@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adaptive Swiper Example</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <style>
+      body, html {
+          margin: 0;
+          padding: 0;
+          height: 100%;
+          overflow-x: hidden;
+      }
+      .swiper {
+          width: 100%;
+          height: 300px;
+      }
+      .swiper-slide {
+          text-align: center;
+          font-size: 18px;
+          background: #ddd;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
+      .swiper-button-prev, .swiper-button-next, .swiper-pagination-bullet {
+          color: #000;
+          cursor: pointer;
+      }
+      .swiper-button-disabled, .swiper-pagination {
+          opacity: 0.3;
+          cursor: default;
+      }
+      .hidden {
+          display: none;
+      }
+  </style>
+</head>
+<body>
+
+  <div class="swiper mySwiper" aria-label="Example Slideshow">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide" aria-hidden="true" tabindex="-1" role="group" aria-roledescription="slide" aria-label="1 of 3">Slide 1</div>
+        <div class="swiper-slide" aria-hidden="true" tabindex="-1" role="group" aria-roledescription="slide" aria-label="2 of 3">Slide 2</div>
+        <div class="swiper-slide" aria-hidden="true" tabindex="-1" role="group" aria-roledescription="slide" aria-label="3 of 3">Slide 3</div>
+    </div>
+    <div class="swiper-pagination" role="navigation" aria-label="Pagination"></div>
+    <button class="swiper-button-prev" aria-label="Previous slide"><</button>
+    <button class="swiper-button-next" aria-label="Next slide">></button>
+</div>
+  
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- 
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const swiperContainer = document.querySelector('.mySwiper');
+        const slides = swiperContainer.querySelectorAll('.swiper-slide');
+        const pagination = swiperContainer.querySelector('.swiper-pagination');
+        const buttonPrev = swiperContainer.querySelector('.swiper-button-prev');
+        const buttonNext = swiperContainer.querySelector('.swiper-button-next');
+
+        const swiper = new Swiper('.mySwiper', {
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            loop: false,
+            simulateTouch: slides.length > 1, // Disable touch control if only one slide
+            allowSlidePrev: slides.length > 1,
+            allowSlideNext: slides.length > 1,
+            on: {
+                init: function () {
+                    updateFocusAndAria(this);
+                    toggleControls(this);
+                },
+                slideChangeTransitionEnd: function () {
+                    updateFocusAndAria(this);
+                }
+            }
+        });
+
+        function updateFocusAndAria(swiper) {
+            swiper.slides.forEach((slide, index) => {
+                if (index === swiper.activeIndex) {
+                    slide.setAttribute('aria-hidden', 'false');
+                    slide.setAttribute('tabindex', '0');
+                    slide.focus(); // Focus the active slide
+                } else {
+                    slide.setAttribute('aria-hidden', 'true');
+                    slide.setAttribute('tabindex', '-1');
+                }
+            });
+        }
+
+        function toggleControls(swiper) {
+            if (swiper.slides.length <= 1) {
+                pagination.classList.add('hidden');
+                buttonPrev.classList.add('hidden');
+                buttonNext.classList.add('hidden');
+            } else {
+                pagination.classList.remove('hidden');
+                buttonPrev.classList.remove('hidden');
+                buttonNext.classList.remove('hidden');
+            }
+        }
+    });
+</script> -->
+<script>
+  $(document).ready(function () {
+      var mySwiper = new Swiper('.mySwiper', {
+          navigation: {
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
+          },
+          pagination: {
+              el: '.swiper-pagination',
+              clickable: true,
+          },
+          loop: false,
+          simulateTouch: $('.swiper-slide').length > 1,
+          allowSlidePrev: $('.swiper-slide').length > 1,
+          allowSlideNext: $('.swiper-slide').length > 1,
+          on: {
+              init: function () {
+                  updateFocusAndAria();
+                  toggleControls();
+              },
+              slideChangeTransitionEnd: function () {
+                  updateFocusAndAria();
+              }
+          }
+      });
+
+      function updateFocusAndAria() {
+          $('.swiper-slide').attr('aria-hidden', 'true').attr('tabindex', '-1');
+          var activeSlide = $('.swiper-slide').eq(mySwiper.activeIndex);
+          activeSlide.attr('aria-hidden', 'false').attr('tabindex', '0');
+          if (mySwiper.initialized) {
+              activeSlide.focus();
+          }
+      }
+
+      function toggleControls() {
+          if ($('.swiper-slide').length <= 1) {
+              $('.swiper-pagination, .swiper-button-prev, .swiper-button-next').addClass('hidden');
+          } else {
+              $('.swiper-pagination, .swiper-button-prev, .swiper-button-next').removeClass('hidden');
+          }
+      }
+  });
+</script>
+
+</body>
+</html>
