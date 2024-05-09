@@ -20,10 +20,7 @@ Digital accessibility is the ability of a website, mobile application or electro
 
 >**접근성(accessibility)은 "ability to access(접근 가능성)"이며, 
 모든 사용자가 제품, 서비스, 환경을 가능한 한 쉽게 이용할 수 있도록 보장하는 설계 원칙입니다. 
-웹 접근성(Web Accessibility), 모바일 접근성(Mobile Accessibility), 무인단말기 접근성 (Kiosk Accessibility)은 이러한 원칙이 웹사이트, 온라인 서비스, 모바일 애플리케이션, ATM, 키오스크, 자동 티켓 발매기에 적용될 때의 특별한 측면을 다룹니다. 다음은 각각에 대한 간단한 설명입니다.**
-
-
-즉, 접근성, 웹 접근성, 모바일 접근성, 그리고 무인단말기 접근성 모두 기술이 모든 사람에게 도달할 수 있도록 보장하는 중요한 원칙입니다. 이러한 접근성 향상은 사용자 경험을 개선하고, 사회적 포용성을 증진시키며, 법적 요구사항을 충족시키는 데 핵심적인 역할을 합니다.
+즉, 접근성, 웹 접근성, 모바일 접근성, 그리고 무인단말기 접근성 모두 기술이 모든 사람에게 도달할 수 있도록 보장하는 중요한 원칙입니다. 이러한 접근성 향상은 사용자 경험을 개선하고, 사회적 포용성을 증진시키며, 법적 요구사항을 충족시키는 데 핵심적인 역할을 하며, 이는 웹사이트, 온라인 서비스, 모바일 애플리케이션, ATM, 키오스크, 자동 티켓 발매기에 적용될 때 모든 사용자가 쉽게 이용할 수 있도록 할 수 있습니다.**
 
 ### 1.1 접근성 (Accessibility)
 접근성은 모든 사용자가 제품, 서비스, 환경에 쉽게 접근하고 사용할 수 있도록 하는 특성을 말합니다. 이는 장애가 있는 사람뿐만 아니라, 노인, 어린이, 임산부 등 다양한 사용자 그룹을 포함합니다. 국제표준화 기구(ISO) 및 웹 접근성 이니셔티브(WAI)와 같은 기구들은 접근성 관련 국제표준을 제공합니다. 국내에서는 이러한 국제표준을 바탕으로 국내형 접근성 지침을 마련하여 적용하고 있습니다.
@@ -146,9 +143,11 @@ Digital accessibility is the ability of a website, mobile application or electro
 3. **청각 장애인** : 기계에서 신용카드가 나오지 않는 등 고장시, 담당자 통화 버튼으로 음성통화가 어려워 도움을 청할 방법이 없음
 
 
-#### 접근성이란? 참조
+### 1.5 참조
 [W3C 접근성 원칙](https://www.w3.org/WAI/fundamentals/accessibility-principles/ko)
 [W3C 웹 접근성 소개](https://www.w3.org/WAI/fundamentals/accessibility-intro/ko)
 [MDN 접근성](https://developer.mozilla.org/ko/docs/Web/Accessibility)
 [무인정보단말기 UI 플랫폼](https://www.kioskui.or.kr/)
 [웹와치](http://www.webwatch.or.kr/)
+[다모아](https://damoa.or.kr/main/inner.php?sMenu=main)
+[무인정보단말기 UI 플랫폼](https://www.kioskui.or.kr/)
