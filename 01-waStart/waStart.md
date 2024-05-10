@@ -151,3 +151,4 @@ Digital accessibility is the ability of a website, mobile application or electro
 [웹와치](http://www.webwatch.or.kr/)
 [다모아](https://damoa.or.kr/main/inner.php?sMenu=main)
 [무인정보단말기 UI 플랫폼](https://www.kioskui.or.kr/)
+[장애인복지통합정보망 복지뱅크 - 장애유형 15가지](https://www.bokjibank.or.kr/SW_bbs/notice/view.php?zipEncode=90wDU9vEU9wBLjxzJzspLrxydrMCH9MyMCvrjzvpLbxEun2ybrMCH9MyMmtpTvNBFDxzPzNj9qgBLLMz5v2AM0tzTfMB5v2AMKMAR9MyFD1u9qusKjxyVjMj9u3zM0tzNfgC39MBMahAW5cDZLgBVu2yPr3BU9YCIj2xxn1l9WMC19fDZLgB)
