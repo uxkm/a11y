@@ -176,7 +176,7 @@ https://www.w3.org/WAI/standards-guidelines/ko
 https://velog.io/@dadak/ReactTIL
 https://velog.io/@yeonni/WCAG-2.2-Update
 https://uxdesign.cc/wcag-2-2-parsing-the-success-criterion-that-didnt-make-it-ab8d4904328e
-
+https://aoa.gitbook.io/skymimo/undefined
 https://oneoneone.kr/content/c635d9c3
 
 

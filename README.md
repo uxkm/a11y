@@ -5,27 +5,24 @@
 4. [웹 콘텐츠 접근성 가이드라인](04-waCag/waWcag.md)
    4.1. [WCAG](04-waCag/waWcag.md)
    4.2. [KWCAG](04-waCag/waKwcag.md)
-5. 접근성 항목별 준수 가이드
-   7.1 인식의 용이성(perceivable)
-   7.2 운용의 용이성(operable)
-   7.3 이해의 용이성(understandable)
-   7.4 견고성(robust)
-6. 접근성 체크리스트
-   5.1 웹 접근성
-   5.2 모바일 접근성
-   5.3 무인단말기 접근성
-7. 접근성을 고려한 콘텐츠 제작 방법
+5. 접근성(a11y) 항목별 준수 가이드
+   5.1 인식의 용이성(Perceivable) - tab
+   5.2 운용의 용이성(Operable) - tab
+   5.3 이해의 용이성(Understandable) - tab
+   5.4 견고성(Robust) - tab
+6. 접근성(a11y) 체크리스트
+   6.1 웹 접근성
+   6.2 모바일 접근성
+   6.3 무인정보단말기 접근성
+7. 접근성(a11y)을 고려한 콘텐츠 제작 방법
 8. WAI-ARIA 가이드라인
 9. WAI-ARIA 구조
    9.1 역할(Role)
    9.2 상태(Attributes) 및 속성(States)
-10. 역할(Role)
-11. 상태(Attributes) 및 속성(States)
+10. ARIA 역할(Role)
+11. ARIA 상태(Attributes) 및 속성(States)
 12. 무인정보단말기 정보접근성
-13. 접근성(a11y) 자가진단 체크리스트
-    13.1 웹 접근성 자가진단
-    13.2 모바일 접근성 자가진단
-14.  접근성(a11y) 참조 사이트
+13. 접근성(a11y) 참조 사이트
 
 
 ---
@@ -82,35 +79,6 @@
 사용자 테스트 실시: 다양한 장애를 가진 사용자들을 포함한 사용자 테스트를 실시하여 접근성 문제를 식별하고 개선합니다.
 
 ---
-
-## 7. 접근성 항목별 준수 가이드
-### 인식의 용이성(perceivable)
-- 신규 자료 통합
-
-### 운용의 용이성(operable)
-- 신규 자료 통합
-
-### 이해의 용이성(understandable)
-- 신규 자료 통합
-
-### 견고성(robust)
-- 신규 자료 통합
-
-## WAI-ARIA 가이드라인
-- 신규 자료 통합
-
-## WAI-ARIA 구조
-### 역할(Role)
-- 신규 자료 통합 및 정리
-- 기본 구조 및 설명
-
-### 상태(Attributes) 및 속성(States)
-- 신규 자료 통합 및 정리
-- 기본 구조 및 설명
-
-## 역할(Role) 
-- 신규 자료 통합 및 정리
-- 종류 별 상세 설명
 
 1. alert role
 2. alertdialog role
@@ -201,8 +169,6 @@
 87. text role
 
 ## 상태(Attributes) 및 속성(States)
-- 신규 자료 통합 및 정리
-- 종류 별 상세 설명
   
 1. aria-activedescendant
 2. aria-atomic
