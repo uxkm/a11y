@@ -56,59 +56,147 @@
     - 2.2 버전의 다음 버전.
     - WCAG 3.0은 웹 콘텐츠, 앱, 도구, 출판, 웹상의 신기술에 적용됩니다.
 
-#### 4.1.4 WCAG 2.1 4가지 원칙
-1. **인지 가능성(Perceivable)**
+#### 4.1.4 W3C 표준화 제정 단계
+> Rescinded Recommendation (철회 권고) 
+
+<img src="https://nuli.navercorp.com/upload/2021/7f75e859-5ba1-4962-ad25-5bcbedd02496_[%EC%A0%91%EA%B7%BC%EC%84%B1]%EC%95%84%ED%8B%B0%ED%81%B4_WCAG3.png" alt="W3C 표준화 제정 단계 : 웹 기술을 표준화하기 위한 절차와 요구 사항">
+[이미지 출처 : NULI]
+
+#### 4.1.5 WCAG 2.1 4가지 원칙
+>WCAG 2.1은 터치를 이용한 상호작용(Interaction)을 지원하고 보다 복잡한 제스처(gestures)를 처리하며 의도하지 않은 인터페이스 활성화를 방지함으로써 모바일 기기 사용자를 위한 가이드 라인으로 17개의 새로운 성공 기준을 제공합니다. 모바일 기능을 더욱 친근하게 개선하고 최종 사용자에게 최고의 사용성을 제공하기 위한 것입니다.
+1. **Perceivable(인지 가능성)**
    - 사용자가 정보를 인지하고 콘텐츠를 볼 수 있어야 합니다.
    - 예) 시각적 콘텐츠는 대체 텍스트를 통해 설명되어야 하며, 오디오 콘텐츠는 자막이나 수화 번역을 통해 제공되어야 합니다.
-2. **운용 가능성(Operable)**
+2. **Operable(운용 가능성)**
    - 사용자가 콘텐츠의 인터페이스 요소를 운용할 수 있어야 합니다.
    - 이는 웹사이트가 키보드만으로도 전체적으로 사용될 수 있어야 하며, 충분한 시간을 제공하고, 발작을 유발할 수 있는 콘텐츠를 피하는 것을 의미합니다.
-3. **이해 가능성(Understandable)**
+3. **Understandable(이해 가능성)**
    - 사용자가 정보와 인터페이스의 운용 방식을 이해할 수 있어야 합니다.
    - 이는 웹 페이지가 예측 가능하게 작동하며, 사용자가 실수를 할 경우 이를 정정할 수 있는 방법을 제공해야 함을 의미합니다.
 4. **견고성(Robust)**
    - 다양한 사용자 에이전트(브라우저 등)와 보조 기술에서 콘텐츠를 정확하게 해석할 수 있어야 합니다.
    - 이는 웹 콘텐츠가 현재 및 미래의 기술과 호환될 수 있도록 보장합니다.
 
-#### 4.1.5 WCAG 2.1 지침별 성공기준과 적합성 수준 개수
-WCAG 전체 성공기준 개수 - 78개
+#### 4.1.6 WCAG 2.1 Guideline(가이드라인)
 1. **인지 가능성(Perceivable)**
-   - 1.1 대체 텍스트(A - 1개 / 총 1개)
-   - 1.2 시간 기반 미디어(A - 3개, AA - 2개, AAA - 4개 / 총 9개)
-   - 1.3 적응성(A - 3개, AA - 3개 / 총 6개)
-   - 1.4 명료성(A - 2개, AA - 7개, AAA - 4개 / 총 13개)
+   - 1.1 Text Alternatives(대체 텍스트)
+   - 1.2 Time-based Media(시간 기반 미디어)
+   - 1.3 Adaptable(적응성)
+   - 1.4 Distinguishable(명료성)
 2. **운용 가능성(Operable)**
-   - 2.1 키보드 접근(A - 3개, AAA - 1개 / 총 4개)
-   - 2.2 충분한 시간 제공(A - 2개, AAA - 4개 / 총 6개)
-   - 2.3 발작 예방(A - 1개, AAA - 2개 / 총 3개)
-   - 2.4 탐색 가능(A - 4개, AA - 3개, AAA - 3개 / 총 10개)
-   - 2.5 입력 양식(A - 4개, AAA - 2개 / 총 6개)
+   - 2.1 Keyboard Accessible(키보드 접근)
+   - 2.2 Enough Time(충분한 시간 제공)
+   - 2.3 Seizures and Physical Reactions(발작 예방)
+   - 2.4 Navigable(탐색 가능)
+   - 2.5 Input Modalities(입력 양식) [New]
 3. **이해 가능성(Understandable)**
-   - 3.1 가독성(A - 1개, AA - 1개, AAA - 4개 / 총 6개)
-   - 3.2 예측 가능성(A - 2개, AA - 2개, AAA - 2개 / 총 6개)
+   - 3.1 Readable(가독성)
+   - 3.2 Predictable(예측 가능성)
+   - 3.3 Input Assistance(입력 지원)
 4. **견고성(Robust)**
-   - 4.1 호환성(A - 2개, AA - 1개 / 총 3개)
+   - 4.1 Compatible(호환성)
 
-#### 4.1.6 WCAG 2.2에 새로 추가된 성공 기준(Success Criteria)
->9개의 성공 기준의 타깃 사용자는 운동장애 사용자, 고령자(Retiree), 인지장애 및 학습장애 사용자, 저시력 사용자가 주 대상입니다.
-- **2.4.11 Focus Not Obscured (Minimum)(AA)**
-- **2.4.12 Focus Not Obscured (Enhanced)(AAA)**
-- **2.4.13 Focus Appearance(AAA)**
-- **2.5.7 Dragging Movements(AA)**
-- **2.5.8 Target Size (Minimum)(AA)**
-- **3.2.6 Consistent Help(A)**
-- **3.3.7 Redundant Entry(A)**
-- **3.3.8 Accessible Authentication (Minimum)(AA)**
-- **3.3.9 Accessible Authentication (Enhanced)(AAA)**
+#### 4.1.7 WCAG 2.1 Success Criterion(성공 기준)
+WCAG 전체 성공 기준 - 총 78 개(A 30 개, AA 20 개, AAA 28 개)
+- 1.1.1 Non-text Content (Level A) 
+- 1.2.1 Audio-only and Video-only (Prerecorded) (Level A) 
+- 1.2.2 Captions (Prerecorded) (Level A) 
+- 1.2.3 Audio Description or Media Alternative (Prerecorded) (Level A) 
+- 1.2.4 Captions (Live) (Level AA) 
+- 1.2.5 Audio Description (Prerecorded) (Level AA) 
+- 1.2.6 Sign Language (Prerecorded) (Level AAA) 
+- 1.2.7 Extended Audio Description (Prerecorded) (Level AAA) 
+- 1.2.8 Media Alternative (Prerecorded) (Level AAA) 
+- 1.2.9 Audio-only (Live) (Level AAA) 
+- 1.3.1 Info and Relationships (Level A) 
+- 1.3.2 Meaningful Sequence (Level A) 
+- 1.3.3 Sensory Characteristics (Level A) 
+- 1.3.4 Orientation (Level AA) 
+- 1.3.5 Identify Input Purpose (Level AA) 
+- 1.3.6 Identify Purpose (Level AAA) 
+- 1.4.1 Use of Color (Level A) 
+- 1.4.2 Audio Control (Level A) 
+- 1.4.3 Contrast (Minimum) (Level AA) 
+- 1.4.4 Resize Text (Level AA) 
+- 1.4.5 Images of Text (Level AA) 
+- 1.4.6 Contrast (Enhanced) (Level AAA) 
+- 1.4.7 Low or No Background Audio (Level AAA) 
+- 1.4.8 Visual Presentation (Level AAA) 
+- 1.4.9 Images of Text (No Exception) (Level AAA) 
+- 1.4.10 Reflow (Level AA) 
+- 1.4.11 Non-text Contrast (Level AA) 
+- 1.4.12 Text Spacing (Level AA) 
+- 1.4.13 Content on Hover or Focus (Level AA) 
+- 2.1.1 Keyboard (Level A) 
+- 2.1.2 No Keyboard Trap (Level A) 
+- 2.1.3 Keyboard (No Exception) (Level AAA) 
+- 2.1.4 Character Key Shortcuts (Level A) 
+- 2.2.1 Timing Adjustable (Level A) 
+- 2.2.2 Pause, Stop, Hide (Level A) 
+- 2.2.3 No Timing (Level AAA) 
+- 2.2.4 Interruptions (Level AAA) 
+- 2.2.5 Re-authenticating (Level AAA) 
+- 2.2.6 Timeouts (Level AAA) 
+- 2.3.1 Three Flashes or Below Threshold (Level A) 
+- 2.3.2 Three Flashes (Level AAA) 
+- 2.3.3 Animation from Interactions (Level AAA) 
+- 2.4.1 Bypass Blocks (Level A) 
+- 2.4.2 Page Titled (Level A) 
+- 2.4.3 Focus Order (Level A) 
+- 2.4.4 Link Purpose (In Context) (Level A) 
+- 2.4.5 Multiple Ways (Level AA) 
+- 2.4.6 Headings and Labels (Level AA) 
+- 2.4.7 Focus Visible (Level AA) 
+- 2.4.8 Location (Level AAA) 
+- 2.4.9 Link Purpose (Link Only) (Level AAA) 
+- 2.4.10 Section Headings (Level AAA) 
+- 2.5.1 Pointer Gestures (Level A) 
+- 2.5.2 Pointer Cancellation (Level A) 
+- 2.5.3 Label in Name (Level A) 
+- 2.5.4 Motion Actuation (Level A) 
+- 2.5.5 Target Size (Level AAA) 
+- 2.5.6 Concurrent Input Mechanisms (Level AAA) 
+- 3.1.1 Language of Page (Level A) 
+- 3.1.2 Language of Parts (Level AA) 
+- 3.1.3 Unusual Words (Level AAA) 
+- 3.1.4 Abbreviations (Level AAA) 
+- 3.1.5 Reading Level (Level AAA) 
+- 3.1.6 Pronunciation (Level AAA) 
+- 3.2.1 On Focus (Level A) 
+- 3.2.2 On Input (Level A) 
+- 3.2.3 Consistent Navigation (Level AA) 
+- 3.2.5 Change on Request (Level AAA) 
+- 3.3.1 Error Identification (Level A) 
+- 3.3.2 Labels or Instructions (Level A) 
+- 3.3.3 Error Suggestion (Level AA) 
+- 3.3.4 Error Prevention (Legal, Financial, Data) (Level AA) 
+- 3.3.5 Help (Level AAA) 
+- 3.3.6 Error Prevention (All) (Level AAA) 
+- 4.1.1 Parsing (Level A) 
+- 4.1.2 Name, Role, Value (Level A) 
+- 4.1.3 Status Messages (Level AA) 
 
 
-#### 4.1.7 WCAG 2.2에 제거된 성공 기준(Success Criteria)
+#### 4.1.8 WCAG 2.2에 새로 추가된 Success Criterion(성공 기준)
+>WCAG 2.2에서는 9개의 성공 기준의 타깃 사용자는 운동장애 사용자, 고령자(Retiree), 인지장애 및 학습장애 사용자, 저시력 사용자가 주 대상입니다.
+- **2.4.11 Focus Not Obscured (Minimum) (AA)**
+- **2.4.12 Focus Not Obscured (Enhanced) (AAA)**
+- **2.4.13 Focus Appearance (AAA)**
+- **2.5.7 Dragging Movements (AA)**
+- **2.5.8 Target Size (Minimum) (AA)**
+- **3.2.6 Consistent Help (A)**
+- **3.3.7 Redundant Entry (A)**
+- **3.3.8 Accessible Authentication (Minimum) (AA)**
+- **3.3.9 Accessible Authentication (Enhanced) (AAA)**
+
+
+#### 4.1.9 WCAG 2.2에 제거된 Success Criterion(성공 기준)
 >이 기준은 원래 보조 기술이 HTML을 직접 분석하는 문제를 해결하기 위해 도입되었습니다. 하지만, 시간이 지나면서 보조 기술은 HTML을 직접 분석할 필요가 없어졌고, 브라우저들은 마크업의 구문 분석 오류를 처리하는 능력이 크게 향상되었습니다. 결과적으로, 정확한 마크업 구조는 더 이상 필수 요소가 아니게 되었습니다. 따라서 이 기준은 그 유용성이 사라져 삭제되었습니다.
 단, 다른 기준에서 확장되어 세부적인 내용들이 추가되었습니다.
-- **4.1.1 구문 분석(더 이상 사용되지 않으며 제거됨)**
- 
+- **4.1.1 Parsing (Obsolete and removed) (구문 분석(사용되지 않고 제거됨))**
 
-#### 4.1.8 접근성 용어정리
+
+#### 4.1.10 접근성 용어정리
 1. **ATAG(웹 저작 도구 접근성 지침)**
    - Authoring Tool Accessibility Guildelines의 약자로 접근 가능한 콘텐츠를 생성하는 접근 가능한 작성 도구를 구축하기 위한 W3C 권장 사항입니다.
    - 저작도구는 “저자” (웹 개발자, 디자이너, 작가 등)가 웹 콘텐츠를 생산하는 데에 사용하는 서비스나 소프트웨어를 가리킵니다. 
@@ -123,12 +211,13 @@ WCAG 전체 성공기준 개수 - 78개
    - WAI : 'Web Internet Applications'의 약자로 웹 접근성을 담당하는 조직.
    - ARIA : 'Accessible Rich Internet Applications'의 약자로 리치 인터넷을 위한 W3C 접근성 명세.
 
-#### 4.1.8 참조
+#### 4.1.11 참조
 [W3C WCAG 1.0](https://www.w3.org/TR/WCAG10/)
 [W3C WCAG 2.0](https://www.w3.org/TR/WCAG20/)
 [W3C WCAG 2.1](https://www.w3.org/TR/WCAG21/)
 [W3C WCAG 2.2](https://www.w3.org/TR/WCAG22/)
 [W3C WCAG 3.0 Draft](https://www.w3.org/TR/2021/WD-wcag-3.0-20210121/)
+[Working Draft of WCAG 3.0](https://www.deque.com/blog/first-public-working-draft-wcag-3/)
 [W3C WCAG 2.1 한국어](http://www.kwacc.or.kr/WAI/wcag21/)
 [W3C Web Content Accessibility Guidelines (WCAG) 2.2](https://www.w3.org/TR/WCAG22/)
 [W3C WCAG2 ko](https://www.w3.org/WAI/standards-guidelines/ko#wcag2)
@@ -137,6 +226,7 @@ WCAG 전체 성공기준 개수 - 78개
 [MDN 웹 컨텐츠 접근성 지침 이해하기](https://developer.mozilla.org/ko/docs/Web/Accessibility/Understanding_WCAG)
 [MDN 접근성이란?](https://developer.mozilla.org/ko/docs/Learn/Accessibility/What_is_accessibility#accessibility_guidelines_and_the_law)
 [NULI WCAG 2.2에서 변경된 사항](https://nuli.navercorp.com/community/article/1133181)
+[NULI W3C 표준화 제정 단계](https://nuli.navercorp.com/community/article/1133108)
 [brunch WCAG 2.2 작업 초안](https://brunch.co.kr/@snclab/55)
 [GITBOOK WCAG 2.1](https://a11y.gitbook.io/wcag/international-standards)
 [WAI 문서로 접근성 이해하기](https://iyu88.github.io//a11y/2023/12/24/web-accessibility-1.html)
@@ -144,40 +234,7 @@ WCAG 전체 성공기준 개수 - 78개
 [웹접근성 국가표준 개정 소개](https://seculayerlab.tistory.com/m/48)
 
 [한국형 웹 콘텐츠 접근성 지침 2.2](https://www.samsungfashion.com/webacc.do)
-
-
-
-https://www.w3.org/TR/WCAG22/#parsing
-https://www.w3.org/TR/UNDERSTANDING-WCAG20/intro.html#introduction-fourprincs-head
-https://developer.mozilla.org/ko/docs/Web/Accessibility/Understanding_WCAG
-https://experienceleague.adobe.com/ko/docs/experience-manager-65/content/managing/accessibility/qg-wcag
-https://www.w3.org/WAI/standards-guidelines/wcag/
-https://www.w3.org/WAI/standards-guidelines/wcag/faq/
-https://www.w3.org/WAI/standards-guidelines/wcag/wcag3-intro/
-https://www.w3.org/WAI/standards-guidelines/ko
-https://www.atlassian.com/ko/trust/compliance/resources/wcag
-https://naradesign.github.io/wcag-2.1.html
-https://docs.tobesoft.co.jp/improvement_a11y_guide_nexacro_n_ko/596cf126a44ae630
-https://velog.io/@liketiger/WCAGWeb-Content-Accessibility-Guidelines#1-wcag%EB%9E%80
-https://a11y.gitbook.io/wcag/1-perceivable/1.1-text-alternatives
-https://mulder21c.io/understanding-kwcag-22-changes-intro/
-https://a11y.gitbook.io/wcag/international-standards
-https://brunch.co.kr/@snclab/41
-https://brunch.co.kr/@snclab/55
-https://accessibleweb.com/wcag/wcag-version-history/
-https://www.w3.org/WAI/GL/task-forces/silver/wiki/Major_Milestones_for_Silver
-https://www.w3.org/TR/2021/WD-wcag-3.0-20210121/
-https://seculayerlab.tistory.com/m/48
-https://www.w3.org/WAI/standards-guidelines/ko
-http://www.websoul.co.kr/accessibility/WA_guide22.asp
-http://www.kwacc.or.kr/WAI/wcag21/#conformance-to-wcag-2-1
-https://www.achecks.org/wcag-2-2-is-live-october-5-2023/
-https://www.w3.org/WAI/standards-guidelines/ko
-https://velog.io/@dadak/ReactTIL
-https://velog.io/@yeonni/WCAG-2.2-Update
-https://uxdesign.cc/wcag-2-2-parsing-the-success-criterion-that-didnt-make-it-ab8d4904328e
-https://aoa.gitbook.io/skymimo/undefined
-https://oneoneone.kr/content/c635d9c3
+[AOA GITBOOK](https://aoa.gitbook.io/skymimo/undefined)
 
 
 
