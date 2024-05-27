@@ -78,122 +78,123 @@
    - 이는 웹 콘텐츠가 현재 및 미래의 기술과 호환될 수 있도록 보장합니다.
 
 #### 4.1.6 WCAG 2.1 Guideline(가이드라인)
-1. **인지 가능성(Perceivable)**
-   - 1.1 Text Alternatives(대체 텍스트)
-   - 1.2 Time-based Media(시간 기반 미디어)
-   - 1.3 Adaptable(적응성)
-   - 1.4 Distinguishable(명료성)
-2. **운용 가능성(Operable)**
-   - 2.1 Keyboard Accessible(키보드 접근)
-   - 2.2 Enough Time(충분한 시간 제공)
-   - 2.3 Seizures and Physical Reactions(발작 예방)
-   - 2.4 Navigable(탐색 가능)
-   - 2.5 Input Modalities(입력 양식) [New]
-3. **이해 가능성(Understandable)**
-   - 3.1 Readable(가독성)
-   - 3.2 Predictable(예측 가능성)
-   - 3.3 Input Assistance(입력 지원)
-4. **견고성(Robust)**
-   - 4.1 Compatible(호환성)
+1. **[인지 가능성(Perceivable)](https://www.w3.org/TR/WCAG21/#perceivable)**
+   - [1.1 Text Alternatives(대체 텍스트)](https://www.w3.org/TR/WCAG21/#text-alternatives)
+   - [1.2 Time-based Media(시간 기반 미디어)](https://www.w3.org/TR/WCAG21/#time-based-media)
+   - [1.3 Adaptable(적응성)](https://www.w3.org/TR/WCAG21/#adaptable)
+   - [1.4 Distinguishable(명료성)](https://www.w3.org/TR/WCAG21/#distinguishable)
+2. **[운용 가능성(Operable)](https://www.w3.org/TR/WCAG21/#operable)**
+   - [2.1 Keyboard Accessible(키보드 접근)](https://www.w3.org/TR/WCAG21/#keyboard-accessible)
+   - [2.2 Enough Time(충분한 시간 제공)](https://www.w3.org/TR/WCAG21/#enough-time)
+   - [2.3 Seizures and Physical Reactions(발작 예방)](https://www.w3.org/TR/WCAG21/#seizures-and-physical-reactions)
+   - [2.4 Navigable(탐색 가능)](https://www.w3.org/TR/WCAG21/#navigable)
+   - [2.5 Input Modalities(입력 양식) [New]](https://www.w3.org/TR/WCAG21/#input-modalities)
+3. **[이해 가능성(Understandable)](https://www.w3.org/TR/WCAG21/#understandable)**
+   - [3.1 Readable(가독성)](https://www.w3.org/TR/WCAG21/#readable)
+   - [3.2 Predictable(예측 가능성)](https://www.w3.org/TR/WCAG21/#predictable)
+   - [3.3 Input Assistance(입력 지원)](https://www.w3.org/TR/WCAG21/#input-assistance)
+4. **[견고성(Robust)](https://www.w3.org/TR/WCAG21/#robust)**
+   - [4.1 Compatible(호환성)](https://www.w3.org/TR/WCAG21/#compatible)
 
 #### 4.1.7 WCAG 2.1 Success Criterion(성공 기준)
 WCAG 전체 성공 기준 - 총 78 개(A 30 개, AA 20 개, AAA 28 개)
-- 1.1.1 Non-text Content (Level A) 
-- 1.2.1 Audio-only and Video-only (Prerecorded) (Level A) 
-- 1.2.2 Captions (Prerecorded) (Level A) 
-- 1.2.3 Audio Description or Media Alternative (Prerecorded) (Level A) 
-- 1.2.4 Captions (Live) (Level AA) 
-- 1.2.5 Audio Description (Prerecorded) (Level AA) 
-- 1.2.6 Sign Language (Prerecorded) (Level AAA) 
-- 1.2.7 Extended Audio Description (Prerecorded) (Level AAA) 
-- 1.2.8 Media Alternative (Prerecorded) (Level AAA) 
-- 1.2.9 Audio-only (Live) (Level AAA) 
-- 1.3.1 Info and Relationships (Level A) 
-- 1.3.2 Meaningful Sequence (Level A) 
-- 1.3.3 Sensory Characteristics (Level A) 
-- 1.3.4 Orientation (Level AA) 
-- 1.3.5 Identify Input Purpose (Level AA) 
-- 1.3.6 Identify Purpose (Level AAA) 
-- 1.4.1 Use of Color (Level A) 
-- 1.4.2 Audio Control (Level A) 
-- 1.4.3 Contrast (Minimum) (Level AA) 
-- 1.4.4 Resize Text (Level AA) 
-- 1.4.5 Images of Text (Level AA) 
-- 1.4.6 Contrast (Enhanced) (Level AAA) 
-- 1.4.7 Low or No Background Audio (Level AAA) 
-- 1.4.8 Visual Presentation (Level AAA) 
-- 1.4.9 Images of Text (No Exception) (Level AAA) 
-- 1.4.10 Reflow (Level AA) 
-- 1.4.11 Non-text Contrast (Level AA) 
-- 1.4.12 Text Spacing (Level AA) 
-- 1.4.13 Content on Hover or Focus (Level AA) 
-- 2.1.1 Keyboard (Level A) 
-- 2.1.2 No Keyboard Trap (Level A) 
-- 2.1.3 Keyboard (No Exception) (Level AAA) 
-- 2.1.4 Character Key Shortcuts (Level A) 
-- 2.2.1 Timing Adjustable (Level A) 
-- 2.2.2 Pause, Stop, Hide (Level A) 
-- 2.2.3 No Timing (Level AAA) 
-- 2.2.4 Interruptions (Level AAA) 
-- 2.2.5 Re-authenticating (Level AAA) 
-- 2.2.6 Timeouts (Level AAA) 
-- 2.3.1 Three Flashes or Below Threshold (Level A) 
-- 2.3.2 Three Flashes (Level AAA) 
-- 2.3.3 Animation from Interactions (Level AAA) 
-- 2.4.1 Bypass Blocks (Level A) 
-- 2.4.2 Page Titled (Level A) 
-- 2.4.3 Focus Order (Level A) 
-- 2.4.4 Link Purpose (In Context) (Level A) 
-- 2.4.5 Multiple Ways (Level AA) 
-- 2.4.6 Headings and Labels (Level AA) 
-- 2.4.7 Focus Visible (Level AA) 
-- 2.4.8 Location (Level AAA) 
-- 2.4.9 Link Purpose (Link Only) (Level AAA) 
-- 2.4.10 Section Headings (Level AAA) 
-- 2.5.1 Pointer Gestures (Level A) 
-- 2.5.2 Pointer Cancellation (Level A) 
-- 2.5.3 Label in Name (Level A) 
-- 2.5.4 Motion Actuation (Level A) 
-- 2.5.5 Target Size (Level AAA) 
-- 2.5.6 Concurrent Input Mechanisms (Level AAA) 
-- 3.1.1 Language of Page (Level A) 
-- 3.1.2 Language of Parts (Level AA) 
-- 3.1.3 Unusual Words (Level AAA) 
-- 3.1.4 Abbreviations (Level AAA) 
-- 3.1.5 Reading Level (Level AAA) 
-- 3.1.6 Pronunciation (Level AAA) 
-- 3.2.1 On Focus (Level A) 
-- 3.2.2 On Input (Level A) 
-- 3.2.3 Consistent Navigation (Level AA) 
-- 3.2.5 Change on Request (Level AAA) 
-- 3.3.1 Error Identification (Level A) 
-- 3.3.2 Labels or Instructions (Level A) 
-- 3.3.3 Error Suggestion (Level AA) 
-- 3.3.4 Error Prevention (Legal, Financial, Data) (Level AA) 
-- 3.3.5 Help (Level AAA) 
-- 3.3.6 Error Prevention (All) (Level AAA) 
-- 4.1.1 Parsing (Level A) 
-- 4.1.2 Name, Role, Value (Level A) 
-- 4.1.3 Status Messages (Level AA) 
+- [1.1.1 Non-text Content (Level A)](https://www.w3.org/TR/WCAG21/#non-text-content) 
+- [1.2.1 Audio-only and Video-only (Prerecorded) (Level A)](https://www.w3.org/TR/WCAG21/#audio-only-and-video-only-prerecorded) 
+- [1.2.2 Captions (Prerecorded) (Level A)](https://www.w3.org/TR/WCAG21/#captions-prerecorded) 
+- [1.2.3 Audio Description or Media Alternative (Prerecorded) (Level A)](https://www.w3.org/TR/WCAG21/#audio-description-or-media-alternative-prerecorded) 
+- [1.2.4 Captions (Live) (Level AA)](https://www.w3.org/TR/WCAG21/#captions-live) 
+- [1.2.5 Audio Description (Prerecorded) (Level AA)](https://www.w3.org/TR/WCAG21/#audio-description-prerecorded) 
+- [1.2.6 Sign Language (Prerecorded) (Level AAA)](https://www.w3.org/TR/WCAG21/#sign-language-prerecorded) 
+- [1.2.7 Extended Audio Description (Prerecorded) (Level AAA)](https://www.w3.org/TR/WCAG21/#extended-audio-description-prerecorded) 
+- [1.2.8 Media Alternative (Prerecorded) (Level AAA)](https://www.w3.org/TR/WCAG21/#media-alternative-prerecorded) 
+- [1.2.9 Audio-only (Live) (Level AAA)](https://www.w3.org/TR/WCAG21/#audio-only-live) 
+- [1.3.1 Info and Relationships (Level A)](https://www.w3.org/TR/WCAG21/#info-and-relationships) 
+- [1.3.2 Meaningful Sequence (Level A)](https://www.w3.org/TR/WCAG21/#meaningful-sequence) 
+- [1.3.3 Sensory Characteristics (Level A)](https://www.w3.org/TR/WCAG21/#sensory-characteristics) 
+- [1.3.4 Orientation (Level AA)](https://www.w3.org/TR/WCAG21/#orientation) 
+- [1.3.5 Identify Input Purpose (Level AA)](https://www.w3.org/TR/WCAG21/#identify-input-purpose) 
+- [1.3.6 Identify Purpose (Level AAA)](https://www.w3.org/TR/WCAG21/#identify-purpose) 
+- [1.4.1 Use of Color (Level A)](https://www.w3.org/TR/WCAG21/#use-of-color) 
+- [1.4.2 Audio Control (Level A)](https://www.w3.org/TR/WCAG21/#audio-control) 
+- [1.4.3 Contrast (Minimum) (Level AA)](https://www.w3.org/TR/WCAG21/#contrast-minimum) 
+- [1.4.4 Resize Text (Level AA)](https://www.w3.org/TR/WCAG21/#resize-text) 
+- [1.4.5 Images of Text (Level AA)](https://www.w3.org/TR/WCAG21/#images-of-text) 
+- [1.4.6 Contrast (Enhanced) (Level AAA)](https://www.w3.org/TR/WCAG21/#contrast-enhanced) 
+- [1.4.7 Low or No Background Audio (Level AAA)](https://www.w3.org/TR/WCAG21/#low-or-no-background-audio) 
+- [1.4.8 Visual Presentation (Level AAA)](https://www.w3.org/TR/WCAG21/#visual-presentation) 
+- [1.4.9 Images of Text (No Exception) (Level AAA)](https://www.w3.org/TR/WCAG21/#images-of-text-no-exception) 
+- [1.4.10 Reflow (Level AA)](https://www.w3.org/TR/WCAG21/#reflow) 
+- [1.4.11 Non-text Contrast (Level AA)](https://www.w3.org/TR/WCAG21/#non-text-contrast) 
+- [1.4.12 Text Spacing (Level AA)](https://www.w3.org/TR/WCAG21/#text-spacing) 
+- [1.4.13 Content on Hover or Focus (Level AA)](https://www.w3.org/TR/WCAG21/#content-on-hover-or-focus) 
+- [2.1.1 Keyboard (Level A)](https://www.w3.org/TR/WCAG21/#keyboard) 
+- [2.1.2 No Keyboard Trap (Level A)](https://www.w3.org/TR/WCAG21/#no-keyboard-trap) 
+- [2.1.3 Keyboard (No Exception) (Level AAA)](https://www.w3.org/TR/WCAG21/#keyboard-no-exception) 
+- [2.1.4 Character Key Shortcuts (Level A)](https://www.w3.org/TR/WCAG21/#character-key-shortcuts) 
+- [2.2.1 Timing Adjustable (Level A)](https://www.w3.org/TR/WCAG21/#timing-adjustable) 
+- [2.2.2 Pause, Stop, Hide (Level A)](https://www.w3.org/TR/WCAG21/#pause-stop-hide) 
+- [2.2.3 No Timing (Level AAA)](https://www.w3.org/TR/WCAG21/#no-timing) 
+- [2.2.4 Interruptions (Level AAA)](https://www.w3.org/TR/WCAG21/#interruptions) 
+- [2.2.5 Re-authenticating (Level AAA)](https://www.w3.org/TR/WCAG21/#re-authenticating) 
+- [2.2.6 Timeouts (Level AAA)](https://www.w3.org/TR/WCAG21/#timeouts) 
+- [2.3.1 Three Flashes or Below Threshold (Level A)](https://www.w3.org/TR/WCAG21/#three-flashes-or-below-threshold) 
+- [2.3.2 Three Flashes (Level AAA)](https://www.w3.org/TR/WCAG21/#three-flashes) 
+- [2.3.3 Animation from Interactions (Level AAA)](https://www.w3.org/TR/WCAG21/#animation-from-interactions) 
+- [2.4.1 Bypass Blocks (Level A)](https://www.w3.org/TR/WCAG21/#bypass-blocks) 
+- [2.4.2 Page Titled (Level A)](https://www.w3.org/TR/WCAG21/#page-titled) 
+- [2.4.3 Focus Order (Level A)](https://www.w3.org/TR/WCAG21/#focus-order) 
+- [2.4.4 Link Purpose (In Context) (Level A)](https://www.w3.org/TR/WCAG21/#link-purpose-in-context) 
+- [2.4.5 Multiple Ways (Level AA)](https://www.w3.org/TR/WCAG21/#multiple-ways) 
+- [2.4.6 Headings and Labels (Level AA)](https://www.w3.org/TR/WCAG21/#headings-and-labels) 
+- [2.4.7 Focus Visible (Level AA)](https://www.w3.org/TR/WCAG21/#focus-visible) 
+- [2.4.8 Location (Level AAA)](https://www.w3.org/TR/WCAG21/#location) 
+- [2.4.9 Link Purpose (Link Only) (Level AAA)](https://www.w3.org/TR/WCAG21/#link-purpose-link-only) 
+- [2.4.10 Section Headings (Level AAA)](https://www.w3.org/TR/WCAG21/#section-headings) 
+- [2.5.1 Pointer Gestures (Level A)](https://www.w3.org/TR/WCAG21/#pointer-gestures) 
+- [2.5.2 Pointer Cancellation (Level A)](https://www.w3.org/TR/WCAG21/#pointer-cancellation) 
+- [2.5.3 Label in Name (Level A)](https://www.w3.org/TR/WCAG21/#label-in-name) 
+- [2.5.4 Motion Actuation (Level A)](https://www.w3.org/TR/WCAG21/#motion-actuation) 
+- [2.5.5 Target Size (Level AAA)](https://www.w3.org/TR/WCAG21/#target-size) 
+- [2.5.6 Concurrent Input Mechanisms (Level AAA)](https://www.w3.org/TR/WCAG21/#concurrent-input-mechanisms) 
+- [3.1.1 Language of Page (Level A)](https://www.w3.org/TR/WCAG21/#language-of-page) 
+- [3.1.2 Language of Parts (Level AA)](https://www.w3.org/TR/WCAG21/#language-of-parts) 
+- [3.1.3 Unusual Words (Level AAA)](https://www.w3.org/TR/WCAG21/#unusual-words) 
+- [3.1.4 Abbreviations (Level AAA)](https://www.w3.org/TR/WCAG21/#abbreviations) 
+- [3.1.5 Reading Level (Level AAA)](https://www.w3.org/TR/WCAG21/#reading-level) 
+- [3.1.6 Pronunciation (Level AAA)](https://www.w3.org/TR/WCAG21/#pronunciation) 
+- [3.2.1 On Focus (Level A)](https://www.w3.org/TR/WCAG21/#on-focus) 
+- [3.2.2 On Input (Level A)](https://www.w3.org/TR/WCAG21/#on-input) 
+- [3.2.3 Consistent Navigation (Level AA)](https://www.w3.org/TR/WCAG21/#consistent-navigation) 
+- [3.2.4 Consistent Identification (Level AA)](https://www.w3.org/TR/WCAG21/#consistent-identification) 
+- [3.2.5 Change on Request (Level AAA)](https://www.w3.org/TR/WCAG21/#change-on-request) 
+- [3.3.1 Error Identification (Level A)](https://www.w3.org/TR/WCAG21/#error-identification) 
+- [3.3.2 Labels or Instructions (Level A)](https://www.w3.org/TR/WCAG21/#labels-or-instructions) 
+- [3.3.3 Error Suggestion (Level AA)](https://www.w3.org/TR/WCAG21/#error-suggestion) 
+- [3.3.4 Error Prevention (Legal, Financial, Data) (Level AA)](https://www.w3.org/TR/WCAG21/#error-prevention-legal-financial-data) 
+- [3.3.5 Help (Level AAA)](https://www.w3.org/TR/WCAG21/#help) 
+- [3.3.6 Error Prevention (All) (Level AAA)](https://www.w3.org/TR/WCAG21/#error-prevention-all) 
+- [4.1.1 Parsing (Level A)](https://www.w3.org/TR/WCAG21/#parsing) 
+- [4.1.2 Name, Role, Value (Level A)](https://www.w3.org/TR/WCAG21/#name-role-value) 
+- [4.1.3 Status Messages (Level AA)](https://www.w3.org/TR/WCAG21/#status-messages) 
 
 
 #### 4.1.8 WCAG 2.2에 새로 추가된 Success Criterion(성공 기준)
 >WCAG 2.2에서는 9개의 성공 기준의 타깃 사용자는 운동장애 사용자, 고령자(Retiree), 인지장애 및 학습장애 사용자, 저시력 사용자가 주 대상입니다.
-- **2.4.11 Focus Not Obscured (Minimum) (AA)**
-- **2.4.12 Focus Not Obscured (Enhanced) (AAA)**
-- **2.4.13 Focus Appearance (AAA)**
-- **2.5.7 Dragging Movements (AA)**
-- **2.5.8 Target Size (Minimum) (AA)**
-- **3.2.6 Consistent Help (A)**
-- **3.3.7 Redundant Entry (A)**
-- **3.3.8 Accessible Authentication (Minimum) (AA)**
-- **3.3.9 Accessible Authentication (Enhanced) (AAA)**
+- **[2.4.11 Focus Not Obscured (Minimum) (AA)](https://www.w3.org/TR/WCAG22/#focus-not-obscured-minimum)**
+- **[2.4.12 Focus Not Obscured (Enhanced) (AAA)](https://www.w3.org/TR/WCAG22/#focus-not-obscured-enhanced)**
+- **[2.4.13 Focus Appearance (AAA)](https://www.w3.org/TR/WCAG22/#focus-appearance)**
+- **[2.5.7 Dragging Movements (AA)](https://www.w3.org/TR/WCAG22/#dragging-movements)**
+- **[2.5.8 Target Size (Minimum) (AA)](https://www.w3.org/TR/WCAG22/#target-size-minimum)**
+- **[3.2.6 Consistent Help (A)](https://www.w3.org/TR/WCAG22/#consistent-help)**
+- **[3.3.7 Redundant Entry (A)](https://www.w3.org/TR/WCAG22/#redundant-entry)**
+- **[3.3.8 Accessible Authentication (Minimum) (AA)](https://www.w3.org/TR/WCAG22/#accessible-authentication-minimum)**
+- **[3.3.9 Accessible Authentication (Enhanced) (AAA)](https://www.w3.org/TR/WCAG22/#accessible-authentication-enhanced)**
 
 
 #### 4.1.9 WCAG 2.2에 제거된 Success Criterion(성공 기준)
 >이 기준은 원래 보조 기술이 HTML을 직접 분석하는 문제를 해결하기 위해 도입되었습니다. 하지만, 시간이 지나면서 보조 기술은 HTML을 직접 분석할 필요가 없어졌고, 브라우저들은 마크업의 구문 분석 오류를 처리하는 능력이 크게 향상되었습니다. 결과적으로, 정확한 마크업 구조는 더 이상 필수 요소가 아니게 되었습니다. 따라서 이 기준은 그 유용성이 사라져 삭제되었습니다.
 단, 다른 기준에서 확장되어 세부적인 내용들이 추가되었습니다.
-- **4.1.1 Parsing (Obsolete and removed) (구문 분석(사용되지 않고 제거됨))**
+- **[4.1.1 Parsing (Obsolete and removed) (구문 분석(사용되지 않고 제거됨))](https://www.w3.org/TR/WCAG22/#parsing)**
 
 
 #### 4.1.10 접근성 용어정리
@@ -236,6 +237,33 @@ WCAG 전체 성공 기준 - 총 78 개(A 30 개, AA 20 개, AAA 28 개)
 
 
 
+
+---
+# INDEX
+1. [접근성이란?](01-a11yStart/start.md) 
+2. [장애인차별금지법 관련 지침](02-a11yGuideline/guideline.md) 
+3. [접근성 인증 마크](03-a11yMark/mark.md) 
+4. [웹 콘텐츠 접근성 가이드라인](04-a11yCag/wcag.md)   
+   4.1. [WCAG](04-a11yCag/wcag.md)   
+   4.2. [KWCAG](04-a11yCag/kwcag.md)   
+5. [KWCAG 항목별 준수 가이드](05-a11yCagGuide/perceivable.md)   
+   5.1 [인식의 용이성(Perceivable)-tab](05-a11yCagGuide/perceivable.md)   
+   5.2 [운용의 용이성(Operable)-tab](05-a11yCagGuide/operable.md)   
+   5.3 [이해의 용이성(Understandable)-tab](05-a11yCagGuide/understandable.md)   
+   5.4 [견고성(Robust)-tab](05-a11yCagGuide/robust.md)   
+6. [KWCAG 체크리스트](06-a11yCheck/web.md)   
+   6.1 [웹 접근성](06-a11yCheck/web.md)   
+   6.2 [모바일 접근성](06-a11yCheck/mobile.md)   
+   6.3 [무인정보단말기 접근성](06-a11yCheck/kiosk.md)   
+7. [KWCAG 콘텐츠 제작 방법](07-a11yDevelop/develop.md)   
+8. [WAI-ARIA 가이드라인](08-a11yAriaGuide/ariaguide.md)   
+9. [WAI-ARIA 구조](09-a11yAria/role.md)   
+   9.1 [역할(Role)](09-a11yAria/role.md)   
+   9.2 [상태(Attributes) 및 속성(States)](09-a11yAria/states.md)   
+10. [ARIA 역할(Role)](10-a11yRole/01-alert.md)   
+11. [ARIA 상태(Attributes) 및 속성(States)](11-a11yAria/01-activedescendant.md)   
+12. [무인정보단말기 정보접근성](12-a11yKiosk/kioska11y.md)   
+13. [접근성(a11y) 참조](13-a11yBookmark/bookmark.md)  
 
 
 
