@@ -28,8 +28,8 @@ WCAG 2.1 부분 참조.
 >**키보드에 의한 초점은 논리적으로 이동해야 하며 시각적으로 구별할 수 있어야 한다.**   
 웹 페이지에서 제공하는 모든 기능을 키보드만으로 사용하는 경우에도 사용자 입력 간의 초점 이동은 적절한 순서를 따라야 하며, 이 과정에서 콘텐츠는 조작이 불가능한 상태가 되거나 갑작스러운 페이지의 전환 등이 일어나지 않아야 한다. 또한 초점을 받은 콘텐츠는 저시력 장애인과 지체 장애인들이 인지할 수 있도록 시각적으로 구별되어야 한다.    
 WCAG 2.1 부분 참조.    
-[2.1.2 No Keyboard Trap (Level A)](https://www.w3.org/TR/WCAG21/#no-keyboard-trap)    
-[2.4.3 Focus Order (Level A)](https://www.w3.org/TR/WCAG21/#character-key-shortcuts)    
+[2.1.2 No Keyboard Trap (Level A)](https://www.w3.org/TR/WCAG21/#no-keyboard-trap){: target="_blank"}    
+[2.4.3 Focus Order (Level A)](https://www.w3.org/TR/WCAG21/#character-key-shortcuts){: target="_blank"}    
 
 **고려 사항**    
 1. 초점 이동 순서 유지   
@@ -65,7 +65,7 @@ WCAG 2.1 부분 참조.
 >**시간제한이 있는 콘텐츠는 응답시간을 조절할 수 있어야 한다.**   
 웹 콘텐츠 제작 시 시간제한이 있는 콘텐츠는 가급적 포함하지 않는 것이 바람직하며, 보안 등의 사유로 시간제한이 반드시 필요할 경우에는 이를 회피할 수 있는 수단을 제공해야 한다.    
 WCAG 2.1 부분 참조.   
-[2.2.1 Timing Adjustable (Level A)](https://www.w3.org/TR/WCAG21/#timing-adjustable)
+[2.2.1 Timing Adjustable (Level A)](https://www.w3.org/TR/WCAG21/#timing-adjustable){: target="_blank"}
 
 
 **고려 사항**    
@@ -85,7 +85,7 @@ WCAG 2.1 부분 참조.
 >**자동으로 변경되는 콘텐츠는 움직임을 제어할 수 있어야 한다.**   
 웹 콘텐츠는 스크롤 및 자동 갱신되는 콘텐츠를 장애인 사용자가 이용할 수 있도록 일시 정지할 수 있는 수단을 제공해야 한다.    
 WCAG 2.1 부분 참조.   
-[2.2.2 Pause, Stop, Hide (Level A)](https://www.w3.org/TR/WCAG21/#pause-stop-hide)
+[2.2.2 Pause, Stop, Hide (Level A)](https://www.w3.org/TR/WCAG21/#pause-stop-hide){: target="_blank"}
 
 
 **고려 사항**    
@@ -105,7 +105,7 @@ WCAG 2.1 부분 참조.
 >**초당 3~50 회 주기로 깜빡이거나 번쩍이는 콘텐츠를 제공하지 않아야 한다.**   
 깜빡이거나(flashing) 번쩍이는(blinking) 콘텐츠로 인해 발작을 일으키지 않도록 초당 3∼50 회 주기로 깜빡이거나 번쩍이는 콘텐츠를 제공하지 않아야 한다. 10 인치 이상의 스크린을 채용하고 있는 정보통신 기기(태블릿 기기, PC 모니터, 무인 안내기 등)에서는 콘텐츠에 의한 광과민성 발작 가능성을 특히 주의해야 한다.    
 WCAG 2.1 부분 참조.   
-[2.3.1 Three Flashes or Below Threshold (Level A)](https://www.w3.org/TR/WCAG21/#three-flashes-or-below-threshold)
+[2.3.1 Three Flashes or Below Threshold (Level A)](https://www.w3.org/TR/WCAG21/#three-flashes-or-below-threshold){: target="_blank"}
 
 
 **고려 사항**    
@@ -127,7 +127,7 @@ WCAG 2.1 부분 참조.
 키보드 사용자는 페이지가 로드된 이후 모든 웹페이지에 공통적으로 들어있는 메뉴 및 링크 목록 등을 탭 키를 이용하여 순차적으로 내비게이션 한 후에 핵심 영역에 도달하게 된다.    
 화면 낭독 프로그램을 이용하는 사람들은 메뉴 등을 페이지가 로드되거나 갱신될때마다 모든 웹페이지에 공통적으로 들어있는 메뉴 등을 다시 듣게 된다. 키보드 사용자와 화면 낭독 프로그램 사용자가 겪게 되는 이러한 불편을 방지하기 위해, 사용자가 메뉴 등과 같은 반복 영역을 바로 건너뛰어 핵심 영역으로 직접 이동할 수 있는 수단을 제공해야 한다.   
 WCAG 2.1 부분 참조.   
-[2.4.1 Bypass Blocks (Level A)](https://www.w3.org/TR/WCAG21/#bypass-blocks)   
+[2.4.1 Bypass Blocks (Level A)](https://www.w3.org/TR/WCAG21/#bypass-blocks){: target="_blank"}   
 
 
 **고려 사항**    
@@ -145,12 +145,12 @@ WCAG 2.1 부분 참조.
 페이지, 프레임, 콘텐츠 블록의 제목은 사용자가 웹 콘텐츠를 운용하기 쉽게 도와준다.     
 제목은 간단명료해야 하며, 해당 페이지, 프레임, 콘텐츠 블록을 유추할 수 있도록 제공해야 한다.    
 WCAG 2.1 부분 참조.   
-[2.4.2 Page Titled (Level A)](https://www.w3.org/TR/WCAG21/#page-titled)   
+[2.4.2 Page Titled (Level A)](https://www.w3.org/TR/WCAG21/#page-titled){: target="_blank"}   
 
 
 **고려 사항**    
 1. 웹 페이지 제목(title) 제공   
-   - 든 웹 페이지가 해당 내용을 간단명료하게 기술한 제목을 포함하고 있을 경우 여러 개의 웹 페이지가 열려 있더라도 사용자(예 : 시각 장애인, 지적 장애인, 중증 지체 장애인 등)는 제목을 통해 웹 페이지를 선택하므로 모든 웹 페이지에는 해당 페이지를 간단명료하게 설명한 제목을 제공해야 한다. 또한, 웹 페이지 제목은 유일하고 서로 다르게 제공해야 한다.    
+   - 모든 웹 페이지가 해당 내용을 간단명료하게 기술한 제목을 포함하고 있을 경우 여러 개의 웹 페이지가 열려 있더라도 사용자(예 : 시각 장애인, 지적 장애인, 중증 지체 장애인 등)는 제목을 통해 웹 페이지를 선택하므로 모든 웹 페이지에는 해당 페이지를 간단명료하게 설명한 제목을 제공해야 한다. 또한, 웹 페이지 제목은 유일하고 서로 다르게 제공해야 한다.    
 2. 팝업 창 제목(title) 제공   
    - 팝업 창에도 제목을 제공해야 한다.    
 3. 프레임 제목(title) 제공   
@@ -189,27 +189,27 @@ WCAG 2.1 부분 참조.
 
 
 #### 참조
-- [W3C WCAG 1.0](https://www.w3.org/TR/WCAG10/)
-- [W3C WCAG 2.0](https://www.w3.org/TR/WCAG20/)
-- [W3C WCAG 2.1](https://www.w3.org/TR/WCAG21/)
-- [W3C WCAG 2.2](https://www.w3.org/TR/WCAG22/)
-- [W3C WCAG 3.0 Draft](https://www.w3.org/TR/2021/WD-wcag-3.0-20210121/)
-- [W3C WCAG 2.1 한국어](http://www.kwacc.or.kr/WAI/wcag21/)
-- [W3C Web Content Accessibility Guidelines (WCAG) 2.2](https://www.w3.org/TR/WCAG22/)
-- [W3C WCAG2 ko](https://www.w3.org/WAI/standards-guidelines/ko#wcag2)
-- [W3C Accessibility Guidelines Working Group](https://www.w3.org/WAI/GL/)
-- [W3C W3C 접근성의 4가지 원칙](https://www.w3.org/TR/UNDERSTANDING-WCAG20/intro.html#introduction-fourprincs-head)
-- [MDN 웹 컨텐츠 접근성 지침 이해하기](https://developer.mozilla.org/ko/docs/Web/Accessibility/Understanding_WCAG)
-- [MDN 접근성이란?](https://developer.mozilla.org/ko/docs/Learn/Accessibility/What_is_accessibility#accessibility_guidelines_and_the_law)
-- [NULI WCAG 2.2에서 변경된 사항](https://nuli.navercorp.com/community/article/1133181)
-- [brunch WCAG 2.2 작업 초안](https://brunch.co.kr/@snclab/55)
-- [GITBOOK WCAG 2.1](https://a11y.gitbook.io/wcag/international-standards)
-- [WAI 문서로 접근성 이해하기](https://iyu88.github.io//a11y/2023/12/24/web-accessibility-1.html)
-- [deque blog WCAG 2.1](https://www.deque.com/blog/wcag-2-1-what-is-next-for-accessibility-guidelines/)
-- [웹접근성 국가표준 개정 소개](https://seculayerlab.tistory.com/m/48)
+- [W3C WCAG 1.0](https://www.w3.org/TR/WCAG10/){: target="_blank"}
+- [W3C WCAG 2.0](https://www.w3.org/TR/WCAG20/){: target="_blank"}
+- [W3C WCAG 2.1](https://www.w3.org/TR/WCAG21/){: target="_blank"}
+- [W3C WCAG 2.2](https://www.w3.org/TR/WCAG22/){: target="_blank"}
+- [W3C WCAG 3.0 Draft](https://www.w3.org/TR/2021/WD-wcag-3.0-20210121/){: target="_blank"}
+- [W3C WCAG 2.1 한국어](http://www.kwacc.or.kr/WAI/wcag21/){: target="_blank"}
+- [W3C Web Content Accessibility Guidelines (WCAG) 2.2](https://www.w3.org/TR/WCAG22/){: target="_blank"}
+- [W3C WCAG2 ko](https://www.w3.org/WAI/standards-guidelines/ko#wcag2){: target="_blank"}
+- [W3C Accessibility Guidelines Working Group](https://www.w3.org/WAI/GL/){: target="_blank"}
+- [W3C W3C 접근성의 4가지 원칙](https://www.w3.org/TR/UNDERSTANDING-WCAG20/intro.html#introduction-fourprincs-head){: target="_blank"}
+- [MDN 웹 컨텐츠 접근성 지침 이해하기](https://developer.mozilla.org/ko/docs/Web/Accessibility/Understanding_WCAG){: target="_blank"}
+- [MDN 접근성이란?](https://developer.mozilla.org/ko/docs/Learn/Accessibility/What_is_accessibility#accessibility_guidelines_and_the_law){: target="_blank"}
+- [NULI WCAG 2.2에서 변경된 사항](https://nuli.navercorp.com/community/article/1133181){: target="_blank"}
+- [brunch WCAG 2.2 작업 초안](https://brunch.co.kr/@snclab/55){: target="_blank"}
+- [GITBOOK WCAG 2.1](https://a11y.gitbook.io/wcag/international-standards){: target="_blank"}
+- [WAI 문서로 접근성 이해하기](https://iyu88.github.io//a11y/2023/12/24/web-accessibility-1.html){: target="_blank"}
+- [deque blog WCAG 2.1](https://www.deque.com/blog/wcag-2-1-what-is-next-for-accessibility-guidelines/){: target="_blank"}
+- [웹접근성 국가표준 개정 소개](https://seculayerlab.tistory.com/m/48){: target="_blank"}
 
-- [한국형 웹 콘텐츠 접근성 지침 2.2](https://www.samsungfashion.com/webacc.do)
-- [AOA GITBOOK](https://aoa.gitbook.io/skymimo/undefined)
+- [한국형 웹 콘텐츠 접근성 지침 2.2](https://www.samsungfashion.com/webacc.do){: target="_blank"}
+- [AOA GITBOOK](https://aoa.gitbook.io/skymimo/undefined){: target="_blank"}
 
 ---
 # INDEX

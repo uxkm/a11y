@@ -8,12 +8,12 @@ KWCAG 2.2 **인식의 용이성**은 대체 텍스트, 멀티미디어 대체 �
 ### 5.1. 대체 텍스트
 > **이미지 등 텍스트 아닌 콘텐츠를 이용할 경우, 그 의미나 용도를 동등하게 인식할 수 있도록 적절한 대체 텍스트를 제공해야 한다. 또한 대체 텍스트는 간단명료하게 제공해야 한다.**   
 WCAG 2.1 부분 참조.   
-[1.1 Text Alternatives](https://www.w3.org/TR/WCAG21/#text-alternatives)
+[1.1 Text Alternatives](https://www.w3.org/TR/WCAG21/#text-alternatives){: target="_blank"}
 
 #### 5.1.1. 적절한 대체 텍스트 제공
 >**텍스트가 아닌 콘텐츠는 그 의미나 용도를 인식할 수 있도록 대체 텍스트를 제공해야 한다.**   
 WCAG 2.1 부분 참조.   
-[1.1.1 Non-text Content (Level A)](https://www.w3.org/TR/WCAG21/#non-text-content)
+[1.1.1 Non-text Content (Level A)](https://www.w3.org/TR/WCAG21/#non-text-content){: target="_blank"}
 
 **대체 텍스트를 제공할 경우**
 1. 구체적인 정보를 제공해야 하는 경우
@@ -47,14 +47,14 @@ WCAG 2.1 부분 참조.
 ### 5.2. 멀티미디어 대체 수단
 >**멀티미디어 콘텐츠를 장애인도 비장애인과 동등하게 인식할 수 있도록 제작하기 위해서는 자막, 대본 또는 수화를 제공해야 한다. 여기서 가장 중요한 요소는 멀티미디어 콘텐츠와 동등한 내용을 제공하는 것이다. 가장 바람직한 방법은 폐쇄 자막을 오디오와 동기화시켜 제공하는 것이다. 대사 없이 영상만 제공하는 경우에는 화면 해설(텍스트, 오디오, 대본)을 제공한다. 음성만 제공하는 경우에도 자막, 대본 또는 수화를 제공해야 한다. 자막, 대본 및 수화는 멀티미디어 콘텐츠에 포함된 음성의 문맥과 동등하여야 한다.**   
 WCAG 2.1 부분 참조.   
-[1.2 Time-based Media](https://www.w3.org/TR/WCAG21/#time-based-media)
+[1.2 Time-based Media](https://www.w3.org/TR/WCAG21/#time-based-media){: target="_blank"}
 
 #### 5.2.1. 자막 제공
 >**멀티미디어 콘텐츠에는 자막, 대본 또는 수어를 제공해야 한다.**   
 WCAG 2.1 부분 참조.   
-[1.2.1 Audio-only and Video-only (Prerecorded) (Level A)](https://www.w3.org/TR/WCAG21/#audio-only-and-video-only-prerecorded)   
-[1.2.2 Captions (Prerecorded) (Level A)](https://www.w3.org/TR/WCAG21/#captions-prerecorded)   
-[1.2.3 Audio Description or Media Alternative (Prerecorded) (Level A)](https://www.w3.org/TR/WCAG21/#audio-description-or-media-alternative-prerecorded)   
+[1.2.1 Audio-only and Video-only (Prerecorded) (Level A)](https://www.w3.org/TR/WCAG21/#audio-only-and-video-only-prerecorded){: target="_blank"}   
+[1.2.2 Captions (Prerecorded) (Level A)](https://www.w3.org/TR/WCAG21/#captions-prerecorded){: target="_blank"}   
+[1.2.3 Audio Description or Media Alternative (Prerecorded) (Level A)](https://www.w3.org/TR/WCAG21/#audio-description-or-media-alternative-prerecorded){: target="_blank"}   
 
 **다음 중 한 가지 이상의 대체 수단을 제공해야 한다.**    
 1. 자막 제공
@@ -76,8 +76,8 @@ WCAG 2.1 부분 참조.
 >**콘텐츠는 색에 관계없이 인식될 수 있어야 한다.**  
 콘텐츠에서 제공하는 모든 정보는 특정한 색을 구별할 수 없는 사용자, 흑백 디스플레이 사용자, 흑백 인쇄물을 보는 사용자 및 고대비 모드 사용자가 인식할 수 있도록 제공해야 한다.   
 WCAG 2.1 부분 참조.   
-[1.3.1 Info and relationships (Level A)](https://www.w3.org/TR/WCAG21/#info-and-relationships)   
-[1.4.1 Use of Color (Level A)](https://www.w3.org/TR/WCAG21/#use-of-color)   
+[1.3.1 Info and relationships (Level A)](https://www.w3.org/TR/WCAG21/#info-and-relationships){: target="_blank"}   
+[1.4.1 Use of Color (Level A)](https://www.w3.org/TR/WCAG21/#use-of-color){: target="_blank"}   
 
 **고려 사항**    
 1. 색에 의한 정보 표현 방지
@@ -94,7 +94,7 @@ WCAG 2.1 부분 참조.
 특정 요소를 가리키거나 지시 사항을 전달하는 콘텐츠에 한정해 적용하는 것으로, 콘텐츠의 사용에 필요한 지시 사항을 시각이나 청각 등과 같은 특정한 단일 감각에만 의존하는 방법으로 제공해서는 안 된다는 것이다. 즉, 여러 가지 다른 감각을 통해서도 지시 사항을 인식하는 데 문제가 없도록 콘텐츠를 제공해야 한다.   
 텍스트 콘텐츠(대체 텍스트 포함)는 보조 기술을 통해 다른 감각으로의 변환이 가능하기 때문에 텍스트 지시 사항에는 추가적인 음성 콘텐츠를 제공할 필요는 없다.   
 WCAG 2.1 부분 참조.   
-[1.3.3 Sensory Characteristics (Level A)](https://www.w3.org/TR/WCAG21/#sensory-characteristics)   
+[1.3.3 Sensory Characteristics (Level A)](https://www.w3.org/TR/WCAG21/#sensory-characteristics){: target="_blank"}   
 
 **고려 사항**    
 1. 색, 크기, 모양 또는 위치와 같은 정보에 대한 인식
@@ -111,7 +111,7 @@ WCAG 2.1 부분 참조.
 >**텍스트 콘텐츠와 배경 간의 명도 대비는 4.5 대 1 이상이어야 한다.**   
 웹 페이지에서 보이는 텍스트 콘텐츠(텍스트 및 텍스트 이미지)와 배경 간의 충분한 대비를 제공하여, 저시력 장애인, 색각 장애인, 노인 등도 콘텐츠를 인식할 수 있도록 제공해야 한다. 다만, 로고, 장식 목적의 콘텐츠, 마우스나 키보드를 활용하여 초점을 받았을 때 명도 대비가 커지는 콘텐츠 등은 예외로 한다.(7.2.1. 사용자 요구에 따른 실행 참조)   
 WCAG 2.1 부분 참조.   
-[1.4.3 Contrast (Minimum) (Level AA)](https://www.w3.org/TR/WCAG21/#contrast-minimum)   
+[1.4.3 Contrast (Minimum) (Level AA)](https://www.w3.org/TR/WCAG21/#contrast-minimum){: target="_blank"}   
 
 **고려 사항**    
 1. 콘텐츠의 명도 대비   
@@ -127,7 +127,7 @@ WCAG 2.1 부분 참조.
 웹 페이지에서 자동으로 소리(동영상, 오디오, 음성, 배경 음악 등 콘텐츠가 제공하는 모든 소리)가 재생됨으로 인해 화면 낭독 프로그램 사용자가 콘텐츠를 인식하고 사용하는데 방해 받지 않아야 한다. 단 3 초 미만의 소리는 허용한다. 3 초 이상 재생되는 소리는 제어할 수 있는 수단(멈춤, 일시정지, 음량 조절 등)을 함께 제공해야 한다.    
 참고로 플랫폼은 콘텐츠가 제공하는 배경음의 음량을 조절하더라도 화면 낭독 프로그램의 음량에는 영향을 주지 않아야 한다.     
 WCAG 2.1 부분 참조.   
-[1.4.2 Audio Control (Level A)](https://www.w3.org/TR/WCAG21/#audio-control)   
+[1.4.2 Audio Control (Level A)](https://www.w3.org/TR/WCAG21/#audio-control){: target="_blank"}   
 
 **고려 사항**    
 1. 자동 재생음을 허용하는 경우    
@@ -143,7 +143,7 @@ WCAG 2.1 부분 참조.
 >**이웃한 콘텐츠는 구별될 수 있어야 한다.**   
 웹 페이지를 구성하는 이웃한 콘텐츠는 시각적으로 구분되도록 제공해야 한다.    
 WCAG 2.1 부분 참조.   
-[1.4.8 Visual Presentation (Level AAA)](https://www.w3.org/TR/WCAG21/#visual-presentation)   
+[1.4.8 Visual Presentation (Level AAA)](https://www.w3.org/TR/WCAG21/#visual-presentation){: target="_blank"}   
 
 **이웃한 콘텐츠를 시각적으로 구분하기 위한 예**       
 1. 테두리를 이용하여 구분함.   
@@ -157,27 +157,27 @@ WCAG 2.1 부분 참조.
 - 이웃한 콘텐츠 간에 간격을 두면 손가락으로 이용할 수 있는 터치스크린을 채용한 기기에서도 콘텐츠의 식별과 조작이 가능하게 된다.
 
 #### 참조
-- [W3C WCAG 1.0](https://www.w3.org/TR/WCAG10/)
-- [W3C WCAG 2.0](https://www.w3.org/TR/WCAG20/)
-- [W3C WCAG 2.1](https://www.w3.org/TR/WCAG21/)
-- [W3C WCAG 2.2](https://www.w3.org/TR/WCAG22/)
-- [W3C WCAG 3.0 Draft](https://www.w3.org/TR/2021/WD-wcag-3.0-20210121/)
-- [W3C WCAG 2.1 한국어](http://www.kwacc.or.kr/WAI/wcag21/)
-- [W3C Web Content Accessibility Guidelines (WCAG) 2.2](https://www.w3.org/TR/WCAG22/)
-- [W3C WCAG2 ko](https://www.w3.org/WAI/standards-guidelines/ko#wcag2)
-- [W3C Accessibility Guidelines Working Group](https://www.w3.org/WAI/GL/)
-- [W3C W3C 접근성의 4가지 원칙](https://www.w3.org/TR/UNDERSTANDING-WCAG20/intro.html#introduction-fourprincs-head)
-- [MDN 웹 컨텐츠 접근성 지침 이해하기](https://developer.mozilla.org/ko/docs/Web/Accessibility/Understanding_WCAG)
-- [MDN 접근성이란?](https://developer.mozilla.org/ko/docs/Learn/Accessibility/What_is_accessibility#accessibility_guidelines_and_the_law)
-- [NULI WCAG 2.2에서 변경된 사항](https://nuli.navercorp.com/community/article/1133181)
-- [brunch WCAG 2.2 작업 초안](https://brunch.co.kr/@snclab/55)
-- [GITBOOK WCAG 2.1](https://a11y.gitbook.io/wcag/international-standards)
-- [WAI 문서로 접근성 이해하기](https://iyu88.github.io//a11y/2023/12/24/web-accessibility-1.html)
-- [deque blog WCAG 2.1](https://www.deque.com/blog/wcag-2-1-what-is-next-for-accessibility-guidelines/)
-- [웹접근성 국가표준 개정 소개](https://seculayerlab.tistory.com/m/48)
+- [W3C WCAG 1.0](https://www.w3.org/TR/WCAG10/){: target="_blank"}
+- [W3C WCAG 2.0](https://www.w3.org/TR/WCAG20/){: target="_blank"}
+- [W3C WCAG 2.1](https://www.w3.org/TR/WCAG21/){: target="_blank"}
+- [W3C WCAG 2.2](https://www.w3.org/TR/WCAG22/){: target="_blank"}
+- [W3C WCAG 3.0 Draft](https://www.w3.org/TR/2021/WD-wcag-3.0-20210121/){: target="_blank"}
+- [W3C WCAG 2.1 한국어](http://www.kwacc.or.kr/WAI/wcag21/){: target="_blank"}
+- [W3C Web Content Accessibility Guidelines (WCAG) 2.2](https://www.w3.org/TR/WCAG22/){: target="_blank"}
+- [W3C WCAG2 ko](https://www.w3.org/WAI/standards-guidelines/ko#wcag2){: target="_blank"}
+- [W3C Accessibility Guidelines Working Group](https://www.w3.org/WAI/GL/){: target="_blank"}
+- [W3C W3C 접근성의 4가지 원칙](https://www.w3.org/TR/UNDERSTANDING-WCAG20/intro.html#introduction-fourprincs-head){: target="_blank"}
+- [MDN 웹 컨텐츠 접근성 지침 이해하기](https://developer.mozilla.org/ko/docs/Web/Accessibility/Understanding_WCAG){: target="_blank"}
+- [MDN 접근성이란?](https://developer.mozilla.org/ko/docs/Learn/Accessibility/What_is_accessibility#accessibility_guidelines_and_the_law){: target="_blank"}
+- [NULI WCAG 2.2에서 변경된 사항](https://nuli.navercorp.com/community/article/1133181){: target="_blank"}
+- [brunch WCAG 2.2 작업 초안](https://brunch.co.kr/@snclab/55){: target="_blank"}
+- [GITBOOK WCAG 2.1](https://a11y.gitbook.io/wcag/international-standards){: target="_blank"}
+- [WAI 문서로 접근성 이해하기](https://iyu88.github.io//a11y/2023/12/24/web-accessibility-1.html){: target="_blank"}
+- [deque blog WCAG 2.1](https://www.deque.com/blog/wcag-2-1-what-is-next-for-accessibility-guidelines/){: target="_blank"}
+- [웹접근성 국가표준 개정 소개](https://seculayerlab.tistory.com/m/48){: target="_blank"}
 
-- [한국형 웹 콘텐츠 접근성 지침 2.2](https://www.samsungfashion.com/webacc.do)
-- [AOA GITBOOK](https://aoa.gitbook.io/skymimo/undefined)
+- [한국형 웹 콘텐츠 접근성 지침 2.2](https://www.samsungfashion.com/webacc.do){: target="_blank"}
+- [AOA GITBOOK](https://aoa.gitbook.io/skymimo/undefined){: target="_blank"}
 
 
 ---
