@@ -193,7 +193,7 @@ KWCAG는 WCAG에서 앞에 Korea만 붙은 것으로 유추할 수 있듯이 WCA
 - 플러그인(plug-in) : 어떤 응용 프로그램에 추가되어 특정한 기능을 수행하도록 구현한 프로그램 모듈로, 웹 브라우저에서 사용되는 플래시 플레이어(Flash Player), 실버라이트 플레이어(Microsoft Silverlight Player), 검색기(search engine) 및 자바 플러그인(Java plug-in) 등이 이에 해당한다.    
 - 핵심 영역 : 웹페이지의 핵심이 되는 주제 또는 콘텐츠를 담고 있는 영역으로, 웹페이지별로 사용자에게 전달하고 싶은 핵심 주제를 담고 있는 콘텐츠가 위치한 영역을 의미한다. 예를 들어 뉴스 포털의 경우에 헤드라인 뉴스가 위치한 곳을 핵심 영역이라고 할 수 있다.
 
-#### 4.2.7 참조
+#### 4.2.8 참조
 - [W3C WCAG 1.0](https://www.w3.org/TR/WCAG10/)
 - [W3C WCAG 2.0](https://www.w3.org/TR/WCAG20/)
 - [W3C WCAG 2.1](https://www.w3.org/TR/WCAG21/)
