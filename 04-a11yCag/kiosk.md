@@ -1,6 +1,6 @@
 ## 4. 웹 콘텐츠 접근성 가이드라인
 
-**무인정보단밀기 접근성**
+### 4.4 무인정보단말기 접근성
 >모바일 접근성은 모바일 디바이스와 애플리케이션을 사용할 때 모든 사람들이 정보와 기능에 접근할 수 있도록 하는 것을 의미합니다.    
 이는 터치스크린 사용, 소형 화면 크기, 다양한 입력 방식 등 모바일 특성을 고려한 접근성입니다. 
 국내에서는 행정안전부고시 제2011-38호에 따르면 "모바일 접근성 이란 모바일 기기를 사용하여 모바일 애플리케이션을 이용하고자 하는 장애인, 고령자 등을 포함한 모든 사람들에게 활용가능성이 제공됨을 말한다." 라고 정의하고 있다.
@@ -92,7 +92,8 @@
 [W3C Mobile Accessibility Examples from UAAG 2.0 Reference](https://www.w3.org/TR/IMPLEMENTING-UAAG20/mobile.html){: target="_blank"}
 [MDN Mobile accessibility checklist](https://developer.mozilla.org/en-US/docs/Web/Accessibility/Mobile_accessibility_checklist){: target="_blank"}
 [보건복지부 블로그](https://blog.naver.com/prologue/PrologueList.naver?blogId=mohw2016){: target="_blank"}
-
+[무인정보단발기 UI플랫폼 - 무인정보단말기 접근성 지침](https://www.kioskui.or.kr/index.do?menu_id=00000985){: target="_blank"}
+[무인정보단말기(키오스크, 스마트자판기 등) 접근성 지침](https://standard.go.kr/KSCI/standardIntro/getStandardSearchView.do?menu19&topMenuId=502&upperMenuId=503&ksNo=KSX9211&tmprKsNo=KS_X_NEW_2015_1845&reformNo=01){: target="_blank"}
 
 
 ---
@@ -100,23 +101,21 @@
 1. [접근성이란?](01-a11yStart/start.md)  
 2. [장애인차별금지법 관련 지침](02-a11yGuideline/guideline.md)  
 3. [접근성 인증 마크](03-a11yMark/mark.md)  
-4. [웹 콘텐츠 접근성 가이드라인](04-a11yCag/wcag.md)   
+4. [접근성 가이드라인](04-a11yCag/wcag.md)   
    4.1. [WCAG](04-a11yCag/wcag.md)   
-   4.2. [KWCAG](04-a11yCag/kwcag.md)   
-      - [웹 접근성](04-a11yCag/kwcag.md)   
-      - [모바일 접근성](04-a11yCag/kwcagMobile.md)   
-      - [무인정보단밀기 접근성](04-a11yCag/kwcagKiosk.md)   
+   4.2. [KWCAG](04-a11yCag/kwcag.md)    
+   4.3. [MACAG](04-a11yCag/macag.md)   
+   4.4. [무인정보단밀기 접근성](04-a11yCag/kiosk.md)   
 5. [KWCAG 항목별 준수 가이드](05-a11yCagGuide/perceivable.md)   
    - [인식의 용이성(Perceivable)](05-a11yCagGuide/perceivable.md)   
    - [운용의 용이성(Operable)](05-a11yCagGuide/operable.md)   
    - [이해의 용이성(Understandable)](05-a11yCagGuide/understandable.md)   
    - [견고성(Robust)](05-a11yCagGuide/robust.md)   
-6. [KWCAG 체크리스트](06-a11yCheck/web.md)   
-   - [웹 접근성](06-a11yCheck/web.md)   
-   - [모바일 접근성](06-a11yCheck/mobile.md)   
+6. [접근성 체크리스트](06-a11yCheck/web.md)   
+   - [웹 접근성](06-a11yCheck/wcag.md)   
+   - [모바일 앱 접근성](06-a11yCheck/macag.md)   
    - [무인정보단말기 접근성](06-a11yCheck/kiosk.md)   
 7. [KWCAG 콘텐츠 제작 방법](07-a11yDevelop/develop.md)   
-   == KWCAG 콘텐츠 제작 방법 및 예시 설명 ==   
 8. [WAI-ARIA 가이드라인](08-a11yAriaGuide/ariaguide.md)   
 9. [WAI-ARIA 구조](09-a11yAria/role.md)   
    - [역할(Role)](09-a11yAria/role.md)   

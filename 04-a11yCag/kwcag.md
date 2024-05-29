@@ -1,13 +1,12 @@
 ## 4. 웹 콘텐츠 접근성 가이드라인
 
-**웹 접근성**
+### 4.2 KWCAG
 >KWCAG (Korean Web Content Accessibility Guidelines)라고 지칭합니다.
 이를 풀어서 설명하면 Korean 한국형, Web 웹, Content 콘텐츠, Accessibility 접근성, Guidelines 지침
 본 표준은 해외의 웹 표준 기술 동향을 토대로 국내 환경에 맞게 반영된 한국형 웹 콘텐츠 접근성 지침이며, 원칙 4개, 지침 13개, 항목 24개로 구성되어 있습니다.
 한국도 2009년 5월 '국가 정보화 기본법'을 개정해 '장애인, 고령자 등의 정보 접근 및 이용 보장'을 명시했으며,
 2015년까지 한국 내 모든 인터넷 사이트가 웹 접근성을 보장하도록 규정했습니다.
 
-### 4.2 KWCAG
 #### 4.2.1 국내 접근성과 국제 접근성 차이점
 >국제 접근성 기준인 WCAG는 Web Content Accessibility Guidelines의 약자이고,
 국내 접근성 기준인 KWCAG는 Korea Web Content Accessibility Guidelines의 약자이다.
@@ -217,28 +216,27 @@ KWCAG는 WCAG에서 앞에 Korea만 붙은 것으로 유추할 수 있듯이 WCA
 - [한국형 웹 콘텐츠 접근성 지침 2.2](https://www.samsungfashion.com/webacc.do)
 - [AOA GITBOOK](https://aoa.gitbook.io/skymimo/undefined)
 
+
 ---
 # INDEX
 1. [접근성이란?](01-a11yStart/start.md)  
 2. [장애인차별금지법 관련 지침](02-a11yGuideline/guideline.md)  
 3. [접근성 인증 마크](03-a11yMark/mark.md)  
-4. [웹 콘텐츠 접근성 가이드라인](04-a11yCag/wcag.md)   
+4. [접근성 가이드라인](04-a11yCag/wcag.md)   
    4.1. [WCAG](04-a11yCag/wcag.md)   
-   4.2. [KWCAG](04-a11yCag/kwcag.md)   
-      - [웹 접근성](04-a11yCag/kwcag.md)   
-      - [모바일 접근성](04-a11yCag/kwcagMobile.md)   
-      - [무인정보단밀기 접근성](04-a11yCag/kwcagKiosk.md)   
+   4.2. [KWCAG](04-a11yCag/kwcag.md)    
+   4.3. [MACAG](04-a11yCag/macag.md)   
+   4.4. [무인정보단밀기 접근성](04-a11yCag/kiosk.md)   
 5. [KWCAG 항목별 준수 가이드](05-a11yCagGuide/perceivable.md)   
    - [인식의 용이성(Perceivable)](05-a11yCagGuide/perceivable.md)   
    - [운용의 용이성(Operable)](05-a11yCagGuide/operable.md)   
    - [이해의 용이성(Understandable)](05-a11yCagGuide/understandable.md)   
    - [견고성(Robust)](05-a11yCagGuide/robust.md)   
-6. [KWCAG 체크리스트](06-a11yCheck/web.md)   
-   - [웹 접근성](06-a11yCheck/web.md)   
-   - [모바일 접근성](06-a11yCheck/mobile.md)   
+6. [접근성 체크리스트](06-a11yCheck/web.md)   
+   - [웹 접근성](06-a11yCheck/wcag.md)   
+   - [모바일 앱 접근성](06-a11yCheck/macag.md)   
    - [무인정보단말기 접근성](06-a11yCheck/kiosk.md)   
 7. [KWCAG 콘텐츠 제작 방법](07-a11yDevelop/develop.md)   
-   == KWCAG 콘텐츠 제작 방법 및 예시 설명 ==   
 8. [WAI-ARIA 가이드라인](08-a11yAriaGuide/ariaguide.md)   
 9. [WAI-ARIA 구조](09-a11yAria/role.md)   
    - [역할(Role)](09-a11yAria/role.md)   
