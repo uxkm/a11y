@@ -35,8 +35,8 @@
 5. 정보소외계층의 정보격차 해소로 평등한 기회 제공
 
 ### 3.8 참조
-- [한국웹접근성인증평가원(사단법인 한국장애인단체총연합회)](https://www.wa.or.kr/)
-- [웹와치](http://www.webwatch.or.kr/)
-- [한국디지털접근성진흥원(구 한국웹접근성평가센터)](http://www.kdaa.or.kr/)
-- [품질인증 소개](https://www.kioskui.or.kr/index.do?menu_id=00001016&servletPath=%2Findex.do)
+- [한국웹접근성인증평가원(사단법인 한국장애인단체총연합회)](https://www.wa.or.kr/){: target="_blank"}    
+- [웹와치](http://www.webwatch.or.kr/){: target="_blank"}    
+- [한국디지털접근성진흥원(구 한국웹접근성평가센터)](http://www.kdaa.or.kr/){: target="_blank"}    
+- [품질인증 소개](https://www.kioskui.or.kr/index.do?menu_id=00001016&servletPath=%2Findex.do){: target="_blank"}    
 

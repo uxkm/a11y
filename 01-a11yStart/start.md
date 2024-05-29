@@ -144,11 +144,11 @@ Digital accessibility is the ability of a website, mobile application or electro
 
 
 ### 1.5 참조
-- [W3C 접근성 원칙](https://www.w3.org/WAI/fundamentals/accessibility-principles/ko)
-- [W3C 웹 접근성 소개](https://www.w3.org/WAI/fundamentals/accessibility-intro/ko)
-- [MDN 접근성](https://developer.mozilla.org/ko/docs/Web/Accessibility)
-- [무인정보단말기 UI 플랫폼](https://www.kioskui.or.kr/)
-- [웹와치](http://www.webwatch.or.kr/)
-- [다모아](https://damoa.or.kr/main/inner.php?sMenu=main)
-- [무인정보단말기 UI 플랫폼](https://www.kioskui.or.kr/)
-- [장애인복지통합정보망 복지뱅크 - 장애유형 15가지](https://www.bokjibank.or.kr/SW_bbs/notice/view.php?zipEncode=90wDU9vEU9wBLjxzJzspLrxydrMCH9MyMCvrjzvpLbxEun2ybrMCH9MyMmtpTvNBFDxzPzNj9qgBLLMz5v2AM0tzTfMB5v2AMKMAR9MyFD1u9qusKjxyVjMj9u3zM0tzNfgC39MBMahAW5cDZLgBVu2yPr3BU9YCIj2xxn1l9WMC19fDZLgB)
+- [W3C 접근성 원칙](https://www.w3.org/WAI/fundamentals/accessibility-principles/ko){: target="_blank"}    
+- [W3C 웹 접근성 소개](https://www.w3.org/WAI/fundamentals/accessibility-intro/ko){: target="_blank"}    
+- [MDN 접근성](https://developer.mozilla.org/ko/docs/Web/Accessibility){: target="_blank"}    
+- [무인정보단말기 UI 플랫폼](https://www.kioskui.or.kr/){: target="_blank"}    
+- [웹와치](http://www.webwatch.or.kr/){: target="_blank"}    
+- [다모아](https://damoa.or.kr/main/inner.php?sMenu=main){: target="_blank"}    
+- [무인정보단말기 UI 플랫폼](https://www.kioskui.or.kr/){: target="_blank"}    
+- [장애인복지통합정보망 복지뱅크 - 장애유형 15가지](https://www.bokjibank.or.kr/SW_bbs/notice/view.php?zipEncode=90wDU9vEU9wBLjxzJzspLrxydrMCH9MyMCvrjzvpLbxEun2ybrMCH9MyMmtpTvNBFDxzPzNj9qgBLLMz5v2AM0tzTfMB5v2AMKMAR9MyFD1u9qusKjxyVjMj9u3zM0tzNfgC39MBMahAW5cDZLgBVu2yPr3BU9YCIj2xxn1l9WMC19fDZLgB){: target="_blank"}    

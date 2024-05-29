@@ -163,8 +163,8 @@ Accessibility Guidelines 2.1)이 2018년에 개정됨에 따라, 이를 국내�
 1. 관광사업자, 상시 100인 이상 사업주
 
 ### 2.3 참조
-- [국가법령정보센터](https://www.law.go.kr/)
-- [한국정보통신기술협회](https://tta.or.kr/tta/index.do)
-- [한국디지털접근성진흥원](http://www.kwacc.or.kr/Accessibility/Law)
-- [사단법인 한국장애인연맹(DPI)](https://dpikorea.org/)
-- [무인정보단말기 UI 플랫폼](https://www.kioskui.or.kr/)
+- [국가법령정보센터](https://www.law.go.kr/){: target="_blank"}    
+- [한국정보통신기술협회](https://tta.or.kr/tta/index.do){: target="_blank"}    
+- [한국디지털접근성진흥원](http://www.kwacc.or.kr/Accessibility/Law){: target="_blank"}   
+- [사단법인 한국장애인연맹(DPI)](https://dpikorea.org/){: target="_blank"}   
+- [무인정보단말기 UI 플랫폼](https://www.kioskui.or.kr/){: target="_blank"}    
