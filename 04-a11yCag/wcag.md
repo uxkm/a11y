@@ -1,6 +1,6 @@
-## 4. 웹 콘텐츠 접근성 가이드라인
+## 4. 접근성 가이드라인
 
-### 4.1 WCAG
+### 4.1 웹 콘텐츠 접근성
 >**웹 콘텐츠 접근성 가이드라인(WCAG - Web Content Accessibility Guidelines)** 은 웹사이트와 온라인 서비스를 모든 사용자가 접근할 수 있도록 만드는 국제 표준 문서입니다.
 이 문서에서 제공된 원칙들을 따르기 위한 구체적인 기준을 제공하며, 
 각 기준은 세 가지 준수 수준(**A, AA, AAA**)으로 구분됩니다. 
@@ -234,39 +234,6 @@ WCAG 전체 성공 기준 - 총 78 개(A 30 개, AA 20 개, AAA 28 개)
 
 - [한국형 웹 콘텐츠 접근성 지침 2.2](https://www.samsungfashion.com/webacc.do)
 - [AOA GITBOOK](https://aoa.gitbook.io/skymimo/undefined)
-
-
-
-
----
-# INDEX
-1. [접근성이란?](01-a11yStart/start.md)  
-2. [장애인차별금지법 관련 지침](02-a11yGuideline/guideline.md)  
-3. [접근성 인증 마크](03-a11yMark/mark.md)  
-4. [접근성 가이드라인](04-a11yCag/wcag.md)   
-   4.1. [WCAG](04-a11yCag/wcag.md)   
-   4.2. [KWCAG](04-a11yCag/kwcag.md)    
-   4.3. [MACAG](04-a11yCag/macag.md)   
-   4.4. [무인정보단밀기 접근성](04-a11yCag/kiosk.md)   
-5. [KWCAG 항목별 준수 가이드](05-a11yCagGuide/perceivable.md)   
-   - [인식의 용이성(Perceivable)](05-a11yCagGuide/perceivable.md)   
-   - [운용의 용이성(Operable)](05-a11yCagGuide/operable.md)   
-   - [이해의 용이성(Understandable)](05-a11yCagGuide/understandable.md)   
-   - [견고성(Robust)](05-a11yCagGuide/robust.md)   
-6. [접근성 체크리스트](06-a11yCheck/web.md)   
-   - [웹 접근성](06-a11yCheck/wcag.md)   
-   - [모바일 앱 접근성](06-a11yCheck/macag.md)   
-   - [무인정보단말기 접근성](06-a11yCheck/kiosk.md)   
-7. [KWCAG 콘텐츠 제작 방법](07-a11yDevelop/develop.md)   
-8. [WAI-ARIA 가이드라인](08-a11yAriaGuide/ariaguide.md)   
-9. [WAI-ARIA 구조](09-a11yAria/role.md)   
-   - [역할(Role)](09-a11yAria/role.md)   
-   - [상태(Attributes) 및 속성(States)](09-a11yAria/states.md)   
-10. [ARIA 역할(Role)](10-a11yRole/01-alert.md)   
-11. [ARIA 상태(Attributes) 및 속성(States)](11-a11yAria/01-activedescendant.md)   
-12. [접근성(a11y) 참조](13-a11yBookmark/bookmark.md)   
-
-
 
 
 
