@@ -85,11 +85,55 @@
 19. 객체 : 사용자 인터페이스에서 시스템의 구성 요소가 아이콘과 같은 화면상에 표시되는 가시적 실체에 의해 표현되는 것
 
 ### 참조
-[W3C Mobile Accessibility at W3C](https://www.w3.org/WAI/standards-guidelines/mobile/){: target="_blank"}
-[W3C Mobile Accessibility: How WCAG 2.0 and Other W3C/WAI Guidelines Apply to Mobile](https://www.w3.org/TR/mobile-accessibility-mapping/){: target="_blank"}
-[W3C First Public Working Draft](https://www.w3.org/news/2015/first-public-working-draft-performance-timeline-level-2/){: target="_blank"}
-[W3C User Agent Accessibility Guidelines (UAAG) 2.0](https://www.w3.org/TR/UAAG20/){: target="_blank"}
-[W3C Mobile Accessibility Examples from UAAG 2.0 Reference](https://www.w3.org/TR/IMPLEMENTING-UAAG20/mobile.html){: target="_blank"}
-[MDN Mobile accessibility checklist](https://developer.mozilla.org/en-US/docs/Web/Accessibility/Mobile_accessibility_checklist){: target="_blank"}
-[보건복지부 블로그](https://blog.naver.com/prologue/PrologueList.naver?blogId=mohw2016){: target="_blank"}
+- [W3C Mobile Accessibility at W3C](https://www.w3.org/WAI/standards-guidelines/mobile/){: target="_blank"}
+- [W3C Mobile Accessibility: How WCAG 2.0 and Other W3C/WAI Guidelines Apply to Mobile](https://www.w3.org/TR/mobile-accessibility-mapping/){: target="_blank"}
+- [W3C First Public Working Draft](https://www.w3.org/news/2015/first-public-working-draft-performance-timeline-level-2/){: target="_blank"}
+- [W3C User Agent Accessibility Guidelines (UAAG) 2.0](https://www.w3.org/TR/UAAG20/){: target="_blank"}
+- [W3C Mobile Accessibility Examples from UAAG 2.0 Reference](https://www.w3.org/TR/IMPLEMENTING-UAAG20/mobile.html){: target="_blank"}
+- [MDN Mobile accessibility checklist](https://developer.mozilla.org/en-US/docs/Web/Accessibility/Mobile_accessibility_checklist){: target="_blank"}
+- [보건복지부 블로그](https://blog.naver.com/prologue/PrologueList.naver?blogId=mohw2016){: target="_blank"}
 
+
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" class="at-a-glance-icons" viewBox="0 0 150 150" width="45px" height="45px">
+<title _mstHash="24" _mstTextHash="45249945">레벨 접근 아이콘</title>
+<path class="cls-1" d="M126.2,68.62a8.16,8.16,0,0,0-6.28-2.45L91.54,67.75,107.16,50a9.54,9.54,0,0,0,2-8.93,8.11,8.11,0,0,0-3.63-5.15L68.19,14.18a8.14,8.14,0,0,0-9.51,1L40.47,31.38A8.14,8.14,0,1,0,51.31,43.53L65.11,31.22l11.41,6.63L56.38,60.79A41.51,41.51,0,0,0,34.61,71.55L45.13,82.07a26.75,26.75,0,0,1,37.79,37.79l10.52,10.52a41.63,41.63,0,0,0,7.07-46.83l11-.61-2.67,32.78a8.14,8.14,0,0,0,7.45,8.78l0.67,0a8.14,8.14,0,0,0,8.1-7.48L128.49,75A8.14,8.14,0,0,0,126.2,68.62Z"></path>
+<path class="cls-1" d="M111.12,33.74A13.63,13.63,0,1,0,97.5,20.12,13.63,13.63,0,0,0,111.12,33.74Z"></path>
+<path class="cls-1" d="M63.12,128.65A26.75,26.75,0,0,1,41,86.86L30.34,76.23a41.62,41.62,0,0,0,58.43,58.43L78.14,124A26.62,26.62,0,0,1,63.12,128.65Z"></path>
+</svg>
+
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" class="at-a-glance-icons" viewBox="0 0 150 150" width="45px" height="45px">
+<title _mstHash="26" _mstTextHash="74042982">단계 아이콘으로 액세스</title>
+<circle class="cls-1" cx="103.07" cy="14.29" r="12.3"></circle>
+<path class="cls-1" d="M69.55,59.55l-5-5.36L65.76,53A1.5,1.5,0,0,0,66,51.09a4.77,4.77,0,0,0,3.75-3.44c1-3.55,4.07-7,8.5-9.56a28.41,28.41,0,0,1,3-1.45l-6.6,20.65A8.31,8.31,0,0,0,74.28,61L69.64,73.35l-14.45.72a5.64,5.64,0,0,0,.28,11.28h0.28l18.15-.9a5.65,5.65,0,0,0,5-3.66L83,70a13.11,13.11,0,0,0,1.48.31L91.84,81l-6.34,23.49a5.64,5.64,0,1,0,10.9,2.94l7-26a5.64,5.64,0,0,0-.81-4.68L95.23,66a8.61,8.61,0,0,0,.86-1.87L102.2,45a22.16,22.16,0,0,0,6.18,2.72,24.87,24.87,0,0,0,6.55.88,19.77,19.77,0,0,0,12.73-4.2,4.77,4.77,0,0,0-6.18-7.28c-2.24,1.91-6.6,2.47-10.58,1.38-3.23-.88-5.6-2.68-6.34-4.81a4.67,4.67,0,0,0-.24-0.55,12.17,12.17,0,0,0-4.95-6.25,4.75,4.75,0,0,0-1.76-1,7.87,7.87,0,0,0-1-.35A17.79,17.79,0,0,0,93.9,25h0a12.66,12.66,0,0,0-1.89,0,35.49,35.49,0,0,0-18.47,4.73c-6.73,3.83-11.35,9.28-13,15.36,0,0.1,0,.21-0.07.31A1.5,1.5,0,0,0,59,45.8L57.75,47l-5-5.36L39.46,54,56.29,72ZM59.84,46.71a0.25,0.25,0,0,1,.35,0l0.18,0.19A4.78,4.78,0,0,0,63.86,51l0.42,0.09,0.09,0.1,0.54,0.57a0.24,0.24,0,0,1,0,.35l-1.24,1.16-5.06-5.4Z"></path>
+<polygon class="cls-1" points="72.11 116.63 72.11 92.23 20.65 92.23 20.65 100.28 64.05 100.28 64.05 124.69 108.26 124.69 108.26 148.01 116.31 147.84 116.31 116.63 72.11 116.63"></polygon>
+</svg>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title" class="at-a-glance-icons" viewBox="0 0 150 150" width="45px" height="45px">
+<title _mstHash="28" _mstTextHash="30133948">침실 아이콘</title>
+<path class="cls-1" d="M19,71.15a5.51,5.51,0,0,0-11,0V146H19V125H130v21h11V115H19V71.15Z"></path><polygon class="cls-1" points="74.82 18.47 139.85 51.98 145.57 40.89 74.8 4.43 74.77 4.43 74.77 4.43 4.43 40.69 10.16 51.78 74.82 18.47"></polygon><circle class="cls-1" cx="35.64" cy="81.62" r="9.5"></circle><path class="cls-1" d="M134.07,85.14C126,84,56.79,77.38,56.79,77.38s-2.61-.45-4.05.71-1.62,2.34-1.66,4.28,0,13.63,0,14.63H31.27c-2.83,0-5.14,1.67-5.14,4.5s2.31,4.5,5.14,4.5H141V92.6S142.17,86.23,134.07,85.14Z"></path>
+</svg>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title" class="at-a-glance-icons" viewBox="0 0 150 150" width="45px" height="45px">
+<title _mstHash="30" _mstTextHash="75640721">레벨 액세스 침실 아이콘</title>
+<path class="cls-1" d="M60.18,71.35A4.59,4.59,0,0,0,56.65,70l-16,.89,8.79-10a5.37,5.37,0,0,0,1.13-5,4.56,4.56,0,0,0-2-2.9l-21-12.21a4.58,4.58,0,0,0-5.35.54L11.93,50.39A4.58,4.58,0,1,0,18,57.23L25.8,50.3,32.22,54,20.88,66.94A23.36,23.36,0,0,0,8.63,73l5.92,5.92a15.06,15.06,0,0,1,21.27,21.27l5.92,5.92a23.43,23.43,0,0,0,4-26.36l6.18-.34L50.4,97.86a4.58,4.58,0,0,0,4.19,4.94l0.38,0a4.58,4.58,0,0,0,4.56-4.21l1.93-23.69A4.58,4.58,0,0,0,60.18,71.35Z"></path><path class="cls-1" d="M51.7,51.72A7.67,7.67,0,1,0,44,44,7.67,7.67,0,0,0,51.7,51.72Z"></path><path class="cls-1" d="M24.68,105.13A15.06,15.06,0,0,1,12.21,81.61l-6-6a23.43,23.43,0,0,0,32.89,32.89l-6-6A15,15,0,0,1,24.68,105.13Z"></path><path class="cls-1" d="M78,72.65a3,3,0,0,0-6,0V115h6V103h62v12h6V98H78V72.65Z"></path><polygon class="cls-1" points="108.94 43 145.54 61.86 148.76 55.62 108.92 35.1 108.91 35.1 108.91 35.1 69.32 55.51 72.54 61.75 108.94 43"></polygon><circle class="cls-1" cx="86.88" cy="78.55" r="5.35"></circle><path class="cls-1" d="M142.19,80.52c-4.56-.62-43.45-4.37-43.45-4.37a3.31,3.31,0,0,0-2.26.4,2.46,2.46,0,0,0-.92,2.31c0,1.06,0,8.14,0,8.14H84.43c-1.59,0-2.89.91-2.89,2.5s1.3,2.5,2.89,2.5H146V84.72S146.75,81.14,142.19,80.52Z"></path>
+</svg>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" class="at-a-glance-icons" viewBox="0 0 150 150" width="45px" height="45px">
+<title _mstHash="32" _mstTextHash="29484299">청각 아이콘</title>
+<path class="cls-1" d="M68.26,131.18c-4.25,0-8.92-1.62-14-4.86l3.24-5c5.62,3.61,10.36,4.72,14.08,3.3,5.38-2.05,8-9.08,9.16-13.08s11.27-19.82,19.87-27.66c8.28-7.55,9.52-18.3,9.52-24,0-7.79-2.38-33.39-33-35.76C65,23.1,54.74,28.35,46.84,39.68a62.42,62.42,0,0,0-8.5,18.1l-5.82-1.45c0.1-.41,10.6-40.93,45.14-38.27,36.66,2.84,38.52,35.27,38.52,41.74,0,6.72-1.49,19.36-11.48,28.47-8.11,7.39-17.4,22.19-18.13,24.84-1.73,6.22-5.35,14.24-12.8,17.08A15.32,15.32,0,0,1,68.26,131.18Z"></path>
+<path class="cls-1" d="M94.89,76.57l-4.42-4.06c0.06-.06,6.26-7,5.4-15.19-0.54-5.07-3.71-9.73-9.44-13.83-5.06-3.63-10.1-4.94-15-3.86C61.38,41.84,54.85,53.17,54.79,53.28l-5.22-3c0.32-.56,7.94-13.78,20.6-16.56,6.61-1.45,13.25.18,19.76,4.85,7.2,5.16,11.2,11.27,11.91,18.14C103,67.64,95.22,76.21,94.89,76.57Z"></path>
+<rect class="cls-1" x="0.84" y="109.3" width="59.93" height="19" transform="translate(-74.43 55.65) rotate(-44.49)"></rect>
+<rect class="cls-1" x="115.68" y="10.8" width="29" height="19" transform="translate(21.91 95.38) rotate(-43.6)"></rect>
+</svg>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" class="at-a-glance-icons" viewBox="0 0 150 150" width="45px" height="45px">
+<title _mstHash="34" _mstTextHash="37256453">시각적 아이콘</title>
+<path class="cls-1" d="M133.46,74.61A37.33,37.33,0,0,0,129.68,69C123,60.53,106.59,45.5,75,45.5c-0.89,0-1.75,0-2.61.06l-7-24.14-8.64,2.51,6.48,22.36c-1.9.26-3.74,0.58-5.52,0.95A76.19,76.19,0,0,0,49,49.56q-2.73.91-5.23,2a71.49,71.49,0,0,0-8.19,4.08q-2.09,1.21-4,2.48A69.87,69.87,0,0,0,24,64c-1.72,1.55-3.23,3-4.51,4.44A57.11,57.11,0,0,0,15,73.91c-1.33,1.62-2,2.62-2,2.62s3.73,8.19,13.5,16.2l-4-13.81a50.52,50.52,0,0,1,4.32-5.08l7,24a65.34,65.34,0,0,0,10.89,5.23L34.29,67.29c1.21-.9,2.52-1.79,3.91-2.67L49.85,104.8a77.44,77.44,0,0,0,10,2.15L46.32,60.3q2.47-1.09,5.21-2l5.08,17.53c0,0.46-.07.91-0.07,1.37a18.35,18.35,0,0,0,3.65,11l5.64,19.47c2.38,0.19,4.84.3,7.41,0.3,0.69,0,1.35,0,2,0L71.64,95.3a17.3,17.3,0,0,0,5.84.14h0L81,107.61h0l6.07,21,8.64-2.51-5.1-17.62,0-.06c13-1.78,23.91-9,31.18-15.78A74,74,0,0,0,133.26,79l1.34-2.16Zm-71-11-2.24-7.72c1.78-.36,3.62-0.65,5.54-0.88l1.55,5.35A18.46,18.46,0,0,0,62.46,63.65ZM87.23,96.77l-1.8-4.7H85a17.77,17.77,0,0,0,8-14.9A18,18,0,0,0,76,59l-1-4h0a83.58,83.58,0,0,1,10.26.38C90.08,58,98.87,64.52,98.87,77.29,98.87,88.46,92.07,94.09,87.23,96.77Zm10.6,0.64a28.19,28.19,0,0,0,8-20.24A30.43,30.43,0,0,0,99.7,58.56c14.2,5.16,21.58,13.9,24.39,18C120.61,81.3,111.32,92.47,97.83,97.41Z"></path>
+</svg>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" class="at-a-glance-icons" viewBox="0 0 150 150" width="45px" height="45px">
+<title _mstHash="36" _mstTextHash="29791736">일반 아이콘</title>
+<path class="cls-1" d="M75,4.2A46.89,46.89,0,0,0,28.16,51c0,10.4,6.64,27.36,20.31,51.85C58.13,120.2,67.64,134.64,68,135.25l7,10.55,7-10.55c0.4-.61,9.91-15,19.57-32.37C115.2,78.4,121.84,61.44,121.84,51A46.89,46.89,0,0,0,75,4.2ZM75,75A24.28,24.28,0,1,1,99.28,50.72,24.28,24.28,0,0,1,75,75Z"></path>
+</svg>
