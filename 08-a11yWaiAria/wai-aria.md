@@ -4,8 +4,7 @@
    <figure style="text-align:center">
       <img src="https://www.w3.org/TR/wai-aria-1.1/img/rdf_model.svg" alt="Class diagram of the relationships described in the role data model.">
       <figcaption><strong>역할 데이터 모델에 설명된 관계 클래스 다이어그램 (크게 보기)</strong></figcaption>
-   </figure>
-</a>
+   </figure></a>
 
 
 
