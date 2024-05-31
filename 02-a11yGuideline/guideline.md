@@ -89,8 +89,7 @@
    - 특징 : 신규 9개 검사항목이 추가
    - 연도 : 2022년 12월(국가표준)
 
-월드와이드웹콘소시엄(W3C, World Wide Web Consortium)의 웹 접근성 국제표준 WCAG 2.1(Web
-Accessibility Guidelines 2.1)이 2018년에 개정됨에 따라, 이를 국내표준에 반영하기 위해 작성되었다.
+월드와이드웹콘소시엄(W3C, World Wide Web Consortium)의 웹 접근성 국제표준 WCAG 2.1(Web Accessibility Guidelines 2.1)이 2018년에 개정됨에 따라, 이를 국내표준에 반영하기 위해 작성되었다.
 
 
 #### 2.2.4 장애인 차별 금지법(장차법) 단계별 적용 범위

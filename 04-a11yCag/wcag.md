@@ -212,7 +212,13 @@ WCAG 전체 성공 기준 - 총 78 개(A 30 개, AA 20 개, AAA 28 개)
    - WAI : 'Web Internet Applications'의 약자로 웹 접근성을 담당하는 조직.
    - ARIA : 'Accessible Rich Internet Applications'의 약자로 리치 인터넷을 위한 W3C 접근성 명세.
 
-#### 4.1.11 참조
+#### 접근성 관련 영상
+- [**웹 접근성과 W3C 표준에 대한 소개 비디오(Introduction to Web Accessibility and W3C Standards) (4분)**](https://www.youtube.com/embed/20SHvU2PKsM"){: target="_blank"}    
+- [**웹 접근성의 다양한 관점들에 대한 비디오(Web Accessibility Perspectives - Compilation of 10 Topics/Videos) (7분 36초)**](https://youtu.be/3f31oufqFSM){: target="_blank"}   
+  * 접근성이 장애를 가진 사람들에게 얼마나 필수적이고, 다양한 상황 속에 있는 모든 사람들에게 도움이 되는지에 대한 예시를 보여주는 7분짜리 비디오   
+
+
+#### 참조
 - [W3C WCAG 1.0](https://www.w3.org/TR/WCAG10/){: target="_blank"}   
 - [W3C WCAG 2.0](https://www.w3.org/TR/WCAG20/){: target="_blank"}   
 - [W3C WCAG 2.1](https://www.w3.org/TR/WCAG21/){: target="_blank"}   

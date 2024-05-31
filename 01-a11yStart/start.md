@@ -1,36 +1,22 @@
 ## 1. 접근성이란?
 
-<!-- 
-장애를 가진 사람들이 사용할 수 있도록 제품, 기기, 서비스 또는 환경을 설계하는 것 접근성은 "ability to access(접근 가능성)"이며,
-이는 일부 시스템이나 기업으로부터 이익을 얻을 수 있고 장애를 가진 사람들 또는 특별한 필요를 가진 사람들의 접근을 가능하게 하거나 보조 기술을 사용하여 접근을 가능하게 하는 것에 중점을 둡니다.
-
-접근성은 다음과 같이 정의할 수 있습니다.
-Accessibility
-Accessibility in the physical world is the degree to which an environment is usable by as many people as possible.
-물리적 세계에서 접근성은 가능한 많은 사람들이 환경을 이용할 수 있는 정도.
-
-Web Accessibility
-Web accessibility is the degree to which a website is usable by as many people as possible.
-웹 접근성은 가능한 많은 사람들이 웹사이트를 사용할 수 있는 정도
-
-Digital Accessibility
-Digital accessibility is the ability of a website, mobile application or electronic document to be easily navigated and understood by a wide range of users, including those users who have visual, auditory, motor or cognitive disabilities.
-디지털 접근성은 시각, 운동, 청각, 언어 또는 인지 장애가 있는 개인을 포함하여 광범위한 사용자가 웹사이트, 모바일 어플리케이션 또는 전자 문서를 쉽게 탐색하고 이해할 수 있는 능력
--->
-
 >**접근성(accessibility)은 "ability to access(접근 가능성)"이며, 
 모든 서비스를 비장애인, 장애인 누구나 할 것 없이 보편적으로 사용할 수 있도록 하는데 있습니다. 
 즉, 접근성, 웹 접근성, 모바일 접근성, 그리고 무인단말기 접근성 모두 기술이 모든 사람에게 도달할 수 있도록 보장하는 중요한 원칙입니다. 이러한 접근성 향상은 사용자 경험을 개선하고, 사회적 포용성을 증진시키며, 법적 요구사항을 충족시키는 데 핵심적인 역할을 하며, 이는 웹사이트, 온라인 서비스, 모바일 애플리케이션, ATM, 키오스크, 자동 티켓 발매기에 적용될 때 모든 사용자가 쉽게 이용할 수 있도록 할 수 있습니다.**
 
 ### 1.1 접근성 (Accessibility)
-접근성은 모든 사용자가 제품, 서비스, 환경에 쉽게 접근하고 사용할 수 있도록 하는 특성을 말합니다. 이는 장애가 있는 사람뿐만 아니라, 노인, 어린이, 임산부 등 다양한 사용자 그룹을 포함합니다. 국제표준화 기구(ISO) 및 웹 접근성 이니셔티브(WAI)와 같은 기구들은 접근성 관련 국제표준을 제공합니다. 국내에서는 이러한 국제표준을 바탕으로 국내형 접근성 지침을 마련하여 적용하고 있습니다.
+<img src="../images/accessibility-circle.svg" width="40px" alt="">접근성은 모든 사용자가 제품, 서비스, 환경에 쉽게 접근하고 사용할 수 있도록 하는 특성을 말합니다. 이는 장애가 있는 사람뿐만 아니라, 노인, 어린이, 임산부 등 다양한 사용자 그룹을 포함합니다. 국제표준화 기구(ISO) 및 웹 접근성 이니셔티브(WAI)와 같은 기구들은 접근성 관련 국제표준을 제공합니다.    
+국내에서는 이러한 국제표준을 바탕으로 국내형 접근성 지침을 마련하여 적용하고 있습니다.
 
->Accessibility essenital for some, useful for all.
-**접근성은 일부에게는 필수이며 모두에게는 유용하다.
+>Accessibility essenital for some, useful for all.   
+접근성은 일부에게는 필수이며 모두에게는 유용하다.   
 -- W3C WAI --
 
->Accessibility in the physical world is the degree to which an environment is usable by as many people as possible.
+>Accessibility in the physical world is the degree to which an environment is usable by as many people as possible.   
 물리적 세계에서 접근성은 가능한 많은 사람들이 환경을 이용할 수 있는 정도.
+
+>Digital accessibility is the ability of a website, mobile application or electronic document to be easily navigated and understood by a wide range of users, including those users who have visual, auditory, motor or cognitive disabilities.   
+디지털 접근성은 시각, 운동, 청각, 언어 또는 인지 장애가 있는 개인을 포함하여 광범위한 사용자가 웹사이트, 모바일 어플리케이션 또는 전자 문서를 쉽게 탐색하고 이해할 수 있는 능력
 
 **올바른 용어를 사용하자**
 >언어 사용은 사회적 감수성과 밀접하게 연결되어 있으며, 특히 장애를 가진 사람들을 언급할 때는 더욱 신중해야 합니다. 여기서 '일반인'과 '비장애인'이라는 용어의 사용에 대해 설명드리겠습니다.
@@ -46,9 +32,10 @@ Digital accessibility is the ability of a website, mobile application or electro
 사회적 감수성을 반영하는 언어 사용은 모든 구성원이 존중받고 포함된다는 느낌을 받도록 돕습니다. '일반인'이라는 용어가 장애인을 일상에서 배제하는 듯한 뉘앙스를 줄 수 있다면, '비장애인'이라는 용어 사용은 모든 인간이 각기 다른 특성을 가지고 있으며, 그것이 장애 여부에 관계없이 모두를 포괄한다는 사실을 강조합니다.
 
 즉, 언어는 생각과 태도를 형성하는데 중요한 역할을 하므로, 용어 선택에 있어서 사려 깊고 섬세한 접근이 필요합니다. 장애인과 비장애인을 구분하여 사용하는 것은 사회적 포용성을 증진하고 모든 사람의 존엄성을 인정하는 데 기여합니다. 이와 같은 언어의 변화는 사회 전반의 인식 개선으로 이어질 수 있습니다.
-
-<img src="https://cdn.koreadisablednews.com/news/photo/202212/2544_2145_547.png" alt="장애우 vs 장애인 올바른 용어를 사용하세요! 관련 웹툰 이미지">  
-[출처] 장애인먼저실천운동본부, 한국장애인신문(http://www.koreadisablednews.com)
+<figure style="text-align:center">
+    <img src="https://cdn.koreadisablednews.com/news/photo/202212/2544_2145_547.png" alt="장애우 vs 장애인 올바른 용어를 사용하세요! 관련 웹툰 이미지">  
+    <figcaption>[출처] 장애인먼저실천운동본부, 한국장애인신문(http://www.koreadisablednews.com)</figcaption>
+</figure>
 
 #### 1.1.2. 장애의 유형
 >'장애인복지법' 2조2항의 규정에서 장애유형은 크게 신체적 장애와 정신적 장애로 분류되며, 손상의 정도에 따라 6등급으로 구분된다.
@@ -60,15 +47,18 @@ Digital accessibility is the ability of a website, mobile application or electro
    
 **정신적 장애**
 1. 정신적 장애 : 지적장애인, 정신장애인, 자폐성장애인
-
-<img src="https://www.dwbnews.kr/news/photo/201911/694_542_419.jpg" alt="장애유형">  
-[출처] [장애인먼저실천운동본부, 한국장애인신문(http://www.koreadisablednews.com)]
+<figure style="text-align:center">
+    <img src="https://www.dwbnews.kr/news/photo/201911/694_542_419.jpg" alt="장애유형">  
+    <figcaption>[출처] [장애인먼저실천운동본부, 한국장애인신문(http://www.koreadisablednews.com)]</figcaption>
+</figure>
 
 #### 1.1.3. 축약형 사용
 >'Accessibility'라는 단어의 긴 철자를 대문자 'A11Y', 또는 소문자 'a11y' 형태로도 표현되는데,이것은 'Accessibility'라는 단어의 긴 철자를 글자수가 한정된 소셜 미디어에서 축약형으로 사용한 것에서 시작되었습니다. 즉, 'Accessibility'의 'A'와 'Y' 사이에는 11개의 글자가 있기 때문에 'A11Y'가 된 것입니다.
 
-<img src="https://t1.daumcdn.net/brunch/service/user/3vYS/image/1nbOpHB943TBd2vwClsY7_G3umY.png" alt="a11y">  
-[출처] a11y-collective.com  
+<figure style="text-align:center">
+    <img src="https://t1.daumcdn.net/brunch/service/user/3vYS/image/1nbOpHB943TBd2vwClsY7_G3umY.png" alt="a11y">
+    <figcaption>[출처] a11y-collective.com</figcaption>
+</figure>
 
 이와 비슷하게 사용되고 있는 용어는 다음과 같습니다.
 1. k8s : Kubernetes(쿠버네티스)
