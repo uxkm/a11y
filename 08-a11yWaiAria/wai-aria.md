@@ -1,6 +1,9 @@
 # WAI-ARIA란?
 
-<a href="https://www.w3.org/TR/wai-aria-1.1/img/rdf_model.svg" target="_blank" title="새 창 열림"><figure style="text-align:center"><img src="https://www.w3.org/TR/wai-aria-1.1/img/rdf_model.svg" alt="Class diagram of the relationships described in the role data model."><figcaption><strong>역할 데이터 모델에 설명된 관계 클래스 다이어그램 (크게 보기)</strong></figcaption></figure></a>
+<figure style="text-align:center">
+  <a href="https://www.w3.org/TR/wai-aria-1.1/img/rdf_model.svg" target="_blank" title="새 창 열림"><img src="https://www.w3.org/TR/wai-aria-1.1/img/rdf_model.svg" alt="Class diagram of the relationships described in the role data model."></a>
+  <figcaption><strong>역할 데이터 모델에 설명된 관계 클래스 다이어그램 (크게 보기)</strong></figcaption>
+</figure>
 
 
 
