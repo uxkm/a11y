@@ -11,13 +11,13 @@
 - #### 4.4. [무인정보단밀기 접근성 - 작업 중](04-a11yCag/kiosk.md)   
 
 ### 5. [접근성 항목별 준수 가이드](05-a11yCagGuide/kwcag/perceivable.md)   
-- #### 5.1. [웹 콘텐츠 접근성](04-a11yCag/kwcag/perceivable.md)   
+- #### 5.1. [웹 콘텐츠 접근성](05-a11yCagGuid/kwcag/perceivable.md)   
   * ##### [인식의 용이성(Perceivable)](05-a11yCagGuide/kwcag/perceivable.md)   
   * ##### [운용의 용이성(Operable)](05-a11yCagGuide/kwcag/operable.md)   
   * ##### [이해의 용이성(Understandable)](05-a11yCagGuide/kwcag/understandable.md)   
   * ##### [견고성(Robust)](05-a11yCagGuide/kwcag/robust.md)   
 
-- #### 5.2. [모바일 앱 접근성](04-a11yCag/macag/perceivable.md)   
+- #### 5.2. [모바일 앱 접근성](05-a11yCagGuide/macag/perceivable.md)   
   * ##### [인식의 용이성(Perceivable)](05-a11yCagGuide/macag/perceivable.md)   
   * ##### [운용의 용이성(Operable)](05-a11yCagGuide/macag/operable.md)   
   * ##### [이해의 용이성(Understandable)](05-a11yCagGuide/macag/understandable.md)   
