@@ -23,7 +23,7 @@
   * ##### [이해의 용이성(Understandable)](05-a11yCagGuide/macag/understandable.md)   
   * ##### [견고성(Robust)](05-a11yCagGuide/macag/robust.md)   
 
-<!-- - #### 5.3. [무인정보단말기 접근성](04-a11yCag/kiosk/kiosk.md)    -->
+<!-- - #### 5.3. [무인정보단말기 접근성](05-a11yCagGuide/kiosk/kiosk.md)    -->
 
 ### 6. [접근성 체크리스트 - 작업 중](06-a11yCheck/web.md)   
 - #### 6.1. [웹 콘텐츠 접근성](06-a11yCheck/wcag.md)   
