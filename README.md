@@ -8,7 +8,7 @@
 - #### 4.1. [웹 콘텐츠 접근성](04-a11yCag/wcag.md)   
 - #### 4.2. [한국형 웹 콘텐츠 접근성](04-a11yCag/kwcag.md)    
 - #### 4.3. [모바일 앱 접근성](04-a11yCag/macag.md)   
-- #### 4.4. [무인정보단밀기 접근성 - 작업 중](04-a11yCag/kiosk.md)   
+- #### 4.4. [무인정보단말기 접근성 - 작업 중](04-a11yCag/kiosk.md)   
 
 ### 5. [접근성 항목별 준수 가이드](05-a11yCagGuide/kwcag/perceivable.md)   
 - #### 5.1. [웹 콘텐츠 접근성](05-a11yCagGuid/kwcag/perceivable.md)   
@@ -25,15 +25,15 @@
 
 - #### 5.3. [무인정보단말기 접근성](05-a11yCagGuide/kiosk/kiosk.md)   
 
-### 6. [접근성 체크리스트 - 작업 중](06-a11yCheck/web.md)   
-- #### 6.1. [웹 콘텐츠 접근성](06-a11yCheck/wcag.md)   
-- #### 6.2. [모바일 앱 접근성](06-a11yCheck/macag.md)   
+### 6. [접근성 체크리스](06-a11yCheck/web.md)   
+- #### 6.1. [웹 콘텐츠 접근성트 - 작업 중](06-a11yCheck/wcag.md)   
+- #### 6.2. [모바일 앱 접근성트 - 작업 중](06-a11yCheck/macag.md)   
 - #### 6.3. [무인정보단말기 접근성](06-a11yCheck/kiosk.md)   
 
-### 7. [접근성 콘텐츠 제작 기법 - 작업 중](07-a11yDevelop/wcag.md)   
-- #### 7.1. [웹 콘텐츠 접근성](07-a11yDevelop/wcag.md)   
-- #### 7.2. [모바일 앱 접근성](07-a11yDevelop/macag.md)   
-<!-- - #### 7.3. [무인정보단말기 접근성](07-a11yDevelop/kiosk.md)   -->
+### 7. [접근성 콘텐츠 제작 기법](07-a11yDevelop/wcag.md)   
+- #### 7.1. [웹 콘텐츠 접근성트 - 작업 중](07-a11yDevelop/wcag.md)   
+- #### 7.2. [모바일 앱 접근성트 - 작업 중](07-a11yDevelop/macag.md)   
+- #### 7.3. [무인정보단말기 접근성](07-a11yDevelop/kiosk.md)  
 
 ### 8. [WAI-ARIA - 작업 중](08-a11yWaiAria/wai-aria.md)  
 - #### 8.1. [WAI-ARIA란?](08-a11yWaiAria/wai-aria.md) 
