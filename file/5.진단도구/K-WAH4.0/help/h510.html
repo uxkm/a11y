@@ -1,0 +1,323 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<style type="text/css">
+<!--
+body {
+	margin: 0;
+	padding: 0;
+	color: #000;
+	font-family: "맑은 고딕", "굴림", Verdana;
+	font-size: 90%;
+	line-height: 1.4;
+	background-color: #FFF;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+
+/* ~~ Element/tag selectors ~~ */
+ul, ol, dl { /* Due to variations between browsers, it's best practices to zero padding and margin on lists. For consistency, you can either specify the amounts you want here, or on the list items (LI, DT, DD) they contain. Remember that what you do here will cascade to the .nav list unless you write a more specific selector. */
+	padding: 0;
+	margin: 0;
+}
+h1, h2, h3, h4, h5, h6, p {
+	margin-top: 0;	 /* removing the top margin gets around an issue where margins can escape from their containing div. The remaining bottom margin will hold it away from any elements that follow. */
+	padding-right: 15px;
+	padding-left: 15px; /* adding the padding to the sides of the elements within the divs, instead of the divs themselves, gets rid of any box model math. A nested div with side padding can also be used as an alternate method. */
+}
+a img { /* this selector removes the default blue border displayed in some browsers around an image when it is surrounded by a link */
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+}
+
+/* ~~ Styling for your site's links must remain in this order - including the group of selectors that create the hover effect. ~~ */
+a:link {
+	color: #003;
+	//text-decoration: underline; /* unless you style your links to look extremely unique, it's best to provide underlines for quick visual identification */
+	font-weight: bold;
+}
+a:visited {
+	color: #6E6C64;
+	//text-decoration: underline;
+}
+a:hover, a:active, a:focus { /* this group of selectors will give a keyboard navigator the same hover experience as the person using a mouse. */
+	//text-decoration: none;
+	color:#03F;
+}
+
+/* ~~this fixed width container surrounds the other divs~~ */
+.container {
+	/*width: 960px;*/
+	width: 100%;
+	background: #FFF;
+	margin: 0 auto; /* the auto value on the sides, coupled with the width, centers the layout */
+	height:auto;
+}
+
+/* ~~ the header is not given a width. It will extend the full width of your layout. It contains an image placeholder that should be replaced with your own linked logo ~~ */
+.header {
+	background: #ADB96E;
+}
+
+.footer {
+ 	background:#FFF;	
+}
+/* ~~ These are the columns for the layout. ~~ 
+
+1) Padding is only placed on the top and/or bottom of the divs. The elements within these divs have padding on their sides. This saves you from any "box model math". Keep in mind, if you add any side padding or border to the div itself, it will be added to the width you define to create the *total* width. You may also choose to remove the padding on the element in the div and place a second div within it with no width and the padding necessary for your design. You may also choose to remove the padding on the element in the div and place a second div within it with no width and the padding necessary for your design.
+
+2) No margin has been given to the columns since they are all floated. If you must add margin, avoid placing it on the side you're floating toward (for example: a right margin on a div set to float right). Many times, padding can be used instead. For divs where this rule must be broken, you should add a "display:inline" declaration to the div's rule to tame a bug where some versions of Internet Explorer double the margin.
+
+3) Since classes can be used multiple times in a document (and an element can also have multiple classes applied), the columns have been assigned class names instead of IDs. For example, two sidebar divs could be stacked if necessary. These can very easily be changed to IDs if that's your preference, as long as you'll only be using them once per document.
+
+4) If you prefer your nav on the right instead of the left, simply float these columns the opposite direction (all right instead of all left) and they'll render in reverse order. There's no need to move the divs around in the HTML source.
+
+*/
+.sidebar1 {
+	float: left;
+	width: 180px;
+	background: #EADCAE;
+	padding-bottom: 10px;
+	height:auto;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+}
+.content {
+	padding: 25px 0 0 30px;
+	width: auto;
+	/*width: 780px;*/
+	float: left;
+	position: absolute;
+	left:180px;
+	height: auto;
+	display:block;
+}
+
+/* ~~ This grouped selector gives the lists in the .content area space ~~ */
+.content ul, .content ol { 
+	padding: 0 15px 15px 40px; /* this padding mirrors the right padding in the headings and paragraph rule above. Padding was placed on the bottom for space between other elements on the lists and on the left to create the indention. These may be adjusted as you wish. */
+}
+
+/* ~~ The navigation list styles (can be removed if you choose to use a premade flyout menu like Spry) ~~ */
+ul.nav {
+	list-style: none; /* this removes the list marker */
+	/*border-top: 1px solid #666; /* this creates the button separation */
+	margin-bottom: 15px; /* this creates the space between the navigation on the content below */
+}
+ul.nav li {
+	/*border-bottom: 1px solid #666; /* this creates the button separation */
+}
+ul.nav a, ul.nav a:visited { /* grouping these selectors makes sure that your links retain their button look even after being visited */
+	display: block; /* this gives the link block properties causing it to fill the whole LI containing it. This causes the entire area to react to a mouse click. */
+	width: 160px;  /*this width makes the entire button clickable for IE6. If you don't need to support IE6, it can be removed. Calculate the proper width by subtracting the padding on this link from the width of your sidebar container. */
+	text-decoration: none;
+	background-color: #F2F2F2;
+	padding-top: 5px;
+	padding-right: 5px;
+	padding-bottom: 5px;
+	padding-left: 15px;
+	font-weight: normal;
+}
+ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background and text color for both mouse and keyboard navigators */
+	color: #00F;
+	background-color: #F2F2F2;
+	font-size: 105%;
+}
+
+/* ~~ The footer ~~ */
+.footer {
+	padding: 10px 0;
+	background: #CCC49F;
+	position: relative;/* this gives IE6 hasLayout to properly clear */
+	clear: both; /* this clear property forces the .container to understand where the columns end and contain them */
+}
+
+/* ~~ miscellaneous float/clear classes ~~ */
+.fltrt {  /* this class can be used to float an element right in your page. The floated element must precede the element it should be next to on the page. */
+	float: right;
+	margin-left: 8px;
+}
+.fltlft { /* this class can be used to float an element left in your page. The floated element must precede the element it should be next to on the page. */
+	float: left;
+	margin-right: 8px;
+}
+.clearfloat { /* this class can be placed on a <br /> or empty div as the final element following the last floated div (within the #container) if the #footer is removed or taken out of the #container */
+	clear:both;
+	height:0;
+	font-size: 1px;
+	line-height: 0px;
+}
+-->
+</style></head>
+
+<body>
+
+<div class="container">
+  <div class="header" style="background-color:#DFF"><!-- end .header -->
+  <img src='kwah4title.jpg' alt="K-WAH4.4 웹접근성 평가도구" width="838" height="117"/>
+  </div>
+  <div class="sidebar1" style="background-color:#EEE">
+    <ul class="nav">
+      <li>    </li>      
+      <li>  	<a href="auto_help.html" style="font-weight:bold">K-WAH4.4 소개</a></li>
+      <li>     <a href="h200.html" style="font-weight:bold">K-WAH4.4 특징</a></li>
+      <li>    <a href="h300.html" style="font-weight:bold">K-WAH4.4 설치환경</a></li>
+        <li>    <a style="font-weight:bold">자동점검규칙</a>
+        <ol>
+       <li> <a href="h410.html">&nbsp 1. 대체텍스트 제공</a></li>
+       <li> <a href="h420.html">&nbsp 2. 제목 제공</a></li>
+       <li> <a href="h430.html">&nbsp 3. 기본언어 명시</a></li>
+       <li> <a href="h440.html">&nbsp 4. 사용자 요구에 따른<br /> &nbsp &nbsp&nbsp 새창 열기</a></li>
+       <li> <a href="h450.html">&nbsp 5. 레이블 제공</a></li>
+       <li> <a href="h460.html">&nbsp 6. 마크업 오류 방지</a></li>    
+       </ol>             
+       <li> <a href="h500.html" style="font-weight:bold">자동점검</a></li>
+       <ol>
+         <li>  <a href="h510.html">&nbsp 1. 점검 옵션 설정</a></li>
+         <li>  <a href="h520.html">&nbsp 2. 프로젝트 생성/열기</a></li>
+         <li>  <a href="h530.html">&nbsp 3. 점검 실행</a></li>
+         <li>  <a href="h540.html">&nbsp 4. 점검 결과 보기</a></li>
+         <li>  <a href="h550.html">&nbsp 5. 보고서 보기/인쇄</a></li>
+      </ol>
+      <li>  <a href="h600.html" style="font-weight:bold">파일 평가</a></li>
+         <li>  <a href="h700.html" style="font-weight:bold">배치작업</a>      </li> 
+         <ol>   
+        <li>   <a href="h710.html">&nbsp 1. 프로젝트 생성/열기</a></li>
+       <li>    <a href="h720.html">&nbsp 2. 점검 실행</a></li>
+        <li>   <a href="h730.html">&nbsp 3. 점검 결과 보기</a></li>
+        <li>   <a href="h740.html">&nbsp 4. 보고서 보기/인쇄</a></li>        
+        </ol>
+         <li> <a style="font-weight:bold">접근성 기능</a></li>
+         <ol>
+         <li> <a href="h810.html">&nbsp 1. 단축키 목록</a></li>
+         <li> <a href="h820.html">&nbsp 2. 키보드를 이용한 <br /> &nbsp &nbsp&nbsp 결과화면 탐색</a></li>
+         <li> </li>
+          
+      </ol>
+    </ul>
+    <p> <BR /><BR /></p>
+   
+  <!-- end .sidebar1 --></div>
+  <div class="content">
+  
+    <h2 style="padding:0 0 0 0px"> 점검 옵션 설정 </h2><br />
+    <h3> 점검 설정 </h3>
+
+	<p>자동점검 실행에 앞서, 점검을 위한 옵션을 설정합니다.<br />
+     점검 옵션은 프로그램이 설치될 때 기본값으로 설정되어 있어서 사용자가 별도로 설정을 변경하지 않으면 기본값이 적용됩니다.<br /> 
+     또한 사용자가 점검 옵션을 변경하고 저장한 이후부터는 새로운 프로젝트가 생성될 때 변경된 옵션이 적용됩니다.</p>
+    <p> ※ 자동점검 옵션은 K-WAH 4.4 설치 디렉토리의 kwah4option.ini 파일에 저장됩니다. 
+
+	<ol>
+		<li>메뉴의 [설정]-[점검 설정 열기]를 선택합니다.</li><br />
+		<li>아래 그림과 같은 [환경 설정] 창이 열립니다.</li><br />
+        
+        <SPAN style="FONT-SIZE: 13px; COLOR: #000000; LINE-HEIGHT: 21px; FONT-FAMILY: '바탕'; TEXT-ALIGN: center">
+        <br />
+            <img src="autoOption.png" alt="자동점검 설정 창" align="left" height="50%" />
+            <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        </SPAN>
+    
+    	<p>각 설정항목의 의미는 다음과 같습니다.</p> 
+		<ol>
+			<li> <b>디렉토리 설정 :</b> 프로젝트가 저장되는 경로</li>
+            <p> 프로젝트 경로의 기본값은 프로그램 설치 디스크의 KWAH4Project 디렉토리로 프로그램이 설치될 때 자동으로 생성됩니다. <br />
+            자동점검을 위하여 사용자가 생성한 프로젝트와 관련파일들이 이 경로에 저장됩니다.<br />
+            프로젝트 새로만들기나 기존 프로젝트의 점검결과 열기를 수행하면 프로젝트 경로가 열립니다. 
+            </p>
+			<li> <b>웹페이지 다운로드 시간 설정 :</b> 점검할 페이지 소스를 로딩하기 위한 최대 시간 제한</li>
+            <p> K-WAH4.4는 웹페이지 점검을 위하여 웹페이지의 소스 코드를 사용자 컴퓨터로 다운로드 받습니다.<br />
+            웹 서버나 네트워크의 속도에 따라서 웹페이지를 다운로드하는 시간이 서로 다를 수 있습니다.<br />
+          프로그램의 점검 시간이 과도하게 길어지는 것을 방지하기 위하여 K-WAH4.4에서는 웹페이지 다운로드 시간을 설정할 수 있습니다.</p>
+            <p>설정한 응답시간을 초과하여도 웹페이지 다운로드를 완료하지 못한 경우에는 다음 페이지를 검사하도록 합니다. <br />
+            서버나 네트워크 속도가 빠른 환경에서는 응답시간을 짧게 설정하고 반대의 경우에는 응답시간을 길게 설정함으로써 환경에 따른 효율을 높일 수 있습니다.</p>
+            <ul>
+              <li>값의 범위 : 10~60초 </li>
+              <li>기본값 : 30초 </li>
+          </ul>
+            </p>
+	    <li><b> 자동점검 설정</b></li>
+
+			<ul>
+				<li>수집페이지 수 : 자동점검할 웹 페이지의 수</li>
+                <p> 웹사이트에서 수집하여 점검할 웹페이지의 수를 지정합니다. <br />
+ <ul>
+                   <li>값의 범위 : 1~무한대<br /></li>
+                   <li>기본값 : 100 페이지 <br />     </li>               
+                    ※ 0은 무한대를 나타내며 웹사이트에 포함된 모든 웹페이지를 점검합니다.                    </ul>
+                </p>
+				<li>수집 깊이 제한 : 수집할 웹페이지 URL 경로의 깊이 제한   </li>
+                <p> 홈페이지로부터 몇 단계의 경로 깊이를 지닌 웹페이지까지 수집할 것인가를 지정합니다.  <br />
+ <ul>
+                   <li>값의 범위 : 1~20<br /></li>
+                  <li> 기본값 : 20 <br />    </li>
+              </ul>                
+                </p>
+                
+				<li>동일 게시판 페이지 수집 수 : 동일 게시판에 속한 웹페이지가 수집되는 수를 제한</li>
+                 <p> 동일 게시판에 포함된 서로 다른 내용의 게시물 페이지를 몇 개까지 수집할 것인가를 지정합니다.  <br />
+ 				<ul>
+                  <li> 값의 범위 : 1~10</li>
+                   <li>기본값 : 5      </li>
+                </ul>   
+                      
+                      
+ </p>
+                
+				<li>적용 인코딩 : 인코딩 정보를 제공하지 않는 서비 또는 콘텐츠의 기본 인코딩을 설정</li>
+                 <p> 소스 인코딩 방법을 설정합니다. 제공하는 인코딩 설정은 다음과 같습니다.<br />
+ 				<ul>
+                  <li> 인코딩 방법: 
+                  <ul>
+                  <li>EUC-KR/KSC_5601</li>
+                   <li>UTF-8</li>
+                    <li>UTF-16</li>
+                  </ul>
+                  </li>
+                   <li>기본값 : EUC_KR      </li>
+                </ul>   
+                
+                
+                 </p>
+                
+				<li>적용 DTD 형식: DOCTYPE을 제공하지 않는 웹문서에 적용되는 DTD 형식을 설정</li>
+                 <p> 소스코드에서 DTD 형식을 정의하고 있지 않은 웹문서에 적용되는 기본 DTD 형식을 설정합니다. 적용가능한 DTD 형식은 다음과 같습니다.<br />
+ 				<ul>
+                  <li> 값의 범위 : </li>
+                  <ul>
+                  <li>HTML4.01</li>
+                  <li>XHTML1.0/1.1</li>
+                 <li>HTML5</li>
+                 
+                  </ul>
+                   <li>기본값 : HTML4.01 </li>
+                </ul>                         
+                      
+                      
+		<li>JS 코드 처리 : JavaScript에 의한 주소 수집 설정</li>
+                 <p> 'JS 코드 처리'를 체크하면 웹 페이지내의 자바스크립트 웹 주소를 하나씩 확인합니다. 자바스크립트 주소 확인 과정은 웹 페이지를 다운받는 시간이 필요하므로 자바스크립트 주소 확인 갯수에 비례하여 시간이 늘어납니다. 따라서 자바스크립트 주소를 수집하지 않더라도 충분한 주소수집이 가능할 경우에는 'JS 코드 처리' 체크 상자를 언체크로 설정하십시오. 기본값은 '체크'입니다. <br />
+
+                      
+			</ul>
+            <div  style="padding:0 0 0 30px">※ 옵션이 변경된 경우에는 반드시 [저장] 버튼을 눌러 변경된 환경을 저장해야 합니다.</div>     
+	  </ol>
+		
+	</ol>
+    
+       <h3> 페이지 확장자 설정 </h3>
+       <div  style="padding:0 0 0 20px"><p> ※ K-WAH4.4에서는 <span lang="EN-US" xml:lang="EN-US">URL </span>점검시 확장자를 자동 판별하므로 별도의 페이지 확장자 등록 기능을 제공하지 않습니다.
+       </p></div> 
+
+    <!-- end .content --></div>
+
+  <!-- end .container --></div>
+</body>
+</html>

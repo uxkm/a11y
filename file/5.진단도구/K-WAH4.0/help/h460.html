@@ -1,0 +1,305 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<style type="text/css">
+<!--
+body {
+	margin: 0;
+	padding: 0;
+	color: #000;
+	font-family: "맑은 고딕", "굴림", Verdana;
+	font-size: 90%;
+	line-height: 1.4;
+	background-color: #FFF;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+
+/* ~~ Element/tag selectors ~~ */
+ul, ol, dl { /* Due to variations between browsers, it's best practices to zero padding and margin on lists. For consistency, you can either specify the amounts you want here, or on the list items (LI, DT, DD) they contain. Remember that what you do here will cascade to the .nav list unless you write a more specific selector. */
+	padding: 0;
+	margin: 0;
+}
+h1, h2, h3, h4, h5, h6, p {
+	margin-top: 0;	 /* removing the top margin gets around an issue where margins can escape from their containing div. The remaining bottom margin will hold it away from any elements that follow. */
+	padding-right: 15px;
+	padding-left: 15px; /* adding the padding to the sides of the elements within the divs, instead of the divs themselves, gets rid of any box model math. A nested div with side padding can also be used as an alternate method. */
+}
+a img { /* this selector removes the default blue border displayed in some browsers around an image when it is surrounded by a link */
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+}
+
+/* ~~ Styling for your site's links must remain in this order - including the group of selectors that create the hover effect. ~~ */
+a:link {
+	color: #003;
+	//text-decoration: underline; /* unless you style your links to look extremely unique, it's best to provide underlines for quick visual identification */
+	font-weight: bold;
+}
+a:visited {
+	color: #6E6C64;
+	//text-decoration: underline;
+}
+a:hover, a:active, a:focus { /* this group of selectors will give a keyboard navigator the same hover experience as the person using a mouse. */
+	//text-decoration: none;
+	color:#03F;
+}
+
+/* ~~this fixed width container surrounds the other divs~~ */
+.container {
+	/*width: 960px;*/
+	width: 100%;
+	background: #FFF;
+	margin: 0 auto; /* the auto value on the sides, coupled with the width, centers the layout */
+	height:auto;
+}
+
+/* ~~ the header is not given a width. It will extend the full width of your layout. It contains an image placeholder that should be replaced with your own linked logo ~~ */
+.header {
+	background: #ADB96E;
+}
+
+.footer {
+ 	background:#FFF;	
+}
+/* ~~ These are the columns for the layout. ~~ 
+
+1) Padding is only placed on the top and/or bottom of the divs. The elements within these divs have padding on their sides. This saves you from any "box model math". Keep in mind, if you add any side padding or border to the div itself, it will be added to the width you define to create the *total* width. You may also choose to remove the padding on the element in the div and place a second div within it with no width and the padding necessary for your design. You may also choose to remove the padding on the element in the div and place a second div within it with no width and the padding necessary for your design.
+
+2) No margin has been given to the columns since they are all floated. If you must add margin, avoid placing it on the side you're floating toward (for example: a right margin on a div set to float right). Many times, padding can be used instead. For divs where this rule must be broken, you should add a "display:inline" declaration to the div's rule to tame a bug where some versions of Internet Explorer double the margin.
+
+3) Since classes can be used multiple times in a document (and an element can also have multiple classes applied), the columns have been assigned class names instead of IDs. For example, two sidebar divs could be stacked if necessary. These can very easily be changed to IDs if that's your preference, as long as you'll only be using them once per document.
+
+4) If you prefer your nav on the right instead of the left, simply float these columns the opposite direction (all right instead of all left) and they'll render in reverse order. There's no need to move the divs around in the HTML source.
+
+*/
+.sidebar1 {
+	float: left;
+	width: 180px;
+	background: #EADCAE;
+	padding-bottom: 10px;
+	height:auto;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+}
+.content {
+	padding: 25px 0 0 30px;
+	width: auto;
+	/*width: 780px;*/
+	float: left;
+	position: absolute;
+	left:180px;
+	height: auto;
+	display:block;
+}
+
+/* ~~ This grouped selector gives the lists in the .content area space ~~ */
+.content ul, .content ol { 
+	padding: 0 15px 15px 40px; /* this padding mirrors the right padding in the headings and paragraph rule above. Padding was placed on the bottom for space between other elements on the lists and on the left to create the indention. These may be adjusted as you wish. */
+}
+
+/* ~~ The navigation list styles (can be removed if you choose to use a premade flyout menu like Spry) ~~ */
+ul.nav {
+	list-style: none; /* this removes the list marker */
+	/*border-top: 1px solid #666; /* this creates the button separation */
+	margin-bottom: 15px; /* this creates the space between the navigation on the content below */
+}
+ul.nav li {
+	/*border-bottom: 1px solid #666; /* this creates the button separation */
+}
+ul.nav a, ul.nav a:visited { /* grouping these selectors makes sure that your links retain their button look even after being visited */
+	display: block; /* this gives the link block properties causing it to fill the whole LI containing it. This causes the entire area to react to a mouse click. */
+	width: 160px;  /*this width makes the entire button clickable for IE6. If you don't need to support IE6, it can be removed. Calculate the proper width by subtracting the padding on this link from the width of your sidebar container. */
+	text-decoration: none;
+	background-color: #F2F2F2;
+	padding-top: 5px;
+	padding-right: 5px;
+	padding-bottom: 5px;
+	padding-left: 15px;
+	font-weight: normal;
+}
+ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background and text color for both mouse and keyboard navigators */
+	color: #00F;
+	background-color: #F2F2F2;
+	font-size: 105%;
+}
+
+/* ~~ The footer ~~ */
+.footer {
+	padding: 10px 0;
+	background: #CCC49F;
+	position: relative;/* this gives IE6 hasLayout to properly clear */
+	clear: both; /* this clear property forces the .container to understand where the columns end and contain them */
+}
+
+/* ~~ miscellaneous float/clear classes ~~ */
+.fltrt {  /* this class can be used to float an element right in your page. The floated element must precede the element it should be next to on the page. */
+	float: right;
+	margin-left: 8px;
+}
+.fltlft { /* this class can be used to float an element left in your page. The floated element must precede the element it should be next to on the page. */
+	float: left;
+	margin-right: 8px;
+}
+.clearfloat { /* this class can be placed on a <br /> or empty div as the final element following the last floated div (within the #container) if the #footer is removed or taken out of the #container */
+	clear:both;
+	height:0;
+	font-size: 1px;
+	line-height: 0px;
+}
+-->
+</style></head>
+
+<body>
+
+<div class="container">
+  <div class="header" style="background-color:#DFF"><!-- end .header -->
+  <img src='kwah4title.jpg' alt="K-WAH4.4 웹접근성 평가도구" width="838" height="117"/>
+  </div>
+  <div class="sidebar1" style="background-color:#EEE">
+    <ul class="nav">
+      <li>    </li>      
+      <li>  	<a href="auto_help.html" style="font-weight:bold">K-WAH4.4 소개</a></li>
+      <li>     <a href="h200.html" style="font-weight:bold">K-WAH4.4 특징</a></li>
+      <li>    <a href="h300.html" style="font-weight:bold">K-WAH4.4 설치환경</a></li>
+        <li>    <a style="font-weight:bold">자동점검규칙</a>
+        <ol>
+       <li> <a href="h410.html">&nbsp 1. 대체텍스트 제공</a></li>
+       <li> <a href="h420.html">&nbsp 2. 제목 제공</a></li>
+       <li> <a href="h430.html">&nbsp 3. 기본언어 명시</a></li>
+       <li> <a href="h440.html">&nbsp 4. 사용자 요구에 따른<br /> &nbsp &nbsp&nbsp 새창 열기</a></li>
+       <li> <a href="h450.html">&nbsp 5. 레이블 제공</a></li>
+       <li> <a href="h460.html">&nbsp 6. 마크업 오류 방지</a></li>    
+       </ol>             
+       <li> <a href="h500.html" style="font-weight:bold">자동점검</a></li>
+       <ol>
+         <li>  <a href="h510.html">&nbsp 1. 점검 옵션 설정</a></li>
+         <li>  <a href="h520.html">&nbsp 2. 프로젝트 생성/열기</a></li>
+         <li>  <a href="h530.html">&nbsp 3. 점검 실행</a></li>
+         <li>  <a href="h540.html">&nbsp 4. 점검 결과 보기</a></li>
+         <li>  <a href="h550.html">&nbsp 5. 보고서 보기/인쇄</a></li>
+      </ol>
+      <li>  <a href="h600.html" style="font-weight:bold">파일 평가</a></li>
+         <li>  <a href="h700.html" style="font-weight:bold">배치작업</a>      </li> 
+         <ol>   
+        <li>   <a href="h710.html">&nbsp 1. 프로젝트 생성/열기</a></li>
+       <li>    <a href="h720.html">&nbsp 2. 점검 실행</a></li>
+        <li>   <a href="h730.html">&nbsp 3. 점검 결과 보기</a></li>
+        <li>   <a href="h740.html">&nbsp 4. 보고서 보기/인쇄</a></li>        
+        </ol>
+         <li> <a style="font-weight:bold">접근성 기능</a></li>
+         <ol>
+         <li> <a href="h810.html">&nbsp 1. 단축키 목록</a></li>
+         <li> <a href="h820.html">&nbsp 2. 키보드를 이용한 <br /> &nbsp &nbsp&nbsp 결과화면 탐색</a></li>
+         <li> </li>
+          
+      </ol>
+    </ul>
+    <p>&nbsp; </p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p><BR />
+      <BR />
+    </p>
+   
+  <!-- end .sidebar1 --></div>
+  <div class="content">
+  
+  <h2 style="padding:0 0 0 0px"> 자동점검규칙 6. 마크업 오류 방지 </h2><br />
+  
+  <p> 점검규칙 6은 마크업 언어의 요소 중 열고 닫음, 중첩 관계, 속성 선언을 문법에 맞게 준수하고 있는가를 점검하기 위한 것입니다. 대상 요소 및 점검 규칙은 다음과 같습니다.  </p><br />
+  
+	<ul>
+		<li><strong>규칙 6-1.</strong> 아이디 중복 선언</li>
+			<ul class="unList">
+				<li>  한 페이지에서 동일한 아이디를 중복 사용하면 오류</li>					
+			</ul>
+		</li>
+		<li><strong>규칙 6-2.</strong> 속성 이름 선언</li>
+			<ul class="unList">
+				<li>  한 페이지에서 속성 이름을 중복 사용하면 오류</li>					
+			</ul>
+		</li>
+		<li><strong>규칙 6-3.</strong> 태그 열고 닫음</li>
+			<ul class="unList">
+				<li>  태그 열고 닫음이 일치하지 않으면 오류</li>					
+			</ul>
+		</li>
+		<li><strong>규칙 6-4.</strong> 닫는 태그 누락</li>
+			<ul class="unList">
+				<li>  여는 태그에 대한 닫는 태그가 없으면 오류</li>					
+			</ul>
+		</li>
+		<li><strong>규칙 6-5.</strong> 여는 태그 누락</li>
+			<ul class="unList">
+				<li>  닫는 태그에 대한 여는 태그가 없으면 오류</li>					
+			</ul>
+		</li>
+		<li><strong>규칙 6-6.</strong> 태그의 정확한 중첩 관계</li>
+			<ul class="unList">
+				<li>  태그의 열고 닫는 순서의 중첩 관계가 엇갈리면 오류</li>	
+								
+			</ul>
+            	</ul>
+           <p>※ 오류 목록(점검 결과)에는 규칙 6-1 (여는 태그와 닫는 태그의 정확한 사용 오류)로 표시됩니다. 이는 W3C Validator 에서도 동일합니다. </p>
+           <p> K-WAH4.4에서는 W3C Validator와의 호환성을 위하여 W3C DTD 형식에 따른 태그의 열고 닫음 관계를 확인할 수 있도록 그 기능이 확장되었습니다. 적용하는 DTD 형식은 다음과 같습니다. </p>
+       
+
+           
+           	<table bordercolor="#000099" border="1">
+   	  <tr>
+   	    <th valign="center"><span lang="EN-US" xml:lang="EN-US">DTD </span>유형</td>
+   	    <th valign="center">선언문</td>
+      </tr>
+   	  <tr>
+   	    <th valign="center"><span lang="EN-US" xml:lang="EN-US">HTML4.01 Strict</span></td>
+   	    <td valign="center"><span lang="EN-US" xml:lang="EN-US">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01//EN&quot; &quot;http://www.w3.org/TR/html4/strict.dtd&quot;&gt;</span></td>
+      </tr>
+   	  <tr>
+   	    <th valign="center"><span lang="EN-US" xml:lang="EN-US">HTML4.01 Transitional</span></td>
+   	    <td valign="center"><span lang="EN-US" xml:lang="EN-US">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;http://www.w3.org/TR/html4/loose.dtd&quot;&gt;</span></td>
+      </tr>
+   	  <tr>
+   	    <th valign="center"><span lang="EN-US" xml:lang="EN-US">HTML4.01 Frameset</span></td>
+   	    <td valign="center"><span lang="EN-US" xml:lang="EN-US">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Frameset//EN&quot; &quot;http://www.w3.org/TR/html4/frameset.dtd&quot;&gt;</span></td>
+      </tr>
+   	  <tr>
+   	    <th valign="center"><span lang="EN-US" xml:lang="EN-US">XHTML1.0 Strict</span></td>
+   	    <td valign="center"><span lang="EN-US" xml:lang="EN-US">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot; &quot;http://www.w3.org/TR/xhtml11/DTD/xhtml1-strict.dtd&quot;&gt;</span></td>
+      </tr>
+   	  <tr>
+   	    <th valign="center"><span lang="EN-US" xml:lang="EN-US">XHTML1.0 Transitional</span></td>
+   	    <td valign="center"><span lang="EN-US" xml:lang="EN-US">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;</span></p></td>
+      </tr>
+   	  <tr>
+   	    <th valign="center"><span lang="EN-US" xml:lang="EN-US">XHTML1.0 Frameset</span></td>
+   	    <td valign="center"><span lang="EN-US" xml:lang="EN-US">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD XHTML 1.0 Frameset//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd&quot;&gt;</span></td>
+      </tr>
+         	  <tr>
+   	    <th valign="center"><span lang="EN-US" xml:lang="EN-US">XHTML1.1 </span></td>
+   	    <td valign="center"><span lang="EN-US" xml:lang="EN-US">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD XHTML 1.1//EN&quot; &quot;http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd&quot;&gt;</span></td>
+      </tr>
+   	  <tr>
+   	    <th valign="center"><span lang="EN-US" xml:lang="EN-US">HTML5</span></td>
+   	    <td valign="center"><span lang="EN-US" xml:lang="EN-US">&lt;!DOCTYPE html&gt;</span></td>
+      </tr>
+    </table>
+    <p></p>
+        ※ K-WAH4.4은 상기 표에 보인 DTD유형 외에도  유사한 DTD유형(XHTML Basic 1.0, XHTML Basic 1.1 등)을 처리할 수 있습니다. 또한 MathML 등과 같은 특수한 DTD 유형은 XML 유형에 준하여 처리됩니다. 
+<p></p>
+<font color="#FF0000">※ 주의: K-WAH4.4이후 버전에서는 이전 버전에 비하여 마크업 오류의 수가 늘어날 수 있습니다.</font> 그 이유는 K-WAH4.4 부터는 마크업 오류 진단을 DTD규격에 따라 엄밀하게 진단하기 때문입니다. 특히 웹페이지내에서 '&lt;'를 사용하였을 경우에는 오류의 수가 더 늘어날 수 있습니다. '&lt;' 기호는 웹소스에서 그대로 사용할 수 없습니다. 만일 이 기호를 사용하려면 반드시 대응하는 ESC코드인 '&	lt;'를 대신 사용해야 합니다. 
+<p></p>
+
+  <!-- end .content --></div>
+
+  <!-- end .container --></div>
+</body>
+</html>

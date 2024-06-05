@@ -5,7 +5,7 @@
 즉, 접근성, 웹 접근성, 모바일 접근성, 그리고 무인단말기 접근성 모두 기술이 모든 사람에게 도달할 수 있도록 보장하는 중요한 원칙입니다. 이러한 접근성 향상은 사용자 경험을 개선하고, 사회적 포용성을 증진시키며, 법적 요구사항을 충족시키는 데 핵심적인 역할을 하며, 이는 웹사이트, 온라인 서비스, 모바일 애플리케이션, ATM, 키오스크, 자동 티켓 발매기에 적용될 때 모든 사용자가 쉽게 이용할 수 있도록 할 수 있습니다.**
 
 ### 1.1 접근성 (Accessibility)
-<img src="../images/accessibility-circle.svg" width="40px" alt="">접근성은 모든 사용자가 제품, 서비스, 환경에 쉽게 접근하고 사용할 수 있도록 하는 특성을 말합니다. 이는 장애가 있는 사람뿐만 아니라, 노인, 어린이, 임산부 등 다양한 사용자 그룹을 포함합니다. 국제표준화 기구(ISO) 및 웹 접근성 이니셔티브(WAI)와 같은 기구들은 접근성 관련 국제표준을 제공합니다.    
+<img src="../images/a11y/a11y-circle.svg" width="40px" alt="">접근성은 모든 사용자가 제품, 서비스, 환경에 쉽게 접근하고 사용할 수 있도록 하는 특성을 말합니다. 이는 장애가 있는 사람뿐만 아니라, 노인, 어린이, 임산부 등 다양한 사용자 그룹을 포함합니다. 국제표준화 기구(ISO) 및 웹 접근성 이니셔티브(WAI)와 같은 기구들은 접근성 관련 국제표준을 제공합니다.    
 국내에서는 이러한 국제표준을 바탕으로 국내형 접근성 지침을 마련하여 적용하고 있습니다.
 
 >Accessibility essenital for some, useful for all.   
@@ -17,6 +17,11 @@
 
 >Digital accessibility is the ability of a website, mobile application or electronic document to be easily navigated and understood by a wide range of users, including those users who have visual, auditory, motor or cognitive disabilities.   
 디지털 접근성은 시각, 운동, 청각, 언어 또는 인지 장애가 있는 개인을 포함하여 광범위한 사용자가 웹사이트, 모바일 어플리케이션 또는 전자 문서를 쉽게 탐색하고 이해할 수 있는 능력
+
+<img src="../images/a11y/img-a11y01.png" alt="고령자">
+<img src="../images/a11y/img-a11y02.png" alt="시각장애">
+<img src="../images/a11y/img-a11y03.png" alt="시간제 휠체어 사용자">
+<img src="../images/a11y/img-a11y04.png" alt="췰체어 사용자">
 
 **올바른 용어를 사용하자**
 >언어 사용은 사회적 감수성과 밀접하게 연결되어 있으며, 특히 장애를 가진 사람들을 언급할 때는 더욱 신중해야 합니다. 여기서 '일반인'과 '비장애인'이라는 용어의 사용에 대해 설명드리겠습니다.

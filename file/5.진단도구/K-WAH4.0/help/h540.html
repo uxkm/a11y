@@ -1,0 +1,296 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<style type="text/css">
+<!--
+body {
+	margin: 0;
+	padding: 0;
+	color: #000;
+	font-family: "맑은 고딕", "굴림", Verdana;
+	font-size: 90%;
+	line-height: 1.4;
+	background-color: #FFF;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+
+/* ~~ Element/tag selectors ~~ */
+ul, ol, dl { /* Due to variations between browsers, it's best practices to zero padding and margin on lists. For consistency, you can either specify the amounts you want here, or on the list items (LI, DT, DD) they contain. Remember that what you do here will cascade to the .nav list unless you write a more specific selector. */
+	padding: 0;
+	margin: 0;
+}
+h1, h2, h3, h4, h5, h6, p {
+	margin-top: 0;	 /* removing the top margin gets around an issue where margins can escape from their containing div. The remaining bottom margin will hold it away from any elements that follow. */
+	padding-right: 15px;
+	padding-left: 15px; /* adding the padding to the sides of the elements within the divs, instead of the divs themselves, gets rid of any box model math. A nested div with side padding can also be used as an alternate method. */
+}
+a img { /* this selector removes the default blue border displayed in some browsers around an image when it is surrounded by a link */
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+}
+
+/* ~~ Styling for your site's links must remain in this order - including the group of selectors that create the hover effect. ~~ */
+a:link {
+	color: #003;
+	//text-decoration: underline; /* unless you style your links to look extremely unique, it's best to provide underlines for quick visual identification */
+	font-weight: bold;
+}
+a:visited {
+	color: #6E6C64;
+	//text-decoration: underline;
+}
+a:hover, a:active, a:focus { /* this group of selectors will give a keyboard navigator the same hover experience as the person using a mouse. */
+	//text-decoration: none;
+	color:#03F;
+}
+
+/* ~~this fixed width container surrounds the other divs~~ */
+.container {
+	/*width: 960px;*/
+	width: 100%;
+	background: #FFF;
+	margin: 0 auto; /* the auto value on the sides, coupled with the width, centers the layout */
+	height:auto;
+}
+
+/* ~~ the header is not given a width. It will extend the full width of your layout. It contains an image placeholder that should be replaced with your own linked logo ~~ */
+.header {
+	background: #ADB96E;
+}
+
+.footer {
+ 	background:#FFF;	
+}
+/* ~~ These are the columns for the layout. ~~ 
+
+1) Padding is only placed on the top and/or bottom of the divs. The elements within these divs have padding on their sides. This saves you from any "box model math". Keep in mind, if you add any side padding or border to the div itself, it will be added to the width you define to create the *total* width. You may also choose to remove the padding on the element in the div and place a second div within it with no width and the padding necessary for your design. You may also choose to remove the padding on the element in the div and place a second div within it with no width and the padding necessary for your design.
+
+2) No margin has been given to the columns since they are all floated. If you must add margin, avoid placing it on the side you're floating toward (for example: a right margin on a div set to float right). Many times, padding can be used instead. For divs where this rule must be broken, you should add a "display:inline" declaration to the div's rule to tame a bug where some versions of Internet Explorer double the margin.
+
+3) Since classes can be used multiple times in a document (and an element can also have multiple classes applied), the columns have been assigned class names instead of IDs. For example, two sidebar divs could be stacked if necessary. These can very easily be changed to IDs if that's your preference, as long as you'll only be using them once per document.
+
+4) If you prefer your nav on the right instead of the left, simply float these columns the opposite direction (all right instead of all left) and they'll render in reverse order. There's no need to move the divs around in the HTML source.
+
+*/
+.sidebar1 {
+	float: left;
+	width: 180px;
+	background: #EADCAE;
+	padding-bottom: 10px;
+	height:auto;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+}
+.content {
+	padding: 25px 0 0 30px;
+	width: auto;
+	/*width: 780px;*/
+	float: left;
+	position: absolute;
+	left:180px;
+	height: auto;
+	display:block;
+}
+
+/* ~~ This grouped selector gives the lists in the .content area space ~~ */
+.content ul, .content ol { 
+	padding: 0 15px 15px 40px; /* this padding mirrors the right padding in the headings and paragraph rule above. Padding was placed on the bottom for space between other elements on the lists and on the left to create the indention. These may be adjusted as you wish. */
+}
+
+/* ~~ The navigation list styles (can be removed if you choose to use a premade flyout menu like Spry) ~~ */
+ul.nav {
+	list-style: none; /* this removes the list marker */
+	/*border-top: 1px solid #666; /* this creates the button separation */
+	margin-bottom: 15px; /* this creates the space between the navigation on the content below */
+}
+ul.nav li {
+	/*border-bottom: 1px solid #666; /* this creates the button separation */
+}
+ul.nav a, ul.nav a:visited { /* grouping these selectors makes sure that your links retain their button look even after being visited */
+	display: block; /* this gives the link block properties causing it to fill the whole LI containing it. This causes the entire area to react to a mouse click. */
+	width: 160px;  /*this width makes the entire button clickable for IE6. If you don't need to support IE6, it can be removed. Calculate the proper width by subtracting the padding on this link from the width of your sidebar container. */
+	text-decoration: none;
+	background-color: #F2F2F2;
+	padding-top: 5px;
+	padding-right: 5px;
+	padding-bottom: 5px;
+	padding-left: 15px;
+	font-weight: normal;
+}
+ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background and text color for both mouse and keyboard navigators */
+	color: #00F;
+	background-color: #F2F2F2;
+	font-size: 105%;
+}
+
+/* ~~ The footer ~~ */
+.footer {
+	padding: 10px 0;
+	background: #CCC49F;
+	position: relative;/* this gives IE6 hasLayout to properly clear */
+	clear: both; /* this clear property forces the .container to understand where the columns end and contain them */
+}
+
+/* ~~ miscellaneous float/clear classes ~~ */
+.fltrt {  /* this class can be used to float an element right in your page. The floated element must precede the element it should be next to on the page. */
+	float: right;
+	margin-left: 8px;
+}
+.fltlft { /* this class can be used to float an element left in your page. The floated element must precede the element it should be next to on the page. */
+	float: left;
+	margin-right: 8px;
+}
+.clearfloat { /* this class can be placed on a <br /> or empty div as the final element following the last floated div (within the #container) if the #footer is removed or taken out of the #container */
+	clear:both;
+	height:0;
+	font-size: 1px;
+	line-height: 0px;
+}
+-->
+</style></head>
+
+<body>
+
+<div class="container">
+  <div class="header" style="background-color:#DFF"><!-- end .header -->
+  <img src='kwah4title.jpg' alt="K-WAH4.4 웹접근성 평가도구" width="838" height="117"/>
+</div>
+  <div class="sidebar1" style="background-color:#EEE">
+    <ul class="nav">
+      <li>    </li>      
+      <li>  	<a href="auto_help.html" style="font-weight:bold">K-WAH4.4 소개</a></li>
+      <li>     <a href="h200.html" style="font-weight:bold">K-WAH4.4 특징</a></li>
+      <li>    <a href="h300.html" style="font-weight:bold">K-WAH4.4 설치환경</a></li>
+        <li>    <a style="font-weight:bold">자동점검규칙</a>
+        <ol>
+       <li> <a href="h410.html">&nbsp 1. 대체텍스트 제공</a></li>
+       <li> <a href="h420.html">&nbsp 2. 제목 제공</a></li>
+       <li> <a href="h430.html">&nbsp 3. 기본언어 명시</a></li>
+       <li> <a href="h440.html">&nbsp 4. 사용자 요구에 따른<br /> &nbsp &nbsp&nbsp 새창 열기</a></li>
+       <li> <a href="h450.html">&nbsp 5. 레이블 제공</a></li>
+       <li> <a href="h460.html">&nbsp 6. 마크업 오류 방지</a></li>    
+       </ol>             
+       <li> <a href="h500.html" style="font-weight:bold">자동점검</a></li>
+       <ol>
+         <li>  <a href="h510.html">&nbsp 1. 점검 옵션 설정</a></li>
+         <li>  <a href="h520.html">&nbsp 2. 프로젝트 생성/열기</a></li>
+         <li>  <a href="h530.html">&nbsp 3. 점검 실행</a></li>
+         <li>  <a href="h540.html">&nbsp 4. 점검 결과 보기</a></li>
+         <li>  <a href="h550.html">&nbsp 5. 보고서 보기/인쇄</a></li>
+      </ol>
+      <li>  <a href="h600.html" style="font-weight:bold">파일 평가</a></li>
+         <li>  <a href="h700.html" style="font-weight:bold">배치작업</a>      </li> 
+         <ol>   
+        <li>   <a href="h710.html">&nbsp 1. 프로젝트 생성/열기</a></li>
+       <li>    <a href="h720.html">&nbsp 2. 점검 실행</a></li>
+        <li>   <a href="h730.html">&nbsp 3. 점검 결과 보기</a></li>
+        <li>   <a href="h740.html">&nbsp 4. 보고서 보기/인쇄</a></li>        
+        </ol>
+         <li> <a style="font-weight:bold">접근성 기능</a></li>
+         <ol>
+         <li> <a href="h810.html">&nbsp 1. 단축키 목록</a></li>
+         <li> <a href="h820.html">&nbsp 2. 키보드를 이용한 <br /> &nbsp &nbsp&nbsp 결과화면 탐색</a></li>
+         <li> </li>
+          
+      </ol>
+    </ul>
+    <p>&nbsp; </p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p><BR />
+      <BR />
+    </p>
+   
+  <!-- end .sidebar1 --></div>
+  <div class="content">
+  
+    <h2 style="padding:0 0 0 0px"> 점검 결과 보기 </h2><br />
+
+    <h3>점검 완료 후 점검결과 보기 </h3>
+	<ul>
+		<li>점검결과 창은 3개의 컬럼으로 구성되어 있습니다.</li>
+        <br />
+    <br />
+	
+		<div  style="padding:0 0 0 40px">
+         <img src="resultview.png" alt="점검 결과 창" width="50%">
+        </div> <br /> 
+        	
+			<p> ① URL 목록 : 웹접근성을 점검한 URL 목록을 보여줍니다. </p>
+			<p > 버튼 ⓐ를 이용하면 URL 목록의 정렬 방식을 선택할 수 있습니다. 
+              <ul>
+                <li> [지침별로 정렬] : 오류가 발견된 웹페이지 목록을 세부검사항목 및 점검규칙별로 정렬하여 보여줍니다. </li>
+                <li> [URL별로 정렬] : 점검을 수행한 모든 URL의 목록을 점검한 순서대로 정렬하여 보여줍니다.</li>
+               </ul>
+                 </p>		
+			<p> ② 오류 현황 : 웹사이트(페이지)에서 발견된 웹접근성 오류 현황을 보여 줍니다.</p>
+			<ul>
+				<li> 페이지별 오류 현황 : URL 목록에서 선택한 웹페이지에서 발견된 오류수를 세부지침별로 보여줍니다.</li>
+				<p > 버튼 ⓒ를 이용하면 전체 페이지의 오류수를 합산한 세부지침별 통계를 볼 수 있습니다. </p>
+ 
+				<li> 오류 목록 : URL 목록에서 선택한 웹페이지에서 발견된 오류의 목록을 보여줍니다.</li>
+				<ul>
+					<li> 오류종류 : 오류의 종류</li>
+					<li> 라인 : 소스코드에서 오류가 발견된 해당 라인 번호</li>
+					<li> 열 : 소스코드에서 오류가 발견된 라인의 해당 열 번호</li>				
+				</ul>
+			</ul>
+			<p> ③ 소스 보기 : URL 목록에서 선택한 웹페이지의 소스코드를 보여줍니다.</p>
+            <ul>
+			<li > 버튼 ⓓ를 이용하면 웹페이지를 보거나 감출수 있습니다.</li>	
+			<li > 버튼 ⓔ를 이용하면 웹페이지 화면을 인쇄할 수 있습니다.</li>	   
+			<li > 버튼 ⓕ를 이용하면 소스코드의 표시형식을 바꾸거나 찾기 등의 기능을 이용할 수 있습니다. </li>	
+			<li> 버튼 ⓖ를 이용하면 웹페이지 화면을 인쇄할 수 있습니다.</li>	 
+            <li> 버튼 ⓗ를 이용하면 현재 웹페이지 URL에 해당하는 웹페이지를 컴퓨터에 설치된 웹브라우저를 이용하여 렌터링 할 수 있습니다.</li>	        
+            </ul>
+            <p>
+            ※ K-WAH4.4에서는 웹 브라우저 창에 접근성 진단시에 캡쳐한 페이지 이미지를 보여줍니다. 만일 해당 URL의 현재 웹 페이지 모습을 보려면 '팝업'버튼(ⓗ)을 누릅니다. 
+            </p>
+		
+		<li> 오류목록에서 항목을 선택하면 오류가 발생한 소스코드 영역이 하이라이트 됩니다.</li><br /><br />
+        
+     </ul>
+     
+   <h3>기존 프로젝트 점검결과 보기 </h3>
+ <ul>
+      <li> 이전에 자동 점검을 수행한 프로젝트를 열어 점검결과를 재확인할 수 있습니다. 다음 중 한 가지 방법으로 점검결과를 열 수 있습니다.</li><br /> 
+    <ul>
+     <li> 메뉴의 [파일]-[새로만들기]-[프로젝트]를 선택</li>
+     <li> 시작페이지의 최근점검한 프로젝트에서 [프로젝트]-[점검결과 열기]를 선택</li>   
+     <li> Alt+F → O → P</li>   
+    </ul>
+		<li>[프로젝트 선택] 창이 열립니다.</li><br />
+		<div  style="padding:0 0 0 40px">
+			<img src="selectproject.bmp" alt="프로젝트 선택 창">
+		</div> <br />
+		<li>프로젝트 이름을 선택하고 [열기] 버튼을 누르면 점검결과 창이 열립니다.</li><br />
+        
+	<!-- end .content -->
+</body>
+</html>

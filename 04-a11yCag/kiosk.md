@@ -103,7 +103,8 @@
 * **컨트롤(control)**
 * **픽토그램(pictogram)**
 * **휴대전화 본인 인증**
-* **RF 매체**
+* **RF(near field communication) 매체**   
+  - 무선주파수를 이용하여 근접 거리에서 데이터를 교신하는 방식으로 인증이 이루어지는 비접촉성 매체   
 
 
 
@@ -148,3 +149,4 @@ Priority 2.
 - [무인정보단발기 UI플랫폼 - 무인정보단말기 접근성 지침](https://www.kioskui.or.kr/index.do?menu_id=00000985){: target="_blank"}   
 - [무인정보단말기(키오스크, 스마트자판기 등) 접근성 지침](https://standard.go.kr/KSCI/standardIntro/getStandardSearchView.do?menu19&topMenuId=502&upperMenuId=503&ksNo=KSX9211&tmprKsNo=KS_X_NEW_2015_1845&reformNo=01){: target="_blank"}   
 - [Guidelines for Public Access Terminals Accessibility - Printable Version](https://mada.org.qa/wp-content/uploads/2020/01/Ireland-Guidelines-for-Public-Access-Terminals-Accessibility.pdf){: target="_blank"}   
+- [산업통상자원부 국가기술표준원 e-나라표준인증 기계가독화 표준 원문 데이터](https://standard.go.kr){: target="_blank"}   
