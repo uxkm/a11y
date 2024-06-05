@@ -1,5 +1,6 @@
 ## 접근성 목차
 > 순번이 없는 메뉴는 콘텐츠의 탭 형식으로 구현
+> 무인정보단말기 접근성 가이드라인은 분리 탭으로 구성. 한페이지에 담기에는 내용이 길어짐 
 
 ### 1. [접근성이란?](01-a11yStart/start.md)  
 ### 2. [장애인차별금지법 관련 지침](02-a11yGuideline/guideline.md)  
@@ -9,6 +10,10 @@
 - #### 4.2. [한국형 웹 콘텐츠 접근성](04-a11yCag/kwcag.md)    
 - #### 4.3. [모바일 앱 접근성](04-a11yCag/macag.md)   
 - #### 4.4. [무인정보단말기 접근성 - 작업 중](04-a11yCag/kiosk.md)   
+  * ##### [설계 원칙](05-a11yCagGuide/kiosk/kiosk.md)  
+  * ##### [주변 환경](05-a11yCagGuide/kiosk/kiosk02.md)  
+  * ##### [요구사항](05-a11yCagGuide/kiosk/kiosk03.md)  
+  * ##### [개인정보/지원 서비스](05-a11yCagGuide/kiosk/kiosk04.md)  
 
 ### 5. [접근성 항목별 준수 가이드](05-a11yCagGuide/kwcag/perceivable.md)   
 - #### 5.1. [웹 콘텐츠 접근성](05-a11yCagGuid/kwcag/perceivable.md)   
