@@ -310,8 +310,10 @@
 음성 안내 설계 가이드에 따라 무인주문기 음성 안내의 각 화면의 음성 안내를 작성한 예시이다.    
 이를 참고하여 음성 안내를 설계할 수 있다.   
 
-<div style="text-align:center">
-   <video controls=""><source src="https://www.kioskui.or.kr/cmsh/kioskui.or.kr/file/order_voice.mp4" type="video/mp4"></video>
+<div style="width:100%;text-align:center">
+   <video controls="" style="width:100%;">
+      <source src="https://www.kioskui.or.kr/cmsh/kioskui.or.kr/file/order_voice.mp4" type="video/mp4">
+   </video>
    <p>무인주문기 음성 안내 예시 출처 - 무인정보단말기 UI 플랫폼</p>
    <p>https://www.kioskui.or.kr/index.do?menu_id=00001089</p>
 </div>
