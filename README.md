@@ -1,6 +1,4 @@
 ## 접근성 목차
-> 순번이 없는 메뉴는 콘텐츠의 탭 형식으로 구현
-> 무인정보단말기 접근성 가이드라인은 분리 탭으로 구성. 한페이지에 담기에는 내용이 길어짐 
 
 ### 1. [접근성이란?](01-a11yStart/start.md)  
 ### 2. [장애인차별금지법 관련 지침](02-a11yGuideline/guideline.md)  
@@ -9,7 +7,7 @@
 - #### 4.1. [웹 콘텐츠 접근성](04-a11yCag/wcag.md)   
 - #### 4.2. [한국형 웹 콘텐츠 접근성](04-a11yCag/kwcag.md)    
 - #### 4.3. [모바일 앱 접근성](04-a11yCag/macag.md)   
-- #### 4.4. [무인정보단말기 접근성 - 작업 중](04-a11yCag/kiosk.md)   
+- #### 4.4. [무인정보단말기 접근성](04-a11yCag/kiosk.md)   
   * ##### [설계 원칙](04-a11yCag/kiosk.md)  
   * ##### [주변 환경](04-a11yCag/kiosk02.md)  
   * ##### [요구사항](04-a11yCag/kiosk03.md)  
@@ -31,13 +29,13 @@
 - #### 5.3. [무인정보단말기 접근성](05-a11yCagGuide/kiosk/kiosk.md)   
 
 ### 6. [접근성 체크리스트](06-a11yCheck/web.md)   
-- #### 6.1. [웹 콘텐츠 접근성트 - 작업 중](06-a11yCheck/wcag.md)   
-- #### 6.2. [모바일 앱 접근성트 - 작업 중](06-a11yCheck/macag.md)   
+- #### 6.1. [웹 콘텐츠 접근성 - 작업 중](06-a11yCheck/wcag.md)   
+- #### 6.2. [모바일 앱 접근성 - 작업 중](06-a11yCheck/macag.md)   
 - #### 6.3. [무인정보단말기 접근성](06-a11yCheck/kiosk.md)   
 
 ### 7. [접근성 콘텐츠 제작 기법](07-a11yDevelop/wcag.md)   
-- #### 7.1. [웹 콘텐츠 접근성트 - 작업 중](07-a11yDevelop/wcag.md)   
-- #### 7.2. [모바일 앱 접근성트 - 작업 중](07-a11yDevelop/macag.md)   
+- #### 7.1. [웹 콘텐츠 접근성 - 작업 중](07-a11yDevelop/wcag.md)   
+- #### 7.2. [모바일 앱 접근성 - 작업 중](07-a11yDevelop/macag.md)   
 - #### 7.3. [무인정보단말기 접근성](07-a11yDevelop/kiosk.md)  
 
 ### 8. [WAI-ARIA - 작업 중](08-a11yWaiAria/wai-aria.md)  
