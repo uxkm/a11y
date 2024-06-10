@@ -9,8 +9,43 @@
 ### 5. 인식의 용이성 (Perceivable)
 
 #### 5.1.1. (적절한 대체 텍스트 제공) 텍스트 아닌 콘텐츠는 그 의미나 용도를 인식할 수 있도록 대체 텍스트를 제공해야 한다.
+> 모든 이미지에는 대체 텍스트를 제공하여야 합니다. 이는 시각 장애인 사용자가 스크린 리더를 통해 이미지의 내용을 이해할 수 있도록 도와줍니다.   
+WCAG 2.1 Guidelines : [WCAG Text Alternatives](https://www.w3.org/WAI/WCAG21/quickref/#text-alternatives){: target="_blank"}   
+
+<figure aria-hidden="true" style="text-align:center">
+   <img src="https://uxkm.io/_assets/images/created_by02_gray.jpg" alt="마이크 앞에서 노래를 부르는 소년">
+   <figcaption>이미지 출처 : uxkm.io</figcaption>
+</figure>
+
+``````````
+예시)   
+<img src="created_by02_gray.jpg" alt="마이크 앞에서 노래를 부르는 소년">
+``````````
+**검수 방법**
+- 이미지가 적절한 대체 텍스트를 포함하고 있는지 확인합니다.   
+- 스크린 리더로 테스트하여 텍스트가 올바르게 읽히는지 확인합니다.   
 
 #### 5.2.1. (자막 제공) 멀티미디어 콘텐츠에는 자막, 대본 또는 수어를 제공해야 한다.
+> 동영상 및 오디오 콘텐츠에는 자막, 대체 텍스트, 오디오 설명 등을 제공해야 합니다.   
+WCAG 2.1 Guidelines : [WCAG Time-based Media](https://www.w3.org/WAI/WCAG21/quickref/#time-based-media){: target="_blank"}   
+
+<video src="https://www.w3.org/WAI/content-assets/wcag-act-rules/test-assets/perspective-video/perspective-video.mp4" controls style="width:100%">
+    <track src="https://www.w3.org/WAI/content-assets/wcag-act-rules/test-assets/perspective-video/perspective-caption.vtt" kind="captions" />
+</video>
+
+``````````
+예시 1)
+캡션이 있는 비디오.
+<video src="/test-assets/perspective-video/perspective-video-with-captions.mp4" controls></video>
+예시 2)
+캡션을 포함 track 요소가 연결되어 있는 비디오.   
+<video src="/test-assets/perspective-video/perspective-video.mp4" controls>
+    <track src="/test-assets/perspective-video/perspective-caption.vtt" kind="captions" />
+</video>
+``````````
+**검수 방법**
+- 비디오 플레이어에서 자막이 정상적으로 표시되는지 확인합니다.    
+- 오디오 설명이 포함된 경우 이를 확인합니다.   
 
 #### 5.3.1. (표의 구성) 표는 이해하기 쉽게 구성해야 한다.
 
@@ -91,6 +126,7 @@
 - [W3C Web Content Accessibility Guidelines (WCAG) 2.2](https://www.w3.org/TR/WCAG22/){: target="_blank"}
 - [W3C WCAG2 ko](https://www.w3.org/WAI/standards-guidelines/ko#wcag2){: target="_blank"}
 - [W3C Accessibility Guidelines Working Group](https://www.w3.org/WAI/GL/){: target="_blank"}
+- [W3C Techniques for WCAG 2.1](https://www.w3.org/WAI/WCAG21/Techniques/){: target="_blank"}
 - [W3C W3C 접근성의 4가지 원칙](https://www.w3.org/TR/UNDERSTANDING-WCAG20/intro.html#introduction-fourprincs-head){: target="_blank"}
 - [MDN 웹 컨텐츠 접근성 지침 이해하기](https://developer.mozilla.org/ko/docs/Web/Accessibility/Understanding_WCAG){: target="_blank"}
 - [MDN 접근성이란?](https://developer.mozilla.org/ko/docs/Learn/Accessibility/What_is_accessibility#accessibility_guidelines_and_the_law){: target="_blank"}
@@ -100,7 +136,6 @@
 - [WAI 문서로 접근성 이해하기](https://iyu88.github.io//a11y/2023/12/24/web-accessibility-1.html){: target="_blank"}
 - [deque blog WCAG 2.1](https://www.deque.com/blog/wcag-2-1-what-is-next-for-accessibility-guidelines/){: target="_blank"}
 - [웹접근성 국가표준 개정 소개](https://seculayerlab.tistory.com/m/48){: target="_blank"}
-
 - [한국형 웹 콘텐츠 접근성 지침 2.2](https://www.samsungfashion.com/webacc.do){: target="_blank"}
 - [AOA GITBOOK](https://aoa.gitbook.io/skymimo/undefined){: target="_blank"}
 
