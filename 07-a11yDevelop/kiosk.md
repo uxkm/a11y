@@ -340,22 +340,198 @@
 
 **점자 표시 규격**   
 - **한국 점자 규격을 준수하여 점자 표시를 해야 한다.**   
+   * 무인정보단말기에 표시되는 점자는 가독성이 높도록 점자 규격을 준용해야 하며, 점자 표시는 반구형으로 제작하는 것을 원칙으로 한다. 평평하고 각진 부식형의 경우 손빔, 이질적 촉지감, 가독성 등 이유로 사용을 금하도록 한다.   
+   * 「점자법」제10조(점자규정 등의 제정 및 개정)에 따라 한국 점자 규정(문화체육관광부고시)에서 점자 표시 방법을 규정하고 있다. 무인정보단말기의 점자 표시는 해당 고시를 따라 기재하는 것을 기본 원칙으로 한다. 제작된 무인정보단말기의 점자 표시는 점역 교정사의 검수를 받아 실제 인식 정확도 확인 작업을 거쳐야 한다. (※ 점자 표기 방법은 한국 점자 규정[문화체육관광부고시 제2020-38호(2020.9.10.)]에 따르는 것을 기본 원칙)   
+<figure style="text-align:center">
+    <img src="https://www.kioskui.or.kr/cmsh/kioskui.or.kr/images/content/img_braille02_1.jpg" alt="반구형 점자 예시이미지">  
+    <figcaption>[이미지 출처] 무인정보단말기 UI 플랫폼 - 반구형 점자</figcaption>
+</figure>
+
 - **점자의 세부규격**   
+  * 점 높이: 반구형 점의 중심정에서 밑면까지의 거리.    
+  **0.6mm ~ 0.9mm**   
+  * 점 지름: 반구형 점의 밑면 중심을 지나 점의 둘레와 만나는 직선거리   
+  **1.5mm ~ 1.6mm**   
+  * 점간 거리: 점칸 내 한 점의 중심점에서 인접한 다른 점의 중심점까지의 거리   
+  **2.3mm ~ 2.5mm**   
+  * 자간 거리: 수평으로 나열된 두 점칸에서 같은 점 번호에 해당하는 두 점의 중심점 사이의 거리   
+  **5.5mm ~ 6.9mm(종이, 스티커)**   
+  **5.5mm ~ 7.3mm(PVC)**   
+  **5.5mm ~ 7.6mm(알루미늄, 스테인리스)**   
+  **기타 재질 : 위의 규격을 준용**   
+  * 줄간 거리: 수직으로 나열된 두 점칸에서 같은 점 번호에 해당하는 두 점의 중심점 사이의 거리    
+  **10.0mm 이상**   
+<figure style="text-align:center">
+    <img src="https://www.kioskui.or.kr/cmsh/kioskui.or.kr/images/content/img_braille03.jpg" alt="점자 규격 예시이미지">  
+    <figcaption>[이미지 출처] 무인정보단말기 UI 플랫폼 - 점자 규격(단위:mm)</figcaption>
+</figure>
 
 **점자 표시 위치**   
 - **점자 표시 위치를 되도록 일관되게 제공해야 한다.**   
+시각장애인이 무인정보단말기에 부착된 장치를 쉽게 구별하기 위해서는 장치마다 일관된 위치에 점자를 표시하는 것이 중요하다. 결제 단말기, 바코드 스캐너 등과 같이 돌출된 때도 있으므로 가급적 개별 장치 윗면에 표시할 것을 권장한다. 일반 활자와 겹쳐서 표시하지 않는 것을 원칙으로 한다. 또한, 점자 외 디자인 목적의 표시 등이 손가락으로 점자를 인지하는 데 어려움이 없도록 한다. 점자 표시의 일관된 위치를 제공해 명확한 장치 식별이 가능해야 오사용에 따른 피해를 방지할 수 있다.   
 - **점자 표시 방향을 준수해야 한다.**   
-
+무인정보단말기를 설계하고 제조하는 사람은 시각장애인이 아니기에 점자 내용을 모를 수 있다. 예시처럼 같은 내용이 뒤집어 부착된다면, 시각장애인은 촉지를 통해 점자 내용을 알 수 없게 된다. 반드시 점자 내용을 확인해 부착 방향을 준수하여 제공해야 한다. 설계 및 제조 과정에서 점역 교정사에게 검수받는 것을 권장한다.   
+<figure style="text-align:center">
+    <img src="https://www.kioskui.or.kr/cmsh/kioskui.or.kr/images/content/img_braille05_1.jpg" alt="방향 준수 예시이미지">  
+    <figcaption>[이미지 출처] 무인정보단말기 UI 플랫폼 - 방향 준수 예시</figcaption>
+</figure>
 
 **점자 표시 제작**   
 - **점자 표시는 알루미늄, 스테인리스처럼 내구성과 내마모성이 우수한 재질을 사용해야 한다.**   
+재질은 내마모성 및 내구성이 좋은 재질로 하며, 이질감과 손빔을 방지할 수 있는 재질을 사용하도록 한다. 또한, 온도의 변화에 쉽게 영향을 받지 않으며 청결을 유지할 수 있어야 한다.   
+**재질 특성**
+   * 폴리카보네이트 : 뛰어난 내충격성과 내후성, 시공성 우수, 내열성이 높고 저온 특수성이 우수하고(-40℃∼135℃), 흡수성이 적으며 자기 소화성이 아주 좋다. 무독성이며 물, 약산에 아주 좋다.   
+   * 알루미늄, 스테인리스 : 뛰어난 내충격성과 내후성, 시공성 우수하며 반영구적, 흡수성이 없다.   
+   * 투명테이프(다이모, 모텍스 등) : 보존적으로 약하므로 사용을 금한다. 부득이하게 사용하게 될 때는 임시 방편용으로만 사용하도록 한다.   
 - **표시된 점자의 유지 및 보수에 신경 써야 한다.**   
+무인정보단말기의 부착된 장치의 위치나 내용이 변경되었을 경우 점자 표시의 내용도 즉각 수정해야 한다. 사용 중인 무인정보단말기의 점자 표시의 점자가 일부 소실되거나 마모되어 인지하기 힘든 경우 즉시 새것으로 교체해야 한다. 점자는 시각장애인이 촉지를 통해 인지하므로 점자 표시의 표면은 정기적으로 청소하여 청결하게 유지해야 한다.   
 
 
 **점자 표시 항목 및 내용**   
 - **정확하고 통일된 내용을 점자 표시에 사용해야 한다.**   
 무인정보단말기의 부착된 모든 개별 장치에 점자 표시를 해야 하며, 정확하고 통일된 내용을 점자 표시에 사용해야 한다.   
 
+**점자 표시 문구 예시**
+<figure style="text-align:center">
+    <img src="https://www.kioskui.or.kr/cmsh/kioskui.or.kr/images/content/img_braille06_1.jpg" alt="신용카드 점자표시 예시이미지">  
+    <figcaption>[이미지 출처] 무인정보단말기 UI 플랫폼 - 신용카드 점자표시</figcaption>
+</figure>
+<figure style="text-align:center">
+    <img src="https://www.kioskui.or.kr/cmsh/kioskui.or.kr/images/content/img_braille06_2.jpg" alt="신용카드 넣는 곳 예시이미지">  
+    <figcaption>[이미지 출처] 무인정보단말기 UI 플랫폼 - 신용카드 넣는 곳 점자표시</figcaption>
+</figure>
+<figure style="text-align:center">
+    <img src="https://www.kioskui.or.kr/cmsh/kioskui.or.kr/images/content/img_braille06_3.jpg" alt="카드 넣는 곳 예시이미지">  
+    <figcaption>[이미지 출처] 무인정보단말기 UI 플랫폼 - 카드 넣는 곳 점자표시</figcaption>
+</figure>
+<figure style="text-align:center">
+    <img src="https://www.kioskui.or.kr/cmsh/kioskui.or.kr/images/content/img_braille06_4.jpg" alt="결제 단말기 예시이미지">  
+    <figcaption>[이미지 출처] 무인정보단말기 UI 플랫폼 - 결제 단말기 점자표시</figcaption>
+</figure>
+<figure style="text-align:center">
+    <img src="https://www.kioskui.or.kr/cmsh/kioskui.or.kr/images/content/img_braille06_5.jpg" alt="바코드 점자표시 예시이미지">  
+    <figcaption>[이미지 출처] 무인정보단말기 UI 플랫폼 - 바코드 점자표시</figcaption>
+</figure>
+<figure style="text-align:center">
+    <img src="https://www.kioskui.or.kr/cmsh/kioskui.or.kr/images/content/img_braille06_6.jpg" alt="바코드 스캐너 점자표시 예시이미지">  
+    <figcaption>[이미지 출처] 무인정보단말기 UI 플랫폼 - 바코드 스캐너 점자표시</figcaption>
+</figure>
+<figure style="text-align:center">
+    <img src="https://www.kioskui.or.kr/cmsh/kioskui.or.kr/images/content/img_braille06_7.jpg" alt="바코드 대는 곳 점자표시 예시이미지">  
+    <figcaption>[이미지 출처] 무인정보단말기 UI 플랫폼 - 바코드 대는 곳 점자표시</figcaption>
+</figure>
+<figure style="text-align:center">
+    <img src="https://www.kioskui.or.kr/cmsh/kioskui.or.kr/images/content/img_braille07_1.jpg" alt="영수증 점자표시 예시이미지">  
+    <figcaption>[이미지 출처] 무인정보단말기 UI 플랫폼 - 영수증 점자표시</figcaption>
+</figure>
+<figure style="text-align:center">
+    <img src="https://www.kioskui.or.kr/cmsh/kioskui.or.kr/images/content/img_braille07_2.jpg" alt="영수증 나오는 곳 점자표시 예시이미지">  
+    <figcaption>[이미지 출처] 무인정보단말기 UI 플랫폼 - 영수증 나오는 곳 점자표시</figcaption>
+</figure>
+<figure style="text-align:center">
+    <img src="https://www.kioskui.or.kr/cmsh/kioskui.or.kr/images/content/img_braille07_3.jpg" alt="용지 나오는 곳 점자표시 예시이미지">  
+    <figcaption>[이미지 출처] 무인정보단말기 UI 플랫폼 - 용지 나오는 곳 점자표시</figcaption>
+</figure>
+<figure style="text-align:center">
+    <img src="https://www.kioskui.or.kr/cmsh/kioskui.or.kr/images/content/img_braille07_4.jpg" alt="출력물 나오는 곳 점자표시 예시이미지">  
+    <figcaption>[이미지 출처] 무인정보단말기 UI 플랫폼 - 출력물 나오는 곳 점자표시</figcaption>
+</figure>
+<figure style="text-align:center">
+    <img src="https://www.kioskui.or.kr/cmsh/kioskui.or.kr/images/content/img_braille07_5.jpg" alt="티켓 나오는 곳 점자표시 예시이미지">  
+    <figcaption>[이미지 출처] 무인정보단말기 UI 플랫폼 - 티켓 나오는 곳 점자표시</figcaption>
+</figure>
+<figure style="text-align:center">
+    <img src="https://www.kioskui.or.kr/cmsh/kioskui.or.kr/images/content/img_braille07_6.jpg" alt="발권 내역 나오는 곳 점자표시 예시이미지">  
+    <figcaption>[이미지 출처] 무인정보단말기 UI 플랫폼 - 발권 내역 나오는 곳 점자표시</figcaption>
+</figure>
+<figure style="text-align:center">
+    <img src="https://www.kioskui.or.kr/cmsh/kioskui.or.kr/images/content/img_braille07_7.jpg" alt="증명서 나오는 곳 점자표시 예시이미지">  
+    <figcaption>[이미지 출처] 무인정보단말기 UI 플랫폼 - 증명서 나오는 곳 점자표시</figcaption>
+</figure>
+<figure style="text-align:center">
+    <img src="https://www.kioskui.or.kr/cmsh/kioskui.or.kr/images/content/img_braille08_1.jpg" alt="음성안내 점자표시 예시이미지">  
+    <figcaption>[이미지 출처] 무인정보단말기 UI 플랫폼 - 음성안내 점자표시</figcaption>
+</figure>
+<figure style="text-align:center">
+    <img src="https://www.kioskui.or.kr/cmsh/kioskui.or.kr/images/content/img_braille08_2.jpg" alt="음성 안내 시작 점자표시 예시이미지">  
+    <figcaption>[이미지 출처] 무인정보단말기 UI 플랫폼 - 음성 안내 시작 점자표시</figcaption>
+</figure>
+<figure style="text-align:center">
+    <img src="https://www.kioskui.or.kr/cmsh/kioskui.or.kr/images/content/img_braille08_3.jpg" alt="이어폰 점자표시 예시이미지">  
+    <figcaption>[이미지 출처] 무인정보단말기 UI 플랫폼 - 이어폰 점자표시</figcaption>
+</figure>
+<figure style="text-align:center">
+    <img src="https://www.kioskui.or.kr/cmsh/kioskui.or.kr/images/content/img_braille08_4.jpg" alt="이어폰 연결 점자표시 예시이미지">  
+    <figcaption>[이미지 출처] 무인정보단말기 UI 플랫폼 - 이어폰 연결 점자표시</figcaption>
+</figure>
+<figure style="text-align:center">
+    <img src="https://www.kioskui.or.kr/cmsh/kioskui.or.kr/images/content/img_braille08_5.jpg" alt="볼륨 조절 점자표시 예시이미지">  
+    <figcaption>[이미지 출처] 무인정보단말기 UI 플랫폼 - 볼륨 조절 점자표시</figcaption>
+</figure>
+<figure style="text-align:center">
+    <img src="https://www.kioskui.or.kr/cmsh/kioskui.or.kr/images/content/img_braille08_6.jpg" alt="음성 안내 볼륨 조절 점자표시 예시이미지">  
+    <figcaption>[이미지 출처] 무인정보단말기 UI 플랫폼 - 음성 안내 볼륨 조절 점자표시</figcaption>
+</figure>
+<figure style="text-align:center">
+    <img src="https://www.kioskui.or.kr/cmsh/kioskui.or.kr/images/content/img_braille08_7.jpg" alt="키패드 점자표시 예시이미지">  
+    <figcaption>[이미지 출처] 무인정보단말기 UI 플랫폼 - 키패드 조절 점자표시</figcaption>
+</figure>
+<figure style="text-align:center">
+    <img src="https://www.kioskui.or.kr/cmsh/kioskui.or.kr/images/content/img_braille08_8.jpg" alt="숫자 키패드 예시이미지">  
+    <figcaption>[이미지 출처] 무인정보단말기 UI 플랫폼 - 숫자 키패드 점자표시</figcaption>
+</figure>
+<figure style="text-align:center">
+    <img src="https://www.kioskui.or.kr/cmsh/kioskui.or.kr/images/content/img_braille06_1.jpg" alt="방향 키패드 예시이미지">  
+    <figcaption>[이미지 출처] 무인정보단말기 UI 플랫폼 - 방향 키패드 점자표시</figcaption>
+</figure>
+<figure style="text-align:center">
+    <img src="https://www.kioskui.or.kr/cmsh/kioskui.or.kr/images/content/img_braille09_2.jpg" alt="시각장애인 전용 키패드 예시이미지">  
+    <figcaption>[이미지 출처] 무인정보단말기 UI 플랫폼 - 시각장애인 전용 키패드 점자표시</figcaption>
+</figure>
+<figure style="text-align:center">
+    <img src="https://www.kioskui.or.kr/cmsh/kioskui.or.kr/images/content/img_braille09_3.jpg" alt="점자 디스플레이 예시이미지">  
+    <figcaption>[이미지 출처] 무인정보단말기 UI 플랫폼 - 점자 디스플레이 점자표시</figcaption>
+</figure>
+<figure style="text-align:center">
+    <img src="https://www.kioskui.or.kr/cmsh/kioskui.or.kr/images/content/img_braille09_4.jpg" alt="디스플레이 예시이미지">  
+    <figcaption>[이미지 출처] 무인정보단말기 UI 플랫폼 - 디스플레이 점자표시</figcaption>
+</figure>
+<figure style="text-align:center">
+    <img src="https://www.kioskui.or.kr/cmsh/kioskui.or.kr/images/content/img_braille09_5.jpg" alt="신분증 올려놓는 곳 예시이미지">  
+    <figcaption>[이미지 출처] 무인정보단말기 UI 플랫폼 - 신분증 올려놓는 곳 점자표시</figcaption>
+</figure>
+<figure style="text-align:center">
+    <img src="https://www.kioskui.or.kr/cmsh/kioskui.or.kr/images/content/img_braille09_6.jpg" alt="지폐 넣는 곳 예시이미지">  
+    <figcaption>[이미지 출처] 무인정보단말기 UI 플랫폼 - 지폐 넣는 곳 점자표시</figcaption>
+</figure>
+<figure style="text-align:center">
+    <img src="https://www.kioskui.or.kr/cmsh/kioskui.or.kr/images/content/img_braille09_7.jpg" alt="지폐 나오는 곳 예시이미지">  
+    <figcaption>[이미지 출처] 무인정보단말기 UI 플랫폼 - 지폐 나오는 곳 점자표시</figcaption>
+</figure>
+<figure style="text-align:center">
+    <img src="https://www.kioskui.or.kr/cmsh/kioskui.or.kr/images/content/img_braille10_1.jpg" alt="동전 넣는 곳 예시이미지">  
+    <figcaption>[이미지 출처] 무인정보단말기 UI 플랫폼 - 동전 넣는 곳 점자표시</figcaption>
+</figure>
+<figure style="text-align:center">
+    <img src="https://www.kioskui.or.kr/cmsh/kioskui.or.kr/images/content/img_braille10_2.jpg" alt="지문인식기 예시이미지">  
+    <figcaption>[이미지 출처] 무인정보단말기 UI 플랫폼 - 지문인식기 점자표시</figcaption>
+</figure>
+<figure style="text-align:center">
+    <img src="https://www.kioskui.or.kr/cmsh/kioskui.or.kr/images/content/img_braille10_3.jpg" alt="장정맥인식기 예시이미지">  
+    <figcaption>[이미지 출처] 무인정보단말기 UI 플랫폼 - 장정맥인식기 점자표시</figcaption>
+</figure>
+<figure style="text-align:center">
+    <img src="https://www.kioskui.or.kr/cmsh/kioskui.or.kr/images/content/img_braille10_4.jpg" alt="지정맥인식기 예시이미지">  
+    <figcaption>[이미지 출처] 무인정보단말기 UI 플랫폼 - 지정맥인식기 점자표시</figcaption>
+</figure>
+<figure style="text-align:center">
+    <img src="https://www.kioskui.or.kr/cmsh/kioskui.or.kr/images/content/img_braille10_5.jpg" alt="바이오 인증하는 곳 예시이미지">  
+    <figcaption>[이미지 출처] 무인정보단말기 UI 플랫폼 - 바이오 인증하는 곳 점자표시</figcaption>
+</figure>
+<figure style="text-align:center">
+    <img src="https://www.kioskui.or.kr/cmsh/kioskui.or.kr/images/content/img_braille10_6.jpg" alt="직원 호출 예시이미지">  
+    <figcaption>[이미지 출처] 무인정보단말기 UI 플랫폼 - 직원 호출 점자표시</figcaption>
+</figure>
 
 ##### 3. 청각장애인 (수어 안내)   
 > **수어 안내를 제공해야 한다.**   
