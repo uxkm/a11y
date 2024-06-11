@@ -1,9 +1,252 @@
 ## 6. 접근성 체크리스트
 
 ### 무인정보단말기 접근성
-> **무인정보단말기**는 유형과 용도에 관계없이 "기본" 접근성 평가는 반드시 이루어져야 하며, "기본" 이외의 항목은 해당 사항이 있는 경우만 실시한다.   
+> 무인정보단말기 접근성은 누구에게나 동등한 기회 제공을 위해 키오스크 접근성 준수 필요하며,   
+키오스크 접근성 보장은 법률에 명시된 의무사항입니다.   
+**무인정보단말기**는 유형과 용도에 관계없이 "기본" 접근성 평가는 반드시 이루어져야 하며, "기본" 이외의 항목은 해당 사항이 있는 경우만 실시한다.   
 무인정보단말기(키오스크)의 접근성에 대해 정리할 때, 웹 접근성과 모바일 앱 접근성 지침 기준을 참고할 수 있습니다. 한국의 웹 접근성 관련 지침은 주로 WCAG(Web Content Accessibility Guidelines)를 바탕으로 하고 있으며, 모바일 접근성 지침도 이와 유사한 원칙을 따릅니다.    
 아래 제공되는 정보는 무인정보단말기 정보접근성 검증기준 문서에 따릅니다.
+
+
+#### 휠체어 사용자를 위한 접근성 항목
+##### 01. 접근방법
+- 단단한 바닥 / 바닥면 높이 차이   
+
+<figure aria-hidden="true" style="text-align:center">
+   <img src="./../images/kiosk/01.kiosk-checklist-1-1.jpg" alt="단단한 바닥 / 바닥면 높이 차이 예시">
+   <figcaption>이미지 출처 : 무인정보단말기(키오스크) 정보접근성 홍보 리플랫 PDF</figcaption>
+</figure>
+
+- 활동 공간 (전면 개방, 부스 내 설치)   
+
+<figure aria-hidden="true" style="text-align:center">
+   <img src="./../images/kiosk/01.kiosk-checklist-1-2.jpg" alt="활동 공간 (전면 개방, 부스 내 설치) 예시">
+   <figcaption>이미지 출처 : 무인정보단말기(키오스크) 정보접근성 홍보 리플랫 PDF</figcaption>
+</figure>
+
+
+##### 02. 무릎공간 / 발공간
+
+<figure aria-hidden="true" style="text-align:center">
+   <img src="./../images/kiosk/01.kiosk-checklist-2-1.jpg" alt="무릎공간 / 발공간 예시">
+   <figcaption>이미지 출처 : 무인정보단말기(키오스크) 정보접근성 홍보 리플랫 PDF</figcaption>
+</figure>
+
+##### 03. 눈부심과 얼비침 방지
+
+<figure aria-hidden="true" style="text-align:center">
+   <img src="./../images/kiosk/01.kiosk-checklist-3-1.jpg" alt="눈부심과 얼비침 방지 예시">
+   <figcaption>이미지 출처 : 무인정보단말기(키오스크) 정보접근성 홍보 리플랫 PDF</figcaption>
+</figure>
+
+##### 04. 사용자컨트롤 위치
+
+<figure aria-hidden="true" style="text-align:center">
+   <img src="./../images/kiosk/01.kiosk-checklist-4-1.jpg" alt="사용자컨트롤 위치 예시">
+   <figcaption>이미지 출처 : 무인정보단말기(키오스크) 정보접근성 홍보 리플랫 PDF</figcaption>
+</figure>
+
+##### 05. 용이한 인식
+
+<figure aria-hidden="true" style="text-align:center">
+   <img src="./../images/kiosk/01.kiosk-checklist-5-1.jpg" alt="용이한 인식 예시">
+   <img src="./../images/kiosk/01.kiosk-checklist-5-2.jpg" alt="기준 눈높이 디스플레이 제공 예시">
+   <figcaption>이미지 출처 : 무인정보단말기(키오스크) 정보접근성 홍보 리플랫 PDF</figcaption>
+</figure>
+
+
+#### 시각장애인(전맹)을 위한 접근성 항목
+##### 01. 레이블 제공
+
+<figure aria-hidden="true" style="text-align:center">
+   <img src="./../images/kiosk/02.kiosk-checklist-1-1.jpg" alt="시각 레이블 텍스트&아이콘 예시">
+   <img src="./../images/kiosk/02.kiosk-checklist-1-2.jpg" alt="비시각 레이블 점자 예시">
+   <figcaption>이미지 출처 : 무인정보단말기(키오스크) 정보접근성 홍보 리플랫 PDF</figcaption>
+</figure>
+
+##### 02. 키보드 및 키패드
+
+<figure aria-hidden="true" style="text-align:center">
+   <img src="./../images/kiosk/02.kiosk-checklist-2-1.jpg" alt="키보드 및 키패드 예시">
+   <img src="./../images/kiosk/02.kiosk-checklist-2-2.jpg" alt="키보드 등의 부착 예시">
+   <img src="./../images/kiosk/02.kiosk-checklist-2-3.jpg" alt="키보드의 촉각 레이블 예시">
+   <figcaption>이미지 출처 : 무인정보단말기(키오스크) 정보접근성 홍보 리플랫 PDF</figcaption>
+</figure>
+
+##### 03. 대체 콘텐츠 제공
+
+<figure aria-hidden="true" style="text-align:center">
+   <img src="./../images/kiosk/02.kiosk-checklist-3-1.jpg" alt="대체 콘텐츠 제공 예시">
+   <img src="./../images/kiosk/02.kiosk-checklist-3-2.jpg" alt="대체 콘텐츠 제공 예시">
+   <figcaption>이미지 출처 : 무인정보단말기(키오스크) 정보접근성 홍보 리플랫 PDF</figcaption>
+</figure>
+
+##### 04. 음성 출력 제공
+> 단말기 전면에 이어폰 단자와 음량 조절 버튼 제공 필요   
+
+- **1. 음량 보장**   
+스피커 음량은 65dBA 이하로 조절 가능 : 오픈된 장소에서도 인지 가능성   
+- **2. 음량 초기화**   
+사용 후 스피커 음량을 65dBA 이하로 초기화 : 단말기 음성이 소음이 되지 않도록 방지   
+- **3. 음량 조절 범위**   
+음량 조절 범위는 18dB 이상 : 사용자들의 청력에 따라 조절할 수 있는 충분한 범위   
+- **4. 음량 조절 단계**   
+음량 조절 단계는 18dB 미만 : 정교한 조절이 가능   
+- **5. 다시 듣기 제공**   
+음성 다시 듣기 기능이 제공 : 편의성 제공      
+- **6. 읽기 종료**   
+음성을 읽는 중에 멈추는 기능이 제공 : 음성 안내를 정확히 인식   
+
+
+<figure aria-hidden="true" style="text-align:center">
+   <img src="./../images/kiosk/02.kiosk-checklist-4-1.jpg" alt="음성 출력 제공 예시">
+   <figcaption>이미지 출처 : 무인정보단말기(키오스크) 정보접근성 홍보 리플랫 PDF</figcaption>
+</figure>
+
+
+#### 시각장애인(저시력인)을 위한 접근성 항목
+##### 01. 폰트 크기 / 콘텐츠 구분
+
+- **폰트 크기**   
+모든 텍스트는 12㎜ 이상 크기로 제공 필요   
+단말기 표면에 부착된 레이블, 스크린에 표시되는 텍스트에 모두 적용   
+- **콘텐츠 구분**   
+모든 이웃한 콘텐츠는 시각적으로 구불될 수 있도록 제공 필요   
+  * 테두리, 구분선, 무늬를 이용하여 구분   
+  * 배경과의 명도대비 또는 채도의 차이를 주어 구분   
+  * 줄 간격 및 글자 간격을 조절하여 구분   
+
+<figure aria-hidden="true" style="text-align:center">
+   <img src="./../images/kiosk/03.kiosk-checklist-1-1.jpg" alt="폰트 크기 / 콘텐츠 구분 예시">
+   <img src="./../images/kiosk/03.kiosk-checklist-1-2.jpg" alt="폰트 크기 / 콘텐츠 구분 예시">
+   <figcaption>이미지 출처 : 무인정보단말기(키오스크) 정보접근성 홍보 리플랫 PDF</figcaption>
+</figure>
+
+##### 02. 색의 사용
+- **명도 대비**   
+의미 있는 텍스트(아이콘)는 배경과 명도 대비가 명확히 제공되어야 함   
+- **색의 사용**   
+색이 시각적 요소를 구분하는 유일한 수단으로 사용되지 않아야 함   
+색은 강조용으로 사용하고 레이블과 함께 제공 필요   
+
+<figure aria-hidden="true" style="text-align:center">
+   <img src="./../images/kiosk/03.kiosk-checklist-2-1.jpg" alt="명도 대비 예시">
+   <img src="./../images/kiosk/03.kiosk-checklist-2-2.jpg" alt="색의 사용 예시">
+   <figcaption>이미지 출처 : 무인정보단말기(키오스크) 정보접근성 홍보 리플랫 PDF</figcaption>
+</figure>
+
+
+#### 뇌병변 장애인을 위한 접근성 항목
+##### 01. 쉬운 조작
+- 작은 힘으로 조작 가능   
+- 단순 조작   
+- 한 손 조작 가능   
+
+<figure aria-hidden="true" style="text-align:center">
+   <img src="./../images/kiosk/04.kiosk-checklist-1-1.jpg" alt="쉬운 조작 예시">
+   <figcaption>이미지 출처 : 무인정보단말기(키오스크) 정보접근성 홍보 리플랫 PDF</figcaption>
+</figure>
+
+##### 02. 버튼 크기 / 간격
+- 충분한 버튼 크기   
+- 버튼 간격 2.5㎜ 이상   
+
+<figure aria-hidden="true" style="text-align:center">
+   <img src="./../images/kiosk/04.kiosk-checklist-2-1.jpg" alt="버튼 크기 / 간격 예시">
+   <figcaption>이미지 출처 : 무인정보단말기(키오스크) 정보접근성 홍보 리플랫 PDF</figcaption>
+</figure>
+
+##### 03. 삽입구
+- **매체 삽입**   
+매체(카드, 지폐 등) 삽입 과정에서 사용자 실수를 방지할 수 있도록 설계 필요   
+
+<figure aria-hidden="true" style="text-align:center">
+   <img src="./../images/kiosk/04.kiosk-checklist-3-1.jpg" alt="삽입구 예시">
+   <figcaption>이미지 출처 : 무인정보단말기(키오스크) 정보접근성 홍보 리플랫 PDF</figcaption>
+</figure>
+
+##### 04. 배출구
+- **낱장 배출 방식**   
+매체를 손으로 잡을 수 있도록 배출구 밖으로 돌출되도록 설계 필요   
+- **상자 배출 방식**   
+사용자가 한 손으로 꺼낼 수 있고 매체가 상자 밖으로 배출되지 않게 설계 필요   
+- **유실 방지**   
+영수증이 유실되지 않게 매체 끝 부위가 물려 있도록 설계 필요   
+
+<figure aria-hidden="true" style="text-align:center">
+   <img src="./../images/kiosk/04.kiosk-checklist-4-1.jpg" alt="배출구 예시">
+   <figcaption>이미지 출처 : 무인정보단말기(키오스크) 정보접근성 홍보 리플랫 PDF</figcaption>
+</figure>
+
+
+#### 청각 장애인을 위한 접근성 항목
+##### 01. 대체 콘텐츠 제공
+- **대체 콘텐츠 제공**   
+의미 있는 모든 청각 정보는 대체 콘텐츠(텍스트, 지시등)화 함께 제공 필요   
+
+<figure aria-hidden="true" style="text-align:center">
+   <img src="./../images/kiosk/05.kiosk-checklist-1-1.jpg" alt="대체 콘텐츠 제공 예시">
+   <figcaption>이미지 출처 : 무인정보단말기(키오스크) 정보접근성 홍보 리플랫 PDF</figcaption>
+</figure>
+
+- **자막/수어 제공**   
+의미 있는 비디오는 자막/수어를 함께 제공 필요
+
+<figure aria-hidden="true" style="text-align:center">
+   <img src="./../images/kiosk/05.kiosk-checklist-1-2.jpg" alt="자막/수어 제공 예시">
+   <figcaption>이미지 출처 : 무인정보단말기(키오스크) 정보접근성 홍보 리플랫 PDF</figcaption>
+</figure>
+
+##### 02. 지원 서비스
+- **도움 제공**   
+단말기 이용 과정에서 담당자에게 도움을 요청하고 지원받을 수 있어야 함
+지원 서비스 종류 : 유인 안내소, 직원 호출, 콜센터(전화번호/영상통화)
+
+<figure aria-hidden="true" style="text-align:center">
+   <img src="./../images/kiosk/05.kiosk-checklist-2-1.jpg" alt="지원 서비스 예시">
+   <figcaption>이미지 출처 : 무인정보단말기(키오스크) 정보접근성 홍보 리플랫 PDF</figcaption>
+</figure>
+
+
+#### 고령자(노인)을 위한 접근성 항목
+##### 01. 접근방법
+- **충분한 시간 제공**   
+서비스를 이용하는 과정에서 시간 제약이 없도록 설계 필요   
+
+<figure aria-hidden="true" style="text-align:center">
+   <img src="./../images/kiosk/06.kiosk-checklist-1-1.jpg" alt="접근방법 예시">
+   <figcaption>이미지 출처 : 무인정보단말기(키오스크) 정보접근성 홍보 리플랫 PDF</figcaption>
+</figure>
+
+##### 02. 초기화 가능
+> 서비스 이용 중 초기 상태로 되돌아갈 수 있도록 설계 필요   
+
+- **정상적인 서비스 종료 후** 사용자가 서비스 종료를 선택   
+- **서비스 이용 중** 사용자가 서비스 이용 중 초기 단계로 이동   
+- **서비스 이용 중** 일정 시간 동안 사용자 입력이 없는 경우   
+
+<figure aria-hidden="true" style="text-align:center">
+   <img src="./../images/kiosk/06.kiosk-checklist-2-1.jpg" alt="초기화 가능 예시">
+   <figcaption>이미지 출처 : 무인정보단말기(키오스크) 정보접근성 홍보 리플랫 PDF</figcaption>
+</figure>
+
+##### 03. 쉬운 이해
+- **자동 갱신 방지**   
+콘텐츠는 자동으로 변경되지 않도록 설계 필요   
+
+<figure aria-hidden="true" style="text-align:center">
+   <img src="./../images/kiosk/06.kiosk-checklist-3-1.jpg" alt="자동 갱신 방지 예시">
+   <figcaption>이미지 출처 : 무인정보단말기(키오스크) 정보접근성 홍보 리플랫 PDF</figcaption>
+</figure>
+
+- **쉬운 용어와 설명**   
+쉬운 용어와 아이콘, 짧고 명확한 표현을 활용   
+
+<figure aria-hidden="true" style="text-align:center">
+   <img src="./../images/kiosk/06.kiosk-checklist-3-2.jpg" alt="쉬운 용어와 설명 예시">
+   <figcaption>이미지 출처 : 무인정보단말기(키오스크) 정보접근성 홍보 리플랫 PDF</figcaption>
+</figure>
+
 
 <figure aria-hidden="true" style="text-align:center">
    <img src="./../images/kiosk/00.kiosk-checklist.jpg" alt="무인정보 단말기 자판 예시">
@@ -13,7 +256,6 @@
    <img src="./../images/kiosk/00.kiosk-checklist-4.jpg" alt="무인정보 단말기 자판 예시">
    <figcaption>이미지 출처 : 무인정보단말기 접근성 검증기준 문서</figcaption>
 </figure>
-
 
 #### 1. 손 또는 팔 동작 보완
 **(기본) 검증 기준**   
