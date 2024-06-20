@@ -99,7 +99,7 @@ WCAG 2.1 부분 참조.
 ### 7.4. 입력의 도움
 
 #### 7.4.1. 레이블(label) 제공
->**사용자 입력에는 대응하는 레이블(label)을 제공해야 한다.**    
+> **사용자 입력에는 대응하는 레이블(label)을 제공해야 한다.**    
 사용자 입력은 용도를 이해할 수 있도록 레이블(label)을 제공해야 한다.    
 WCAG 2.1 부분 참조.    
 [3.3.2 Labels or Instructions (Level A)](https://www.w3.org/TR/WCAG21/#labels-or-instructions){: target="_blank"}   
@@ -115,7 +115,7 @@ WCAG 2.1 부분 참조.
 
 
 #### 7.4.2. 오류 정정
->**입력 오류를 정정할 수 있는 방법을 제공해야 한다.**    
+> **입력 오류를 정정할 수 있는 방법을 제공해야 한다.**    
 입력 서식 작성 시, 사용자의 실수로 오류가 발생할 경우 이를 정정할 수 있는 방법을 제공해야 한다.   
 WCAG 2.1 부분 참조.    
 [3.3.1 Error Identification (Level A)](https://www.w3.org/TR/WCAG21/#error-identification){: target="_blank"}   
