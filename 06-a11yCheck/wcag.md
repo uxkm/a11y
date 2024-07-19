@@ -24,7 +24,7 @@ kwcag 2.2 원칙을 구현하기 위해 14개의 지침을 따라야 하고, 각
 
 #### 5.1.1. (적절한 대체 텍스트 제공) 텍스트 아닌 콘텐츠는 그 의미나 용도를 인식할 수 있도록 대체 텍스트를 제공해야 한다.
 > 모든 이미지에는 대체 텍스트를 제공하여야 합니다. 이는 시각 장애인 사용자가 스크린 리더를 통해 이미지의 내용을 이해할 수 있도록 도와줍니다.   
-WCAG 2.2 Guidelines : [Guideline 1.1 Text Alternatives](https://www.w3.org/TR/WCAG21/#text-alternatives){: target="_blank"}   
+WCAG 2.2 Guidelines : [1.1 Text Alternatives](https://www.w3.org/TR/WCAG21/#text-alternatives){: target="_blank"}   
 
 <figure aria-hidden="true" style="text-align:center">
    <img src="https://uxkm.io/_assets/images/created_by02_gray.jpg" alt="마이크 앞에서 노래를 부르는 소년">
@@ -37,12 +37,12 @@ WCAG 2.2 Guidelines : [Guideline 1.1 Text Alternatives](https://www.w3.org/TR/WC
 ```
 
 **검수 방법**
-- 이미지가 적절한 대체 텍스트를 포함하고 있는지 확인합니다.   
-- 스크린 리더로 테스트하여 텍스트가 올바르게 읽히는지 확인합니다.   
+- 이미지가 적절한 대체 텍스트를 포함하고 있는가?   
+- 스크린 리더로 테스트하여 텍스트가 올바르게 읽히는가?   
 
 #### 5.2.1. (자막 제공) 멀티미디어 콘텐츠에는 자막, 대본 또는 수어를 제공해야 한다.
 > 동영상 및 오디오 콘텐츠에는 자막, 대체 텍스트, 오디오 설명 등을 제공해야 합니다.   
-WCAG 2.2 Guidelines : [Guideline 1.2 Time-based Media](https://www.w3.org/TR/WCAG21/#time-based-media){: target="_blank"}   
+WCAG 2.2 Guidelines : [1.2 Time-based Media](https://www.w3.org/TR/WCAG21/#time-based-media){: target="_blank"}   
 
 <video src="https://www.w3.org/WAI/content-assets/wcag-act-rules/test-assets/perspective-video/perspective-video.mp4" controls style="width:100%">
     <track src="https://www.w3.org/WAI/content-assets/wcag-act-rules/test-assets/perspective-video/perspective-caption.vtt" kind="captions" />
@@ -60,10 +60,15 @@ WCAG 2.2 Guidelines : [Guideline 1.2 Time-based Media](https://www.w3.org/TR/WCA
 ```
 
 **검수 방법**
-- 비디오 플레이어에서 자막이 정상적으로 표시되는지 확인합니다.    
-- 오디오 설명이 포함된 경우 이를 확인합니다.   
+- 비디오 플레이어에서 자막이 정상적으로 표시되가?    
+- 오디오 설명이 포함된 경우 자막, 대본 또는 수어를 제공하는가?   
 
 #### 5.3.1. (표의 구성) 표는 이해하기 쉽게 구성해야 한다.
+
+
+**검수 방법**
+- 표의 제목을 caption으로 제공되고 있는지 확인합니다.    
+- 표의 헤더 셀과 테이터 셀의 관계 정의가 되었는지 확인합니다.   
 
 #### 5.3.2. (콘텐츠의 선형구조) 콘텐츠는 논리적인 순서로 제공해야 한다.
 
@@ -72,7 +77,7 @@ WCAG 2.2 Guidelines : [Guideline 1.2 Time-based Media](https://www.w3.org/TR/WCA
 
 #### 5.4.1. (색에 무관한 콘텐츠 인식) 콘텐츠는 색에 관계없이 인식될 수 있어야 한다.
 > 콘텐츠는 색에 관계없이 인식될 수 있어야 합니다. 이는 색상에 의존하는 정보 전달을 피해야 하며, 색상만으로는 정보를 전달하지 않도록 합니다.   
-WCAG 2.2 Guidelines : [WCAG Use of Color](https://www.w3.org/TR/WCAG22/#use-of-color){: target="_blank"}   
+WCAG 2.2 Guidelines : [1.4.1 Use of Color](https://www.w3.org/TR/WCAG22/#use-of-color){: target="_blank"}   
 
 <p>이 문장에서 <strong style="color: red;">빨간색 텍스트</strong>는 중요한 정보입니다.</p>
 <p>이 문장에서 <strong style="color: red; font-weight: bold; text-decoration: underline;">중요한 정보</strong>가 포함되어 있습니다.</p>
@@ -86,18 +91,71 @@ WCAG 2.2 Guidelines : [WCAG Use of Color](https://www.w3.org/TR/WCAG22/#use-of-c
 ```
 
 **검수 방법**
-- 색상만으로 정보를 전달하지 않았는지 확인.     
-- 스크린 리더로 콘텐츠를 확인하여 모든 정보가 전달되는지 점검.   
+- 색상만으로 정보를 전달하지 않았는가?     
+- 스크린 리더로 콘텐츠를 확인하여 모든 정보가 전달되었는가?   
 
 #### 5.4.2. (자동 재생 금지) 자동으로 소리가 재생되지 않아야 한다.
+> 웹 페이지에서 자동으로 소리(동영상, 오디오, 음성, 배경 음악 등 콘텐츠가 제공하는 모든 소리)가 재생됨으로 인해 화면낭독프로그램 사용자가 콘텐츠를 인식하고 사용하는 데 방해받지 않아야 한다.    
+단, 3초 미만의 소리는 허용한다. 3초 이상 재생되는 소리는 제어할 수 있는 수단(멈춤, 일시정지, 음량 조절 등)을 함께 제공해야 한다. 참고로, 플랫폼은 콘텐츠가 제공하는 배경음의 음량을 조절하더라도 화면낭독프로그램의 음량에는 영향을 주지 않아야 한다.   
+WCAG 2.2 Guidelines : [2.2.2 Pause, Stop, Hide](https://www.w3.org/TR/WCAG22/#pause-stop-hide){: target="_blank"}   
+
+```sh
+<!-- 예시: 자동 재생 금지 -->
+<video id="myVideo" width="320" height="240" controls>
+    <source src="movie.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const video = document.getElementById('myVideo');
+        video.autoplay = false;
+    });
+</script>
+```
+
+**검수 방법**
+- 페이지에 포함된 모든 오디오 및 비디오 요소를 확인하였는가?     
+- 페이지가 로드될 때 오디오나 비디오가 자동으로 재생되지 않는지 확인하였는가?   
+- 코드를 검토하여 autoplay 속성이 'false'로 설정, 제거되었는가?   
 
 #### 5.4.3. (텍스트 콘텐츠의 명도 대비) 텍스트 콘텐츠와 배경 간의 명도대비는 4.5 대 1 이상이어야 한다.
+> 웹 페이지에서 보이는 텍스트 콘텐츠(텍스트 및 텍스트 이미지)와 배경 간의 충분한 대비를 제공하여, 저시력장애인, 색각장애인, 고령자 등도 콘텐츠를 인식할 수 있도록 제공해야 한다.    
+다만, 로고, 장식목적의 콘텐츠, 마우스나 키보드를 활용하여 초점을 받았을 때 명도 대비가 커지는 콘텐츠 등은 예외로 한다.    
+**중요 : 작업 시 많이 오류를 범하는 항목**
+WCAG 2.2 Guidelines : [1.4.3 Contrast (Minimum))](https://www.w3.org/TR/WCAG22/#pause-stop-hide){: target="_blank"}   
+
+```sh
+<!-- 오류 예시 -->
+<style>
+    .low-contrast {
+        color: #777; /* 회색 텍스트 */
+        background-color: #eee; /* 연한 회색 배경 */
+    }
+</style>
+<div class="low-contrast">
+    명도 대비가 충분하지 않습니다.
+</div>
+
+<!-- 정상 예시 -->
+<style>
+    .high-contrast {
+        color: #000; /* 검은색 텍스트 */
+        background-color: #fff; /* 흰색 배경 */
+    }
+</style>
+<div class="high-contrast">
+    명도 대비가 충분합니다.
+</div>
+```
+
+**검수 방법**
+- 콘텐츠의 명도 대비: 웹 페이지가 제공하는 텍스트 콘텐츠(텍스트 및 텍스트 이미지)와 배경 간의 명도 대비는 4.5:1 이상이어야 한다. 준수하였는가?     
+- 폰트 크기에 따른 명도 대비: 텍스트 콘텐츠를 구성하고 있는 텍스트 폰트를 18pt 이상 또는 14pt 이상의 굵은 폰트를 사용하는 경우, 명도 대비를 3:1까지 낮출 수 있다. 준수하였는가?   
+- 화면 확대가 가능한 콘텐츠: 화면 확대가 가능하도록 구현한 텍스트 콘텐츠(텍스트 및 텍스트 이미지)의 명도 대비는 3:1까지 낮출 수 있다. 준수하였는가?   
+
 
 #### 5.4.4. (콘텐츠 간의 구분) 이웃한 콘텐츠는 구별될 수 있어야 한다.
-
-
-
-
 
 
 ### 운용의 용이성 (Operable)
@@ -150,7 +208,7 @@ WCAG 2.2 Guidelines : [WCAG Use of Color](https://www.w3.org/TR/WCAG22/#use-of-c
 | **지침(3개)**            | **검사항목(7개)**           |
 | ------------------------ | -------------------------------------------------------------------------------------------------------------------- |
 | 7.1. 가독성              | 7.1.1. (기본 언어 표시) 주로 사용하는 언어를 명시해야 한다.   |
-| 7.2 예측 가능성           | 7.2.1. (사용자 요구에 따른 실행) 사용자가 의도하지 않은 기능(새 창, 초점에 의한 맥락 변화 등)은 실행되지 않아야 한다.   |
+| 7.2. 예측 가능성          | 7.2.1. (사용자 요구에 따른 실행) 사용자가 의도하지 않은 기능(새 창, 초점에 의한 맥락 변화 등)은 실행되지 않아야 한다.   |
 |                          | 7.2.2. (찾기 쉬운 도움 정보) 도움 정보가 제공되는 경우, 각 페이지에서 동일한 상대적인 순서로 접근할 수 있어야 한다.   |
 | 7.3. 입력 도움            | 7.3.1. (오류 정정) 입력 오류를 정정할 수 있는 방법을 제공해야 한다.   |
 |                          | 7.3.2. (레이블 제공) 사용자 입력에는 대응하는 레이블을 제공해야 한다.  |
@@ -171,8 +229,6 @@ WCAG 2.2 Guidelines : [WCAG Use of Color](https://www.w3.org/TR/WCAG22/#use-of-c
 
 
 
-
-
 ### 견고성 (Robust)
 
 | **지침(2개)**            | **검사항목(2개)**           |
@@ -181,6 +237,19 @@ WCAG 2.2 Guidelines : [WCAG Use of Color](https://www.w3.org/TR/WCAG22/#use-of-c
 | 8.2. 웹 애플리케이션 접근성   | 8.2.1. (웹 애플리케이션 접근성 준수) 콘텐츠에 포함된 웹 애플리케이션은 접근성이 있어야 한다.    |
 
 #### 8.1.1. (마크업 오류 방지) 마크업 언어의 요소는 열고 닫음, 중첩 관계 및 속성 선언에 오류가 없어야 한다. 
+> HTML 마크업 언어에서 요소는 열고 닫아야 하며, 중첩 관계 및 속성 선언이 정확해야 합니다. 이를 통해 문서의 구조를 올바르게 유지하고, 브라우저가 페이지를 정확하게 렌더링할 수 있도록 합니다.   
+[요소 중첩 | UKKM](https://uxkm.io/publishing/html/02-blockInline/05-element_nesting#gsc.tab=0){: target="_blank"}
+
+
+
+HTML5 스펙 문서: HTML5의 사양을 정의한 문서로, 이전 버전에서 추가된 새로운 기능과 요소들에 대해 설명합니다.
+[HTML5 Specification](https://html.spec.whatwg.org/multipage/){: target="_blank"}
+
+HTML 요소 참고 문서: HTML 요소들에 대한 참고 자료로, 각 요소의 사용법과 속성에 대해 설명합니다.
+HTML Element Reference
+
+HTML 검증 도구: 작성한 HTML 문서의 유효성을 검사할 수 있는 W3C의 마크업 검증 서비스입니다.
+W3C Markup Validation Service
 
 #### 8.2.1. (웹 애플리케이션 접근성 준수) 콘텐츠에 포함된 웹 애플리케이션은 접근성이 있어야 한다. 
 
