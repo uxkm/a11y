@@ -215,7 +215,7 @@ WCAG 2.2 Guidelines : [2.2.2 Pause, Stop, Hide](https://www.w3.org/TR/WCAG22/#pa
 WCAG 2.2 Guidelines : [1.4.3 Contrast (Minimum)](https://www.w3.org/TR/WCAG22/#pause-stop-hide){: target="_blank"}   
 
 ```sh
-<!-- 오류 예시 -->
+<!-- 잘못된 예시 -->
 <style>
     .low-contrast {
         color: #777; /* 회색 텍스트 */
@@ -250,7 +250,7 @@ WCAG 2.2 Guidelines : [1.4.3 Contrast (Minimum)](https://www.w3.org/TR/WCAG22/#p
 WCAG 2.2 Guidelines : [1.4.3 Contrast (Minimum)](https://www.w3.org/TR/WCAG22/#visual-presentation){: target="_blank"}   
 
 ```sh
-<!-- 오류 예시 : 이웃한 콘텐츠가 구별되지 않아 사용자가 정보를 쉽게 찾기 어려움. 
+<!-- 잘못된 예시 : 이웃한 콘텐츠가 구별되지 않아 사용자가 정보를 쉽게 찾기 어려움. 
 예) 충분한 여백이나 구분선이 없는 경우가 이에 해당 -->
 <style>
     .content {
@@ -285,7 +285,7 @@ WCAG 2.2 Guidelines : [1.4.3 Contrast (Minimum)](https://www.w3.org/TR/WCAG22/#v
 WCAG 2.2 Guidelines : [2.1.1 Keyboard](https://www.w3.org/TR/WCAG22/#keyboard){: target="_blank"}   
 
 ```sh
-<!-- 오류 예시 : 이웃한 콘텐츠가 구별되지 않아 사용자가 정보를 쉽게 찾기 어려움. 
+<!-- 잘못된 예시 : 이웃한 콘텐츠가 구별되지 않아 사용자가 정보를 쉽게 찾기 어려움. 
 예) 충분한 여백이나 구분선이 없는 경우가 이에 해당 -->
 <style>
     .content {
@@ -345,11 +345,95 @@ WCAG 2.2 Guidelines : [2.1.1 Keyboard](https://www.w3.org/TR/WCAG22/#keyboard){:
 #### 7.2.2. (찾기 쉬운 도움 정보) 도움 정보가 제공되는 경우, 각 페이지에서 동일한 상대적인 순서로 접근할 수 있어야 한다.
 
 #### 7.3.1. (오류 정정) 입력 오류를 정정할 수 있는 방법을 제공해야 한다. 
+> 입력 오류 정정은 사용자가 폼이나 입력 필드에서 오류를 발생시켰을 때, 이를 사용자에게 알리고 수정할 수 있는 방법을 제공하는 것을 의미합니다.   
+WCAG 2.2 Guidelines : [Input Assistance](https://www.w3.org/TR/WCAG22/#error-identification){: target="_blank"}
+
+```sh
+<!-- 잘못된 예시 1 : 입력 오류가 발생해도 사용자에게 알림 미제공
+<form id="exampleForm">
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email">
+  <button type="submit">Submit</button>
+</form>
+
+<!-- 잘못된 예시 2 : 폼 필드가 잘못되었을 때 시각적 피드백을 미제공
+<style>
+  .error {
+    color: red;
+    font-weight: bold;
+  }
+</style>
+<form>
+  <label for="username">Username:</label>
+  <input type="text" id="username" name="username">
+  <span class="error">This field is required.</span>
+  <button type="submit">Submit</button>
+</form>
+
+
+<!-- 올바른 예시 1 : aria-describedby와 aria-live 속성을 사용하여 실시간으로 오류 메시지를 사용자에게 알립 -->
+<form id="exampleForm">
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" aria-describedby="emailError">
+  <span id="emailError" class="error" aria-live="polite"></span>
+  <button type="submit">Submit</button>
+</form>
+
+<script>
+  document.getElementById('exampleForm').addEventListener('submit', function(event) {
+    var emailInput = document.getElementById('email');
+    var emailError = document.getElementById('emailError');
+    if (!emailInput.checkValidity()) {
+      emailError.textContent = 'Please enter a valid email address.';
+      emailInput.focus();
+      event.preventDefault();
+    } else {
+      emailError.textContent = '';
+    }
+  });
+</script>
+
+<!-- 올바른 예시 2 : 폼 필드에 오류가 있을 때 시각적 피드백을 제공하여 사용자가 오류를 쉽게 인식하고 수정할 수 있게 함 -->
+<style>
+  .error {
+    border: 2px solid red;
+  }
+</style>
+<form id="exampleForm">
+  <label for="username">Username:</label>
+  <input type="text" id="username" name="username" aria-describedby="usernameError">
+  <span id="usernameError" class="error-message" aria-live="polite"></span>
+  <button type="submit">Submit</button>
+</form>
+
+<script>
+  document.getElementById('exampleForm').addEventListener('submit', function(event) {
+    var usernameInput = document.getElementById('username');
+    var usernameError = document.getElementById('usernameError');
+    if (usernameInput.value === '') {
+      usernameError.textContent = 'Username is required.';
+      usernameInput.classList.add('error');
+      usernameInput.focus();
+      event.preventDefault();
+    } else {
+      usernameError.textContent = '';
+      usernameInput.classList.remove('error');
+    }
+  });
+</script>
+```
+
+**검수 방법**
+- HTML Validator 사용: W3C HTML Validator와 같은 도구를 사용하여 마크업 오류를 자동으로 검수하였습니까?     
+- 브라우저 개발자 도구 사용: 브라우저의 개발자 도구(예: Chrome DevTools)를 사용하여 HTML 구조를 확인하였습니까?     
+- 수동 검사: HTML 코드를 수동으로 검토하여 태그의 열고 닫음, 중첩 관계, 속성 선언을 확인하였습니까?     
+
 
 #### 7.3.2. (레이블 제공) 사용자 입력에는 대응하는 레이블을 제공해야 한다. 
 
-#### 7.4.2. (오류 정정) 입력 오류를 정정할 수 있는 방법을 제공해야 한다. 
+#### 7.3.3. (접근 가능한 인증) 인증 과정은 인지 기능 테스트에만 의존해서는 안 된다.  
 
+#### 7.3.4. (반복 입력 정보) 반복되는 입력 정보는 자동 입력 또는 선택 입력할 수 있어야 한다.   
 
 
 ### 견고성 (Robust)
@@ -357,19 +441,76 @@ WCAG 2.2 Guidelines : [2.1.1 Keyboard](https://www.w3.org/TR/WCAG22/#keyboard){:
 #### 8.1.1. (마크업 오류 방지) 마크업 언어의 요소는 열고 닫음, 중첩 관계 및 속성 선언에 오류가 없어야 한다. 
 > HTML 마크업 언어에서 요소는 열고 닫아야 하며, 중첩 관계 및 속성 선언이 정확해야 합니다. 이를 통해 문서의 구조를 올바르게 유지하고, 브라우저가 페이지를 정확하게 렌더링할 수 있도록 합니다.   
 [요소 중첩 | UKKM](https://uxkm.io/publishing/html/02-blockInline/05-element_nesting#gsc.tab=0){: target="_blank"}
+HTML5 스펙 문서:[HTML5 Specification](https://html.spec.whatwg.org/multipage/){: target="_blank"}
 
+```sh
+<!-- 잘못된 예시 1 : <p> 태그가 닫히지 않아 마크업 오류가 발생
+<p>Welcome to our website
 
+<!-- 잘못된 예시 2 :  태그의 중첩이 잘못되어 있는 경우 
+<div>
+  <p>This is a paragraph.
+  <div>This is inside a div.</p>
+</div>
 
-HTML5 스펙 문서: HTML5의 사양을 정의한 문서로, 이전 버전에서 추가된 새로운 기능과 요소들에 대해 설명합니다.
-[HTML5 Specification](https://html.spec.whatwg.org/multipage/){: target="_blank"}
+<!-- 올바른 예시 1 : 태그를 열고 닫는 마크업 -->
+<p>Welcome to our website</p>
 
-HTML 요소 참고 문서: HTML 요소들에 대한 참고 자료로, 각 요소의 사용법과 속성에 대해 설명합니다.
-HTML Element Reference
+<!-- 올바른 예시 2 : 태그의 중첩을 올바르게 하여 구조를 유지 -->
+<div>
+  <p>This is a paragraph.</p>
+  <div>This is inside a div.</div>
+</div>
+```
 
-HTML 검증 도구: 작성한 HTML 문서의 유효성을 검사할 수 있는 W3C의 마크업 검증 서비스입니다.
-W3C Markup Validation Service
+**검수 방법**
+- HTML Validator 사용: W3C HTML Validator와 같은 도구를 사용하여 마크업 오류를 자동으로 검수하였습니까?     
+- 브라우저 개발자 도구 사용: 브라우저의 개발자 도구(예: Chrome DevTools)를 사용하여 HTML 구조를 확인하였습니까?     
+- 수동 검사: HTML 코드를 수동으로 검토하여 태그의 열고 닫음, 중첩 관계, 속성 선언을 확인하였습니까?     
+
 
 #### 8.2.1. (웹 애플리케이션 접근성 준수) 콘텐츠에 포함된 웹 애플리케이션은 접근성이 있어야 한다. 
+> 웹사이트, 도구, 기술이 장애를 가진 사람들도 포함하여 모든 사용자에게 접근 가능하도록 설계되는 것을 의미합니다.    
+웹 콘텐츠 접근성 지침(WCAG) 개요 : [WAI](https://www.w3.org/WAI/standards-guidelines/wcag/){: target="_blank"}      
+WCAG 2.2 Guidelines : [WCAG22](https://www.w3.org/TR/WCAG22/){: target="_blank"}   
+
+```sh
+<!-- 잘못된 예시 1 : 버튼에 대체 텍스트가 없어 스크린 리더 사용자에게 혼란을 줄 수 있는 경우 
+<button onclick="submitForm()">Submit</button>
+
+<!-- 잘못된 예시 2 : 버튼의 상태 변화(예: 메뉴 열림/닫힘)에 대한 정보를 미제공 한 경우 
+<button onclick="toggleMenu()">Menu</button>
+
+<!-- 올바른 예시 1 : aria-label 속성을 사용하여 스크린 리더 사용자에게 버튼의 용도를 설명 -->
+<button onclick="submitForm()" aria-label="Submit form">Submit</button>
+
+<!-- 올바른 예시 2 : aria-expanded와 aria-controls 속성을 사용하여 버튼 상태와 관련된 정보를 제공 -->
+<button onclick="toggleMenu()" aria-expanded="false" aria-controls="menu">Menu</button>
+<nav id="menu" hidden>
+  <!-- Menu content -->
+</nav>
+
+<script>
+  function toggleMenu() {
+    var button = document.querySelector('button');
+    var menu = document.getElementById('menu');
+    var expanded = button.getAttribute('aria-expanded') === 'true' || false;
+    
+    button.setAttribute('aria-expanded', !expanded);
+    menu.hidden = expanded;
+  }
+</script>
+```
+
+**검수 방법**
+- 자동화 도구 사용: 접근성 자동화 검사 도구(예: Axe, WAVE)를 사용하여 페이지를 분석하고 문제점을 발견하였습니까?     
+- 스크린 리더 테스트: NVDA, JAWS와 같은 스크린 리더를 사용하여 웹 애플리케이션이 제대로 읽히는지 확인하였습니까?     
+- 키보드 네비게이션 테스트: 마우스 없이 키보드만으로 웹 애플리케이션을 사용할 수 있는지 확인하였습니까?     
+- 색 대비 검사: 텍스트와 배경 색상의 대비가 충분한지 확인하였습니까?     
+- 수동 검사: WCAG 지침을 참고하여 수동으로 접근성을 검토하였습니까?     
+
+
+
 
 
 #### 웹 접근성 요약 보고서
