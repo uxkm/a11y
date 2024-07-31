@@ -430,6 +430,91 @@ WCAG 2.2 Guidelines : [Input Assistance](https://www.w3.org/TR/WCAG22/#error-ide
 
 
 #### 7.3.2. (레이블 제공) 사용자 입력에는 대응하는 레이블을 제공해야 한다. 
+> 사용자 입력 필드에 대응하는 레이블을 제공하는 것은 입력 필드가 어떤 정보를 요구하는지 사용자에게 명확히 전달하기 위함이며, 레이블은 입력 필드와 시각적으로 또는 프로그래밍 방식으로 연결되어야 합니다.   
+WCAG 2.2 Guidelines : [2.5.3 Label in Name](https://www.w3.org/TR/WCAG22/#label-in-name){: target="_blank"}
+<!-- https://aoa.gitbook.io/skymimo/aoa-2018/tips/role-application -->
+
+```sh
+<!-- 잘못된 예시 1 : 입력 오류가 발생해도 사용자에게 알림 미제공
+<form id="exampleForm">
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email">
+  <button type="submit">Submit</button>
+</form>
+
+<!-- 잘못된 예시 2 : 폼 필드가 잘못되었을 때 시각적 피드백을 미제공
+<style>
+  .error {
+    color: red;
+    font-weight: bold;
+  }
+</style>
+<form>
+  <label for="username">Username:</label>
+  <input type="text" id="username" name="username">
+  <span class="error">This field is required.</span>
+  <button type="submit">Submit</button>
+</form>
+
+
+<!-- 올바른 예시 1 : aria-describedby와 aria-live 속성을 사용하여 실시간으로 오류 메시지를 사용자에게 알립 -->
+<form id="exampleForm">
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" aria-describedby="emailError">
+  <span id="emailError" class="error" aria-live="polite"></span>
+  <button type="submit">Submit</button>
+</form>
+
+<script>
+  document.getElementById('exampleForm').addEventListener('submit', function(event) {
+    var emailInput = document.getElementById('email');
+    var emailError = document.getElementById('emailError');
+    if (!emailInput.checkValidity()) {
+      emailError.textContent = 'Please enter a valid email address.';
+      emailInput.focus();
+      event.preventDefault();
+    } else {
+      emailError.textContent = '';
+    }
+  });
+</script>
+
+<!-- 올바른 예시 2 : 폼 필드에 오류가 있을 때 시각적 피드백을 제공하여 사용자가 오류를 쉽게 인식하고 수정할 수 있게 함 -->
+<style>
+  .error {
+    border: 2px solid red;
+  }
+</style>
+<form id="exampleForm">
+  <label for="username">Username:</label>
+  <input type="text" id="username" name="username" aria-describedby="usernameError">
+  <span id="usernameError" class="error-message" aria-live="polite"></span>
+  <button type="submit">Submit</button>
+</form>
+
+<script>
+  document.getElementById('exampleForm').addEventListener('submit', function(event) {
+    var usernameInput = document.getElementById('username');
+    var usernameError = document.getElementById('usernameError');
+    if (usernameInput.value === '') {
+      usernameError.textContent = 'Username is required.';
+      usernameInput.classList.add('error');
+      usernameInput.focus();
+      event.preventDefault();
+    } else {
+      usernameError.textContent = '';
+      usernameInput.classList.remove('error');
+    }
+  });
+</script>
+```
+
+**검수 방법**
+- HTML Validator 사용: W3C HTML Validator와 같은 도구를 사용하여 마크업 오류를 자동으로 검수하였습니까?     
+- 브라우저 개발자 도구 사용: 브라우저의 개발자 도구(예: Chrome DevTools)를 사용하여 HTML 구조를 확인하였습니까?     
+- 수동 검사: HTML 코드를 수동으로 검토하여 태그의 열고 닫음, 중첩 관계, 속성 선언을 확인하였습니까?     
+
+
 
 #### 7.3.3. (접근 가능한 인증) 인증 과정은 인지 기능 테스트에만 의존해서는 안 된다.  
 
