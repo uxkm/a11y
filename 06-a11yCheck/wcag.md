@@ -1,18 +1,18 @@
 ## 접근성 체크리스트
 
 **웹 콘텐츠 접근성**
-> 웹 콘텐츠를 시각 장애, 저시력 장애, 청각 장애, 지체 장애, 학습 장애, 지적 장애, 뇌병변 장애, 광과민성 증후 등 다양한 장애를 가진 사용자들이 쉽게 접근할 수 있도록 구축하는 방법에는 몇 가지 중요한 원칙과 지침이 있습니다. 이러한 원칙과 지침은 장애인 사용자가 비장애인 사용자와 동등하게 인터넷을 이용할 수 있도록 돕기 위해 설계되었습니다.   
-kwcag 2.1 과 2.2 기준 접근성은 크게 세 가지 주요 구성 요소로 나눌 수 있습니다.    
-원칙 (Principles), 지침 (Guidelines), 검사 항목 (Requirements). 원칙은 4 가지 기본 원칙에 기초혀며,    
-kwcag 2.1 원칙을 구현하기 위해 13개의 지침을 따라야 하고, 각 지침의 준수 여부를 확인하기 위해 24개의 검사 항목을 마련해야 합니다.    
-kwcag 2.2 원칙을 구현하기 위해 14개의 지침을 따라야 하고, 각 지침의 준수 여부를 확인하기 위해 33개의 검사 항목을 마련해야 합니다.    
-검사 항목은 구체적인 테스트 가능한 기준을 제공하여 웹사이트가 원칙 및 지침을 준수하고 있는지 확인하는 데 사용됩니다.   
-지능정보화기본법 시행규칙 일부개정령(안) 입법예고에 따라 '24.9.1부터 심사기준이 변경되며 이에따라 kwcag 2.2 기준으로 체크리스트를 제공합니다.
+> 웹 콘텐츠를 시각 장애, 저시력 장애, 청각 장애, 지체 장애, 학습 장애, 지적 장애, 뇌병변 장애, 광과민성 증후 등 다양한 장애를 가진 사용자들이 쉽게 접근할 수 있도록 구축하는 방법에는 몇 가지 중요한 원칙과 지침이 있습니다. 이러한 원칙과 지침은 장애인 사용자가 비장애인 사용자와 동등하게 인터넷을 이용할 수 있도록 돕기 위해 설계되었으며,   
+kwcag 2.1 과 2.2 기준 접근성은 크게 세 가지 주요 구성 요소로 나눌 수 있다.    
+원칙 (Principles), 지침 (Guidelines), 검사 항목 (Requirements). 원칙은 4 가지 기본 원칙에 기초하며,    
+kwcag 2.1 원칙을 구현하기 위해 13개의 지침을 따라야 하고, 각 지침의 준수 여부를 확인하기 위해 24개의 검사 항목을 마련해야 한다.    
+kwcag 2.2 원칙을 구현하기 위해 14개의 지침을 따라야 하고, 각 지침의 준수 여부를 확인하기 위해 33개의 검사 항목을 마련해야 한다.    
+검사 항목은 구체적인 테스트 가능한 기준을 제공하여 웹사이트가 원칙 및 지침을 준수하고 있는지 확인하는 데 사용된다.   
+**지능정보화기본법 시행규칙 일부개정령(안) 입법예고에 따라 '24.9.1부터 심사기준이 변경되며 이에따라 kwcag 2.2 기준으로 체크리스트를 제공한다.**
 
 ### 5. 인식의 용이성 (Perceivable)
 
 #### 5.1.1. (적절한 대체 텍스트 제공) 텍스트 아닌 콘텐츠는 그 의미나 용도를 인식할 수 있도록 대체 텍스트를 제공해야 한다.
-> 모든 이미지에는 대체 텍스트를 제공하여야 합니다. 이는 시각 장애인 사용자가 스크린 리더를 통해 이미지의 내용을 이해할 수 있도록 도와줍니다.   
+> 모든 이미지에는 대체 텍스트를 제공하여야 합니다. 이는 시각 장애인 사용자가 스크린 리더를 통해 이미지의 내용을 이해할 수 있도록 제공한다.   
 WCAG 2.2 Guidelines : [1.1 Text Alternatives](https://www.w3.org/TR/WCAG21/#text-alternatives){: target="_blank"}   
 
 <figure aria-hidden="true" style="text-align:center">
@@ -30,7 +30,7 @@ WCAG 2.2 Guidelines : [1.1 Text Alternatives](https://www.w3.org/TR/WCAG21/#text
 - 스크린 리더로 테스트하여 텍스트가 올바르게 읽히는가?   
 
 #### 5.2.1. (자막 제공) 멀티미디어 콘텐츠에는 자막, 대본 또는 수어를 제공해야 한다.
-> 동영상 및 오디오 콘텐츠에는 자막, 대체 텍스트, 오디오 설명 등을 제공해야 합니다.   
+> 동영상 및 오디오 콘텐츠에는 자막, 대체 텍스트, 오디오 설명 등을 제공해야 한다.   
 WCAG 2.2 Guidelines : [1.2 Time-based Media](https://www.w3.org/TR/WCAG21/#time-based-media){: target="_blank"}   
 
 <video src="https://www.w3.org/WAI/content-assets/wcag-act-rules/test-assets/perspective-video/perspective-video.mp4" controls style="width:100%">
@@ -53,7 +53,7 @@ WCAG 2.2 Guidelines : [1.2 Time-based Media](https://www.w3.org/TR/WCAG21/#time-
 - 오디오 설명이 포함된 경우 자막, 대본 또는 수어를 제공하는가?   
 
 #### 5.3.1. (표의 구성) 표는 이해하기 쉽게 구성해야 한다.
-> 표는 데이터를 체계적으로 정리하고, 쉽게 이해할 수 있도록 구성해야 합니다.   
+> 표는 데이터를 체계적으로 정리하고, 쉽게 이해할 수 있도록 구성해야 한다.   
 [W3C Accessible Tables](https://www.w3.org/WAI/tutorials/tables/){: target="_blank"}   
 
 ```sh
@@ -107,9 +107,9 @@ WCAG 2.2 Guidelines : [1.2 Time-based Media](https://www.w3.org/TR/WCAG21/#time-
 - 캡션과 ARIA 속성이 적절하게 사용되었는지 확인하였는가?    
 
 #### 5.3.2. (콘텐츠의 선형구조) 콘텐츠는 논리적인 순서로 제공해야 한다.
-> 콘텐츠는 논리적인 순서로 제공되어야 합니다.    
-모든 사용자가 콘텐츠를 쉽게 탐색하고 이해할 수 있게 합니다.    
-논리적인 순서는 시각적으로나 코드 구조적으로나 일관되어야 합니다.   
+> 콘텐츠는 논리적인 순서로 제공되어야 한다.    
+모든 사용자가 콘텐츠를 쉽게 탐색하고 이해할 수 있게 한다.    
+논리적인 순서는 시각적으로나 코드 구조적으로나 일관되어야 한다.   
 WCAG 2.2 Guidelines : [WCAG 2.2 - 1.3.2 Meaningful Sequence](https://www.w3.org/TR/WCAG22/#meaningful-sequence){: target="_blank"}   
 
 
@@ -145,7 +145,8 @@ WCAG 2.2 Guidelines : [WCAG 2.2 - 1.3.2 Meaningful Sequence](https://www.w3.org/
 
 
 #### 5.3.3. (명확한 지시사항 제공) 지시사항은 모양, 크기, 위치, 방향, 색, 소리 등에 관계없이 인식될 수 있어야 한다.
-> 웹 콘텐츠나 사용자 인터페이스를 설계할 때, 지시사항이나 안내는 특정 감각적 특성(모양, 크기, 위치, 방향, 색, 소리 등)에 의존하지 않고 명확히 전달되어야 합니다. 즉, 색상에만 의존하여 정보를 전달하는 것이 아니라 텍스트나 다른 시각적 단서도 함께 제공해야 합니다.    
+> 웹 콘텐츠나 사용자 인터페이스를 설계할 때, 지시사항이나 안내는 특정 감각적 특성(모양, 크기, 위치, 방향, 색, 소리 등)에 의존하지 않고 명확히 전달되어야 한다.    
+즉, 색상에만 의존하여 정보를 전달하는 것이 아니라 텍스트나 다른 시각적 단서도 함께 제공해야 한다.    
 WCAG 2.2 Guidelines : [WCAG 2.2 - 1.3.3 Sensory Characteristics](https://www.w3.org/TR/WCAG22/#sensory-characteristics){: target="_blank"}
 
 
@@ -165,7 +166,7 @@ WCAG 2.2 Guidelines : [WCAG 2.2 - 1.3.3 Sensory Characteristics](https://www.w3.
 
 
 #### 5.4.1. (색에 무관한 콘텐츠 인식) 콘텐츠는 색에 관계없이 인식될 수 있어야 한다.
-> 콘텐츠는 색에 관계없이 인식될 수 있어야 합니다. 이는 색상에 의존하는 정보 전달을 피해야 하며, 색상만으로는 정보를 전달하지 않도록 합니다.   
+> 콘텐츠는 색에 관계없이 인식될 수 있어야 한다. 이는 색상에 의존하는 정보 전달을 피해야 하며, 색상만으로는 정보를 전달하지 않도록 한다.   
 WCAG 2.2 Guidelines : [1.4.1 Use of Color](https://www.w3.org/TR/WCAG22/#use-of-color){: target="_blank"}   
 
 <p>이 문장에서 <strong style="color: red;">빨간색 텍스트</strong>는 중요한 정보입니다.</p>
@@ -281,71 +282,1183 @@ WCAG 2.2 Guidelines : [1.4.3 Contrast (Minimum)](https://www.w3.org/TR/WCAG22/#v
 ### 운용의 용이성 (Operable)
 
 #### 6.1.1. (키보드 사용 보장) 모든 기능은 키보드만으로도 사용할 수 있어야 한다. 
-> 웹 접근성에서 키보드 사용 보장이란 모든 기능이 키보드만으로도 사용할 수 있어야 한다는 것을 의미합니다. 이는 시각 장애나 지체 장애가 있는 사용자들이 마우스를 사용할 수 없는 경우에도 웹 페이지의 모든 기능을 사용할 수 있도록 하기 위함입니다. 키보드 네비게이션, 폼 요소의 접근성, 인터랙티브 요소의 포커스 등이 포함됩니다.    
+> 웹 접근성에서 키보드 사용 보장이란 모든 기능이 키보드만으로도 사용할 수 있어야 한다는 것을 의미한다. 이는 시각 장애나 지체 장애가 있는 사용자들이 마우스를 사용할 수 없는 경우에도 웹 페이지의 모든 기능을 사용할 수 있도록 하기 위함이며, 키보드 네비게이션, 폼 요소의 접근성, 인터랙티브 요소의 포커스 등이 포함된다.    
 WCAG 2.2 Guidelines : [2.1.1 Keyboard](https://www.w3.org/TR/WCAG22/#keyboard){: target="_blank"}   
 
 ```sh
-<!-- 잘못된 예시 : 이웃한 콘텐츠가 구별되지 않아 사용자가 정보를 쉽게 찾기 어려움. 
-예) 충분한 여백이나 구분선이 없는 경우가 이에 해당 -->
-<style>
-    .content {
-        padding: 10px;
+<!-- 잘못된 예시 : 키보드로 조작할 수 없는 경우
+    커스텀 버튼이 마우스 클릭으로만 조작 가능하며, 키보드로는 조작할 수 없음
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Non-keyboard Accessible Example</title>
+  <style>
+    .custom-button {
+      width: 100px;
+      height: 50px;
+      background-color: blue;
+      color: white;
+      text-align: center;
+      line-height: 50px;
+      cursor: pointer;
     }
-</style>
-<div class="content">첫 번째 콘텐츠</div>
-<div class="content">두 번째 콘텐츠</div>
+  </style>
+</head>
+<body>
+  <div class="custom-button" onclick="alert('Button clicked!')">Click me</div>
+</body>
+</html>
 
-<!-- 올바른 예시 -->
-<style>
-    .content {
-        padding: 10px;
-        margin-bottom: 20px;
-        border: 1px solid #ddd;
-        background-color: #f9f9f9;
+<!-- 올바른 예시 : 키보드로 조작할 수 있는 경우
+    tabindex="0" 속성을 추가하여 키보드 포커스를 받을 수 있게 하고, onkeypress 이벤트를 사용하여 Enter 키로 버튼을 조작할 수 있게 함
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Keyboard Accessible Example</title>
+  <style>
+    .custom-button {
+      width: 100px;
+      height: 50px;
+      background-color: blue;
+      color: white;
+      text-align: center;
+      line-height: 50px;
+      cursor: pointer;
     }
-</style>
-<div class="content">첫 번째 콘텐츠</div>
-<div class="content">두 번째 콘텐츠</div>
+    .custom-button:focus {
+      outline: 2px solid yellow;
+    }
+  </style>
+</head>
+<body>
+  <div class="custom-button" tabindex="0" onclick="alert('Button clicked!')" onkeypress="if(event.key === 'Enter') { this.click(); }">Click me</div>
+</body>
+</html>
 ```
 
 **검수 방법**
-- 시각적 구분 확인: 콘텐츠 간에 충분한 여백, 구분선, 또는 배경색이 사용되어 이웃한 콘텐츠가 명확히 구별되는지 확인하였는가?   
-- 콘텐츠의 가독성 확인: 텍스트와 배경의 대비가 충분하여 가독성이 높은지 확인였는가?   
+- 키보드만 사용하여 웹 애플리케이션의 모든 기능을 탐색하고 조작할 수 있는지 확인하였는가?   
+- Tab, Shift+Tab, Enter, Space, Arrow 키 등을 사용하여 인터페이스 요소가 예상대로 작동하는지 테스트하였는가?   
+- Axe와 같은 접근성 검사 도구를 사용하여 키보드 접근성의 문제를 평가하였는가?   
+- WAVE 도구를 사용하여 키보드 접근성과 관련된 접근성 문제를 검사하였는가?   
+- NVDA, JAWS와 같은 스크린 리더를 사용하여 키보드만으로 모든 기능을 사용할 수 있는지 확인하였는가?   
+- 스크린 리더로 각 인터페이스 요소를 탐색하며 키보드 접근성이 보장되는지 확인하였는가?   
+- 브라우저의 개발자 도구를 사용하여 HTML 구조와 접근성 속성을 검사하고, 모든 인터페이스 요소가 키보드로 접근 가능한지 확인하였는가?   
+- 다양한 사용자가 웹 사이트를 탐색하며 키보드만으로 모든 기능을 사용하는 데 어려움이 없는지 피드백을 받았습니까?   
 
 
 #### 6.1.2. (초점 이동과 표시) 키보드에 의한 초점은 논리적으로 이동해야 하며, 시각적으로 구별할 수 있어야 한다.
+> 키보드에 의한 초점은 논리적으로 이동하고, 시각적으로 구별할 수 있어야 한다. 이는 사용자가 키보드를 통해 웹 페이지를 탐색할 때 초점의 위치를 쉽게 인식하고, 초점 이동이 자연스럽게 이루어지도록 한다.   
+WCAG 2.2 Guidelines : [Focus Order](https://www.w3.org/TR/WCAG22/#focus-order){: target="_blank"}
+
+```sh
+<!-- 잘못된 예시 1 : 초점 이동이 논리적이지 않고 시각적으로 구별되지 않는 경우 
+     초점이 이동할 때 시각적 표시가 없으며, 초점 이동의 순서가 논리적이지 않음.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Example Page</title>
+</head>
+<body>
+  <div>
+    <button>Button 1</button>
+    <input type="text" placeholder="Text Input">
+    <button>Button 2</button>
+  </div>
+</body>
+</html>
+
+
+<!-- 올바른 예시 1 : 초점 이동이 논리적이고 시각적으로 구별되는 경우
+     :focus 가상 클래스를 사용하여 초점이 맞춰진 요소를 시각적으로 구별할 수 있도록 하고, 요소의 배치와 순서를 논리적으로 배치.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Example Page</title>
+  <style>
+    button, input[type="text"] {
+      margin: 10px;
+    }
+    button:focus, input[type="text"]:focus {
+      outline: 2px solid blue;
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <button>Button 1</button>
+    <button>Button 2</button>
+    <input type="text" placeholder="Text Input">
+  </div>
+</body>
+</html>
+```
+
+**검수 방법**
+- 키보드만 사용하여 페이지를 탐색하며, 초점 이동이 논리적으로 이루어지는지 확인하였습니까?     
+- 초점이 맞춰진 요소가 시각적으로 구별되는지 확인하였습니까?     
+- Axe와 같은 접근성 검사 도구를 사용하여 초점 이동의 논리성과 시각적 구별 가능성을 평가하였습니까?     
+- WAVE 도구를 사용하여 초점 이동과 관련된 접근성 문제를 검사하였습니까?     
+- NVDA, JAWS와 같은 스크린 리더를 사용하여 초점 이동이 논리적이고 시각적으로 구별 가능한지 확인하였습니까?     
+- 브라우저의 개발자 도구를 사용하여 HTML 구조와 CSS 스타일을 검사하고, 초점 이동이 올바르게 구현되었는지 확인하였습니까?     
+- 다양한 사용자가 웹 사이트를 탐색하며 초점 이동과 시각적 구별이 원활한지 피드백을 받았습니까?    
+
 
 #### 6.1.3. (조작 가능) 사용자 입력 및 콘트롤은 조작 가능하도록 제공되어야 한다.
+> 사용자 입력 및 컨트롤이 조작 가능하게 제공된다는 것은, 모든 사용자(장애가 있는 사용자 포함)가 웹 페이지의 모든 기능을 문제없이 사용할 수 있도록 하는 것을 의미하며, 키보드, 마우스, 터치스크린 등 다양한 입력 장치를 사용하여 웹 페이지를 조작할 수 있어야 함을 포함한다.   
+WCAG 2.2 Guidelines : [Keyboard Accessible](https://www.w3.org/TR/WCAG22/#keyboard-accessible){: target="_blank"}
+
+```sh
+<!-- 잘못된 예시 1 : 조작 불가능한 컨트롤 
+     버튼이 숨겨져 있어 접근할 수 없고, 텍스트 입력 필드가 읽기 전용으로 설정되어 있어 사용자가 입력 불가능
+-->
+<div>
+  <button onclick="alert('Button clicked!')" style="display:none;">Hidden Button</button>
+  <input type="text" placeholder="Enter text" readonly>
+</div>
+
+<!-- 잘못된 예시 2 : 키보드 접근성이 없는 경우 
+     tabindex="-1" 속성으로 인해 버튼이 키보드 포커스를 받을 수 없음
+-->
+<div>
+  <button onclick="alert('Button clicked!')" tabindex="-1">Non-focusable Button</button>
+</div>
+
+
+<!-- 올바른 예시 1 : 조작 가능한 컨트롤
+     버튼이 표시되어 있으며, 텍스트 입력 필드가 조작 가능하게 설정.
+-->
+<div>
+  <button onclick="alert('Button clicked!')">Click me</button>
+  <input type="text" placeholder="Enter text">
+</div>
+
+<!-- 올바른 예시 2 : 키보드 접근성이 있는 경우
+     버튼이 키보드 포커스를 받을 수 있도록 설정.
+-->
+<div>
+  <button onclick="alert('Button clicked!')">Focusable Button</button>
+</div>
+```
+
+**검수 방법**
+- 키보드, 마우스, 터치스크린 등 다양한 입력 장치를 사용하여 웹 페이지의 모든 기능을 테스트하였습니까?     
+- 모든 버튼, 링크, 입력 필드 등이 조작 가능한지 확인하였습니까?     
+- Axe와 같은 접근성 검사 도구를 사용하여 사용자 입력 및 컨트롤의 접근성을 평가하였습니까?     
+- WAVE 도구를 사용하여 조작 가능 여부를 검사하였습니까?     
+- NVDA, JAWS와 같은 스크린 리더를 사용하여 모든 사용자 입력 및 컨트롤이 접근 가능하고 조작 가능한지 확인하였습니까?     
+- 브라우저의 개발자 도구를 사용하여 HTML 구조와 CSS 스타일을 검사하고, 모든 사용자 입력 및 컨트롤이 조작 가능하게 설정되었는지 확인하였습니까?     
+- 다양한 사용자가 웹 사이트를 탐색하며 모든 기능을 문제없이 사용할 수 있는지 피드백을 받았습니까?    
+
 
 #### 6.1.4 (문자 단축키) 문자 단축키는 오동작으로 인한 오류를 방지하여야 한다.
+> 문자 단축키는 오동작을 방지할 수 있도록 설계되어야 하며, 사용자에게 혼란을 주지 않도록, 단축키를 사용할 때 명확한 컨텍스트가 필요하거나 추가 키(예: Ctrl, Alt, Shift)와 함께 사용해야 함을 의미한다.   
+WCAG 2.2 Guidelines : [Character Key Shortcuts](https://www.w3.org/TR/WCAG22/#character-key-shortcuts){: target="_blank"}
+
+```sh
+<!-- 잘못된 예시 1 : 오동작 방지 없이 문자 단축키 사용
+     사용자가 입력 필드에 텍스트를 입력할 때 'a' 키를 누르면 의도하지 않은 동작이 발생할 수 있음
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Example Page</title>
+  <script>
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'a') {
+        alert('You pressed the "a" key!');
+      }
+    });
+  </script>
+</head>
+<body>
+  <input type="text" placeholder="Type something here">
+</body>
+</html>
+
+
+<!-- 올바른 예시 1 : 오동작 방지를 위한 문자 단축키 사용
+     'Ctrl' 키와 함께 'a' 키를 눌러야 단축키가 작동하도록 하여 오동작을 방지.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Example Page</title>
+  <script>
+    document.addEventListener('keydown', function(event) {
+      if (event.ctrlKey && event.key === 'a') {
+        alert('You pressed "Ctrl + a"!');
+        event.preventDefault(); // 기본 동작 방지
+      }
+    });
+  </script>
+</head>
+<body>
+  <input type="text" placeholder="Type something here">
+</body>
+</html>
+```
+
+**검수 방법**
+- 다양한 입력 시나리오를 테스트하여 단축키가 의도치 않게 작동하지 않는지 확인하였습니까?     
+- 단축키를 사용할 때 추가 키(예: Ctrl, Alt, Shift)와 함께 사용하도록 설정되었는지 확인하였습니까?     
+- Axe와 같은 접근성 검사 도구를 사용하여 문자 단축키 사용의 접근성을 평가하였습니까?     
+- WAVE 도구를 사용하여 단축키 사용과 관련된 접근성 문제를 검사하였습니까?     
+- NVDA, JAWS와 같은 스크린 리더를 사용하여 단축키가 올바르게 작동하고, 오동작을 방지하도록 설정되었는지 확인하였습니까?     
+- 브라우저의 개발자 도구를 사용하여 단축키 이벤트 리스너와 스크립트를 검사하고, 오동작을 방지하기 위한 추가 키 설정이 올바르게 구현되었는지 확인하였습니까?     
+- 다양한 사용자가 웹 사이트를 탐색하며 단축키 사용에 불편함이 없는지 피드백을 받았습니까?    
+
 
 #### 6.2.1. (응답시간 조절) 시간제한이 있는 콘텐츠는 응답시간을 조절할 수 있어야 한다.
+> 시간제한이 있는 콘텐츠는 사용자가 응답시간을 조절할 수 있도록 해야 하며, 사용자가 콘텐츠를 충분히 읽고 이해하며 상호작용할 수 있는 시간을 제공하는 것을 의미한다. 사용자는 시간을 연장하거나, 일시 정지하거나, 시간제한을 제거할 수 있는 옵션을 제공받아야 한다.   
+WCAG 2.2 Guidelines : [Timing Adjustable](https://www.w3.org/TR/WCAG22/#timing-adjustable){: target="_blank"}
+
+```sh
+<!-- 잘못된 예시 1 : 시간제한을 조절할 수 없는 경우
+     시간제한이 고정되어 있으며 사용자가 조절할 수 없음
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Timed Quiz</title>
+  <script>
+    let timeLeft = 30;
+    let timer = setInterval(function() {
+      document.getElementById('time').textContent = timeLeft + ' seconds remaining';
+      timeLeft--;
+      if (timeLeft < 0) {
+        clearInterval(timer);
+        alert('Time is up!');
+      }
+    }, 1000);
+  </script>
+</head>
+<body>
+  <h1>Quiz</h1>
+  <p id="time">30 seconds remaining</p>
+  <form>
+    <label for="question">What is 2 + 2?</label>
+    <input type="text" id="question" name="question">
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>
+
+
+<!-- 올바른 예시 1 : 시간제한을 조절할 수 있는 경우
+    사용자가 시간을 연장하거나, 일시 정지하거나, 다시 시작할 수 있는 옵션을 제공.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Timed Quiz</title>
+  <script>
+    let timeLeft = 30;
+    let timer;
+
+    function startTimer() {
+      timer = setInterval(function() {
+        document.getElementById('time').textContent = timeLeft + ' seconds remaining';
+        timeLeft--;
+        if (timeLeft < 0) {
+          clearInterval(timer);
+          alert('Time is up!');
+        }
+      }, 1000);
+    }
+
+    function extendTime() {
+      timeLeft += 30; // Extend time by 30 seconds
+    }
+
+    function pauseTimer() {
+      clearInterval(timer);
+    }
+
+    function resumeTimer() {
+      startTimer();
+    }
+
+    window.onload = function() {
+      startTimer();
+    }
+  </script>
+</head>
+<body>
+  <h1>Quiz</h1>
+  <p id="time">30 seconds remaining</p>
+  <form>
+    <label for="question">What is 2 + 2?</label>
+    <input type="text" id="question" name="question">
+    <button type="submit">Submit</button>
+  </form>
+  <button onclick="extendTime()">Extend Time</button>
+  <button onclick="pauseTimer()">Pause</button>
+  <button onclick="resumeTimer()">Resume</button>
+</body>
+</html>
+```
+
+**검수 방법**
+- 시간을 연장, 일시 정지 및 다시 시작할 수 있는 옵션이 제공되는지 확인하였습니까?     
+- 다양한 시나리오에서 시간이 올바르게 조절되는지 테스트하였습니까?     
+- Axe와 같은 접근성 검사 도구를 사용하여 시간제한 조절 기능의 접근성을 평가하였습니까?     
+- WAVE 도구를 사용하여 시간제한 조절 기능과 관련된 접근성 문제를 검사하였습니까?     
+- NVDA, JAWS와 같은 스크린 리더를 사용하여 시간제한 조절 기능이 올바르게 작동하고 접근 가능한지 확인하였습니까?     
+- 브라우저의 개발자 도구를 사용하여 시간제한 조절 스크립트와 HTML 구조를 검사하고, 모든 기능이 올바르게 구현되었는지 확인하였습니까?     
+- 다양한 사용자가 웹 사이트를 탐색하며 시간제한 조절 기능을 사용하는 데 어려움이 없는지 피드백을 받았습니까?    
+
 
 #### 6.2.2. (정지 기능 제공) 자동으로 변경되는 콘텐츠는 움직임을 제어할 수 있어야 한다.
+> 자동으로 변경되는 콘텐츠는 사용자가 이를 제어할 수 있도록 기능을 제공해야 하며, 사용자가 콘텐츠의 자동 변환을 멈추거나 일시 정지할 수 있는 옵션을 포함하여 시각적 혼란을 최소화하는 것을 의미한다.   
+WCAG 2.2 Guidelines : [Pause, Stop, Hide](https://www.w3.org/TR/WCAG22/#pause-stop-hide){: target="_blank"}
+
+```sh
+<!-- 잘못된 예시 1 : 초당 3~50회 주기로 깜빡이는 콘텐츠 
+     자동 슬라이드쇼를 제어할 수 있는 방법이 미제공
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Auto-changing Content</title>
+  <style>
+    #slider {
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+    }
+    #slides {
+      display: flex;
+      width: 400%;
+      animation: slide 8s infinite;
+    }
+    .slide {
+      width: 100%;
+      height: 200px;
+    }
+    @keyframes slide {
+      0% { transform: translateX(0); }
+      25% { transform: translateX(-100%); }
+      50% { transform: translateX(-200%); }
+      75% { transform: translateX(-300%); }
+      100% { transform: translateX(0); }
+    }
+  </style>
+</head>
+<body>
+  <div id="slider">
+    <div id="slides">
+      <div class="slide" style="background-color: red;"></div>
+      <div class="slide" style="background-color: blue;"></div>
+      <div class="slide" style="background-color: green;"></div>
+      <div class="slide" style="background-color: yellow;"></div>
+    </div>
+  </div>
+</body>
+</html>
+
+
+<!-- 올바른 예시 1 : 자동으로 변경되는 콘텐츠를 제어할 수 있는 경우
+    사용자가 슬라이드쇼를 일시 정지하거나 다시 시작할 수 있는 버튼을 제공하여 자동으로 변경되는 콘텐츠를 제어 가능.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Auto-changing Content</title>
+  <style>
+    #slider {
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+      position: relative;
+    }
+    #slides {
+      display: flex;
+      width: 400%;
+      transition: transform 1s;
+    }
+    .slide {
+      width: 100%;
+      height: 200px;
+    }
+    .control-buttons {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 10;
+    }
+  </style>
+</head>
+<body>
+  <div id="slider">
+    <div id="slides">
+      <div class="slide" style="background-color: red;"></div>
+      <div class="slide" style="background-color: blue;"></div>
+      <div class="slide" style="background-color: green;"></div>
+      <div class="slide" style="background-color: yellow;"></div>
+    </div>
+    <div class="control-buttons">
+      <button onclick="pauseSlides()">Pause</button>
+      <button onclick="resumeSlides()">Resume</button>
+    </div>
+  </div>
+
+  <script>
+    let currentIndex = 0;
+    let slides = document.getElementById('slides');
+    let totalSlides = slides.children.length;
+    let interval;
+
+    function showSlide(index) {
+      slides.style.transform = 'translateX(' + (-100 * index) + '%)';
+    }
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % totalSlides;
+      showSlide(currentIndex);
+    }
+
+    function startSlides() {
+      interval = setInterval(nextSlide, 2000);
+    }
+
+    function pauseSlides() {
+      clearInterval(interval);
+    }
+
+    function resumeSlides() {
+      startSlides();
+    }
+
+    window.onload = function() {
+      startSlides();
+    }
+  </script>
+</body>
+</html>
+```
+
+**검수 방법**
+- 콘텐츠의 자동 변환을 멈추거나 일시 정지할 수 있는 옵션이 제공되는지 확인하였습니까?     
+- 다양한 시나리오에서 제어 기능이 올바르게 작동하는지 테스트하였습니까?     
+- Axe와 같은 접근성 검사 도구를 사용하여 자동으로 변경되는 콘텐츠 제어 기능의 접근성을 평가하였습니까?     
+- WAVE 도구를 사용하여 제어 기능과 관련된 접근성 문제를 검사하였습니까?     
+- NVDA, JAWS와 같은 스크린 리더를 사용하여 자동으로 변경되는 콘텐츠 제어 기능이 올바르게 작동하고 접근 가능한지 확인하였습니까?     
+- 브라우저의 개발자 도구를 사용하여 제어 스크립트와 HTML 구조를 검사하고, 모든 기능이 올바르게 구현되었는지 확인하였습니까?     
+- 다양한 사용자가 웹 사이트를 탐색하며 자동으로 변경되는 콘텐츠 제어 기능을 사용하는 데 어려움이 없는지 피드백을 받았습니까?    
+
 
 #### 6.3.1. (깜빡임과 번쩍임 사용 제한) 초당 3~50회 주기로 깜빡이거나 번쩍이는 콘텐츠를 제공하지 않아야 한다.
+> 초당 3~50회 주기로 깜빡이거나 번쩍이는 콘텐츠는 사용자가 발작을 경험할 수 있는 위험을 증가시키므로 피해야 한다. 대신, 깜빡임을 줄이거나 제거하고, 다른 시각적 효과로 대체해야 한다.   
+WCAG 2.2 Guidelines : [Three Flashes or Below Threshold](https://www.w3.org/TR/WCAG22/#three-flashes-or-below-threshold){: target="_blank"}
+
+```sh
+<!-- 잘못된 예시 1 : 초당 3~50회 주기로 깜빡이는 콘텐츠 
+     blink 애니메이션이 초당 10회 깜빡이도록 설정되어 있어 접근성 문제를 일으킬 수 있음
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Blinking Content</title>
+  <style>
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    .blink {
+      animation: blink 0.1s infinite;
+    }
+  </style>
+</head>
+<body>
+  <div class="blink">This content blinks rapidly!</div>
+</body>
+</html>
+
+
+<!-- 올바른 예시 1 : 깜빡임을 제거한 콘텐츠
+    깜빡임 대신 배경색이 부드럽게 전환되도록 설정하여 안전하게 시각적 주의를 끌 수 있는경우.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Non-Blinking Content</title>
+  <style>
+    .highlight {
+      background-color: yellow;
+      transition: background-color 0.5s ease;
+    }
+    .highlight:hover {
+      background-color: orange;
+    }
+  </style>
+</head>
+<body>
+  <div class="highlight">This content changes color smoothly!</div>
+</body>
+</html>
+```
+
+**검수 방법**
+- 모든 콘텐츠를 확인하여 초당 3~50회 주기로 깜빡이거나 번쩍이는 요소가 있는지 검사하였습니까?     
+- 깜빡임이 있는 콘텐츠를 다른 시각적 효과로 대체했는지 확인하였습니까?     
+- Axe와 같은 접근성 검사 도구를 사용하여 깜빡임과 번쩍임 문제를 평가하였습니까?     
+- WAVE 도구를 사용하여 깜빡임 관련 접근성 문제를 검사하였습니까?     
+- 브라우저의 개발자 도구를 사용하여 애니메이션 및 전환 효과를 검사하고, 깜빡임이 없는지 확인하였습니까?     
+- 다양한 사용자가 웹 사이트를 탐색하며 깜빡임이나 번쩍임이 발생하지 않는지 피드백을 받았습니까?    
+
 
 #### 6.4.4. (고정된 참조 위치 정보) 전자출판문서 형식의 웹 페이지는 각페이지로 이동할 수 있는 기능이 있어야 하고, 서식이나 플랫폼에 상관없이 참조 위치 정보를 일관되게 제공ㆍ유지해야 한다.
+> 전자출판문서 형식의 웹 페이지는 각 페이지로 이동할 수 있는 기능을 제공해야 한다. 또한, 서식이나 플랫폼에 상관없이 참조 위치 정보를 일관되게 제공·유지하여 사용자가 문서 내에서 일관된 경험을 할 수 있도록 해야 한다.   
+WCAG 2.2 Guidelines : [Navigable](https://www.w3.org/TR/WCAG22/#navigable){: target="_blank"}
+[EPUB Accessibility Guidelines](https://www.w3.org/TR/epub-a11y-11/){: target="_blank"}
+
+```sh
+<!-- 잘못된 예시 1 : 페이지 이동 기능이 없는 경우 
+    페이지 이동 기능이 제공되지 않아 사용자가 문서 내에서 쉽게 탐색 불가능
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document without Navigation</title>
+</head>
+<body>
+  <div id="content">
+    <h1>Chapter 1</h1>
+    <p>Content of chapter 1...</p>
+    <h1>Chapter 2</h1>
+    <p>Content of chapter 2...</p>
+  </div>
+</body>
+</html>
+
+
+<!-- 올바른 예시 1 : 페이지 이동 기능이 있는 경우
+    내비게이션 링크를 제공하여 사용자가 각 챕터로 쉽게 이동.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document with Navigation</title>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="#chapter1">Chapter 1</a></li>
+      <li><a href="#chapter2">Chapter 2</a></li>
+      <li><a href="#chapter3">Chapter 3</a></li>
+    </ul>
+  </nav>
+  <div id="content">
+    <h1 id="chapter1">Chapter 1</h1>
+    <p>Content of chapter 1...</p>
+    <h1 id="chapter2">Chapter 2</h1>
+    <p>Content of chapter 2...</p>
+    <h1 id="chapter3">Chapter 3</h1>
+    <p>Content of chapter 3...</p>
+  </div>
+</body>
+</html>
+
+
+<!-- 올바른 예시 2 : 일관된 참조 위치 정보 제공
+    id 속성을 사용하여 페이지를 구분하고, 내비게이션 링크를 통해 각 페이지로 이동할 수 있도록 합니다. 각 페이지는 :target CSS 선택자를 사용하여 참조 위치가 일관되게 유지.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document with Consistent Reference</title>
+  <style>
+    .page {
+      display: none;
+    }
+    .page:target {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="#page1">Page 1</a></li>
+      <li><a href="#page2">Page 2</a></li>
+      <li><a href="#page3">Page 3</a></li>
+    </ul>
+  </nav>
+  <div id="content">
+    <div id="page1" class="page">
+      <h1>Page 1</h1>
+      <p>Content of page 1...</p>
+    </div>
+    <div id="page2" class="page">
+      <h1>Page 2</h1>
+      <p>Content of page 2...</p>
+    </div>
+    <div id="page3" class="page">
+      <h1>Page 3</h1>
+      <p>Content of page 3...</p>
+    </div>
+  </div>
+</body>
+</html>
+```
+
+**검수 방법**
+- 내비게이션 링크를 클릭하여 각 페이지로 이동할 수 있는지 확인하였습니까?     
+- 모든 페이지가 일관된 참조 위치를 유지하고 있는지 확인하였습니까?     
+- Axe와 같은 접근성 검사 도구를 사용하여 내비게이션 기능의 접근성을 평가하였습니까?     
+- WAVE 도구를 사용하여 내비게이션과 참조 위치 정보와 관련된 접근성 문제를 검사하였습니까?     
+- NVDA, JAWS와 같은 스크린 리더를 사용하여 내비게이션 링크와 참조 위치가 올바르게 작동하는지 확인하였습니까?     
+- 브라우저의 개발자 도구를 사용하여 HTML 구조와 CSS 스타일을 검사하고, 모든 기능이 올바르게 구현되었는지 확인하였습니까?     
+- 다양한 사용자가 웹 사이트를 탐색하며 내비게이션 기능과 참조 위치 정보 제공에 어려움이 없는지 피드백을 받았습니까?    
+
 
 #### 6.5.1. (단일 포인터 입력 지원) 다중 포인터 또는 경로기반 동작을 통한 입력은 단일 포인터 입력으로도 조작할 수 있어야 한다.
+> 웹 애플리케이션은 다중 포인터 또는 경로 기반 동작을 포함한 입력 방식을 사용할 때, 단일 포인터 입력으로도 동일한 작업을 수행할 수 있도록 지원해야 한다. 이는 사용자가 한 손가락만으로도 모든 기능을 이용할 수 있게 하여 접근성을 높입.   
+WCAG 2.2 Guidelines : [Pointer Gestures](https://www.w3.org/TR/WCAG22/#pointer-gestures){: target="_blank"}
+
+```sh
+<!-- 잘못된 예시 1 : 다중 포인터 입력만 지원하는 경우 
+    다중 포인터 입력(예: 두 손가락으로 줌)을 지원하지만, 단일 포인터 입력에 대한 대체 방법이 미제공
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Multi-pointer Input Only</title>
+  <style>
+    #image {
+      width: 300px;
+      height: 200px;
+      background: url('image.jpg') no-repeat;
+      background-size: cover;
+    }
+  </style>
+</head>
+<body>
+  <div id="image"></div>
+  <script>
+    const image = document.getElementById('image');
+    image.addEventListener('touchstart', function(event) {
+      if (event.touches.length > 1) {
+        // Handle multi-touch zoom or pan
+      }
+    });
+  </script>
+</body>
+</html>
+
+
+<!-- 올바른 예시 1 : 단일 포인터 입력을 지원하는 경우
+    단일 포인터 입력(예: 마우스를 통한 드래그)을 지원하여 모든 사용자가 이미지를 조작할 수 있도록 제공.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Single Pointer Input Supported</title>
+  <style>
+    #image {
+      width: 300px;
+      height: 200px;
+      background: url('image.jpg') no-repeat;
+      background-size: cover;
+    }
+  </style>
+</head>
+<body>
+  <div id="image"></div>
+  <script>
+    const image = document.getElementById('image');
+    let isDragging = false;
+    let startX, startY;
+
+    // Multi-pointer input (e.g., zoom)
+    image.addEventListener('touchstart', function(event) {
+      if (event.touches.length > 1) {
+        // Handle multi-touch zoom or pan
+      }
+    });
+
+    // Single pointer input (e.g., drag)
+    image.addEventListener('mousedown', function(event) {
+      isDragging = true;
+      startX = event.pageX - image.offsetLeft;
+      startY = event.pageY - image.offsetTop;
+    });
+
+    document.addEventListener('mousemove', function(event) {
+      if (isDragging) {
+        image.style.left = `${event.pageX - startX}px`;
+        image.style.top = `${event.pageY - startY}px`;
+      }
+    });
+
+    document.addEventListener('mouseup', function() {
+      isDragging = false;
+    });
+  </script>
+</body>
+</html>
+```
+
+**검수 방법**
+- 터치스크린, 마우스, 스타일러스 등 다양한 입력 장치를 사용하여 웹 애플리케이션의 모든 기능이 단일 포인터 입력으로 작동하는지 확인하였습니까?     
+- 다중 포인터 입력이 필요한 기능이 단일 포인터 입력으로도 수행될 수 있는지 테스트하였습니까?     
+- Axe와 같은 접근성 검사 도구를 사용하여 포인터 입력 지원의 접근성을 평가하였습니까?     
+- WAVE 도구를 사용하여 포인터 입력과 관련된 접근성 문제를 검사하였습니까?     
+- NVDA, JAWS와 같은 스크린 리더를 사용하여 단일 포인터 입력이 올바르게 작동하고 접근 가능한지 확인하였습니까?     
+- 브라우저의 개발자 도구를 사용하여 입력 이벤트 리스너와 스크립트를 검사하고, 모든 기능이 단일 포인터 입력으로도 조작 가능하게 구현되었는지 확인하였습니까?     
+- 다양한 사용자가 웹 사이트를 탐색하며 단일 포인터 입력으로 모든 기능을 사용하는 데 어려움이 없는지 피드백을 받았습니까?    
+
 
 #### 6.5.2. (포인터 입력 취소) 단일 포인터 입력으로 실행되는 기능은 취소할 수 있어야 한다.
+> 단일 포인터 입력으로 실행되는 기능은 사용자가 쉽게 취소할 수 있어야 한다. 이를 통해 사용자는 실수로 실행된 동작을 되돌릴 수 있으며, 웹 애플리케이션을 더 편리하게 사용할 수 있다.   
+WCAG 2.2 Guidelines : [Pointer Cancellation](https://www.w3.org/TR/WCAG22/#pointer-cancellation){: target="_blank"}
+
+```sh
+<!-- 잘못된 예시 1 : 포인터 입력 취소 기능이 없는 경우 
+    사용자가 삭제 버튼을 클릭하면 즉시 동작이 실행되며, 이를 취소할 수 있는 방법이 미제공
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Uncancelable Action</title>
+</head>
+<body>
+  <button id="deleteButton">Delete</button>
+  <script>
+    document.getElementById('deleteButton').addEventListener('click', function() {
+      alert('Item deleted');
+    });
+  </script>
+</body>
+</html>
+
+
+<!-- 올바른 예시 1 : 포인터 입력 취소 기능이 있는 경우
+    삭제 버튼을 클릭하면 확인 대화 상자가 나타나며, 사용자가 동작을 취소할 수 있는 옵션을 제공.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cancelable Action</title>
+</head>
+<body>
+  <button id="deleteButton">Delete</button>
+  <div id="confirmationDialog" style="display:none;">
+    <p>Are you sure you want to delete this item?</p>
+    <button id="confirmDelete">Yes</button>
+    <button id="cancelDelete">No</button>
+  </div>
+  <script>
+    document.getElementById('deleteButton').addEventListener('click', function() {
+      document.getElementById('confirmationDialog').style.display = 'block';
+    });
+
+    document.getElementById('confirmDelete').addEventListener('click', function() {
+      alert('Item deleted');
+      document.getElementById('confirmationDialog').style.display = 'none';
+    });
+
+    document.getElementById('cancelDelete').addEventListener('click', function() {
+      document.getElementById('confirmationDialog').style.display = 'none';
+    });
+  </script>
+</body>
+</html>
+```
+
+**검수 방법**
+- 단일 포인터 입력(예: 마우스 클릭, 터치)을 통해 실행되는 모든 기능이 취소 가능한지 확인하였습니까?     
+- 실행된 동작을 쉽게 취소할 수 있는지 테스트하였습니까?     
+- Axe와 같은 접근성 검사 도구를 사용하여 포인터 입력 취소 기능의 접근성을 평가하였습니까?     
+- WAVE 도구를 사용하여 포인터 입력과 관련된 접근성 문제를 검사하였습니까?     
+- NVDA, JAWS와 같은 스크린 리더를 사용하여 포인터 입력 취소 기능이 올바르게 작동하고 접근 가능한지 확인하였습니까?     
+- 브라우저의 개발자 도구를 사용하여 이벤트 리스너와 스크립트를 검사하고, 모든 기능이 취소 가능하게 구현되었는지 확인하였습니까?     
+- 다양한 사용자가 웹 사이트를 탐색하며 포인터 입력 취소 기능을 사용하는 데 어려움이 없는지 피드백을 받았습니까?    
+
 
 #### 6.5.3. (레이블과 네임) 텍스트 또는 텍스트 이미지가 포함된 레이블이 있는 사용자 인터페이스 구성요소는 네임에 시각적으로 표시되는 해당 텍스트를 포함해야 한다.
+> 텍스트 또는 텍스트 이미지를 포함한 레이블이 있는 사용자 인터페이스 구성 요소는 네임에 시각적으로 표시되는 해당 텍스트를 포함해야 한다. 이는 사용자 인터페이스의 일관성을 유지하고, 보조 기술이 정확하게 정보를 전달할 수 있도록 보장해야 한다.   
+WCAG 2.2 Guidelines : [Label in Name](https://www.w3.org/TR/WCAG22/#label-in-name){: target="_blank"}
+
+```sh
+<!-- 잘못된 예시 1 : 레이블과 네임이 일치하지 않는 경우 
+    시각적으로 "Find:"가 표시되지만, 스크린 리더는 "Search"라는 네임을 읽게 되어 일관성이 없음
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Label and Name Example</title>
+</head>
+<body>
+  <label for="search">Find:</label>
+  <input type="text" id="search" aria-label="Search">
+</body>
+</html>
+
+
+<!-- 올바른 예시 1 : 레이블과 네임이 일치하는 경우
+    시각적으로 표시되는 텍스트 "Search:"와 스크린 리더가 읽는 네임 "Search"가 일치.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Label and Name Example</title>
+</head>
+<body>
+  <label for="search">Search:</label>
+  <input type="text" id="search" aria-label="Search">
+</body>
+</html>
+```
+
+**검수 방법**
+- UI 요소의 시각적 레이블과 네임이 일치하는지 확인하였습니까?     
+- HTML 소스 코드를 확인하여 aria-label 또는 aria-labelledby 속성이 올바르게 설정되었는지 확인하였습니까?     
+- Axe와 같은 접근성 검사 도구를 사용하여 레이블과 네임의 일치성을 평가하였습니까?     
+- WAVE 도구를 사용하여 레이블과 관련된 접근성 문제를 검사하였습니까?     
+- NVDA, JAWS와 같은 스크린 리더를 사용하여 레이블과 네임이 일치하는지 확인하였습니까?     
+- 스크린 리더로 각 UI 요소를 탐색하며 시각적으로 표시된 텍스트와 네임이 일치하는지 확인하였습니까?     
+- 브라우저의 개발자 도구를 사용하여 HTML 구조와 접근성 속성을 검사하고, 레이블과 네임이 일치하는지 확인하였습니까?     
+- 다양한 사용자가 웹 사이트를 탐색하며 레이블과 네임의 일치성에 대한 피드백을 받았습니까?    
+
+
 
 #### 6.5.4. (동작기반 작동) 동작기반으로 작동하는 기능은 사용자 인터페이스 구성요소로 조작할 수 있고, 동작기반 기능을 비활성화할 수 있어야 한다.
+> 동작기반으로 작동하는 기능은 사용자 인터페이스 구성 요소로도 조작할 수 있어야 하며, 사용자가 이러한 기능을 비활성화할 수 있는 옵션을 제공해야 한다. 이를 통해 다양한 사용자가 동일한 기능을 접근하고 사용할 수 있도록 보장한다.   
+WCAG 2.2 Guidelines : [Motion Actuation](https://www.w3.org/TR/WCAG22/#motion-actuation){: target="_blank"}
+
+```sh
+<!-- 잘못된 예시 1 : 동작기반 기능만 제공하는 경우 
+    기기를 흔드는 동작으로만 기능이 작동하며, 다른 대체 방법이 미제공
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Motion-Based Functionality</title>
+  <script>
+    window.addEventListener('devicemotion', function(event) {
+      if (event.acceleration.x > 2) {
+        alert('Motion detected!');
+      }
+    });
+  </script>
+</head>
+<body>
+  <p>Shake your device to trigger an action.</p>
+</body>
+</html>
+
+
+<!-- 올바른 예시 1 : 사용자 인터페이스 구성 요소와 비활성화 옵션을 제공하는 경우
+    사용자가 기기를 흔드는 동작과 버튼 클릭을 통해 동일한 기능을 사용할 수 있으며, 동작기반 기능을 비활성화할 수 있는 옵션을 제공.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Motion-Based Functionality with UI Controls</title>
+  <style>
+    #disableMotion {
+      margin-top: 20px;
+    }
+  </style>
+  <script>
+    let motionEnabled = true;
+
+    function handleMotion(event) {
+      if (motionEnabled && event.acceleration.x > 2) {
+        alert('Motion detected!');
+      }
+    }
+
+    window.addEventListener('devicemotion', handleMotion);
+
+    function toggleMotion() {
+      motionEnabled = !motionEnabled;
+      document.getElementById('motionStatus').textContent = motionEnabled ? 'enabled' : 'disabled';
+    }
+  </script>
+</head>
+<body>
+  <p>Shake your device to trigger an action or click the button below.</p>
+  <button onclick="alert('Button clicked!')">Trigger Action</button>
+  <div id="disableMotion">
+    <button onclick="toggleMotion()">Toggle Motion Detection</button>
+    <p>Motion detection is currently <span id="motionStatus">enabled</span>.</p>
+  </div>
+</body>
+</html>
+```
+
+**검수 방법**
+- 동작기반 기능이 사용자 인터페이스 구성 요소(예: 버튼 클릭)를 통해 조작될 수 있는지 확인하였습니까?     
+- 동작기반 기능을 비활성화할 수 있는 옵션이 제공되는지 확인하였습니까?     
+- Axe와 같은 접근성 검사 도구를 사용하여 동작기반 기능의 접근성을 평가하였습니까?     
+- WAVE 도구를 사용하여 동작기반 기능과 관련된 접근성 문제를 검사하였습니까?     
+- NVDA, JAWS와 같은 스크린 리더를 사용하여 동작기반 기능이 올바르게 작동하고 접근 가능한지 확인하였습니까?     
+- 스크린 리더를 사용하여 비활성화 옵션이 제대로 작동하는지 확인하였습니까?     
+- 브라우저의 개발자 도구를 사용하여 이벤트 리스너와 스크립트를 검사하고, 동작기반 기능이 사용자 인터페이스 구성 요소로 조작될 수 있는지 확인하였습니까?     
+- 다양한 사용자가 웹 사이트를 탐색하며 동작기반 기능과 비활성화 옵션을 사용하는 데 어려움이 없는지 피드백을 받았습니까?    
+
 
 
 ### 이해의 용이성 (Understandable)
 
 #### 7.1.1. (기본 언어 표시) 주로 사용하는 언어를 명시해야 한다. 
+> 주로 사용하는 언어를 명시하여, 브라우저와 보조 기술이 페이지의 언어를 올바르게 인식하도록 적절한 설정을 적용함으로서 사용자 경험과 접근성을 크게 향상시킨다.   
+WCAG 2.2 Guidelines : [Language of Page](https://www.w3.org/TR/WCAG22/#language-of-page){: target="_blank"}
+
+```sh
+<!-- 잘못된 예시 1 : 기본 언어가 명시되지 않은 경우
+    페이지의 기본 언어가 명시되지 않아 브라우저와 보조 기술이 언어를 인식할 수 없다.   
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Example Page</title>
+</head>
+<body>
+  <h1>Welcome to our website</h1>
+  <p>This is a sample paragraph.</p>
+</body>
+</html>
+
+
+<!-- 잘못된 예시 2 : 다국어 콘텐츠가 포함된 경우 
+    일부 콘텐츠가 스페인어로 되어 있지만 언어가 명시되지 않았음
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Multilingual Page</title>
+</head>
+<body>
+  <h1>Welcome to our website</h1>
+  <p>Bienvenido a nuestro sitio web</p>
+</body>
+</html>
+
+
+
+<!-- 올바른 예시 1 : 기본 언어를 명시한 경우
+    lang 속성을 사용하여 페이지의 기본 언어를 영어(en)로 명시.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Multilingual Page</title>
+</head>
+<body>
+  <h1>Welcome to our website</h1>
+  <p>Bienvenido a nuestro sitio web</p>
+</body>
+</html>
+
+
+<!-- 올바른 예시 2 : 다국어 콘텐츠가 포함된 경우 
+    lang="es" 속성을 사용하여 스페인어 콘텐츠를 명시.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Multilingual Page</title>
+</head>
+<body>
+  <h1>Welcome to our website</h1>
+  <p lang="es">Bienvenido a nuestro sitio web</p>
+</body>
+</html>
+```
+
+**검수 방법**
+- HTML 문서의 &lt;html&gt; 태그에 lang 속성이 올바르게 설정되어 있는지 확인하였습니까?     
+- 다국어 콘텐츠가 포함된 경우, 해당 콘텐츠의 lang 속성이 올바르게 설정되어 있는지 확인하였습니까?     
+- Axe와 같은 접근성 검사 도구를 사용하여 페이지의 언어 설정이 올바른지 평가하였습니까?     
+- WAVE 도구를 사용하여 페이지의 접근성을 검사하였습니까?     
+- NVDA, JAWS와 같은 스크린 리더를 사용하여 페이지의 언어가 올바르게 인식되는지 확인하였습니까?     
+- 브라우저의 개발자 도구를 사용하여 HTML 구조를 검사하고, 언어 속성이 올바르게 설정되었는지 확인하였습니까?     
+- Google Search Console과 같은 도구를 사용하여 페이지의 언어 설정이 검색 엔진에 올바르게 인식되는지 확인하습니까?    
+
 
 #### 7.2.1. (사용자 요구에 따른 실행) 사용자가 의도하지 않은 기능(새 창, 초점에 의한 맥락 변화 등)은 실행되지 않아야 한다. 
+> 사용자가 의도하지 않은 기능이 실행되지 않도록 하려면, 사용자 인터페이스 요소가 예상치 못한 방식으로 동작하지 않도록 해야 하고, 특히 새 창 열기, 자동 포커스 변경 등의 동작은 사용자의 명시적인 동작이나 선택에 의해서만 이루어져야 한다.   
+WCAG 2.2 Guidelines : [On Focus](https://www.w3.org/TR/WCAG22/#on-focus){: target="_blank"}
+WCAG 2.2 Guidelines : [On Input](https://www.w3.org/TR/WCAG22/#on-input){: target="_blank"}
+
+```sh
+<!-- 잘못된 예시 1 : 의도하지 않은 새 창 열기(사전 안내 미제공)
+    사용자가 클릭할 때 새 창이 열리지만 새 창이 열리는 사전안내가 없어 사용자에게 혼란을 줄 수 있다   
+-->
+<a href="https://uxkm.io" target="_blank">UXKM</a>
+
+<!-- 잘못된 예시 2 : 의도하지 않은 포커스 변화 
+    사용자가 username 필드에 포커스를 줄 때 자동으로 password 필드로 포커스가 이동하여 혼란을 줄 수 있다
+-->
+<input type="text" id="username" onfocus="document.getElementById('password').focus();">
+<input type="password" id="password">
+
+
+
+<!-- 올바른 예시 1 : 의도하지 않은 새 창 열기(사전 안내 제공) -->
+<a href="https://uxkm.io" target="_blank" title="새 창 열림">UXKM</a>
+
+<!-- 올바른 예시 2 : 의도하지 않은 포커스 변화 방지 
+    사용자가 입력 필드 사이를 자유롭게 이동할 수 있도록 자동 포커스 이동을 제거
+-->
+<label for="username">Username:</label>
+<input type="text" id="username" name="username">
+
+<label for="password">Password:</label>
+<input type="password" id="password" name="password">
+```
+
+**검수 방법**
+- 페이지의 링크를 클릭하여 새 창이 열리지 않는지 확인하였습니까?     
+- 입력 필드와 상호작용할 때 의도하지 않은 포커스 변화가 발생하지 않는지 테스트하였습니까?     
+- Axe와 같은 접근성 검사 도구를 사용하여 의도하지 않은 동작이 없는지 평가하였습니까?     
+- WAVE 도구를 사용하여 페이지의 접근성을 검사하였습니까?     
+- NVDA, JAWS와 같은 스크린 리더를 사용하여 상호작용 시 의도하지 않은 기능이 실행되지 않는지 확인하였습니까?     
+- 브라우저의 개발자 도구를 사용하여 이벤트 핸들러와 스크립트를 검사하고, 의도하지 않은 동작이 발생하지 않는지 확인하였습니까?     
+- 다양한 사용자가 웹 사이트를 탐색하며 의도하지 않은 기능이 실행되지 않는지 피드백을 받았습니까?    
+
 
 #### 7.2.2. (찾기 쉬운 도움 정보) 도움 정보가 제공되는 경우, 각 페이지에서 동일한 상대적인 순서로 접근할 수 있어야 한다.
+> 도움 정보가 제공되는 경우, 모든 페이지에서 동일한 위치와 접근 방법으로 제공되어야 하고, 사용자는 페이지마다 도움 정보를 찾는 데 혼동을 겪지 않고, 일관된 사용자 경험을 제공받을 수 있음.   
+WCAG 2.2 Guidelines : [Consistent Navigation](https://www.w3.org/TR/WCAG22/#consistent-navigation){: target="_blank"}
+WCAG 2.2 Guidelines : [Consistent Identification](https://www.w3.org/TR/WCAG22/#consistent-identification){: target="_blank"}
+
+```sh
+<!-- 잘못된 예시 1 : 일관되지 않은 도움 정보 위치
+    페이지마다 도움 정보의 위치가 달라 사용자가 찾기 어려움이 있음 
+-->
+<!-- Page 1 -->
+<div id="header">
+  <a href="help.html">Help</a>
+</div>
+<!-- Page 2 -->
+<div id="footer">
+  <a href="help.html">Help</a>
+</div>
+
+
+<!-- 올바른 예시 1 : 일관된 도움 정보 위치 
+    모든 페이지의 헤더 내에서 동일한 위치에 도움 정보를 제공하여 사용자가 쉽게 찾을 수 있다
+-->
+<!-- Page 1 -->
+<div id="header">
+  <nav>
+    <a href="home.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="help.html">Help</a>
+  </nav>
+</div>
+<!-- Page 2 -->
+<div id="header">
+  <nav>
+    <a href="home.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="help.html">Help</a>
+  </nav>
+</div>
+
+
+<!-- 올바른 예시 2 : 일관된 도움 정보 위치와 접근성 향상
+    모든 페이지에서 동일한 헤더 파일을 포함시켜 도움 정보의 위치를 일관되게 유지. 또한 aria-label 속성을 사용하여 접근성을 향상
+-->
+<!-- Header include (header.html) -->
+<div id="header">
+  <nav>
+    <a href="home.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="help.html" aria-label="Help page">Help</a>
+  </nav>
+</div>
+
+<!-- Page 1 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Page 1</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Include header -->
+  <div id="header-container">
+    <?php include 'header.html'; ?>
+  </div>
+  <main>
+    <h1>Welcome to Page 1</h1>
+    <!-- Page content -->
+  </main>
+</body>
+</html>
+
+<!-- Page 2 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Page 2</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Include header -->
+  <div id="header-container">
+    <?php include 'header.html'; ?>
+  </div>
+  <main>
+    <h1>Welcome to Page 2</h1>
+    <!-- Page content -->
+  </main>
+</body>
+</html>
+```
+
+**검수 방법**
+- 여러 페이지를 탐색하며 도움 정보가 동일한 위치에 있는지 확인하였습니까?     
+- 도움 정보를 클릭하여 올바른 도움말 페이지로 이동하는지 테스트하였습니까?     
+- Axe와 같은 접근성 검사 도구를 사용하여 도움 정보의 일관성을 평가하였습니까?     
+- WAVE 도구를 사용하여 도움 정보의 접근성을 검사하였습니까?     
+- NVDA, JAWS와 같은 스크린 리더를 사용하여 도움 정보가 각 페이지에서 동일한 방법으로 접근되는지 확인하였습니까?     
+- 브라우저의 개발자 도구를 사용하여 HTML 구조를 검사하고, 도움 정보가 동일한 위치에 일관되게 제공되는지 확인하였습니까?     
+- 다양한 사용자가 웹 사이트를 탐색하며 도움 정보를 찾는 데 어려움이 없는지 피드백을 받았습니까?    
+
+
 
 #### 7.3.1. (오류 정정) 입력 오류를 정정할 수 있는 방법을 제공해야 한다. 
-> 입력 오류 정정은 사용자가 폼이나 입력 필드에서 오류를 발생시켰을 때, 이를 사용자에게 알리고 수정할 수 있는 방법을 제공하는 것을 의미합니다.   
+> 입력 오류 정정은 사용자가 폼이나 입력 필드에서 오류를 발생시켰을 때, 이를 사용자에게 알리고 수정할 수 있는 방법을 제공하는 것을 의미한다.   
 WCAG 2.2 Guidelines : [Input Assistance](https://www.w3.org/TR/WCAG22/#error-identification){: target="_blank"}
 
 ```sh
@@ -430,101 +1543,184 @@ WCAG 2.2 Guidelines : [Input Assistance](https://www.w3.org/TR/WCAG22/#error-ide
 
 
 #### 7.3.2. (레이블 제공) 사용자 입력에는 대응하는 레이블을 제공해야 한다. 
-> 사용자 입력 필드에 대응하는 레이블을 제공하는 것은 입력 필드가 어떤 정보를 요구하는지 사용자에게 명확히 전달하기 위함이며, 레이블은 입력 필드와 시각적으로 또는 프로그래밍 방식으로 연결되어야 합니다.   
+> 사용자 입력 필드에 대응하는 레이블을 제공하는 것은 입력 필드가 어떤 정보를 요구하는지 사용자에게 명확히 전달하기 위함이며, 레이블은 입력 필드와 시각적으로 또는 프로그래밍 방식으로 연결되어야 한다.   
 WCAG 2.2 Guidelines : [2.5.3 Label in Name](https://www.w3.org/TR/WCAG22/#label-in-name){: target="_blank"}
 <!-- https://aoa.gitbook.io/skymimo/aoa-2018/tips/role-application -->
 
 ```sh
-<!-- 잘못된 예시 1 : 입력 오류가 발생해도 사용자에게 알림 미제공
-<form id="exampleForm">
-  <label for="email">Email:</label>
-  <input type="email" id="email" name="email">
+<!-- 잘못된 예시 1 : 입력 필드에 레이블 미제공
+<input type="text" id="username">
+
+<!-- 올바른 예시 1 : 입력 필드와 레이블을 연결 레이블 for 속성 + input id 연결 -->
+<label for="username">Username:</label>
+<input type="text" id="username" name="username">
+```
+
+**검수 방법**
+- 입력 필드 옆에 레이블이 있는지 검토하였는가?     
+- 레이블을 클릭하면 해당 입력 필드로 포커스가 이동하는지 확인하였습니까?     
+- Axe, WAVE와 같은 접근성 검사 도구를 사용하여 레이블이 올바르게 제공되었는지 확인하였습니까?     
+- 브라우저의 개발자 도구를 사용하여 HTML 구조를 확인하고, 입력 필드와 레이블이 적절히 연결되었는지 확인하였습니까?     
+- NVDA, JAWS와 같은 스크린 리더를 사용하여 레이블이 입력 필드와 연결되어 올바르게 읽히는지 확인하였습니까?     
+
+
+#### 7.3.3. (접근 가능한 인증) 인증 과정은 인지 기능 테스트에만 의존해서는 안 된다.  
+> 접근 가능한 인증은 사용자의 인지 기능에만 의존하지 않는 인증 방법을 제공하는 것을 의미한다. 다양한 인증 방법을 제공하여 모든 사용자가 쉽게 인증 절차를 완료할 수 있도록 해야 한다.    
+WCAG 2.2 Guidelines : [Accessible Authentication](https://www.w3.org/TR/WCAG22/#accessible-authentication-minimum){: target="_blank"}
+Web Authentication : [An API for accessing Public Key Credentials](https://www.w3.org/TR/webauthn-2/){: target="_blank"}
+
+인증방식의 예)
+- 브라우저가 아이디/비밀번호를 저장할 수 있도록 마크업된 서식   
+- 공개인증(OAuth: Open Authorization)을 통한 제3자 인증방식   
+- 신체(얼굴, 지문 등)나 물건(휴대폰, USB 등)을 이용한 인증   
+- 사용자 자신에게 익숙하여 별도의 인지적인 노력을 필요로 하지 않는 개인정보(이름, 이메일주소, 전화번호 등) 확인을 통한 인증   
+
+```sh
+<!-- 잘못된 예시 1 : 인지 기능에 의존하는 인증 - 사용자가 수학 문제를 풀어야 인증할 수 있어 인지 기능에 과도하게 의존
+<form id="captchaForm">
+  <label for="captcha">Please solve the following equation: 3 + 4 = ?</label>
+  <input type="text" id="captcha" name="captcha">
   <button type="submit">Submit</button>
 </form>
 
-<!-- 잘못된 예시 2 : 폼 필드가 잘못되었을 때 시각적 피드백을 미제공
-<style>
-  .error {
-    color: red;
-    font-weight: bold;
-  }
-</style>
-<form>
+
+<!-- 올바른 예시 1 : 다양한 인증 방법 제공 - 사용자가 비밀번호 외에도 OTP(One-Time Password)를 사용하여 인증할 수 있는 방법을 제공 -->
+<form id="authForm">
   <label for="username">Username:</label>
   <input type="text" id="username" name="username">
-  <span class="error">This field is required.</span>
-  <button type="submit">Submit</button>
-</form>
 
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password">
 
-<!-- 올바른 예시 1 : aria-describedby와 aria-live 속성을 사용하여 실시간으로 오류 메시지를 사용자에게 알립 -->
-<form id="exampleForm">
-  <label for="email">Email:</label>
-  <input type="email" id="email" name="email" aria-describedby="emailError">
-  <span id="emailError" class="error" aria-live="polite"></span>
+  <p>If you prefer, you can use an alternative method for authentication:</p>
+  <button type="button" onclick="sendOtp()">Send OTP to my phone</button>
+
+  <label for="otp" class="visually-hidden">Enter the OTP received:</label>
+  <input type="text" id="otp" name="otp">
+
   <button type="submit">Submit</button>
 </form>
 
 <script>
-  document.getElementById('exampleForm').addEventListener('submit', function(event) {
-    var emailInput = document.getElementById('email');
-    var emailError = document.getElementById('emailError');
-    if (!emailInput.checkValidity()) {
-      emailError.textContent = 'Please enter a valid email address.';
-      emailInput.focus();
-      event.preventDefault();
-    } else {
-      emailError.textContent = '';
-    }
-  });
+  function sendOtp() {
+    // Simulate sending OTP
+    alert('OTP sent to your registered phone number.');
+  }
 </script>
 
-<!-- 올바른 예시 2 : 폼 필드에 오류가 있을 때 시각적 피드백을 제공하여 사용자가 오류를 쉽게 인식하고 수정할 수 있게 함 -->
-<style>
-  .error {
-    border: 2px solid red;
-  }
-</style>
-<form id="exampleForm">
+
+<!-- 올바른 예시 2 : 생체 인식 및 보안 키 사용 - WebAuthn API를 사용하여 생체 인식 또는 보안 키를 통한 인증 방법을 제공 -->
+<form id="webauthnForm">
   <label for="username">Username:</label>
-  <input type="text" id="username" name="username" aria-describedby="usernameError">
-  <span id="usernameError" class="error-message" aria-live="polite"></span>
+  <input type="text" id="username" name="username">
+
+  <button type="button" onclick="authenticate()">Authenticate using WebAuthn</button>
+
   <button type="submit">Submit</button>
 </form>
 
 <script>
-  document.getElementById('exampleForm').addEventListener('submit', function(event) {
-    var usernameInput = document.getElementById('username');
-    var usernameError = document.getElementById('usernameError');
-    if (usernameInput.value === '') {
-      usernameError.textContent = 'Username is required.';
-      usernameInput.classList.add('error');
-      usernameInput.focus();
-      event.preventDefault();
-    } else {
-      usernameError.textContent = '';
-      usernameInput.classList.remove('error');
+  async function authenticate() {
+    // Example of WebAuthn API usage
+    try {
+      const publicKey = {/* PublicKeyCredentialRequestOptions */};
+      const credential = await navigator.credentials.get({publicKey});
+      // Process the credential response
+      alert('Authentication successful');
+    } catch (err) {
+      alert('Authentication failed: ' + err);
     }
-  });
+  }
 </script>
 ```
 
 **검수 방법**
-- HTML Validator 사용: W3C HTML Validator와 같은 도구를 사용하여 마크업 오류를 자동으로 검수하였습니까?     
-- 브라우저 개발자 도구 사용: 브라우저의 개발자 도구(예: Chrome DevTools)를 사용하여 HTML 구조를 확인하였습니까?     
-- 수동 검사: HTML 코드를 수동으로 검토하여 태그의 열고 닫음, 중첩 관계, 속성 선언을 확인하였습니까?     
+- 다양한 인증 방법이 제공되는지 확인하였는가?   
+- 모든 인증 방법이 작동하는지 테스트하였는가?   
+- Axe와 같은 접근성 검사 도구를 사용하여 인증 절차의 접근성을 평가하였는가?   
+- WAVE 도구를 사용하여 인증 절차의 접근성을 검사하였는가?   
+- NVDA, JAWS와 같은 스크린 리더를 사용하여 인증 절차가 올바르게 안내되고 실행되는지 확인하였는가?   
+- 인지 기능에 제한이 있는 사용자, 시각 장애인, 청각 장애인 등 다양한 사용자가 인증 절차를 테스트하고 피드백을 제공받았는가?   
+- 브라우저의 개발자 도구를 사용하여 HTML 구조와 스크립트를 검사하고, 다양한 인증 방법이 올바르게 구현되었는지 확인하였는가?   
 
-
-
-#### 7.3.3. (접근 가능한 인증) 인증 과정은 인지 기능 테스트에만 의존해서는 안 된다.  
 
 #### 7.3.4. (반복 입력 정보) 반복되는 입력 정보는 자동 입력 또는 선택 입력할 수 있어야 한다.   
+> 반복되는 입력 정보를 자동 입력 또는 선택 입력할 수 있게 함으로써 사용자의 편의성을 높이고 입력 오류를 줄일 수 있다. 이는 자동 완성, 드롭다운 목록, 브라우저의 자동 완성 기능 등을 통해 구현할 수 있다.    
+WCAG 2.2 Guidelines : [1.4.10 Reflow](https://www.w3.org/TR/WCAG22/#reflow){: target="_blank"}
+
+```sh
+<!-- 잘못된 예시 1 : 사용자가 동일한 주소를 반복적으로 입력
+<form id="shippingForm">
+  <label for="address">Shipping Address:</label>
+  <input type="text" id="address" name="address">
+  
+  <label for="billingAddress">Billing Address:</label>
+  <input type="text" id="billingAddress" name="billingAddress">
+  
+  <button type="submit">Submit</button>
+</form>
+
+<!-- 잘못된 예시 2 : 사용자가 국가명을 직접 입력
+<form id="countryForm">
+  <label for="country">Country:</label>
+  <input type="text" id="country" name="country">
+  
+  <button type="submit">Submit</button>
+</form>
+
+
+<!-- 올바른 예시 1 : "Billing address is the same as shipping address" 체크박스를 선택하면 배송 주소를 자동으로 청구 주소에 복사 -->
+<form id="shippingForm">
+  <label for="address">Shipping Address:</label>
+  <input type="text" id="address" name="address" autocomplete="shipping street-address">
+  
+  <label>
+    <input type="checkbox" id="sameAddress" onclick="copyAddress()"> Billing address is the same as shipping address
+  </label>
+  
+  <label for="billingAddress">Billing Address:</label>
+  <input type="text" id="billingAddress" name="billingAddress" autocomplete="billing street-address">
+  
+  <button type="submit">Submit</button>
+</form>
+
+<script>
+  function copyAddress() {
+    if (document.getElementById('sameAddress').checked) {
+      document.getElementById('billingAddress').value = document.getElementById('address').value;
+    } else {
+      document.getElementById('billingAddress').value = '';
+    }
+  }
+</script>
+
+<!-- 올바른 예시 2 : 드롭다운 목록을 사용하여 사용자가 국가를 선택 -->
+<form id="countryForm">
+  <label for="country">Country:</label>
+  <select id="country" name="country">
+    <option value="USA">United States</option>
+    <option value="CAN">Canada</option>
+    <option value="MEX">Mexico</option>
+    <!-- More options can be added here -->
+  </select>
+  
+  <button type="submit">Submit</button>
+</form>
+```
+
+**검수 방법**
+- 자동 입력 또는 선택 입력 기능이 제대로 작동하는지 확인하였는가?   
+- 사용자가 반복 입력 정보를 쉽게 입력할 수 있는지 테스트하였는가?   
+- Axe, WAVE와 같은 접근성 검사 도구를 사용하여 자동 입력 기능이 접근성을 저해하지 않는지 확인하였는가?   
+- NVDA, JAWS와 같은 스크린 리더를 사용하여 자동 입력 또는 선택 입력 기능이 올바르게 안내되고 실행되는지 확인하였는가?   
+- 브라우저의 개발자 도구를 사용하여 HTML 구조와 스크립트를 검사하고, 자동 입력 또는 선택 입력 기능이 올바르게 구현되었는지 확인하였는가?   
+- 인지 기능에 제한이 있는 사용자, 시각 장애인, 청각 장애인 등 다양한 사용자가 자동 입력 또는 선택 입력 기능을 테스트하고 피드백을 제공하였는가?   
 
 
 ### 견고성 (Robust)
 
 #### 8.1.1. (마크업 오류 방지) 마크업 언어의 요소는 열고 닫음, 중첩 관계 및 속성 선언에 오류가 없어야 한다. 
-> HTML 마크업 언어에서 요소는 열고 닫아야 하며, 중첩 관계 및 속성 선언이 정확해야 합니다. 이를 통해 문서의 구조를 올바르게 유지하고, 브라우저가 페이지를 정확하게 렌더링할 수 있도록 합니다.   
+> HTML 마크업 언어에서 요소는 열고 닫아야 하며, 중첩 관계 및 속성 선언이 정확해야 한다. 이를 통해 문서의 구조를 올바르게 유지하고, 브라우저가 페이지를 정확하게 렌더링할 수 있도록 한다.   
 [요소 중첩 | UKKM](https://uxkm.io/publishing/html/02-blockInline/05-element_nesting#gsc.tab=0){: target="_blank"}
 HTML5 스펙 문서:[HTML5 Specification](https://html.spec.whatwg.org/multipage/){: target="_blank"}
 
@@ -555,7 +1751,7 @@ HTML5 스펙 문서:[HTML5 Specification](https://html.spec.whatwg.org/multipage
 
 
 #### 8.2.1. (웹 애플리케이션 접근성 준수) 콘텐츠에 포함된 웹 애플리케이션은 접근성이 있어야 한다. 
-> 웹사이트, 도구, 기술이 장애를 가진 사람들도 포함하여 모든 사용자에게 접근 가능하도록 설계되는 것을 의미합니다.    
+> 웹사이트, 도구, 기술이 장애를 가진 사람들도 포함하여 모든 사용자에게 접근 가능하도록 설계되는 것을 의미한다.    
 웹 콘텐츠 접근성 지침(WCAG) 개요 : [WAI](https://www.w3.org/WAI/standards-guidelines/wcag/){: target="_blank"}      
 WCAG 2.2 Guidelines : [WCAG22](https://www.w3.org/TR/WCAG22/){: target="_blank"}   
 
