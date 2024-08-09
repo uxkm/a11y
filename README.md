@@ -54,3 +54,8 @@
   * ##### [Relationship Attributes](08-a11yWaiAria/attrs-relationships.md)   
 
 ### 9. [접근성 참조](a11yBookmark/bookmark.md)   
+
+
+
+### 10. 기타 참조
+- [CSS TIP (css만으로 해상도 알아내기)](https://css-tip.com/screen-dimension/){: target="_blank"}
