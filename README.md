@@ -30,12 +30,12 @@
 
 ### 6. [접근성 체크리스트](06-a11yCheck/web.md)   
 - #### 6.1. [웹 콘텐츠 접근성](06-a11yCheck/wcag.md)   
-- #### 6.2. [모바일 앱 접근성 - 작업 중](06-a11yCheck/macag.md)   
+- #### 6.2. [모바일 앱 접근성](06-a11yCheck/macag.md)   
 - #### 6.3. [무인정보단말기 접근성](06-a11yCheck/kiosk.md)   
 
 ### 7. [접근성 콘텐츠 제작 기법](07-a11yDevelop/wcag.md)   
-- #### 7.1. [웹 콘텐츠 접근성 - 작업 중](07-a11yDevelop/wcag.md)   
-- #### 7.2. [모바일 앱 접근성 - 작업 중](07-a11yDevelop/macag.md)   
+- #### 7.1. [웹 콘텐츠 접근성 - 대기](07-a11yDevelop/wcag.md)   
+- #### 7.2. [모바일 앱 접근성 - 대기](07-a11yDevelop/macag.md)   
 - #### 7.3. [무인정보단말기 접근성](07-a11yDevelop/kiosk.md)  
 
 ### 8. [WAI-ARIA - 작업 중](08-a11yWaiAria/wai-aria.md)  
