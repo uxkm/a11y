@@ -1,7 +1,7 @@
 # WAI-ARIA란?
 > **WAI-ARIA (Web Accessibility Initiative - Accessible Rich Internet Applications)** 는  웹 콘텐츠와 웹 애플리케이션이 장애인에게 더 접근 가능하도록 돕기 위한 W3C의 표준 기술이며, 스크린 리더와 같은 보조 기술이 웹 페이지의 구조와 목적을 이해하고 상호작용할 수 있도록 하는 **역할**, **상태** 및 **속성**을 정의하고 있다.    
 
-## WAI-ARIA 핵심 목표 및 기능 요약
+## 1. WAI-ARIA 핵심 목표 및 기능 요약
 - 동적인 콘텐츠와 고급 사용자 인터페이스 컨트롤을 대상으로 하는 웹 접근성 표준으로, 특히 스크린 리더 사용자와 같은 보조 기술 사용자가 웹 애플리케이션을 효과적으로 사용할 수 있도록 돕기 위해 설계됨.    
 - HTML에 추가적인 속성을 제공하여 접근성을 높이며, 이 속성들은 웹 요소의 역할, 상태, 속성을 설명하여 보조 기술이 이를 더 잘 이해하고 사용자에게 전달할 수 있도록 한다. 이를 통해 복잡한 웹 애플리케이션에서도 모든 사용자가 원활하게 상호작용할 수 있는 환경을 제공.   
    
@@ -14,7 +14,7 @@
 </figure>
 
 
-## WAI-ARIA의 연혁 및 발전
+## 2. WAI-ARIA의 연혁 및 발전
 1. **2004년: 초기**    
    - WAI-ARIA의 개념은 2004년 W3C에서 처음 논의되었으며, 당시 웹 애플리케이션이 점점 더 복잡해지면서 접근성을 보장하는 새로운 방법이 필요하다는 인식이 있었음.       
 2. **2006년: 첫 번째 공개 작업 초안 (Working Draft)**    
@@ -40,7 +40,7 @@
    - WAI-ARIA의 다음 버전인 1.3에 대한 논의가 진행 중이며, 웹 접근성 표준의 계속적인 개선이 목표. WAI-ARIA 1.3은 더 많은 사용자 정의 위젯 지원과 접근성 테스트 및 지원의 자동화를 목표로 할 가능성.       
 
 
-## WAI-ARIA의 중요성
+## 3. WAI-ARIA의 중요성
 1. **웹 접근성 표준화**    
    - WAI-ARIA는 동적 콘텐츠와 복잡한 사용자 인터페이스를 포함하는 웹 애플리케이션의 접근성을 보장하기 위해 필수적인 기술 표준.     
 2. **보조 기술과의 통합**    
@@ -60,14 +60,14 @@
 
 
 
-## WAI-ARIA의 주요 역할(Role)
+## 4. WAI-ARIA의 주요 역할(Role)
 > WAI-ARIA에서 **역할(Role)** 은 특정 HTML 요소가 웹 페이지 내에서 어떤 역할을 하는지를 정의하며, 스크린 리더와 같은 보조 기술이 이 정보를 이용해 사용자가 웹 콘텐츠를 더 잘 이해하고 탐색할 수 있도록 돕는다.   
 대부분의 시멘틱 마크업의 요소들은 기본적인 **역할(Role)** 이 지원되고 있으며,    
 기존 레거시 시스템이나 특정 요구 사항으로 인해 div 요소를 사용해야 하는 상황에서 동일한 접근성 역할을 부여하여 사용 가능하다.    
-[Accessible Rich Internet Applications (WAI-ARIA) 1.2 - Roles Model](https://www.w3.org/TR/wai-aria/#roles){: target="_blank"}
-[MDN WAI-ARIA 역할](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles){: target="_blank"}
-
-### ARIA 역할 유형
+[Accessible Rich Internet Applications (WAI-ARIA) 1.2 - Roles Model](https://www.w3.org/TR/wai-aria/#roles){: target="_blank"}     
+[MDN WAI-ARIA 역할](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles){: target="_blank"}     
+     
+### 4.1. ARIA 역할 유형   
 > ARIA 역할 유형은 웹 페이지와 애플리케이션에서 다양한 요소의 기능과 구조를 정의하여, 보조 기술이 이를 올바르게 인식하고 사용자에게 전달할 수 있도록 돕는다.     
 각 역할 유형은 특정 UI 구성 요소나 문서 구조를 설명하며, 이들 역할을 올바르게 사용하면 웹 접근성을 크게 향상시킬 수 있다. 작업시 이러한 역할을 잘 이해하고 적절히 활용하여 모든 사용자가 웹 콘텐츠에 효과적으로 접근할 수 있도록 해야 한다.   
 1. **Abstract Roles (추상적 역할)**  
@@ -120,7 +120,7 @@
    - 웹 애플리케이션에서 중요한 정보를 전달하거나 사용자와 상호작용을 하는 데 사용되며, 보조 기술이 이들 요소를 인식하고 사용자에게 알리도록 제공한다.    
    - 주요 예시)alertdialog, dialog, tooltip.
 
-### 자주 사용되는 역할(Role) 예시
+### 4. 2. 자주 사용되는 역할(Role) 예시
 1. **Role: button**   
 - 요소를 "버튼"으로(클릭 가능한 요소) 인식.   
 
@@ -329,7 +329,7 @@
 </div>
 ```
 
-### 역할(Role) 요약 및 주의사항
+### 4.3. 역할(Role) 요약 및 주의사항
 1. **역할 부여**   
    - div 요소에 role 속성을 추가하여, 특정 HTML5 요소가 제공하는 접근성 역할을 구현할 수 있다.   
 2. **일관된 접근성**   
@@ -350,13 +350,13 @@
 ```
 
 
-## 상태 및 속성(State and Properties)
+## 5. 상태 및 속성(State and Properties)
 > WAI-ARIA에서 **상태(State)** 와 **속성(Properties)** 은 웹 콘텐츠와 애플리케이션의 접근성을 향상시키기 위해 사용.    
 둘 다 보조 기술이 웹 요소의 현재 상태나 특성을 이해하도록 돕지만, 약간의 차이가 있다.
 [Accessible Rich Internet Applications (WAI-ARIA) 1.2 - Supported States and Properties](https://www.w3.org/TR/wai-aria/#states_and_properties){: target="_blank"}
 [MDN WAI-ARIA states and properties](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes){: target="_blank"}
 
-### 상태(State)와 속성(Properties)의 차이점
+### 5.1 상태(State)와 속성(Properties)의 차이점
 - **상태(State)**   
   * 동적이거나 시간에 따라 변할 수 있는 정보.   
   * 사용자가 상호작용할 때 자주 변경됨.   
@@ -369,10 +369,10 @@
 
 
 
-## WAI-ARIA 적용 방법
+## 6. WAI-ARIA 적용 방법
 > WAI-ARIA를 실제 웹 사이트와 애플리케이션에 적용하는 방법과 몇 가지 사례를 제시하여 웹 접근성을 개선하고 모든 사용자가 웹 콘텐츠에 접근할 수 있도록 제공.    
 
-### 적절한 ARIA 역할(Role) 사용
+### 6.1. 적절한 ARIA 역할(Role) 사용
 - WAI-ARIA 역할을 사용하여 HTML 요소의 목적을 명확하게 정의   
 - 예) div나 span 같은 요소에 role="button"을 사용하여 해당 요소가 버튼 역할을 수행하도록 해준다.
 
@@ -381,7 +381,7 @@
 <div role="button" tabindex="0">Click Me</div>
 ```
 
-### ARIA 속성(Properties) 활용
+### 6.2. ARIA 속성(Properties) 활용
 - 요소의 상태나 특성을 명확히 하기 위해 적절한 ARIA 속성을 추가   
 - 예) aria-expanded를 사용하여 요소가 확장되었는지 여부를 나타낼 수 있다.
 
@@ -394,7 +394,7 @@
 </ul>
 ```
 
-### ARIA 상태(States) 적용
+### 6.3. ARIA 상태(States) 적용
 - 사용자의 상호작용에 따라 변할 수 있는 요소에 대해 ARIA 상태를 설정   
 - 예) 체크박스의 상태를 aria-checked로 표시.
 
@@ -403,7 +403,7 @@
 <div role="checkbox" aria-checked="false" tabindex="0">Accept Terms</div>
 ```
 
-### 정확한 레이블 제공
+### 6.4. 정확한 레이블 제공
 - aria-label 또는 aria-labelledby를 사용하여 요소에 명확한 텍스트 레이블을 제공함으로써 스크린 리더 사용자가 요소의 목적을 이해할 수 있도록 함   
 
 ```sh
@@ -412,7 +412,7 @@
 <button type="button" aria-label="취소">X</button>
 ```
 
-### 동적 콘텐츠에 aria-live 적용
+### 6.5. 동적 콘텐츠에 aria-live 적용
 - 실시간으로 변경되는 콘텐츠에 aria-live 속성을 사용하여 스크린 리더가 해당 변화를 사용자에게 알릴 수 있도록 한다   
 
 ```sh
@@ -420,7 +420,7 @@
 <div aria-live="polite">New message received.</div>
 ```
 
-## 관련 도구 및 리소스
+## 7. 관련 도구 및 리소스
 > WAI-ARIA 적용을 돕는 도구와 추가 학습을 위한 리소스.
 
 상세 설명: 접근성 검토 도구와 학습 자료를 소개합니다. 이러한 도구는 WAI-ARIA 적용 상태를 확인하고, 웹 콘텐츠의 접근성을 평가하는 데 유용합니다.
