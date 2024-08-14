@@ -1,5 +1,5 @@
 # 9. 관련 도구 및 플러그인
-> WAI-ARIA 적용을 돕는 도구와 추가 학습을 위한 리소스 제공.
+> WAI-ARIA를 이해하고 효과적으로 구현하기 위해 사용할 수 있는 다양한 도구와 리소스 제공.
 
 ## 9.1 보조 기술이 필요한 장애 유형   
 1. **시각** : 실명, 색각 이상, 다양한 형태의 저시력을 포함한 시각 장애    
@@ -119,6 +119,26 @@ WebAIM에서 2019년 8월부터 9월까지 스크린 리더 사용자의 선호�
   </figcaption>
 </figure>
 
+**7. 안드로이드 접근성 검사기**
+
+<figure class="img_figure mt_m" style="text-align:center">
+  <img src="https://developer.android.com/static/codelabs/starting-android-accessibility/img/80422bba6e519497.png?hl=ko" alt="Play 스토어의 접근성 검사기">
+  <figcaption>
+    <b class="t_black">Play 스토어의 접근성 검사기</b><br>
+    출처 : developer.android.com
+  </figcaption>
+</figure>
+
+**8. iOS Accessibility Inspector**
+
+<figure class="img_figure mt_m" style="text-align:center">
+  <img src="https://docs-assets.developer.apple.com/published/be82179a1110c56d69ee735ea919bae7/accessibility-inspector-overview@2x.png" alt="Accessibility Inspector">
+  <figcaption>
+    <b class="t_black">Accessibility Inspector</b><br>
+    출처 : https://developer.apple.com/documentation/accessibility/accessibility-inspector
+  </figcaption>
+</figure>
+
 
 
 
@@ -128,3 +148,11 @@ WebAIM에서 2019년 8월부터 9월까지 스크린 리더 사용자의 선호�
 - [NVDA Screenreader](https://ul.gpii.net/content/nvda-screenreader){: target="_blank"}   
 - [webaim.org Screen Reader User Survey](https://webaim.org/projects/screenreadersurvey8/){: target="_blank"}   
 - [JAWS verses NVDA](https://digitalaccessibilitycentre.org/index.php/blog/20-diary/211-jaws-verses-nvda){: target="_blank"}   
+- [Mobile Android 접근성 시작 | Android Developers](https://developer.android.com/codelabs/starting-android-accessibility?hl=ko#0){: target="_blank"}   
+- [Mobile iOS Accessibility Inspector](https://developer.apple.com/documentation/accessibility/accessibility-inspector){: target="_blank"}   
+- [Colour Contrast Analyzer (CCA)](https://www.tpgi.com/color-contrast-checker/){: target="_blank"}   
+- [WCAG - Contrast Checker](https://contrastchecker.com/){: target="_blank"}   
+- [WCAG Contrast Checker](https://w3cag.com/){: target="_blank"}   
+- [Contrast Checker - WebAIM](https://webaim.org/resources/contrastchecker/){: target="_blank"}   
+- [Contrast Check](https://accessibilitycheck.org/contrast/){: target="_blank"}   
+- [Contrast Finder](https://app.contrast-finder.org/?lang=ko){: target="_blank"}   
