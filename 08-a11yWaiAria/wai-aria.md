@@ -49,7 +49,7 @@
    - 모든 사용자가 웹 애플리케이션을 사용할 수 있도록 보장하여 포용적인 웹 환경을 조성.    
    - WAI-ARIA를 웹 사이트와 애플리케이션에 적절히 적용하면, 장애를 가진 사용자를 포함한 모든 사용자가 웹 콘텐츠를 보다 쉽게 접근하고 사용할 수 있게 된다.    
 
-## WAI-ARIA 적용 시 주의사항
+## 4. WAI-ARIA 적용 시 주의사항
 1. **WAI-ARIA의 남용 방지**   
    - 이미 접근성이 내장된 네이티브 HTML 요소에 불필요하게 WAI-ARIA를 추가하지 않도록 주의    
    - 예) &lt;button&gt; 요소는 이미 접근성이 확보되어 있으므로 추가적인 role="button" 속성 불필요.    
@@ -60,16 +60,17 @@
 
 
 
-## 4. WAI-ARIA의 주요 역할(Role)
+## 5. WAI-ARIA의 주요 역할(Role)
 > WAI-ARIA에서 **역할(Role)** 은 특정 HTML 요소가 웹 페이지 내에서 어떤 역할을 하는지를 정의하며, 스크린 리더와 같은 보조 기술이 이 정보를 이용해 사용자가 웹 콘텐츠를 더 잘 이해하고 탐색할 수 있도록 돕는다.   
 대부분의 시멘틱 마크업의 요소들은 기본적인 **역할(Role)** 이 지원되고 있으며,    
 기존 레거시 시스템이나 특정 요구 사항으로 인해 div 요소를 사용해야 하는 상황에서 동일한 접근성 역할을 부여하여 사용 가능하다.    
 [Accessible Rich Internet Applications (WAI-ARIA) 1.2 - Roles Model](https://www.w3.org/TR/wai-aria/#roles){: target="_blank"}     
 [MDN WAI-ARIA 역할](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles){: target="_blank"}     
      
-### 4.1. ARIA 역할 유형   
+### 5.1. ARIA 역할 유형   
 > ARIA 역할 유형은 웹 페이지와 애플리케이션에서 다양한 요소의 기능과 구조를 정의하여, 보조 기술이 이를 올바르게 인식하고 사용자에게 전달할 수 있도록 돕는다.     
 각 역할 유형은 특정 UI 구성 요소나 문서 구조를 설명하며, 이들 역할을 올바르게 사용하면 웹 접근성을 크게 향상시킬 수 있다. 작업시 이러한 역할을 잘 이해하고 적절히 활용하여 모든 사용자가 웹 콘텐츠에 효과적으로 접근할 수 있도록 해야 한다.   
+    
 1. **Abstract Roles (추상적 역할)**  
    - 문서를 구성하고 간소화하는 데 도움이 되도록 브라우저에서만 사용하기 위한 것. HTML 마크업을 작성하는 개발자가 사용해서는 안 됨. 참조용으로만 포함.    
    - 주요 예시)command, composite, input, landmark, range, roletype, section, sectionhead, select, structure, widget 및 window.
@@ -120,8 +121,8 @@
    - 웹 애플리케이션에서 중요한 정보를 전달하거나 사용자와 상호작용을 하는 데 사용되며, 보조 기술이 이들 요소를 인식하고 사용자에게 알리도록 제공한다.    
    - 주요 예시)alertdialog, dialog, tooltip.
 
-### 4. 2. 자주 사용되는 역할(Role) 예시
-1. **Role: button**   
+### 5.2. 자주 사용되는 역할(Role) 예시
+**1. Role: button**   
 - 요소를 "버튼"으로(클릭 가능한 요소) 인식.   
 
 ```sh
@@ -132,7 +133,7 @@
 <div role="button" tabindex="0">UXKM</div>
 ```
 
-2. **Role: alert**   
+**2. Role: alert**   
 - 중요한 메시지를 사용자에게 즉시 전달해야 할 때 사용. 스크린 리더는 이 요소가 등장할 때 자동으로 읽어줌.   
 - 폼 제출 시 오류 메시지를 표시할 때 유용.   
 
@@ -141,7 +142,7 @@
 <div role="alert">중요한 알림 메시지입니다!</div>
 ```
 
-3. **Role: dialog**   
+**3. Role: dialog**   
 - 대화 상자(Dialog)를 나타냄. 주로 모달 창에 사용되며, 사용자가 상호작용할 수 있는 창을 보여준다.   
 
 ```sh
@@ -152,7 +153,7 @@
 </div>
 ```
 
-4. **Role: heading**   
+**4. Role: heading**   
 - 섹션 제목을 정의. 레벨(aria-level 속성으로 설정)이 포함되어 콘텐츠의 계층 구조를 정의할 수 있다.     
 
 ```sh
@@ -163,7 +164,7 @@
 <div role="heading" aria-level="1">Heading h1</div>
 ```
 
-5. **Role: navigation**   
+**5. Role: navigation**   
 - 페이지 내의 내비게이션 링크 그룹을 정의. 메뉴, 탐색 바 등에서 사용.     
 
 ```sh
@@ -184,7 +185,7 @@
 </div>
 ```
 
-6. **Role: tab**   
+**6. Role: tab**   
 - 탭 인터페이스에서 탭 요소를 정의. tablist와 함께 사용.     
 
 ```sh
@@ -195,7 +196,7 @@
 </div>
 ```
 
-7. **Role: tabpanel**   
+**7. Role: tabpanel**   
 - 탭이 선택되었을 때 표시되는 콘텐츠 패널을 정의.     
 
 ```sh
@@ -203,7 +204,7 @@
 <div role="tabpanel" aria-labelledby="tab1">Content for Tab 1</div>
 ```
 
-8. **Role: header**   
+**8. Role: header**   
 - header 요소의 역할을 수행하는 div요소에 role="banner" 속성을 추가     
 
 ```sh
@@ -230,7 +231,7 @@
 </div>
 ```
 
-9. **Role: main**   
+**9. Role: main**   
 - main 요소의 역할을 수행하는 div요소에 role="main" 속성을 추가     
 
 ```sh
@@ -257,7 +258,7 @@
 </div>
 ```
 
-10. **Role: section**   
+**10. Role: section**   
 - section 요소의 역할을 수행하는 div요소에 role="region" 속성을 추가. 이때, aria-labelledby를 사용하여 섹션 제목을 참조할 수 있다.     
 
 ```sh
@@ -274,7 +275,7 @@
 </div>
 ```
 
-11. **Role: article**   
+**11. Role: article**   
 - article 요소의 역할을 수행하는 div요소에 role="article" 속성을 추가.      
 
 ```sh
@@ -291,7 +292,7 @@
 </div>
 ```
 
-12. **Role: footer**   
+**12. Role: footer**   
 - footer 요소의 역할을 수행하는 div요소에 role="contentinfo" 속성을 추가.      
 
 ```sh
@@ -306,7 +307,7 @@
 </div>
 ```
 
-13. **Role: aside**   
+**13. Role: aside**   
 - aside  요소의 역할을 수행하는 div요소에 role="complementary" 속성을 추가.      
 
 ```sh
@@ -329,7 +330,7 @@
 </div>
 ```
 
-### 4.3. 역할(Role) 요약 및 주의사항
+### 5.3. 역할(Role) 요약 및 주의사항
 1. **역할 부여**   
    - div 요소에 role 속성을 추가하여, 특정 HTML5 요소가 제공하는 접근성 역할을 구현할 수 있다.   
 2. **일관된 접근성**   
@@ -350,13 +351,13 @@
 ```
 
 
-## 5. 상태 및 속성(State and Properties)
+## 6. 상태 및 속성(State and Properties)
 > WAI-ARIA에서 **상태(State)** 와 **속성(Properties)** 은 웹 콘텐츠와 애플리케이션의 접근성을 향상시키기 위해 사용.    
 둘 다 보조 기술이 웹 요소의 현재 상태나 특성을 이해하도록 돕지만, 약간의 차이가 있다.
 [Accessible Rich Internet Applications (WAI-ARIA) 1.2 - Supported States and Properties](https://www.w3.org/TR/wai-aria/#states_and_properties){: target="_blank"}
 [MDN WAI-ARIA states and properties](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes){: target="_blank"}
 
-### 5.1 상태(State)와 속성(Properties)의 차이점
+### 6.1 상태(State)와 속성(Properties)의 차이점
 - **상태(State)**   
   * 동적이거나 시간에 따라 변할 수 있는 정보.   
   * 사용자가 상호작용할 때 자주 변경됨.   
@@ -369,10 +370,10 @@
 
 
 
-## 6. WAI-ARIA 적용 방법
+## 7. WAI-ARIA 적용 방법
 > WAI-ARIA를 실제 웹 사이트와 애플리케이션에 적용하는 방법과 몇 가지 사례를 제시하여 웹 접근성을 개선하고 모든 사용자가 웹 콘텐츠에 접근할 수 있도록 제공.    
 
-### 6.1. 적절한 ARIA 역할(Role) 사용
+### 7.1. 적절한 ARIA 역할(Role) 사용
 - WAI-ARIA 역할을 사용하여 HTML 요소의 목적을 명확하게 정의   
 - 예) div나 span 같은 요소에 role="button"을 사용하여 해당 요소가 버튼 역할을 수행하도록 해준다.
 
@@ -381,7 +382,7 @@
 <div role="button" tabindex="0">Click Me</div>
 ```
 
-### 6.2. ARIA 속성(Properties) 활용
+### 7.2. ARIA 속성(Properties) 활용
 - 요소의 상태나 특성을 명확히 하기 위해 적절한 ARIA 속성을 추가   
 - 예) aria-expanded를 사용하여 요소가 확장되었는지 여부를 나타낼 수 있다.
 
@@ -394,7 +395,7 @@
 </ul>
 ```
 
-### 6.3. ARIA 상태(States) 적용
+### 7.3. ARIA 상태(States) 적용
 - 사용자의 상호작용에 따라 변할 수 있는 요소에 대해 ARIA 상태를 설정   
 - 예) 체크박스의 상태를 aria-checked로 표시.
 
@@ -403,7 +404,7 @@
 <div role="checkbox" aria-checked="false" tabindex="0">Accept Terms</div>
 ```
 
-### 6.4. 정확한 레이블 제공
+### 7.4. 정확한 레이블 제공
 - aria-label 또는 aria-labelledby를 사용하여 요소에 명확한 텍스트 레이블을 제공함으로써 스크린 리더 사용자가 요소의 목적을 이해할 수 있도록 함   
 
 ```sh
@@ -412,7 +413,7 @@
 <button type="button" aria-label="취소">X</button>
 ```
 
-### 6.5. 동적 콘텐츠에 aria-live 적용
+### 7.5. 동적 콘텐츠에 aria-live 적용
 - 실시간으로 변경되는 콘텐츠에 aria-live 속성을 사용하여 스크린 리더가 해당 변화를 사용자에게 알릴 수 있도록 한다   
 
 ```sh
@@ -420,7 +421,7 @@
 <div aria-live="polite">New message received.</div>
 ```
 
-## 7. 관련 도구 및 리소스
+## 8. 관련 도구 및 리소스
 > WAI-ARIA 적용을 돕는 도구와 추가 학습을 위한 리소스.
 
 상세 설명: 접근성 검토 도구와 학습 자료를 소개합니다. 이러한 도구는 WAI-ARIA 적용 상태를 확인하고, 웹 콘텐츠의 접근성을 평가하는 데 유용합니다.
