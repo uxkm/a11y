@@ -363,39 +363,180 @@
 
 
 ## 6. 상태 및 속성(State and Properties)
-> WAI-ARIA에서 **상태(State)** 와 **속성(Properties)** 은 웹 콘텐츠와 애플리케이션의 접근성을 향상시키기 위해 사용.    
-둘 다 보조 기술이 웹 요소의 현재 상태나 특성을 이해하도록 돕지만, 약간의 차이가 있다.
+> WAI-ARIA에서 **상태(State)** 와 **속성(Properties)** 은 웹 콘텐츠와 애플리케이션의 접근성을 향상시키기 위해 사용되는 주요 개념입니다. 이들은 보조 기술이 웹 요소의 현재 상태나 특성을 이해하고 사용자에게 전달할 수 있도록 돕습니다.    
+**상태**는 동적으로 변할 수 있는 정보를 나타내며,    
+**속성**은 일반적으로 정적인 정보를 제공합니다.
 [Accessible Rich Internet Applications (WAI-ARIA) 1.2 - Supported States and Properties](https://www.w3.org/TR/wai-aria/#states_and_properties){: target="_blank"}
 [MDN WAI-ARIA states and properties](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes){: target="_blank"}
 
 ### 6.1 상태(State)와 속성(Properties)의 차이점
 - **상태(State)**   
-  * 동적이거나 시간에 따라 변할 수 있는 정보.   
-  * 사용자가 상호작용할 때 자주 변경됨.   
-  * HTML 요소의 상태나 특성을 정의하며, 보조 기술이 웹 요소의 현재 상태를 이해하고 사용자에게 전달할 수 있도록 돕고, 역할(Role)과 함께 사용되어 웹 콘텐츠의 접근성을 강화한다.    
+  * 웹 요소의 동적인 상태를 나타내며, 사용자의 상호작용에 따라 변경될 수 있습니다.       
+  * HTML 요소의 상태나 특성을 정의하며, 보조 기술이 웹 요소의 현재 상태를 이해하고 사용자에게 전달할 수 있도록 돕고, 역할(Role)과 함께 사용되어 웹 콘텐츠의 접근성을 강화합니다.    
   * 예) 선택 여부, 확장 여부, 활성화 상태 등을 포함.   
 - **속성(Properties)**    
+  * 웹 요소의 고정된 특성을 나타내며, 보조 기술이 이러한 요소를 적절하게 처리할 수 있도록 돕습니다..   
   * 일반적으로 변경되지 않거나 요소의 본질적인 특성을 나타내는 정적 정보.   
   * 페이지 로딩 시 설정되고 보통 변경되지 않는다.   
   * 예) 요소의 레이블, 설명, 역할 등이 속성에 해당.    
 
+### 6.2 상태 (States) 예시
+상태는 웹 요소의 동적인 상태를 나타내며, 사용자의 상호작용에 따라 변경될 수 있습니다.    
+
+**1. aria-checked**   
+  - 체크박스, 라디오 버튼 또는 트리 항목의 선택 상태를 나타냅니다.   
+  - value:true (선택됨) | false (선택되지 않음) | mixed (부분 선택됨, 체크박스에만 해당)
+
+```sh
+<div role="checkbox" aria-checked="false" tabindex="0">Accept Terms</div>
+```
+
+**2. aria-expanded**   
+  - 요소가 확장되었는지, 축소되었는지 여부를 나타냅니다. 드롭다운 메뉴, 아코디언 등에서 사용됩니다.   
+  - value: true (확장됨) | false (축소됨)
+
+```sh
+<button aria-expanded="false" aria-controls="submenu">Menu</button>
+<ul id="submenu" aria-hidden="true">
+    <li><a href="#item1">Item 1</a></li>
+    <li><a href="#item2">Item 2</a></li>
+</ul>
+```
+
+**3. aria-disabled**   
+  - 요소가 비활성화되었음을 나타냅니다. 이 상태에서는 사용자가 요소와 상호작용할 수 없습니다.   
+  - value: true (비활성화됨) | false (활성화됨)
+
+```sh
+<button aria-disabled="true">Submit</button>
+```
+
+**4. aria-hidden**   
+  - 요소가 보조 기술에 의해 무시될지를 나타냅니다. 요소가 시각적으로는 보이지만, 보조 기술 사용자에게는 숨겨질 때 사용됩니다.   
+  - value: true (숨김) | false (보임)
+
+```sh
+<div aria-hidden="true">This content is hidden from screen readers</div>
+```
+
+**5. aria-selected**   
+  - 요소가 선택된 상태인지 나타냅니다. 주로 탭, 옵션 리스트 등에서 사용됩니다.   
+  - value: true (선택됨) | false (선택되지 않음)
+
+```sh
+<div role="tablist">
+    <div role="tab" aria-selected="true">Tab 1</div>
+    <div role="tab" aria-selected="false">Tab 2</div>
+</div>
+```
+
+**6. aria-pressed**   
+  - 토글 버튼의 눌림 상태를 나타냅니다.   
+  - value: true (눌림) | false (눌리지 않음) | mixed (부분적으로 눌림)
+
+```sh
+<button aria-pressed="false">Bold</button>
+```
+
+
+### 6.3 속성 (Properties) 예시
+속성은 웹 요소의 고정된 특성을 나타내며, 보조 기술이 이러한 요소를 적절하게 처리할 수 있도록 돕습니다.    
+
+**1. aria-label**   
+  - 요소의 레이블을 제공하여, 스크린 리더가 이 레이블을 읽어 사용자에게 요소의 목적을 전달합니다.   
+  - 작성자가 접근성 있는 이름을 제공할 수 없는 역할을 제외한 거의 모든 역할에 사용됩니다.   
+  - value: string
+
+```sh
+<button aria-label="닫기">X</button>
+<button aria-label="취소">X</button>
+```
+
+**2. aria-labelledby**   
+  - 다른 요소에 의해 레이블이 제공될 때 사용됩니다. 레이블 요소의 ID를 참조하여 해당 요소를 레이블로 지정합니다.   
+  - 이 속성은 액세스 가능한 이름만 정의합니다. 레이블 지정 요소를 클릭하여 연결된 입력을 활성화하는 것과 같은 다른 기능은 제공하지 않습니다.    
+  - 작성자가 액세스 가능한 이름을 제공할 수 없는 역할을 제외한 거의 모든 역할에서 사용됩니다.    
+  - value: ID reference list(ID 참조 목록)
+
+```sh
+<h1 id="dialogTitle">Dialog Title</h1>
+<div role="dialog" aria-labelledby="dialogTitle">
+    <p>This is a dialog content.</p>
+</div>
+```
+
+**3. aria-describedby**   
+  - 다른 요소가 추가적인 설명을 제공할 때 사용됩니다. 설명을 제공하는 요소의 ID를 참조합니다.   
+  - 모든 역할에 사용됩니다. 모든 HTML 요소에서도 사용할 수 있습니다.    
+  - value: ID reference list(ID 참조 목록)
+
+```sh
+<span id="info">This is a description of the element.</span>
+<input type="text" aria-describedby="info">
+```
+
+**4. aria-controls**   
+  - 요소가 제어하는 다른 요소의 ID를 참조합니다. 주로 사용자 인터페이스에서 요소 간의 관계를 나타냅니다.
+  - 모든 역할에서 사용됩니다.
+  - value: id list(ID 목록)
+
+```sh
+<button aria-controls="submenu">Toggle Submenu</button>
+<div id="submenu">Submenu content</div>
+```
+
+**5. aria-live**   
+  - 동적으로 변경되는 콘텐츠 영역을 나타내며, 보조 기술이 콘텐츠의 변경 사항을 사용자에게 알리는 방법을 정의합니다.
+  - 모든 역할에서 사용됩니다.
+  - value: off | polite | assertive
+
+```sh
+<div aria-live="polite">New message received.</div>
+```
+
+**6. aria-valuenow**   
+  - 슬라이더나 프로그레스 바 등에서 현재 값을 나타냅니다.
+  - meter, scrollbar, separator, slider, spinbutton 역할에서 사용됩니다.
+  - value: number
+
+```sh
+<div role="slider" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+```
+
+**7. aria-valuemin**   
+  - 슬라이더나 프로그레스 바 등에서 설정할 수 있는 최소 값을 나타냅니다.
+  - meter, scrollbar, separator, slider, spinbutton 역할에서 사용됩니다.
+  - value: number
+
+```sh
+<div role="slider" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+```
+
+**8. aria-valuemax**   
+  -  슬라이더나 프로그레스 바 등에서 설정할 수 있는 최대 값을 나타냅니다.
+  - meter, scrollbar, separator, slider, spinbutton 역할에서 사용됩니다.
+  - value: number
+
+```sh
+<div role="slider" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+```
 
 
 ## 7. WAI-ARIA 적용 방법
-> WAI-ARIA를 실제 웹 사이트와 애플리케이션에 적용하는 방법과 몇 가지 사례를 제시하여 웹 접근성을 개선하고 모든 사용자가 웹 콘텐츠에 접근할 수 있도록 제공.    
+> WAI-ARIA를 실제 웹 사이트와 애플리케이션에 적용하는 방법과 몇 가지 사례를 제시하여 웹 접근성을 개선하고 모든 사용자가 웹 콘텐츠에 접근할 수 있도록 제공합니다.    
 
-### 7.1. 적절한 ARIA 역할(Role) 사용
-- WAI-ARIA 역할을 사용하여 HTML 요소의 목적을 명확하게 정의   
-- 예) div나 span 같은 요소에 role="button"을 사용하여 해당 요소가 버튼 역할을 수행하도록 해준다.
+**1. 적절한 ARIA 역할(Role) 사용**    
+   - WAI-ARIA 역할을 사용하여 HTML 요소의 목적을 명확하게 정의   
+   - 예) div나 span 같은 요소에 role="button"을 사용하여 해당 요소가 버튼 역할을 수행하도록 해줍니다.
 
 ```sh
 // 스크린 리더에게 해당 요소가 클릭 가능한 버튼임을 알려주고 tabindex를 제공하여 초점(포커스)이 발생할 수 있게 제공.
 <div role="button" tabindex="0">Click Me</div>
 ```
 
-### 7.2. ARIA 속성(Properties) 활용
-- 요소의 상태나 특성을 명확히 하기 위해 적절한 ARIA 속성을 추가   
-- 예) aria-expanded를 사용하여 요소가 확장되었는지 여부를 나타낼 수 있다.
+**2. ARIA 속성(Properties) 활용**   
+  - 요소의 상태나 특성을 명확히 하기 위해 적절한 ARIA 속성을 추가   
+  - 예) aria-expanded를 사용하여 요소가 확장되었는지 여부를 나타낼 수 있습니다.
 
 ```sh
 // 드롭다운 메뉴의 확장/축소 상태를 보조 기술에 전달.
@@ -406,17 +547,17 @@
 </ul>
 ```
 
-### 7.3. ARIA 상태(States) 적용
-- 사용자의 상호작용에 따라 변할 수 있는 요소에 대해 ARIA 상태를 설정   
-- 예) 체크박스의 상태를 aria-checked로 표시.
+**3. ARIA 상태(States) 적용**    
+  - 사용자의 상호작용에 따라 변할 수 있는 요소에 대해 ARIA 상태를 설정   
+  - 예) 체크박스의 상태를 aria-checked로 표시.
 
 ```sh
 // 사용자가 체크박스를 선택하거나 해제할 때 이 속성이 업데이트됨.
 <div role="checkbox" aria-checked="false" tabindex="0">Accept Terms</div>
 ```
 
-### 7.4. 정확한 레이블 제공
-- aria-label 또는 aria-labelledby를 사용하여 요소에 명확한 텍스트 레이블을 제공함으로써 스크린 리더 사용자가 요소의 목적을 이해할 수 있도록 함   
+**4. 정확한 레이블 제공**    
+  - aria-label 또는 aria-labelledby를 사용하여 요소에 명확한 텍스트 레이블을 제공함으로써 스크린 리더 사용자가 요소의 목적을 이해할 수 있도록 함   
 
 ```sh
 // "X" 버튼이 "닫기 또는 취소" 버튼임을 보조 기술 사용자에게 알림.
@@ -424,8 +565,8 @@
 <button type="button" aria-label="취소">X</button>
 ```
 
-### 7.5. 동적 콘텐츠에 aria-live 적용
-- 실시간으로 변경되는 콘텐츠에 aria-live 속성을 사용하여 스크린 리더가 해당 변화를 사용자에게 알릴 수 있도록 한다   
+**5. 동적 콘텐츠에 aria-live 적용**    
+  - 실시간으로 변경되는 콘텐츠에 aria-live 속성을 사용하여 스크린 리더가 해당 변화를 사용자에게 알릴 수 있도록 한다   
 
 ```sh
 // 메시지가 추가되면 스크린 리더가 사용자에게 이를 알려준다.
