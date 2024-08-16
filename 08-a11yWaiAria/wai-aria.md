@@ -1,5 +1,6 @@
 # WAI-ARIA란?
-> **WAI-ARIA (Web Accessibility Initiative - Accessible Rich Internet Applications)** 는  웹 콘텐츠와 웹 애플리케이션이 장애인에게 더 접근 가능하도록 돕기 위한 W3C의 표준 기술이며, 스크린 리더와 같은 보조 기술이 웹 페이지의 구조와 목적을 이해하고 상호작용할 수 있도록 하는 **역할**, **상태** 및 **속성**을 정의하고 있다.    
+> **WAI-ARIA (Web Accessibility Initiative - Accessible Rich Internet Applications)** 는  웹 콘텐츠와 애플리케이션이 장애인에게 더 접근 가능하도록 돕는 W3C의 표준으로, 보조 기술이 웹 페이지를 이해하고 상호작용할 수 있도록 역할, 상태, 속성을 정의합니다. ARIA의 첫 번째 규칙은 네이티브 HTML 요소가 이미 적절한 의미와 동작을 제공하는 경우, 이를 변경하지 않고 그대로 사용하는 것이 중요하다는 것입니다. 즉, 네이티브 HTML의 접근성 기능을 우선 활용해야 합니다.    
+
 
 <figure style="text-align:center">
   <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*vWTlh8KR_FwH4JhOFYk6Jw.png" alt="Web Accessibility Initiative">

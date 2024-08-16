@@ -127,6 +127,7 @@ div 요소를 버튼처럼 동작하게 만드는 예시입니다. 이 경우 ro
 
 **상태가 있는 아코디언 버튼**
 아코디언 UI를 구현하는 버튼입니다. 아코디언 패널을 열거나 닫을 때 버튼 상태를 aria-expanded 속성으로 표시합니다.   
+
 ```sh
 <button type="button" aria-expanded="false" aria-controls="accordion1" onclick="toggleAccordion(this)">
   Section 1
@@ -148,6 +149,43 @@ div 요소를 버튼처럼 동작하게 만드는 예시입니다. 이 경우 ro
 체크박스는 사용자가 선택하거나 선택 해제할 수 있는 항목입니다.      
 [W3C ARIA checkbox](https://www.w3.org/TR/wai-aria-1.2/#checkbox){: target="_blank"}   
 [MDN ARIA checkbox](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/checkbox_role){: target="_blank"}   
+
+```sh
+// 잘못된 예시 - 상태를 나타내는 속성이 없음
+<div role="checkbox">Accept Terms</div>
+
+// 올바른 예시
+<div role="checkbox" aria-checked="false" tabindex="0">Accept Terms</div>
+
+// (권장)시멘틱 요소 사용
+<input type="checkbox" id="terms">
+<label for="terms">Accept Terms</label>
+```
+
+**사용 시 주의사항**   
+- aria-checked 속성을 통해 체크박스의 상태를 명확히 지정해야 합니다 (true, false, mixed).   
+- 시멘틱 요소를 사용하지 않는경우 체크박스가 포커스를 받을 수 있도록 tabindex="0"를 추가해야 합니다.
+
+**상속된 상태 및 속성**   
+- aria-checked: 체크박스의 현재 상태를 나타냅니다.    
+
+### **3. gridcell (그리드 셀 역할)**    
+그리드나 테이블의 개별 셀을 나타냅니다.      
+특정 관련 ARIA 역할 및 속성에 대한 지원은 보조 기술에 대한 지원이 부족합니다. 가능하면 HTML 테이블 마크업을 대신 사용하는것이 좋습니다.    
+[W3C ARIA gridcell](https://www.w3.org/TR/wai-aria-1.2/#gridcell){: target="_blank"}   
+[MDN ARIA gridcell](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/gridcell_role){: target="_blank"}   
+
+```sh
+// 잘못된 예시 - 상태를 나타내는 속성이 없음
+<div role="checkbox">Accept Terms</div>
+
+// 올바른 예시
+<div role="checkbox" aria-checked="false" tabindex="0">Accept Terms</div>
+
+// (권장)시멘틱 요소 사용
+<input type="checkbox" id="terms">
+<label for="terms">Accept Terms</label>
+```
 
 **사용 시 주의사항**   
 - aria-checked 속성을 통해 체크박스의 상태를 명확히 지정해야 합니다 (true, false, mixed).   
