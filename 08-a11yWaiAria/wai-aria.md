@@ -385,7 +385,7 @@
 
 **1. aria-checked**   
   - 체크박스, 라디오 버튼 또는 트리 항목의 선택 상태를 나타냅니다.   
-  - value:true (선택됨) | false (선택되지 않음) | mixed (부분 선택됨, 체크박스에만 해당)
+  - value:true (선택됨), false (선택되지 않음), mixed (부분 선택됨, 체크박스에만 해당)
 
 ```sh
 <div role="checkbox" aria-checked="false" tabindex="0">Accept Terms</div>
@@ -393,7 +393,7 @@
 
 **2. aria-expanded**   
   - 요소가 확장되었는지, 축소되었는지 여부를 나타냅니다. 드롭다운 메뉴, 아코디언 등에서 사용됩니다.   
-  - value: true (확장됨) | false (축소됨)
+  - value: true (확장됨), false (축소됨)
 
 ```sh
 <button aria-expanded="false" aria-controls="submenu">Menu</button>
@@ -405,7 +405,7 @@
 
 **3. aria-disabled**   
   - 요소가 비활성화되었음을 나타냅니다. 이 상태에서는 사용자가 요소와 상호작용할 수 없습니다.   
-  - value: true (비활성화됨) | false (활성화됨)
+  - value: true (비활성화됨), false (활성화됨)
 
 ```sh
 <button aria-disabled="true">Submit</button>
@@ -413,7 +413,7 @@
 
 **4. aria-hidden**   
   - 요소가 보조 기술에 의해 무시될지를 나타냅니다. 요소가 시각적으로는 보이지만, 보조 기술 사용자에게는 숨겨질 때 사용됩니다.   
-  - value: true (숨김) | false (보임)
+  - value: true (숨김), false (보임)
 
 ```sh
 <div aria-hidden="true">This content is hidden from screen readers</div>
@@ -421,7 +421,7 @@
 
 **5. aria-selected**   
   - 요소가 선택된 상태인지 나타냅니다. 주로 탭, 옵션 리스트 등에서 사용됩니다.   
-  - value: true (선택됨) | false (선택되지 않음)
+  - value: true (선택됨), false (선택되지 않음)
 
 ```sh
 <div role="tablist">
@@ -432,7 +432,7 @@
 
 **6. aria-pressed**   
   - 토글 버튼의 눌림 상태를 나타냅니다.   
-  - value: true (눌림) | false (눌리지 않음) | mixed (부분적으로 눌림)
+  - value: true (눌림), false (눌리지 않음), mixed (부분적으로 눌림)
 
 ```sh
 <button aria-pressed="false">Bold</button>
@@ -488,7 +488,7 @@
 **5. aria-live**   
   - 동적으로 변경되는 콘텐츠 영역을 나타내며, 보조 기술이 콘텐츠의 변경 사항을 사용자에게 알리는 방법을 정의합니다.
   - 모든 역할에서 사용됩니다.
-  - value: off | polite | assertive
+  - value: off, polite, assertive
 
 ```sh
 <div aria-live="polite">New message received.</div>
