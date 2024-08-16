@@ -148,7 +148,7 @@ WebAIM에서 2019년 8월부터 9월까지 스크린 리더 사용자의 선호�
 - [NVDA Screenreader](https://ul.gpii.net/content/nvda-screenreader){: target="_blank"}   
 - [webaim.org Screen Reader User Survey](https://webaim.org/projects/screenreadersurvey8/){: target="_blank"}   
 - [JAWS verses NVDA](https://digitalaccessibilitycentre.org/index.php/blog/20-diary/211-jaws-verses-nvda){: target="_blank"}   
-- [Mobile Android 접근성 시작 | Android Developers](https://developer.android.com/codelabs/starting-android-accessibility?hl=ko#0){: target="_blank"}   
+- [Mobile Android 접근성 시작 - Android Developers](https://developer.android.com/codelabs/starting-android-accessibility?hl=ko#0){: target="_blank"}   
 - [Mobile iOS Accessibility Inspector](https://developer.apple.com/documentation/accessibility/accessibility-inspector){: target="_blank"}   
 - [Colour Contrast Analyzer (CCA)](https://www.tpgi.com/color-contrast-checker/){: target="_blank"}   
 - [WCAG - Contrast Checker](https://contrastchecker.com/){: target="_blank"}   
