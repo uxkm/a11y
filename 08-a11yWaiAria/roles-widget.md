@@ -1399,7 +1399,7 @@ tab 역할은 탭 인터페이스에서 사용되는 개별 탭을 나타냅니�
 
 **기본 tab 역할 예시**
 시멘틱 요소 사용을 권장하며, &lt;button&gt; 요소를 사용하여 탭을 구현. 탭 버튼과 관련 콘텐츠가 올바르게 연결되어 보조 기술이 이 구조를 정확히 이해할 수 있도록 합니다.   
-tab과 tabpanel을 올바르게 연결한 것입니다. aria-controls 속성을 사용해 각 tab이 제어하는 tabpanel을 명시했고, aria-selected 속성으로 현재 선택된 탭을 나타냈습니다. 선택되지 않은 탭은 tabindex="-1"을 사용해 포커스가 불가능하도록 설정되었습니다.    
+tab과 tabpanel을 올바르게 연결해야 하며, aria-controls 속성을 사용해 각 tab이 제어하는 tabpanel을 명시하고, aria-selected 속성으로 현재 선택된 탭을 나타냅니다. 선택되지 않은 탭은 tabindex="-1"을 사용해 포커스가 불가능하도록 설정해야 합니다.    
 
 ```sh
 // 잘못된 예시 - tab과 tabpanel이 연결되지 않았고, aria-selected 및 aria-controls 속성 누락.
@@ -1519,13 +1519,11 @@ tabpanel 역할은 탭 인터페이스에서 개별 탭(tab)과 연결된 콘텐
 
 
 
-**기본 tab 역할 예시**
-시멘틱 요소 사용을 권장하며, &lt;button&gt; 요소를 사용하여 탭을 구현. 탭 버튼과 관련 콘텐츠가 올바르게 연결되어 보조 기술이 이 구조를 정확히 이해할 수 있도록 합니다.   
-tab과 tabpanel을 올바르게 연결한 것입니다. aria-controls 속성을 사용해 각 tab이 제어하는 tabpanel을 명시했고, aria-selected 속성으로 현재 선택된 탭을 나타냈습니다. 선택되지 않은 탭은 tabindex="-1"을 사용해 포커스가 불가능하도록 설정되었습니다.    
-
+**기본 tabpanel 역할 예시**
+각 tabpanel 요소는 aria-labelledby 속성을 통해 자신을 설명하는 탭의 ID를 참조하고 있으며, 또한, aria-controls 속성을 사용하여 각 탭이 관련된 tabpanel을 가리키도록 설정해야 합니다.    
 ```sh
-// 잘못된 예시 - tab과 tabpanel이 연결되지 않았고, aria-selected 및 aria-controls 속성 누락.
-<div role="tab">Tab 1</div>
+// 잘못된 예시
+// tabpanel은 올바른 tab과 연결되어야 합니다. 이를 위해 aria-labelledby 속성을 사용하여 해당 탭의 ID를 참조해야 합니다. 또한, 초기에는 선택된 탭과 관련된 tabpanel만 표시되고, 나머지 tabpanel은 숨겨져 있어야 합니다.
 <div role="tabpanel">Content for Tab 1</div>
 
 // 올바른 예시
@@ -1545,15 +1543,17 @@ tab과 tabpanel을 올바르게 연결한 것입니다. aria-controls 속성을 
 <div role="tabpanel" id="panel2" aria-labelledby="tab2" hidden>Content for Tab 2</div>
 ```
 
-**동적으로 업데이트 가능한 tab 예시**
-이 예시는 탭을 동적으로 업데이트할 수 있는 기능을 구현한 것입니다. 사용자가 탭을 클릭하면, 이전에 선택된 탭은 비활성화되고 새 탭이 활성화됩니다. 보조 기술은 현재 선택된 탭과 그에 따른 콘텐츠를 정확히 전달받습니다. 
+**동적으로 업데이트 가능한 tabpanel 예시**
+이 예시는 탭을 클릭할 때마다 관련된 tabpanel이 표시되고 나머지 패널은 숨겨지도록 동적으로 업데이트되는 기능을 구현했습니다. 선택된 탭에 따라 관련된 콘텐츠가 표시되며, 보조 기술은 이 변화된 상태를 인식할 수 있습니다. 
 ```sh
 <div role="tablist">
   <div role="tab" id="tab1" aria-selected="true" aria-controls="panel1" tabindex="0">Tab 1</div>
   <div role="tab" id="tab2" aria-selected="false" aria-controls="panel2" tabindex="-1">Tab 2</div>
+  <div role="tab" id="tab3" aria-selected="false" aria-controls="panel3" tabindex="-1">Tab 3</div>
 </div>
 <div role="tabpanel" id="panel1" aria-labelledby="tab1">Content for Tab 1</div>
 <div role="tabpanel" id="panel2" aria-labelledby="tab2" hidden>Content for Tab 2</div>
+<div role="tabpanel" id="panel3" aria-labelledby="tab3" hidden>Content for Tab 3</div>
 
 <script>
   const tabs = document.querySelectorAll('[role="tab"]');
@@ -1575,8 +1575,8 @@ tab과 tabpanel을 올바르게 연결한 것입니다. aria-controls 속성을 
 </script>
 ```
 
-**비활성화된 tab 예시**
-aria-disabled="true" 속성을 사용하여 비활성화된 탭을 나타냈습니다. 이 탭은 포커스를 받을 수 없으며(tabindex="-1"), 시각적으로도 비활성화된 상태임을 표시했습니다.  
+**비활성화된 tabpanel 예시**
+이 예시는 aria-disabled="true" 속성을 사용해 비활성화된 탭을 나타내고 있으며, 비활성화된 탭은 포커스를 받을 수 없으며 연결된 tabpanel은 표시되지 않습니다.  
 ```sh
 <div role="tablist">
   <div role="tab" id="tab1" aria-selected="true" aria-controls="panel1" tabindex="0">Tab 1</div>
@@ -1586,39 +1586,194 @@ aria-disabled="true" 속성을 사용하여 비활성화된 탭을 나타냈습�
 <div role="tabpanel" id="panel2" aria-labelledby="tab2" hidden>Content for Tab 2</div>
 ```
 
-**키보드 내비게이션을 지원하는 tab 예시**
-이 예시는 키보드 내비게이션을 지원하는 탭 인터페이스를 구현한 것입니다. 사용자는 ArrowRight 및 ArrowLeft 키를 사용하여 탭 간에 이동할 수 있으며, 탭의 선택이 자동으로 업데이트됩니다.  
+### **19. textbox (텍스트 상자 역할)**    
+textbox 역할은 사용자가 텍스트를 입력할 수 있는 UI 요소를 나타냅니다. 이 역할은 일반적으로 HTML의 &lt;input&gt; 요소와 &lt;textarea&gt; 요소에 해당하며, 단일 또는 여러 줄의 텍스트를 입력할 수 있는 필드를 정의합니다. textbox는 사용자가 정보를 입력할 수 있는 기본적인 인터랙티브 요소로, 다양한 입력 유형을 지원할 수 있습니다.    
+[W3C ARIA textbox](https://www.w3.org/TR/wai-aria-1.2/#textbox){: target="_blank"}   
+[MDN ARIA textbox](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/textbox_role){: target="_blank"}   
+[input type요소 참조 - UXKM input text](https://uxkm.io/publishing/html/09-forms/03-input_element_part1#gsc.tab=0){: target="_blank"}    
+[textarea요소 참조 - UXKM textarea](https://uxkm.io/publishing/html/09-forms/09-textarea_element#gsc.tab=0){: target="_blank"}    
+
+**기본 설명** 
+- textbox 역할은 사용자가 텍스트를 입력할 수 있는 필드를 정의합니다.    
+- 보조 기술은 aria-multiline, aria-required, aria-readonly, aria-invalid 등의 속성을 통해 텍스트 상자의 상태와 동작을 인식할 수 있습니다.   
+- 단일 줄 텍스트 상자(input type="text")와 여러 줄 텍스트 상자(textarea) 모두 textbox 역할을 가집니다.    
+
+**사용 시 주의사항**   
+- textbox 역할을 사용할 때는 사용자가 입력해야 할 내용의 목적을 명확히 설명하기 위해 aria-label 또는 aria-labelledby 속성을 사용해야 합니다.   
+- 필수 입력 필드일 경우 aria-required="true"를 사용하여 사용자에게 이를 알립니다.
+- 읽기 전용 텍스트 상자의 경우 aria-readonly="true" 속성을 사용해 수정이 불가능함을 나타내야 합니다.
+- 유효성 검사가 필요한 경우 aria-invalid 속성을 사용하여 입력 값이 유효한지 여부를 나타낼 수 있습니다. 유효하지 않은 경우 관련 메시지를 제공해야 합니다.
+- 여러 줄 입력이 필요한 경우, aria-multiline="true" 속성을 사용하여 보조 기술이 이 필드가 여러 줄을 지원함을 알 수 있도록 해야 합니다.
+
+**상속된 상태 및 속성**   
+- aria-required: 텍스트 상자가 필수 입력 필드인지 여부를 나타냅니다.    
+- aria-invalid: 텍스트 상자의 입력 내용이 유효한지 여부를 나타냅니다.    
+- aria-readonly: 텍스트 상자가 읽기 전용인지 여부를 나타냅니다.    
+- aria-multiline: 텍스트 상자가 여러 줄을 지원하는지 여부를 나타냅니다. 값은 true 또는 false입니다.    
+- aria-labelledby, aria-describedby: 텍스트 상자의 레이블과 설명을 참조하는 속성입니다.    
+
+
+
+**기본 textbox 역할 예시**
+&lt;input type="text"&gt; 또는 &lt;textarea&gt; 요소는 기본적으로 textbox 역할을 가지며, 사용자가 텍스트를 입력할 수 있는 필드로 동작합니다. aria-label 속성을 사용해 보조 기술이 이 필드의 목적을 이해할 수 있도록 제공합니다.    
 ```sh
-<div role="tablist">
-  <div role="tab" id="tab1" aria-selected="true" aria-controls="panel1" tabindex="0">Tab 1</div>
-  <div role="tab" id="tab2" aria-selected="false" aria-controls="panel2" tabindex="-1">Tab 2</div>
-  <div role="tab" id="tab3" aria-selected="false" aria-controls="panel3" tabindex="-1">Tab 3</div>
-</div>
-<div role="tabpanel" id="panel1" aria-labelledby="tab1">Content for Tab 1</div>
-<div role="tabpanel" id="panel2" aria-labelledby="tab2" hidden>Content for Tab 2</div>
-<div role="tabpanel" id="panel3" aria-labelledby="tab3" hidden>Content for Tab 3</div>
+// 잘못된 예시
+// 텍스트 상자를 나타내는 div 요소에 role="textbox"를 사용했지만, 사용자가 실제로 텍스트를 입력할 수 있는 필드로 동작하지 않습니다. 보조 기술이 이 요소를 텍스트 입력 필드로 인식할 수 없으며, 입력도 불가능합니다.
+<div role="textbox">Enter text here...</div>
+
+// (권장) 올바른 예시 시멘틱 요소 사용
+<textarea aria-label="Enter your message"></textarea>
+```
+
+**여러 줄 입력이 가능한 textbox 예시**
+이 예시는 탭을 클릭할 때마다 관련된 tabpanel이 표시되고 나머지 패널은 숨겨지도록 동적으로 업데이트되는 기능을 구현했습니다. 선택된 탭에 따라 관련된 콘텐츠가 표시되며, 보조 기술은 이 변화된 상태를 인식할 수 있습니다. 
+```sh
+<textarea aria-label="Enter your message" aria-multiline="true"></textarea>
+```
+
+**필수 입력 필드인 textbox 예시**
+aria-required="true" 속성을 사용하여 이 텍스트 상자가 필수 입력 필드임을 나타냈습니다. 보조 기술은 사용자가 이 필드를 비워두고 제출하려고 할 때 이를 경고할 수 있습니다. 
+```sh
+<input type="text" aria-label="Enter your email" aria-required="true">
+```
+
+**읽기 전용 textbox 예시**
+aria-readonly="true" 속성을 사용하여 이 텍스트 상자가 읽기 전용임을 나타냈습니다. 사용자는 이 필드의 내용을 수정할 수 없으며, 보조 기술은 이 필드가 수정 불가능하다는 정보를 사용자에게 전달합니다. 
+```sh
+<input type="text" aria-label="Username" value="JohnDoe" aria-readonly="true">
+```
+
+**유효성 검사가 필요한 textbox 예시**
+aria-invalid 속성을 사용하여 텍스트 상자 입력 값의 유효성을 검사하는 예시입니다. 사용자가 올바른 이메일 형식을 입력하지 않으면, 보조 기술은 이 필드가 유효하지 않음을 경고할 수 있으며, 관련 오류 메시지를 표시합니다. 
+```sh
+<input type="text" aria-label="Enter your email" aria-invalid="false" placeholder="example@domain.com">
+<p id="error-message" style="display: none;">Invalid email address</p>
 
 <script>
-  const tabElements = document.querySelectorAll('[role="tab"]');
-
-  tabElements.forEach((tab, index) => {
-    tab.addEventListener('keydown', (event) => {
-      let newIndex;
-      if (event.key === 'ArrowRight') {
-        newIndex = (index + 1) % tabElements.length;
-      } else if (event.key === 'ArrowLeft') {
-        newIndex = (index - 1 + tabElements.length) % tabElements.length;
-      } else {
-        return;
-      }
-      tabElements[newIndex].focus();
-      tabElements[newIndex].click();
-    });
+  const textbox = document.querySelector('input[aria-label="Enter your email"]');
+  textbox.addEventListener('input', function() {
+    const isValid = textbox.value.includes('@');
+    textbox.setAttribute('aria-invalid', !isValid);
+    document.getElementById('error-message').style.display = isValid ? 'none' : 'block';
   });
 </script>
 ```
 
 
+### **20. treeitem (트리 항목 역할)**    
+treeitem 역할은 트리 구조 내에서 개별 항목을 나타냅니다. treeitem은 보통 계층적 데이터 구조를 표현하는 트리 컴포넌트 내에서 사용되며, 각 항목은 다른 항목을 포함하거나 포함하지 않을 수 있습니다. treeitem은 일반적으로 tree 또는 group 역할과 함께 사용됩니다.    
+[W3C ARIA treeitem](https://www.w3.org/TR/wai-aria-1.2/#treeitem){: target="_blank"}   
+[MDN ARIA treeitem](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/treeitem_role){: target="_blank"}   
+
+**기본 설명** 
+- treeitem 역할은 트리 구조의 개별 항목을 정의하며, 사용자는 이를 클릭하거나 확장/축소할 수 있습니다.    
+- 트리 항목은 aria-expanded 속성을 사용하여 현재 하위 항목이 표시되는지 여부를 나타냅니다.   
+- treeitem은 계층적 구조를 표현하기 위해 group 역할을 가진 컨테이너에 포함될 수 있으며, 최상위 항목은 tree 역할을 가진 컨테이너에 직접 포함됩니다.    
+
+**사용 시 주의사항**   
+- treeitem 역할을 사용할 때는 필수적으로 aria-expanded 속성을 설정하여 하위 항목의 표시 여부를 명확히 해야 합니다. 값은 true(확장됨) 또는 false(축소됨)입니다.
+- 트리 항목이 하위 항목을 포함할 경우, 이 하위 항목들은 group 역할을 가진 컨테이너에 포함되어야 하며, 이 컨테이너는 treeitem 내에 있어야 합니다.
+- 키보드 내비게이션을 지원하도록 구현하여 사용자가 트리 항목을 쉽게 탐색하고 확장/축소할 수 있도록 해야 합니다.
+- 비활성화된 트리 항목의 경우, aria-disabled="true" 속성을 사용하여 이를 명확히 표시해야 합니다.
+
+**상속된 상태 및 속성**   
+- aria-expanded: 트리 항목의 하위 항목이 확장되었는지 여부를 나타냅니다. 값은 true(확장됨) 또는 false(축소됨)입니다.    
+- aria-disabled: 트리 항목이 비활성화되었는지 여부를 나타냅니다.    
+- aria-selected: 트리 항목이 선택되었는지 여부를 나타냅니다.    
+- aria-labelledby, aria-describedby: 트리 항목의 레이블과 설명을 참조하는 속성입니다.    
+
+
+
+**기본 treeitem 역할 예시**
+tree 역할을 가진 컨테이너 안에 treeitem을 포함시켜 트리 구조를 정의합니다. aria-expanded 속성을 사용하여 첫 번째 항목이 확장된 상태임을 나타내고, 해당 항목에 포함된 하위 항목들은 group 역할을 가진 컨테이너에 포함되어 제공합니다.    
+```sh
+// 잘못된 예시
+// treeitem 요소가 단독으로 사용되고 있으며, 이를 포함하는 트리 구조(tree 역할)가 정의되지 않았습니다. 또한, 하위 항목의 확장 상태를 나타내는 aria-expanded 속성이 누락되었습니다.
+<div role="textbox">Enter text here...</div>
+
+// 올바른 예시
+<div role="tree">
+  <div role="treeitem" aria-expanded="true" tabindex="0">Item 1
+    <div role="group">
+      <div role="treeitem">Sub-item 1</div>
+      <div role="treeitem">Sub-item 2</div>
+    </div>
+  </div>
+  <div role="treeitem" aria-expanded="false" tabindex="-1">Item 2</div>
+</div>
+```
+
+**동적 확장/축소 가능한 treeitem 예시**
+이 예시는 사용자가 treeitem을 클릭하면 하위 항목의 표시 여부를 토글할 수 있는 트리 구조를 구현했습니다. aria-expanded 속성은 클릭에 따라 동적으로 업데이트되며, 하위 항목(group 역할)이 표시되거나 숨겨집니다.
+```sh
+<div role="tree" id="myTree">
+  <div role="treeitem" aria-expanded="false" tabindex="0">Item 1
+    <div role="group" hidden>
+      <div role="treeitem">Sub-item 1</div>
+      <div role="treeitem">Sub-item 2</div>
+    </div>
+  </div>
+  <div role="treeitem" aria-expanded="false" tabindex="-1">Item 2</div>
+</div>
+
+<script>
+  const tree = document.getElementById('myTree');
+  tree.addEventListener('click', function(event) {
+    const treeitem = event.target.closest('[role="treeitem"]');
+    if (treeitem) {
+      const expanded = treeitem.getAttribute('aria-expanded') === 'true';
+      treeitem.setAttribute('aria-expanded', !expanded);
+      const group = treeitem.querySelector('[role="group"]');
+      if (group) {
+        group.hidden = expanded;
+      }
+    }
+  });
+</script>
+```
+
+**키보드 내비게이션을 지원하는 treeitem 예시**
+이 예시는 키보드 내비게이션을 지원하는 트리 구조를 구현한 것입니다. 사용자는 ArrowRight 및 ArrowLeft 키를 사용하여 트리 항목을 확장하거나 축소할 수 있으며, ArrowDown 및 ArrowUp 키를 사용해 항목 간을 탐색할 수 있습니다. 
+```sh
+<div role="tree" id="keyboardTree">
+  <div role="treeitem" aria-expanded="false" tabindex="0">Item 1
+    <div role="group" hidden>
+      <div role="treeitem">Sub-item 1</div>
+      <div role="treeitem">Sub-item 2</div>
+    </div>
+  </div>
+  <div role="treeitem" aria-expanded="false" tabindex="-1">Item 2</div>
+</div>
+
+<script>
+  const treeItems = document.querySelectorAll('#keyboardTree [role="treeitem"]');
+
+  treeItems.forEach((item, index) => {
+    item.addEventListener('keydown', function(event) {
+      if (event.key === 'ArrowRight' && this.getAttribute('aria-expanded') === 'false') {
+        this.setAttribute('aria-expanded', 'true');
+        this.querySelector('[role="group"]').hidden = false;
+      } else if (event.key === 'ArrowLeft' && this.getAttribute('aria-expanded') === 'true') {
+        this.setAttribute('aria-expanded', 'false');
+        this.querySelector('[role="group"]').hidden = true;
+      } else if (event.key === 'ArrowDown') {
+        treeItems[Math.min(index + 1, treeItems.length - 1)].focus();
+      } else if (event.key === 'ArrowUp') {
+        treeItems[Math.max(index - 1, 0)].focus();
+      }
+    });
+  });
+</script>
+```
+
+**비활성화된 treeitem 예시**
+aria-disabled="true" 속성을 사용하여 비활성화된 트리 항목을 나타냈습니다. 이 항목은 포커스를 받을 수 없으며, 시각적으로도 비활성화된 상태임을 나타내고 있습니다. 
+```sh
+<div role="tree">
+  <div role="treeitem" aria-expanded="false" tabindex="0">Item 1</div>
+  <div role="treeitem" aria-expanded="false" aria-disabled="true" tabindex="-1" style="color: grey;">Item 2 (Disabled)</div>
+</div>
+```
 
 
 ---
@@ -1626,12 +1781,348 @@ aria-disabled="true" 속성을 사용하여 비활성화된 탭을 나타냈습�
 **복합형(Composite) Widget Roles**
 
 
+### **21. combobox (콤보 박스 역할)**    
+combobox 역할은 사용자가 직접 입력하거나, 목록에서 선택할 수 있는 요소를 나타냅니다. 콤보 박스는 드롭다운 리스트와 텍스트 입력 필드를 결합한 형태로, 사용자는 제시된 목록에서 선택하거나 새 값을 입력할 수 있습니다. combobox는 보통 listbox, tree, grid와 같은 관련된 선택 목록과 함께 사용됩니다.    
+[W3C ARIA combobox](https://www.w3.org/TR/wai-aria-1.2/#combobox){: target="_blank"}   
+[MDN ARIA combobox](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/combobox_role){: target="_blank"}   
+[select 요소 참조 - UXKM select](https://uxkm.io/publishing/html/09-forms/05-select_element#gsc.tab=0){: target="_blank"}    
+
+**기본 설명** 
+- combobox 역할은 텍스트 입력 필드와 선택 가능한 항목 목록을 결합한 UI 요소를 정의합니다.    
+- 콤보 박스는 aria-expanded, aria-controls, aria-haspopup, aria-autocomplete 등의 속성을 사용하여 보조 기술에 현재 상태와 동작을 알립니다.   
+- 콤보 박스에 연결된 선택 목록은 보통 listbox, tree, 또는 grid 역할을 가지며, 이는 콤보 박스의 aria-controls 속성에 의해 참조됩니다.    
+
+**사용 시 주의사항**   
+- combobox 역할을 사용할 때는 aria-expanded, aria-controls, aria-haspopup 속성을 설정하여 콤보 박스의 현재 상태와 관련된 목록을 명확히 정의해야 합니다.   
+- 자동 완성 기능을 제공하는 경우 aria-autocomplete 속성을 사용하여 보조 기술이 이 기능을 인식할 수 있도록 합니다.
+- 콤보 박스의 목록이 동적으로 확장/축소될 때, aria-expanded 속성을 동적으로 업데이트하여 현재 상태를 반영해야 합니다.
+- 비활성화된 콤보 박스는 aria-disabled="true" 속성을 사용하여 이를 명확히 표시해야 합니다.
+
+**상속된 상태 및 속성**   
+- aria-expanded: 콤보 박스의 선택 목록이 확장되었는지 여부를 나타냅니다.    
+- aria-controls: 콤보 박스가 제어하는 선택 목록의 ID를 참조합니다.    
+- aria-haspopup: 콤보 박스가 선택 목록을 가지고 있음을 나타냅니다. 일반적으로 listbox, tree, grid 중 하나입니다.    
+- aria-autocomplete: 콤보 박스에 자동 완성 기능이 있는지 여부를 나타냅니다.    
+- aria-disabled: 콤보 박스가 비활성화되었는지 여부를 나타냅니다.    
+- aria-labelledby, aria-describedby: 콤보 박스의 레이블과 설명을 참조하는 속성입니다.    
 
 
+**기본 combobox 역할 예시**
+HTML5의 &lt;select&gt; 요소는 기본적으로 콤보 박스 역할을 수행하며, 브라우저와 보조 기술에서 기본적으로 지원됩니다.  
+단, 디자인적으로 UI를 수정하여 사용해야하는 경우에는 텍스트 입력 필드에 role="combobox"를 설정하고, 관련된 선택 목록(listbox)을 aria-controls 속성을 통해 참조. aria-expanded 속성은 목록이 확장되었는지 여부를 나타내고, aria-autocomplete="list"는 사용자가 입력할 때 목록을 제시할 수 있음을 나타내야 합니다.     
+```sh
+// 잘못된 예시
+// combobox 요소가 단독으로 사용되었으며, 텍스트 입력 필드와 선택 목록이 포함되지 않았습니다. 이 상태에서는 보조 기술이 콤보 박스의 기능을 제대로 인식할 수 없습니다.
+<div role="combobox">Choose an option</div>
+
+// (권장) 올바른 예시 디자인에 맞추어서 사용하는 경우
+<label for="combo1">Choose an option:</label>
+<input id="combo1" type="text" role="combobox" aria-expanded="false" aria-controls="listbox1" aria-autocomplete="list" aria-haspopup="listbox">
+<ul id="listbox1" role="listbox" hidden>
+  <li role="option">Option 1</li>
+  <li role="option">Option 2</li>
+  <li role="option">Option 3</li>
+</ul>
+
+// (권장) 응용한 예시 디자인에 맞추어서 사용하는 경우
+<label>
+  <span>Choose an option:</span>
+  <input id="combo1" type="text" role="combobox" aria-expanded="false" aria-controls="radiocheck" aria-autocomplete="list" aria-haspopup="listbox">
+</label>
+<div id="radiocheck" role="listbox" hidden>
+  <li>
+     <label>
+       <input type="radio" name="radCheck" checked aria-checked="true">
+       <span>option 1</span>
+     </label>
+  /li>
+  <li>
+     <label>
+       <input type="radio" name="radCheck">
+       <span>option 2</span>
+     </label>
+  /li>
+  <li>
+     <label>
+       <input type="radio" name="radCheck">
+       <span>option 3</span>
+     </label>
+  /li>
+</div>
+
+// (권장) 올바른 예시 시멘틱 요소 사용
+<label for="combo1">Choose an option:</label>
+<select id="combo1">
+  <option>Option 1</option>
+  <option>Option 2</option>
+  <option>Option 3</option>
+</select>
+```
+
+**동적 확장/축소 가능한 combobox 예시**
+이 예시는 사용자가 입력할 때 관련된 선택 목록을 동적으로 확장하거나 축소하는 기능을 구현한 콤보 박스입니다. 텍스트 필드에 입력이 시작되면 목록이 확장되고, 항목을 클릭하면 목록이 축소되며 선택된 값이 텍스트 필드에 입력됩니다. 
+```sh
+<label for="combo2">Choose an option:</label>
+<input id="combo2" type="text" role="combobox" aria-expanded="false" aria-controls="listbox2" aria-autocomplete="list" aria-haspopup="listbox">
+<ul id="listbox2" role="listbox" hidden>
+  <li role="option" tabindex="-1">Option 1</li>
+  <li role="option" tabindex="-1">Option 2</li>
+  <li role="option" tabindex="-1">Option 3</li>
+</ul>
+
+<script>
+  const combobox = document.getElementById('combo2');
+  const listbox = document.getElementById('listbox2');
+
+  combobox.addEventListener('input', function() {
+    combobox.setAttribute('aria-expanded', 'true');
+    listbox.hidden = false;
+  });
+
+  combobox.addEventListener('blur', function() {
+    combobox.setAttribute('aria-expanded', 'false');
+    listbox.hidden = true;
+  });
+
+  listbox.addEventListener('click', function(event) {
+    if (event.target.getAttribute('role') === 'option') {
+      combobox.value = event.target.textContent;
+      combobox.setAttribute('aria-expanded', 'false');
+      listbox.hidden = true;
+    }
+  });
+</script>
+```
+
+**자동 완성 기능이 포함된 combobox 예시**
+이 예시는 자동 완성 기능이 포함된 콤보 박스를 구현한 것입니다. 사용자가 텍스트를 입력하면 해당 텍스트로 시작하는 항목만 목록에 표시됩니다. 사용자는 입력을 통해 목록을 필터링할 수 있으며, 목록에서 항목을 선택할 수 있습니다. 
+```sh
+<label for="combo3">Choose an option:</label>
+<input id="combo3" type="text" role="combobox" aria-expanded="false" aria-controls="listbox3" aria-autocomplete="list" aria-haspopup="listbox">
+<ul id="listbox3" role="listbox" hidden>
+  <li role="option">Apple</li>
+  <li role="option">Banana</li>
+  <li role="option">Cherry</li>
+  <li role="option">Date</li>
+  <li role="option">Elderberry</li>
+</ul>
+
+<script>
+  const combo3 = document.getElementById('combo3');
+  const listbox3 = document.getElementById('listbox3');
+
+  combo3.addEventListener('input', function() {
+    const filter = combo3.value.toLowerCase();
+    const options = listbox3.querySelectorAll('[role="option"]');
+    let hasVisibleOption = false;
+    options.forEach(option => {
+      if (option.textContent.toLowerCase().startsWith(filter)) {
+        option.hidden = false;
+        hasVisibleOption = true;
+      } else {
+        option.hidden = true;
+      }
+    });
+    listbox3.hidden = !hasVisibleOption;
+    combo3.setAttribute('aria-expanded', hasVisibleOption ? 'true' : 'false');
+  });
+
+  listbox3.addEventListener('click', function(event) {
+    if (event.target.getAttribute('role') === 'option') {
+      combo3.value = event.target.textContent;
+      combo3.setAttribute('aria-expanded', 'false');
+      listbox3.hidden = true;
+    }
+  });
+</script>
+```
+
+**비활성화된 combobox예시**
+aria-disabled="true" 속성과 함께 disabled 속성을 사용하여 콤보 박스를 비활성화했습니다. 이 상태에서는 사용자가 입력할 수 없으며, 보조 기술은 이 필드가 비활성화되었음을 알립니다. 
+```sh
+<label for="combo4">Choose an option:</label>
+<input id="combo4" type="text" role="combobox" aria-expanded="false" aria-controls="listbox4" aria-autocomplete="list" aria-haspopup="listbox" aria-disabled="true" disabled>
+<ul id="listbox4" role="listbox" hidden>
+  <li role="option">Option 1</li>
+  <li role="option">Option 2</li>
+  <li role="option">Option 3</li>
+</ul>
+```
+
+### **22. grid (그리드 역할)**    
+grid 역할은 행과 열로 구성된 데이터의 표 형식을 나타냅니다. 그리드는 대화형 데이터를 구조화된 형태로 표시하며, 사용자는 특정 셀을 클릭하거나 탐색하여 상호작용할 수 있습니다. grid는 행(row), 열(column), 셀(gridcell) 등의 역할과 함께 사용되며, 복잡한 테이블이나 데이터 표현에 적합합니다.    
+시멘틱한 &lt;table&gt; 요소를 사용하여 그리드를 구현하는것을 권장합니다.   
+[W3C ARIA combobox](https://www.w3.org/TR/wai-aria-1.2/#combobox){: target="_blank"}   
+[MDN ARIA combobox](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/combobox_role){: target="_blank"}   
+[table 요소 참조 - UXKM table](https://uxkm.io/publishing/html/08-table/01-table_element#gsc.tab=0){: target="_blank"}    
+
+**기본 설명** 
+- grid 역할은 데이터를 구조화된 행과 열로 표시하는 인터랙티브 컴포넌트를 정의합니다.    
+- 키보드 내비게이션을 지원하여 사용자가 그리드 내의 데이터를 쉽게 탐색할 수 있도록 해야 합니다.   
+- 대화형 요소(예: 정렬 가능한 컬럼 헤더 등)를 포함할 경우, aria-sort와 같은 속성을 사용해 현재 상태를 명확히 나타내야 합니다.    
+- 비활성화된 셀이나 행이 포함된 경우, aria-disabled 속성을 사용해 보조 기술이 이를 인식할 수 있도록 해야 합니다.    
+
+**사용 시 주의사항**   
+- aria-readonly: 그리드나 그리드 내의 셀이 읽기 전용인지 여부를 나타냅니다.   
+- 자동 완성 기능을 제공하는 경우 aria-autocomplete 속성을 사용하여 보조 기술이 이 기능을 인식할 수 있도록 합니다.
+- 콤보 박스의 목록이 동적으로 확장/축소될 때, aria-expanded 속성을 동적으로 업데이트하여 현재 상태를 반영해야 합니다.
+- 비활성화된 콤보 박스는 aria-disabled="true" 속성을 사용하여 이를 명확히 표시해야 합니다.
+
+**상속된 상태 및 속성**   
+- aria-expanded: 콤보 박스의 선택 목록이 확장되었는지 여부를 나타냅니다.    
+- aria-multiselectable: 그리드에서 다중 선택이 가능한지 여부를 나타냅니다.    
+- aria-colcount: 그리드의 열 수를 나타냅니다.    
+- aria-rowcount: 그리드의 행 수를 나타냅니다.    
+- aria-colindex: 그리드 내 열의 위치를 나타냅니다.    
+- aria-rowindex: 그리드 내 행의 위치를 나타냅니다.    
+- aria-sort: 열의 정렬 상태를 나타냅니다.    
+- aria-disabled: 그리드 내의 셀이 비활성화되었는지 여부를 나타냅니다.    
+- aria-labelledby, aria-describedby: 그리드의 레이블과 설명을 참조하는 속성입니다.    
 
 
-다음 역할은 독립형 사용자 인터페이스 위젯 또는 더 큰 복합 위젯의 일부로 작동합니다.
-button, checkbox, radio, gridcell, link, menuitem, menuitemcheckbox, menuitemradio, option, progressbar, scrollbar, searchbox, separator (when focusable), slider, spinbutton, switch, tab, tabpanel, textbox, treeitem
+**기본 grid 역할 예시**
+시멘틱한 &lt;table&gt; 요소를 사용하여 그리드를 구현하는것을 권장합니다. 이는 th 요소는 columnheader 역할을 지원하며, td 요소는 gridcell 역할을 지원하고 있습니다.  
+행(row)과 셀(gridcell)로 구성된 기본 그리드를 정의하여 사용할 수 있습니다.      
+```sh
+// 잘못된 예시
+// 이 예시는 단순히 그리드 역할만 지정되어 있으며, 데이터의 행과 열을 정의하는 row 및 gridcell 요소가 포함되지 않았습니다. 이 상태에서는 그리드의 구조가 명확하지 않습니다
+<div role="grid">Data Grid</div>
+
+// 올바른 예시
+<div role="grid">
+  <div role="row" tabindex="0">
+    <div role="gridcell">Header 1</div>
+    <div role="gridcell">Header 2</div>
+    <div role="gridcell">Header 3</div>
+  </div>
+  <div role="row" tabindex="0">
+    <div role="gridcell">Data 1</div>
+    <div role="gridcell">Data 2</div>
+    <div role="gridcell">Data 3</div>
+  </div>
+  <div role="row" tabindex="0">
+    <div role="gridcell">Data 4</div>
+    <div role="gridcell">Data 5</div>
+    <div role="gridcell">Data 6</div>
+  </div>
+</div>
+
+// (권장) 시멘틱 요소 사용
+<table>
+  <thead>
+    <tr>
+      <th scope="col">Header 1</th>
+      <th scope="col">Header 2</th>
+      <th scope="col">Header 3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Data 1</td>
+      <td>Data 2</td>
+      <td>Data 3</td>
+    </tr>
+    <tr>
+      <td>Data 4</td>
+      <td>Data 5</td>
+      <td>Data 6</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+**대화형 그리드 예시**
+이 예시는 사용자가 헤더를 클릭하여 데이터를 정렬할 수 있는 대화형 그리드를 구현했습니다. 각 columnheader는 aria-sort 속성을 사용해 정렬 상태를 나타내며, 사용자가 정렬 상태를 변경할 수 있습니다. 
+```sh
+<div role="grid" aria-labelledby="grid-label">
+  <div role="row">
+    <div role="columnheader" aria-sort="none" tabindex="0">Name</div>
+    <div role="columnheader" aria-sort="none" tabindex="0">Age</div>
+    <div role="columnheader" aria-sort="none" tabindex="0">Country</div>
+  </div>
+  <div role="row" tabindex="0">
+    <div role="gridcell">Alice</div>
+    <div role="gridcell">30</div>
+    <div role="gridcell">USA</div>
+  </div>
+  <div role="row" tabindex="0">
+    <div role="gridcell">Bob</div>
+    <div role="gridcell">25</div>
+    <div role="gridcell">Canada</div>
+  </div>
+  <div role="row" tabindex="0">
+    <div role="gridcell">Charlie</div>
+    <div role="gridcell">35</div>
+    <div role="gridcell">UK</div>
+  </div>
+</div>
+<div id="grid-label">User Data Grid</div>
+
+<script>
+  document.querySelectorAll('[role="columnheader"]').forEach(header => {
+    header.addEventListener('click', () => {
+      let currentSort = header.getAttribute('aria-sort');
+      header.setAttribute('aria-sort', currentSort === 'ascending' ? 'descending' : 'ascending');
+    });
+  });
+</script>
+```
+
+**자동 완성 기능이 포함된 combobox 예시**
+이 예시는 자동 완성 기능이 포함된 콤보 박스를 구현한 것입니다. 사용자가 텍스트를 입력하면 해당 텍스트로 시작하는 항목만 목록에 표시됩니다. 사용자는 입력을 통해 목록을 필터링할 수 있으며, 목록에서 항목을 선택할 수 있습니다. 
+```sh
+<label for="combo3">Choose an option:</label>
+<input id="combo3" type="text" role="combobox" aria-expanded="false" aria-controls="listbox3" aria-autocomplete="list" aria-haspopup="listbox">
+<ul id="listbox3" role="listbox" hidden>
+  <li role="option">Apple</li>
+  <li role="option">Banana</li>
+  <li role="option">Cherry</li>
+  <li role="option">Date</li>
+  <li role="option">Elderberry</li>
+</ul>
+
+<script>
+  const combo3 = document.getElementById('combo3');
+  const listbox3 = document.getElementById('listbox3');
+
+  combo3.addEventListener('input', function() {
+    const filter = combo3.value.toLowerCase();
+    const options = listbox3.querySelectorAll('[role="option"]');
+    let hasVisibleOption = false;
+    options.forEach(option => {
+      if (option.textContent.toLowerCase().startsWith(filter)) {
+        option.hidden = false;
+        hasVisibleOption = true;
+      } else {
+        option.hidden = true;
+      }
+    });
+    listbox3.hidden = !hasVisibleOption;
+    combo3.setAttribute('aria-expanded', hasVisibleOption ? 'true' : 'false');
+  });
+
+  listbox3.addEventListener('click', function(event) {
+    if (event.target.getAttribute('role') === 'option') {
+      combo3.value = event.target.textContent;
+      combo3.setAttribute('aria-expanded', 'false');
+      listbox3.hidden = true;
+    }
+  });
+</script>
+```
+
+**비활성화된 combobox예시**
+aria-disabled="true" 속성과 함께 disabled 속성을 사용하여 콤보 박스를 비활성화했습니다. 이 상태에서는 사용자가 입력할 수 없으며, 보조 기술은 이 필드가 비활성화되었음을 알립니다. 
+```sh
+<label for="combo4">Choose an option:</label>
+<input id="combo4" type="text" role="combobox" aria-expanded="false" aria-controls="listbox4" aria-autocomplete="list" aria-haspopup="listbox" aria-disabled="true" disabled>
+<ul id="listbox4" role="listbox" hidden>
+  <li role="option">Option 1</li>
+  <li role="option">Option 2</li>
+  <li role="option">Option 3</li>
+</ul>
+```
+
 
 다음 역할은 복합 사용자 인터페이스 위젯 역할을 합니다. 이러한 역할은 일반적으로 포함된 다른 위젯을 관리하는 컨테이너 역할을 합니다.
 combobox, grid, listbox, menu, menubar, radiogroup, tablist, tree, treegrid
