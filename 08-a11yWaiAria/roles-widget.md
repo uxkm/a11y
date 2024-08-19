@@ -1502,22 +1502,20 @@ tabpanel 역할은 탭 인터페이스에서 개별 탭(tab)과 연결된 콘텐
 [MDN ARIA tabpanel](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/tabpanel_role){: target="_blank"}   
 
 **기본 설명** 
-- tab 역할은 탭 인터페이스에서 개별 탭을 정의합니다.    
-- 사용자는 클릭하거나 키보드를 사용해 탭을 탐색하고 선택할 수 있습니다.   
-- aria-selected 속성을 사용하여 현재 선택된 탭을 나타내며, aria-controls 속성으로 해당 탭이 제어하는 tabpanel을 지정합니다.    
-- 탭은 일반적으로 tablist 컨테이너 안에 포함되며, 선택된 탭에 따라 관련 콘텐츠(tabpanel)가 표시됩니다.    
+- tabpanel 역할은 탭 인터페이스에서 개별 탭에 연결된 콘텐츠 영역을 정의합니다.    
+- 사용자는 tab 요소를 선택하여 관련 tabpanel을 활성화할 수 있으며, 활성화된 tabpanel은 사용자가 현재 보고 있는 콘텐츠를 나타냅니다.   
+- tabpanel은 aria-labelledby 속성을 사용하여 자신을 설명하는 탭의 ID를 참조하며, 이를 통해 보조 기술이 이 패널과 관련된 탭을 인식할 수 있습니다.    
 
 **사용 시 주의사항**   
-- tab 역할을 사용할 때는 반드시 aria-selected 속성을 설정하여 현재 선택된 탭을 명확히 표시해야 합니다. 값은 true(선택됨) 또는 false(선택되지 않음)입니다.   
-- 각 tab 요소는 aria-controls 속성을 사용하여 제어하는 tabpanel을 지정해야 합니다. 이 속성은 tabpanel의 ID와 연결되어야 합니다.
-- tabpanel은 tab과 연결되어야 하며, 탭이 선택될 때 해당 tabpanel만 표시되고 나머지는 숨겨져야 합니다.
-- 비활성화된 탭은 aria-disabled="true" 속성을 사용하여 표시하며, 시각적으로도 이를 나타내야 합니다.
-- 키보드 내비게이션을 지원하도록 구현하여 사용자가 탭을 쉽게 탐색할 수 있도록 해야 합니다.
+- tabpanel 역할을 사용할 때는 반드시 aria-labelledby 속성을 사용하여 해당 tabpanel을 설명하는 tab의 ID를 참조해야 합니다.   
+- tabpanel은 탭 인터페이스의 일부로 사용되며, 탭과 연결되어 있어야 합니다. 선택된 탭과 연결된 tabpanel만 표시되며, 나머지 패널은 숨겨져야 합니다.
+- tabpanel의 콘텐츠가 동적으로 업데이트될 경우, 사용자가 선택한 탭에 따라 관련 콘텐츠만 표시되도록 구현해야 합니다.
+- 비활성화된 탭의 경우, 해당 탭과 관련된 tabpanel은 접근할 수 없도록 해야 합니다.
 
 **상속된 상태 및 속성**   
-- aria-selected: 현재 탭의 선택 상태를 나타냅니다. 값은 true(선택됨) 또는 false(선택되지 않음)입니다.    
-- aria-controls: 탭이 제어하는 tabpanel의 ID를 참조합니다.    
-- aria-disabled: 탭이 비활성화되었는지 여부를 나타냅니다.    
+- aria-labelledby: tabpanel이 연결된 tab의 ID를 참조하여, 해당 탭과의 관계를 나타냅니다.    
+- aria-describedby: tabpanel에 대한 추가 설명을 제공하는 요소를 참조할 수 있습니다.    
+- aria-hidden: tabpanel이 숨겨져 있는지를 나타냅니다. hidden 속성과 함께 사용되어야 합니다.    
 
 
 
