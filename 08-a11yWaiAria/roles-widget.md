@@ -2420,140 +2420,720 @@ menubar 역할은 일반적으로 애플리케이션이나 웹사이트의 상�
 - 사용자는 키보드와 마우스를 사용해 메뉴 항목 간을 탐색하고 선택할 수 있습니다.   
 
 **사용 시 주의사항**   
-- menu 역할을 사용할 때는 반드시 menuitem, menuitemcheckbox, menuitemradio 등의 하위 항목 역할을 사용하여 메뉴 항목의 유형을 명확히 정의해야 합니다.   
-- 드롭다운 메뉴와 컨텍스트 메뉴는 aria-haspopup 및 aria-expanded 속성을 사용해 보조 기술이 현재 메뉴의 상태를 인식할 수 있도록 해야 합니다.
+- menubar 역할을 사용할 때는 반드시 menuitem, menuitemcheckbox, menuitemradio 등의 하위 항목 역할을 사용하여 메뉴 항목의 유형을 명확히 정의해야 합니다.   
+- aria-haspopup 및 aria-expanded 속성을 사용해 보조 기술이 현재 메뉴 항목의 상태를 인식할 수 있도록 해야 합니다.
 - 키보드 내비게이션을 지원하여 사용자가 메뉴 항목을 쉽게 탐색하고 선택할 수 있도록 해야 합니다.
-- 체크박스 및 라디오 버튼 메뉴 항목의 경우, aria-checked 속성을 사용하여 선택 상태를 명확히 나타내야 합니다.
+- 서브메뉴를 포함한 복잡한 메뉴 구조를 구현할 때는 계층적 구조가 명확히 전달되도록 해야 합니다.
 
 **상속된 상태 및 속성**   
-- aria-haspopup: 메뉴를 호출하는 요소가 메뉴나 다른 팝업 요소를 가지고 있음을 나타냅니다.    
-- aria-expanded: 메뉴가 확장되었는지 여부를 나타냅니다.    
-- aria-checked: menuitemcheckbox 또는 menuitemradio 요소의 선택 상태를 나타냅니다.    
+- aria-haspopup: 메뉴 항목이 서브메뉴 또는 다른 팝업 요소를 가지고 있음을 나타냅니다.    
+- aria-expanded: 메뉴 항목이 확장되었는지 여부를 나타냅니다.    
 - aria-disabled: 메뉴 항목이 비활성화되었는지 여부를 나타냅니다.    
-- aria-labelledby, aria-describedby: 메뉴와 메뉴 항목의 레이블과 설명을 참조하는 속성입니다.    
+- aria-labelledby, aria-describedby: 메뉴 모음의 레이블과 설명을 참조하는 속성입니다.    
 
 
 **기본 menubar 역할 예시**
 role="menuitem"을 추가하여 보조 기술이 이를 메뉴 항목으로 인식할 수 있도록 해야 합니다. 또한, tabindex="0"을 사용해 각 항목이 키보드 탐색이 가능하도록 설정해야 합니다.          
 ```sh
 // 잘못된 예시
-// 이 예시는 menu의 기본 구조를 제공하지만, 각 메뉴 항목에 적절한 역할(menuitem, menuitemcheckbox, menuitemradio)이 지정되지 않았습니다. 보조 기술은 각 항목이 메뉴의 일부임을 제대로 인식하지 못합니다.
-<div role="menu">
+// 이 예시는 menubar의 기본 구조를 제공하지만, 개별 메뉴 항목에 적절한 역할(menuitem)이 지정되지 않았습니다. 보조 기술은 각 항목이 메뉴 모음의 일부임을 인식하지 못합니다.
+<div role="menubar">
+  <div>File</div>
+  <div>Edit</div>
+  <div>View</div>
+</div>
+
+// 올바른 예시
+<div role="menubar">
+  <div role="menuitem" tabindex="0">File</div>
+  <div role="menuitem" tabindex="0">Edit</div>
+  <div role="menuitem" tabindex="0">View</div>
+</div>
+```
+
+**드롭다운 메뉴가 포함된 menubar 예시**
+이 예시는 드롭다운 메뉴가 포함된 menubar를 구현했습니다. aria-haspopup 속성으로 메뉴 항목이 드롭다운 메뉴를 포함하고 있음을 나타내며, aria-expanded 속성으로 메뉴가 확장되었는지 여부를 나타냅니다. 사용자가 메뉴 항목을 클릭하면 관련된 드롭다운 메뉴가 표시됩니다. 
+```sh
+<nav role="menubar">
+  <div role="menuitem" aria-haspopup="true" aria-expanded="false" tabindex="0">File</div>
+  <div role="menu" hidden>
+    <div role="menuitem" tabindex="-1">New</div>
+    <div role="menuitem" tabindex="-1">Open</div>
+    <div role="menuitem" tabindex="-1">Save</div>
+  </div>
+  <div role="menuitem" aria-haspopup="true" aria-expanded="false" tabindex="0">Edit</div>
+  <div role="menu" hidden>
+    <div role="menuitem" tabindex="-1">Cut</div>
+    <div role="menuitem" tabindex="-1">Copy</div>
+    <div role="menuitem" tabindex="-1">Paste</div>
+  </div>
+</nav>
+
+<script>
+  const menubarItems = document.querySelectorAll('[role="menuitem"]');
+
+  menubarItems.forEach(item => {
+    item.addEventListener('click', () => {
+      const expanded = item.getAttribute('aria-expanded') === 'true';
+      item.setAttribute('aria-expanded', !expanded);
+      const menu = item.nextElementSibling;
+      menu.hidden = expanded;
+    });
+  });
+</script>
+```
+
+**서브메뉴가 포함된 menubar 예시**
+이 예시는 서브메뉴가 포함된 menubar를 구현했습니다. menuitem 내에 또 다른 menuitem과 menu가 포함되어 계층적인 메뉴 구조를 만들었습니다. 각 서브메뉴는 상위 메뉴와 연결되어 있으며, 클릭 시 확장/축소됩니다. 
+```sh
+<nav role="menubar">
+  <div role="menuitem" aria-haspopup="true" aria-expanded="false" tabindex="0">File</div>
+  <div role="menu" hidden>
+    <div role="menuitem" aria-haspopup="true" aria-expanded="false" tabindex="-1">New</div>
+    <div role="menu" hidden>
+      <div role="menuitem" tabindex="-1">Project</div>
+      <div role="menuitem" tabindex="-1">File</div>
+    </div>
+    <div role="menuitem" tabindex="-1">Open</div>
+    <div role="menuitem" tabindex="-1">Save</div>
+  </div>
+  <div role="menuitem" aria-haspopup="true" aria-expanded="false" tabindex="0">Edit</div>
+  <div role="menu" hidden>
+    <div role="menuitem" tabindex="-1">Cut</div>
+    <div role="menuitem" tabindex="-1">Copy</div>
+    <div role="menuitem" tabindex="-1">Paste</div>
+  </div>
+</nav>
+
+<script>
+  const menubarItems = document.querySelectorAll('[role="menuitem"]');
+
+  menubarItems.forEach(item => {
+    item.addEventListener('click', () => {
+      const expanded = item.getAttribute('aria-expanded') === 'true';
+      item.setAttribute('aria-expanded', !expanded);
+      const menu = item.nextElementSibling;
+      menu.hidden = expanded;
+    });
+  });
+</script>
+```
+
+**키보드 내비게이션을 지원하는 menubar 예시**
+이 예시는 키보드 내비게이션을 지원하는 menubar를 구현했습니다. 사용자는 ArrowRight 및 ArrowLeft 키로 메뉴 항목 간을 이동할 수 있으며, 현재 포커스된 항목이 명확하게 표시됩니다. Enter 또는 Space 키를 사용해 메뉴를 확장하거나 동작을 트리거할 수 있습니다. 
+```sh
+<nav role="menubar">
+  <div role="menuitem" tabindex="0">File</div>
+  <div role="menuitem" tabindex="-1">Edit</div>
+  <div role="menuitem" tabindex="-1">View</div>
+</nav>
+
+<script>
+  const menuItems = document.querySelectorAll('[role="menuitem"]');
+  let currentIndex = 0;
+
+  menuItems[currentIndex].focus();
+
+  menuItems.forEach((item, index) => {
+    item.addEventListener('keydown', event => {
+      if (event.key === 'ArrowRight') {
+        menuItems[currentIndex].tabIndex = -1;
+        currentIndex = (currentIndex + 1) % menuItems.length;
+        menuItems[currentIndex].tabIndex = 0;
+        menuItems[currentIndex].focus();
+      } else if (event.key === 'ArrowLeft') {
+        menuItems[currentIndex].tabIndex = -1;
+        currentIndex = (currentIndex - 1 + menuItems.length) % menuItems.length;
+        menuItems[currentIndex].tabIndex = 0;
+        menuItems[currentIndex].focus();
+      } else if (event.key === 'Enter' || event.key === ' ') {
+        // Trigger the associated action or expand the menu
+      }
+    });
+  });
+</script>
+```
+
+### **26. radiogroup (라디오 그룹 역할)**    
+radiogroup 역할은 하나 이상의 radio 버튼으로 구성된 그룹을 나타냅니다. radiogroup 내의 radio 버튼은 단일 선택 항목을 제공하며, 사용자는 그룹 내에서 하나의 버튼만 선택할 수 있습니다. 이 역할은 라디오 버튼이 논리적으로 연결되어 있으며, 사용자가 선택할 수 있는 상호 배타적인 옵션을 제공함을 보조 기술에 알립니다.   
+[W3C ARIA radiogroup](https://www.w3.org/TR/wai-aria-1.2/#radiogroup){: target="_blank"}   
+[MDN ARIA radiogroup](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/radiogroup_role){: target="_blank"}   
+
+**기본 설명** 
+- radiogroup 역할은 여러 개의 radio 버튼을 그룹화하여 단일 선택 옵션을 제공하는 UI 컴포넌트를 정의합니다.    
+- radiogroup 내의 radio 버튼은 aria-checked 속성을 사용하여 현재 선택된 버튼을 표시하며, 사용자는 그룹 내에서 하나의 옵션만 선택할 수 있습니다.   
+- radiogroup은 aria-labelledby 또는 aria-describedby 속성을 사용하여 그룹의 레이블이나 설명을 제공할 수 있습니다.   
+
+**사용 시 주의사항**   
+- radiogroup 역할을 사용할 때는 각 radio 버튼에 aria-checked 속성을 사용하여 선택 상태를 명확히 나타내야 합니다.   
+- aria-labelledby 또는 aria-describedby 속성을 사용하여 라디오 그룹의 레이블이나 설명을 제공해 보조 기술이 그룹의 목적을 이해할 수 있도록 해야 합니다.
+- 키보드 내비게이션을 지원하여 사용자가 라디오 버튼을 쉽게 탐색하고 선택할 수 있도록 해야 합니다.
+- 비활성화된 라디오 버튼의 경우, aria-disabled 속성을 사용해 선택할 수 없음을 명확히 표시해야 합니다.
+
+**상속된 상태 및 속성**   
+- aria-checked: radio 버튼의 선택 상태를 나타냅니다. 값은 true(선택됨) 또는 false(선택되지 않음)입니다.    
+- aria-disabled: 라디오 버튼이 비활성화되었는지 여부를 나타냅니다.    
+- aria-labelledby, aria-describedby: 라디오 그룹의 레이블과 설명을 참조하는 속성입니다.    
+
+
+**기본 radiogroup 역할 예시**
+각 라디오 버튼에 aria-checked 속성을 추가하여 현재 선택된 상태를 명확히 나타내야 합니다. aria-labelledby 속성을 사용해 라디오 그룹의 레이블을 참조하며, 보조 기술이 이 그룹이 무엇을 나타내는지 이해할 수 있도록 합니다.          
+권장하는 방식은 &lt;fieldset&gt; 및 &lt;input type="radio"&gt; 요소를 사용하여 시멘틱하게 라디오 그룹을 구현합니다. &lt;legend&gt; 요소는 그룹의 레이블을 제공하며, &lt;input&gt; 요소는 각각의 라디오 버튼 역할을 합니다.    
+```sh
+// 잘못된 예시
+// 이 예시는 radiogroup의 기본 구조를 제공하지만, 각 라디오 버튼에 aria-checked 속성이 없으며, 사용자가 선택한 상태를 알 수 없습니다. 또한, 라디오 버튼을 선택할 수 있는 메커니즘이 구현되지 않았습니다.
+<div role="radiogroup">
+  <div role="radio">Option 1</div>
+  <div role="radio">Option 2</div>
+  <div role="radio">Option 3</div>
+</div>
+
+// 올바른 예시
+<div role="radiogroup" aria-labelledby="radioGroupLabel">
+  <div role="radio" aria-checked="false" tabindex="0">Option 1</div>
+  <div role="radio" aria-checked="true" tabindex="0">Option 2</div>
+  <div role="radio" aria-checked="false" tabindex="0">Option 3</div>
+</div>
+<div id="radioGroupLabel">Choose an option:</div>
+
+// (권장)시멘틱 요소 사용
+<fieldset>
+  <legend>Choose an option:</legend>
+  <input type="radio" id="option1" name="options" value="1">
+  <label for="option1">Option 1</label><br>
+  <input type="radio" id="option2" name="options" value="2" checked>
+  <label for="option2">Option 2</label><br>
+  <input type="radio" id="option3" name="options" value="3">
+  <label for="option3">Option 3</label>
+</fieldset>
+```
+
+**동적 선택이 가능한 radiogroup 예시**
+이 예시는 드롭다운 메뉴가 포함된 menubar를 구현했습니다. aria-haspopup 속성으로 메뉴 항목이 드롭다운 메뉴를 포함하고 있음을 나타내며, aria-expanded 속성으로 메뉴가 확장되었는지 여부를 나타냅니다. 사용자가 메뉴 항목을 클릭하면 관련된 드롭다운 메뉴가 표시됩니다. 
+```sh
+<div role="radiogroup" aria-labelledby="dynamicRadioGroup">
+  <div role="radio" aria-checked="false" tabindex="0">Option 1</div>
+  <div role="radio" aria-checked="true" tabindex="0">Option 2</div>
+  <div role="radio" aria-checked="false" tabindex="0">Option 3</div>
+</div>
+<div id="dynamicRadioGroup">Choose an option:</div>
+
+<script>
+  document.querySelectorAll('[role="radio"]').forEach(radio => {
+    radio.addEventListener('click', () => {
+      document.querySelectorAll('[role="radio"]').forEach(r => r.setAttribute('aria-checked', 'false'));
+      radio.setAttribute('aria-checked', 'true');
+    });
+  });
+</script>
+```
+
+**서브메뉴가 포함된 menubar 예시**
+이 예시는 사용자가 클릭하여 라디오 버튼을 선택할 수 있는 동적 라디오 그룹을 구현한 것입니다. 사용자가 한 옵션을 클릭하면 다른 옵션은 자동으로 선택 해제됩니다. 
+```sh
+<nav role="menubar">
+  <div role="menuitem" aria-haspopup="true" aria-expanded="false" tabindex="0">File</div>
+  <div role="menu" hidden>
+    <div role="menuitem" aria-haspopup="true" aria-expanded="false" tabindex="-1">New</div>
+    <div role="menu" hidden>
+      <div role="menuitem" tabindex="-1">Project</div>
+      <div role="menuitem" tabindex="-1">File</div>
+    </div>
+    <div role="menuitem" tabindex="-1">Open</div>
+    <div role="menuitem" tabindex="-1">Save</div>
+  </div>
+  <div role="menuitem" aria-haspopup="true" aria-expanded="false" tabindex="0">Edit</div>
+  <div role="menu" hidden>
+    <div role="menuitem" tabindex="-1">Cut</div>
+    <div role="menuitem" tabindex="-1">Copy</div>
+    <div role="menuitem" tabindex="-1">Paste</div>
+  </div>
+</nav>
+
+<script>
+  const menubarItems = document.querySelectorAll('[role="menuitem"]');
+
+  menubarItems.forEach(item => {
+    item.addEventListener('click', () => {
+      const expanded = item.getAttribute('aria-expanded') === 'true';
+      item.setAttribute('aria-expanded', !expanded);
+      const menu = item.nextElementSibling;
+      menu.hidden = expanded;
+    });
+  });
+</script>
+```
+
+**키보드 내비게이션을 지원하는 radiogroup 예시**
+이 예시는 키보드 내비게이션을 지원하는 라디오 그룹을 구현했습니다. 사용자는 화살표 키로 라디오 버튼을 탐색하고, Enter 또는 Space 키로 선택할 수 있습니다. 
+```sh
+<div role="radiogroup" aria-labelledby="keyboardRadioGroup">
+  <div role="radio" aria-checked="false" tabindex="0">Option 1</div>
+  <div role="radio" aria-checked="true" tabindex="0">Option 2</div>
+  <div role="radio" aria-checked="false" tabindex="0">Option 3</div>
+</div>
+<div id="keyboardRadioGroup">Choose an option:</div>
+
+<script>
+  const radios = document.querySelectorAll('[role="radio"]');
+  let currentIndex = 1;
+
+  radios[currentIndex].focus();
+
+  radios.forEach((radio, index) => {
+    radio.addEventListener('keydown', event => {
+      if (event.key === 'ArrowDown' || event.key === 'ArrowRight') {
+        radios[currentIndex].setAttribute('aria-checked', 'false');
+        currentIndex = (currentIndex + 1) % radios.length;
+        radios[currentIndex].setAttribute('aria-checked', 'true');
+        radios[currentIndex].focus();
+      } else if (event.key === 'ArrowUp' || event.key === 'ArrowLeft') {
+        radios[currentIndex].setAttribute('aria-checked', 'false');
+        currentIndex = (currentIndex - 1 + radios.length) % radios.length;
+        radios[currentIndex].setAttribute('aria-checked', 'true');
+        radios[currentIndex].focus();
+      } else if (event.key === 'Enter' || event.key === ' ') {
+        radios[currentIndex].click();
+      }
+    });
+  });
+</script>
+```
+
+**비활성화된 라디오 그룹 항목 예시**
+이 예시는 aria-disabled="true" 속성을 사용하여 비활성화된 라디오 버튼을 나타냈습니다. 이 버튼은 선택할 수 없으며, 시각적으로도 비활성화 상태임을 나타냅니다. 
+```sh
+<div role="radiogroup" aria-labelledby="disabledRadioGroup">
+  <div role="radio" aria-checked="false" tabindex="0">Option 1</div>
+  <div role="radio" aria-checked="false" aria-disabled="true" tabindex="-1" style="color: grey;">Option 2 (Disabled)</div>
+  <div role="radio" aria-checked="false" tabindex="0">Option 3</div>
+</div>
+<div id="disabledRadioGroup">Choose an option:</div>
+```
+
+### **27. tablist (탭 목록 역할)**    
+tablist 역할은 관련된 여러 개의 tab 요소를 그룹화하여, 사용자가 여러 패널 사이를 전환할 수 있는 탭 인터페이스를 정의합니다. tablist는 일반적으로 tabpanel과 함께 사용되며, 사용자가 선택한 탭에 따라 관련된 콘텐츠 패널이 활성화됩니다. tablist는 tab 요소들의 컨테이너 역할을 하며, 탭 간의 내비게이션과 선택을 관리합니다.   
+[W3C ARIA tablist](https://www.w3.org/TR/wai-aria-1.2/#tablist){: target="_blank"}   
+[MDN ARIA tablist](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/tablist_role){: target="_blank"}   
+
+**기본 설명** 
+- tablist 역할은 여러 개의 tab 요소를 그룹화하여 사용자가 탭 인터페이스를 통해 콘텐츠를 전환할 수 있도록 합니다.    
+- tablist는 각 tab 요소와 관련된 tabpanel과 함께 사용되며, 선택된 탭에 따라 해당 tabpanel이 활성화됩니다.   
+- 보조 기술은 tablist와 연결된 tab 및 tabpanel 요소를 인식하여 사용자가 현재 어떤 탭을 선택했는지, 그리고 관련된 콘텐츠가 무엇인지 알 수 있도록 합니다.   
+
+**사용 시 주의사항**   
+- tablist 역할을 사용할 때는 각 탭 요소에 role="tab"을 지정하고, tabpanel과 연관된 콘텐츠를 aria-controls 속성으로 연결해야 합니다.   
+- 현재 선택된 탭은 aria-selected="true"로 표시하고, 다른 탭은 aria-selected="false"로 표시해야 합니다. 선택된 탭은 tabindex="0"을 가져야 하며, 다른 탭은 tabindex="-1"을 가져야 합니다.
+- 키보드 내비게이션을 지원하여 사용자가 탭을 쉽게 탐색하고 전환할 수 있도록 해야 합니다.
+- 비활성화된 탭은 aria-disabled="true" 속성을 사용해 선택할 수 없도록 해야 합니다.
+
+**상속된 상태 및 속성**   
+- aria-controls: 각 탭이 제어하는 tabpanel의 ID를 참조합니다.    
+- aria-selected: 현재 탭의 선택 상태를 나타냅니다. 값은 true(선택됨) 또는 false(선택되지 않음)입니다.    
+- aria-disabled: 탭이 비활성화되었는지 여부를 나타냅니다.    
+- aria-labelledby, aria-describedby: 탭 목록의 레이블과 설명을 참조하는 속성입니다.    
+
+
+**기본 tablist 역할 예시**
+각 tab 요소에 role="tab"을 추가하여 보조 기술이 이를 인식할 수 있도록 합니다. aria-controls 속성으로 각 탭이 제어하는 tabpanel을 지정하고, aria-selected 속성으로 현재 선택된 탭을 나타냅니다. tablist는 관련된 탭들의 컨테이너 역할을 합니다.          
+```sh
+// 잘못된 예시
+// 이 예시는 tablist의 기본 구조를 제공하지만, 각 탭에 role="tab"이 지정되지 않았으며, 보조 기술이 탭과 콘텐츠 간의 관계를 인식하지 못합니다.
+<div role="tablist">
+  <div>Tab 1</div>
+  <div>Tab 2</div>
+  <div>Tab 3</div>
+</div>
+
+// 올바른 예시
+<div role="tablist" aria-labelledby="tablistLabel">
+  <div role="tab" id="tab1" aria-controls="panel1" aria-selected="true" tabindex="0">Tab 1</div>
+  <div role="tab" id="tab2" aria-controls="panel2" aria-selected="false" tabindex="-1">Tab 2</div>
+  <div role="tab" id="tab3" aria-controls="panel3" aria-selected="false" tabindex="-1">Tab 3</div>
+</div>
+<div id="panel1" role="tabpanel" aria-labelledby="tab1">Content for Tab 1</div>
+<div id="panel2" role="tabpanel" aria-labelledby="tab2" hidden>Content for Tab 2</div>
+<div id="panel3" role="tabpanel" aria-labelledby="tab3" hidden>Content for Tab 3</div>
+```
+
+**키보드 내비게이션을 지원하는 tablist 예시**
+이 예시는 키보드 내비게이션을 지원하는 tablist를 구현했습니다. 사용자는 화살표 키로 탭 간을 탐색할 수 있으며, 선택된 탭에 따라 관련 콘텐츠 패널이 표시됩니다. 
+```sh
+<div role="tablist" aria-labelledby="keyboardTablist">
+  <div role="tab" id="tab1" aria-controls="panel1" aria-selected="true" tabindex="0">Tab 1</div>
+  <div role="tab" id="tab2" aria-controls="panel2" aria-selected="false" tabindex="-1">Tab 2</div>
+  <div role="tab" id="tab3" aria-controls="panel3" aria-selected="false" tabindex="-1">Tab 3</div>
+</div>
+<div id="panel1" role="tabpanel" aria-labelledby="tab1">Content for Tab 1</div>
+<div id="panel2" role="tabpanel" aria-labelledby="tab2" hidden>Content for Tab 2</div>
+<div id="panel3" role="tabpanel" aria-labelledby="tab3" hidden>Content for Tab 3</div>
+
+<script>
+  const tabs = document.querySelectorAll('[role="tab"]');
+  let currentIndex = 0;
+
+  tabs[currentIndex].focus();
+
+  tabs.forEach((tab, index) => {
+    tab.addEventListener('keydown', event => {
+      if (event.key === 'ArrowRight') {
+        tabs[currentIndex].setAttribute('tabindex', '-1');
+        tabs[currentIndex].setAttribute('aria-selected', 'false');
+        currentIndex = (currentIndex + 1) % tabs.length;
+        tabs[currentIndex].setAttribute('tabindex', '0');
+        tabs[currentIndex].setAttribute('aria-selected', 'true');
+        tabs[currentIndex].focus();
+        showPanel(tabs[currentIndex]);
+      } else if (event.key === 'ArrowLeft') {
+        tabs[currentIndex].setAttribute('tabindex', '-1');
+        tabs[currentIndex].setAttribute('aria-selected', 'false');
+        currentIndex = (currentIndex - 1 + tabs.length) % tabs.length;
+        tabs[currentIndex].setAttribute('tabindex', '0');
+        tabs[currentIndex].setAttribute('aria-selected', 'true');
+        tabs[currentIndex].focus();
+        showPanel(tabs[currentIndex]);
+      }
+    });
+  });
+
+  function showPanel(tab) {
+    document.querySelectorAll('[role="tabpanel"]').forEach(panel => {
+      panel.hidden = true;
+    });
+    document.getElementById(tab.getAttribute('aria-controls')).hidden = false;
+  }
+</script>
+```
+
+**동적 콘텐츠 전환을 지원하는 tablist 예시**
+이 예시는 사용자가 탭을 클릭할 때마다 콘텐츠가 동적으로 전환되는 tablist를 구현했습니다. 선택된 탭에 따라 aria-selected 속성이 업데이트되고, 관련된 tabpanel이 표시됩니다. 
+```sh
+<div role="tablist">
+  <div role="tab" id="tab1" aria-controls="panel1" aria-selected="true" tabindex="0">Tab 1</div>
+  <div role="tab" id="tab2" aria-controls="panel2" aria-selected="false" tabindex="-1">Tab 2</div>
+  <div role="tab" id="tab3" aria-controls="panel3" aria-selected="false" tabindex="-1">Tab 3</div>
+</div>
+<div id="panel1" role="tabpanel" aria-labelledby="tab1">Content for Tab 1</div>
+<div id="panel2" role="tabpanel" aria-labelledby="tab2" hidden>Content for Tab 2</div>
+<div id="panel3" role="tabpanel" aria-labelledby="tab3" hidden>Content for Tab 3</div>
+
+<script>
+  document.querySelectorAll('[role="tab"]').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('[role="tab"]').forEach(t => {
+        t.setAttribute('aria-selected', 'false');
+        t.setAttribute('tabindex', '-1');
+      });
+      tab.setAttribute('aria-selected', 'true');
+      tab.setAttribute('tabindex', '0');
+      document.querySelectorAll('[role="tabpanel"]').forEach(panel => panel.hidden = true);
+      document.getElementById(tab.getAttribute('aria-controls')).hidden = false;
+    });
+  });
+</script>
+```
+
+**비활성화된 탭을 포함한 tablist 예시**
+이 예시는 aria-disabled="true" 속성을 사용하여 비활성화된 탭을 포함한 tablist를 나타냈습니다. 비활성화된 탭은 선택할 수 없으며, 시각적으로도 비활성화 상태임을 표시합니다. 
+```sh
+<div role="tablist">
+  <div role="tab" id="tab1" aria-controls="panel1" aria-selected="true" tabindex="0">Tab 1</div>
+  <div role="tab" id="tab2" aria-controls="panel2" aria-selected="false" tabindex="-1" aria-disabled="true" style="color: grey;">Tab 2 (Disabled)</div>
+  <div role="tab" id="tab3" aria-controls="panel3" aria-selected="false" tabindex="-1">Tab 3</div>
+</div>
+<div id="panel1" role="tabpanel" aria-labelledby="tab1">Content for Tab 1</div>
+<div id="panel2" role="tabpanel" aria-labelledby="tab2" hidden>Content for Tab 2</div>
+<div id="panel3" role="tabpanel" aria-labelledby="tab3" hidden>Content for Tab 3</div>
+```
+
+### **28. tree (트리 역할)**    
+tree 역할은 계층적 데이터 구조를 표현하는 UI 컴포넌트를 정의합니다. 트리 구조는 여러 개의 treeitem 요소로 구성되며, 각 항목은 하위 항목을 포함할 수 있습니다. 사용자는 트리 항목을 확장하거나 축소하여 관련된 하위 항목을 표시하거나 숨길 수 있습니다. 이 역할은 복잡한 계층적 데이터를 직관적으로 표현하고 탐색할 수 있도록 도와줍니다.   
+[W3C ARIA tree](https://www.w3.org/TR/wai-aria-1.2/#tree){: target="_blank"}   
+[MDN ARIA tree](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/tree_role){: target="_blank"}   
+
+**기본 설명** 
+- tree 역할은 계층적으로 정리된 데이터를 표현하는 UI 컴포넌트를 정의합니다.    
+- treeitem은 트리 내의 개별 항목을 나타내며, 각 항목은 하위 항목을 포함할 수 있습니다.   
+- tree는 보조 기술이 전체 트리 구조를 이해하고, 사용자가 트리 항목을 탐색하며 상호작용할 수 있도록 지원합니다.   
+
+**사용 시 주의사항**   
+- tree 역할을 사용할 때는 각 트리 항목에 role="treeitem"을 지정하고, 트리 구조를 명확히 표현해야 합니다.   
+- 트리 항목이 하위 항목을 포함할 경우, role="group"을 사용하여 하위 항목들을 그룹화하고, aria-expanded 속성을 통해 상위 항목의 확장 상태를 명확히 해야 합니다.
+- 키보드 내비게이션을 지원하여 사용자가 트리 항목을 쉽게 탐색하고 상호작용할 수 있도록 해야 합니다.
+- 비활성화된 트리 항목은 aria-disabled="true" 속성을 사용해 선택할 수 없도록 해야 합니다.
+
+**상속된 상태 및 속성**   
+- aria-expanded: 트리 항목의 하위 항목이 확장되었는지 여부를 나타냅니다.    
+- aria-disabled: 트리 항목이 비활성화되었는지 여부를 나타냅니다.    
+- aria-selected: 트리 항목이 선택되었는지 여부를 나타냅니다.    
+- aria-labelledby, aria-describedby: 트리 항목의 레이블과 설명을 참조하는 속성입니다.    
+
+
+**기본 tree 역할 예시**
+각 트리 항목에 role="treeitem"을 추가하고, 보조 기술이 트리 항목의 확장 상태를 인식할 수 있도록 aria-expanded 속성을 설정합니다. 사용자가 키보드를 사용해 트리 항목을 탐색할 수 있도록 tabindex 속성도 설정되어야 합니다.          
+```sh
+// 잘못된 예시
+// 이 예시는 tree의 기본 구조를 제공하지만, 트리 항목에 role="treeitem"이 지정되지 않았으며, 보조 기술이 트리 구조를 인식하지 못합니다.
+<div role="tree">
   <div>Item 1</div>
   <div>Item 2</div>
   <div>Item 3</div>
 </div>
 
 // 올바른 예시
-// 각 항목에 role="option"을 추가하여 보조 기술이 이를 선택 가능한 옵션으로 인식할 수 있도록 했습니다. 또한 aria-selected 속성을 사용하여 항목이 선택되었는지 여부를 나타냅니다.
-<div role="menu">
-  <div role="menuitem" tabindex="0">Item 1</div>
-  <div role="menuitem" tabindex="0">Item 2</div>
-  <div role="menuitem" tabindex="0">Item 3</div>
+<div role="tree">
+  <div role="treeitem" aria-expanded="false" tabindex="0">Item 1</div>
+  <div role="treeitem" aria-expanded="false" tabindex="-1">Item 2</div>
+  <div role="treeitem" aria-expanded="false" tabindex="-1">Item 3</div>
 </div>
-
-// (권장) 시멘틱 요소 사용
-<select>
-  <option>Option 1</option>
-  <option>Option 2</option>
-  <option>Option 3</option>
-</select>
 ```
 
-**단일 선택 가능한 listbox 예시**
-이 예시는 단일 선택 가능한 listbox를 구현했습니다. 사용자가 하나의 옵션을 클릭하면, 다른 옵션의 aria-selected 속성은 false로 설정되고 클릭된 옵션만 true로 설정됩니다. 
+**하위 항목을 포함한 tree 예시**
+이 예시는 트리 항목이 하위 항목을 포함하는 트리 구조를 구현했습니다. role="group"은 하위 항목을 그룹화하는 역할을 하며, aria-expanded="true"로 설정된 상위 항목은 기본적으로 확장된 상태로 표시됩니다. 
 ```sh
-<div role="listbox" aria-labelledby="listbox-label" tabindex="0">
-  <div role="option" aria-selected="false">Option 1</div>
-  <div role="option" aria-selected="false">Option 2</div>
-  <div role="option" aria-selected="false">Option 3</div>
+<div role="tree">
+  <div role="treeitem" aria-expanded="true" tabindex="0">
+    Item 1
+    <div role="group">
+      <div role="treeitem" tabindex="-1">Sub-item 1.1</div>
+      <div role="treeitem" tabindex="-1">Sub-item 1.2</div>
+    </div>
+  </div>
+  <div role="treeitem" aria-expanded="false" tabindex="-1">Item 2</div>
+  <div role="treeitem" aria-expanded="false" tabindex="-1">Item 3</div>
 </div>
-<div id="listbox-label">Choose an option:</div>
+```
+
+**키보드 내비게이션을 지원하는 tree 예시**
+이 예시는 키보드 내비게이션을 지원하는 트리 구조를 구현했습니다. 사용자는 ArrowRight 및 ArrowLeft 키를 사용해 트리 항목을 확장하거나 축소할 수 있으며, ArrowDown 및 ArrowUp 키를 사용해 트리 항목 간을 탐색할 수 있습니다. 
+```sh
+<div role="tree">
+  <div role="treeitem" aria-expanded="true" tabindex="0">
+    Item 1
+    <div role="group">
+      <div role="treeitem" tabindex="-1">Sub-item 1.1</div>
+      <div role="treeitem" tabindex="-1">Sub-item 1.2</div>
+    </div>
+  </div>
+  <div role="treeitem" aria-expanded="false" tabindex="-1">Item 2</div>
+  <div role="treeitem" aria-expanded="false" tabindex="-1">Item 3</div>
+</div>
 
 <script>
-  const listbox = document.querySelector('[role="listbox"]');
-  const options = listbox.querySelectorAll('[role="option"]');
+  const treeItems = document.querySelectorAll('[role="treeitem"]');
 
-  options.forEach(option => {
-    option.addEventListener('click', () => {
-      options.forEach(opt => opt.setAttribute('aria-selected', 'false'));
-      option.setAttribute('aria-selected', 'true');
+  treeItems.forEach(item => {
+    item.addEventListener('keydown', event => {
+      if (event.key === 'ArrowRight' && item.getAttribute('aria-expanded') === 'false') {
+        item.setAttribute('aria-expanded', 'true');
+        const group = item.querySelector('[role="group"]');
+        if (group) group.hidden = false;
+      } else if (event.key === 'ArrowLeft' && item.getAttribute('aria-expanded') === 'true') {
+        item.setAttribute('aria-expanded', 'false');
+        const group = item.querySelector('[role="group"]');
+        if (group) group.hidden = true;
+      } else if (event.key === 'ArrowDown') {
+        const nextItem = item.nextElementSibling;
+        if (nextItem) nextItem.focus();
+      } else if (event.key === 'ArrowUp') {
+        const prevItem = item.previousElementSibling;
+        if (prevItem) prevItem.focus();
+      }
     });
   });
 </script>
 ```
 
-**다중 선택 가능한 listbox 예시**
-이 예시는 다중 선택이 가능한 listbox를 구현했습니다. aria-multiselectable="true" 속성을 사용하여 다중 선택 기능을 활성화했으며, 사용자가 여러 옵션을 선택할 수 있도록 했습니다. 
+**비활성화된 트리 항목 예시**
+aria-disabled="true" 속성을 사용하여 비활성화된 트리 항목을 나타냈습니다. 이 항목은 포커스를 받을 수 없으며, 시각적으로도 비활성화 상태임을 나타냅니다. 
 ```sh
-<div role="listbox" aria-multiselectable="true" tabindex="0">
-  <div role="option" aria-selected="false" tabindex="-1">Option 1</div>
-  <div role="option" aria-selected="false" tabindex="-1">Option 2</div>
-  <div role="option" aria-selected="false" tabindex="-1">Option 3</div>
+<div role="tree">
+  <div role="treeitem" aria-expanded="false" tabindex="0">Item 1</div>
+  <div role="treeitem" aria-expanded="false" tabindex="-1" aria-disabled="true" style="color: grey;">Item 2 (Disabled)</div>
+  <div role="treeitem" aria-expanded="false" tabindex="-1">Item 3</div>
+</div>
+```
+
+### **29. treegrid (트리 그리드 역할)**    
+treegrid 역할은 트리 구조와 그리드 구조를 결합한 복합 UI 컴포넌트를 정의합니다. treegrid는 계층적 데이터를 행과 열로 구성된 그리드 형식으로 표현하며, 각 행은 하위 항목을 포함할 수 있습니다. 사용자는 트리 항목을 확장하거나 축소하여 관련 데이터를 탐색할 수 있으며, 그리드의 행과 열 사이를 탐색할 수 있습니다.   
+[W3C ARIA treegrid](https://www.w3.org/TR/wai-aria-1.2/#treegrid){: target="_blank"}   
+[MDN ARIA treegrid](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/treegrid_role){: target="_blank"}   
+
+**기본 설명** 
+- treegrid 역할은 그리드와 트리 구조를 결합한 UI 컴포넌트를 정의합니다. 이는 트리 구조를 그리드 형식으로 표현하며, 각 행은 하위 항목을 포함할 수 있습니다.    
+- treegrid는 row, gridcell, treeitem과 같은 요소로 구성되며, 사용자는 계층적 데이터를 탐색하면서 그리드의 개별 셀과 상호작용할 수 있습니다.   
+- 이 역할은 복잡한 계층적 데이터를 직관적으로 표현하고 상호작용할 수 있는 강력한 구조를 제공합니다.   
+
+**사용 시 주의사항**   
+- treegrid 역할을 사용할 때는 각 행에 role="row"를 지정하고, 그리드 셀에는 role="gridcell"을 지정하여 그리드의 구조를 명확히 표현해야 합니다.   
+- 트리 구조의 확장 상태를 관리하기 위해 aria-expanded 속성을 사용하고, 하위 항목을 포함할 경우 role="rowgroup"을 사용해 그룹화해야 합니다.
+- 키보드 내비게이션을 지원하여 사용자가 트리 그리드를 쉽게 탐색하고 상호작용할 수 있도록 해야 합니다.
+- 비활성화된 항목은 aria-disabled="true" 속성을 사용해 명확히 표시해야 합니다.
+
+**상속된 상태 및 속성**   
+- aria-expanded: 트리 그리드 항목의 하위 항목이 확장되었는지 여부를 나타냅니다.    
+- aria-disabled: 트리 그리드 항목이 비활성화되었는지 여부를 나타냅니다.    
+- aria-selected: 트리 그리드 항목이 선택되었는지 여부를 나타냅니다.    
+- aria-labelledby, aria-describedby: 트리 그리드의 레이블과 설명을 참조하는 속성입니다.    
+
+
+**기본 treegrid 역할 예시**
+treegrid의 기본 구조를 정의합니다. row 요소는 그리드의 각 행을 나타내고, gridcell 요소는 각 셀을 나타냅니다. 상위 폴더(Folder 1)는 확장된 상태(aria-expanded="true")로 표시되며, 하위 항목(Sub-folder 1, Sub-folder 2)을 포함합니다.          
+```sh
+// 잘못된 예시
+// 이 예시는 treegrid의 기본 구조를 제공하지만, 트리 항목과 그리드 셀에 적절한 역할이 지정되지 않았습니다. 보조 기술은 데이터의 계층적 구조와 그리드 형식을 인식하지 못합니다.
+<div role="treegrid">
+  <div>Item 1</div>
+  <div>Item 2</div>
+  <div>Item 3</div>
+</div>
+
+// 올바른 예시
+<div role="treegrid" aria-label="File Explorer">
+  <div role="row" aria-expanded="true" tabindex="0">
+    <div role="gridcell">Folder 1</div>
+    <div role="gridcell">3 items</div>
+    <div role="gridcell">Jan 1, 2024</div>
+  </div>
+  <div role="rowgroup">
+    <div role="row" tabindex="-1">
+      <div role="gridcell" style="padding-left: 20px;">Sub-folder 1</div>
+      <div role="gridcell">2 items</div>
+      <div role="gridcell">Jan 2, 2024</div>
+    </div>
+    <div role="row" tabindex="-1">
+      <div role="gridcell" style="padding-left: 20px;">Sub-folder 2</div>
+      <div role="gridcell">1 item</div>
+      <div role="gridcell">Jan 3, 2024</div>
+    </div>
+  </div>
+  <div role="row" aria-expanded="false" tabindex="-1">
+    <div role="gridcell">Folder 2</div>
+    <div role="gridcell">5 items</div>
+    <div role="gridcell">Feb 1, 2024</div>
+  </div>
+</div>
+```
+
+**동적 확장/축소 가능한 treegrid 예시**
+이 예시는 트리 그리드에서 항목을 동적으로 확장하거나 축소할 수 있는 기능을 구현한 것입니다. 사용자가 상위 폴더를 클릭하면 하위 항목이 표시되거나 숨겨집니다. 이와 같은 구조는 aria-expanded 속성에 따라 동적으로 업데이트됩니다. 
+```sh
+<div role="treegrid" aria-label="File Explorer">
+  <div role="row" aria-expanded="false" tabindex="0">
+    <div role="gridcell">Folder 1</div>
+    <div role="gridcell">3 items</div>
+    <div role="gridcell">Jan 1, 2024</div>
+  </div>
+  <div role="rowgroup" hidden>
+    <div role="row" tabindex="-1">
+      <div role="gridcell" style="padding-left: 20px;">Sub-folder 1</div>
+      <div role="gridcell">2 items</div>
+      <div role="gridcell">Jan 2, 2024</div>
+    </div>
+    <div role="row" tabindex="-1">
+      <div role="gridcell" style="padding-left: 20px;">Sub-folder 2</div>
+      <div role="gridcell">1 item</div>
+      <div role="gridcell">Jan 3, 2024</div>
+    </div>
+  </div>
+  <div role="row" aria-expanded="false" tabindex="-1">
+    <div role="gridcell">Folder 2</div>
+    <div role="gridcell">5 items</div>
+    <div role="gridcell">Feb 1, 2024</div>
+  </div>
 </div>
 
 <script>
-  const multiSelectListbox = document.querySelector('[role="listbox"]');
-  const multiSelectOptions = multiSelectListbox.querySelectorAll('[role="option"]');
-
-  multiSelectOptions.forEach(option => {
-    option.addEventListener('click', () => {
-      const isSelected = option.getAttribute('aria-selected') === 'true';
-      option.setAttribute('aria-selected', !isSelected);
+  document.querySelectorAll('[role="row"]').forEach(row => {
+    row.addEventListener('click', () => {
+      const expanded = row.getAttribute('aria-expanded') === 'true';
+      row.setAttribute('aria-expanded', !expanded);
+      const group = row.nextElementSibling;
+      if (group && group.getAttribute('role') === 'rowgroup') {
+        group.hidden = expanded;
+      }
     });
   });
 </script>
 ```
 
-**키보드 내비게이션을 지원하는 listbox 예시**
-이 예시는 키보드 내비게이션을 지원하는 listbox를 구현했습니다. 사용자는 화살표 키로 옵션 간을 이동하고, Enter 또는 Space 키로 옵션을 선택할 수 있습니다. 
+**키보드 내비게이션을 지원하는 treegrid 예시**
+이 예시는 키보드 내비게이션을 지원하는 트리 그리드를 구현했습니다. 사용자는 ArrowRight 및 ArrowLeft 키를 사용하여 항목을 확장하거나 축소할 수 있으며, ArrowDown 및 ArrowUp 키를 사용해 행 간을 탐색할 수 있습니다. 
 ```sh
-<div role="listbox" tabindex="0">
-  <div role="option" aria-selected="false" tabindex="-1">Option 1</div>
-  <div role="option" aria-selected="false" tabindex="-1">Option 2</div>
-  <div role="option" aria-selected="false" tabindex="-1">Option 3</div>
+<div role="treegrid" aria-label="File Explorer">
+  <div role="row" aria-expanded="true" tabindex="0">
+    <div role="gridcell">Folder 1</div>
+    <div role="gridcell">3 items</div>
+    <div role="gridcell">Jan 1, 2024</div>
+  </div>
+  <div role="rowgroup">
+    <div role="row" tabindex="-1">
+      <div role="gridcell" style="padding-left: 20px;">Sub-folder 1</div>
+      <div role="gridcell">2 items</div>
+      <div role="gridcell">Jan 2, 2024</div>
+    </div>
+    <div role="row" tabindex="-1">
+      <div role="gridcell" style="padding-left: 20px;">Sub-folder 2</div>
+      <div role="gridcell">1 item</div>
+      <div role="gridcell">Jan 3, 2024</div>
+    </div>
+  </div>
+  <div role="row" aria-expanded="false" tabindex="-1">
+    <div role="gridcell">Folder 2</div>
+    <div role="gridcell">5 items</div>
+    <div role="gridcell">Feb 1, 2024</div>
+  </div>
 </div>
 
 <script>
-  const listbox = document.querySelector('[role="listbox"]');
-  const options = listbox.querySelectorAll('[role="option"]');
+  const rows = document.querySelectorAll('[role="row"]');
 
-  let currentIndex = 0;
-  options[currentIndex].tabIndex = 0;
-  options[currentIndex].focus();
-
-  listbox.addEventListener('keydown', event => {
-    if (event.key === 'ArrowDown') {
-      options[currentIndex].tabIndex = -1;
-      currentIndex = (currentIndex + 1) % options.length;
-      options[currentIndex].tabIndex = 0;
-      options[currentIndex].focus();
-    } else if (event.key === 'ArrowUp') {
-      options[currentIndex].tabIndex = -1;
-      currentIndex = (currentIndex - 1 + options.length) % options.length;
-      options[currentIndex].tabIndex = 0;
-      options[currentIndex].focus();
-    } else if (event.key === 'Enter' || event.key === ' ') {
-      const isSelected = options[currentIndex].getAttribute('aria-selected') === 'true';
-      options[currentIndex].setAttribute('aria-selected', !isSelected);
-    }
+  rows.forEach(row => {
+    row.addEventListener('keydown', event => {
+      if (event.key === 'ArrowRight' && row.getAttribute('aria-expanded') === 'false') {
+        row.setAttribute('aria-expanded', 'true');
+        const group = row.nextElementSibling;
+        if (group && group.getAttribute('role') === 'rowgroup') {
+          group.hidden = false;
+        }
+      } else if (event.key === 'ArrowLeft' && row.getAttribute('aria-expanded') === 'true') {
+        row.setAttribute('aria-expanded', 'false');
+        const group = row.nextElementSibling;
+        if (group && group.getAttribute('role') === 'rowgroup') {
+          group.hidden = true;
+        }
+      } else if (event.key === 'ArrowDown') {
+        const nextRow = row.nextElementSibling;
+        if (nextRow && nextRow.getAttribute('role') === 'row') {
+          nextRow.focus();
+        }
+      } else if (event.key === 'ArrowUp') {
+        const prevRow = row.previousElementSibling;
+        if (prevRow && prevRow.getAttribute('role') === 'row') {
+          prevRow.focus();
+        }
+      }
+    });
   });
 </script>
 ```
 
-**비활성화된 listbox 예시**
-aria-disabled="true" 속성을 사용하여 비활성화된 listbox를 나타냈습니다. 이 상태에서는 사용자가 옵션을 선택할 수 없으며, 시각적으로도 비활성화된 상태임을 나타냅니다. 
+**비활성화된 트리 그리드 항목 예시**
+aria-disabled="true" 속성을 사용하여 비활성화된 트리 그리드 항목을 나타냈습니다. 이 항목은 선택할 수 없으며, 시각적으로도 비활성화 상태임을 표시합니다. 
 ```sh
-<div role="listbox" aria-disabled="true" tabindex="-1">
-  <div role="option" aria-selected="false" tabindex="-1" style="color: grey;">Option 1</div>
-  <div role="option" aria-selected="false" tabindex="-1" style="color: grey;">Option 2</div>
-  <div role="option" aria-selected="false" tabindex="-1" style="color: grey;">Option 3</div>
+<div role="treegrid" aria-label="File Explorer">
+  <div role="row" aria-expanded="false" tabindex="0">
+    <div role="gridcell">Folder 1</div>
+    <div role="gridcell">3 items</div>
+    <div role="gridcell">Jan 1, 2024</div>
+  </div>
+  <div role="row" aria-expanded="false" aria-disabled="true" tabindex="-1" style="color: grey;">
+    <div role="gridcell">Folder 2 (Disabled)</div>
+    <div role="gridcell">5 items</div>
+    <div role="gridcell">Feb 1, 2024</div>
+  </div>
 </div>
 ```
-
-
-다음 역할은 복합 사용자 인터페이스 위젯 역할을 합니다. 이러한 역할은 일반적으로 포함된 다른 위젯을 관리하는 컨테이너 역할을 합니다.
-combobox, grid, listbox, menu, menubar, radiogroup, tablist, tree, treegrid
 
 ## 참조
 - [W3C Accessible Rich Internet Applications (WAI-ARIA) 1.1](https://www.w3.org/TR/wai-aria-1.1/){: target="_blank"}   
