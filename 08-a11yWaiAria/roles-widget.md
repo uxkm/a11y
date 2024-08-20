@@ -10,7 +10,7 @@ Widget Roles은 다음과 같이 구분하여 사용되고 있습니다.
    - button(button), checkbox(input type="checkbox"), radio(input type="radio"), gridcell(th,td), link(a), menuitem, menuitemcheckbox, menuitemradio, option(select), progressbar(progress), scrollbar, searchbox(input type="search"), separator (when focusable), slider(input type="range"), spinbutton(input type="number"), switch(input type="checkbox"), tab, tabpanel, textbox(input type="text", textarea), treeitem     
 2. 복합형(Composite) Widget Roles    
    - 복합형 Widget Roles는 여러 개의 하위 요소를 포함하며, 상호작용할 수 있는 복잡한 UI 구성 요소를 의미합니다. 주요 복합형 Widget Roles는 다음과 같습니다.    
-   - combobox, grid, listbox, menu, menubar, radiogroup, tablist, tree, treegrid     
+   - combobox(select), grid(table), listbox(select), menu, menubar, radiogroup(input type="radio"), tablist, tree, treegrid     
 
 **tab - 독립형(Standalone) Widget Roles**
 
