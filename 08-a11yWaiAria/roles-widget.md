@@ -7,7 +7,7 @@
 Widget Roles은 다음과 같이 구분하여 사용되고 있습니다.
 1. 독립형(Standalone) Widget Roles    
    - 독립형 Widget Roles는 단일 UI 요소로서 작동하며, 사용자가 직접 상호작용할 수 있는 개별적인 요소를 의미합니다. 주요 독립형 Widget Roles는 다음과 같습니다.    
-   - button, checkbox, radio, gridcell, link, menuitem, menuitemcheckbox, menuitemradio, option, progressbar, scrollbar, searchbox, separator (when focusable), slider, spinbutton, switch, tab, tabpanel, textbox, treeitem     
+   - button(button), checkbox(input type="checkbox"), radio(input type="radio"), gridcell(th,td), link(a), menuitem, menuitemcheckbox, menuitemradio, option(select), progressbar(progress), scrollbar, searchbox(input type="search"), separator (when focusable), slider(input type="range"), spinbutton(input type="number"), switch(input type="checkbox"), tab, tabpanel, textbox(input type="text", textarea), treeitem     
 2. 복합형(Composite) Widget Roles    
    - 복합형 Widget Roles는 여러 개의 하위 요소를 포함하며, 상호작용할 수 있는 복잡한 UI 구성 요소를 의미합니다. 주요 복합형 Widget Roles는 다음과 같습니다.    
    - combobox, grid, listbox, menu, menubar, radiogroup, tablist, tree, treegrid     
@@ -2068,59 +2068,487 @@ grid 역할은 행과 열로 구성된 데이터의 표 형식을 나타냅니�
 </script>
 ```
 
-**자동 완성 기능이 포함된 combobox 예시**
-이 예시는 자동 완성 기능이 포함된 콤보 박스를 구현한 것입니다. 사용자가 텍스트를 입력하면 해당 텍스트로 시작하는 항목만 목록에 표시됩니다. 사용자는 입력을 통해 목록을 필터링할 수 있으며, 목록에서 항목을 선택할 수 있습니다. 
+**키보드 내비게이션을 지원하는 그리드 예시**
+이 예시는 키보드 내비게이션을 지원하는 그리드를 구현했습니다. 사용자는 화살표 키를 사용해 그리드 내의 셀과 행을 탐색할 수 있으며, 보조 기술은 이 구조를 올바르게 인식합니다. 
 ```sh
-<label for="combo3">Choose an option:</label>
-<input id="combo3" type="text" role="combobox" aria-expanded="false" aria-controls="listbox3" aria-autocomplete="list" aria-haspopup="listbox">
-<ul id="listbox3" role="listbox" hidden>
-  <li role="option">Apple</li>
-  <li role="option">Banana</li>
-  <li role="option">Cherry</li>
-  <li role="option">Date</li>
-  <li role="option">Elderberry</li>
-</ul>
+<div role="grid" aria-labelledby="keyboardGridLabel">
+  <div role="row" tabindex="0">
+    <div role="gridcell" tabindex="-1">Row 1, Cell 1</div>
+    <div role="gridcell" tabindex="-1">Row 1, Cell 2</div>
+    <div role="gridcell" tabindex="-1">Row 1, Cell 3</div>
+  </div>
+  <div role="row" tabindex="-1">
+    <div role="gridcell" tabindex="-1">Row 2, Cell 1</div>
+    <div role="gridcell" tabindex="-1">Row 2, Cell 2</div>
+    <div role="gridcell" tabindex="-1">Row 2, Cell 3</div>
+  </div>
+  <div role="row" tabindex="-1">
+    <div role="gridcell" tabindex="-1">Row 3, Cell 1</div>
+    <div role="gridcell" tabindex="-1">Row 3, Cell 2</div>
+    <div role="gridcell" tabindex="-1">Row 3, Cell 3</div>
+  </div>
+</div>
+<div id="keyboardGridLabel">Keyboard Accessible Grid</div>
 
 <script>
-  const combo3 = document.getElementById('combo3');
-  const listbox3 = document.getElementById('listbox3');
-
-  combo3.addEventListener('input', function() {
-    const filter = combo3.value.toLowerCase();
-    const options = listbox3.querySelectorAll('[role="option"]');
-    let hasVisibleOption = false;
-    options.forEach(option => {
-      if (option.textContent.toLowerCase().startsWith(filter)) {
-        option.hidden = false;
-        hasVisibleOption = true;
-      } else {
-        option.hidden = true;
+  const gridRows = document.querySelectorAll('[role="row"]');
+  gridRows.forEach(row => {
+    row.addEventListener('keydown', event => {
+      const cells = Array.from(row.querySelectorAll('[role="gridcell"]'));
+      const currentIndex = cells.findIndex(cell => cell === document.activeElement);
+      if (event.key === 'ArrowRight' && currentIndex < cells.length - 1) {
+        cells[currentIndex + 1].focus();
+      } else if (event.key === 'ArrowLeft' && currentIndex > 0) {
+        cells[currentIndex - 1].focus();
+      } else if (event.key === 'ArrowDown' && row.nextElementSibling) {
+        row.nextElementSibling.querySelector('[role="gridcell"]').focus();
+      } else if (event.key === 'ArrowUp' && row.previousElementSibling) {
+        row.previousElementSibling.querySelector('[role="gridcell"]').focus();
       }
     });
-    listbox3.hidden = !hasVisibleOption;
-    combo3.setAttribute('aria-expanded', hasVisibleOption ? 'true' : 'false');
   });
+</script>
+```
 
-  listbox3.addEventListener('click', function(event) {
-    if (event.target.getAttribute('role') === 'option') {
-      combo3.value = event.target.textContent;
-      combo3.setAttribute('aria-expanded', 'false');
-      listbox3.hidden = true;
+**비활성화된 셀을 포함하는 그리드 예시**
+aria-disabled="true" 속성을 사용하여 비활성화된 셀을 나타냈습니다. 이 셀은 포커스를 받을 수 없으며, 시각적으로도 비활성화 상태임을 나타냅니다. 
+```sh
+<div role="grid">
+  <div role="row">
+    <div role="gridcell" tabindex="0">Active Cell 1</div>
+    <div role="gridcell" aria-disabled="true" tabindex="-1" style="color: grey;">Disabled Cell</div>
+    <div role="gridcell" tabindex="0">Active Cell 2</div>
+  </div>
+</div>
+```
+
+### **23. listbox (리스트 상자 역할)**    
+listbox 역할은 사용자가 목록에서 하나 이상의 항목을 선택할 수 있는 인터페이스 요소를 나타냅니다. 일반적으로 listbox는 여러 개의 option 요소로 구성되며, 사용자는 마우스 클릭이나 키보드 입력으로 항목을 선택할 수 있습니다. listbox는 단일 선택 또는 다중 선택이 가능하며, 선택된 항목은 aria-selected 속성으로 표시됩니다.    
+시멘틱한 &lt;select&gt; 요소를 사용하여 listbox를 구현하는것을 권장합니다.   
+[W3C ARIA listbox](https://www.w3.org/TR/wai-aria-1.2/#listbox){: target="_blank"}   
+[MDN ARIA listbox](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/listbox_role){: target="_blank"}   
+[select 요소 참조 - UXKM select](https://uxkm.io/publishing/html/09-forms/05-select_element#gsc.tab=0){: target="_blank"}    
+
+**기본 설명** 
+- listbox 역할은 사용자가 하나 이상의 항목을 선택할 수 있는 목록을 정의합니다.    
+- listbox는 option 역할을 가진 여러 항목으로 구성되며, 각 항목은 선택 가능 상태를 나타내는 aria-selected 속성을 가질 수 있습니다.   
+- listbox는 다양한 형태로 구현될 수 있으며, 단일 선택이나 다중 선택이 가능한 인터페이스로 설정할 수 있습니다.    
+
+**사용 시 주의사항**   
+- listbox 역할을 사용할 때는 반드시 option 역할을 가진 요소를 포함해야 하며, 각 옵션에는 선택 상태를 나타내는 aria-selected 속성이 필요합니다.   
+- 단일 선택 또는 다중 선택 기능을 제공할 경우, aria-multiselectable 속성을 사용하여 보조 기술이 이 기능을 인식할 수 있도록 해야 합니다.
+- 키보드 내비게이션을 지원하여 사용자가 listbox를 쉽게 탐색하고 선택할 수 있도록 해야 합니다.
+- 비활성화된 listbox의 경우, aria-disabled 속성을 사용하여 이를 명확히 표시해야 합니다.
+
+**상속된 상태 및 속성**   
+- aria-multiselectable: listbox가 다중 선택을 지원하는지 여부를 나타냅니다.    
+- aria-required: listbox가 필수 입력 필드인지 여부를 나타냅니다.    
+- aria-disabled: listbox가 비활성화되었는지 여부를 나타냅니다.    
+- aria-selected: 개별 option의 선택 상태를 나타냅니다.    
+- aria-labelledby, aria-describedby: listbox의 레이블과 설명을 참조하는 속성입니다.    
+
+
+**기본 listbox 역할 예시**
+시멘틱한 &lt;select&gt; 요소를 사용하여 구현하는것을 권장합니다. &lt;select&gt; 요소는 기본적으로 listbox 역할을 가지며, 브라우저와 보조 기술에서 기본적으로 지원됩니다.          
+```sh
+// 잘못된 예시
+// 이 예시는 listbox의 기본 구조를 제공하지만, 개별 항목(option)에 역할이 지정되지 않았습니다. 보조 기술은 각 항목이 선택 가능한 option임을 인식하지 못합니다.
+<div role="listbox">
+  <div>Option 1</div>
+  <div>Option 2</div>
+  <div>Option 3</div>
+</div>
+
+// 올바른 예시
+// 각 항목에 role="option"을 추가하여 보조 기술이 이를 선택 가능한 옵션으로 인식할 수 있도록 했습니다. 또한 aria-selected 속성을 사용하여 항목이 선택되었는지 여부를 나타냅니다.
+<div role="listbox">
+  <div role="option" aria-selected="false">Option 1</div>
+  <div role="option" aria-selected="false">Option 2</div>
+  <div role="option" aria-selected="false">Option 3</div>
+</div>
+
+// (권장) 시멘틱 요소 사용
+<select>
+  <option>Option 1</option>
+  <option>Option 2</option>
+  <option>Option 3</option>
+</select>
+```
+
+**단일 선택 가능한 listbox 예시**
+이 예시는 단일 선택 가능한 listbox를 구현했습니다. 사용자가 하나의 옵션을 클릭하면, 다른 옵션의 aria-selected 속성은 false로 설정되고 클릭된 옵션만 true로 설정됩니다. 
+```sh
+<div role="listbox" aria-labelledby="listbox-label" tabindex="0">
+  <div role="option" aria-selected="false">Option 1</div>
+  <div role="option" aria-selected="false">Option 2</div>
+  <div role="option" aria-selected="false">Option 3</div>
+</div>
+<div id="listbox-label">Choose an option:</div>
+
+<script>
+  const listbox = document.querySelector('[role="listbox"]');
+  const options = listbox.querySelectorAll('[role="option"]');
+
+  options.forEach(option => {
+    option.addEventListener('click', () => {
+      options.forEach(opt => opt.setAttribute('aria-selected', 'false'));
+      option.setAttribute('aria-selected', 'true');
+    });
+  });
+</script>
+```
+
+**다중 선택 가능한 listbox 예시**
+이 예시는 다중 선택이 가능한 listbox를 구현했습니다. aria-multiselectable="true" 속성을 사용하여 다중 선택 기능을 활성화했으며, 사용자가 여러 옵션을 선택할 수 있도록 했습니다. 
+```sh
+<div role="listbox" aria-multiselectable="true" tabindex="0">
+  <div role="option" aria-selected="false" tabindex="-1">Option 1</div>
+  <div role="option" aria-selected="false" tabindex="-1">Option 2</div>
+  <div role="option" aria-selected="false" tabindex="-1">Option 3</div>
+</div>
+
+<script>
+  const multiSelectListbox = document.querySelector('[role="listbox"]');
+  const multiSelectOptions = multiSelectListbox.querySelectorAll('[role="option"]');
+
+  multiSelectOptions.forEach(option => {
+    option.addEventListener('click', () => {
+      const isSelected = option.getAttribute('aria-selected') === 'true';
+      option.setAttribute('aria-selected', !isSelected);
+    });
+  });
+</script>
+```
+
+**키보드 내비게이션을 지원하는 listbox 예시**
+이 예시는 키보드 내비게이션을 지원하는 listbox를 구현했습니다. 사용자는 화살표 키로 옵션 간을 이동하고, Enter 또는 Space 키로 옵션을 선택할 수 있습니다. 
+```sh
+<div role="listbox" tabindex="0">
+  <div role="option" aria-selected="false" tabindex="-1">Option 1</div>
+  <div role="option" aria-selected="false" tabindex="-1">Option 2</div>
+  <div role="option" aria-selected="false" tabindex="-1">Option 3</div>
+</div>
+
+<script>
+  const listbox = document.querySelector('[role="listbox"]');
+  const options = listbox.querySelectorAll('[role="option"]');
+
+  let currentIndex = 0;
+  options[currentIndex].tabIndex = 0;
+  options[currentIndex].focus();
+
+  listbox.addEventListener('keydown', event => {
+    if (event.key === 'ArrowDown') {
+      options[currentIndex].tabIndex = -1;
+      currentIndex = (currentIndex + 1) % options.length;
+      options[currentIndex].tabIndex = 0;
+      options[currentIndex].focus();
+    } else if (event.key === 'ArrowUp') {
+      options[currentIndex].tabIndex = -1;
+      currentIndex = (currentIndex - 1 + options.length) % options.length;
+      options[currentIndex].tabIndex = 0;
+      options[currentIndex].focus();
+    } else if (event.key === 'Enter' || event.key === ' ') {
+      const isSelected = options[currentIndex].getAttribute('aria-selected') === 'true';
+      options[currentIndex].setAttribute('aria-selected', !isSelected);
     }
   });
 </script>
 ```
 
-**비활성화된 combobox예시**
-aria-disabled="true" 속성과 함께 disabled 속성을 사용하여 콤보 박스를 비활성화했습니다. 이 상태에서는 사용자가 입력할 수 없으며, 보조 기술은 이 필드가 비활성화되었음을 알립니다. 
+**비활성화된 listbox 예시**
+aria-disabled="true" 속성을 사용하여 비활성화된 listbox를 나타냈습니다. 이 상태에서는 사용자가 옵션을 선택할 수 없으며, 시각적으로도 비활성화된 상태임을 나타냅니다. 
 ```sh
-<label for="combo4">Choose an option:</label>
-<input id="combo4" type="text" role="combobox" aria-expanded="false" aria-controls="listbox4" aria-autocomplete="list" aria-haspopup="listbox" aria-disabled="true" disabled>
-<ul id="listbox4" role="listbox" hidden>
-  <li role="option">Option 1</li>
-  <li role="option">Option 2</li>
-  <li role="option">Option 3</li>
-</ul>
+<div role="listbox" aria-disabled="true" tabindex="-1">
+  <div role="option" aria-selected="false" tabindex="-1" style="color: grey;">Option 1</div>
+  <div role="option" aria-selected="false" tabindex="-1" style="color: grey;">Option 2</div>
+  <div role="option" aria-selected="false" tabindex="-1" style="color: grey;">Option 3</div>
+</div>
+```
+
+### **24. menu (메뉴 역할)**    
+menu 역할은 메뉴 항목의 그룹을 정의하는 UI 컴포넌트로, 일반적으로 웹 애플리케이션의 내비게이션 또는 상호작용을 위한 요소로 사용됩니다. 메뉴는 여러 개의 menuitem, menuitemcheckbox, menuitemradio와 같은 요소로 구성되며, 사용자는 메뉴 항목을 클릭하거나 키보드로 탐색할 수 있습니다. menu는 드롭다운, 컨텍스트 메뉴, 내비게이션 메뉴 등의 형태로 사용될 수 있습니다.   
+[W3C ARIA menu](https://www.w3.org/TR/wai-aria-1.2/#menu){: target="_blank"}   
+[MDN ARIA menu](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/menu_role){: target="_blank"}   
+
+**기본 설명** 
+- menu 역할은 메뉴 항목의 그룹을 정의하며, 주로 내비게이션 또는 상호작용을 위한 UI 컴포넌트로 사용됩니다.    
+- 메뉴는 menuitem, menuitemcheckbox, menuitemradio와 같은 하위 항목으로 구성되며, 이러한 항목은 각각의 역할과 기능을 명확히 정의합니다.   
+- 메뉴는 사용자가 키보드나 마우스를 사용하여 항목을 선택하고 탐색할 수 있는 구조로 구현됩니다.   
+
+**사용 시 주의사항**   
+- menu 역할을 사용할 때는 반드시 menuitem, menuitemcheckbox, menuitemradio 등의 하위 항목 역할을 사용하여 메뉴 항목의 유형을 명확히 정의해야 합니다.   
+- 드롭다운 메뉴와 컨텍스트 메뉴는 aria-haspopup 및 aria-expanded 속성을 사용해 보조 기술이 현재 메뉴의 상태를 인식할 수 있도록 해야 합니다.
+- 키보드 내비게이션을 지원하여 사용자가 메뉴 항목을 쉽게 탐색하고 선택할 수 있도록 해야 합니다.
+- 체크박스 및 라디오 버튼 메뉴 항목의 경우, aria-checked 속성을 사용하여 선택 상태를 명확히 나타내야 합니다.
+
+**상속된 상태 및 속성**   
+- aria-haspopup: 메뉴를 호출하는 요소가 메뉴나 다른 팝업 요소를 가지고 있음을 나타냅니다.    
+- aria-expanded: 메뉴가 확장되었는지 여부를 나타냅니다.    
+- aria-checked: menuitemcheckbox 또는 menuitemradio 요소의 선택 상태를 나타냅니다.    
+- aria-disabled: 메뉴 항목이 비활성화되었는지 여부를 나타냅니다.    
+- aria-labelledby, aria-describedby: 메뉴와 메뉴 항목의 레이블과 설명을 참조하는 속성입니다.    
+
+
+**기본 menu 역할 예시**
+role="menuitem"을 추가하여 보조 기술이 이를 메뉴 항목으로 인식할 수 있도록 해야 합니다. 또한, tabindex="0"을 사용해 각 항목이 키보드 탐색이 가능하도록 설정해야 합니다.          
+```sh
+// 잘못된 예시
+// 이 예시는 menu의 기본 구조를 제공하지만, 각 메뉴 항목에 적절한 역할(menuitem, menuitemcheckbox, menuitemradio)이 지정되지 않았습니다. 보조 기술은 각 항목이 메뉴의 일부임을 제대로 인식하지 못합니다.
+<div role="menu">
+  <div>Item 1</div>
+  <div>Item 2</div>
+  <div>Item 3</div>
+</div>
+
+// 올바른 예시
+// 각 항목에 role="option"을 추가하여 보조 기술이 이를 선택 가능한 옵션으로 인식할 수 있도록 했습니다. 또한 aria-selected 속성을 사용하여 항목이 선택되었는지 여부를 나타냅니다.
+<div role="menu">
+  <div role="menuitem" tabindex="0">Item 1</div>
+  <div role="menuitem" tabindex="0">Item 2</div>
+  <div role="menuitem" tabindex="0">Item 3</div>
+</div>
+```
+
+**드롭다운 메뉴 예시**
+이 예시는 드롭다운 메뉴를 구현한 것입니다. 버튼을 클릭하면 메뉴가 확장되거나 축소되며, aria-expanded 속성으로 현재 상태를 나타냅니다. aria-haspopup="true" 속성은 버튼이 메뉴를 제어함을 나타냅니다. 
+```sh
+<button aria-haspopup="true" aria-expanded="false" aria-controls="menu1">Options</button>
+<div role="menu" id="menu1" hidden>
+  <div role="menuitem" tabindex="-1">Profile</div>
+  <div role="menuitem" tabindex="-1">Settings</div>
+  <div role="menuitem" tabindex="-1">Log out</div>
+</div>
+
+<script>
+  const button = document.querySelector('[aria-haspopup="true"]');
+  const menu = document.getElementById('menu1');
+
+  button.addEventListener('click', () => {
+    const expanded = button.getAttribute('aria-expanded') === 'true';
+    button.setAttribute('aria-expanded', !expanded);
+    menu.hidden = expanded;
+  });
+</script>
+```
+
+**컨텍스트 메뉴 예시**
+이 예시는 사용자가 마우스 오른쪽 버튼을 클릭할 때 나타나는 컨텍스트 메뉴를 구현한 것입니다. 마우스 위치에 메뉴가 나타나며, 클릭 시 메뉴가 사라집니다. 
+```sh
+<div id="contextMenu" role="menu" hidden style="position: absolute;">
+  <div role="menuitem" tabindex="-1">Copy</div>
+  <div role="menuitem" tabindex="-1">Paste</div>
+  <div role="menuitem" tabindex="-1">Delete</div>
+</div>
+
+<script>
+  document.addEventListener('contextmenu', event => {
+    event.preventDefault();
+    const menu = document.getElementById('contextMenu');
+    menu.style.left = `${event.pageX}px`;
+    menu.style.top = `${event.pageY}px`;
+    menu.hidden = false;
+  });
+
+  document.addEventListener('click', () => {
+    document.getElementById('contextMenu').hidden = true;
+  });
+</script>
+```
+
+**다중 선택 가능한 체크박스 메뉴 예시**
+이 예시는 다중 선택이 가능한 체크박스 메뉴를 구현한 것입니다. menuitemcheckbox 역할을 사용해 각 항목이 체크 가능한 메뉴 항목임을 나타내며, 사용자가 클릭하여 항목을 선택 또는 해제할 수 있습니다. 
+```sh
+<div role="menu">
+  <div role="menuitemcheckbox" aria-checked="false" tabindex="0">Enable notifications</div>
+  <div role="menuitemcheckbox" aria-checked="false" tabindex="0">Enable dark mode</div>
+  <div role="menuitemcheckbox" aria-checked="true" tabindex="0">Enable auto-update</div>
+</div>
+
+<script>
+  document.querySelectorAll('[role="menuitemcheckbox"]').forEach(item => {
+    item.addEventListener('click', () => {
+      const isChecked = item.getAttribute('aria-checked') === 'true';
+      item.setAttribute('aria-checked', !isChecked);
+    });
+  });
+</script>
+```
+
+**키보드 내비게이션을 지원하는 메뉴 예시**
+이 예시는 키보드 내비게이션을 지원하는 메뉴를 구현했습니다. 사용자는 ArrowDown 및 ArrowUp 키로 메뉴 항목 간을 탐색할 수 있으며, 현재 포커스된 항목이 명확하게 표시됩니다.
+```sh
+<div role="menu" tabindex="0">
+  <div role="menuitem" tabindex="-1">New File</div>
+  <div role="menuitem" tabindex="-1">Open File</div>
+  <div role="menuitem" tabindex="-1">Save File</div>
+</div>
+
+<script>
+  const menuItems = document.querySelectorAll('[role="menuitem"]');
+  let currentIndex = 0;
+
+  menuItems[currentIndex].tabIndex = 0;
+  menuItems[currentIndex].focus();
+
+  menuItems.forEach((item, index) => {
+    item.addEventListener('keydown', event => {
+      if (event.key === 'ArrowDown') {
+        menuItems[currentIndex].tabIndex = -1;
+        currentIndex = (currentIndex + 1) % menuItems.length;
+        menuItems[currentIndex].tabIndex = 0;
+        menuItems[currentIndex].focus();
+      } else if (event.key === 'ArrowUp') {
+        menuItems[currentIndex].tabIndex = -1;
+        currentIndex = (currentIndex - 1 + menuItems.length) % menuItems.length;
+        menuItems[currentIndex].tabIndex = 0;
+        menuItems[currentIndex].focus();
+      }
+    });
+  });
+</script>
+```
+
+### **25. menubar (메뉴 모음 역할)**    
+menubar 역할은 일반적으로 애플리케이션이나 웹사이트의 상단에 위치하는 메뉴 모음을 나타냅니다. menubar는 menuitem, menuitemcheckbox, menuitemradio, submenu와 같은 하위 요소로 구성되며, 사용자는 메뉴 모음에서 다양한 작업을 수행할 수 있습니다. menubar는 내비게이션 메뉴 또는 애플리케이션의 주요 기능을 제공하는 UI 컴포넌트로 사용됩니다.   
+[W3C ARIA menubar](https://www.w3.org/TR/wai-aria-1.2/#menubar){: target="_blank"}   
+[MDN ARIA menubar](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/menubar_role){: target="_blank"}   
+
+**기본 설명** 
+- menubar 역할은 상단 메뉴 모음을 나타내며, 사용자가 다양한 메뉴 항목을 선택하고 탐색할 수 있도록 돕습니다.    
+- menubar는 일반적으로 menuitem 요소로 구성되며, 각 항목은 드롭다운 메뉴 또는 하위 메뉴를 포함할 수 있습니다.   
+- 사용자는 키보드와 마우스를 사용해 메뉴 항목 간을 탐색하고 선택할 수 있습니다.   
+
+**사용 시 주의사항**   
+- menu 역할을 사용할 때는 반드시 menuitem, menuitemcheckbox, menuitemradio 등의 하위 항목 역할을 사용하여 메뉴 항목의 유형을 명확히 정의해야 합니다.   
+- 드롭다운 메뉴와 컨텍스트 메뉴는 aria-haspopup 및 aria-expanded 속성을 사용해 보조 기술이 현재 메뉴의 상태를 인식할 수 있도록 해야 합니다.
+- 키보드 내비게이션을 지원하여 사용자가 메뉴 항목을 쉽게 탐색하고 선택할 수 있도록 해야 합니다.
+- 체크박스 및 라디오 버튼 메뉴 항목의 경우, aria-checked 속성을 사용하여 선택 상태를 명확히 나타내야 합니다.
+
+**상속된 상태 및 속성**   
+- aria-haspopup: 메뉴를 호출하는 요소가 메뉴나 다른 팝업 요소를 가지고 있음을 나타냅니다.    
+- aria-expanded: 메뉴가 확장되었는지 여부를 나타냅니다.    
+- aria-checked: menuitemcheckbox 또는 menuitemradio 요소의 선택 상태를 나타냅니다.    
+- aria-disabled: 메뉴 항목이 비활성화되었는지 여부를 나타냅니다.    
+- aria-labelledby, aria-describedby: 메뉴와 메뉴 항목의 레이블과 설명을 참조하는 속성입니다.    
+
+
+**기본 menubar 역할 예시**
+role="menuitem"을 추가하여 보조 기술이 이를 메뉴 항목으로 인식할 수 있도록 해야 합니다. 또한, tabindex="0"을 사용해 각 항목이 키보드 탐색이 가능하도록 설정해야 합니다.          
+```sh
+// 잘못된 예시
+// 이 예시는 menu의 기본 구조를 제공하지만, 각 메뉴 항목에 적절한 역할(menuitem, menuitemcheckbox, menuitemradio)이 지정되지 않았습니다. 보조 기술은 각 항목이 메뉴의 일부임을 제대로 인식하지 못합니다.
+<div role="menu">
+  <div>Item 1</div>
+  <div>Item 2</div>
+  <div>Item 3</div>
+</div>
+
+// 올바른 예시
+// 각 항목에 role="option"을 추가하여 보조 기술이 이를 선택 가능한 옵션으로 인식할 수 있도록 했습니다. 또한 aria-selected 속성을 사용하여 항목이 선택되었는지 여부를 나타냅니다.
+<div role="menu">
+  <div role="menuitem" tabindex="0">Item 1</div>
+  <div role="menuitem" tabindex="0">Item 2</div>
+  <div role="menuitem" tabindex="0">Item 3</div>
+</div>
+
+// (권장) 시멘틱 요소 사용
+<select>
+  <option>Option 1</option>
+  <option>Option 2</option>
+  <option>Option 3</option>
+</select>
+```
+
+**단일 선택 가능한 listbox 예시**
+이 예시는 단일 선택 가능한 listbox를 구현했습니다. 사용자가 하나의 옵션을 클릭하면, 다른 옵션의 aria-selected 속성은 false로 설정되고 클릭된 옵션만 true로 설정됩니다. 
+```sh
+<div role="listbox" aria-labelledby="listbox-label" tabindex="0">
+  <div role="option" aria-selected="false">Option 1</div>
+  <div role="option" aria-selected="false">Option 2</div>
+  <div role="option" aria-selected="false">Option 3</div>
+</div>
+<div id="listbox-label">Choose an option:</div>
+
+<script>
+  const listbox = document.querySelector('[role="listbox"]');
+  const options = listbox.querySelectorAll('[role="option"]');
+
+  options.forEach(option => {
+    option.addEventListener('click', () => {
+      options.forEach(opt => opt.setAttribute('aria-selected', 'false'));
+      option.setAttribute('aria-selected', 'true');
+    });
+  });
+</script>
+```
+
+**다중 선택 가능한 listbox 예시**
+이 예시는 다중 선택이 가능한 listbox를 구현했습니다. aria-multiselectable="true" 속성을 사용하여 다중 선택 기능을 활성화했으며, 사용자가 여러 옵션을 선택할 수 있도록 했습니다. 
+```sh
+<div role="listbox" aria-multiselectable="true" tabindex="0">
+  <div role="option" aria-selected="false" tabindex="-1">Option 1</div>
+  <div role="option" aria-selected="false" tabindex="-1">Option 2</div>
+  <div role="option" aria-selected="false" tabindex="-1">Option 3</div>
+</div>
+
+<script>
+  const multiSelectListbox = document.querySelector('[role="listbox"]');
+  const multiSelectOptions = multiSelectListbox.querySelectorAll('[role="option"]');
+
+  multiSelectOptions.forEach(option => {
+    option.addEventListener('click', () => {
+      const isSelected = option.getAttribute('aria-selected') === 'true';
+      option.setAttribute('aria-selected', !isSelected);
+    });
+  });
+</script>
+```
+
+**키보드 내비게이션을 지원하는 listbox 예시**
+이 예시는 키보드 내비게이션을 지원하는 listbox를 구현했습니다. 사용자는 화살표 키로 옵션 간을 이동하고, Enter 또는 Space 키로 옵션을 선택할 수 있습니다. 
+```sh
+<div role="listbox" tabindex="0">
+  <div role="option" aria-selected="false" tabindex="-1">Option 1</div>
+  <div role="option" aria-selected="false" tabindex="-1">Option 2</div>
+  <div role="option" aria-selected="false" tabindex="-1">Option 3</div>
+</div>
+
+<script>
+  const listbox = document.querySelector('[role="listbox"]');
+  const options = listbox.querySelectorAll('[role="option"]');
+
+  let currentIndex = 0;
+  options[currentIndex].tabIndex = 0;
+  options[currentIndex].focus();
+
+  listbox.addEventListener('keydown', event => {
+    if (event.key === 'ArrowDown') {
+      options[currentIndex].tabIndex = -1;
+      currentIndex = (currentIndex + 1) % options.length;
+      options[currentIndex].tabIndex = 0;
+      options[currentIndex].focus();
+    } else if (event.key === 'ArrowUp') {
+      options[currentIndex].tabIndex = -1;
+      currentIndex = (currentIndex - 1 + options.length) % options.length;
+      options[currentIndex].tabIndex = 0;
+      options[currentIndex].focus();
+    } else if (event.key === 'Enter' || event.key === ' ') {
+      const isSelected = options[currentIndex].getAttribute('aria-selected') === 'true';
+      options[currentIndex].setAttribute('aria-selected', !isSelected);
+    }
+  });
+</script>
+```
+
+**비활성화된 listbox 예시**
+aria-disabled="true" 속성을 사용하여 비활성화된 listbox를 나타냈습니다. 이 상태에서는 사용자가 옵션을 선택할 수 없으며, 시각적으로도 비활성화된 상태임을 나타냅니다. 
+```sh
+<div role="listbox" aria-disabled="true" tabindex="-1">
+  <div role="option" aria-selected="false" tabindex="-1" style="color: grey;">Option 1</div>
+  <div role="option" aria-selected="false" tabindex="-1" style="color: grey;">Option 2</div>
+  <div role="option" aria-selected="false" tabindex="-1" style="color: grey;">Option 3</div>
+</div>
 ```
 
 

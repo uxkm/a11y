@@ -253,9 +253,9 @@ WCAG 2.2 Guidelines : [1.4.3 Contrast (Minimum)](https://www.w3.org/TR/WCAG22/#p
 
 
 #### 5.4.4. (콘텐츠 간의 구분) 이웃한 콘텐츠는 구별될 수 있어야 한다.
-> 웹 페이지에서 보이는 텍스트 콘텐츠(텍스트 및 텍스트 이미지)와 배경 간의 충분한 대비를 제공하여, 저시력장애인, 색각장애인, 고령자 등도 콘텐츠를 인식할 수 있도록 제공해야 한다.    
-다만, 로고, 장식목적의 콘텐츠, 마우스나 키보드를 활용하여 초점을 받았을 때 명도 대비가 커지는 콘텐츠 등은 예외로 한다.    
-WCAG 2.2 Guidelines : [1.4.3 Contrast (Minimum)](https://www.w3.org/TR/WCAG22/#visual-presentation){: target="_blank"}   
+> 웹 페이지 내에서 서로 인접한 콘텐츠 블록들이 명확하게 구분되어 사용자가 쉽게 이해하고 탐색할 수 있어야 한다는 의미입니다.    
+이는 사용자가 더 쉽게 콘텐츠를 이해하고, 탐색하며, 상호작용할 수 있도록 돕습니다.    
+WCAG 2.2 Guidelines : [1.4.8 Visual Presentation](https://www.w3.org/TR/WCAG22/#visual-presentation){: target="_blank"}   
 
 ```sh
 <!-- 잘못된 예시 : 이웃한 콘텐츠가 구별되지 않아 사용자가 정보를 쉽게 찾기 어려움. 
