@@ -3,6 +3,7 @@
 ## Abstract Roles (추상적 역할)
 > **Abstract Roles**은 다른 역할을 정의하는 데 사용되는 개념적 역할입니다. 이러한 역할들은 웹 페이지에 직접 사용되지 않으며, 구체적인 역할을 정의하고 이들 간의 관계를 설명하고,        
 웹 접근성을 높이는 데 중요한 역할을 합니다. 올바르게 이해하고 사용하여 웹 콘텐츠의 접근성을 개선할 수 있습니다.
+[W3C ARIA Abstract Roles](https://www.w3.org/TR/wai-aria-1.2/#abstract_roles){: target="_blank"}   
 
 ### **1. command (명령 역할)**    
 사용자 명령을 나타내는 역할의 상위 개념입니다. 이 역할을 통해 사용자가 상호작용할 수 있는 다양한 UI 요소를 정의합니다. command 역할 자체는 직접 사용되지 않으며, button, link, menuitem 등의 구체적인 역할이 이 역할에서 파생됩니다.   

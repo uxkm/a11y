@@ -48,7 +48,7 @@
   * ##### [Document Structure - 작업 중](08-a11yWaiAria/roles-document.md)   
   * ##### [Landmark Roles - 작업 중](08-a11yWaiAria/roles-landmark.md)   
   * ##### [Live Region Roles - 작업 중](08-a11yWaiAria/attrs-liveregions.md)   
-  * ##### [Window Roles - 작업 중](08-a11yWaiAria/roles-window.md)   
+  * ##### [Window Roles](08-a11yWaiAria/roles-window.md)   
 - #### 8.3. [WAI-ARIA 상태 및 속성 - 작업 중](08-a11yWaiAria/attrs-widgets.md) 
   * ##### [Widget Attributes](08-a11yWaiAria/attrs-widgets.md)  
   * ##### [Live Region Attributes](08-a11yWaiAria/attrs-liveregions.md)  

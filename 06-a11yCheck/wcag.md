@@ -14,7 +14,7 @@ kwcag 2.1 원칙을 구현하기 위해 13개의 지침을 따라야 하고, 각
 
 #### 5.1.1. (적절한 대체 텍스트 제공) 텍스트 아닌 콘텐츠는 그 의미나 용도를 인식할 수 있도록 대체 텍스트를 제공해야 한다.
 > 모든 이미지에는 대체 텍스트를 제공하여야 합니다. 이는 시각 장애인 사용자가 스크린 리더를 통해 이미지의 내용을 이해할 수 있도록 제공한다.   
-WCAG 2.2 Guidelines : [1.1 Text Alternatives](https://www.w3.org/TR/WCAG21/#text-alternatives){: target="_blank"}   
+WCAG 2.2 Guidelines : [1.1 Text Alternatives](https://www.w3.org/TR/WCAG22/#text-alternatives){: target="_blank"}   
 
 <figure aria-hidden="true" style="text-align:center">
    <img src="https://uxkm.io/_assets/images/created_by02_gray.jpg" alt="마이크 앞에서 노래를 부르는 소년">
@@ -32,7 +32,7 @@ WCAG 2.2 Guidelines : [1.1 Text Alternatives](https://www.w3.org/TR/WCAG21/#text
 
 #### 5.2.1. (자막 제공) 멀티미디어 콘텐츠에는 자막, 대본 또는 수어를 제공해야 한다.
 > 동영상 및 오디오 콘텐츠에는 자막, 대체 텍스트, 오디오 설명 등을 제공해야 한다.   
-WCAG 2.2 Guidelines : [1.2 Time-based Media](https://www.w3.org/TR/WCAG21/#time-based-media){: target="_blank"}   
+WCAG 2.2 Guidelines : [1.2 Time-based Media](https://www.w3.org/TR/WCAG22/#time-based-media){: target="_blank"}   
 
 <video src="https://www.w3.org/WAI/content-assets/wcag-act-rules/test-assets/perspective-video/perspective-video.mp4" controls style="width:100%">
     <track src="https://www.w3.org/WAI/content-assets/wcag-act-rules/test-assets/perspective-video/perspective-caption.vtt" kind="captions" />
@@ -47,7 +47,6 @@ WCAG 2.2 Guidelines : [1.2 Time-based Media](https://www.w3.org/TR/WCAG21/#time-
 <video src="/test-assets/perspective-video/perspective-video.mp4" controls>
     <track src="/test-assets/perspective-video/perspective-caption.vtt" kind="captions" />
 </video>
-```
 
 **검수 방법**
 - 비디오 플레이어에서 자막이 정상적으로 표시되는가?    

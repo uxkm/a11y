@@ -1,31 +1,54 @@
 # WAI-ARIA 역할
 
-## Widget Roles (위젯 역할)
-> **Widget Roles**은 다른 역할을 정의하는 데 사용되는 개념적 역할입니다. 이러한 역할들은 웹 페이지에 직접 사용되지 않으며, 구체적인 역할을 정의하고 이들 간의 관계를 설명하고,        
-웹 접근성을 높이는 데 중요한 역할을 합니다. 올바르게 이해하고 사용하여 웹 콘텐츠의 접근성을 개선할 수 있습니다.
+## Live Region Roles (라이브 영역 역할)
+> **Live Region Roles**는 웹 페이지에서 콘텐츠가 동적으로 변경될 때, 보조 기술이 이를 즉시 사용자에게 알리도록 도와주는 ARIA 역할입니다. 이러한 역할들은 사용자에게 실시간으로 중요한 업데이트나 변화가 발생했음을 알리는 데 사용되며, 페이지 새로 고침 없이도 정보를 실시간으로 전달할 수 있습니다.   
+[W3C ARIA Live Region Roles](https://www.w3.org/TR/wai-aria-1.2/#live_region_roles){: target="_blank"}   
+
 
 ### **1. button (버튼 역할)**    
-사용자 명령을 나타내는 역할의 상위 개념입니다. 이 역할을 통해 사용자가 상호작용할 수 있는 다양한 UI 요소를 정의합니다. command 역할 자체는 직접 사용되지 않으며, button, link, menuitem 등의 구체적인 역할이 이 역할에서 파생됩니다.   
-[W3C ARIA command](https://www.w3.org/TR/wai-aria-1.2/#command){: target="_blank"}   
-[MDN ARIA command](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/command_role){: target="_blank"}   
+사용자가 클릭하여 특정 동작을 수행할 수 있는 UI 요소입니다.   
+button 역할은 웹 페이지에서 다양한 형태로 사용될 수 있으며, 각 상황에 맞게 구현 방식이 다를 수 있습니다. 중요한 것은 각 버튼의 역할을 명확히 하여 접근성을 보장하고, aria 속성을 사용하여 보조 기술이 버튼의 상태와 기능을 올바르게 이해할 수 있도록 돕는 것입니다.   
+아래에 여러 가지 button 역할의 상세 예시를 제공합니다.   
+[W3C ARIA button](https://www.w3.org/TR/wai-aria-1.2/#button){: target="_blank"}   
+[MDN ARIA button](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/button_role){: target="_blank"}   
 
-```sh
-// 잘못된 예시 - 'command'는 직접 사용되지 않음
-<div role="command">Click me</div>
+**기본 설명**  
+- button 역할은 사용자가 클릭하여 특정 작업을 수행할 수 있는 요소를 정의합니다.    
+- HTML의 &lt;button&gt; 요소는 기본적으로 button 역할을 가지며, 접근성 및 사용자 경험 측면에서 매우 중요합니다.    
+- 버튼은 텍스트, 이미지, 또는 다른 콘텐츠를 포함할 수 있으며, 보조 기술에서 이 버튼의 기능을 인식할 수 있도록 접근성 속성을 설정할 수 있습니다.    
 
-// 올바른 예시 - button은 command에서 파생된 역할
-<div role="button">Click me</div> 
-
-// (권장)시맨틱 마크업과의 비교 - HTML5의 시맨틱 요소를 사용하여 button 역할을 암시적으로 정의
-<button type="button">Click me</button>
-```
 **사용 시 주의사항**   
-- command는 직접 사용되지 않으며, 이를 상속하는 구체적인 역할(button, link 등)을 사용해야 합니다.   
-- 명령 요소는 사용자에게 명확히 전달되도록 aria-label 또는 aria-labelledby 속성을 사용할 수 있습니다.   
+- 버튼을 클릭하거나 키보드를 통해 활성화할 수 있도록, button 역할을 가지는 요소는 tabindex="0"을 사용하여 키보드 접근성을 보장해야 합니다.   
+- button 역할을 명시적으로 설정할 때는, 보조 기술이 이 요소를 버튼으로 인식하도록 해야 합니다.
+- 토글 버튼이나 확장/축소 버튼과 같은 동적인 버튼의 경우, aria-pressed 또는 aria-expanded 속성을 사용하여 상태를 명확히 전달해야 합니다.
+- 비활성화된 버튼은 disabled 속성을 사용하여 보조 기술에 의해 인식되도록 해야 하며, 시각적으로도 비활성화 상태를 명확히 나타내야 합니다.
+- 버튼 내에서 이미지, 아이콘 등을 사용할 경우, 반드시 alt 속성이나 다른 접근성 속성을 통해 버튼의 기능을 설명해야 합니다.
 
 **상속된 상태 및 속성**   
-- aria-disabled: 요소가 비활성화되었는지 여부를 나타냅니다.   
-- aria-expanded: 요소가 확장되었는지 여부를 나타냅니다.    
+- aria-pressed: 버튼의 토글 상태를 나타냅니다. 가능한 값은 true, false, mixed입니다.    
+- aria-expanded: 버튼이 제어하는 콘텐츠의 확장 상태를 나타냅니다. 가능한 값은 true 또는 false입니다.    
+- aria-disabled: 버튼이 비활성화되었는지 여부를 나타냅니다.    
+- aria-labelledby, aria-describedby: 버튼의 레이블과 설명을 참조하는 속성입니다.    
+
+
+**기본 버튼 예시**
+가장 일반적인 버튼으로, 사용자가 클릭하여 특정 동작을 수행할 수 있습니다.    
+```sh
+// 잘못된 예시 - <div> 요소는 본래 버튼 역할을 하지 않으므로, 키보드 접근성이 부족할 수 있습니다. 이 경우 tabindex와 aria-pressed 같은 추가적인 속성이 필요/
+<div role="button">저장</div>
+
+// 올바른 예시
+<div role="button" tabindex="0" aria-pressed="false">저장</div>
+
+// (권장)시멘틱 요소 예시
+<button type="button">저장</button>
+```
+
+**링크로 구현된 버튼 예시**
+&lt;a&gt; 태그를 버튼처럼 스타일링하여 사용한 예시입니다. role="button"을 추가하여 보조 기술이 이를 버튼으로 인식하게 했습니다. 이와 함께, 키보드 탐색을 위한 tabindex와 클릭 이벤트 핸들러를 추가해야 합니다.    
+```sh
+<a href="submit-form" role="button" class="btn">Submit</a>
+```
 
 다음 역할은 라이브 지역이며 라이브 지역 특성에 의해 수정될 수 있습니다.
 

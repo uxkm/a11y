@@ -3,6 +3,7 @@
 ## Widget Roles (위젯 역할)
 > **Widget Roles**은 다른 역할을 정의하는 데 사용되는 개념적 역할입니다. 이러한 역할들은 웹 페이지에 직접 사용되지 않으며, 구체적인 역할을 정의하고 이들 간의 관계를 설명합니다.        
 웹 접근성을 높이는 데 중요한 역할을 하며, 올바르게 이해하고 사용하여 웹 콘텐츠의 접근성을 개선할 수 있습니다.
+[W3C ARIA Widget Roles](https://www.w3.org/TR/wai-aria-1.2/#widget_roles){: target="_blank"}   
 
 Widget Roles은 다음과 같이 구분하여 사용되고 있습니다.
 1. 독립형(Standalone) Widget Roles    
