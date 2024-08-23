@@ -9,6 +9,7 @@
 banner 역할은 기본적으로 시멘틱 마크업 사용을 권장하며 웹 페이지의 상단에 위치하는 주목할 만한 영역을 나타냅니다. 이 역할은 일반적으로 웹사이트의 로고, 제목, 주요 탐색 링크 등을 포함하는 페이지의 헤더 부분에 사용됩니다. banner 역할은 사이트 전체에 걸쳐 일관되게 반복되는 콘텐츠를 나타내며, 사용자가 페이지의 주요 제목과 탐색 메뉴를 쉽게 찾을 수 있도록 돕습니다.   
 [W3C ARIA banner](https://www.w3.org/TR/wai-aria-1.2/#banner){: target="_blank"}   
 [MDN ARIA banner](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/banner_role){: target="_blank"}   
+[UXKM : header element](https://uxkm.io/publishing/html/03-sections/01-header_element#gsc.tab=0){: target="_blank"}   
 
 **기본 설명**  
 - banner 역할은 웹 페이지의 상단에 있는 중요한 영역을 정의하는 데 사용됩니다. 가능하면 시멘틱 마크업인 &lt;header&gt;를 사용하는 것이 좋으며, 특정 상황에서만 비시멘틱 요소에 role="banner"를 추가하여 사용할 수 있습니다.    
@@ -77,6 +78,7 @@ banner 역할은 기본적으로 시멘틱 마크업 사용을 권장하며 웹 
 complementary 역할은 웹 페이지에서 주 콘텐츠와 직접적인 연관은 없지만, 부가적인 정보를 제공하는 콘텐츠 영역을 나타냅니다. 이 역할은 주로 페이지의 주요 콘텐츠와는 독립적으로 보조적인 정보를 제공하는 경우에 사용되며, 보조 기술이 이러한 정보를 주요 콘텐츠와 구분하여 인식할 수 있도록 도와줍니다.   
 [W3C ARIA complementary](https://www.w3.org/TR/wai-aria-1.2/#complementary){: target="_blank"}   
 [MDN ARIA complementary](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/complementary_role){: target="_blank"}   
+[UXKM : aside element](https://uxkm.io/publishing/html/03-sections/07-aside_element#gsc.tab=0){: target="_blank"}   
 
 **기본 설명**  
 - complementary 역할은 주 콘텐츠와는 독립적으로 작동하는 보조적인 정보를 제공하는 데 사용됩니다. 이 역할을 사용할 때는 페이지의 주요 콘텐츠와 명확하게 구분되도록 설계해야 하며, 페이지에 하나 이상 존재할 수 있습니다.    
@@ -131,6 +133,7 @@ complementary 역할은 웹 페이지에서 주 콘텐츠와 직접적인 연관
 contentinfo 역할은 웹 페이지나 애플리케이션의 바닥글 영역을 나타내는 데 사용됩니다. 이 영역은 일반적으로 저작권 정보, 법적 고지, 사이트 맵 링크, 연락처 정보 등을 포함하며, 페이지의 주요 콘텐츠와는 독립적으로 페이지의 전반적인 정보와 관련된 내용을 제공합니다.   
 [W3C ARIA contentinfo](https://www.w3.org/TR/wai-aria-1.2/#contentinfo){: target="_blank"}   
 [MDN ARIA contentinfo](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/contentinfo_role){: target="_blank"}   
+[UXKM : footer element](https://uxkm.io/publishing/html/03-sections/06-footer_element#gsc.tab=0){: target="_blank"}   
 
 **기본 설명**  
 - contentinfo 역할은 웹 페이지나 섹션의 바닥글 영역을 정의하는 데 사용됩니다. 이 역할을 사용할 때는 페이지의 주요 콘텐츠와는 독립적인 바닥글 정보만을 포함해야 합니다.    
@@ -178,6 +181,7 @@ contentinfo 역할은 웹 페이지나 애플리케이션의 바닥글 영역을
 form 역할은 사용자가 데이터를 입력하고 이를 서버로 제출할 수 있는 인터페이스를 나타냅니다. 이 역할은 HTML 폼 요소와 함께 사용되며, 보조 기술이 사용자가 데이터를 입력하고 전송할 수 있는 영역을 명확하게 인식하도록 도와줍니다. 기본적으로 HTML &lt;form&gt; 요소는 자동으로 form 역할을 가집니다.   
 [W3C ARIA form](https://www.w3.org/TR/wai-aria-1.2/#form){: target="_blank"}   
 [MDN ARIA form](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/form_role){: target="_blank"}   
+[UXKM : form element](https://uxkm.io/publishing/html/09-forms/01-form_element#gsc.tab=0){: target="_blank"}   
 
 **기본 설명**  
 - form 역할은 사용자 데이터 입력 및 제출을 위한 인터페이스를 나타내며, 일반적으로 &lt;form&gt; 요소에 암시적으로 적용됩니다. 그러나 필요에 따라 비시멘틱 요소에 폼 역할을 부여할 때 role="form"을 사용할 수 있습니다.    
@@ -235,6 +239,7 @@ form 역할은 사용자가 데이터를 입력하고 이를 서버로 제출할
 main 역할은 웹 페이지에서 주요 콘텐츠 영역을 나타냅니다. 이 역할은 페이지의 핵심 콘텐츠를 포함하며, 보조 기술이 이 영역을 페이지의 주요 부분으로 인식하도록 도와줍니다. main 역할은 페이지 내에서 유일해야 하며, 보조 기술이 사용자가 이 영역으로 빠르게 접근할 수 있도록 지원합니다.   
 [W3C ARIA main](https://www.w3.org/TR/wai-aria-1.2/#main){: target="_blank"}   
 [MDN ARIA main](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/main_role){: target="_blank"}   
+[UXKM : main element](https://uxkm.io/publishing/html/04-grouping/01-main_element#gsc.tab=0){: target="_blank"}   
 
 **기본 설명**  
 - main 역할은 웹 페이지의 주요 콘텐츠를 나타내며, 페이지 내에서 유일하게 사용됩니다. 이 역할을 사용할 때는 보조적인 콘텐츠와 명확히 구분하여 페이지의 핵심 정보를 제공하는 데 집중해야 합니다.    
@@ -287,6 +292,7 @@ main 역할은 웹 페이지에서 주요 콘텐츠 영역을 나타냅니다. �
 navigation 역할은 웹 페이지에서 탐색 링크 모음을 나타냅니다. 이 역할은 사용자가 사이트의 다른 페이지나 섹션으로 이동할 수 있도록 돕는 주요 탐색 메뉴에 적용됩니다. 보조 기술은 navigation 역할을 통해 이 영역이 탐색 목적으로 사용된다는 것을 인식하여, 사용자가 사이트의 구조를 쉽게 파악하고 탐색할 수 있도록 도와줍니다.   
 [W3C ARIA navigation](https://www.w3.org/TR/wai-aria-1.2/#navigation){: target="_blank"}   
 [MDN ARIA navigation](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/navigation_role){: target="_blank"}   
+[UXKM : nav element](https://uxkm.io/publishing/html/03-sections/04-nav_element#gsc.tab=0){: target="_blank"}   
 
 **기본 설명**  
 - navigation 역할은 웹 페이지에서 사용자가 사이트를 탐색할 수 있도록 돕는 중요한 역할을 합니다. 이 역할을 사용할 때는 탐색 링크가 명확히 그룹화되도록 하며, 보조 기술이 이 영역을 탐색 메뉴로 인식하게 해야 합니다.    
@@ -344,6 +350,9 @@ navigation 역할은 웹 페이지에서 탐색 링크 모음을 나타냅니다
 region 역할은 웹 페이지의 특정 콘텐츠 영역을 나타내며, 이 영역이 사용자에게 중요한 정보나 기능을 제공한다는 것을 보조 기술에 알립니다. region 역할은 보통 aria-labelledby 속성과 함께 사용되어, 이 영역에 대한 명확한 레이블을 제공하고, 사용자가 쉽게 이 영역을 탐색하고 이해할 수 있도록 합니다.   
 [W3C ARIA region](https://www.w3.org/TR/wai-aria-1.2/#region){: target="_blank"}   
 [MDN ARIA region](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/region_role){: target="_blank"}   
+[UXKM : main element](https://uxkm.io/publishing/html/04-grouping/01-main_element#gsc.tab=0){: target="_blank"}   
+[UXKM : section element](https://uxkm.io/publishing/html/03-sections/03-section_element#gsc.tab=0){: target="_blank"}   
+[UXKM : aside element](https://uxkm.io/publishing/html/03-sections/07-aside_element#gsc.tab=0){: target="_blank"}   
 
 **기본 설명**  
 - region 역할은 웹 페이지에서 중요한 콘텐츠 영역을 지정하는 데 사용됩니다. 이 역할은 보조 기술이 해당 영역을 강조하고, 사용자가 이 영역에 빠르게 접근할 수 있도록 돕습니다.    
@@ -400,6 +409,7 @@ region 역할은 웹 페이지의 특정 콘텐츠 영역을 나타내며, 이 �
 search 역할은 웹 페이지에서 검색 기능을 제공하는 영역을 나타냅니다. 이 역할은 사용자가 사이트나 애플리케이션 내에서 특정 정보를 검색할 수 있는 기능을 명확하게 지정합니다. 보조 기술은 search 역할을 통해 이 영역이 검색 목적을 가진다는 것을 인식하고, 사용자에게 이를 알립니다.   
 [W3C ARIA search](https://www.w3.org/TR/wai-aria-1.2/#search){: target="_blank"}   
 [MDN ARIA search](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/search_role){: target="_blank"}   
+[UXKM : input="search" element](https://uxkm.io/publishing/html/09-forms/03-input_element_part1#gsc.tab=0){: target="_blank"}   
 
 **기본 설명**  
 - search 역할은 웹 페이지에서 검색 기능을 제공하는 영역을 나타냅니다. 이 역할을 사용할 때는 검색 기능이 포함된 UI 요소에만 적용해야 하며, 검색 영역이 명확히 레이블링되도록 설정해야 합니다.    
@@ -450,7 +460,7 @@ search 역할은 웹 페이지에서 검색 기능을 제공하는 영역을 나
 ```
 
 **(권장) HTML5 시멘틱 마크업 사용 예시**
-이 예시는 시멘틱 요소인 <form>과 <input type="search">를 사용하여 검색 기능을 정의한 것입니다. HTML5 시멘틱 마크업은 기본적으로 검색 역할을 수행하므로, 추가적인 ARIA 속성이 필요하지 않습니다.    
+이 예시는 시멘틱 요소인 &lt;form&gt;과 &lt;input type="search"&gt;를 사용하여 검색 기능을 정의한 것입니다. HTML5 시멘틱 마크업은 기본적으로 검색 역할을 수행하므로, 추가적인 ARIA 속성이 필요하지 않습니다.    
 ```sh
 <form>
   <label for="search">Search:</label>
