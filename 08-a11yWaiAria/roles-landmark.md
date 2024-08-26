@@ -1,4 +1,6 @@
 # WAI-ARIA 역할
+> WAI-ARIA (Web Accessibility Initiative - Accessible Rich Internet Applications) 역할(Role)은 웹 콘텐츠와 웹 애플리케이션의 접근성을 향상시키기 위해 사용되는 속성입니다. 이 속성들은 특히 스크린 리더와 같은 보조 기술이 웹 페이지의 구조와 기능을 더 잘 이해하도록 도와줍니다. WAI-ARIA 역할은 HTML 요소에 추가되어 보조 기술이 사용자 인터페이스의 목적과 행동을 더 명확하게 이해할 수 있게 합니다.   
+주요 WAI-ARIA 역할은 Abstract Roles, Widget Roles, Document Structure Roles, Landmark Roles, Live Region Roles, Window Roles로 정의할 수 있습니다.   
 
 ## Landmark Roles (랜드마크 역할)
 > **Landmark Roles**는 웹 페이지에서 주요 영역을 식별하고 쉽게 탐색할 수 있도록 도와주는 ARIA 역할입니다. 이 역할들은 페이지의 중요한 섹션을 구분하여 보조 기술을 사용하는 사용자들이 빠르게 페이지의 주요 콘텐츠로 이동할 수 있도록 합니다. 이러한 역할들은 웹 페이지의 구조를 정의하고, 페이지 내에서 중요한 영역을 강조하는 데 사용됩니다.   

@@ -1,4 +1,6 @@
 # WAI-ARIA 역할
+> WAI-ARIA (Web Accessibility Initiative - Accessible Rich Internet Applications) 역할(Role)은 웹 콘텐츠와 웹 애플리케이션의 접근성을 향상시키기 위해 사용되는 속성입니다. 이 속성들은 특히 스크린 리더와 같은 보조 기술이 웹 페이지의 구조와 기능을 더 잘 이해하도록 도와줍니다. WAI-ARIA 역할은 HTML 요소에 추가되어 보조 기술이 사용자 인터페이스의 목적과 행동을 더 명확하게 이해할 수 있게 합니다.   
+주요 WAI-ARIA 역할은 Abstract Roles, Widget Roles, Document Structure Roles, Landmark Roles, Live Region Roles, Window Roles로 정의할 수 있습니다.   
 
 ## Live Region Roles (라이브 영역 역할)
 > **Live Region Roles**는 웹 페이지에서 콘텐츠가 동적으로 변경될 때, 보조 기술이 이를 즉시 사용자에게 알리도록 도와주는 ARIA 역할입니다. 이러한 역할들은 사용자에게 실시간으로 중요한 업데이트나 변화가 발생했음을 알리는 데 사용되며, 페이지 새로 고침 없이도 정보를 실시간으로 전달할 수 있습니다.   
