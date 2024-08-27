@@ -86,70 +86,7 @@ aria-labelledby 속성은 WAI-ARIA(Accessible Rich Internet Applications)에서 
 </div>
 ```
 
-### **2. aria-labelledby (property)**    
-aria-labelledby 속성은 WAI-ARIA(Accessible Rich Internet Applications)에서 제공하는 속성으로, 특정 요소의 레이블(제목)을 다른 요소를 통해 정의할 때 사용됩니다. 이 속성은 보조 기술(예: 스크린 리더)이 요소와 연관된 레이블을 사용자에게 명확하게 전달할 수 있도록 도와줍니다. aria-labelledby 속성은 aria-label 속성과 유사하지만, aria-label이 직접적으로 레이블 텍스트를 제공하는 반면, aria-labelledby는 다른 요소의 콘텐츠를 레이블로 참조합니다.     
-[WAI-ARIA 1.2 Specification (aria-labelledby)](https://www.w3.org/TR/wai-aria-1.2/#aria-labelledby){: target="_blank"}   
-[MDN Web Docs (aria-labelledby)](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-labelledby){: target="_blank"}   
-
-
-**aria-labelledby 속성 값**  
-- aria-labelledby의 값은 레이블로 사용할 요소의 id입니다. 하나 이상의 요소를 공백으로 구분하여 나열할 수 있습니다.   
-
-
-**연관된 Tag 및 역할**   
-- **연관된 태그**: input, textarea, button, div, section 등 거의 모든 HTML 요소에서 사용 가능합니다.   
-- **연관된 역할**: textbox, button, img, link 등 다양한 역할과 함께 사용됩니다.    
-
-**사용 시 주의사항**   
-- **정확한 참조**: aria-labelledby 속성의 값으로 참조되는 ID는 문서 내에서 고유해야 하며, 실제로 존재하는 요소를 가리켜야 합니다.   
-- **문맥에 맞는 레이블**: 참조된 요소의 텍스트는 해당 요소가 설명하려는 대상과 관련성이 있어야 합니다.   
-- **보완적 사용**: aria-describedby와 함께 사용하면, 요소의 제목과 추가 설명을 모두 보조 기술에 전달할 수 있습니다.   
-
-   
-**폼 필드에서의 사용 예시**      
-이 예시에서는 input 요소가 aria-labelledby 속성을 통해 label 요소(username-label ID가 있는 요소)를 참조합니다. 보조 기술은 input 필드의 레이블로 "사용자 이름"을 사용자에게 전달합니다.      
-```sh
-<label id="username-label" for="username">사용자 이름:</label>
-<input type="text" id="username" aria-labelledby="username-label">
-```
-
-**그룹화된 요소에서의 사용 예시**      
-이 예시에서는 input 필드들이 aria-labelledby 속성을 통해 h2 요소(personal-info-title ID가 있는 요소)를 참조하여, 두 필드 모두 "개인 정보"라는 제목을 레이블로 사용합니다.    
-```sh
-<div id="personal-info">
-  <h2 id="personal-info-title">개인 정보</h2>
-  <p>아래에 개인 정보를 입력하세요.</p>
-</div>
-
-<input type="text" id="first-name" aria-labelledby="personal-info-title" placeholder="이름">
-<input type="text" id="last-name" aria-labelledby="personal-info-title" placeholder="성">
-```
-
-**버튼에 대한 설명에서의 사용 예시**      
-이 예시에서는 button 요소가 aria-labelledby 속성을 통해 div 요소(save-desc ID가 있는 요소)를 참조합니다. 보조 기술은 버튼의 텍스트와 함께 추가 설명을 사용자에게 전달합니다.    
-```sh
-<div id="save-desc">현재 페이지에서 작성한 내용을 저장합니다.</div>
-<button id="save-button" aria-labelledby="save-desc">저장</button>
-```
-
-**이미지에 대한 설명에서의 사용 예시**      
-이 예시에서는 div 요소가 role="group"과 함께 사용되며, aria-labelledby 속성을 통해 그룹의 제목을 정의합니다. 보조 기술은 그룹 내의 모든 요소들이 "복합 위젯 제목"이라는 레이블을 공유하고 있음을 전달합니다.    
-```sh
-<img src="example.jpg" alt="자연 경관" id="landscape-img" aria-labelledby="image-desc">
-<div id="image-desc">이 이미지는 저녁 노을이 비치는 산과 호수를 담고 있습니다.</div>
-```
-
-**복합 위젯에서의 사용 예시**      
-이 예시에서는 div 요소가 role="group"과 함께 사용되며, aria-labelledby 속성을 통해 그룹의 제목을 정의합니다. 보조 기술은 그룹 내의 모든 요소들이 "복합 위젯 제목"이라는 레이블을 공유하고 있음을 전달합니다.    
-```sh
-<div id="widget-title">복합 위젯 제목</div>
-<div role="group" aria-labelledby="widget-title">
-  <button>버튼 1</button>
-  <button>버튼 2</button>
-</div>
-```
-
-### **3. aria-controls (property)**    
+### **2. aria-controls (property)**    
 aria-controls 속성은 WAI-ARIA(Accessible Rich Internet Applications)에서 제공하는 속성으로, 특정 요소가 제어하는 다른 요소의 ID를 참조하는 데 사용됩니다. 이 속성은 주로 동적 콘텐츠(예: 탭 패널, 드롭다운 메뉴, 대화 상자 등)에서 사용되며, 보조 기술(예: 스크린 리더) 사용자에게 현재 요소가 어떤 요소를 제어하고 있는지를 알리는 역할을 합니다. 즉, 요소 간의 제어 관계를 명확히 전달할 수 있으며, 이를 통해 보다 접근성 높은 인터랙티브 웹 콘텐츠를 제공할 수 있습니다.     
 [WAI-ARIA 1.2 Specification (aria-controls)](https://www.w3.org/TR/wai-aria-1.2/#aria-controls){: target="_blank"}   
 [MDN Web Docs (aria-controls)](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-controls){: target="_blank"}   
@@ -321,7 +258,7 @@ aria-controls 속성은 WAI-ARIA(Accessible Rich Internet Applications)에서 �
 </script>
 ```
 
-### **4. aria-describedby (property)**    
+### **3. aria-describedby (property)**    
 aria-describedby 속성은 WAI-ARIA(Accessible Rich Internet Applications)에서 제공하는 속성으로, 특정 요소에 대한 추가적인 설명을 제공하는 요소의 ID를 참조하는 데 사용됩니다. 이 속성은 주로 입력 필드, 버튼, 이미지 등에서 추가적인 컨텍스트나 설명을 제공할 때 사용되며, 보조 기술(예: 스크린 리더)이 이 정보를 사용자에게 전달할 수 있도록 돕습니다.     
 [WAI-ARIA 1.2 Specification (aria-describedby)](https://www.w3.org/TR/wai-aria-1.2/#aria-describedby){: target="_blank"}   
 [MDN Web Docs (aria-describedby)](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-describedby){: target="_blank"}   
@@ -373,7 +310,7 @@ aria-describedby 속성은 WAI-ARIA(Accessible Rich Internet Applications)에서
 <div id="alert-desc">각 필드에 올바른 정보를 입력하지 않으면 오류 메시지가 표시됩니다.</div>
 ```
 
-### **5. aria-details (property)**    
+### **4. aria-details (property)**    
 aria-details 속성은 WAI-ARIA(Accessible Rich Internet Applications)에서 제공하는 속성으로, 특정 요소와 관련된 추가적인 세부 정보나 설명을 제공하는 다른 요소의 ID를 참조하는 데 사용됩니다. aria-describedby와 유사하지만, aria-details는 더 구체적이고 복잡한 설명이나 세부 사항을 제공하는 경우에 사용됩니다. 이 속성은 주로 보조 기술(예: 스크린 리더) 사용자에게 추가적인 정보를 제공하기 위해 사용됩니다.     
 [WAI-ARIA 1.2 Specification (aria-details)](https://www.w3.org/TR/wai-aria-1.2/#aria-details){: target="_blank"}   
 [MDN Web Docs (aria-details)](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-details){: target="_blank"}   
@@ -466,7 +403,7 @@ ARIA(Accessible Rich Internet Applications) 속성으로, 웹 콘텐츠의 접�
 </div>
 ```
 
-### **6. aria-errormessage (property)**    
+### **5. aria-errormessage (property)**    
 aria-errormessage 속성은 WAI-ARIA(Accessible Rich Internet Applications)에서 제공하는 속성으로, 사용자 입력에서 오류가 발생했을 때 해당 오류 메시지를 제공하는 요소의 ID를 참조합니다. 이 속성은 주로 폼 필드에서 사용되며, 보조 기술(예: 스크린 리더)을 통해 사용자에게 어떤 오류가 발생했는지 명확하게 전달하는 데 사용됩니다. 사용자가 입력한 데이터가 잘못되었을 때 해당 오류를 명확히 전달하는 데 매우 유용하며, 이를 통해 보조 기술 사용자가 웹 양식에서 발생하는 오류를 보다 쉽게 이해하고 수정할 수 있도록 돕습니다.     
 [WAI-ARIA 1.2 Specification (aria-errormessage)](https://www.w3.org/TR/wai-aria-1.2/#aria-errormessage){: target="_blank"}   
 [MDN Web Docs (aria-errormessage)](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-errormessage){: target="_blank"}   
@@ -601,7 +538,7 @@ aria-errormessage 속성은 WAI-ARIA(Accessible Rich Internet Applications)에�
 </div>
 ```
 
-### **7. aria-activedescendant (property)**    
+### **6. aria-activedescendant (property)**    
 aria-activedescendant 속성은 WAI-ARIA(Accessible Rich Internet Applications)에서 제공하는 속성 중 하나로, 복잡한 위젯 내에서 현재 활성화된(또는 포커스된) 자식 요소를 지정하는 데 사용됩니다. 이 속성은 사용자 입력에 따라 동적으로 선택된 자식 요소를 명시적으로 참조함으로써, 스크린 리더가 현재 활성화된 항목을 올바르게 전달할 수 있도록 돕습니다.   
 [WAI-ARIA 1.2 Specification (aria-activedescendant)](https://www.w3.org/TR/wai-aria-1.2/#aria-activedescendant){: target="_blank"}   
 [MDN Web Docs (aria-activedescendant)](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-activedescendant){: target="_blank"}   
@@ -700,7 +637,7 @@ aria-activedescendant 속성은 WAI-ARIA(Accessible Rich Internet Applications)�
 ```
 
 
-### **8. aria-flowto (property)**    
+### **7. aria-flowto (property)**    
 aria-flowto 속성은 WAI-ARIA(Accessible Rich Internet Applications)에서 제공하는 속성으로, 웹 페이지 내의 요소들이 일반적인 문서 흐름과 다르게 논리적으로 연결되어 있음을 명시할 때 사용됩니다. 이 속성은 사용자가 페이지 내의 요소 간 이동을 할 때 특정 요소에서 다른 요소로 이동하도록 안내하는 데 유용합니다. 주로 복잡한 레이아웃에서 요소 간의 탐색 순서를 제어하거나 명시하고자 할 때 사용됩니다.     
 [WAI-ARIA 1.2 Specification (aria-flowto)](https://www.w3.org/TR/wai-aria-1.2/#aria-flowto){: target="_blank"}   
 [MDN Web Docs (aria-flowto)](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-flowto){: target="_blank"}   
@@ -778,7 +715,7 @@ aria-flowto 속성은 WAI-ARIA(Accessible Rich Internet Applications)에서 제�
 </div>
 ```
 
-### **9. aria-owns (property)**    
+### **8. aria-owns (property)**    
 aria-owns 속성은 WAI-ARIA(Accessible Rich Internet Applications)에서 제공하는 속성으로, DOM(Document Object Model) 트리 내에서 시각적으로나 논리적으로 특정 요소의 자식 요소처럼 보이지만, 실제로는 다른 위치에 있는 요소들을 명시적으로 부모-자식 관계로 설정할 때 사용됩니다. 이 속성은 스크린 리더와 같은 보조 기술이 요소 간의 논리적인 관계를 정확히 이해할 수 있도록 도와줍니다.     
 [WAI-ARIA 1.2 Specification (aria-owns)](https://www.w3.org/TR/wai-aria-1.2/#aria-owns){: target="_blank"}   
 [MDN Web Docs (aria-owns)](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-owns){: target="_blank"}   
@@ -844,7 +781,7 @@ aria-owns 속성은 WAI-ARIA(Accessible Rich Internet Applications)에서 제공
 </div>
 ```
 
-### **10. aria-posinset (property)**    
+### **9. aria-posinset (property)**    
 aria-posinset 속성은 WAI-ARIA(Accessible Rich Internet Applications)에서 제공하는 속성으로, 특정 항목이 세트나 그룹 내에서 몇 번째 위치에 있는지를 나타낼 때 사용됩니다. 이 속성은 일반적으로 aria-setsize와 함께 사용되며, 리스트, 트리, 그리드 등에서 항목의 순서를 명확하게 정의하기 위해 사용됩니다. 이 속성은 스크린 리더와 같은 보조 기술이 그룹 내 항목의 위치를 사용자에게 정확하게 전달할 수 있도록 도와줍니다.     
 [WAI-ARIA 1.2 Specification (aria-posinset)](https://www.w3.org/TR/wai-aria-1.2/#aria-posinset){: target="_blank"}   
 [MDN Web Docs (aria-posinset)](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-posinset){: target="_blank"}   
@@ -899,7 +836,7 @@ aria-posinset 속성은 WAI-ARIA(Accessible Rich Internet Applications)에서 �
 </select>
 ```
 
-### **11. aria-setsize (property)**    
+### **10. aria-setsize (property)**    
 aria-setsize 속성은 WAI-ARIA(Accessible Rich Internet Applications)에서 제공하는 속성으로, 특정 그룹이나 세트(set) 내에 포함된 항목의 총 개수를 명시하는 데 사용됩니다. 이 속성은 주로 리스트 항목, 트리 항목, 그리드 항목 등에서 사용되며, 보조 기술(예: 스크린 리더)이 사용자에게 현재 항목이 속한 세트의 크기를 전달할 수 있도록 도와줍니다. aria-setsize 속성은 aria-posinset 속성과 함께 사용하여 세트 내 항목의 순서와 전체 크기를 명확하게 나타냅니다.     
 [WAI-ARIA 1.2 Specification (aria-setsize)](https://www.w3.org/TR/wai-aria-1.2/#aria-setsize){: target="_blank"}   
 [MDN Web Docs (aria-setsize)](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-setsize){: target="_blank"}   
@@ -967,7 +904,7 @@ aria-setsize 속성은 WAI-ARIA(Accessible Rich Internet Applications)에서 제
 ```
 
 
-### **12. aria-colcount (property)**    
+### **11. aria-colcount (property)**    
 aria-colcount 속성은 WAI-ARIA(Accessible Rich Internet Applications)에서 정의된 속성 중 하나로, 그리드나 테이블 구조에서 총 열(column)의 수를 명시적으로 설정하는 데 사용됩니다. 이 속성은 특히 그리드나 테이블이 동적으로 생성되거나 페이지에서 일부 열만 보이는 경우(동적인 그리드나 테이블의 열 수를 명확히 정의)에 유용합니다. aria-colcount는 스크린 리더와 같은 보조 기술이 전체 테이블 구조를 올바르게 이해하고 사용자에게 전달할 수 있도록 돕습니다.     
 [WAI-ARIA 1.2 Specification (aria-colcount)](https://www.w3.org/TR/wai-aria-1.2/#aria-colcount){: target="_blank"}   
 [MDN Web Docs (aria-colcount)](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-colcount){: target="_blank"}   
@@ -1060,7 +997,7 @@ aria-colcount 속성은 WAI-ARIA(Accessible Rich Internet Applications)에서 �
 </div>
 ```
 
-### **13. aria-colindex (property)**    
+### **12. aria-colindex (property)**    
 aria-colindex 속성은 WAI-ARIA(Accessible Rich Internet Applications)에서 제공하는 속성으로, 그리드 또는 테이블 구조에서 특정 셀(gridcell 또는 cell)이 어느 열에 위치하는지를 명시적으로 지정합니다. 이 속성은 스크린 리더와 같은 보조 기술이 현재 셀의 위치를 정확하게 파악하고 사용자에게 전달할 수 있도록 돕습니다.     
 [WAI-ARIA 1.2 Specification (aria-colindex)](https://www.w3.org/TR/wai-aria-1.2/#aria-colindex){: target="_blank"}   
 [MDN Web Docs (aria-colindex)](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-colindex){: target="_blank"}   
@@ -1147,7 +1084,7 @@ aria-colindex 속성은 WAI-ARIA(Accessible Rich Internet Applications)에서 �
 </div>
 ```
 
-### **14. aria-colspan (property)**    
+### **13. aria-colspan (property)**    
 aria-colspan 속성은 WAI-ARIA(Accessible Rich Internet Applications)에서 제공하는 속성으로, 테이블 또는 그리드 구조에서 특정 셀이 몇 개의 열을 차지하는지를 명시적으로 지정하는 데 사용됩니다. 이 속성은 HTML의 colspan 속성과 유사한 역할을 하며, 스크린 리더와 같은 보조 기술이 셀의 레이아웃을 정확하게 이해하고 사용자에게 전달할 수 있도록 돕습니다.     
 [WAI-ARIA 1.2 Specification (aria-colspan)](https://www.w3.org/TR/wai-aria-1.2/#aria-colspan){: target="_blank"}   
 [MDN Web Docs (aria-colspan)](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-colspan){: target="_blank"}   
@@ -1232,7 +1169,7 @@ aria-colspan 속성과 관련된 역할 및 접근성 문제를 고려할 때, �
 </div>
 ```
 
-### **15. aria-rowcount (property)**    
+### **14. aria-rowcount (property)**    
 aria-rowcount 속성은 WAI-ARIA(Accessible Rich Internet Applications)에서 제공하는 속성으로, 테이블, 그리드 또는 트리 구조에서 전체 행(row)의 총 수를 명시하는 데 사용됩니다. 이 속성은 스크린 리더와 같은 보조 기술이 테이블이나 그리드의 전체 크기를 이해하고, 사용자에게 현재 탐색 중인 항목이 전체 행 중 몇 번째에 위치하는지를 더 잘 전달할 수 있도록 돕습니다.     
 [WAI-ARIA 1.2 Specification (aria-rowcount)](https://www.w3.org/TR/wai-aria-1.2/#aria-rowcount){: target="_blank"}   
 [MDN Web Docs (aria-rowcount)](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-rowcount){: target="_blank"}   
@@ -1315,7 +1252,7 @@ aria-rowcount 속성은 WAI-ARIA(Accessible Rich Internet Applications)에서 �
 </div>
 ```
 
-### **16. aria-rowindex (property)**    
+### **15. aria-rowindex (property)**    
 aria-rowindex 속성은 WAI-ARIA(Accessible Rich Internet Applications)에서 제공하는 속성으로, 테이블이나 그리드에서 특정 행(row)의 위치를 명시하는 데 사용됩니다. 이 속성은 스크린 리더와 같은 보조 기술이 테이블 구조를 정확하게 이해하고, 현재 행이 전체 테이블이나 그리드 내에서 몇 번째에 위치하는지를 사용자에게 전달할 수 있도록 돕습니다.     
 [WAI-ARIA 1.2 Specification (aria-rowindex)](https://www.w3.org/TR/wai-aria-1.2/#aria-rowindex){: target="_blank"}   
 [MDN Web Docs (aria-rowindex)](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-rowindex){: target="_blank"}   
@@ -1398,7 +1335,7 @@ aria-rowindex 속성은 WAI-ARIA(Accessible Rich Internet Applications)에서 �
 </div>
 ```
 
-### **17. aria-rowspan (property)**    
+### **16. aria-rowspan (property)**    
 aria-rowspan 속성은 WAI-ARIA(Accessible Rich Internet Applications)에서 제공하는 속성으로, 테이블 또는 그리드 구조에서 특정 셀이 여러 행(row)에 걸쳐 있음을 명시적으로 정의하는 데 사용됩니다. 이 속성은 HTML의 rowspan 속성과 유사하며, 스크린 리더와 같은 보조 기술이 테이블의 구조를 정확하게 이해하고 사용자에게 전달할 수 있도록 돕습니다.     
 [WAI-ARIA 1.2 Specification (aria-rowspan)](https://www.w3.org/TR/wai-aria-1.2/#aria-rowspan){: target="_blank"}   
 [MDN Web Docs (aria-rowspan)](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-rowspan){: target="_blank"}   
