@@ -35,7 +35,7 @@
 
 ### 7. [접근성 콘텐츠 제작 기법](07-a11yDevelop/wcag.md)   
 - #### 7.1. [웹 콘텐츠 접근성 - 맨 마지막에 작업 예정](07-a11yDevelop/wcag.md)   
-- #### 7.2. [모바일 앱 접근성 - 맨 마지막에 작업 예정](07-a11yDevelop/macag.md)   
+- #### 7.2. [모바일 앱 접근성 - 진행중](07-a11yDevelop/macag.md)   
 - #### 7.3. [무인정보단말기 접근성](07-a11yDevelop/kiosk.md)  
 
 ### 8. [WAI-ARIA](08-a11yWaiAria/wai-aria.md)  
@@ -49,7 +49,7 @@
   * ##### [Landmark Roles](08-a11yWaiAria/roles-landmark.md)   
   * ##### [Live Region Roles](08-a11yWaiAria/attrs-liveregions.md)   
   * ##### [Window Roles](08-a11yWaiAria/roles-window.md)   
-- #### 8.3. [WAI-ARIA 상태 및 속성 - 작업 중](08-a11yWaiAria/attrs-widgets.md) 
+- #### 8.3. [WAI-ARIA 상태 및 속성](08-a11yWaiAria/attrs-widgets.md) 
   * ##### [Widget Attributes](08-a11yWaiAria/attrs-widgets.md)  
   * ##### [Live Region Attributes](08-a11yWaiAria/attrs-liveregions.md)  
   * ##### [Drag-and-Drop Attributes](08-a11yWaiAria/attrs-dragdrop.md)  

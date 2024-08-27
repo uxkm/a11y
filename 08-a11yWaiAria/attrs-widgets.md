@@ -32,26 +32,26 @@ aria-autocomplete 속성은 사용자가 입력한 값에 따라 시스템이 �
 - **키보드 접근성**: 자동 완성 제안을 키보드로 쉽게 탐색할 수 있도록 키보드 접근성을 고려해야 합니다.    
 
 
-**잘못된 예시**
+**잘못된 예시**         
 aria-autocomplete의 값으로 유효하지 않은 invalid-value가 사용되었습니다. 속성 값은 none, inline, list, both 중 하나여야 합니다.    
 ```sh
 <input type="text" aria-autocomplete="invalid-value" aria-controls="suggestions">
 <div id="suggestions"></div>
 ```
 
-**속성값 none 활용 예시**
+**속성값 none 활용 예시**         
 이 예시는 자동 완성 기능이 없는 입력 필드를 나타냅니다. aria-autocomplete="none"을 사용하여 사용자에게 자동 완성이 없음을 명확히 알립니다.    
 ```sh
 <input type="text" aria-autocomplete="none" placeholder="Enter text here">
 ```
 
-**속성값 inline 활용 예시**
+**속성값 inline 활용 예시**         
 aria-autocomplete="inline"은 사용자가 입력하는 동안 자동 완성된 텍스트가 입력 필드에 바로 채워지는 경우를 나타냅니다. 사용자는 즉시 입력된 내용을 볼 수 있습니다.    
 ```sh
 <input type="text" aria-autocomplete="inline" placeholder="Search here" aria-haspopup="true" aria-expanded="false">
 ```
 
-**속성값 list 활용 예시**
+**속성값 list 활용 예시**         
 aria-autocomplete="list"는 사용자가 입력하는 동안 자동 완성 제안 목록이 표시됨을 나타냅니다. 사용자는 목록에서 제안을 선택할 수 있으며, aria-controls 속성으로 해당 제안 목록과의 관계를 정의합니다.    
 ```sh
 <input type="text" aria-autocomplete="list" aria-controls="suggestions" aria-haspopup="true" aria-expanded="false">
@@ -62,7 +62,7 @@ aria-autocomplete="list"는 사용자가 입력하는 동안 자동 완성 제�
 </div>
 ```
 
-**속성값 both 활용 예시**
+**속성값 both 활용 예시**         
 aria-autocomplete="both"를 사용하여 사용자가 입력하는 동안 자동 완성 제안이 나타나고, 동시에 입력 필드에 자동 완성된 텍스트가 채워집니다. aria-activedescendant 속성을 사용해 현재 활성화된 제안을 명확히 나타내고, aria-label을 통해 보조 기술이 제안 목록의 역할을 이해할 수 있도록 합니다.    
 ```sh
 <input type="text" aria-autocomplete="both" aria-controls="suggestions" aria-haspopup="true" aria-expanded="false" aria-activedescendant="suggestion1">
@@ -73,7 +73,7 @@ aria-autocomplete="both"를 사용하여 사용자가 입력하는 동안 자동
 </div>
 ```
 
-**부가 활용 예시**
+**부가 활용 예시**         
 이 예시에서는 사용자가 도시 이름을 입력할 때 자동 완성 제안을 제공합니다. aria-autocomplete="list"를 사용해 사용자가 선택할 수 있는 제안 목록을 제공합니다. 각 제안은 role="option"으로 지정되어 있으며, 입력 필드와 제안 목록은 aria-controls로 연결됩니다.    
 ```sh
 <input type="text" aria-autocomplete="list" aria-controls="city-suggestions" placeholder="Enter city">
@@ -108,26 +108,26 @@ aria-checked는 ARIA(Accessible Rich Internet Applications)에서 사용하는 �
 - **지원하지 않는 요소에 적용 시 주의**: 기본적으로 체크 가능한 요소(예: input type="checkbox")가 아닌 경우 role 속성을 사용해 해당 요소가 체크 가능한 것으로 인식되도록 해야 합니다.       
 
 
-**잘못된 예시**
+**잘못된 예시**         
 aria-checked는 토글 버튼에서 사용될 수 있지만, 이 경우 role="checkbox" 또는 role="switch"를 추가하여 버튼이 체크 가능함을 명확히 해야 합니다.    
 ```sh
 <button aria-checked="true">Toggle Button</button>
 ```
 
-**올바른 예시**
+**올바른 예시**         
 이 예시는 토글 버튼에서 role="switch"와 aria-checked를 함께 사용하여 버튼이 활성화된 상태임을 보조 기술에 명확하게 전달합니다.    
 ```sh
 <button role="switch" aria-checked="true">Toggle Button</button>
 ```
 
-**기본 체크박스 예시**
+**기본 체크박스 예시**         
 이 체크박스는 기본적으로 선택되지 않은 상태입니다. aria-checked="false" 속성으로 이 상태를 보조 기술에 전달합니다.    
 ```sh
 <input type="checkbox" id="agree" aria-checked="false">
 <label for="agree">I agree to the terms and conditions</label>
 ```
 
-**동적 체크박스 예시**
+**동적 체크박스 예시**         
 이 예시는 커스텀 체크박스로, div 요소에 role="checkbox"를 설정하고 aria-checked 속성을 사용해 체크 상태를 보조 기술에 알립니다. 클릭 시 체크 상태가 반전되도록 설정되어 있습니다.    
 ```sh
 <div role="checkbox" aria-checked="true" tabindex="0" id="customCheckbox">Subscribe to newsletter</div>
@@ -140,13 +140,13 @@ document.getElementById('customCheckbox').addEventListener('click', function() {
 </script>
 ```
 
-**혼합 상태(mixed) 예시**
+**혼합 상태(mixed) 예시**         
 이 예시는 혼합 상태를 나타내는 체크박스를 구현한 것입니다. 예를 들어, 사용자가 트리 구조의 일부 항목만 선택했을 때 전체 선택 체크박스에 혼합 상태(aria-checked="mixed")를 표시할 수 있습니다.    
 ```sh
 <div role="checkbox" aria-checked="mixed" tabindex="0">Select all items</div>
 ```
 
-**부가 활용 예시**
+**부가 활용 예시**         
 이 예시는 라디오 버튼을 커스텀 방식으로 구현한 것입니다. 사용자가 하나의 옵션을 선택하면 다른 옵션의 aria-checked 속성이 false로 변경되어 하나의 라디오 버튼만 선택되도록 합니다.    
 ```sh
 <div role="radio" aria-checked="false" tabindex="0" id="option1">Option 1</div>
@@ -188,37 +188,37 @@ aria-disabled 속성은 ARIA(Accessible Rich Internet Applications)에서 사용
 - **상호작용 차단**: 비활성화된 요소는 클릭이나 입력과 같은 상호작용을 완전히 차단해야 하며, 이벤트 리스너도 작동하지 않도록 처리해야 합니다.       
 
 
-**잘못된 예시**
+**잘못된 예시**         
 본래 비활성화 기능을 지원하는 HTML 요소에서는 aria-disabled 대신 HTML disabled 속성을 사용하는 것이 더 적절합니다.    
 ```sh
 <input type="text" aria-disabled="true">
 ```
 
-**올바른 예시**
+**올바른 예시**         
 본래 비활성화 기능을 지원하는 input 요소에서는 HTML disabled 속성을 사용하는 것이 적절합니다. 이 속성은 자동으로 보조 기술과 시각적 표현을 처리합니다.    
 ```sh
 <input type="text" disabled>
 ```
 
-**기본 버튼 예시**
+**기본 버튼 예시**         
 이 버튼은 aria-disabled="true"로 설정되어 있으며, 사용자는 이 버튼과 상호작용할 수 없습니다. 스크린 리더는 이 상태를 사용자가 인식할 수 있도록 안내합니다.    
 ```sh
 <button aria-disabled="true">Submit</button>
 ```
 
-**커스텀 버튼 예시**
+**커스텀 버튼 예시**         
 이 예시는 div 요소를 버튼으로 사용하고 있으며, aria-disabled="true"를 통해 이 요소가 비활성화 상태임을 나타냅니다. 시각적으로도 회색으로 표시하여 비활성화 상태를 표현하고 있습니다.    
 ```sh
 <div role="button" aria-disabled="true" tabindex="0" style="color: grey;">Custom Button</div>
 ```
 
-**비활성화된 링크 예시**
+**비활성화된 링크 예시**         
 이 링크는 aria-disabled="true"로 설정되어 있으며, pointer-events: none을 사용해 클릭을 차단하고, 회색으로 표시하여 비활성화 상태를 시각적으로도 표현하고 있습니다.    
 ```sh
 <a href="#" aria-disabled="true" style="pointer-events: none; color: grey;">Disabled Link</a>
 ```
 
-**동적 상태 변경 예시**
+**동적 상태 변경 예시**         
 이 예시는 버튼이 aria-disabled="true"로 설정된 상태에서 클릭 이벤트를 감지하여 경고 메시지를 표시합니다. 이처럼 동적 상호작용에서 비활성화 상태를 반영해야 합니다.    
 ```sh
 <button id="dynamicButton" aria-disabled="true">Click Me</button>
@@ -234,7 +234,7 @@ document.getElementById('dynamicButton').addEventListener('click', function() {
 </script>
 ```
 
-**부가 활용 예시**
+**부가 활용 예시**         
 이 예시는 select 요소가 비활성화된 상태임을 나타냅니다. 사용자는 드롭다운 메뉴를 열거나 선택할 수 없습니다.    
 ```sh
 <select aria-disabled="true">
@@ -267,7 +267,7 @@ aria-errormessage 속성의 값은 사용자에게 표시될 오류 메시지를
 - **동적 업데이트**: 입력 필드의 상태가 변경되어 오류 메시지가 업데이트될 경우, 보조 기술이 이를 인식할 수 있도록 aria-errormessage 속성의 값을 동적으로 업데이트해야 합니다.       
 
 
-**잘못된 예시**
+**잘못된 예시**      
 오류 메시지 div 요소와 input 필드 사이에 aria-errormessage 속성이 사용되지 않았습니다. 이로 인해 보조 기술이 오류 메시지를 사용자에게 전달하지 못할 수 있습니다.    
 ```sh
 <form>
@@ -277,7 +277,7 @@ aria-errormessage 속성의 값은 사용자에게 표시될 오류 메시지를
 </form>
 ```
 
-**올바른 예시**
+**올바른 예시**      
 이 예시는 오류 메시지가 aria-errormessage 속성을 통해 input 필드와 올바르게 연결된 상황을 보여줍니다. 보조 기술은 이 설정을 통해 사용자에게 오류 메시지를 적절히 전달할 수 있습니다.    
 ```sh
 <form>
@@ -287,7 +287,7 @@ aria-errormessage 속성의 값은 사용자에게 표시될 오류 메시지를
 </form>
 ```
 
-**기본 오류 메시지 예시**
+**기본 오류 메시지 예시**      
 이 예시는 사용자가 잘못된 이메일 주소를 입력했을 때 표시되는 오류 메시지를 구현한 것입니다. aria-errormessage 속성은 오류 메시지가 포함된 div 요소의 ID를 참조하며, aria-invalid="true" 속성과 함께 사용됩니다.    
 ```sh
 <form>
@@ -297,7 +297,7 @@ aria-errormessage 속성의 값은 사용자에게 표시될 오류 메시지를
 </form>
 ```
 
-**동적 오류 메시지 및 초점 이동 예시**
+**동적 오류 메시지 및 초점 이동 예시**      
 이 예시는 사용자가 폼을 제출할 때 입력 필드에 오류가 있으면 동적으로 오류 메시지를 표시하고, 오류가 발생한 필드로 초점을 이동하는 방법을 보여줍니다. aria-errormessage 속성은 오류 메시지가 포함된 요소와 연결되어 있으며, aria-invalid 속성은 사용자의 입력 상태에 따라 동적으로 업데이트됩니다. 첫 번째 오류가 발생한 필드로 초점이 이동하여 사용자가 쉽게 오류를 수정할 수 있도록 도와줍니다.    
 ```sh
 <form id="userForm">
@@ -352,7 +352,7 @@ document.getElementById('userForm').addEventListener('submit', function(event) {
 </script>
 ```
 
-**부가 활용 예시**
+**부가 활용 예시**      
 이 예시는 비밀번호 필드에 대한 오류 메시지를 표시하는 상황을 보여줍니다. aria-errormessage 속성은 사용자에게 비밀번호 길이에 대한 구체적인 오류 메시지를 전달합니다.    
 ```sh
 <form>
@@ -384,14 +384,14 @@ aria-expanded 속성은 ARIA(Accessible Rich Internet Applications)에서 사용
 - **적용 대상 요소**: aria-expanded는 주로 버튼이나 링크와 같은 상호작용 가능한 요소에 사용되며, 이들이 제어하는 확장/축소 가능한 콘텐츠와 연결됩니다.       
 
 
-**잘못된 예시**
+**잘못된 예시**      
 이 예시에서는 aria-expanded 속성이 전혀 사용되지 않았기 때문에, 보조 기술이 콘텐츠가 확장되었는지 여부를 알 수 없습니다. 이로 인해 접근성이 떨어질 수 있습니다.    
 ```sh
 <button>Toggle Content</button>
 <div id="content">This is some content.</div>
 ```
 
-**올바른 예시**
+**올바른 예시**      
 이 예시는 aria-expanded 속성을 올바르게 사용하여, 버튼이 제어하는 콘텐츠가 확장되었는지 여부를 보조 기술에 전달합니다. 사용자가 클릭할 때마다 속성이 동적으로 업데이트되어 정확한 상태를 반영합니다.    
 ```sh
 <button aria-expanded="false" aria-controls="content">Toggle Content</button>
@@ -407,7 +407,7 @@ document.querySelector('button').addEventListener('click', function() {
 </script>
 ```
 
-**기본 드롭다운 메뉴 예시**
+**기본 드롭다운 메뉴 예시**      
 이 예시는 버튼을 클릭하여 드롭다운 메뉴를 열고 닫을 수 있는 기본적인 드롭다운 메뉴 구현을 보여줍니다. aria-expanded 속성은 버튼이 제어하는 메뉴의 확장 상태를 명확히 나타내며, 사용자가 클릭할 때마다 동적으로 업데이트됩니다.    
 ```sh
 <button aria-expanded="false" aria-controls="menu" id="dropdownButton">Menu</button>
@@ -427,7 +427,7 @@ document.getElementById('dropdownButton').addEventListener('click', function() {
 </script>
 ```
 
-**아코디언 패널 예시**
+**아코디언 패널 예시**      
 이 예시는 아코디언 패널을 구현한 예시입니다. 각 패널은 버튼으로 제어되며, aria-expanded 속성은 패널이 확장되었는지 또는 축소되었는지를 나타냅니다. 사용자가 패널을 클릭하여 상태를 변경할 때마다 aria-expanded가 동적으로 업데이트됩니다.    
 ```sh
 <div>
@@ -450,7 +450,7 @@ document.querySelectorAll('button[aria-expanded]').forEach(button => {
 </script>
 ```
 
-**부가 활용 예시**
+**부가 활용 예시**      
 이 예시는 링크 요소를 사용하여 서브메뉴를 확장/축소하는 예시입니다. aria-expanded 속성이 링크에 적용되어, 사용자가 서브메뉴의 현재 상태를 알 수 있도록 합니다. 링크를 클릭할 때 서브메뉴의 상태가 동적으로 업데이트됩니다.    
 ```sh
 <a href="#" aria-expanded="false" aria-controls="submenu" id="submenuLink">Submenu</a>
@@ -497,7 +497,7 @@ aria-haspopup 속성은 팝업의 유형을 지정하는 다양한 값을 가질
 - **연관된 속성들과 함께 사용**: aria-expanded, aria-controls 등의 속성과 함께 사용하여 팝업의 상태(예: 열림/닫힘)와 관계를 명확하게 전달할 수 있습니다.       
 
 
-**잘못된 예시**
+**잘못된 예시**      
 이 예시에서는 aria-haspopup 속성이 전혀 사용되지 않았기 때문에, 보조 기술이 버튼이 팝업 메뉴를 트리거할 수 있는지 여부를 알 수 없습니다.    
 ```sh
 <button>Show Options</button>
@@ -508,7 +508,7 @@ aria-haspopup 속성은 팝업의 유형을 지정하는 다양한 값을 가질
 </ul>
 ```
 
-**올바른 예시**
+**올바른 예시**      
 이 예시는 aria-haspopup="menu" 속성을 사용하여, 버튼이 팝업 메뉴를 트리거할 수 있음을 보조 기술에 전달합니다. 이로 인해 접근성이 향상되며, 사용자가 버튼과 상호작용할 때 팝업 메뉴의 존재를 인식할 수 있습니다.    
 ```sh
 <button aria-haspopup="menu" aria-controls="optionsMenu">Show Options</button>
@@ -526,7 +526,7 @@ document.querySelector('button[aria-haspopup="menu"]').addEventListener('click',
 </script>
 ```
 
-**aria-haspopup="menu" - 팝업 메뉴 트리거 예시**
+**aria-haspopup="menu" - 팝업 메뉴 트리거 예시**      
 이 예시는 버튼이 팝업 메뉴를 트리거하는 기본적인 메뉴 구현을 보여줍니다. aria-haspopup="menu"는 버튼이 메뉴를 열 수 있음을 나타내며, aria-expanded 속성은 메뉴가 열려 있는지 여부를 나타냅니다.    
 ```sh
 <button aria-haspopup="menu" aria-expanded="false" aria-controls="menu" id="menuButton">Open Menu</button>
@@ -546,7 +546,7 @@ document.getElementById('menuButton').addEventListener('click', function() {
 </script>
 ```
 
-**aria-haspopup="listbox" - 팝업 목록 상자 예시**
+**aria-haspopup="listbox" - 팝업 목록 상자 예시**      
 이 예시는 링크가 목록 상자(listbox)를 트리거하는 상황을 보여줍니다. aria-haspopup="listbox" 속성을 통해 링크가 팝업 목록 상자를 열 수 있음을 명확히 나타냅니다.    
 ```sh
 <a href="#" aria-haspopup="listbox" aria-controls="dropdownList" id="dropdownLink">Select an Option</a>
@@ -566,7 +566,7 @@ document.getElementById('dropdownLink').addEventListener('click', function(event
 </script>
 ```
 
-**aria-haspopup="tree" - 팝업 트리뷰 예시**
+**aria-haspopup="tree" - 팝업 트리뷰 예시**      
 이 예시는 버튼이 트리뷰(treeview)를 트리거하는 상황을 보여줍니다. aria-haspopup="tree" 속성을 통해 이 버튼이 트리뷰를 열 수 있음을 보조 기술에 전달합니다.    
 ```sh
 <button aria-haspopup="tree" aria-controls="treeMenu" id="treeButton">Toggle Tree Menu</button>
@@ -589,7 +589,7 @@ document.getElementById('treeButton').addEventListener('click', function() {
 </script>
 ```
 
-**aria-haspopup="grid" - 팝업 그리드 예시**
+**aria-haspopup="grid" - 팝업 그리드 예시**      
 이 예시는 버튼이 팝업 그리드(grid)를 트리거하는 상황을 보여줍니다. aria-haspopup="grid" 속성을 통해 이 버튼이 그리드를 열 수 있음을 명확히 나타냅니다.    
 ```sh
 <button aria-haspopup="grid" aria-controls="gridMenu" id="gridButton">Show Grid</button>
@@ -617,7 +617,7 @@ document.getElementById('gridButton').addEventListener('click', function() {
 </script>
 ```
 
-**aria-haspopup="dialog" - 팝업 대화 상자 예시**
+**aria-haspopup="dialog" - 팝업 대화 상자 예시**      
 이 예시는 버튼을 클릭하여 대화 상자(dialog)를 트리거하는 예시입니다. aria-haspopup="dialog"는 이 버튼이 대화 상자를 열 수 있음을 나타내며, 대화 상자가 열리면 보조 기술은 이를 인식할 수 있습니다.    
 ```sh
 <button aria-haspopup="dialog" aria-controls="dialog" id="openDialog">Open Dialog</button>
@@ -661,7 +661,7 @@ aria-hidden 속성은 ARIA(Accessible Rich Internet Applications)에서 사용�
 - **동적 상태 변경**: 특정 상황에서만 보조 기술에 의해 무시되도록 하려면, aria-hidden 상태를 동적으로 업데이트할 수 있습니다.       
 
 
-**잘못된 예시**
+**잘못된 예시**      
 이 예시는 aria-hidden="true" 속성을 상호작용 가능한 요소(버튼)에 적용했기 때문에, 이 버튼은 시각적으로는 보이지만 스크린 리더에서는 완전히 무시됩니다. 이는 사용자의 접근성을 해칠 수 있습니다.    
 ```sh
 <div aria-hidden="true">
@@ -669,7 +669,7 @@ aria-hidden 속성은 ARIA(Accessible Rich Internet Applications)에서 사용�
 </div>
 ```
 
-**올바른 예시**
+**올바른 예시**      
 상호작용 가능한 요소는 일반적으로 aria-hidden을 사용하지 않습니다. 대신, 이러한 요소는 보조 기술에서도 접근 가능하도록 해야 합니다.    
 ```sh
 <div>
@@ -677,13 +677,13 @@ aria-hidden 속성은 ARIA(Accessible Rich Internet Applications)에서 사용�
 </div>
 ```
 
-**화면에 보이는 텍스트 숨기기 예시**
+**화면에 보이는 텍스트 숨기기 예시**      
 이 예시는 aria-hidden="true"를 사용하여, 이 텍스트가 화면에는 보이지만 스크린 리더와 같은 보조 기술에서는 무시되도록 합니다. 이 방식은 장식적 텍스트나 중복된 정보에 유용합니다.    
 ```sh
 <div aria-hidden="true">This text is visible on screen but hidden from screen readers.</div>
 ```
 
-**대체 텍스트 제공 예시**
+**대체 텍스트 제공 예시**      
 이 예시는 장식용 이미지를 스크린 리더에서 무시하도록 설정합니다. 이미지에 의미가 없으므로, aria-hidden="true"와 빈 alt 속성을 함께 사용하여 보조 기술이 이 이미지를 무시하도록 합니다.    
 ```sh
 <div aria-hidden="true">
@@ -692,7 +692,7 @@ aria-hidden 속성은 ARIA(Accessible Rich Internet Applications)에서 사용�
 <p>This image is decorative and hidden from screen readers.</p>
 ```
 
-**중복된 메뉴 항목 숨기기 예시**
+**중복된 메뉴 항목 숨기기 예시**      
 이 예시는 중복된 메뉴 항목을 스크린 리더에서 숨기는 방법을 보여줍니다. aria-hidden="true"를 사용하여, 보조 기술이 중복된 항목을 무시하도록 설정합니다.    
 ```sh
 <nav>
@@ -705,7 +705,7 @@ aria-hidden 속성은 ARIA(Accessible Rich Internet Applications)에서 사용�
 </nav>
 ```
 
-**동적으로 요소 숨기기 예시**
+**동적으로 요소 숨기기 예시**      
 이 예시는 버튼을 클릭하여 특정 콘텐츠의 가시성을 동적으로 전환하는 방법을 보여줍니다. aria-hidden 속성은 동적으로 업데이트되어 보조 기술에서 해당 요소가 무시될지 여부를 결정합니다.    
 ```sh
 <div id="dynamicContent">This content may be hidden from screen readers.</div>
@@ -720,7 +720,7 @@ function toggleVisibility() {
 </script>
 ```
 
-**부가 활용 예시**
+**부가 활용 예시**      
 이 예시는 장식용 아이콘을 aria-hidden="true"로 설정하여 스크린 리더에서 무시되도록 합니다. 스크린 리더는 별표 아이콘을 읽지 않고 "Save" 버튼만 사용자에게 전달합니다.    
 ```sh
 <span class="icon" aria-hidden="true">★</span>
@@ -751,20 +751,20 @@ aria-invalid 속성은 ARIA(Accessible Rich Internet Applications)에서 사용�
 - **동적 업데이트**: 사용자가 입력을 수정하고 유효성을 검토할 때마다 aria-invalid 상태를 동적으로 업데이트하여 보조 기술이 최신 상태를 반영하도록 해야 합니다.       
 
 
-**잘못된 예시**
+**잘못된 예시**      
 이 예시는 aria-invalid="true" 속성이 설정된 상태에서 오류 메시지나 추가 설명이 제공되지 않기 때문에, 사용자는 필드가 왜 유효하지 않은지 이해할 수 없습니다.    
 ```sh
 <input type="text" aria-invalid="true">
 ```
 
-**올바른 예시**
+**올바른 예시**      
 이 예시는 오류 메시지를 함께 제공하여 사용자가 필드가 유효하지 않은 이유를 이해할 수 있도록 도와줍니다. aria-errormessage 속성은 오류 메시지와 필드를 연결합니다.    
 ```sh
 <input type="text" aria-invalid="true" aria-errormessage="error1">
 <div id="error1" style="color: red;">This field is required.</div>
 ```
 
-**기본 입력 필드 예시**
+**기본 입력 필드 예시**      
 이 예시는 사용자가 잘못된 이메일 주소를 입력했을 때 입력 필드에 aria-invalid="true"를 설정하여 유효하지 않음을 표시합니다. 오류 메시지는 aria-errormessage 속성을 통해 제공됩니다.    
 ```sh
 <form>
@@ -774,7 +774,7 @@ aria-invalid 속성은 ARIA(Accessible Rich Internet Applications)에서 사용�
 </form>
 ```
 
-**동적 유효성 검사 예시**
+**동적 유효성 검사 예시**      
 이 예시는 사용자가 폼을 제출할 때 각 필드의 유효성을 동적으로 검사하여 aria-invalid 속성을 업데이트하는 방법을 보여줍니다. 유효하지 않은 필드에는 aria-invalid="true"가 설정되고, 이에 따른 오류 메시지가 표시됩니다.    
 ```sh
 <form id="registrationForm">
@@ -824,21 +824,21 @@ document.getElementById('registrationForm').addEventListener('submit', function(
 </script>
 ```
 
-**문법 오류 예시**
+**문법 오류 예시**      
 이 예시는 텍스트 입력 필드에서 문법 오류가 있는 경우를 나타냅니다. aria-invalid="grammar"는 문법 오류가 있음을 나타내며, 보조 기술이 이를 사용자에게 전달할 수 있도록 합니다.    
 ```sh
 <textarea aria-invalid="grammar" aria-errormessage="grammarError">This is an example sentence with a mistake</textarea>
 <div id="grammarError" style="color: red;">There is a grammar error in your text.</div>
 ```
 
-**철자 오류 예시**
+**철자 오류 예시**      
 이 예시는 텍스트 입력 필드에서 철자 오류가 있는 경우를 나타냅니다. aria-invalid="spelling"은 철자 오류가 있음을 나타내며, 보조 기술이 이를 사용자에게 알릴 수 있습니다.    
 ```sh
 <textarea aria-invalid="spelling" aria-errormessage="spellingError">This is a smaple text with spelling errors.</textarea>
 <div id="spellingError" style="color: red;">There are spelling errors in your text.</div>
 ```
 
-**부가 활용 예시**
+**부가 활용 예시**      
 이 예시는 장식용 아이콘을 aria-hidden="true"로 설정하여 스크린 리더에서 무시되도록 합니다. 스크린 리더는 별표 아이콘을 읽지 않고 "Save" 버튼만 사용자에게 전달합니다.    
 ```sh
 <select aria-invalid="false" id="countrySelect" aria-errormessage="countryError">
@@ -883,13 +883,13 @@ aria-label 속성은 ARIA(Accessible Rich Internet Applications)에서 사용하
 - **중복 레이블 피하기**: aria-label을 사용하여 레이블을 설정할 때는 중복되는 레이블이 없도록 주의해야 하며, 필요할 경우 aria-labelledby를 고려할 수 있습니다.       
 
 
-**잘못된 예시**
+**잘못된 예시**      
 이 버튼에는 레이블이 제공되지만, 버튼의 시각적인 요소가 전혀 없어서 시각적인 사용자들은 버튼의 목적을 알 수 없습니다. 레이블을 추가했더라도, 시각적으로도 사용자가 버튼의 기능을 인식할 수 있도록 해야 합니다.    
 ```sh
 <button aria-label="Submit Form"></button>
 ```
 
-**올바른 예시**
+**올바른 예시**      
 이 예시는 aria-label 속성을 사용해 보조 기술 사용자에게 "Submit Form"이라는 명확한 레이블을 제공하면서, 시각적인 사용자에게는 체크 아이콘을 통해 버튼의 기능을 인식할 수 있도록 설정합니다.    
 ```sh
 <button aria-label="Submit Form">
@@ -897,7 +897,7 @@ aria-label 속성은 ARIA(Accessible Rich Internet Applications)에서 사용하
 </button>
 ```
 
-**레이블이 없는 아이콘 버튼에 레이블 제공 예시**
+**레이블이 없는 아이콘 버튼에 레이블 제공 예시**      
 이 예시는 시각적인 텍스트 레이블이 없는 아이콘 버튼에 aria-label="Close"를 추가하여, 보조 기술 사용자가 이 버튼의 목적을 이해할 수 있도록 합니다.    
 ```sh
 <button aria-label="Close">
@@ -907,13 +907,13 @@ aria-label 속성은 ARIA(Accessible Rich Internet Applications)에서 사용하
 </button>
 ```
 
-**검색 입력 필드에 레이블 제공 예시**
+**검색 입력 필드에 레이블 제공 예시**      
 이 예시는 시각적인 레이블이 없고, placeholder 텍스트가 레이블 역할을 하지 않는 검색 입력 필드에 aria-label="Search"를 추가하여 보조 기술이 이 필드를 적절히 설명할 수 있도록 합니다.    
 ```sh
 <input type="text" aria-label="Search" placeholder="Search...">
 ```
 
-**링크 텍스트 대신 레이블 제공 예시**
+**링크 텍스트 대신 레이블 제공 예시**      
 이 예시는 링크의 시각적인 텍스트 대신, aria-label을 사용하여 더 구체적인 설명을 제공합니다. 시각적인 텍스트는 "More info"이지만, 스크린 리더 사용자에게는 "Learn more about our services"라고 읽히도록 설정되었습니다.    
 ```sh
 <a href="#" aria-label="Learn more about our services">
@@ -954,7 +954,7 @@ aria-modal 속성은 ARIA(Accessible Rich Internet Applications)에서 사용하
 - **닫기 기능 제공**: 모달 대화 상자에는 닫기 버튼을 제공해야 하며, Esc 키를 통해 모달을 닫을 수 있도록 하는 것이 일반적입니다.       
 
 
-**잘못된 예시**
+**잘못된 예시**      
 이 예시에서는 모달 대화 상자가 aria-modal="true"로 설정되어 있지만, 포커스 관리가 전혀 이루어지지 않았습니다. 이로 인해 사용자가 포커스를 모달 외부로 이동할 수 있게 되어, 모달의 목적이 손상될 수 있습니다.    
 ```sh
 <div role="dialog" aria-modal="true">
@@ -962,7 +962,7 @@ aria-modal 속성은 ARIA(Accessible Rich Internet Applications)에서 사용하
 </div>
 ```
 
-**올바른 예시**
+**올바른 예시**      
 이 예시는 aria-modal="true"를 사용하여 포커스 관리가 제대로 된 모달 대화 상자를 구현한 것입니다. 사용자는 Esc 키를 사용해 모달을 닫을 수 있고, 모달이 닫히면 포커스가 원래 위치로 돌아갑니다.    
 ```sh
 <div id="modalDialog" role="dialog" aria-modal="true" aria-labelledby="dialogTitle" style="display:none;">
@@ -988,7 +988,7 @@ document.addEventListener('keydown', function(event) {
 </script>
 ```
 
-**기본 모달 대화 상자 예시**
+**기본 모달 대화 상자 예시**      
 이 예시는 버튼을 클릭하여 모달 대화 상자를 열고, 모달 내부에서만 포커스가 유지되도록 설정한 것입니다. aria-modal="true" 속성은 대화 상자가 모달임을 명확히 나타내며, 사용자가 다른 UI 요소와 상호작용할 수 없도록 합니다.    
 ```sh
 <button id="openModal">Open Modal</button>
@@ -1095,25 +1095,25 @@ aria-multiline 속성은 ARIA(Accessible Rich Internet Applications)에서 사�
 - **기본 HTML 요소 고려**: textarea와 같은 기본 HTML 요소는 이미 여러 줄을 지원하므로, 추가적으로 aria-multiline 속성을 설정할 필요는 없습니다.       
 
 
-**잘못된 예시**
+**잘못된 예시**      
 이 예시에서는 단일 줄 텍스트 입력 필드에 aria-multiline="true"를 설정했습니다. 그러나 실제로는 단일 줄만 지원하기 때문에 이 설정은 오해를 불러일으킬 수 있습니다.    
 ```sh
 <input type="text" aria-multiline="true" placeholder="Enter your name">
 ```
 
-**올바른 예시**
+**올바른 예시**      
 이 예시는 단일 줄 텍스트 입력 필드에 aria-multiline="false"를 설정하여, 필드의 실제 동작과 일치하는 상태를 유지합니다.    
 ```sh
 <input type="text" aria-multiline="false" placeholder="Enter your name">
 ```
 
-**단일 줄 텍스트 입력 필드 예시**
+**단일 줄 텍스트 입력 필드 예시**      
 이 예시는 단일 줄 텍스트 입력 필드를 나타냅니다. aria-multiline="false"로 설정되어 있으며, 보조 기술은 이 필드가 단일 줄 입력만 지원함을 인식합니다.    
 ```sh
 <input type="text" aria-multiline="false" placeholder="Enter your name">
 ```
 
-**여러 줄 텍스트 입력 필드 예시**
+**여러 줄 텍스트 입력 필드 예시**      
 이 예시는 div 요소를 여러 줄 텍스트 입력 필드로 사용한 커스텀 구현입니다. aria-multiline="true"로 설정하여, 보조 기술이 이 필드가 여러 줄을 지원함을 알 수 있도록 합니다.    
 ```sh
 <div role="textbox" aria-multiline="true" contenteditable="true" style="border: 1px solid #ccc; padding: 8px;">
@@ -1121,7 +1121,7 @@ aria-multiline 속성은 ARIA(Accessible Rich Internet Applications)에서 사�
 </div>
 ```
 
-**자동 줄바꿈 지원 입력 필드 예시**
+**자동 줄바꿈 지원 입력 필드 예시**      
 이 예시는 textarea 요소를 사용한 기본적인 여러 줄 텍스트 입력 필드입니다. aria-multiline 속성은 기본적으로 true로 간주되므로, 추가 설정 없이도 보조 기술은 여러 줄 입력을 인식합니다.    
 ```sh
 <textarea aria-multiline="true" rows="4" cols="50" placeholder="Type your message here..."></textarea>
@@ -1156,7 +1156,7 @@ aria-multiselectable 속성은 ARIA(Accessible Rich Internet Applications)에서
 - **사용자 상호작용 고려**: 다중 선택이 가능하도록 설정할 때는, 사용자가 Shift 키나 Ctrl(Command) 키를 사용해 여러 항목을 선택할 수 있도록 해야 합니다.       
 
 
-**잘못된 예시**
+**잘못된 예시**      
 이 예시는 aria-multiselectable="true"를 사용하고 있지만, 여러 개의 옵션이 없는 상황에서는 다중 선택이 불가능하므로 이 속성을 설정할 필요가 없습니다.    
 ```sh
 <div role="listbox" aria-multiselectable="true">
@@ -1164,7 +1164,7 @@ aria-multiselectable 속성은 ARIA(Accessible Rich Internet Applications)에서
 </div>
 ```
 
-**올바른 예시**
+**올바른 예시**      
 다중 선택이 불가능한 경우, aria-multiselectable="false"로 설정하여 보조 기술이 이를 올바르게 인식하도록 합니다.    
 ```sh
 <div role="listbox" aria-multiselectable="false">
@@ -1172,7 +1172,7 @@ aria-multiselectable 속성은 ARIA(Accessible Rich Internet Applications)에서
 </div>
 ```
 
-**다중 선택 가능한 리스트박스 예시**
+**다중 선택 가능한 리스트박스 예시**      
 이 예시는 다중 선택이 가능한 리스트박스를 구현한 것입니다. aria-multiselectable="true" 속성을 사용하여 보조 기술이 사용자가 여러 옵션을 선택할 수 있음을 알 수 있도록 합니다.    
 ```sh
 <div role="listbox" aria-multiselectable="true">
@@ -1196,7 +1196,7 @@ document.querySelectorAll('[role="option"]').forEach(option => {
 </script>
 ```
 
-**다중 선택 가능한 그리드 예시**
+**다중 선택 가능한 그리드 예시**      
 이 예시는 다중 선택이 가능한 그리드를 구현한 것입니다. aria-multiselectable="true" 속성을 통해 사용자가 여러 그리드 셀을 선택할 수 있음을 나타냅니다.    
 ```sh
 <div role="grid" aria-multiselectable="true">
@@ -1224,7 +1224,7 @@ document.querySelectorAll('[role="gridcell"]').forEach(cell => {
 </script>
 ```
 
-**다중 선택 가능한 트리뷰 예시**
+**다중 선택 가능한 트리뷰 예시**      
 이 예시는 다중 선택이 가능한 트리뷰를 구현한 것입니다. 사용자는 aria-multiselectable="true"로 설정된 트리뷰에서 여러 항목을 선택할 수 있습니다.    
 ```sh
 <ul role="tree" aria-multiselectable="true">
@@ -1270,7 +1270,7 @@ aria-orientation 속성은 ARIA(Accessible Rich Internet Applications)에서 사
 - **사용자 상호작용 고려**: 사용자가 방향에 따라 키보드 내비게이션(예: 화살표 키)을 할 때, 올바르게 설정된 aria-orientation은 보조 기술이 사용자 경험을 정확하게 전달하는 데 도움을 줍니다.       
 
 
-**잘못된 예시**
+**잘못된 예시**      
 이 예시는 탭이 실제로는 수평으로 배열되어 있는데도 불구하고 aria-orientation="vertical"로 설정되었습니다. 이는 보조 기술 사용자에게 잘못된 정보를 제공할 수 있습니다.    
 ```sh
 <div role="tablist" aria-orientation="vertical">
@@ -1279,7 +1279,7 @@ aria-orientation 속성은 ARIA(Accessible Rich Internet Applications)에서 사
 </div>
 ```
 
-**올바른 예시**
+**올바른 예시**      
 이 예시는 탭이 실제로 수평으로 배열되어 있으며, aria-orientation="horizontal"로 올바르게 설정되어 있습니다.    
 ```sh
 <div role="tablist" aria-orientation="horizontal">
@@ -1288,7 +1288,7 @@ aria-orientation 속성은 ARIA(Accessible Rich Internet Applications)에서 사
 </div>
 ```
 
-**수평 탭 리스트 예시**
+**수평 탭 리스트 예시**      
 이 예시는 수평으로 배열된 탭 리스트를 나타냅니다. aria-orientation="horizontal" 속성은 탭이 수평으로 배치되어 있음을 보조 기술에 알립니다.    
 ```sh
 <div role="tablist" aria-orientation="horizontal">
@@ -1298,7 +1298,7 @@ aria-orientation 속성은 ARIA(Accessible Rich Internet Applications)에서 사
 </div>
 ```
 
-**수직 슬라이더 예시**
+**수직 슬라이더 예시**      
 이 예시는 수직으로 배열된 슬라이더를 나타냅니다. aria-orientation="vertical" 속성은 슬라이더가 수직 방향으로 동작함을 보조 기술에 전달합니다.    
 ```sh
 <div role="slider" aria-orientation="vertical" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0" style="height: 200px;">
@@ -1306,7 +1306,7 @@ aria-orientation 속성은 ARIA(Accessible Rich Internet Applications)에서 사
 </div>
 ```
 
-**수직 목록 박스 예시**
+**수직 목록 박스 예시**      
 이 예시는 수직으로 배열된 목록 박스를 나타냅니다. aria-orientation="vertical" 속성은 옵션이 수직 방향으로 배열되어 있음을 보조 기술에 알립니다.    
 ```sh
 <div role="listbox" aria-orientation="vertical">
@@ -1346,31 +1346,31 @@ aria-placeholder 속성은 ARIA(Accessible Rich Internet Applications)에서 사
 - **사용자 상호작용 고려**: 입력 필드가 활성화될 때 플레이스홀더 텍스트는 일반적으로 사라지므로, aria-placeholder는 필드가 비어 있을 때만 유효한 설명으로 사용됩니다.       
 
 
-**잘못된 예시**
+**잘못된 예시**      
 이 예시는 aria-placeholder 속성에 빈 문자열을 사용하고 있어 보조 기술이 유효한 힌트를 제공할 수 없습니다. aria-placeholder 속성 값은 유용하고 명확한 힌트를 제공해야 합니다.    
 ```sh
 <input type="text" aria-placeholder="">
 ```
 
-**올바른 예시**
+**올바른 예시**      
 이 예시는 사용자에게 입력할 내용을 명확히 설명하는 aria-placeholder 속성을 사용합니다. 보조 기술은 이 정보를 사용자에게 전달하여 입력 필드의 용도를 이해하도록 도와줍니다.    
 ```sh
 <input type="text" aria-placeholder="Enter your email address">
 ```
 
-**텍스트 입력 필드에서의 힌트 제공 예시**
+**텍스트 입력 필드에서의 힌트 제공 예시**      
 이 예시는 사용자가 입력해야 할 예상 값을 설명하기 위해 aria-placeholder="Enter your full name"을 추가하여, 보조 기술이 이를 사용자에게 전달하도록 설정합니다.    
 ```sh
 <input type="text" aria-placeholder="Enter your full name">
 ```
 
-**여러 줄 텍스트 입력 필드에서의 힌트 제공 예시**
+**여러 줄 텍스트 입력 필드에서의 힌트 제공 예시**      
 이 예시는 여러 줄 텍스트 입력 필드에서 사용자에게 제공되는 힌트를 설명하기 위해 aria-placeholder 속성을 사용합니다. 이 속성은 보조 기술 사용자에게 입력 필드에 무엇을 입력해야 하는지 설명합니다.    
 ```sh
 <textarea aria-placeholder="Type your detailed message here"></textarea>
 ```
 
-**커스텀 텍스트 입력 필드에서의 힌트 제공 예시**
+**커스텀 텍스트 입력 필드에서의 힌트 제공 예시**      
 이 예시는 커스텀 텍스트 입력 필드에 힌트를 제공하기 위해 aria-placeholder 속성을 사용합니다. 시각적으로는 힌트를 제공하지 않지만, 보조 기술은 사용자에게 입력 필드의 목적을 설명합니다.    
 ```sh
 <div role="textbox" aria-placeholder="Enter your address" contenteditable="true" style="border: 1px solid #ccc; padding: 8px;">
@@ -1400,13 +1400,13 @@ aria-pressed 속성은 ARIA(Accessible Rich Internet Applications)에서 사용�
 - **단일 선택과 다중 선택 구분**: 단일 선택의 경우에는 true 또는 false로 설정하고, 다중 선택에서 혼합 상태를 나타내려면 mixed 값을 사용할 수 있습니다.       
 
 
-**잘못된 예시**
+**잘못된 예시**      
 이 예시는 aria-pressed="true"로 설정되어 있지만, 버튼의 상태가 동적으로 변경되지 않기 때문에 사용자가 상호작용할 때 버튼의 상태가 업데이트되지 않습니다. 이로 인해 사용자는 버튼의 현재 상태를 잘못 인식할 수 있습니다.    
 ```sh
 <button aria-pressed="true">Press me</button>
 ```
 
-**올바른 예시**
+**올바른 예시**      
 이 예시는 버튼이 클릭될 때마다 aria-pressed 속성이 동적으로 업데이트되어, 보조 기술이 버튼의 현재 상태를 정확하게 전달할 수 있도록 합니다.    
 ```sh
 <button aria-pressed="true" id="dynamicButton">Press me</button>
@@ -1419,7 +1419,7 @@ document.getElementById('dynamicButton').addEventListener('click', function() {
 </script>
 ```
 
-**스타일과 함께 상태 표시 예시**
+**스타일과 함께 상태 표시 예시**      
 이 예시는 버튼의 상태에 따라 스타일이 변경되는 토글 버튼을 구현한 것입니다. 버튼이 눌리면 배경색과 텍스트 색상이 변경되며, aria-pressed 속성이 업데이트됩니다.    
 ```sh
 <button aria-pressed="false" id="styledButton" style="background-color: #f0f0f0; border: 1px solid #ccc; padding: 10px;">
@@ -1436,7 +1436,7 @@ document.getElementById('styledButton').addEventListener('click', function() {
 </script>
 ```
 
-**기본 토글 버튼 예시**
+**기본 토글 버튼 예시**      
 이 예시는 텍스트 서식 설정에서 "Bold" 기능을 위한 토글 버튼을 구현한 것입니다. aria-pressed 속성은 사용자가 버튼을 클릭할 때마다 버튼의 상태를 동적으로 업데이트하여, 버튼이 활성화(눌림) 상태인지 비활성화 상태인지 보조 기술에 알립니다.    
 ```sh
 <button aria-pressed="false" id="toggleButton">Bold</button>
@@ -1449,7 +1449,7 @@ document.getElementById('toggleButton').addEventListener('click', function() {
 </script>
 ```
 
-**커스텀 토글 버튼 예시**
+**커스텀 토글 버튼 예시**      
 이 예시는 div 요소를 사용한 커스텀 토글 버튼을 구현한 것입니다. aria-pressed 속성은 버튼의 눌림 상태를 나타내며, 사용자가 클릭할 때마다 상태가 변경됩니다.    
 ```sh
 <div role="button" aria-pressed="false" tabindex="0" id="customToggleButton" style="padding: 8px; border: 1px solid #ccc;">
@@ -1464,7 +1464,7 @@ document.getElementById('customToggleButton').addEventListener('click', function
 </script>
 ```
 
-**혼합 상태(mixed) 토글 버튼 예시**
+**혼합 상태(mixed) 토글 버튼 예시**      
 이 예시는 "Toggle All" 버튼에서 사용되는 혼합 상태(mixed) 예시입니다. 초기 상태는 mixed로 설정되어 있으며, 사용자가 클릭할 때마다 상태가 true 또는 false로 전환됩니다.    
 ```sh
 <button aria-pressed="mixed" id="mixedStateButton">Toggle All</button>
@@ -1499,31 +1499,31 @@ aria-readonly 속성은 ARIA(Accessible Rich Internet Applications)에서 사용
 - **기본 HTML 속성과의 차이**: aria-readonly 속성은 주로 ARIA 역할을 사용한 커스텀 요소에 사용되며, HTML의 readonly 속성과 유사하지만, HTML5 요소에서는 readonly 속성을 사용하는 것이 권장됩니다.       
 
 
-**잘못된 예시**
+**잘못된 예시**      
 이 예시에서는 aria-readonly="true"가 설정되었지만, 기본적으로 HTML의 readonly 속성을 사용하는 것이 더 적절합니다. HTML 요소에서는 readonly 속성을 사용하는 것이 일반적입니다.    
 ```sh
 <input type="text" aria-readonly="true">
 ```
 
-**올바른 예시**
+**올바른 예시**      
 이 예시는 기본 HTML readonly 속성을 사용하여 텍스트 입력 필드를 읽기 전용으로 설정한 예시입니다. HTML 요소에서 readonly 속성을 사용하는 것이 더 권장됩니다.    
 ```sh
 <input type="text" readonly value="This field is read-only">
 ```
 
-**읽기 전용 텍스트 입력 필드 예시**
+**읽기 전용 텍스트 입력 필드 예시**      
 이 예시는 사용자가 값을 변경할 수 없는 읽기 전용 텍스트 입력 필드를 나타냅니다. aria-readonly="true" 속성은 보조 기술이 이 필드가 읽기 전용임을 인식하도록 합니다.    
 ```sh
 <input type="text" aria-readonly="true" value="This field is read-only">
 ```
 
-**읽기 전용 텍스트 영역 예시**
+**읽기 전용 텍스트 영역 예시**      
 이 예시는 사용자가 내용을 수정할 수 없는 읽기 전용 텍스트 영역을 나타냅니다. 보조 기술은 aria-readonly="true" 속성을 통해 이 상태를 인식합니다.    
 ```sh
 <textarea aria-readonly="true">This text cannot be edited by the user.</textarea>
 ```
 
-**읽기 전용 스피너 예시**
+**읽기 전용 스피너 예시**      
 이 예시는 숫자 증감이 불가능한 읽기 전용 스피너를 나타냅니다. aria-readonly="true" 속성은 사용자가 값을 변경할 수 없음을 보조 기술에 알립니다.    
 ```sh
 <div role="spinbutton" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" aria-readonly="true">
@@ -1531,7 +1531,7 @@ aria-readonly 속성은 ARIA(Accessible Rich Internet Applications)에서 사용
 </div>
 ```
 
-**읽기 전용 커스텀 텍스트 입력 필드 예시**
+**읽기 전용 커스텀 텍스트 입력 필드 예시**      
 이 예시는 div 요소를 사용한 커스텀 텍스트 입력 필드로, 읽기 전용 상태를 나타냅니다. aria-readonly="true" 속성은 이 필드가 사용자가 수정할 수 없는 상태임을 보조 기술에 전달합니다.    
 ```sh
 <div role="textbox" aria-readonly="true" contenteditable="false" style="border: 1px solid #ccc; padding: 8px;">
@@ -1562,19 +1562,19 @@ aria-required 속성은 ARIA(Accessible Rich Internet Applications)에서 사용
 - **일관된 사용자 경험**: aria-required와 required 속성을 함께 사용하는 경우, 보조 기술 사용자와 시각적 사용자 모두에게 일관된 경험을 제공할 수 있습니다.       
 
 
-**잘못된 예시**
+**잘못된 예시**      
 이 예시에서는 aria-required="true" 속성이 설정되어 있지만, 사용자에게 필수 입력 항목이라는 시각적 표시가 없습니다. 시각적 표시를 추가해야 사용자 경험이 일관됩니다.    
 ```sh
 <input type="text" aria-required="true">
 ```
 
-**올바른 예시**
+**올바른 예시**      
 이 예시는 HTML5 required 속성과 aria-required 속성을 함께 사용하여, 시각적 사용자와 보조 기술 사용자 모두에게 필수 입력 필드임을 명확히 전달합니다.    
 ```sh
 <input type="text" aria-required="true" placeholder="Enter your name" required>
 ```
 
-**필수 입력 텍스트 필드 예시**
+**필수 입력 텍스트 필드 예시**      
 이 예시는 필수 텍스트 필드를 포함한 폼을 구현한 것입니다. aria-required="true"와 required 속성을 함께 사용하여 필수 필드임을 명확히 하고, 폼 제출 시 필드가 비어 있을 경우 경고 메시지를 표시합니다.    
 ```sh
 <form id="exampleForm">
@@ -1595,7 +1595,7 @@ document.getElementById('exampleForm').addEventListener('submit', function(event
 </script>
 ```
 
-**필수 입력 텍스트 영역 예시**
+**필수 입력 텍스트 영역 예시**      
 이 예시는 필수 입력이 필요한 텍스트 영역을 나타냅니다. aria-required="true"와 required 속성을 함께 사용하여, 사용자가 입력하지 않으면 폼 제출 시 경고 메시지를 표시합니다.    
 ```sh
 <form id="messageForm">
@@ -1616,7 +1616,7 @@ document.getElementById('messageForm').addEventListener('submit', function(event
 </script>
 ```
 
-**필수 선택 드롭다운 메뉴 예시**
+**필수 선택 드롭다운 메뉴 예시**      
 이 예시는 필수 선택 필드를 포함한 드롭다운 메뉴를 구현한 것입니다. aria-required="true"와 required 속성을 함께 사용하여 필수 선택 필드임을 나타내고, 선택하지 않고 폼을 제출하려고 하면 경고 메시지를 표시합니다.    
 ```sh
 <form id="countryForm">
@@ -1685,7 +1685,7 @@ aria-selected 속성은 ARIA(Accessible Rich Internet Applications)에서 사용
 - **단일 선택과 다중 선택 구분**: aria-selected는 단일 선택과 다중 선택 모두에 사용할 수 있으며, 이를 통해 보조 기술이 현재 선택된 항목을 명확히 전달할 수 있습니다.       
 
 
-**잘못된 예시**
+**잘못된 예시**      
 이 예시에서는 aria-selected 속성이 일부 옵션에만 설정되어 있어 보조 기술이 정확한 선택 상태를 인식하기 어려울 수 있습니다. 모든 선택 가능한 항목에 aria-selected 속성을 명시적으로 설정해야 합니다.    
 ```sh
 <div role="listbox">
@@ -1695,7 +1695,7 @@ aria-selected 속성은 ARIA(Accessible Rich Internet Applications)에서 사용
 </div>
 ```
 
-**올바른 예시**
+**올바른 예시**      
 이 예시는 모든 선택 가능한 항목에 aria-selected 속성이 명시적으로 설정되어 있으며, 보조 기술이 각 항목의 선택 상태를 정확하게 인식할 수 있습니다.    
 ```sh
 <div role="listbox">
@@ -1705,7 +1705,7 @@ aria-selected 속성은 ARIA(Accessible Rich Internet Applications)에서 사용
 </div>
 ```
 
-**단일 선택 리스트 박스 예시**
+**단일 선택 리스트 박스 예시**      
 이 예시는 단일 선택이 가능한 리스트 박스를 나타냅니다. aria-selected="true" 속성이 설정된 항목이 현재 선택된 항목임을 나타내며, 클릭 시 선택 상태가 동적으로 업데이트됩니다.    
 ```sh
 <div role="listbox" id="singleSelectListbox">
@@ -1730,7 +1730,7 @@ document.getElementById('singleSelectListbox').addEventListener('click', functio
 </script>
 ```
 
-**다중 선택 리스트 박스 예시**
+**다중 선택 리스트 박스 예시**      
 이 예시는 다중 선택이 가능한 리스트 박스를 나타냅니다. 사용자는 여러 항목을 선택할 수 있으며, 각 항목의 aria-selected 상태는 클릭 시 동적으로 업데이트됩니다.    
 ```sh
 <div role="listbox" id="multiSelectListbox" aria-multiselectable="true">
@@ -1749,7 +1749,7 @@ document.getElementById('multiSelectListbox').addEventListener('click', function
 </script>
 ```
 
-**탭 리스트에서 선택된 탭 예시**
+**탭 리스트에서 선택된 탭 예시**      
 이 예시는 탭 리스트에서 선택된 탭을 나타냅니다. 사용자가 탭을 클릭할 때, 선택된 탭이 동적으로 업데이트되며, 선택된 탭의 콘텐츠가 표시됩니다.    
 ```sh
 <div role="tablist" id="tabListExample">
@@ -1775,7 +1775,7 @@ document.getElementById('tabListExample').addEventListener('click', function(eve
 </script>
 ```
 
-**키보드 내비게이션과 함께 사용하는 예시**
+**키보드 내비게이션과 함께 사용하는 예시**      
 이 예시는 키보드 내비게이션을 통해 항목 간의 선택 상태를 변경하는 리스트 박스를 구현한 것입니다. 사용자가 ArrowDown 및 ArrowUp 키를 사용하여 항목 간에 이동하며, aria-selected 속성이 동적으로 업데이트됩니다.    
 ```sh
 <div role="listbox" id="keyboardListbox" tabindex="0">
@@ -1807,7 +1807,7 @@ document.getElementById('keyboardListbox').addEventListener('keydown', function(
 </script>
 ```
 
-**시멘틱 마크업을 활용한 탭 리스트 예시**
+**시멘틱 마크업을 활용한 탭 리스트 예시**      
 이 예시는 시멘틱 마크업을 활용한 탭 리스트를 나타냅니다. 각 탭은 aria-selected 속성을 통해 현재 선택된 상태를 나타내며, 클릭 시 선택된 탭과 연관된 패널의 콘텐츠가 표시됩니다. 이 예시는 시멘틱 HTML 요소인 &lt;ul&gt;와 &lt;li&gt;를 활용하여 더 구조화된 접근성을 제공합니다.    
 ```sh
 <ul role="tablist">
@@ -1863,7 +1863,7 @@ aria-sort 속성은 ARIA(Accessible Rich Internet Applications)에서 사용하�
 - **명확한 피드백 제공**: 사용자가 열을 클릭하여 정렬 상태를 변경할 때, 시각적인 피드백(예: 화살표 아이콘)과 함께 aria-sort 속성을 업데이트하면 사용자가 정렬 상태를 더 쉽게 인식할 수 있습니다.       
 
 
-**잘못된 예시**
+**잘못된 예시**      
 이 예시는 aria-sort 속성이 Age 열에만 설정되어 있으며, 사용자가 실제로 정렬 상태를 변경할 수 없습니다. 모든 열에 aria-sort 속성을 적용하고, 동적으로 상태를 업데이트해야 합니다.    
 ```sh
 <table>
@@ -1889,7 +1889,7 @@ aria-sort 속성은 ARIA(Accessible Rich Internet Applications)에서 사용하�
 </table>
 ```
 
-**올바른 예시**
+**올바른 예시**      
 이 예시는 모든 열에 aria-sort 속성이 명시적으로 설정되어 있으며, 보조 기술이 각 열의 정렬 상태를 정확하게 인식할 수 있습니다.   
 ```sh
 <table>
@@ -1915,7 +1915,7 @@ aria-sort 속성은 ARIA(Accessible Rich Internet Applications)에서 사용하�
 </table>
 ```
 
-**기본 테이블의 열 정렬 상태 예시**
+**기본 테이블의 열 정렬 상태 예시**      
 이 예시는 기본 테이블의 열 헤더에 aria-sort 속성을 사용하여 현재 "Name" 열이 오름차순으로 정렬된 상태임을 나타냅니다. 다른 열은 정렬되지 않은 상태로 표시됩니다.    
 ```sh
 <table>
@@ -1941,7 +1941,7 @@ aria-sort 속성은 ARIA(Accessible Rich Internet Applications)에서 사용하�
 </table>
 ```
 
-**동적으로 정렬 상태를 변경하는 테이블 예시**
+**동적으로 정렬 상태를 변경하는 테이블 예시**      
 이 예시는 사용자가 열 헤더를 클릭할 때마다 aria-sort 속성이 동적으로 변경되는 테이블을 구현한 것입니다. 사용자가 헤더를 클릭할 때, 열의 정렬 상태가 오름차순, 내림차순, 또는 정렬되지 않은 상태로 순환됩니다.    
 ```sh
 <table id="sortableTable">
@@ -2013,7 +2013,7 @@ aria-valuemax 속성은 ARIA(Accessible Rich Internet Applications)에서 사용
 - **보조 기술과의 호환성**: 이 속성은 보조 기술이 요소의 범위를 인식하도록 돕기 때문에, 특히 시각적으로 요소의 범위를 이해하기 어려운 사용자에게 유용합니다.       
 
 
-**잘못된 예시**
+**잘못된 예시**      
 이 예시에서는 aria-valuemax="50"으로 설정되어 있지만, aria-valuenow 값이 50을 초과하고 있습니다. 이는 사용자가 최대 값보다 높은 값을 설정할 수 있음을 잘못 전달할 수 있습니다.    
 ```sh
 <div role="slider" aria-valuemin="0" aria-valuemax="50" aria-valuenow="60" tabindex="0">
@@ -2021,7 +2021,7 @@ aria-valuemax 속성은 ARIA(Accessible Rich Internet Applications)에서 사용
 </div>
 ```
 
-**올바른 예시**
+**올바른 예시**      
 이 예시는 aria-valuemax 값이 슬라이더의 실제 최대 값과 일치하며, 현재 값이 최대 값을 초과하지 않습니다. 보조 기술은 이 정보를 사용하여 올바른 범위를 전달할 수 있습니다.   
 ```sh
 <div role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0">
@@ -2029,14 +2029,14 @@ aria-valuemax 속성은 ARIA(Accessible Rich Internet Applications)에서 사용
 </div>
 ```
 
-**기본 슬라이더 예시**
+**기본 슬라이더 예시**      
 이 예시는 HTML5 슬라이더 요소를 사용하여 볼륨을 조정하는 슬라이더를 나타냅니다. aria-valuemax="100" 속성은 슬라이더의 최대 값이 100임을 보조 기술에 알립니다.    
 ```sh
 <label for="volumeSlider">Volume</label>
 <input type="range" id="volumeSlider" min="0" max="100" value="50" aria-valuemax="100">
 ```
 
-**커스텀 슬라이더 예시**
+**커스텀 슬라이더 예시**      
 이 예시는 커스텀 슬라이더를 구현한 것으로, aria-valuemax="200" 속성을 사용하여 슬라이더의 최대 값을 보조 기술에 전달합니다. 사용자는 키보드 화살표 키를 사용하여 슬라이더 값을 조정할 수 있습니다.    
 ```sh
 <div role="slider" aria-valuemin="0" aria-valuemax="200" aria-valuenow="100" tabindex="0" style="width: 200px; background: lightgray; height: 10px; position: relative;">
@@ -2062,7 +2062,7 @@ document.getElementById('sliderThumb').addEventListener('keydown', function(even
 </script>
 ```
 
-**스피너 예시**
+**스피너 예시**      
 이 예시는 스피너 컨트롤을 구현한 것으로, aria-valuemax="10" 속성을 사용하여 스피너가 허용하는 최대 값이 10임을 나타냅니다. 사용자는 화살표 키를 사용하여 값을 증감할 수 있습니다.    
 ```sh
 <div role="spinbutton" aria-valuemin="1" aria-valuemax="10" aria-valuenow="5" tabindex="0">
@@ -2087,7 +2087,7 @@ document.querySelector('[role="spinbutton"]').addEventListener('keydown', functi
 </script>
 ```
 
-**시멘틱 마크업을 활용한 진행률 표시 예시**
+**시멘틱 마크업을 활용한 진행률 표시 예시**      
 이 예시는 파일 업로드 진행률을 나타내는 progress 요소를 사용하여 시멘틱 마크업을 구현한 것입니다. aria-valuemax="100" 속성은 진행률의 최대 값이 100임을 보조 기술에 전달합니다.    
 ```sh
 <progress id="fileProgress" max="100" value="50" aria-valuemax="100"></progress>
@@ -2115,7 +2115,7 @@ aria-valuemin 속성은 ARIA(Accessible Rich Internet Applications)에서 사용
 - **보조 기술과의 호환성**: 이 속성은 보조 기술이 요소의 범위를 인식하도록 돕기 때문에, 특히 시각적으로 요소의 범위를 이해하기 어려운 사용자에게 유용합니다.       
 
 
-**잘못된 예시**
+**잘못된 예시**      
 이 예시에서는 aria-valuemin="10"으로 설정되어 있지만, aria-valuenow 값이 10보다 작습니다. 이는 사용자가 최소 값보다 낮은 값을 설정할 수 있음을 잘못 전달할 수 있습니다.    
 ```sh
 <div role="slider" aria-valuemin="10" aria-valuemax="50" aria-valuenow="5" tabindex="0">
@@ -2123,7 +2123,7 @@ aria-valuemin 속성은 ARIA(Accessible Rich Internet Applications)에서 사용
 </div>
 ```
 
-**올바른 예시**
+**올바른 예시**      
 이 예시는 aria-valuemin 값이 슬라이더의 실제 최소 값과 일치하며, 현재 값이 최소 값을 초과하지 않습니다. 보조 기술은 이 정보를 사용하여 올바른 범위를 전달할 수 있습니다.   
 ```sh
 <div role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0">
@@ -2131,14 +2131,14 @@ aria-valuemin 속성은 ARIA(Accessible Rich Internet Applications)에서 사용
 </div>
 ```
 
-**기본 슬라이더 예시**
+**기본 슬라이더 예시**      
 이 예시는 HTML5 슬라이더 요소를 사용하여 볼륨을 조정하는 슬라이더를 나타냅니다. aria-valuemin="0" 속성은 슬라이더의 최소 값이 0임을 보조 기술에 알립니다.    
 ```sh
 <label for="volumeSlider">Volume</label>
 <input type="range" id="volumeSlider" min="0" max="100" value="50" aria-valuemax="100">
 ```
 
-**커스텀 슬라이더 예시**
+**커스텀 슬라이더 예시**      
 이 예시는 커스텀 슬라이더를 구현한 것으로, aria-valuemin="0" 속성을 사용하여 슬라이더의 최소 값을 보조 기술에 전달합니다. 사용자는 키보드 화살표 키를 사용하여 슬라이더 값을 조정할 수 있습니다.    
 ```sh
 <div role="slider" aria-valuemin="0" aria-valuemax="200" aria-valuenow="100" tabindex="0" style="width: 200px; background: lightgray; height: 10px; position: relative;">
@@ -2164,7 +2164,7 @@ document.getElementById('sliderThumb').addEventListener('keydown', function(even
 </script>
 ```
 
-**스피너 예시**
+**스피너 예시**      
 이 예시는 스피너 컨트롤을 구현한 것으로, aria-valuemin="1" 속성을 사용하여 스피너가 허용하는 최소 값이 1임을 나타냅니다. 사용자는 화살표 키를 사용하여 값을 증감할 수 있습니다.    
 ```sh
 <div role="spinbutton" aria-valuemin="1" aria-valuemax="10" aria-valuenow="5" tabindex="0">
@@ -2189,7 +2189,7 @@ document.querySelector('[role="spinbutton"]').addEventListener('keydown', functi
 </script>
 ```
 
-**시멘틱 마크업을 활용한 진행률 표시 예시**
+**시멘틱 마크업을 활용한 진행률 표시 예시**      
 이 예시는 파일 업로드 진행률을 나타내는 progress 요소를 사용하여 시멘틱 마크업을 구현한 것입니다. aria-valuemin="0" 속성은 진행률의 최소 값이 0임을 보조 기술에 전달합니다.    
 ```sh
 <progress id="fileProgress" max="100" value="50" aria-valuemax="100"></progress>
@@ -2217,7 +2217,7 @@ aria-valuenow 속성은 ARIA(Accessible Rich Internet Applications)에서 사용
 - **보조 기술과의 호환성**: 이 속성은 보조 기술이 요소의 범위를 인식하도록 돕기 때문에, 특히 시각적으로 요소의 범위를 이해하기 어려운 사용자에게 유용합니다.       
 
 
-**잘못된 예시**
+**잘못된 예시**      
 이 예시에서는 aria-valuenow="150"으로 설정되어 있지만, 이는 aria-valuemax="100"을 초과하는 값입니다. 이는 사용자가 최대 값보다 높은 값을 설정할 수 있음을 잘못 전달할 수 있습니다.    
 ```sh
 <div role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="150" tabindex="0">
@@ -2225,7 +2225,7 @@ aria-valuenow 속성은 ARIA(Accessible Rich Internet Applications)에서 사용
 </div>
 ```
 
-**올바른 예시**
+**올바른 예시**      
 이 예시는 aria-valuenow 값이 슬라이더의 현재 값과 일치하며, 최대 값 또는 최소 값을 초과하지 않습니다. 보조 기술은 이 정보를 사용하여 올바른 상태를 전달할 수 있습니다.   
 ```sh
 <div role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0">
@@ -2233,14 +2233,14 @@ aria-valuenow 속성은 ARIA(Accessible Rich Internet Applications)에서 사용
 </div>
 ```
 
-**기본 슬라이더 예시**
+**기본 슬라이더 예시**      
 이 예시는 HTML5 슬라이더 요소를 사용하여 볼륨을 조정하는 슬라이더를 나타냅니다. aria-valuenow="50" 속성은 슬라이더의 현재 값이 50임을 보조 기술에 알립니다.    
 ```sh
 <label for="volumeSlider">Volume</label>
 <input type="range" id="volumeSlider" min="0" max="100" value="50" aria-valuenow="50">
 ```
 
-**커스텀 슬라이더 예시**
+**커스텀 슬라이더 예시**      
 이 예시는 커스텀 슬라이더를 구현한 것으로, aria-valuenow="100" 속성을 사용하여 슬라이더의 현재 값을 보조 기술에 전달합니다. 사용자는 키보드 화살표 키를 사용하여 슬라이더 값을 조정할 수 있습니다.    
 ```sh
 <div role="slider" aria-valuemin="0" aria-valuemax="200" aria-valuenow="100" tabindex="0" style="width: 200px; background: lightgray; height: 10px; position: relative;">
@@ -2266,7 +2266,7 @@ document.getElementById('sliderThumb').addEventListener('keydown', function(even
 </script>
 ```
 
-**스피너 예시**
+**스피너 예시**      
 이 예시는 스피너 컨트롤을 구현한 것으로, aria-valuenow="5" 속성을 사용하여 스피너의 현재 값이 5임을 나타냅니다. 사용자는 화살표 키를 사용하여 값을 증감할 수 있으며, aria-valuenow 속성이 동적으로 업데이트됩니다.    
 ```sh
 <div role="spinbutton" aria-valuemin="1" aria-valuemax="10" aria-valuenow="5" tabindex="0">
@@ -2291,7 +2291,7 @@ document.querySelector('[role="spinbutton"]').addEventListener('keydown', functi
 </script>
 ```
 
-**시멘틱 마크업을 활용한 진행률 표시 예시**
+**시멘틱 마크업을 활용한 진행률 표시 예시**      
 이 예시는 파일 업로드 진행률을 나타내는 progress 요소를 사용하여 시멘틱 마크업을 구현한 것입니다. aria-valuenow="50" 속성은 진행률의 현재 값이 50%임을 보조 기술에 전달합니다.    
 ```sh
 <progress id="fileProgress" max="100" value="50" aria-valuenow="50"></progress>
@@ -2319,7 +2319,7 @@ aria-valuetext 속성은 ARIA(Accessible Rich Internet Applications)에서 사�
 - **보조 기술과의 호환성**: 이 속성은 보조 기술이 요소의 범위를 인식하도록 돕기 때문에, 특히 시각적으로 요소의 범위를 이해하기 어려운 사용자에게 유용합니다.       
 
 
-**잘못된 예시**
+**잘못된 예시**      
 이 예시에서는 aria-valuenow="50"과 aria-valuetext="150"이 일치하지 않습니다. 이로 인해 보조 기술 사용자가 혼란을 겪을 수 있습니다. aria-valuetext는 aria-valuenow와 의미가 일치하는 텍스트로 설정해야 합니다.    
 ```sh
 <div role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-valuetext="150" tabindex="0">
@@ -2327,7 +2327,7 @@ aria-valuetext 속성은 ARIA(Accessible Rich Internet Applications)에서 사�
 </div>
 ```
 
-**올바른 예시**
+**올바른 예시**      
 이 예시는 aria-valuenow 값이 50이고, aria-valuetext가 이를 설명하는 "Medium"으로 설정되어 있으며, 보조 기술 사용자에게 일관된 정보를 제공합니다.   
 ```sh
 <div role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-valuetext="Medium" tabindex="0">
@@ -2335,14 +2335,14 @@ aria-valuetext 속성은 ARIA(Accessible Rich Internet Applications)에서 사�
 </div>
 ```
 
-**기본 슬라이더 예시**
+**기본 슬라이더 예시**      
 이 예시는 HTML5 슬라이더 요소를 사용하여 볼륨을 조정하는 슬라이더를 나타냅니다. aria-valuetext="Medium" 속성은 슬라이더의 현재 값이 50일 때, 이를 "Medium"이라는 텍스트로 설명합니다.    
 ```sh
 <label for="volumeSlider">Volume</label>
 <input type="range" id="volumeSlider" min="0" max="100" value="50" aria-valuenow="50" aria-valuetext="Medium">
 ```
 
-**커스텀 슬라이더 예시**
+**커스텀 슬라이더 예시**      
 이 예시는 커스텀 슬라이더를 구현한 것으로, aria-valuenow="100"과 함께 aria-valuetext="Halfway" 속성을 사용하여 슬라이더의 현재 값을 보조 기술에 전달합니다. 사용자가 슬라이더 값을 변경할 때, 해당 값에 대한 텍스트 설명도 동적으로 업데이트됩니다.    
 ```sh
 <div role="slider" aria-valuemin="0" aria-valuemax="200" aria-valuenow="100" aria-valuetext="Halfway" tabindex="0" style="width: 200px; background: lightgray; height: 10px; position: relative;">
@@ -2369,7 +2369,7 @@ document.getElementById('sliderThumb').addEventListener('keydown', function(even
 </script>
 ```
 
-**스피너 예시**
+**스피너 예시**      
 이 예시는 스피너 컨트롤을 구현한 것으로, aria-valuenow="5"와 함께 aria-valuetext="Five" 속성을 사용하여 현재 값을 텍스트로 표현합니다. 사용자가 값을 변경할 때, aria-valuetext가 동적으로 업데이트됩니다.    
 ```sh
 <div role="spinbutton" aria-valuemin="1" aria-valuemax="10" aria-valuenow="5" aria-valuetext="Five" tabindex="0">
@@ -2395,7 +2395,7 @@ document.querySelector('[role="spinbutton"]').addEventListener('keydown', functi
 </script>
 ```
 
-**시멘틱 마크업을 활용한 진행률 표시 예시**
+**시멘틱 마크업을 활용한 진행률 표시 예시**      
 이 예시는 파일 업로드 진행률을 나타내는 progress 요소를 사용하여 시멘틱 마크업을 구현한 것입니다. aria-valuetext="50 percent completed" 속성은 진행률의 현재 값을 텍스트로 설명하며, 보조 기술 사용자에게 보다 명확한 정보를 제공합니다.    
 ```sh
 <progress id="fileProgress" max="100" value="50" aria-valuenow="50" aria-valuetext="50 percent completed"></progress>

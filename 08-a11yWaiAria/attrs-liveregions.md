@@ -53,7 +53,7 @@ aria-atomic 속성은 WAI-ARIA(Accessible Rich Internet Applications)의 속성 
 - **성능 이슈**: aria-atomic="true"는 스크린 리더가 전체 요소를 다시 읽게 만들기 때문에, 복잡하거나 큰 콘텐츠에서는 성능 이슈를 유발할 수 있습니다.    
 
 
-**잘못된 예시**
+**잘못된 예시**      
 사용자가 날씨에 대한 추가 정보(기온)을 듣기 위해 aria-atomic="true"가 필요하지 않음에도 불구하고, 전체 내용을 다시 읽게 됩니다. 단순히 추가된 정보만 전달하는 것이 더 바람직합니다.    
 ```sh
 <div aria-live="polite" aria-atomic="true">
@@ -66,7 +66,7 @@ aria-atomic 속성은 WAI-ARIA(Accessible Rich Internet Applications)의 속성 
 </script>
 ```
 
-**올바른 예시**
+**올바른 예시**      
 이 경우 aria-atomic="false"가 적절합니다. 사용자는 변동된 부분(기온)을 듣기만 하면 되기 때문에 전체 내용을 다시 듣지 않아도 됩니다.    
 ```sh
 <div aria-live="polite" aria-atomic="false">
@@ -79,7 +79,7 @@ aria-atomic 속성은 WAI-ARIA(Accessible Rich Internet Applications)의 속성 
 </script>
 ```
 
-**aria-atomic="true" 사용 예시 - 사용자가 전체 업데이트된 정보를 필요로 할 때:**
+**aria-atomic="true" 사용 예시 - 사용자가 전체 업데이트된 정보를 필요로 할 때**   
 전체 상태를 다시 읽어주는 것이 적절할 때 사용합니다.    
 ```sh
 <div aria-live="assertive" aria-atomic="true">
@@ -92,7 +92,7 @@ aria-atomic 속성은 WAI-ARIA(Accessible Rich Internet Applications)의 속성 
 </script>
 ```
 
-**aria-atomic="false" 사용 예시 - 일부 정보만 업데이트되었을 때**
+**aria-atomic="false" 사용 예시 - 일부 정보만 업데이트되었을 때**   
 새 메시지만 전달되는 것이 목적이므로, 변경된 부분만 알립니다.    
 ```sh
 <div aria-live="polite" aria-atomic="false">
@@ -105,7 +105,7 @@ aria-atomic 속성은 WAI-ARIA(Accessible Rich Internet Applications)의 속성 
 </script>
 ```
 
-**시멘틱 구조의 예시**
+**시멘틱 구조의 예시**      
 이 구조에서는 서버 상태의 모든 변화를 사용자에게 알리는 것이 중요하기 때문에 aria-atomic="true"가 적절합니다. 스크린 리더는 전체 상태를 다시 읽어줍니다.    
 ```sh
 <article role="log" aria-live="polite" aria-atomic="true">
@@ -142,7 +142,7 @@ aria-busy는 WAI-ARIA(Accessible Rich Internet Applications)에서 정의된 상
 - **동작 완료 시점**: 비동기 작업이 완료되면 반드시 aria-busy 속성을 false로 설정하여 화면 판독기가 이 정보를 인식할 수 있도록 해야 합니다.    
 
 
-**잘못된 예시**
+**잘못된 예시**      
 작업이 완료된 후에도 aria-busy="true" 상태가 유지되어, 사용자는 계속해서 요소가 바쁘다고 인식하게 됩니다.    
 ```sh
 <div id="content" aria-busy="true">
@@ -156,7 +156,7 @@ aria-busy는 WAI-ARIA(Accessible Rich Internet Applications)에서 정의된 상
 </script>
 ```
 
-**올바른 예시**
+**올바른 예시**      
 작업이 완료되면 aria-busy를 false로 설정하여 화면 판독기가 사용자가 이 영역과 상호작용할 수 있음을 알 수 있도록 합니다.    
 ```sh
 <div id="content" aria-busy="true">
@@ -185,7 +185,7 @@ aria-busy는 WAI-ARIA(Accessible Rich Internet Applications)에서 정의된 상
 </script>
 ```
 
-**비동기 데이터 업데이트 예시**
+**비동기 데이터 업데이트 예시**      
 비동기적으로 데이터를 갱신하는 동안 aria-busy="true"를 설정하고, 갱신이 완료되면 false로 변경합니다.    
 ```sh
 <div id="data-section" aria-busy="true">
@@ -200,7 +200,7 @@ aria-busy는 WAI-ARIA(Accessible Rich Internet Applications)에서 정의된 상
 </script>
 ```
 
-**시멘틱 구조의 예시**
+**시멘틱 구조의 예시**      
 업데이트 로그 섹션이 로드 중일 때 사용자가 해당 섹션이 아직 작업 중임을 알 수 있도록 aria-busy="true"를 사용합니다. 로드가 완료되면 false로 설정하여 사용자가 해당 영역을 탐색할 수 있게 합니다.    
 ```sh
 <section role="region" aria-labelledby="updates" aria-busy="true">
@@ -237,7 +237,7 @@ aria-live 속성은 WAI-ARIA(Accessible Rich Internet Applications)에서 사용
 - **불필요한 알림 방지**: aria-live 속성의 남용은 사용자가 불필요한 정보로 인해 혼란스러워질 수 있으므로, 실질적으로 중요한 정보에만 이 속성을 적용해야 합니다.    
 
 
-**잘못된 예시**
+**잘못된 예시**      
 시계가 매초 업데이트되면서 스크린 리더가 계속해서 사용자를 방해하게 됩니다. assertive 대신 off나 polite가 적절합니다.    
 ```sh
 <div aria-live="assertive">
@@ -250,7 +250,7 @@ aria-live 속성은 WAI-ARIA(Accessible Rich Internet Applications)에서 사용
 </script>
 ```
 
-**올바른 예시**
+**올바른 예시**      
 새 메시지가 도착했을 때 polite 속성을 사용하여 스크린 리더가 다른 작업을 방해하지 않고 알림을 전달합니다.    
 ```sh
 <div aria-live="polite">
@@ -263,7 +263,7 @@ aria-live 속성은 WAI-ARIA(Accessible Rich Internet Applications)에서 사용
 </script>
 ```
 
-**aria-live="off" 사용 예시**
+**aria-live="off" 사용 예시**      
 화면 판독기 사용자에게 중요하지 않은 정보의 변경사항이 있을 때 aria-live="off"를 사용합니다.    
 ```sh
 <div aria-live="off">
@@ -271,7 +271,7 @@ aria-live 속성은 WAI-ARIA(Accessible Rich Internet Applications)에서 사용
 </div>
 ```
 
-**aria-live="polite" 사용 예시**
+**aria-live="polite" 사용 예시**      
 날씨 정보처럼 사용자가 알아야 하지만 즉시 알릴 필요는 없는 정보에 적합합니다.    
 ```sh
 <div aria-live="polite">
@@ -284,7 +284,7 @@ aria-live 속성은 WAI-ARIA(Accessible Rich Internet Applications)에서 사용
 </script>
 ```
 
-**aria-live="assertive" 사용 예시**
+**aria-live="assertive" 사용 예시**      
 즉각적인 주의가 필요한 오류 메시지나 경고에는 assertive를 사용하여 사용자에게 즉시 알립니다.    
 ```sh
 <div aria-live="assertive">
@@ -297,7 +297,7 @@ aria-live 속성은 WAI-ARIA(Accessible Rich Internet Applications)에서 사용
 </script>
 ```
 
-**시멘틱 구조의 예시**
+**시멘틱 구조의 예시**      
 시스템 알림처럼 즉각적인 반응이 필요한 상황에서는 aria-live="assertive"를 사용합니다. 사용자는 중요한 시스템 상태 변경 사항을 즉시 인식할 수 있습니다.    
 ```sh
 <article role="alert" aria-live="assertive">
@@ -313,7 +313,7 @@ aria-live 속성은 WAI-ARIA(Accessible Rich Internet Applications)에서 사용
 </script>
 ```
 
-**키패드 응용 예시**
+**키패드 응용 예시**      
 aria-live="assertive"사용하여 사용자가 버튼을 클릭할 때 메시지가 여기에 업데이트됩니다. aria-live="assertive"는 화면 판독기(스크린 리더) 사용자에게 즉시 메시지를 읽어주도록 합니다. 숫자 입력과 관련된 간단한 사용자 인터페이스를 구현하는 데 사용될 수 있으며, 특히 키패드를 이용한 비밀번호 입력 같은 상황에 유용할 수 있습니다.    
 ```sh
 <div class="keypad">
@@ -393,7 +393,7 @@ aria-relevant 속성은 WAI-ARIA(Accessible Rich Internet Applications)에서 �
 - **aria-live 속성과의 조합**: aria-relevant는 aria-live 속성과 함께 사용될 때 의미가 있습니다. aria-live가 off로 설정된 경우, aria-relevant는 효과가 없습니다.    
 
 
-**잘못된 예시**
+**잘못된 예시**      
 aria-relevant="all"은 모든 변경 사항(추가, 제거, 텍스트 변경)을 알리므로, 불필요한 정보가 스크린 리더를 통해 전달될 수 있습니다. 실제로 중요한 변경 사항만 알리는 것이 좋습니다.    
 ```sh
 <div aria-live="polite" aria-relevant="all">
@@ -407,7 +407,7 @@ aria-relevant="all"은 모든 변경 사항(추가, 제거, 텍스트 변경)을
 </script>
 ```
 
-**올바른 예시**
+**올바른 예시**      
 이 예시에서는 새로운 메시지가 도착했을 때만 스크린 리더가 이를 알리도록 aria-relevant="additions"를 사용했습니다. 사용자가 알아야 할 중요한 정보만 전달됩니다.    
 ```sh
 <div aria-live="polite" aria-relevant="additions">
@@ -422,7 +422,7 @@ aria-relevant="all"은 모든 변경 사항(추가, 제거, 텍스트 변경)을
 </script>
 ```
 
-**aria-relevant="additions" 사용 예시**
+**aria-relevant="additions" 사용 예시**      
 새로운 업데이트가 추가될 때만 알리도록 설정합니다.    
 ```sh
 <div aria-live="polite" aria-relevant="additions">
@@ -439,7 +439,7 @@ aria-relevant="all"은 모든 변경 사항(추가, 제거, 텍스트 변경)을
 </script>
 ```
 
-**aria-relevant="removals" 사용 예시**
+**aria-relevant="removals" 사용 예시**      
 메시지가 제거될 때만 스크린 리더가 이를 알립니다.    
 ```sh
 <div aria-live="polite" aria-relevant="removals">
@@ -452,7 +452,7 @@ aria-relevant="all"은 모든 변경 사항(추가, 제거, 텍스트 변경)을
 </script>
 ```
 
-**aria-relevant="text" 사용 예시**
+**aria-relevant="text" 사용 예시**      
 텍스트가 변경될 때만 알리도록 설정합니다.    
 ```sh
 <div aria-live="polite" aria-relevant="text">
@@ -465,7 +465,7 @@ aria-relevant="all"은 모든 변경 사항(추가, 제거, 텍스트 변경)을
 </script>
 ```
 
-**aria-relevant="all" 사용 예시**
+**aria-relevant="all" 사용 예시**      
 모든 변경 사항(추가, 제거, 텍스트 변경)을 사용자에게 알리도록 설정합니다.    
 ```sh
 <div aria-live="assertive" aria-relevant="all">
@@ -482,7 +482,7 @@ aria-relevant="all"은 모든 변경 사항(추가, 제거, 텍스트 변경)을
 </script>
 ```
 
-**시멘틱 구조의 예시**
+**시멘틱 구조의 예시**      
 시스템 로그와 같은 영역에서 새로운 로그가 추가되거나 텍스트가 변경될 때만 스크린 리더가 이를 알리도록 설정합니다.    
 ```sh
 <section role="log" aria-live="polite" aria-relevant="additions text">
