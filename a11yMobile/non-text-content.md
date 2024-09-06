@@ -46,22 +46,50 @@
 - **사용자 피드백**: 실제 사용자 테스트를 통해 대체 텍스트의 적절성에 대한 피드백을 수집.   
 
 
-#### 6. 개발방법       
+#### 6. 개발방법     
+시각장애인 사용자는 스크린리더 프로그램을 사용하여 콘텐츠 정보를 인식하고 사용합니다. 다음 그림에 보이는 바와 같이 스크린리더는 각각의 콘텐츠가 갖고 있는 정보를 음성으로 알려줍니다. 콘텐츠의 용도를 알 수 있는 텍스트 정보(●) 예: 블루라이트 필터, 콘텐츠가 어떤 컨트롤인지 버튼인지, 토글 버튼인지 등 유형 정보(▲) 예: 스위치, 콘텐츠 유형에 따른 상태 정보(◼︎) 예:사용 안 함, 콘텐츠를 사용하기에 필요한 힌트 정보(★) 예:전환하려면 두 번 탭 하세요. 를 음성으로 알려주는 것을 볼 수 있습니다.    
+<figure aria-hidden="true" style="text-align:center;border:1px solid #000">
+   <img src="https://nuli.navercorp.com/upload/2022/ad08ec91-d01c-4d98-a39b-af3fab51dfaf_iOSAndroid%E1%84%8B%E1%85%B3%E1%86%B7%E1%84%89%E1%85%A5%E1%86%BC.gif" alt="">
+   <figcaption>이미지 출처 : NULI</figcaption>
+</figure>
+
 **네이티브**     
+iOS는 accessibilityLabel로 Android는 contentDescription으로 대체 텍스트 정보를 제공할 수 있습니다.   
 
 - **iOS**    
   - [관련문서:Apple's Accessibility Programming Guide for iOS](https://developer.apple.com/accessibility/ios/){: target="_blank"}
   - **Interface Builder 이용하여 요소에 대체 텍스트 적용하는 방법**   
-      - Xcode에서 Interface Builder를 열고, UI 요소를 선택합니다.    
-      - 'Identity Inspector'의 'Accessibility' 섹션을 찾아 'Label' 필드에 대체 텍스트를 입력합니다.   
+      - 방법1. Xcode의 Accessibility 패널에서 Label 제공   
+        <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
+          <img src="https://nuli.navercorp.com/upload/2022/9391c267-047d-4e98-8df3-c612bdb800c3_0a705587-7652-1b4c-8177-6b9d37cb2ad0.png" alt="">
+          <figcaption>이미지 출처 : NULI</figcaption>
+        </figure>
+        
+        - ① Accessibility 에서 Enabled 을 선택해 접근성 기능을 활성화한 상태에서    
+        - ② Label 에 콘텐츠의 의미를 명확하게 전달할 수 있는 대체 텍스트를 작성합니다.    
+      - 방법2. 코드로 Label 제공   
+         ```sh
+          var.isAccessibilityElement = true   // ① 접근성 요소 활성화
+          var.accessibilityLabel = "대체 텍스트" // ② 대체 텍스트 정보
+          ```    
   - **UIAccessibility API를 활용하여 코드에 대체 텍스트 제공**    
-  ```sh
-  let imageView = UIImageView(image: UIImage(named: "sunrise.png"))
-  imageView.accessibilityLabel = "A beautiful sunrise over the mountains"
-  ```
+    ```sh
+    let imageView = UIImageView(image: UIImage(named: "sunrise.png"))
+    imageView.accessibilityLabel = "A beautiful sunrise over the mountains"
+    ```
 
 - **Android**         
   - [관련문서:Android Accessibility Overview](https://developer.android.com/guide/topics/ui/accessibility){: target="_blank"}
+  - 방법1. Android Studio Properties 창에서 contentDescription 제공   
+    <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
+      <img src="https://nuli.navercorp.com/upload/2022/6f0c6c7f-f031-4e6a-9998-b472415c9077_androidstudio.png" alt="">
+      <figcaption>이미지 출처 : NULI</figcaption>
+    </figure>
+  - 방법2. 코드로 contentDescription제공   
+    ```sh
+    android:contentDescription = "대체 텍스트" // UI 레이아웃 XML에서 제공
+    ```   
+    </figure>
   - **contentDescription 속성 사용**    
   ```sh
   <ImageView
@@ -123,16 +151,17 @@ export default SunriseImage;
    
 **주의사항**     
 - 기능을 제공하는 경우 이용방법 등 충분한 설명을 제공하지 않은 경우 (권고)     
-- 숫자 정보에 대해 의미전달이 미흡한 대체텍스트를 제공하는 경우 (권고) : 준수예) 6.20 --> 6월20일     
+- 숫자 정보에 대해 의미전달이 미흡한 대체텍스트를 제공하는 경우 (권고) :    
+- 준수예) 6.20 --> 6월20일     
 - 권고) 객체 유형정보를 정확히 제공할 것을 권장함(Traits 정보)     
 - IR기법으로 대체텍스트를 제공 시 hidden형태가 아니더라도 화면 터치방식으로는 대체정보 인지 불가함(오류)     
 
 #### 8. 점검 방법     
-**VoiceOver**         
+**iOS**         
 - **음성출력 형태**: VoiceOver는 UI 요소의 accessibilityLabel을 읽어줍니다. 예를 들어, "Submit button"이라고 출력합니다.    
 - **제공방법**: Xcode의 Interface Builder에서 Label 필드에 텍스트를 입력하거나, 코드에서 accessibilityLabel을 설정합니다.    
 
-**TalkBack**    
+**Android**    
 - **음성출력 형태**: TalkBack은 contentDescription 속성에 설정된 텍스트를 읽어줍니다.    
 - **제공방법**: Android Studio에서 XML의 contentDescription 속성을 사용하거나, 코드에서 직접 설정합니다.    
 
@@ -222,10 +251,10 @@ UIAutomatorViewer를 이용하여 점검한다.
 **방법 5 (하이브리드)**    
 크롬(Chrome) 브라우저 요소검사를 이용하여 점검한다.    
 - 해당 이미지 요소를 선택하여 우측클릭하여 요소검사를 하여 코드로 확인.    
-    <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-        <img src="./../images/a11y-mobile/img_a11yMobile_check05-01.png" alt="">
-        <figcaption>크롬(Chrome) 브라우저 이미지 요소검사</figcaption>
-    </figure>
+  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
+    <img src="./../images/a11y-mobile/img_a11yMobile_check05-01.png" alt="">
+    <figcaption>크롬(Chrome) 브라우저 이미지 요소검사</figcaption>
+  </figure>
  
 
 **주의사항**    
@@ -244,9 +273,9 @@ UIAutomatorViewer를 이용하여 점검한다.
 
 [AOA11Y 모바일 앱 접근성 (1.대체 텍스트)](https://www.youtube.com/watch?v=eQHPJ4tk-ag){: target="_blank"}    
    
+---
 
-
-#### 12. 접근성 테스트 도구 활용 점검방법      
+#### 접근성 테스트 도구 활용 점검방법      
 **Lighthouse**   
 Lighthouse is an open-source, automated tool for improving the quality of web pages.    
 Lighthouse는 구글에서 제공하는 웹 페이지 품질 개선을 위한 오픈 소스로 자동화 도구입니다. Lighthouse는 사이트의 성능, 접근성, SEO 등에 대한 전반적인 진단을 해줍니다.    
@@ -364,15 +393,14 @@ VSCode 사용 시 별도 확장 설치 후 소스 코드에서 잘못 작성된 
 접근성 오류 부분이 있는지 분석해 주는 플러그인이며 서비스 개발 환경이 React라면 실시간으로 JSX 요소에 대한 접근성 규칙을 확인하고 준수할 수 있도록 돕는 패키지를 설치해 개발할 수 있습니다. 기본적으로 추천되는 규칙 외에 예외로 사용하고 싶은 부분이 있다면 같이 서비스를 개발하는 개발자들과 협의하면서 lint 규칙을 만들어가다 보면 접근성을 준수하는 서비스 개발에 도움이 될 것입니다.    
 [규칙 상세 설명 : jsx-eslint/eslint-plugin-jsx-a11y](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y){: target="_blank"}  
 
-
 **사용법**   
-- eslint를 전역 설치했다면, eslint-plugin-jsx-a11y 플러그인도 전역으로 설치.  
+eslint를 전역 설치했다면, eslint-plugin-jsx-a11y 플러그인도 전역으로 설치.  
 ```sh
 npm install eslint-plugin-jsx-a11y
 // 또는
 yarn add eslint-plugin-jsx-a11y
 ``` 
-- .eslintrc.json 파일에 다음과 같이 추가한다.   
+.eslintrc.json 파일에 다음과 같이 추가한다.   
 ```sh
 {
   "extends": "plugin:jsx-a11y/recommended",
@@ -388,8 +416,120 @@ yarn add eslint-plugin-jsx-a11y
   }
 }
 ```
+   
+**iOS : Accessibility Inspector**    
+iOS 앱 개발도구인 xcode에는 Accessibility Inspector 툴을 통해 접근성을 수동 검사할 수 있습니다.    
+   
+- Xcode에서 Accessibility Inspector 툴을 실행합니다. (Xcode > Open Developer Tool > Accessibility Inspector)   
+  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
+    <img src="https://nuli.navercorp.com/upload/2023/ef764147-3952-46ec-948e-9c54e319af16_xcode_tool_accessibility_inspector.jpg" alt="">
+    <figcaption>이미지 출처 : NULI</figcaption>
+  </figure>  
+- 테스트할 장치를 선택합니다. 저는 진단하고 싶은 앱을 실행 후 아이폰을 노트북에 연결하여 장치 선택을 했어요. 개발 중인 앱을 Simulator로 빌드 하셨다면 Simulator를 선택하여 진단하실 수 있습니다.   
+  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
+    <img src="https://nuli.navercorp.com/upload/2023/1590bb9b-98eb-4302-8946-9a5dcc76b522_%E1%84%8C%E1%85%A1%E1%86%BC%E1%84%8E%E1%85%B5%E1%84%89%E1%85%A5%E1%86%AB%E1%84%90%E1%85%A2%E1%86%A8.jpg" alt="">
+    <img src="https://nuli.navercorp.com/upload/2023/48870f35-9a4e-4d8c-844a-fad3a870c76a_%E1%84%8C%E1%85%A1%E1%86%BC%E1%84%8E%E1%85%B5%E1%84%89%E1%85%A5%E1%86%AB%E1%84%90%E1%85%A2%E1%86%A8_%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE.jpg" alt="">
+    <figcaption>이미지 출처 : NULI</figcaption>
+  </figure>  
+- Accessibility Inspector 툴 오른쪽 상단에서 audit 버튼을 선택합니다. Run Audit 버튼을 선택합니다.   
+  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
+    <img src="https://nuli.navercorp.com/upload/2023/ac06562c-681f-4abf-8900-b8ebef40dd60_audit%E1%84%89%E1%85%B5%E1%86%AF%E1%84%92%E1%85%A2%E1%86%BC.jpg" alt="">
+    <figcaption>이미지 출처 : NULI</figcaption>
+  </figure>  
+- 결과 이슈 목록을 선택하거나 눈 버튼을 선택하시면 해당 항목을 보여줍니다. 장치를 보시면 노란색으로 표시되고, 물음표 버튼를 선택하시면 해당 이슈를 해결할 수 있는 방법을 알려줍니다.   
+  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
+    <img src="https://nuli.navercorp.com/upload/2023/d1d742a4-0487-449b-acac-fa494262bad5_audit%E1%84%80%E1%85%A7%E1%86%AF%E1%84%80%E1%85%AA.jpg" alt="">
+    <figcaption>이미지 출처 : NULI</figcaption>
+  </figure>  
+- 물음표 버튼를 선택하시면 해당 이슈를 해결할 수 있는 방법을 알려줍니다.   
+  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
+    <img src="https://nuli.navercorp.com/upload/2023/6543e5af-479a-4d55-8431-774e49278f26_%E1%84%8B%E1%85%B5%E1%84%89%E1%85%B2%E1%84%92%E1%85%A2%E1%84%80%E1%85%A7%E1%86%AF%E1%84%87%E1%85%A1%E1%86%BC%E1%84%87%E1%85%A5%E1%86%B8.jpg" alt="">
+    <figcaption>이미지 출처 : NULI</figcaption>
+  </figure>  
+- 목록에서 주의 깊게 봐야 할 이슈는 바로 description에 대한 이슈입니다. 대체 텍스트 이슈는 접근성 사용자에게 매우 크리티컬한 이슈이면서 해결 방법이 매우 수월한 이슈입니다.   
+  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
+    <img src="https://nuli.navercorp.com/upload/2023/3de8b5aa-6124-45e3-8048-b37edbad65c9_%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%E1%84%83%E1%85%A2%E1%84%8E%E1%85%A6%E1%84%90%E1%85%A6%E1%86%A8%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%E1%84%8B%E1%85%A9%E1%84%85%E1%85%B2.jpg" alt="">
+    <img src="https://nuli.navercorp.com/upload/2023/608699d9-c72b-45b0-b126-8b60c029773b_%E1%84%87%E1%85%A5%E1%84%90%E1%85%B3%E1%86%AB%E1%84%83%E1%85%A2%E1%84%8E%E1%85%A6%E1%84%90%E1%85%A6%E1%86%A8%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%E1%84%8B%E1%85%A9%E1%84%85%E1%85%B2.jpg" alt="">
+    <figcaption>이미지 출처 : NULI</figcaption>
+  </figure>  
+- Xcode의 Identity Inspector 탭의 Accessibility 패널에 **대체 텍스트**를 넣어주세요.   
+- 대체 텍스트 외에도 명도대비, 작은 터치영역등 다양한 접근성 이슈를 체크해주고 있습니다.   
+  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
+    <img src="https://nuli.navercorp.com/upload/2023/34d0933e-dab9-4cbd-8aa6-5b563025935c_accessibilityLabel.jpg" alt="">
+    <figcaption>이미지 출처 : NULI</figcaption>
+  </figure>  
+
+- **Inspection**   
+  각 요소별 접근성 항목을 확인할 수 있고, iOS 스크린리더인 VoiceOver 음성으로 들어볼 수 있습니다.    
+  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
+    <img src="https://nuli.navercorp.com/upload/2023/90a6c179-4017-46f9-b47e-2bfe9b6f8231_inspection.jpg" alt="">
+    <figcaption>이미지 출처 : NULI</figcaption>
+  </figure>  
+
+  1. 스피커      
+    현재 초점이 위치한 요소의 정보를 VoiceOver 음성으로 들려줍니다.   
+  2. 이전 요소 탐색   
+    현재 초점이 위치한 곳에서 이전 요소의 정보를 VoiceOver 음성으로 들려줍니다.   
+  3. 자동 탐색   
+    현재 초점이 위치한 곳에서 모든 요소를 자동으로 탐색하며 요소의 정보를 VoiceOver 음성으로 들려줍니다.   
+  4. 다음 요소 탐색    
+    현재 초점이 위치한 곳에서 다음 요소의 정보를 VoiceOver 음성으로 들려줍니다.   
+  5. 직접 탐색   
+    마우스로 요소를 직접 선택하여 탐색합니다.   
+  6. 현재 초점이 위치한 요소의 접근성 항목을 나타냅니다.   
+    항목은 Label(대체 텍스트), Value(값), Traits(유형 정보), Identifier(식별자), Hint(힌트 정보), User Input Labels(사용자 입력 텍스트 정보)입니다.      
+
+**Android : Lint**    
+Android 앱 개발도구인 Android Studio 의 Lint를 통해 개발과정에서 접근성을 수동 검사할 수 있습니다.   
+- Analyze > Inspect Code를 실행합니다.   
+  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
+    <img src="https://nuli.navercorp.com/upload/2023/f596269f-ffcd-49af-bc69-42e725bc226a_analyze_inspect_code.png" alt="">
+    <figcaption>이미지 출처 : NULI</figcaption>
+  </figure>  
+- Android Studio 4.1.1. 버전을 사용. Android Studio Electric Eel 2022.1.1 Patch 2버전이면 Code 메뉴에 inspect Code가 보임.   
+  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
+    <img src="https://nuli.navercorp.com/upload/2023/f91dbb78-00ab-4fb8-bf01-bc92815001dd_code_inspect_code.png" alt="">
+    <figcaption>이미지 출처 : NULI</figcaption>
+  </figure>  
+- Inspection profile에서 더보기 버튼을 실행합니다.   
+  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
+    <img src="https://nuli.navercorp.com/upload/2023/ef698256-3642-4e80-84a5-014957df07b4_insection_profile_%E1%84%83%E1%85%A5%E1%84%87%E1%85%A9%E1%84%80%E1%85%B5.jpg" alt="">
+    <figcaption>이미지 출처 : NULI</figcaption>
+  </figure>  
+- Inspections 창에서 Lint > Accessibility 항목 중 “Image without contentDescription” 항목과 "Missing accessibility label"을 체크합니다.   
+- Android에서 Accessibility 항목 중 주의 깊게 봐야 할 이슈는 바로 이미지 대체 텍스트와 입력 서식 라벨에 대한 이슈입니다.    
+- Severity를 Error로 체크해 주세요. Error 이슈를 해결하기 전까지는 빌드 성공을 할 수 없음.     
+  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
+    <img src="https://nuli.navercorp.com/upload/2023/30028858-e6ae-4acb-a8c2-0028397dd24e_lint_accessibility.jpg" alt="">
+    <figcaption>이미지 출처 : NULI</figcaption>
+  </figure>  
+- 진단 범위도 설정. 모든 범위 In All Sccopes     
+  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
+    <img src="https://nuli.navercorp.com/upload/2023/b2fc68a3-81c2-42f3-9861-3e3d7193be0f_lint_accessibility_%E1%84%87%E1%85%A5%E1%86%B7%E1%84%8B%E1%85%B1.jpg" alt="">
+    <figcaption>이미지 출처 : NULI</figcaption>
+  </figure>  
+- OK를 누르고 코드를 확인. contentDescription 이 없는 ImageView 또는 ImageButton에 빨간색으로 표시된 것을 확인할 수가 있습니다. labelFor 또는 hint가 없는 EditText 역시 빨간색으로 표시된 것을 볼 수 있습니다.        
+  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
+    <img src="https://nuli.navercorp.com/upload/2023/eca0a298-7f02-42a0-be07-bb6d75cff10b_imagebutton_%E1%84%8B%E1%85%A9%E1%84%85%E1%85%B2.jpg" alt="">
+    <img src="https://nuli.navercorp.com/upload/2023/86d98d79-68a5-42d9-9d60-db57025d560a_edittext_%E1%84%8B%E1%85%A9%E1%84%85%E1%85%B2.jpg" alt="">
+    <figcaption>이미지 출처 : NULI</figcaption>
+  </figure>  
+- 이슈 해결 - ImageView 클래스에 contentDescription을 코드에서 추가. 빨간색으로 표시되었던 코드가 노란색 코드로 변경.        
+  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
+    <img src="https://nuli.navercorp.com/upload/2023/940b3ba0-192e-4459-8cbb-8ce944d3cea3_imagebutton_%E1%84%92%E1%85%A2%E1%84%80%E1%85%A7%E1%86%AF.jpg" alt="">
+    <figcaption>이미지 출처 : NULI</figcaption>
+  </figure>  
+- 이슈 해결 : EditText 역시 hint 코드를 추가. 빨간색으로 표시되었던 코드가 노란색 코드로 변경.        
+  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
+    <img src="https://nuli.navercorp.com/upload/2023/24ba5208-1b5f-4b52-8df6-8d6fffd189f0_edittext_%E1%84%92%E1%85%A2%E1%84%80%E1%85%A7%E1%86%AF.jpg" alt="">
+    <figcaption>이미지 출처 : NULI</figcaption>
+  </figure>  
+
+
+
+
  
-#### 13. 결론     
+#### 결론     
 **접근성은 시작은 있지만 끝이 없는 작업입니다.**    
 오류 항목을 정기적으로 점검하여 접근성 개선을 한다면 점차 검사를 할 항목이 줄어들게 될 것입니다. 모두가 차별 없이 서비스를 이용할 수 있도록 접근성 유지를 위한 모두의 노력이 필요합니다. 무엇보다 접근성 작업은 서비스를 제공한다면 **선택이 아닌 필수**로 지켜야하는 항목임을 잊지 말아야 합니다.     
 
@@ -402,6 +542,7 @@ yarn add eslint-plugin-jsx-a11y
 - 접근성 정기적인 모니터링    
 
 
+---
 ---
 
 
@@ -468,3 +609,4 @@ yarn add eslint-plugin-jsx-a11y
 - [MDN Mobile accessibility checklist](https://developer.mozilla.org/en-US/docs/Web/Accessibility/Mobile_accessibility_checklist){: target="_blank"}    
 - [보건복지부 블로그](https://blog.naver.com/prologue/PrologueList.naver?blogId=mohw2016){: target="_blank"}     
 - [행정안전부 - 전자정부 웹사이트 UI UX 가이드라인](https://www.mois.go.kr/frt/bbs/type001/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000045&nttId=69451){: target="_blank"}     
+- [널리 알리는 기술 소식 커뮤니티](https://nuli.navercorp.com/community/article){: target="_blank"}     
