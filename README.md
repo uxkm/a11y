@@ -42,7 +42,7 @@
     * tab으로 분리? - 복합형(Composite)    
   * ##### [Document Structure](07-a11yWaiAria/roles-document.md)   
   * ##### [Landmark Roles](07-a11yWaiAria/roles-landmark.md)   
-  * ##### [Live Region Roles](07-a11yWaiAria/attrs-liveregions.md)   
+  * ##### [Live Region Roles](07-a11yWaiAria/roles-live.md)   
   * ##### [Window Roles](07-a11yWaiAria/roles-window.md)   
 - #### 7.3. [WAI-ARIA 상태 및 속성](07-a11yWaiAria/attrs-widgets.md) 
   * ##### [Widget Attributes](07-a11yWaiAria/attrs-widgets.md)  

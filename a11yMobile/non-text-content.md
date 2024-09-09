@@ -134,6 +134,79 @@ function SunriseImage() {
 
 export default SunriseImage;
 ```
+**이미지 alt속성 작성 예시**    
+카카오페이 신용대출 서비스 화면 중 대출 가능성 배너를 보여주는 UI로 다음은 alt속성 작성 예시 방법입니다.    
+<figure aria-hidden="true" style="text-align:center;border:1px solid #000">
+  <img src="./../images/a11y-mobile/img_a11yMobile_ex01.png" alt="">
+  <figcaption>이미지 출처 : kakaopay</figcaption>
+</figure>
+
+- **alt 속성을 사용하지 않은 경우**   
+  ```sh
+  <img src="/img/img_nudge_typeB_320x219.png" />
+  음성출력 형태 : 이미지 넛지 타입비 삼백이십엑스이백십구피엔지 이미지
+  ``` 
+   - 스크린 리더는 이미지에 alt 속성이 없으면 파일 이름을 표현합니다.    
+   - 대체 텍스트가 없기 때문에 대신 이미지 경로 정보인 src를 음성으로 전달합니다.     
+   - 파일의 이름으로 콘텐츠를 설명하는 것도 방법이 될 수는 있습니다. 하지만 네트워크 오류, 콘텐츠 차단 등 서비스 관련 이미지를 표시할 수 없는 경우에는 서비스와 무관한 이미지의 alt 값이 음성으로 출력되기 때문에 접근성뿐만 아니라 다양한 환경의 사용자를 고려한다면 alt 속성은 꼭 필요한 속성입니다.   
+- **alt 속성을 사용했지만 값을 제공하지 않는 경우**    
+  ```sh
+  <img src="/img/img_nudge_typeB_320x219.png" alt="" />
+  음성출력 형태 : 없음
+  ``` 
+   - alt 속성의 값을 빈 값("")으로 생략해 제공하는 경우에는 이미지가 핵심 요소가 아님을 뜻하기 때문에 스크린 리더는 img 태그를 해석하지 않습니다.    
+   - 이 경우 스크린 리더 사용자는 웹 브라우징 과정에서 이미지 요소가 있다는 것을 알 수 없습니다.     
+   - 따라서 배경 이미지처럼 단순 디자인의 목적을 가진 이미지는 의도적으로 대체 텍스트를 빈 값으로 작성해 스크린 리더가 읽지 않도록 할 수 있습니다.     
+   - 하지만 이미지 1번 영역 죠르디의 상태로 높은 대출 승인율을 표현하는 콘텐츠임을 감안하면, 사용자에게 이미지 설명을 전달할 필요가 있다고 생각하기 때문에 다음 단계로 넘어가 alt 속성에 대체 텍스트를 작성해 보도록 하겠습니다.      
+- **적합한 대체 텍스트를 작성하지 않은 경우**    
+  ```sh
+  <img src="/img/img_nudge_typeB_320x219.png" alt="기뻐하는 죠르디 이미지" />
+  음성출력 형태 : 기뻐하는 죠르디 이미지 이미지
+  ``` 
+   - 시맨틱 태그는 암시적으로 role을 갖고 있으며, 스크린 리더는 &lt;img&gt;를 ‘이미지’로 자동으로 결정하게 됩니다.     
+   - 따라서 이미지의 존재 여부를 표현하는 ‘사진, 이미지, 아이콘’등의 단어를 대체 텍스트에 포함하게 되면 스크린 리더가 기본적으로 해석한 ‘이미지’와 중복된 의미를 갖기 때문에 적합하지 않습니다.      
+- **(권장)적합한 대체 텍스트를 제공한 경우**    
+  ```sh
+  <img src="/img/img_nudge_typeB_320x219.png" alt="기뻐하는 죠르디" />
+  음성출력 형태 : 기뻐하는 죠르디 이미지
+  ```   
+**버튼에 이미지 작성 예시**    
+아래 이미지의 2번 영역에 있는 물음표 모양 버튼을 보면 우리는 너무나도 쉽게 내 대출 승인율이 무엇인지 자세한 정보를 확인할 수 있는 버튼임을 인식할 수 있습니다.    
+먼저 우리는 스크린 리더가 코드를 어떻게 해석하는지 알아야 합니다.     
+- 브라우저는 코드를 스크린 리더가 읽을 수 있는 접근성 트리(Accessibility Tree)로 만듭니다.    
+- 스크린 리더는 접근성 트리의 요소를 순차 탐색하게 되는데, 접근성 트리에 표시되는 요소의 Name을 기반으로 해석합니다.     
+- 여기서 말하는 Name은 Accessible Name이라고도 하며 스크린 리더가 요소를 포커스했을 때 읽는 값으로 author와 contents 중 하나로 결정됩니다.    
+- 이때, author가 contents보다 우선순위가 높습니다.    
+  - author: aria-label, aria-labelledby, title 속성, &lt;img&gt;의 alt 속성, svg의 &lt;desc&gt;
+  - contents: Text 노드
+<figure aria-hidden="true" style="text-align:center;border:1px solid #000">
+  <img src="./../images/a11y-mobile/img_a11yMobile_ex02.png" alt="">
+  <figcaption>이미지 출처 : kakaopay</figcaption>
+</figure>
+
+```sh
+<button type="button">
+  <!-- <img src="/img/img_common_question.png" alt="물음표" />: 구체적이지 않으며 추상적 -->
+  <img src="/img/img_common_question.png" alt="내 대출 승인율이란" />
+</button>
+음성출력 형태 : 내 대출 승인율이란 버튼
+``` 
+   - &lt;img&gt;의 author는 alt 속성으로 Accessible Name은 “내 대출 승인율이란”이 됩니다.    
+   - &lt;button&gt;은 author가 설정되지 않은 경우 자식 요소의 Accessible Name을 모아 contents로 사용하는 Children Presentational이라는 특징을 갖습니다.    
+   - 따라서 &lt;button&gt;의 content는 ‘내 대출 승인율이란’이 되고 스크린 리더는 자동적으로 결정한 role과 결합해 “내 대출 승인율이란 버튼”이라고 해석하게 됩니다.      
+
+**텍스트와 상호작용 요소의 분리 예시**    
+텍스트 안에 링크나 버튼을 넣지 않아야 한다. 아래 예처럼 텍스트 안에 링크가 있는 경우 스크린 리더는 빠르게 텍스트를 읽어 나가기 때문에 화면의 레이아웃을 파악하기 힘든 시각장애인은 링크 위치를 알 수 없다. 텍스트와 상호작용이 가능한 요소는 분리하여 디자인해야 인식 가능하다.     
+
+<figure aria-hidden="true" style="text-align:center;border:1px solid #000">
+  <img src="./../images/a11y-mobile/img_a11yMobile_ex03.png" alt="">
+  <figcaption>이미지 출처 : 모바일 UI UX 기본가이드 | 브런치 스토리 by최철호</figcaption>
+</figure>
+
+이미지 요소에 어떤 내용으로 대체 텍스트를 제공할 것인지 고민하기 전에, 이미지를 어떤 목적으로 사용하고 있는지를 생각해 봐야 합니다.     
+이미지가 주요 콘텐츠의 일부로서 사용자에게 정보를 전달하는 역할을 한다면 적절한 의미에 맞는 대체 텍스트를 제공하면 됩니다.    
+반대로 이미지가 콘텐츠의 내용을 설명하는 핵심적인 요소가 아니라면 대체 텍스트를 생략하거나 배경 이미지 속성을 활용함으로써 스크린 리더 사용자에게 불필요한 정보를 전달하지 않도록 합니다.    
+
 
 
 #### 7. 점검 기준     
@@ -274,12 +347,15 @@ UIAutomatorViewer를 이용하여 점검한다.
 [AOA11Y 모바일 앱 접근성 (1.대체 텍스트)](https://www.youtube.com/watch?v=eQHPJ4tk-ag){: target="_blank"}    
    
 ---
+<details>
+<summary><strong style="font-size:20px">접근성 테스트 도구 활용 점검방법</strong></summary>
+<div markdown="1">
 
-#### 접근성 테스트 도구 활용 점검방법      
 **Lighthouse**   
 Lighthouse is an open-source, automated tool for improving the quality of web pages.    
 Lighthouse는 구글에서 제공하는 웹 페이지 품질 개선을 위한 오픈 소스로 자동화 도구입니다. Lighthouse는 사이트의 성능, 접근성, SEO 등에 대한 전반적인 진단을 해줍니다.    
 상세 설명 [Lighthouse Overview 공식 문서 참조](https://developer.chrome.com/docs/lighthouse/overview/){: target="_blank"}  
+
 
 - **참고** 
   - Lighthouse 모바일의 경우 네트워크 속도를 최대 4배정도 느리게 측정하기 때문에 모바일 Performance가 비교적 낮게 나옵니다.    
@@ -524,6 +600,9 @@ Android 앱 개발도구인 Android Studio 의 Lint를 통해 개발과정에서
     <img src="https://nuli.navercorp.com/upload/2023/24ba5208-1b5f-4b52-8df6-8d6fffd189f0_edittext_%E1%84%92%E1%85%A2%E1%84%80%E1%85%A7%E1%86%AF.jpg" alt="">
     <figcaption>이미지 출처 : NULI</figcaption>
   </figure>  
+
+</div>
+</details>
 
 
 
