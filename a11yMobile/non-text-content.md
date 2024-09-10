@@ -50,7 +50,7 @@
 시각장애인 사용자는 스크린리더 프로그램을 사용하여 콘텐츠 정보를 인식하고 사용합니다. 다음 그림에 보이는 바와 같이 스크린리더는 각각의 콘텐츠가 갖고 있는 정보를 음성으로 알려줍니다. 콘텐츠의 용도를 알 수 있는 텍스트 정보(●) 예: 블루라이트 필터, 콘텐츠가 어떤 컨트롤인지 버튼인지, 토글 버튼인지 등 유형 정보(▲) 예: 스위치, 콘텐츠 유형에 따른 상태 정보(◼︎) 예:사용 안 함, 콘텐츠를 사용하기에 필요한 힌트 정보(★) 예:전환하려면 두 번 탭 하세요. 를 음성으로 알려주는 것을 볼 수 있습니다.    
 <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
    <img src="https://nuli.navercorp.com/upload/2022/ad08ec91-d01c-4d98-a39b-af3fab51dfaf_iOSAndroid%E1%84%8B%E1%85%B3%E1%86%B7%E1%84%89%E1%85%A5%E1%86%BC.gif" alt="">
-   <figcaption>이미지 출처 : NULI</figcaption>
+   <figcaption>출처 : NULI</figcaption>
 </figure>
 
 **네이티브**     
@@ -62,7 +62,7 @@ iOS는 accessibilityLabel로 Android는 contentDescription으로 대체 텍스�
       - 방법1. Xcode의 Accessibility 패널에서 Label 제공   
         <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
           <img src="https://nuli.navercorp.com/upload/2022/9391c267-047d-4e98-8df3-c612bdb800c3_0a705587-7652-1b4c-8177-6b9d37cb2ad0.png" alt="">
-          <figcaption>이미지 출처 : NULI</figcaption>
+          <figcaption>출처 : NULI</figcaption>
         </figure>
         
         - ① Accessibility 에서 Enabled 을 선택해 접근성 기능을 활성화한 상태에서    
@@ -83,7 +83,7 @@ iOS는 accessibilityLabel로 Android는 contentDescription으로 대체 텍스�
   - 방법1. Android Studio Properties 창에서 contentDescription 제공   
     <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
       <img src="https://nuli.navercorp.com/upload/2022/6f0c6c7f-f031-4e6a-9998-b472415c9077_androidstudio.png" alt="">
-      <figcaption>이미지 출처 : NULI</figcaption>
+      <figcaption>출처 : NULI</figcaption>
     </figure>
   - 방법2. 코드로 contentDescription제공   
     ```sh
@@ -138,7 +138,7 @@ export default SunriseImage;
 카카오페이 신용대출 서비스 화면 중 대출 가능성 배너를 보여주는 UI로 다음은 alt속성 작성 예시 방법입니다.    
 <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
   <img src="./../images/a11y-mobile/img_a11yMobile_ex01.png" alt="">
-  <figcaption>이미지 출처 : kakaopay</figcaption>
+  <figcaption>출처 : kakaopay</figcaption>
 </figure>
 
 - **alt 속성을 사용하지 않은 경우**   
@@ -181,7 +181,7 @@ export default SunriseImage;
   - contents: Text 노드
 <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
   <img src="./../images/a11y-mobile/img_a11yMobile_ex02.png" alt="">
-  <figcaption>이미지 출처 : kakaopay</figcaption>
+  <figcaption>출처 : kakaopay</figcaption>
 </figure>
 
 ```sh
@@ -200,7 +200,7 @@ export default SunriseImage;
 
 <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
   <img src="./../images/a11y-mobile/img_a11yMobile_ex03.png" alt="">
-  <figcaption>이미지 출처 : 모바일 UI UX 기본가이드 | 브런치 스토리 by최철호</figcaption>
+  <figcaption>출처 : 모바일 UI UX 기본가이드 | 브런치 스토리 by최철호</figcaption>
 </figure>
 
 이미지 요소에 어떤 내용으로 대체 텍스트를 제공할 것인지 고민하기 전에, 이미지를 어떤 목적으로 사용하고 있는지를 생각해 봐야 합니다.     
@@ -246,7 +246,7 @@ TalkBack(또는 Voice Assistant 등) 기능으로 텍스트가 아닌 콘텐츠�
 <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
    <img src="./../images/a11y-mobile/img_a11yMobile_check01-01.png" alt="">
    <img src="./../images/a11y-mobile/img_a11yMobile_check01-02.png" alt="">
-   <figcaption>이미지 출처 : 모바일 애플리케이션 접근성 제작기법</figcaption>
+   <figcaption>출처 : 모바일 애플리케이션 접근성 제작기법</figcaption>
 </figure>
 
 **방법 2 (네이티브-문서 제공기준)**      
@@ -254,7 +254,7 @@ TalkBack(또는 Voice Assistant 등) 기능으로 텍스트가 아닌 콘텐츠�
 - 설정→접근성→시각→Talk Back→설정→개발자 설정→음성출력 표시 체크 후 확인한다.     
 <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
    <img src="./../images/a11y-mobile/img_a11yMobile_check02-01.png" alt="">
-   <figcaption>이미지 출처 : 모바일 애플리케이션 접근성 제작기법</figcaption>
+   <figcaption>출처 : 모바일 애플리케이션 접근성 제작기법</figcaption>
 </figure>
 
 **방법 3 (네이티브-문서 제공기준)**   
@@ -263,35 +263,35 @@ UIAutoMatorViewer를 활용하여 점검한다.
   - Toolbar에서 Android Device Monitor 버튼을 선택    
     <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
         <img src="./../images/a11y-mobile/img_a11yMobile_check03-01-01.png" alt="">
-        <figcaption>이미지 출처 : 모바일 애플리케이션 접근성 제작기법</figcaption>
+        <figcaption>출처 : 모바일 애플리케이션 접근성 제작기법</figcaption>
     </figure>
   - Devices 탭에서 디바이스가 연결된 상태로 점검할 화면을 띄운 뒤 Dump View Hierarchy for UI Automator버튼을 선택 
     <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
         <img src="./../images/a11y-mobile/img_a11yMobile_check03-01-02.png" alt="">
-        <figcaption>이미지 출처 : 모바일 애플리케이션 접근성 제작기법</figcaption>
+        <figcaption>출처 : 모바일 애플리케이션 접근성 제작기법</figcaption>
     </figure>
 - ADT(Android Developer Tools) 를 이용한 실행 방법     
   - DDMS(Dalvik Debug Monitor Server) 를 실행    
   - Devices 탭에서 디바이스가 연결된 상태로 점검할 화면을 띄운 뒤 Dump View Hierarchy for UI Automator버튼을 선택 
     <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
         <img src="./../images/a11y-mobile/img_a11yMobile_check03-02-01.png" alt="">
-        <figcaption>이미지 출처 : 모바일 애플리케이션 접근성 제작기법</figcaption>
+        <figcaption>출처 : 모바일 애플리케이션 접근성 제작기법</figcaption>
     </figure>
 - SDK 내부의UIAutomator Viewer 실행     
   - Android sdk폴더의 tools 안에있는 uiautomatorviewer.bat 파일실행 
     <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
         <img src="./../images/a11y-mobile/img_a11yMobile_check03-03-01.png" alt="">
-        <figcaption>이미지 출처 : 모바일 애플리케이션 접근성 제작기법</figcaption>
+        <figcaption>출처 : 모바일 애플리케이션 접근성 제작기법</figcaption>
     </figure>
   - 실행화면 
     <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
         <img src="./../images/a11y-mobile/img_a11yMobile_check03-03-02.png" alt="">
-        <figcaption>이미지 출처 : 모바일 애플리케이션 접근성 제작기법</figcaption>
+        <figcaption>출처 : 모바일 애플리케이션 접근성 제작기법</figcaption>
     </figure>
   - Device Screenshot 선택 
     <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
         <img src="./../images/a11y-mobile/img_a11yMobile_check03-03-03.png" alt="">
-        <figcaption>이미지 출처 : 모바일 애플리케이션 접근성 제작기법</figcaption>
+        <figcaption>출처 : 모바일 애플리케이션 접근성 제작기법</figcaption>
     </figure>
 
 **방법 4 (네이티브-문서 제공기준)**    
@@ -300,24 +300,24 @@ UIAutomatorViewer를 이용하여 점검한다.
 - 점검할 UI객체를 선택하여 상세정보를 확인한다.     
     <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
         <img src="./../images/a11y-mobile/img_a11yMobile_check04-01.png" alt="">
-        <figcaption>이미지 출처 : 모바일 애플리케이션 접근성 제작기법</figcaption>
+        <figcaption>출처 : 모바일 애플리케이션 접근성 제작기법</figcaption>
     </figure>
 - ImageButton, ImageView의경우 content-desc항목이 적용되어있는지 확인해야 한다.     
   - 대체텍스트 적용 시 Node Detail과 계층구조의{ }안에 대체텍스트내용이 표시 된다. 
     <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
         <img src="./../images/a11y-mobile/img_a11yMobile_check04-03-01.png" alt="">
-        <figcaption>이미지 출처 : 모바일 애플리케이션 접근성 제작기법</figcaption>
+        <figcaption>출처 : 모바일 애플리케이션 접근성 제작기법</figcaption>
     </figure>
   - 대체텍스트 미적용 시 Node Detai과 계층구조에 대체텍스트가 표시되지 않는다. 
     <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
         <img src="./../images/a11y-mobile/img_a11yMobile_check04-03-02.png" alt="">
-        <figcaption>이미지 출처 : 모바일 애플리케이션 접근성 제작기법</figcaption>
+        <figcaption>출처 : 모바일 애플리케이션 접근성 제작기법</figcaption>
     </figure>     
 - TextView, Button, EditText등의 경우 content-desc에 대체텍스트가 적용되지 않고 text에 대체텍스트가 적용될 수 있다.     
     <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
         <img src="./../images/a11y-mobile/img_a11yMobile_check04-04-01.png" alt="">
         <img src="./../images/a11y-mobile/img_a11yMobile_check04-04-02.png" alt="">
-        <figcaption>이미지 출처 : 모바일 애플리케이션 접근성 제작기법</figcaption>
+        <figcaption>출처 : 모바일 애플리케이션 접근성 제작기법</figcaption>
     </figure>
     
 
@@ -337,9 +337,117 @@ UIAutomatorViewer를 이용하여 점검한다.
 
 #### 9. 준수 사례       
 
+**사례1**   
+
+- 아이콘 + 텍스트와 같이 제공되는 경우    
+  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
+    <img src="./../images/a11y-mobile/img_a11yMobile_ex_do01.png" alt="">
+    <figcaption>출처 : 무인정보단말기 UI 플랫폼</figcaption>
+  </figure>
+  
+  - 음성출력 형태(Talkback) : UI 가이드 원칙 링크 6개 중 첫번째. 활성화하려면 두 번 탭하세요. 링크 사용가능. 세 손가락으로 탭 동작으로 보기.
+
+**사례2**   
+
+- 이미지로 제공되는 경우    
+  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
+    <img src="./../images/a11y-mobile/img_a11yMobile_ex_do02.png" alt="">
+    <figcaption>출처 : 무인정보단말기 UI 플랫폼</figcaption>
+  </figure>
+  
+  - 음성출력 형태(Talkback) : 정보접근성이 보장된 무인정보단말기 UI 플랫폼 고령자도 OK! 장애인도 OK! 무인정보단말기의 정보접근성을 모두 갖춘 무인정보단말기 UI 플랫폼과 개발도구 제공 자세히 보기. 활성화하려면 두 번 탭하세요. 링크 사용가능. 세 손가락으로 탭 동작으로 보기.
+
+**사례3**   
+
+- 의미와 용도를 이해할 수 있도록 적절하게 대체텍스트를 제공한 경우    
+  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
+    <img src="./../images/a11y-mobile/img_a11yMobile_ex_do03.png" alt="">
+    <figcaption>출처 : 모바일애플리케이션콘텐츠접근성지침2.0</figcaption>
+  </figure>
+  
+  - 다음 메일 Kakao corp. 별점 평점 4.3"으로 해당 메일의 정보를 올바르게 제공함
+
+**사례4**   
+
+- 이미지 버튼에 적절한 대체텍스트를 제공한 경우    
+  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
+    <img src="./../images/a11y-mobile/img_a11yMobile_ex_do04.png" alt="">
+    <figcaption>출처 : 모바일애플리케이션콘텐츠접근성지침2.0</figcaption>
+  </figure>
+  
+  - "옵션 버튼" 으로 해당 버튼의 정보를 올바르게 제공함
 
 #### 10. 미준수 사례       
 
+**사례1**   
+
+- 이미지 요소가 제공하는 정보와 동일한 정보가 음성으로 출력되지 않는 경우    
+  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
+    <img src="./../images/a11y-mobile/img_a11yMobile_ex_donot01.png" alt="">
+    <figcaption>출처 : 모바일애플리케이션콘텐츠접근성지침2.0</figcaption>
+  </figure>
+  
+  - 개선 전 : "이벤트"로 해당 이미지에 대해 대체텍스트가 부적절하게 제공됨   
+  - 개선 후 : "릴레이팡팡 한방에 달성하기!"로 해당 이미지에 대해 대체텍스트가 제공되어야 함   
+
+**사례2**   
+
+- 의미와 용도를 이해할 수 없는 대체 텍스트를 제공하는 경우    
+  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
+    <img src="./../images/a11y-mobile/img_a11yMobile_ex_donot02.png" alt="">
+    <figcaption>출처 : 모바일애플리케이션콘텐츠접근성지침2.0</figcaption>
+  </figure>
+  
+  - 개선 전 : “버튼 -4 라벨지정안됨” 으로 해당 이미지 버튼에 대체텍스트가 부적절하게 제공됨   
+  - 개선 후 : "카드 설정 버튼" 또는 "의미와 용도에 맞는 텍스트 정보" 로 해당 이미지에 대해 대체텍스트가 제공되어야 함   
+
+**사례3**   
+
+- 버튼에 대체텍스트가 제공되지 않은 경우    
+  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
+    <img src="./../images/a11y-mobile/img_a11yMobile_ex_donot03.png" alt="">
+    <figcaption>출처 : 모바일애플리케이션콘텐츠접근성지침2.0</figcaption>
+  </figure>
+  
+  - 개선 전 : 보안 키패드에 대체텍스트가 제공되지 않음   
+  - 개선 후 : 각 버튼에 대해 대체텍스트가 제공되어야 함   
+  - [키패드 적용 기본 예시](https://codepen.io/io-uxkm/pen/qBzgvpX){: target="_blank"} 
+
+**사례4**   
+
+- 의미없는 대체 텍스트가 제공된 경우    
+  - 개선 전 : 의미를 갖지 않는 장식용 이미지에 alt가 제공   
+    아이콘 자체로 의미를 갖지 않는 경우 alt="" 제공해도 무방합니다.    
+  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
+    <img src="./../images/a11y-mobile/img_a11yMobile_ex_donot04.png" alt="">
+    <figcaption>출처 : 카카오</figcaption>
+  </figure>
+  
+  - 개선 후 : 불필요한 alt값 제거로 화면을 읽는데 불편함(불필요한 내용으로 피곤함 유발, 텍스트와 중복된 내용) 방지   
+  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
+    <img src="./../images/a11y-mobile/img_a11yMobile_ex_donot05.png" alt="">
+    <figcaption>출처 : 카카오</figcaption>
+  </figure>
+
+**사례6**   
+
+- 의미없는 대체 텍스트가 제공된 경우와 암묵적으로 제시된 이미지에 중복 사용된 경우    
+  - 개선 전 : 의미를 갖지 않는 장식용 이미지에 alt가 제공    
+    의미를 가지는 정보는 날짜 같은 경우는 풀어서 제공해줘야 함. 예)~2024.09.30 -> 2024년 09월 30까지      
+    음성출력 형태(Talkback) : **"유플닷컴 출석체크 이벤트 2024년 9월 30일 달력 이미지"** 링크 활성화하려면 두 번 탭하세요. 링크 사용가능. 세 손가락으로 탭 동작으로 보기.      
+    음성출력 형태(Voiceover) : **"유플닷컴 출석체크 이벤트 물결 2024점 9점 30점 슬래시 달력 이미지"** 링크    
+  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
+    <img src="./../images/a11y-mobile/img_a11yMobile_ex_donot06.png" alt="">
+    <figcaption>출처 : LGU+</figcaption>
+  </figure>
+  
+  - 개선 후 : 의미없는 장식용 이미지에 대한 alt값 제거 및 이미지에 대한 중복 사용 제거   
+    음성출력 형태(Talkback) : **"유플닷컴 출석체크 이벤트 기간 2024년 9월 30일 까지"** 링크 활성화하려면 두 번 탭하세요. 링크 사용가능. 세 손가락으로 탭 동작으로 보기.
+    음성출력 형태(Voiceover) : **"유플닷컴 출석체크 이벤트 기간 2024년 9월 30일 까지"** 링크
+  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
+    <img src="./../images/a11y-mobile/img_a11yMobile_ex_donot07.png" alt="">
+    <figcaption>출처 : LGU+</figcaption>
+  </figure>
 
 #### 11. 관련 영상       
 <iframe style="width:100%;min-height:315px;" src="https://www.youtube.com/embed/eQHPJ4tk-ag?si=mMQd3txeiPLQc_4B" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -348,7 +456,7 @@ UIAutomatorViewer를 이용하여 점검한다.
    
 ---
 <details>
-<summary><strong style="font-size:20px">접근성 테스트 도구 활용 점검방법</strong></summary>
+<summary><strong style="font-size:20px;cursor:pointer;">접근성 테스트 도구 활용 점검방법</strong></summary>
 <div markdown="1">
 
 **Lighthouse**   
@@ -499,47 +607,47 @@ iOS 앱 개발도구인 xcode에는 Accessibility Inspector 툴을 통해 접근
 - Xcode에서 Accessibility Inspector 툴을 실행합니다. (Xcode > Open Developer Tool > Accessibility Inspector)   
   <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
     <img src="https://nuli.navercorp.com/upload/2023/ef764147-3952-46ec-948e-9c54e319af16_xcode_tool_accessibility_inspector.jpg" alt="">
-    <figcaption>이미지 출처 : NULI</figcaption>
+    <figcaption>출처 : NULI</figcaption>
   </figure>  
 - 테스트할 장치를 선택합니다. 저는 진단하고 싶은 앱을 실행 후 아이폰을 노트북에 연결하여 장치 선택을 했어요. 개발 중인 앱을 Simulator로 빌드 하셨다면 Simulator를 선택하여 진단하실 수 있습니다.   
   <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
     <img src="https://nuli.navercorp.com/upload/2023/1590bb9b-98eb-4302-8946-9a5dcc76b522_%E1%84%8C%E1%85%A1%E1%86%BC%E1%84%8E%E1%85%B5%E1%84%89%E1%85%A5%E1%86%AB%E1%84%90%E1%85%A2%E1%86%A8.jpg" alt="">
     <img src="https://nuli.navercorp.com/upload/2023/48870f35-9a4e-4d8c-844a-fad3a870c76a_%E1%84%8C%E1%85%A1%E1%86%BC%E1%84%8E%E1%85%B5%E1%84%89%E1%85%A5%E1%86%AB%E1%84%90%E1%85%A2%E1%86%A8_%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE.jpg" alt="">
-    <figcaption>이미지 출처 : NULI</figcaption>
+    <figcaption>출처 : NULI</figcaption>
   </figure>  
 - Accessibility Inspector 툴 오른쪽 상단에서 audit 버튼을 선택합니다. Run Audit 버튼을 선택합니다.   
   <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
     <img src="https://nuli.navercorp.com/upload/2023/ac06562c-681f-4abf-8900-b8ebef40dd60_audit%E1%84%89%E1%85%B5%E1%86%AF%E1%84%92%E1%85%A2%E1%86%BC.jpg" alt="">
-    <figcaption>이미지 출처 : NULI</figcaption>
+    <figcaption>출처 : NULI</figcaption>
   </figure>  
 - 결과 이슈 목록을 선택하거나 눈 버튼을 선택하시면 해당 항목을 보여줍니다. 장치를 보시면 노란색으로 표시되고, 물음표 버튼를 선택하시면 해당 이슈를 해결할 수 있는 방법을 알려줍니다.   
   <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
     <img src="https://nuli.navercorp.com/upload/2023/d1d742a4-0487-449b-acac-fa494262bad5_audit%E1%84%80%E1%85%A7%E1%86%AF%E1%84%80%E1%85%AA.jpg" alt="">
-    <figcaption>이미지 출처 : NULI</figcaption>
+    <figcaption>출처 : NULI</figcaption>
   </figure>  
 - 물음표 버튼를 선택하시면 해당 이슈를 해결할 수 있는 방법을 알려줍니다.   
   <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
     <img src="https://nuli.navercorp.com/upload/2023/6543e5af-479a-4d55-8431-774e49278f26_%E1%84%8B%E1%85%B5%E1%84%89%E1%85%B2%E1%84%92%E1%85%A2%E1%84%80%E1%85%A7%E1%86%AF%E1%84%87%E1%85%A1%E1%86%BC%E1%84%87%E1%85%A5%E1%86%B8.jpg" alt="">
-    <figcaption>이미지 출처 : NULI</figcaption>
+    <figcaption>출처 : NULI</figcaption>
   </figure>  
 - 목록에서 주의 깊게 봐야 할 이슈는 바로 description에 대한 이슈입니다. 대체 텍스트 이슈는 접근성 사용자에게 매우 크리티컬한 이슈이면서 해결 방법이 매우 수월한 이슈입니다.   
   <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
     <img src="https://nuli.navercorp.com/upload/2023/3de8b5aa-6124-45e3-8048-b37edbad65c9_%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%E1%84%83%E1%85%A2%E1%84%8E%E1%85%A6%E1%84%90%E1%85%A6%E1%86%A8%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%E1%84%8B%E1%85%A9%E1%84%85%E1%85%B2.jpg" alt="">
     <img src="https://nuli.navercorp.com/upload/2023/608699d9-c72b-45b0-b126-8b60c029773b_%E1%84%87%E1%85%A5%E1%84%90%E1%85%B3%E1%86%AB%E1%84%83%E1%85%A2%E1%84%8E%E1%85%A6%E1%84%90%E1%85%A6%E1%86%A8%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%E1%84%8B%E1%85%A9%E1%84%85%E1%85%B2.jpg" alt="">
-    <figcaption>이미지 출처 : NULI</figcaption>
+    <figcaption>출처 : NULI</figcaption>
   </figure>  
 - Xcode의 Identity Inspector 탭의 Accessibility 패널에 **대체 텍스트**를 넣어주세요.   
 - 대체 텍스트 외에도 명도대비, 작은 터치영역등 다양한 접근성 이슈를 체크해주고 있습니다.   
   <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
     <img src="https://nuli.navercorp.com/upload/2023/34d0933e-dab9-4cbd-8aa6-5b563025935c_accessibilityLabel.jpg" alt="">
-    <figcaption>이미지 출처 : NULI</figcaption>
+    <figcaption>출처 : NULI</figcaption>
   </figure>  
 
 - **Inspection**   
   각 요소별 접근성 항목을 확인할 수 있고, iOS 스크린리더인 VoiceOver 음성으로 들어볼 수 있습니다.    
   <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
     <img src="https://nuli.navercorp.com/upload/2023/90a6c179-4017-46f9-b47e-2bfe9b6f8231_inspection.jpg" alt="">
-    <figcaption>이미지 출처 : NULI</figcaption>
+    <figcaption>출처 : NULI</figcaption>
   </figure>  
 
   1. 스피커      
@@ -560,45 +668,45 @@ Android 앱 개발도구인 Android Studio 의 Lint를 통해 개발과정에서
 - Analyze > Inspect Code를 실행합니다.   
   <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
     <img src="https://nuli.navercorp.com/upload/2023/f596269f-ffcd-49af-bc69-42e725bc226a_analyze_inspect_code.png" alt="">
-    <figcaption>이미지 출처 : NULI</figcaption>
+    <figcaption>출처 : NULI</figcaption>
   </figure>  
 - Android Studio 4.1.1. 버전을 사용. Android Studio Electric Eel 2022.1.1 Patch 2버전이면 Code 메뉴에 inspect Code가 보임.   
   <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
     <img src="https://nuli.navercorp.com/upload/2023/f91dbb78-00ab-4fb8-bf01-bc92815001dd_code_inspect_code.png" alt="">
-    <figcaption>이미지 출처 : NULI</figcaption>
+    <figcaption>출처 : NULI</figcaption>
   </figure>  
 - Inspection profile에서 더보기 버튼을 실행합니다.   
   <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
     <img src="https://nuli.navercorp.com/upload/2023/ef698256-3642-4e80-84a5-014957df07b4_insection_profile_%E1%84%83%E1%85%A5%E1%84%87%E1%85%A9%E1%84%80%E1%85%B5.jpg" alt="">
-    <figcaption>이미지 출처 : NULI</figcaption>
+    <figcaption>출처 : NULI</figcaption>
   </figure>  
 - Inspections 창에서 Lint > Accessibility 항목 중 “Image without contentDescription” 항목과 "Missing accessibility label"을 체크합니다.   
 - Android에서 Accessibility 항목 중 주의 깊게 봐야 할 이슈는 바로 이미지 대체 텍스트와 입력 서식 라벨에 대한 이슈입니다.    
 - Severity를 Error로 체크해 주세요. Error 이슈를 해결하기 전까지는 빌드 성공을 할 수 없음.     
   <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
     <img src="https://nuli.navercorp.com/upload/2023/30028858-e6ae-4acb-a8c2-0028397dd24e_lint_accessibility.jpg" alt="">
-    <figcaption>이미지 출처 : NULI</figcaption>
+    <figcaption>출처 : NULI</figcaption>
   </figure>  
 - 진단 범위도 설정. 모든 범위 In All Sccopes     
   <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
     <img src="https://nuli.navercorp.com/upload/2023/b2fc68a3-81c2-42f3-9861-3e3d7193be0f_lint_accessibility_%E1%84%87%E1%85%A5%E1%86%B7%E1%84%8B%E1%85%B1.jpg" alt="">
-    <figcaption>이미지 출처 : NULI</figcaption>
+    <figcaption>출처 : NULI</figcaption>
   </figure>  
 - OK를 누르고 코드를 확인. contentDescription 이 없는 ImageView 또는 ImageButton에 빨간색으로 표시된 것을 확인할 수가 있습니다. labelFor 또는 hint가 없는 EditText 역시 빨간색으로 표시된 것을 볼 수 있습니다.        
   <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
     <img src="https://nuli.navercorp.com/upload/2023/eca0a298-7f02-42a0-be07-bb6d75cff10b_imagebutton_%E1%84%8B%E1%85%A9%E1%84%85%E1%85%B2.jpg" alt="">
     <img src="https://nuli.navercorp.com/upload/2023/86d98d79-68a5-42d9-9d60-db57025d560a_edittext_%E1%84%8B%E1%85%A9%E1%84%85%E1%85%B2.jpg" alt="">
-    <figcaption>이미지 출처 : NULI</figcaption>
+    <figcaption>출처 : NULI</figcaption>
   </figure>  
 - 이슈 해결 - ImageView 클래스에 contentDescription을 코드에서 추가. 빨간색으로 표시되었던 코드가 노란색 코드로 변경.        
   <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
     <img src="https://nuli.navercorp.com/upload/2023/940b3ba0-192e-4459-8cbb-8ce944d3cea3_imagebutton_%E1%84%92%E1%85%A2%E1%84%80%E1%85%A7%E1%86%AF.jpg" alt="">
-    <figcaption>이미지 출처 : NULI</figcaption>
+    <figcaption>출처 : NULI</figcaption>
   </figure>  
 - 이슈 해결 : EditText 역시 hint 코드를 추가. 빨간색으로 표시되었던 코드가 노란색 코드로 변경.        
   <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
     <img src="https://nuli.navercorp.com/upload/2023/24ba5208-1b5f-4b52-8df6-8d6fffd189f0_edittext_%E1%84%92%E1%85%A2%E1%84%80%E1%85%A7%E1%86%AF.jpg" alt="">
-    <figcaption>이미지 출처 : NULI</figcaption>
+    <figcaption>출처 : NULI</figcaption>
   </figure>  
 
 </div>
