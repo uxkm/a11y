@@ -63,6 +63,7 @@ ACCESSIBILITY 메뉴명도 A11Y로 변경 고려?
 너무 길어서 접근성 제작 기법으로 A11y Creation Tech  
 ## A11Y CREATION TECH   
 ### 1. [웹 접근성 제작 기법 - 대기중](a11yWeb/non-text-content.md)    
+
 ####  [인식의 용이성(Perceivable)](a11yWeb/non-text-content.md)   
   * #### [적절한 대체 텍스트 제공](a11yWeb/non-text-content.md)    
   * #### [자막 제공](a11yWeb/captions-prerecorded.md)    
@@ -73,6 +74,7 @@ ACCESSIBILITY 메뉴명도 A11Y로 변경 고려?
   * #### [자동 재생 금지](a11yWeb/pause-stop-hide.md)    
   * #### [텍스트 콘텐츠의 명도 대비](a11yWeb/contrast-minimum.md)    
   * #### [콘텐츠 간의 구분](a11yWeb/grouping-content.md)    
+   
 ####  [운용의 용이성(Operable)](a11yWeb/keyboard.md)   
   * #### [키보드 사용 보장](a11yWeb/keyboard.md)    
   * #### [초점 이동과 표시](a11yWeb/focus-visible.md)    
@@ -89,6 +91,7 @@ ACCESSIBILITY 메뉴명도 A11Y로 변경 고려?
   * #### [포인터 입력 취소](a11yWeb/pointer-cancellation.md)    
   * #### [레이블과 네임](a11yWeb/label-in-name.md)    
   * #### [동작기반 작동](a11yWeb/motion-actuation.md)    
+   
 ####  [이해의 용이성(Understandable)](a11yWeb/language-of-page.md)   
   * #### [기본 언어 표시](a11yWeb/language-of-page.md)    
   * #### [사용자 요구에 따른 실행](a11yWeb/change-on-request.md)    
@@ -97,11 +100,13 @@ ACCESSIBILITY 메뉴명도 A11Y로 변경 고려?
   * #### [레이블 제공](a11yWeb/labels-or-instructions.md)    
   * #### [접근 가능한 인증](a11yWeb/accessible-authentication.md)    
   * #### [반복 입력 정보](a11yWeb/redundant-entry.md)    
+   
 ####  [견고성(Robust)](a11yWeb/validating-markup.md)   
   * #### [마크업 오류 방지](a11yWeb/validating-markup.md)    
   * #### [웹 애플리케이션 접근성 준수](a11yWeb/web-application-accessibility.md)    
    
 ### 2. [모바일 접근성 제작 기법 - 진행중](a11yMobile/non-text-content.md)     
+
 ####  [인식의 용이성(Perceivable)](a11yMobile/non-text-content.md)   
   * #### [대체 텍스트](a11yMobile/non-text-content.md)    
   * #### [자막, 수화 등의 제공](a11yMobile/captions-sign.md)    
@@ -109,18 +114,21 @@ ACCESSIBILITY 메뉴명도 A11Y로 변경 고려?
   * #### [명도 대비](a11yMobile/contrast-minimum.md)    
   * #### [명확한 지시 사항](a11yMobile/labels-or-instructions.md)     
   * #### [알림 기능](a11yMobile/interruptions.md)     
+   
 ####  [운용의 용이성(Operable)](a11yMobile/focus-visible.md)   
   * #### [초점](a11yMobile/focus-visible.md)      
   * #### [누르기 동작 지원](a11yMobile/pointer-gestures.md)       
   * #### [응답 시간 조절](a11yMobile/timing-adjustable.md)       
   * #### [정지 기능 제공](a11yMobile/pause-stop-hide.md)       
   * #### [컨트롤의 크기와 간격](a11yMobile/target-size-minimum.md)      
+   
 ####  [이해의 용이성(Understandable)](a11yMobile/error-identification.md)   
   * #### [입력 도움](a11yMobile/error-identification.md)      
   * #### [사용자 인터페이스의 일관성](a11yMobile/consistent-identification.md)       
   * #### [깜박거림의 사용 제한](a11yMobile/three-flashes-or-below-threshold.md)         
   * #### [자동재생 금지](a11yMobile/pause-stop.md)      
   * #### [예측가능성](a11yMobile/on-focus.md)        
+   
 ####  [견고성(Robust)](a11yMobile/resize-text.md)   
   * #### [폰트 관련 기능의 활용](a11yMobile/resize-text.md)         
   * #### [보조 기술과의 호환성](a11yMobile/name-role-value.md)          
