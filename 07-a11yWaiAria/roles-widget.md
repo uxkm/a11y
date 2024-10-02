@@ -1955,8 +1955,8 @@ aria-disabled="true" 속성과 함께 disabled 속성을 사용하여 콤보 박
 ### **22. grid (그리드 역할)**    
 grid 역할은 행과 열로 구성된 데이터의 표 형식을 나타냅니다. 그리드는 대화형 데이터를 구조화된 형태로 표시하며, 사용자는 특정 셀을 클릭하거나 탐색하여 상호작용할 수 있습니다. grid는 행(row), 열(column), 셀(gridcell) 등의 역할과 함께 사용되며, 복잡한 테이블이나 데이터 표현에 적합합니다.    
 시멘틱한 &lt;table&gt; 요소를 사용하여 그리드를 구현하는것을 권장합니다.   
-[W3C ARIA combobox](https://www.w3.org/TR/wai-aria-1.2/#combobox){: target="_blank"}   
-[MDN ARIA combobox](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/combobox_role){: target="_blank"}   
+[W3C ARIA grid](https://www.w3.org/TR/wai-aria/#grid){: target="_blank"}   
+[MDN ARIA grid](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/grid_role){: target="_blank"}   
 [table 요소 참조 - UXKM table](https://uxkm.io/publishing/html/08-table/01-table_element#gsc.tab=0){: target="_blank"}    
 
 **기본 설명** 
@@ -1966,10 +1966,10 @@ grid 역할은 행과 열로 구성된 데이터의 표 형식을 나타냅니�
 - 비활성화된 셀이나 행이 포함된 경우, aria-disabled 속성을 사용해 보조 기술이 이를 인식할 수 있도록 해야 합니다.    
 
 **사용 시 주의사항**   
-- aria-readonly: 그리드나 그리드 내의 셀이 읽기 전용인지 여부를 나타냅니다.   
-- 자동 완성 기능을 제공하는 경우 aria-autocomplete 속성을 사용하여 보조 기술이 이 기능을 인식할 수 있도록 합니다.
-- 콤보 박스의 목록이 동적으로 확장/축소될 때, aria-expanded 속성을 동적으로 업데이트하여 현재 상태를 반영해야 합니다.
-- 비활성화된 콤보 박스는 aria-disabled="true" 속성을 사용하여 이를 명확히 표시해야 합니다.
+- grid 역할을 사용할 때는 row, gridcell, columnheader 등의 하위 요소를 적절히 사용하여 그리드 구조를 명확히 정의해야 합니다.   
+- 키보드 내비게이션을 지원하여 사용자가 그리드 내의 데이터를 쉽게 탐색할 수 있도록 해야 합니다.
+- 대화형 요소(예: 정렬 가능한 컬럼 헤더 등)를 포함할 경우, aria-sort와 같은 속성을 사용해 현재 상태를 명확히 나타내야 합니다.
+- 비활성화된 셀이나 행이 포함된 경우, aria-disabled 속성을 사용해 보조 기술이 이를 인식할 수 있도록 해야 합니다.
 
 **상속된 상태 및 속성**   
 - aria-expanded: 콤보 박스의 선택 목록이 확장되었는지 여부를 나타냅니다.    
