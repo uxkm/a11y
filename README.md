@@ -108,7 +108,7 @@ ACCESSIBILITY 메뉴명도 A11Y로 변경 고려?
 ### 2. [모바일 접근성 제작 기법 - 진행중](a11yMobile/non-text-content.md)     
 ####  [인식의 용이성(Perceivable)](a11yMobile/non-text-content.md)   
   * #### [대체 텍스트](a11yMobile/non-text-content.md) (완료)   
-  * #### [자막, 수화 등의 제공](a11yMobile/captions-sign.md)  (진행)   
+  * #### [자막, 수화 등의 제공](a11yMobile/captions-sign.md)  (완료)   
   * #### [색에 무관한 인식](a11yMobile/use-of-color.md) (대기)    
   * #### [명도 대비](a11yMobile/contrast-minimum.md) (대기)    
   * #### [명확한 지시 사항](a11yMobile/labels-or-instructions.md) (대기)     
