@@ -48,71 +48,49 @@
 #### 6. 개발방법     
 
 **네이티브**     
-iOS는 accessibilityLabel로 Android는 contentDescription으로 대체 텍스트 정보를 제공할 수 있습니다.   
 
 - **iOS**    
-  - [관련문서:Apple's Accessibility Programming Guide for iOS](https://developer.apple.com/accessibility/ios/){: target="_blank"}
-  - **Interface Builder 이용하여 요소에 대체 텍스트 적용하는 방법**   
-      - 방법1. Xcode의 Accessibility 패널에서 Label 제공   
-        <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-          <img src="https://nuli.navercorp.com/upload/2022/9391c267-047d-4e98-8df3-c612bdb800c3_0a705587-7652-1b4c-8177-6b9d37cb2ad0.png" alt="">
-          <figcaption>출처 : NULI</figcaption>
-        </figure>
-        
-        - ① Accessibility 에서 Enabled 을 선택해 접근성 기능을 활성화한 상태에서    
-        - ② Label 에 콘텐츠의 의미를 명확하게 전달할 수 있는 대체 텍스트를 작성합니다.    
-      - 방법2. 코드로 Label 제공   
-         ```sh
-          var.isAccessibilityElement = true   // ① 접근성 요소 활성화
-          var.accessibilityLabel = "대체 텍스트" // ② 대체 텍스트 정보
-          ```    
-  - **UIAccessibility API를 활용하여 코드에 대체 텍스트 제공**    
+  - 경고 메시지 제공 
     ```sh
-    let imageView = UIImageView(image: UIImage(named: "sunrise.png"))
-    imageView.accessibilityLabel = "A beautiful sunrise over the mountains"
-    ```
+    let warningLabel = UILabel()
+    warningLabel.text = "Error occurred"
+    warningLabel.textColor = .red
+    warningLabel.accessibilityLabel = "Error occurred"
+    ```    
 
 - **Android**         
-  - [관련문서:Android Accessibility Overview](https://developer.android.com/guide/topics/ui/accessibility){: target="_blank"}
-  - 방법1. Android Studio Properties 창에서 contentDescription 제공   
-    <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-      <img src="https://nuli.navercorp.com/upload/2022/6f0c6c7f-f031-4e6a-9998-b472415c9077_androidstudio.png" alt="">
-      <figcaption>출처 : NULI</figcaption>
-    </figure>
-  - 방법2. 코드로 contentDescription제공   
+  - 버튼 색상과 텍스트로 상태 표시   
     ```sh
-    android:contentDescription = "대체 텍스트" // UI 레이아웃 XML에서 제공
+    <Button
+    android:id="@+id/button"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Submit"
+    android:backgroundTint="@color/green"
+    android:contentDescription="Submit button, status: success" />
     ```   
-    </figure>
-  - **contentDescription 속성 사용**    
-  ```sh
-  <ImageView
-      android:id="@+id/myImage"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:contentDescription="A beautiful sunrise over the mountains" />
-  ```   
-  - **코드에서 contentDescription 설정**    
-  ```sh
-  val myButton: Button = findViewById(R.id.my_button)
-  myButton.contentDescription = "Submit"
-  ```
 
 - **하이브리드(html)**    
 ```sh
-<img src="sunrise.png" alt="A beautiful sunrise over the mountains">
+<button style="background-color: green;">
+  Submit
+  <span>(성공)</span>
+</button>
 ```
 - **하이브리드(Vue)**    
 ```sh
 <template>
-  <img :src="sunriseImage" alt="A beautiful sunrise over the mountains">
+  <button :style="{ backgroundColor: buttonColor }">
+    Submit <span v-if="status === 'success'">(성공)</span>
+  </button>
 </template>
 
 <script>
 export default {
   data() {
     return {
-      sunriseImage: 'sunrise.png'
+      buttonColor: 'green',
+      status: 'success'
     };
   }
 };
@@ -120,87 +98,14 @@ export default {
 ```
 - **하이브리드(React)**    
 ```sh
-import React from 'react';
-
-function SunriseImage() {
-  return <img src="sunrise.png" alt="A beautiful sunrise over the mountains" />;
+function SubmitButton({ status }) {
+  return (
+    <button style={{ backgroundColor: status === 'success' ? 'green' : 'red' }}>
+      Submit {status === 'success' && <span>(성공)</span>}
+    </button>
+  );
 }
-
-export default SunriseImage;
 ```
-**이미지 alt속성 작성 예시**    
-카카오페이 신용대출 서비스 화면 중 대출 가능성 배너를 보여주는 UI로 다음은 alt속성 작성 예시 방법입니다.    
-<figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-  <img src="./../images/a11y-mobile/img_a11yMobile_ex01.png" alt="">
-  <figcaption>출처 : kakaopay</figcaption>
-</figure>
-
-- **alt 속성을 사용하지 않은 경우**   
-  ```sh
-  <img src="/img/img_nudge_typeB_320x219.png" />
-  음성출력 형태 : 이미지 넛지 타입비 삼백이십엑스이백십구피엔지 이미지
-  ``` 
-   - 스크린 리더는 이미지에 alt 속성이 없으면 파일 이름을 표현합니다.    
-   - 대체 텍스트가 없기 때문에 대신 이미지 경로 정보인 src를 음성으로 전달합니다.     
-   - 파일의 이름으로 콘텐츠를 설명하는 것도 방법이 될 수는 있습니다. 하지만 네트워크 오류, 콘텐츠 차단 등 서비스 관련 이미지를 표시할 수 없는 경우에는 서비스와 무관한 이미지의 alt 값이 음성으로 출력되기 때문에 접근성뿐만 아니라 다양한 환경의 사용자를 고려한다면 alt 속성은 꼭 필요한 속성입니다.   
-- **alt 속성을 사용했지만 값을 제공하지 않는 경우**    
-  ```sh
-  <img src="/img/img_nudge_typeB_320x219.png" alt="" />
-  음성출력 형태 : 없음
-  ``` 
-   - alt 속성의 값을 빈 값("")으로 생략해 제공하는 경우에는 이미지가 핵심 요소가 아님을 뜻하기 때문에 스크린 리더는 img 태그를 해석하지 않습니다.    
-   - 이 경우 스크린 리더 사용자는 웹 브라우징 과정에서 이미지 요소가 있다는 것을 알 수 없습니다.     
-   - 따라서 배경 이미지처럼 단순 디자인의 목적을 가진 이미지는 의도적으로 대체 텍스트를 빈 값으로 작성해 스크린 리더가 읽지 않도록 할 수 있습니다.     
-   - 하지만 이미지 1번 영역 죠르디의 상태로 높은 대출 승인율을 표현하는 콘텐츠임을 감안하면, 사용자에게 이미지 설명을 전달할 필요가 있다고 생각하기 때문에 다음 단계로 넘어가 alt 속성에 대체 텍스트를 작성해 보도록 하겠습니다.      
-- **적합한 대체 텍스트를 작성하지 않은 경우**    
-  ```sh
-  <img src="/img/img_nudge_typeB_320x219.png" alt="기뻐하는 죠르디 이미지" />
-  음성출력 형태 : 기뻐하는 죠르디 이미지 이미지
-  ``` 
-   - 시맨틱 태그는 암시적으로 role을 갖고 있으며, 스크린 리더는 &lt;img&gt;를 ‘이미지’로 자동으로 결정하게 됩니다.     
-   - 따라서 이미지의 존재 여부를 표현하는 ‘사진, 이미지, 아이콘’등의 단어를 대체 텍스트에 포함하게 되면 스크린 리더가 기본적으로 해석한 ‘이미지’와 중복된 의미를 갖기 때문에 적합하지 않습니다.      
-- **(권장)적합한 대체 텍스트를 제공한 경우**    
-  ```sh
-  <img src="/img/img_nudge_typeB_320x219.png" alt="기뻐하는 죠르디" />
-  음성출력 형태 : 기뻐하는 죠르디 이미지
-  ```   
-**버튼에 이미지 작성 예시**    
-아래 이미지의 2번 영역에 있는 물음표 모양 버튼을 보면 우리는 너무나도 쉽게 내 대출 승인율이 무엇인지 자세한 정보를 확인할 수 있는 버튼임을 인식할 수 있습니다.    
-먼저 우리는 스크린 리더가 코드를 어떻게 해석하는지 알아야 합니다.     
-- 브라우저는 코드를 스크린 리더가 읽을 수 있는 접근성 트리(Accessibility Tree)로 만듭니다.    
-- 스크린 리더는 접근성 트리의 요소를 순차 탐색하게 되는데, 접근성 트리에 표시되는 요소의 Name을 기반으로 해석합니다.     
-- 여기서 말하는 Name은 Accessible Name이라고도 하며 스크린 리더가 요소를 포커스했을 때 읽는 값으로 author와 contents 중 하나로 결정됩니다.    
-- 이때, author가 contents보다 우선순위가 높습니다.    
-  - author: aria-label, aria-labelledby, title 속성, &lt;img&gt;의 alt 속성, svg의 &lt;desc&gt;
-  - contents: Text 노드
-<figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-  <img src="./../images/a11y-mobile/img_a11yMobile_ex02.png" alt="">
-  <figcaption>출처 : kakaopay</figcaption>
-</figure>
-
-```sh
-<button type="button">
-  <!-- <img src="/img/img_common_question.png" alt="물음표" />: 구체적이지 않으며 추상적 -->
-  <img src="/img/img_common_question.png" alt="내 대출 승인율이란" />
-</button>
-음성출력 형태 : 내 대출 승인율이란 버튼
-``` 
-   - &lt;img&gt;의 author는 alt 속성으로 Accessible Name은 “내 대출 승인율이란”이 됩니다.    
-   - &lt;button&gt;은 author가 설정되지 않은 경우 자식 요소의 Accessible Name을 모아 contents로 사용하는 Children Presentational이라는 특징을 갖습니다.    
-   - 따라서 &lt;button&gt;의 content는 ‘내 대출 승인율이란’이 되고 스크린 리더는 자동적으로 결정한 role과 결합해 “내 대출 승인율이란 버튼”이라고 해석하게 됩니다.      
-
-**텍스트와 상호작용 요소의 분리 예시**    
-텍스트 안에 링크나 버튼을 넣지 않아야 한다. 아래 예처럼 텍스트 안에 링크가 있는 경우 스크린 리더는 빠르게 텍스트를 읽어 나가기 때문에 화면의 레이아웃을 파악하기 힘든 시각장애인은 링크 위치를 알 수 없다. 텍스트와 상호작용이 가능한 요소는 분리하여 디자인해야 인식 가능하다.     
-
-<figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-  <img src="./../images/a11y-mobile/img_a11yMobile_ex03.png" alt="">
-  <figcaption>출처 : 모바일 UI UX 기본가이드 | 브런치 스토리 by최철호</figcaption>
-</figure>
-
-이미지 요소에 어떤 내용으로 대체 텍스트를 제공할 것인지 고민하기 전에, 이미지를 어떤 목적으로 사용하고 있는지를 생각해 봐야 합니다.     
-이미지가 주요 콘텐츠의 일부로서 사용자에게 정보를 전달하는 역할을 한다면 적절한 의미에 맞는 대체 텍스트를 제공하면 됩니다.    
-반대로 이미지가 콘텐츠의 내용을 설명하는 핵심적인 요소가 아니라면 대체 텍스트를 생략하거나 배경 이미지 속성을 활용함으로써 스크린 리더 사용자에게 불필요한 정보를 전달하지 않도록 합니다.    
-
 
 
 #### 7. 점검 기준     
@@ -212,12 +117,6 @@ export default SunriseImage;
 - **색각 이상 사용자를 고려한 설계**: 색각 이상 사용자가 정보를 인식할 수 있도록 보완적인 디자인 요소가 적용되었는가?      
 - 예)그래프 내 각 항목 등 정보의 구분을 색상으로만 표시하여, 색상 제거 시 동등한 정보 전달이 되지 않는 경우       
    
-**주의사항**     
-- 기능을 제공하는 경우 이용방법 등 충분한 설명을 제공하지 않은 경우 (권고)     
-- 숫자 정보에 대해 의미전달이 미흡한 대체텍스트를 제공하는 경우 (권고) :    
-- 준수예) 6.20 --> 6월20일     
-- 권고) 객체 유형정보를 정확히 제공할 것을 권장함(Traits 정보)     
-- IR기법으로 대체텍스트를 제공 시 hidden형태가 아니더라도 화면 터치방식으로는 대체정보 인지 불가함(오류)     
 
 #### 8. 점검 방법     
 **iOS**         
@@ -229,220 +128,109 @@ export default SunriseImage;
 - **색상 보정 모드**를 사용해 색각 이상 사용자에 대한 대응 여부를 테스트.    
 
 **방법 1 (네이티브-문서 제공기준)**     
-TalkBack(또는 Voice Assistant 등) 기능으로 텍스트가 아닌 콘텐츠에 대응하는 대체 텍스트의 적절성 여부를 확인한다.    
-- 화면 구성 정보를 제공하는지 확인한다. (Title, List View, Grid View)     
-- 화면 내 구체적인 Contents를 읽어주는지 확인한다. (Text, Imge)     
-- 화면 내 기능을 읽어주는지 확인한다. (Button 등)     
-<figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-   <img src="./../images/a11y-mobile/img_a11yMobile_check01-01.png" alt="">
-   <img src="./../images/a11y-mobile/img_a11yMobile_check01-02.png" alt="">
-   <figcaption>출처 : 모바일 애플리케이션 접근성 제작기법</figcaption>
-</figure>
+색상으로 정보를 구분하는 경우, 색상을 대체할 수 있는 정보(텍스트, 이미지, 심볼 등)도 함께 제공하는지를 점검한다.    
+
+- 화면의 구성 요소(List 등)들이 색으로만 구분토록 되어 있는지 확인한다.     
+- 화면 내 콘텐츠(이미지, 그래프, 차트 등)이 색상만으로 구분토록 되어 있는 지 확인한다.     
+- 화면 변환 (현재 위치/변경 화면)이 색상만으로 제공 되어 있는지 확인한다.     
 
 **방법 2 (네이티브-문서 제공기준)**      
-음성출력 표시 기능으로 텍스트가 아닌 콘텐츠에 대응하는 대체 텍스트의 적절성 여부를 점검한다.    
-- 설정→접근성→시각→Talk Back→설정→개발자 설정→음성출력 표시 체크 후 확인한다.     
+접근성 기능의 흑백음영 기능을 이용하여 색상정보 없이 콘텐츠 정보를 인식할 수 있는지 확인한다.     
 <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-   <img src="./../images/a11y-mobile/img_a11yMobile_check02-01.png" alt="">
+   <img src="./../images/a11y-mobile/img_a11yMobile_usecolor01.png" alt="">
    <figcaption>출처 : 모바일 애플리케이션 접근성 제작기법</figcaption>
 </figure>
-
-**방법 3 (네이티브-문서 제공기준)**   
-UIAutoMatorViewer를 활용하여 점검한다.     
-- Android Studio를 이용한 실행방법     
-  - Toolbar에서 Android Device Monitor 버튼을 선택    
-    <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-        <img src="./../images/a11y-mobile/img_a11yMobile_check03-01-01.png" alt="">
-        <figcaption>출처 : 모바일 애플리케이션 접근성 제작기법</figcaption>
-    </figure>
-  - Devices 탭에서 디바이스가 연결된 상태로 점검할 화면을 띄운 뒤 Dump View Hierarchy for UI Automator버튼을 선택 
-    <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-        <img src="./../images/a11y-mobile/img_a11yMobile_check03-01-02.png" alt="">
-        <figcaption>출처 : 모바일 애플리케이션 접근성 제작기법</figcaption>
-    </figure>
-- ADT(Android Developer Tools) 를 이용한 실행 방법     
-  - DDMS(Dalvik Debug Monitor Server) 를 실행    
-  - Devices 탭에서 디바이스가 연결된 상태로 점검할 화면을 띄운 뒤 Dump View Hierarchy for UI Automator버튼을 선택 
-    <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-        <img src="./../images/a11y-mobile/img_a11yMobile_check03-02-01.png" alt="">
-        <figcaption>출처 : 모바일 애플리케이션 접근성 제작기법</figcaption>
-    </figure>
-- SDK 내부의UIAutomator Viewer 실행     
-  - Android sdk폴더의 tools 안에있는 uiautomatorviewer.bat 파일실행 
-    <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-        <img src="./../images/a11y-mobile/img_a11yMobile_check03-03-01.png" alt="">
-        <figcaption>출처 : 모바일 애플리케이션 접근성 제작기법</figcaption>
-    </figure>
-  - 실행화면 
-    <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-        <img src="./../images/a11y-mobile/img_a11yMobile_check03-03-02.png" alt="">
-        <figcaption>출처 : 모바일 애플리케이션 접근성 제작기법</figcaption>
-    </figure>
-  - Device Screenshot 선택 
-    <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-        <img src="./../images/a11y-mobile/img_a11yMobile_check03-03-03.png" alt="">
-        <figcaption>출처 : 모바일 애플리케이션 접근성 제작기법</figcaption>
-    </figure>
-
-**방법 4 (네이티브-문서 제공기준)**    
-UIAutomatorViewer를 이용하여 점검한다.     
-- 점검할 화면을 띄운다.    
-- 점검할 UI객체를 선택하여 상세정보를 확인한다.     
-    <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-        <img src="./../images/a11y-mobile/img_a11yMobile_check04-01.png" alt="">
-        <figcaption>출처 : 모바일 애플리케이션 접근성 제작기법</figcaption>
-    </figure>
-- ImageButton, ImageView의경우 content-desc항목이 적용되어있는지 확인해야 한다.     
-  - 대체텍스트 적용 시 Node Detail과 계층구조의{ }안에 대체텍스트내용이 표시 된다. 
-    <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-        <img src="./../images/a11y-mobile/img_a11yMobile_check04-03-01.png" alt="">
-        <figcaption>출처 : 모바일 애플리케이션 접근성 제작기법</figcaption>
-    </figure>
-  - 대체텍스트 미적용 시 Node Detai과 계층구조에 대체텍스트가 표시되지 않는다. 
-    <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-        <img src="./../images/a11y-mobile/img_a11yMobile_check04-03-02.png" alt="">
-        <figcaption>출처 : 모바일 애플리케이션 접근성 제작기법</figcaption>
-    </figure>     
-- TextView, Button, EditText등의 경우 content-desc에 대체텍스트가 적용되지 않고 text에 대체텍스트가 적용될 수 있다.     
-    <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-        <img src="./../images/a11y-mobile/img_a11yMobile_check04-04-01.png" alt="">
-        <img src="./../images/a11y-mobile/img_a11yMobile_check04-04-02.png" alt="">
-        <figcaption>출처 : 모바일 애플리케이션 접근성 제작기법</figcaption>
-    </figure>
-    
 
 **방법 5 (하이브리드)**    
 크롬(Chrome) 브라우저 요소검사를 이용하여 점검한다.    
-- 해당 이미지 요소를 선택하여 우측클릭하여 요소검사를 하여 코드로 확인.    
+- 현재 페이지에서 F12 를 눌러 Chrome DevTools를 실행합니다.    
+- 우측 상단 메뉴 → 도구 더 보기 → 렌더링을 클릭합니다.    
+- 스크롤을 내려 색맹 에뮬레이션을 찾고 에뮬레이션 옵션을 변경합니다.    
+- 색맹 에뮬레이션(Emulate vision deficiencies) 옵션을 변경하며 위 이미지의 변화를 확인합니다.    
+- Customize and Control DevTools  →  More tools  →  Rendering    
   <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-    <img src="./../images/a11y-mobile/img_a11yMobile_check05-01.png" alt="">
-    <figcaption>크롬(Chrome) 브라우저 이미지 요소검사</figcaption>
+    <img src="./../images/a11y-mobile/img_a11yMobile_usecolor02.png" alt="">
+    <img src="./../images/a11y-mobile/img_a11yMobile_usecolor02-2.png" alt="">
+    <img src="./../images/a11y-mobile/img_a11yMobile_usecolor02-1.png" alt="">
+    <figcaption>크롬(Chrome) 브라우저 색맹 에뮬레이션 테스트</figcaption>
   </figure>
- 
 
-**주의사항**    
-- 개발방법에 따라 연관된 타 UI 객체에 대체텍스트를 적용하고 있는경우가 있다. 이런경우엔 오류항목으로 볼 수 없다.     
-- UIAutoMatorViewe 를 활용한 대체텍스트 확인은 다른 점검기법과 병행되어 사용하는 것이 바람직하다.     
-    
+색맹 에뮬레이션(Emulate vision deficiencies)은 아래의 6개 옵션을 제공합니다.   
+- 흐릿한 시야(Blurred vision)    
+  - 블러 모드를 선택하면 화면이 뿌옇게 표시되어 저시력 장애를 간접 체험할 수 있게 합니다.    
+  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
+    <img src="./../images/a11y-mobile/img_a11yMobile_usecolor03.png" alt="">
+    <img src="./../images/a11y-mobile/img_a11yMobile_usecolor03-1.png" alt="">
+    <figcaption>저시력 장애 간접 체험</figcaption>
+  </figure>
+- 대비 감소(Reduced contrast)    
+- 제1색맹(적색맹) - Protanopia(no red): 적색과 녹색을 구별할 수 없고, 적색을 어두운 색상으로 인식합니다.    
+  - 적색맹 이상(Protanopia) 또는 녹색맹(Deuteranopia) 모드를 선택하면 빨간색과 녹색 대신 노란색과 갈색으로 표시되는 색각 이상을 체험할 수 있습니다.    
+  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
+    <img src="./../images/a11y-mobile/img_a11yMobile_usecolor04.png" alt="">
+    <img src="./../images/a11y-mobile/img_a11yMobile_usecolor04-1.png" alt="">
+    <figcaption>적녹 색각 이상 간접 경험</figcaption>
+  </figure>
+- 제2색맹(녹색맹) - Deuteranopia(no green): 적색과 녹색을 구별할 수 없고, 녹색을 어두운 색상으로 인식합니다.    
+- 제3색맹(청색맹) - Tritanopia(no blue): 청색과 노란색을 구분할 수 없습니다.    
+  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
+    <img src="./../images/a11y-mobile/img_a11yMobile_usecolor06.png" alt="">
+    <img src="./../images/a11y-mobile/img_a11yMobile_usecolor06-1.png" alt="">
+    <figcaption>청황 색각 이상 간접 경험</figcaption>
+  </figure>
+- 색맹(전색맹) - Achromatopsia(no color): 색상을 전혀 구별할 수 없습니다. 약 4만 명 중에 한 명 정도로 나타나는 희귀 유전질환입니다.   
+  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
+    <img src="./../images/a11y-mobile/img_a11yMobile_usecolor07.png" alt="">
+    <img src="./../images/a11y-mobile/img_a11yMobile_usecolor07-1.png" alt="">
+    <figcaption>전 색맹 간접 경험</figcaption>
+  </figure>
+
+
 
 #### 9. 준수 사례       
 
 **사례1**   
-
-- 아이콘 + 텍스트와 같이 제공되는 경우    
-  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-    <img src="./../images/a11y-mobile/img_a11yMobile_ex_do01.png" alt="">
-    <figcaption>출처 : 무인정보단말기 UI 플랫폼</figcaption>
-  </figure>
-  
-  - 음성출력 형태(Talkback) : UI 가이드 원칙 링크 6개 중 첫번째. 활성화하려면 두 번 탭하세요. 링크 사용가능. 세 손가락으로 탭 동작으로 보기.
+색상에만 의존하지 않는 그래프 정보를 제공한 경우   
+<figure aria-hidden="true" style="text-align:center;border:1px solid #000">
+  <img src="./../images/a11y-mobile/img_a11yMobile_usecolor_ex_do01.png" alt="">
+  <figcaption>출처 : 모바일애플리케이션콘텐츠접근성지침2.0</figcaption>
+</figure>
 
 **사례2**   
-
-- 이미지로 제공되는 경우    
-  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-    <img src="./../images/a11y-mobile/img_a11yMobile_ex_do02.png" alt="">
-    <figcaption>출처 : 무인정보단말기 UI 플랫폼</figcaption>
-  </figure>
-  
-  - 음성출력 형태(Talkback) : 정보접근성이 보장된 무인정보단말기 UI 플랫폼 고령자도 OK! 장애인도 OK! 무인정보단말기의 정보접근성을 모두 갖춘 무인정보단말기 UI 플랫폼과 개발도구 제공 자세히 보기. 활성화하려면 두 번 탭하세요. 링크 사용가능. 세 손가락으로 탭 동작으로 보기.
-
-**사례3**   
-
-- 의미와 용도를 이해할 수 있도록 적절하게 대체텍스트를 제공한 경우    
-  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-    <img src="./../images/a11y-mobile/img_a11yMobile_ex_do03.png" alt="">
-    <figcaption>출처 : 모바일애플리케이션콘텐츠접근성지침2.0</figcaption>
-  </figure>
-  
-  - 다음 메일 Kakao corp. 별점 평점 4.3"으로 해당 메일의 정보를 올바르게 제공함
-
-**사례4**   
-
-- 이미지 버튼에 적절한 대체텍스트를 제공한 경우    
-  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-    <img src="./../images/a11y-mobile/img_a11yMobile_ex_do04.png" alt="">
-    <figcaption>출처 : 모바일애플리케이션콘텐츠접근성지침2.0</figcaption>
-  </figure>
-  
-  - "옵션 버튼" 으로 해당 버튼의 정보를 올바르게 제공함
+선택된 항목을 적절하게 제공한 경우   
+<figure aria-hidden="true" style="text-align:center;border:1px solid #000">
+  <img src="./../images/a11y-mobile/img_a11yMobile_usecolor_ex_do02.png" alt="">
+  <figcaption>출처 : 모바일애플리케이션콘텐츠접근성지침2.0</figcaption>
+</figure>
 
 #### 10. 미준수 사례       
 
 **사례1**   
-
-- 이미지 요소가 제공하는 정보와 동일한 정보가 음성으로 출력되지 않는 경우    
-  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-    <img src="./../images/a11y-mobile/img_a11yMobile_ex_donot01.png" alt="">
-    <figcaption>출처 : 모바일애플리케이션콘텐츠접근성지침2.0</figcaption>
-  </figure>
-  
-  - 개선 전 : "이벤트"로 해당 이미지에 대해 대체텍스트가 부적절하게 제공됨   
-  - 개선 후 : "릴레이팡팡 한방에 달성하기!"로 해당 이미지에 대해 대체텍스트가 제공되어야 함   
+그래프 내 각 항목 등 정보의 구분을 색상으로만 표시하여, 색상 제거 시 동등한 정보 전달이 되지 않는 경우     
+<figure aria-hidden="true" style="text-align:center;border:1px solid #000">
+  <img src="./../images/a11y-mobile/img_a11yMobile_usecolor_ex_donot01.png" alt="">
+  <figcaption>출처 : 모바일애플리케이션콘텐츠접근성지침2.0</figcaption>
+</figure>
 
 **사례2**   
-
-- 의미와 용도를 이해할 수 없는 대체 텍스트를 제공하는 경우    
-  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-    <img src="./../images/a11y-mobile/img_a11yMobile_ex_donot02.png" alt="">
-    <figcaption>출처 : 모바일애플리케이션콘텐츠접근성지침2.0</figcaption>
-  </figure>
-  
-  - 개선 전 : “버튼 -4 라벨지정안됨” 으로 해당 이미지 버튼에 대체텍스트가 부적절하게 제공됨   
-  - 개선 후 : "카드 설정 버튼" 또는 "의미와 용도에 맞는 텍스트 정보" 로 해당 이미지에 대해 대체텍스트가 제공되어야 함   
+그래프 내 각 항목 등 정보의 구분을 색상으로만 표시하여, 색상 제거 시 동등한 정보 전달이 되지 않는 경우     
+<figure aria-hidden="true" style="text-align:center;border:1px solid #000">
+  <img src="./../images/a11y-mobile/img_a11yMobile_usecolor_ex_donot02.png" alt="">
+  <figcaption>출처 : 모바일애플리케이션콘텐츠접근성지침2.0</figcaption>
+</figure>
 
 **사례3**   
+선택된 항목을 색상으로만 제공한 경우     
+<figure aria-hidden="true" style="text-align:center;border:1px solid #000">
+  <img src="./../images/a11y-mobile/img_a11yMobile_usecolor_ex_donot03.png" alt="">
+  <figcaption>출처 : 모바일애플리케이션콘텐츠접근성지침2.0</figcaption>
+</figure>
 
-- 버튼에 대체텍스트가 제공되지 않은 경우    
-  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-    <img src="./../images/a11y-mobile/img_a11yMobile_ex_donot03.png" alt="">
-    <figcaption>출처 : 모바일애플리케이션콘텐츠접근성지침2.0</figcaption>
-  </figure>
-  
-  - 개선 전 : 보안 키패드에 대체텍스트가 제공되지 않음   
-  - 개선 후 : 각 버튼에 대해 대체텍스트가 제공되어야 함   
-  - [키패드 적용 기본 예시](https://codepen.io/io-uxkm/pen/qBzgvpX){: target="_blank"} 
-
-**사례4**   
-
-- 의미없는 대체 텍스트가 제공된 경우    
-  - 개선 전 : 의미를 갖지 않는 장식용 이미지에 alt가 제공   
-    아이콘 자체로 의미를 갖지 않는 경우 alt="" 제공해도 무방합니다.    
-  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-    <img src="./../images/a11y-mobile/img_a11yMobile_ex_donot04.png" alt="">
-    <figcaption>출처 : 카카오</figcaption>
-  </figure>
-  
-  - 개선 후 : 불필요한 alt값 제거로 화면을 읽는데 불편함(불필요한 내용으로 피곤함 유발, 텍스트와 중복된 내용) 방지   
-  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-    <img src="./../images/a11y-mobile/img_a11yMobile_ex_donot05.png" alt="">
-    <figcaption>출처 : 카카오</figcaption>
-  </figure>
-
-**사례6**   
-
-- 의미없는 대체 텍스트가 제공된 경우와 암묵적으로 제시된 이미지에 중복 사용된 경우    
-  - 개선 전 : 의미를 갖지 않는 장식용 이미지에 alt가 제공    
-    의미를 가지는 정보는 날짜 같은 경우는 풀어서 제공해줘야 함. 예)~2024.09.30 -> 2024년 09월 30까지      
-    음성출력 형태(Talkback) : **"유플닷컴 출석체크 이벤트 2024년 9월 30일 달력 이미지"** 링크 활성화하려면 두 번 탭하세요. 링크 사용가능. 세 손가락으로 탭 동작으로 보기.      
-    음성출력 형태(Voiceover) : **"유플닷컴 출석체크 이벤트 물결 2024점 9점 30점 슬래시 달력 이미지"** 링크    
-  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-    <img src="./../images/a11y-mobile/img_a11yMobile_ex_donot06.png" alt="">
-    <figcaption>출처 : LGU+</figcaption>
-  </figure>
-  
-  - 개선 후 : 의미없는 장식용 이미지에 대한 alt값 제거 및 이미지에 대한 중복 사용 제거   
-    음성출력 형태(Talkback) : **"유플닷컴 출석체크 이벤트 기간 2024년 9월 30일 까지"** 링크 활성화하려면 두 번 탭하세요. 링크 사용가능. 세 손가락으로 탭 동작으로 보기.
-    음성출력 형태(Voiceover) : **"유플닷컴 출석체크 이벤트 기간 2024년 9월 30일 까지"** 링크
-  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-    <img src="./../images/a11y-mobile/img_a11yMobile_ex_donot07.png" alt="">
-    <figcaption>출처 : LGU+</figcaption>
-  </figure>
 
 #### 11. 관련 영상       
-<iframe style="width:100%;min-height:315px;" src="https://www.youtube.com/embed/eQHPJ4tk-ag?si=mMQd3txeiPLQc_4B" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe style="width:100%;min-height:315px;" src="https://www.youtube.com/embed/W1e3oeXSaZQ?si=I_QUln4IFznHhVEu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-[AOA11Y 모바일 앱 접근성 (1.대체 텍스트)](https://www.youtube.com/watch?v=eQHPJ4tk-ag){: target="_blank"}    
+[AOA11Y 모바일 앱 접근성 (3. 색상에무관한인식)](https://www.youtube.com/embed/W1e3oeXSaZQ?si=I_QUln4IFznHhVEu){: target="_blank"}    
    
 ---
 <details>
