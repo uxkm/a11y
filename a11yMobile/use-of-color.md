@@ -165,13 +165,15 @@ function SubmitButton({ status }) {
   </figure>
 - 대비 감소(Reduced contrast)    
 - 제1색맹(적색맹) - Protanopia(no red): 적색과 녹색을 구별할 수 없고, 적색을 어두운 색상으로 인식합니다.    
+- 제2색맹(녹색맹) - Deuteranopia(no green): 적색과 녹색을 구별할 수 없고, 녹색을 어두운 색상으로 인식합니다.    
   - 적색맹 이상(Protanopia) 또는 녹색맹(Deuteranopia) 모드를 선택하면 빨간색과 녹색 대신 노란색과 갈색으로 표시되는 색각 이상을 체험할 수 있습니다.    
   <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
     <img src="./../images/a11y-mobile/img_a11yMobile_usecolor04.png" alt="">
+    <img src="./../images/a11y-mobile/img_a11yMobile_usecolor05.png" alt="">
     <img src="./../images/a11y-mobile/img_a11yMobile_usecolor04-1.png" alt="">
+    <img src="./../images/a11y-mobile/img_a11yMobile_usecolor05-1.png" alt="">
     <figcaption>적녹 색각 이상 간접 경험</figcaption>
   </figure>
-- 제2색맹(녹색맹) - Deuteranopia(no green): 적색과 녹색을 구별할 수 없고, 녹색을 어두운 색상으로 인식합니다.    
 - 제3색맹(청색맹) - Tritanopia(no blue): 청색과 노란색을 구분할 수 없습니다.    
   <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
     <img src="./../images/a11y-mobile/img_a11yMobile_usecolor06.png" alt="">
@@ -179,6 +181,7 @@ function SubmitButton({ status }) {
     <figcaption>청황 색각 이상 간접 경험</figcaption>
   </figure>
 - 색맹(전색맹) - Achromatopsia(no color): 색상을 전혀 구별할 수 없습니다. 약 4만 명 중에 한 명 정도로 나타나는 희귀 유전질환입니다.   
+  - 전색맹(Achromatopsia) 모드를 선택하면 빨간색, 녹색, 파란색을 모두 구분할 수 없는 흑백 비전(Vision)으로 화면에 표시되어 간접적으로 체험할 수 있습니다.    
   <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
     <img src="./../images/a11y-mobile/img_a11yMobile_usecolor07.png" alt="">
     <img src="./../images/a11y-mobile/img_a11yMobile_usecolor07-1.png" alt="">
