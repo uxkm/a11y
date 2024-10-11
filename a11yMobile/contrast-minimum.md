@@ -87,30 +87,30 @@
     android:background="#FFFFFF" />
     ```   
 
-- **하이브리드(html)**    
-```sh
-<div style="background-color: #FFFFFF; color: #333333;">
-  Important Info
-</div>
-```
-- **하이브리드(Vue)**    
-```sh
-<template>
-  <div :style="{ backgroundColor: '#FFFFFF', color: '#333333' }">
+- **하이브리드(html)**     
+  ```sh
+  <div style="background-color: #FFFFFF; color: #333333;">
     Important Info
   </div>
-</template>
-```
-- **하이브리드(React)**    
-```sh
-function ImportantInfo() {
-  return (
-    <div style={{ backgroundColor: '#FFFFFF', color: '#333333' }}>
+  ```   
+- **하이브리드(Vue)**     
+  ```sh
+  <template>
+    <div :style="{ backgroundColor: '#FFFFFF', color: '#333333' }">
       Important Info
     </div>
-  );
-}
-```
+  </template>
+  ```
+- **하이브리드(React)**    
+  ```sh
+  function ImportantInfo() {
+    return (
+      <div style={{ backgroundColor: '#FFFFFF', color: '#333333' }}>
+        Important Info
+      </div>
+    );
+  }
+  ```
     
 
 #### 7. 점검 기준     
