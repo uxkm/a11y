@@ -196,16 +196,29 @@
   <figcaption>글자와 배경의 명도대비가 3:1 이상인 경우</figcaption>
 </figure>
 
-**사례3**   
-  
-<figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-  <img src="./../images/a11y-mobile/img_a11yMobile_contrast_ex_do02.png" alt="">
-  <figcaption>글자와 배경의 명도대비가 3:1 이상인 경우</figcaption>
-</figure>
-
 #### 10. 미준수 사례       
 
-**사례1**   
+**사례1**    
+
+<figure aria-hidden="true" style="text-align:center;border:1px solid #000">
+  <img src="./../images/a11y-mobile/img_a11yMobile_contrast_ex_donot01.png" alt="">
+  <img src="./../images/a11y-mobile/img_a11yMobile_contrast_ex_donot01-1.png" alt="">
+  <figcaption>input의 placeholder나 버튼의 색상</figcaption>
+</figure>
+
+**사례2**    
+
+<figure aria-hidden="true" style="text-align:center;border:1px solid #000">
+  <img src="./../images/a11y-mobile/img_a11yMobile_contrast_ex_donot02.png" alt="">
+  <figcaption>글자와 배경의 명도대비가 3:1 미만인 경우</figcaption>
+</figure>
+
+**사례3**    
+
+<figure aria-hidden="true" style="text-align:center;border:1px solid #000">
+  <img src="./../images/a11y-mobile/img_a11yMobile_contrast_ex_donot03.png" alt="">
+  <figcaption>글자와 배경의 명도대비가 3:1 미만인 경우</figcaption>
+</figure>
 
 
 #### 11. 관련 영상       
