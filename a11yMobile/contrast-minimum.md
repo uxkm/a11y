@@ -7,453 +7,214 @@
    
 ### 명도 대비   
 **관련 지침 : 화면에 표시되는 모든 사용자 인터페이스 컴포넌트와 텍스트는 전경색과 배경색이 구분될 수 있도록 제공되어야 한다.**   
-대체 텍스트는 비 텍스트 콘텐츠를 설명하는 중요한 요소로, 접근성을 높이기 위해 필수적으로 제공되어야 합니다. 다양한 테스트 도구를 활용해 웹 및 모바일 앱에서 대체 텍스트를 포함한 접근성 요소를 철저히 점검하고, 사용자 경험을 개선할 수 있습니다. 접근성을 준수함으로써 모든 사용자에게 포용적인 디지털 환경을 제공합니다.   
-[WCAG 2.2 Quick Reference - Non-text Content](https://www.w3.org/WAI/WCAG22/quickref/#non-text-content){: target="_blank"}
+명도 대비는 텍스트와 배경 또는 인터페이스 컴포넌트 간의 색상 차이를 의미하며, 이를 통해 콘텐츠가 보다 쉽게 인식될 수 있도록 해야 합니다. WCAG 가이드라인에서는 명도 대비 비율을 최소한 4.5:1 이상 유지할 것을 권장하며, 큰 텍스트(18pt 이상) 또는 굵은 텍스트(14pt 이상)는 3:1의 비율을 유지하도록 규정하고 있습니다. 명도 대비가 부족하면 저시력 사용자나 시각 장애인은 콘텐츠를 인식하는 데 어려움을 겪게 됩니다.   
+[WCAG 2.2 Quick Reference - Contrast (Minimum)](https://www.w3.org/WAI/WCAG22/quickref/#contrast-minimum){: target="_blank"}
+
+예시)    
+- **잘못된 예**: 연한 회색 텍스트가 흰색 배경에 표시되어 텍스트가 구분되지 않는 경우.    
+- **올바른 예**: 진한 회색 텍스트가 흰색 배경에 표시되어 명확히 구분되는 경우.     
+
+<figure aria-hidden="true" style="text-align:center;border:1px solid #000">
+  <img src="./../images/a11y-mobile/img_a11yMobile_contrast-minimum.png" alt="">
+  <figcaption>WCAG 명도 대비 권장사항</figcaption>
+</figure>   
+<figure aria-hidden="true" style="text-align:center;border:1px solid #000">
+  <img src="./../images/a11y-mobile/img_a11yMobile_contrast-minimum-1.png" alt="">
+  <figcaption>텍스트 크기와 무게 명도 대비 상세</figcaption>
+</figure>   
 
 **키워드**   
 #모바일 앱 접근성, #모바일 앱 접근성 콘텐츠 제작 기법, #WCAG2.2, #명도 대비, #저시력 사용자, #색상 대비, #사용자 인터페이스, #텍스트 가독성
 
 #### 1. 필요성        
-대체 텍스트는 이미지, 동영상, 아이콘 등 비 텍스트 콘텐츠의 의미를 텍스트로 설명하여, 시각 장애인이나 저시력 사용자가 스크린 리더를 통해 콘텐츠를 이해할 수 있도록 돕습니다. 이는 접근성을 보장하며, 웹 및 앱에서 모든 사용자가 동등하게 콘텐츠에 접근할 수 있게 합니다.   
+명도 대비는 저시력 사용자, 고령자, 시각 장애인이 앱을 사용할 때 중요한 정보를 놓치지 않도록 보장하는 핵심 요소입니다. 명확한 대비가 없으면 텍스트와 UI 컴포넌트가 배경과 혼동될 수 있어 사용자의 접근성이 떨어집니다. 명도 대비가 유지되면 더 많은 사용자들이 콘텐츠를 쉽게 이해하고 접근할 수 있습니다.     
+
 
 #### 2. 대상       
-- **시각 장애인**: 스크린 리더를 사용하는 사용자들.   
-- **저시력 사용자**: 텍스트 크기 조정 및 색상 대비에 의존하는 사용자들.   
-- **고령자**: 시력이 저하된 사용자들.   
-- **인지 장애인**: 복잡한 비주얼 콘텐츠를 이해하는 데 어려움을 겪는 사용자들.   
+- **저시력 사용자**: 명도 대비가 낮은 텍스트와 UI 컴포넌트를 인식하는 데 어려움을 겪는 사용자.   
+- **고령자**: 시력 저하로 인해 명도 대비가 중요한 사용자.   
+- **시각 장애인**: 색상 인식이 어렵거나 제한적인 사용자.   
+- **비장애 사용자**: 햇빛이나 어두운 환경에서 명도 대비가 적절치 않을 경우 콘텐츠를 인식하는 데 어려움을 겪는 사용자.      
 
 #### 3. 체크리스트       
-- **대체 텍스트 제공 여부**: 모든 비 텍스트 콘텐츠에 대체 텍스트가 제공되고 있는가?   
-- **적절성**: 대체 텍스트가 콘텐츠의 의미를 정확하게 전달하고 있는가?   
-- **중복 여부**: 같은 콘텐츠에 대해 중복된 대체 텍스트가 제공되고 있지 않은가?    
-- **불필요한 정보 배제**: 장식용 이미지에 대체 텍스트가 불필요하게 포함되어 있지 않은가?     
-- **스크린 리더 테스트**: 대체 텍스트가 스크린 리더에서 올바르게 읽히는가?     
+- **명도 대비 비율 확인**: 텍스트와 배경, UI 요소의 대비가 WCAG 기준(최소 4.5:1)을 충족하는가?   
+- **폰트 크기와 대비 비율**: 큰 텍스트나 굵은 텍스트의 경우 최소 3:1의 대비 비율을 유지하는가?   
+- **상태 변화 반영**: 버튼, 링크, 체크박스 등 UI 요소의 활성화 상태가 색상 변화 외에도 명확하게 표시되고 있는가?   
+- **배경 이미지 사용 시 대비**: 배경 이미지 위에 텍스트를 배치할 경우, 텍스트가 이미지와 충분한 대비를 이루고 있는가?     
 
 
 #### 4. 기기별 테스트 방법      
 **iOS**     
-- **VoiceOver 활성화**: 설정 > 접근성 > VoiceOver를 활성화하여 대체 텍스트가 올바르게 읽히는지 테스트합니다.   
-- **Accessibility Inspector 사용**: Xcode의 'Accessibility Inspector'를 통해 UI 요소의 대체 텍스트 적용 상태를 확인합니다.    
+- **명도 대비 테스트**: iOS 설정에서 색상 필터 및 스마트 반전 기능을 사용하여 명도 대비가 유지되고 있는지 확인.    
+- **VoiceOver 사용**: VoiceOver를 통해 텍스트 및 UI 요소가 명확하게 인식되는지 확인.   
+- **iOS 개발자 도구**: Xcode의 Accessibility Inspector를 사용하여 명도 대비를 자동으로 분석하고, 기준에 맞는지 확인.   
 - [iPhone 사용 설명서 - VoiceOver](https://help.apple.com/iphone/11/?lang=ko#/iph3e2e415f){: target="_blank"}
    
 **Android**   
-- **TalkBack 활성화**: 설정 > 접근성 > TalkBack을 활성화하여 대체 텍스트가 적절하게 읽히는지 테스트합니다.    
-- **Accessibility Scanner 사용**: Google Play에서 제공하는 'Accessibility Scanner' 앱을 사용하여 대체 텍스트의 적용 여부를 자동으로 탐지합니다.      
+- **명도 대비 테스트**: Android 디바이스에서 '색상 반전'과 '고대비 텍스트' 설정을 활성화하여 앱의 명도 대비를 테스트.   
+- **TalkBack 사용**: 텍스트와 UI 요소가 충분한 대비를 유지하여 사용자가 쉽게 인식할 수 있는지 확인.    
+- **Accessibility Scanner 사용**: Google Play에서 제공하는 Accessibility Scanner 앱을 통해 명도 대비 문제를 자동으로 탐지.      
 - [Android 접근성 고객센터 - TalkBack 및 Android](https://support.google.com/accessibility/android/topic/10601571?hl=ko&ref_topic=3529932&sjid=14261166623289476037-AP){: target="_blank"}
+- [접근성 검사기 (Accessibility Scanner)](https://developer.android.com/codelabs/starting-android-accessibility?hl=ko#2){: target="_blank"}
 
 #### 5. QA 지표       
-- **대체 텍스트 오류 비율**: 대체 텍스트가 누락되거나 부정확하게 제공된 UI 요소의 비율.   
-- **스크린 리더 정확성**: 스크린 리더를 통해 올바르게 읽히는 대체 텍스트의 비율.   
-- **사용자 피드백**: 실제 사용자 테스트를 통해 대체 텍스트의 적절성에 대한 피드백을 수집.   
+- **대비 비율**: 텍스트와 배경, UI 요소 간의 대비 비율이 4.5:1(일반 텍스트) 또는 3:1(큰 텍스트)을 충족하는지 여부.    
+- **대비 문제 비율**: 앱 내에서 명도 대비가 부족한 요소의 비율.   
+- **사용자 피드백**: 저시력 사용자, 고령자 등을 대상으로 한 접근성 테스트 결과 및 피드백.      
 
 
 #### 6. 개발방법     
-시각장애인 사용자는 스크린리더 프로그램을 사용하여 콘텐츠 정보를 인식하고 사용합니다. 다음 그림에 보이는 바와 같이 스크린리더는 각각의 콘텐츠가 갖고 있는 정보를 음성으로 알려줍니다. 콘텐츠의 용도를 알 수 있는 텍스트 정보(●) 예: 블루라이트 필터, 콘텐츠가 어떤 컨트롤인지 버튼인지, 토글 버튼인지 등 유형 정보(▲) 예: 스위치, 콘텐츠 유형에 따른 상태 정보(◼︎) 예:사용 안 함, 콘텐츠를 사용하기에 필요한 힌트 정보(★) 예:전환하려면 두 번 탭 하세요. 를 음성으로 알려주는 것을 볼 수 있습니다.    
-<figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-   <img src="https://nuli.navercorp.com/upload/2022/ad08ec91-d01c-4d98-a39b-af3fab51dfaf_iOSAndroid%E1%84%8B%E1%85%B3%E1%86%B7%E1%84%89%E1%85%A5%E1%86%BC.gif" alt="">
-   <figcaption>출처 : NULI</figcaption>
-</figure>
 
 **네이티브**     
-iOS는 accessibilityLabel로 Android는 contentDescription으로 대체 텍스트 정보를 제공할 수 있습니다.   
 
 - **iOS**    
-  - [관련문서:Apple's Accessibility Programming Guide for iOS](https://developer.apple.com/accessibility/ios/){: target="_blank"}
-  - **Interface Builder 이용하여 요소에 대체 텍스트 적용하는 방법**   
-      - 방법1. Xcode의 Accessibility 패널에서 Label 제공   
-        <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-          <img src="https://nuli.navercorp.com/upload/2022/9391c267-047d-4e98-8df3-c612bdb800c3_0a705587-7652-1b4c-8177-6b9d37cb2ad0.png" alt="">
-          <figcaption>출처 : NULI</figcaption>
-        </figure>
-        
-        - ① Accessibility 에서 Enabled 을 선택해 접근성 기능을 활성화한 상태에서    
-        - ② Label 에 콘텐츠의 의미를 명확하게 전달할 수 있는 대체 텍스트를 작성합니다.    
-      - 방법2. 코드로 Label 제공   
-         ```sh
-          var.isAccessibilityElement = true   // ① 접근성 요소 활성화
-          var.accessibilityLabel = "대체 텍스트" // ② 대체 텍스트 정보
-          ```    
-  - **UIAccessibility API를 활용하여 코드에 대체 텍스트 제공**    
+  - 명도 대비 체크 및 조정   
     ```sh
-    let imageView = UIImageView(image: UIImage(named: "sunrise.png"))
-    imageView.accessibilityLabel = "A beautiful sunrise over the mountains"
-    ```
+    let label = UILabel()
+    label.text = "Important Info"
+    label.textColor = .darkGray  // 명도 대비 기준을 충족하도록 적절한 색상 사용
+    label.backgroundColor = .white
+    ```    
 
-- **Android**         
-  - [관련문서:Android Accessibility Overview](https://developer.android.com/guide/topics/ui/accessibility){: target="_blank"}
-  - 방법1. Android Studio Properties 창에서 contentDescription 제공   
-    <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-      <img src="https://nuli.navercorp.com/upload/2022/6f0c6c7f-f031-4e6a-9998-b472415c9077_androidstudio.png" alt="">
-      <figcaption>출처 : NULI</figcaption>
-    </figure>
-  - 방법2. 코드로 contentDescription제공   
+- **Android**        
+  - 명도 대비 조정   
     ```sh
-    android:contentDescription = "대체 텍스트" // UI 레이아웃 XML에서 제공
+    <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Important Info"
+    android:textColor="#4A4A4A"  <!-- 진한 색상으로 명도 대비 기준 충족 -->
+    android:background="#FFFFFF" />
     ```   
-    </figure>
-  - **contentDescription 속성 사용**    
-  ```sh
-  <ImageView
-      android:id="@+id/myImage"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:contentDescription="A beautiful sunrise over the mountains" />
-  ```   
-  - **코드에서 contentDescription 설정**    
-  ```sh
-  val myButton: Button = findViewById(R.id.my_button)
-  myButton.contentDescription = "Submit"
-  ```
 
 - **하이브리드(html)**    
 ```sh
-<img src="sunrise.png" alt="A beautiful sunrise over the mountains">
+<div style="background-color: #FFFFFF; color: #333333;">
+  Important Info
+</div>
 ```
 - **하이브리드(Vue)**    
 ```sh
 <template>
-  <img :src="sunriseImage" alt="A beautiful sunrise over the mountains">
+  <div :style="{ backgroundColor: '#FFFFFF', color: '#333333' }">
+    Important Info
+  </div>
 </template>
-
-<script>
-export default {
-  data() {
-    return {
-      sunriseImage: 'sunrise.png'
-    };
-  }
-};
-</script>
 ```
 - **하이브리드(React)**    
 ```sh
-import React from 'react';
-
-function SunriseImage() {
-  return <img src="sunrise.png" alt="A beautiful sunrise over the mountains" />;
+function ImportantInfo() {
+  return (
+    <div style={{ backgroundColor: '#FFFFFF', color: '#333333' }}>
+      Important Info
+    </div>
+  );
 }
-
-export default SunriseImage;
 ```
-**이미지 alt속성 작성 예시**    
-카카오페이 신용대출 서비스 화면 중 대출 가능성 배너를 보여주는 UI로 다음은 alt속성 작성 예시 방법입니다.    
-<figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-  <img src="./../images/a11y-mobile/img_a11yMobile_ex01.png" alt="">
-  <figcaption>출처 : kakaopay</figcaption>
-</figure>
-
-- **alt 속성을 사용하지 않은 경우**   
-  ```sh
-  <img src="/img/img_nudge_typeB_320x219.png" />
-  음성출력 형태 : 이미지 넛지 타입비 삼백이십엑스이백십구피엔지 이미지
-  ``` 
-   - 스크린 리더는 이미지에 alt 속성이 없으면 파일 이름을 표현합니다.    
-   - 대체 텍스트가 없기 때문에 대신 이미지 경로 정보인 src를 음성으로 전달합니다.     
-   - 파일의 이름으로 콘텐츠를 설명하는 것도 방법이 될 수는 있습니다. 하지만 네트워크 오류, 콘텐츠 차단 등 서비스 관련 이미지를 표시할 수 없는 경우에는 서비스와 무관한 이미지의 alt 값이 음성으로 출력되기 때문에 접근성뿐만 아니라 다양한 환경의 사용자를 고려한다면 alt 속성은 꼭 필요한 속성입니다.   
-- **alt 속성을 사용했지만 값을 제공하지 않는 경우**    
-  ```sh
-  <img src="/img/img_nudge_typeB_320x219.png" alt="" />
-  음성출력 형태 : 없음
-  ``` 
-   - alt 속성의 값을 빈 값("")으로 생략해 제공하는 경우에는 이미지가 핵심 요소가 아님을 뜻하기 때문에 스크린 리더는 img 태그를 해석하지 않습니다.    
-   - 이 경우 스크린 리더 사용자는 웹 브라우징 과정에서 이미지 요소가 있다는 것을 알 수 없습니다.     
-   - 따라서 배경 이미지처럼 단순 디자인의 목적을 가진 이미지는 의도적으로 대체 텍스트를 빈 값으로 작성해 스크린 리더가 읽지 않도록 할 수 있습니다.     
-   - 하지만 이미지 1번 영역 죠르디의 상태로 높은 대출 승인율을 표현하는 콘텐츠임을 감안하면, 사용자에게 이미지 설명을 전달할 필요가 있다고 생각하기 때문에 다음 단계로 넘어가 alt 속성에 대체 텍스트를 작성해 보도록 하겠습니다.      
-- **적합한 대체 텍스트를 작성하지 않은 경우**    
-  ```sh
-  <img src="/img/img_nudge_typeB_320x219.png" alt="기뻐하는 죠르디 이미지" />
-  음성출력 형태 : 기뻐하는 죠르디 이미지 이미지
-  ``` 
-   - 시맨틱 태그는 암시적으로 role을 갖고 있으며, 스크린 리더는 &lt;img&gt;를 ‘이미지’로 자동으로 결정하게 됩니다.     
-   - 따라서 이미지의 존재 여부를 표현하는 ‘사진, 이미지, 아이콘’등의 단어를 대체 텍스트에 포함하게 되면 스크린 리더가 기본적으로 해석한 ‘이미지’와 중복된 의미를 갖기 때문에 적합하지 않습니다.      
-- **(권장)적합한 대체 텍스트를 제공한 경우**    
-  ```sh
-  <img src="/img/img_nudge_typeB_320x219.png" alt="기뻐하는 죠르디" />
-  음성출력 형태 : 기뻐하는 죠르디 이미지
-  ```   
-**버튼에 이미지 작성 예시**    
-아래 이미지의 2번 영역에 있는 물음표 모양 버튼을 보면 우리는 너무나도 쉽게 내 대출 승인율이 무엇인지 자세한 정보를 확인할 수 있는 버튼임을 인식할 수 있습니다.    
-먼저 우리는 스크린 리더가 코드를 어떻게 해석하는지 알아야 합니다.     
-- 브라우저는 코드를 스크린 리더가 읽을 수 있는 접근성 트리(Accessibility Tree)로 만듭니다.    
-- 스크린 리더는 접근성 트리의 요소를 순차 탐색하게 되는데, 접근성 트리에 표시되는 요소의 Name을 기반으로 해석합니다.     
-- 여기서 말하는 Name은 Accessible Name이라고도 하며 스크린 리더가 요소를 포커스했을 때 읽는 값으로 author와 contents 중 하나로 결정됩니다.    
-- 이때, author가 contents보다 우선순위가 높습니다.    
-  - author: aria-label, aria-labelledby, title 속성, &lt;img&gt;의 alt 속성, svg의 &lt;desc&gt;
-  - contents: Text 노드
-<figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-  <img src="./../images/a11y-mobile/img_a11yMobile_ex02.png" alt="">
-  <figcaption>출처 : kakaopay</figcaption>
-</figure>
-
-```sh
-<button type="button">
-  <!-- <img src="/img/img_common_question.png" alt="물음표" />: 구체적이지 않으며 추상적 -->
-  <img src="/img/img_common_question.png" alt="내 대출 승인율이란" />
-</button>
-음성출력 형태 : 내 대출 승인율이란 버튼
-``` 
-   - &lt;img&gt;의 author는 alt 속성으로 Accessible Name은 “내 대출 승인율이란”이 됩니다.    
-   - &lt;button&gt;은 author가 설정되지 않은 경우 자식 요소의 Accessible Name을 모아 contents로 사용하는 Children Presentational이라는 특징을 갖습니다.    
-   - 따라서 &lt;button&gt;의 content는 ‘내 대출 승인율이란’이 되고 스크린 리더는 자동적으로 결정한 role과 결합해 “내 대출 승인율이란 버튼”이라고 해석하게 됩니다.      
-
-**텍스트와 상호작용 요소의 분리 예시**    
-텍스트 안에 링크나 버튼을 넣지 않아야 한다. 아래 예처럼 텍스트 안에 링크가 있는 경우 스크린 리더는 빠르게 텍스트를 읽어 나가기 때문에 화면의 레이아웃을 파악하기 힘든 시각장애인은 링크 위치를 알 수 없다. 텍스트와 상호작용이 가능한 요소는 분리하여 디자인해야 인식 가능하다.     
-
-<figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-  <img src="./../images/a11y-mobile/img_a11yMobile_ex03.png" alt="">
-  <figcaption>출처 : 모바일 UI UX 기본가이드 | 브런치 스토리 by최철호</figcaption>
-</figure>
-
-이미지 요소에 어떤 내용으로 대체 텍스트를 제공할 것인지 고민하기 전에, 이미지를 어떤 목적으로 사용하고 있는지를 생각해 봐야 합니다.     
-이미지가 주요 콘텐츠의 일부로서 사용자에게 정보를 전달하는 역할을 한다면 적절한 의미에 맞는 대체 텍스트를 제공하면 됩니다.    
-반대로 이미지가 콘텐츠의 내용을 설명하는 핵심적인 요소가 아니라면 대체 텍스트를 생략하거나 배경 이미지 속성을 활용함으로써 스크린 리더 사용자에게 불필요한 정보를 전달하지 않도록 합니다.    
-
-
+    
 
 #### 7. 점검 기준     
-텍스트가 아닌 콘텐츠에 해당 이미지가 제공하는 의미나 용도를 동일하게 인식할 수 있는 적절한 대체 텍스트를 제공한다.    
-
-**오류유형**    
-- 이미지 요소가 제공하는 정보와 동일한 정보가 음성으로 출력되지 않는 경우      
-- 의미와 용도를 이해할 수 없는 대체 텍스트를 제공하는 경우     
-- 의미없는 이미지에 대체텍스트를 제공하는 경우     
-- 대체 텍스트 제공 없이 설명만 제공되는 경우(Hint로만 제공된 경우)     
-- 객체 유형 정보가 반복 제공되는 경우 (~이미지이미지, ~버튼버튼 등)    
-- 객체 유형에 대한 정보가 잘못 제공된 경우     
-- display:none, visibility:hidden으로 대체텍스트가 제공된 경우     
-- 화면에 보이지 않는 형태로 대체텍스트가 제공된 경우 (터치방식으로 대체정보 확인이 불가한 경우)       
-   
-**주의사항**     
-- 기능을 제공하는 경우 이용방법 등 충분한 설명을 제공하지 않은 경우 (권고)     
-- 숫자 정보에 대해 의미전달이 미흡한 대체텍스트를 제공하는 경우 (권고) :    
-- 준수예) 6.20 --> 6월20일     
-- 권고) 객체 유형정보를 정확히 제공할 것을 권장함(Traits 정보)     
-- IR기법으로 대체텍스트를 제공 시 hidden형태가 아니더라도 화면 터치방식으로는 대체정보 인지 불가함(오류)     
+- **명도 대비 비율**: 텍스트와 배경, UI 요소의 대비 비율이 최소 4.5:1(일반 텍스트) 또는 3:1(큰 텍스트) 이상을 유지하고 있는가?   
+- **대비 문제 시각화**: 명도 대비 부족 시 텍스트나 UI 요소가 충분히 구별될 수 있는 대체 방법이 제공되고 있는가?   
+- **대비 도구 사용 여부**: 앱 설계 시 명도 대비를 확인하기 위한 자동화된 도구를 사용하여 테스트가 이루어졌는가?     
+<figure aria-hidden="true" style="text-align:center;border:1px solid #000">
+  <img src="./../images/a11y-mobile/img_a11yMobile_contrast.png" alt="">
+  <figcaption>디자인 설계시 시맨틱 컬러 가이드 예시</figcaption>
+</figure>   
+<figure aria-hidden="true" style="text-align:center;border:1px solid #000">
+  <img src="./../images/a11y-mobile/img_a11yMobile_contrast-1.png" alt="">
+  <figcaption>텍스트에 사용 가능한 색상 예시</figcaption>
+</figure>   
 
 #### 8. 점검 방법     
 **iOS**         
-- **음성출력 형태**: VoiceOver는 UI 요소의 accessibilityLabel을 읽어줍니다. 예를 들어, "Submit button"이라고 출력합니다.    
-- **제공방법**: Xcode의 Interface Builder에서 Label 필드에 텍스트를 입력하거나, 코드에서 accessibilityLabel을 설정합니다.    
+- **Xcode Accessibility Inspector**: Xcode의 Accessibility Inspector를 사용해 앱의 명도 대비를 분석하고 자동으로 테스트.    
 
 **Android**    
-- **음성출력 형태**: TalkBack은 contentDescription 속성에 설정된 텍스트를 읽어줍니다.    
-- **제공방법**: Android Studio에서 XML의 contentDescription 속성을 사용하거나, 코드에서 직접 설정합니다.    
+- **Accessibility Scanner**: Android의 Accessibility Scanner 앱을 사용하여 명도 대비 문제를 탐지.    
 
-**방법 1 (네이티브-문서 제공기준)**     
-TalkBack(또는 Voice Assistant 등) 기능으로 텍스트가 아닌 콘텐츠에 대응하는 대체 텍스트의 적절성 여부를 확인한다.    
-- 화면 구성 정보를 제공하는지 확인한다. (Title, List View, Grid View)     
-- 화면 내 구체적인 Contents를 읽어주는지 확인한다. (Text, Imge)     
-- 화면 내 기능을 읽어주는지 확인한다. (Button 등)     
-<figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-   <img src="./../images/a11y-mobile/img_a11yMobile_check01-01.png" alt="">
-   <img src="./../images/a11y-mobile/img_a11yMobile_check01-02.png" alt="">
-   <figcaption>출처 : 모바일 애플리케이션 접근성 제작기법</figcaption>
-</figure>
-
-**방법 2 (네이티브-문서 제공기준)**      
-음성출력 표시 기능으로 텍스트가 아닌 콘텐츠에 대응하는 대체 텍스트의 적절성 여부를 점검한다.    
-- 설정→접근성→시각→Talk Back→설정→개발자 설정→음성출력 표시 체크 후 확인한다.     
-<figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-   <img src="./../images/a11y-mobile/img_a11yMobile_check02-01.png" alt="">
-   <figcaption>출처 : 모바일 애플리케이션 접근성 제작기법</figcaption>
-</figure>
-
-**방법 3 (네이티브-문서 제공기준)**   
-UIAutoMatorViewer를 활용하여 점검한다.     
-- Android Studio를 이용한 실행방법     
-  - Toolbar에서 Android Device Monitor 버튼을 선택    
-    <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-        <img src="./../images/a11y-mobile/img_a11yMobile_check03-01-01.png" alt="">
-        <figcaption>출처 : 모바일 애플리케이션 접근성 제작기법</figcaption>
-    </figure>
-  - Devices 탭에서 디바이스가 연결된 상태로 점검할 화면을 띄운 뒤 Dump View Hierarchy for UI Automator버튼을 선택 
-    <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-        <img src="./../images/a11y-mobile/img_a11yMobile_check03-01-02.png" alt="">
-        <figcaption>출처 : 모바일 애플리케이션 접근성 제작기법</figcaption>
-    </figure>
-- ADT(Android Developer Tools) 를 이용한 실행 방법     
-  - DDMS(Dalvik Debug Monitor Server) 를 실행    
-  - Devices 탭에서 디바이스가 연결된 상태로 점검할 화면을 띄운 뒤 Dump View Hierarchy for UI Automator버튼을 선택 
-    <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-        <img src="./../images/a11y-mobile/img_a11yMobile_check03-02-01.png" alt="">
-        <figcaption>출처 : 모바일 애플리케이션 접근성 제작기법</figcaption>
-    </figure>
-- SDK 내부의UIAutomator Viewer 실행     
-  - Android sdk폴더의 tools 안에있는 uiautomatorviewer.bat 파일실행 
-    <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-        <img src="./../images/a11y-mobile/img_a11yMobile_check03-03-01.png" alt="">
-        <figcaption>출처 : 모바일 애플리케이션 접근성 제작기법</figcaption>
-    </figure>
-  - 실행화면 
-    <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-        <img src="./../images/a11y-mobile/img_a11yMobile_check03-03-02.png" alt="">
-        <figcaption>출처 : 모바일 애플리케이션 접근성 제작기법</figcaption>
-    </figure>
-  - Device Screenshot 선택 
-    <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-        <img src="./../images/a11y-mobile/img_a11yMobile_check03-03-03.png" alt="">
-        <figcaption>출처 : 모바일 애플리케이션 접근성 제작기법</figcaption>
-    </figure>
-
-**방법 4 (네이티브-문서 제공기준)**    
-UIAutomatorViewer를 이용하여 점검한다.     
-- 점검할 화면을 띄운다.    
-- 점검할 UI객체를 선택하여 상세정보를 확인한다.     
-    <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-        <img src="./../images/a11y-mobile/img_a11yMobile_check04-01.png" alt="">
-        <figcaption>출처 : 모바일 애플리케이션 접근성 제작기법</figcaption>
-    </figure>
-- ImageButton, ImageView의경우 content-desc항목이 적용되어있는지 확인해야 한다.     
-  - 대체텍스트 적용 시 Node Detail과 계층구조의{ }안에 대체텍스트내용이 표시 된다. 
-    <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-        <img src="./../images/a11y-mobile/img_a11yMobile_check04-03-01.png" alt="">
-        <figcaption>출처 : 모바일 애플리케이션 접근성 제작기법</figcaption>
-    </figure>
-  - 대체텍스트 미적용 시 Node Detai과 계층구조에 대체텍스트가 표시되지 않는다. 
-    <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-        <img src="./../images/a11y-mobile/img_a11yMobile_check04-03-02.png" alt="">
-        <figcaption>출처 : 모바일 애플리케이션 접근성 제작기법</figcaption>
-    </figure>     
-- TextView, Button, EditText등의 경우 content-desc에 대체텍스트가 적용되지 않고 text에 대체텍스트가 적용될 수 있다.     
-    <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-        <img src="./../images/a11y-mobile/img_a11yMobile_check04-04-01.png" alt="">
-        <img src="./../images/a11y-mobile/img_a11yMobile_check04-04-02.png" alt="">
-        <figcaption>출처 : 모바일 애플리케이션 접근성 제작기법</figcaption>
-    </figure>
-    
-
-**방법 5 (하이브리드)**    
-크롬(Chrome) 브라우저 요소검사를 이용하여 점검한다.    
-- 해당 이미지 요소를 선택하여 우측클릭하여 요소검사를 하여 코드로 확인.    
+**하이브리드**     
+- Colour Contrast Analyser (CCA) 프로그램을 사용하여 전경색과 배경색의 대비를 측정하여 점검.    
+  [평가툴 다운로드 - Colour Contrast Analyser (CCA)](https://www.tpgi.com/color-contrast-checker/){: target="_blank"}
   <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-    <img src="./../images/a11y-mobile/img_a11yMobile_check05-01.png" alt="">
-    <figcaption>크롬(Chrome) 브라우저 이미지 요소검사</figcaption>
-  </figure>
- 
+    <img src="./../images/a11y-mobile/img_a11yMobile_contrast01.png" alt="">
+    <figcaption>Colour Contrast Analyser (CCA)</figcaption>
+  </figure>   
+- Color Contrast Checker 사이트에서 체크
+  배경색과 텍스트 색상을 지정하여 작은 텍스트와 큰 텍스트의 명암비를 파악할 수 있다. 값의 상태에 따라 Poor, Good, Super와 같은 상태 표시로 적절한 대비 상태를 직관적으로 인지할 수 있다.    
+  [Color Contrast Checker](https://coolors.co/contrast-checker){: target="_blank"}
+  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
+    <img src="./../images/a11y-mobile/img_a11yMobile_contrast02.png" alt="">
+    <figcaption>Color Contrast Checker 사이트</figcaption>
+  </figure>   
+- WCAG Color Contrast Checker 사이트에서 체크
+  위 사이트는 WCAG(Web Content Accessibility Guidelines)의 AA, AAA 기준으로 Small text, Large text, UI components에 따라서 Pass 또는 Fail을 표시해준다.    
+  [WCAG Color Contrast Checker](https://accessibleweb.com/color-contrast-checker/){: target="_blank"}
+  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
+    <img src="./../images/a11y-mobile/img_a11yMobile_contrast03.png" alt="">
+    <figcaption>WCAG Color Contrast Checker 사이트</figcaption>
+  </figure>   
+- Leonardo 사이트에서 체크
+  한 번에 여러 개의 색상을 체크하거나 색상 팔레트의 명암비를 체크하고 싶을 때 유용하다. 여러 가지 색상을 추가할 수 있으며 색상 대비를 조정하거나 밝기를 조정해서 팔레트를 구성할 수 있다. 우측에 표시되는 팔레트에는 배경 색상 대비 명암비가 자동으로 표시된다. 배경 색상을 변경하면 명암비도 자동으로 변경된다.    
+  [Leonardo](https://leonardocolor.io/theme.html#){: target="_blank"}
+  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
+    <img src="./../images/a11y-mobile/img_a11yMobile_contrast04.png" alt="">
+    <figcaption>Leonardo 사이트</figcaption>
+  </figure>   
+- WCAG Color contrast checker 확장 프로그램
+  현재 운영 중인 사이트의 명암비를 체크할 수 있는 플러그인이다. 플러그인을 설치하고 실행하면 좌측 패널에서 현재 보고 있는 페이지의 각 콘텐츠 명암비를 체크해준다. 사이즈도 Small, Large로 자동으로 보여주며 요소를 클릭하면 해당 위치로 자동 스크롤 되어 확인할 수 있다.    
+  [WCAG Color contrast checker](https://chromewebstore.google.com/detail/wcag-color-contrast-check/plnahcmalebffmaghcpcmpaciebdhgdf){: target="_blank"}
+  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
+    <img src="./../images/a11y-mobile/img_a11yMobile_contrast05.png" alt="">
+    <figcaption>WCAG Color contrast checker 확장 프로그램</figcaption>
+  </figure>   
+- 피그마 플러그인
+  해당 플러그인을 사용하면 피그마 내에서 선택한 디자인의 명암비를 바로 확인할 수 있다. 웹접근성 지침(AA, AAA)의 기준에 따라 표시도 해주며, 제안 색상을 선택하면 일괄적으로 별경할 수도 있다. 변경은 Pro 버전이라서 그냥 확인하는 용도로도 충분히 사용성이 좋은 것 같다.    
+  [Figma : Stark - Contrast & Accessibility Checker](https://www.figma.com/community/plugin/732603254453395948/stark-contrast-accessibility-checker){: target="_blank"}
+  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
+    <img src="./../images/a11y-mobile/img_a11yMobile_contrast06.png" alt="">
+    <img src="./../images/a11y-mobile/img_a11yMobile_contrast06-1.png" alt="">
+    <img src="./../images/a11y-mobile/img_a11yMobile_contrast06-2.png" alt="">
+    <figcaption>피그마 플러그인 Contrast & Accessibility Checker</figcaption>
+  </figure>   
 
-**주의사항**    
-- 개발방법에 따라 연관된 타 UI 객체에 대체텍스트를 적용하고 있는경우가 있다. 이런경우엔 오류항목으로 볼 수 없다.     
-- UIAutoMatorViewe 를 활용한 대체텍스트 확인은 다른 점검기법과 병행되어 사용하는 것이 바람직하다.     
-    
+
 
 #### 9. 준수 사례       
 
 **사례1**   
-
-- 아이콘 + 텍스트와 같이 제공되는 경우    
-  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-    <img src="./../images/a11y-mobile/img_a11yMobile_ex_do01.png" alt="">
-    <figcaption>출처 : 무인정보단말기 UI 플랫폼</figcaption>
-  </figure>
   
-  - 음성출력 형태(Talkback) : UI 가이드 원칙 링크 6개 중 첫번째. 활성화하려면 두 번 탭하세요. 링크 사용가능. 세 손가락으로 탭 동작으로 보기.
+<figure aria-hidden="true" style="text-align:center;border:1px solid #000">
+  <img src="./../images/a11y-mobile/img_a11yMobile_contrast_ex_do01.png" alt="">
+  <figcaption>텍스트 그림자 효과 적용</figcaption>
+</figure>
 
 **사례2**   
-
-- 이미지로 제공되는 경우    
-  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-    <img src="./../images/a11y-mobile/img_a11yMobile_ex_do02.png" alt="">
-    <figcaption>출처 : 무인정보단말기 UI 플랫폼</figcaption>
-  </figure>
   
-  - 음성출력 형태(Talkback) : 정보접근성이 보장된 무인정보단말기 UI 플랫폼 고령자도 OK! 장애인도 OK! 무인정보단말기의 정보접근성을 모두 갖춘 무인정보단말기 UI 플랫폼과 개발도구 제공 자세히 보기. 활성화하려면 두 번 탭하세요. 링크 사용가능. 세 손가락으로 탭 동작으로 보기.
+<figure aria-hidden="true" style="text-align:center;border:1px solid #000">
+  <img src="./../images/a11y-mobile/img_a11yMobile_contrast_ex_do02.png" alt="">
+  <figcaption>글자와 배경의 명도대비가 3:1 이상인 경우</figcaption>
+</figure>
 
 **사례3**   
-
-- 의미와 용도를 이해할 수 있도록 적절하게 대체텍스트를 제공한 경우    
-  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-    <img src="./../images/a11y-mobile/img_a11yMobile_ex_do03.png" alt="">
-    <figcaption>출처 : 모바일애플리케이션콘텐츠접근성지침2.0</figcaption>
-  </figure>
   
-  - 다음 메일 Kakao corp. 별점 평점 4.3"으로 해당 메일의 정보를 올바르게 제공함
-
-**사례4**   
-
-- 이미지 버튼에 적절한 대체텍스트를 제공한 경우    
-  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-    <img src="./../images/a11y-mobile/img_a11yMobile_ex_do04.png" alt="">
-    <figcaption>출처 : 모바일애플리케이션콘텐츠접근성지침2.0</figcaption>
-  </figure>
-  
-  - "옵션 버튼" 으로 해당 버튼의 정보를 올바르게 제공함
+<figure aria-hidden="true" style="text-align:center;border:1px solid #000">
+  <img src="./../images/a11y-mobile/img_a11yMobile_contrast_ex_do02.png" alt="">
+  <figcaption>글자와 배경의 명도대비가 3:1 이상인 경우</figcaption>
+</figure>
 
 #### 10. 미준수 사례       
 
 **사례1**   
 
-- 이미지 요소가 제공하는 정보와 동일한 정보가 음성으로 출력되지 않는 경우    
-  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-    <img src="./../images/a11y-mobile/img_a11yMobile_ex_donot01.png" alt="">
-    <figcaption>출처 : 모바일애플리케이션콘텐츠접근성지침2.0</figcaption>
-  </figure>
-  
-  - 개선 전 : "이벤트"로 해당 이미지에 대해 대체텍스트가 부적절하게 제공됨   
-  - 개선 후 : "릴레이팡팡 한방에 달성하기!"로 해당 이미지에 대해 대체텍스트가 제공되어야 함   
-
-**사례2**   
-
-- 의미와 용도를 이해할 수 없는 대체 텍스트를 제공하는 경우    
-  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-    <img src="./../images/a11y-mobile/img_a11yMobile_ex_donot02.png" alt="">
-    <figcaption>출처 : 모바일애플리케이션콘텐츠접근성지침2.0</figcaption>
-  </figure>
-  
-  - 개선 전 : “버튼 -4 라벨지정안됨” 으로 해당 이미지 버튼에 대체텍스트가 부적절하게 제공됨   
-  - 개선 후 : "카드 설정 버튼" 또는 "의미와 용도에 맞는 텍스트 정보" 로 해당 이미지에 대해 대체텍스트가 제공되어야 함   
-
-**사례3**   
-
-- 버튼에 대체텍스트가 제공되지 않은 경우    
-  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-    <img src="./../images/a11y-mobile/img_a11yMobile_ex_donot03.png" alt="">
-    <figcaption>출처 : 모바일애플리케이션콘텐츠접근성지침2.0</figcaption>
-  </figure>
-  
-  - 개선 전 : 보안 키패드에 대체텍스트가 제공되지 않음   
-  - 개선 후 : 각 버튼에 대해 대체텍스트가 제공되어야 함   
-  - [키패드 적용 기본 예시](https://codepen.io/io-uxkm/pen/qBzgvpX){: target="_blank"} 
-
-**사례4**   
-
-- 의미없는 대체 텍스트가 제공된 경우    
-  - 개선 전 : 의미를 갖지 않는 장식용 이미지에 alt가 제공   
-    아이콘 자체로 의미를 갖지 않는 경우 alt="" 제공해도 무방합니다.    
-  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-    <img src="./../images/a11y-mobile/img_a11yMobile_ex_donot04.png" alt="">
-    <figcaption>출처 : 카카오</figcaption>
-  </figure>
-  
-  - 개선 후 : 불필요한 alt값 제거로 화면을 읽는데 불편함(불필요한 내용으로 피곤함 유발, 텍스트와 중복된 내용) 방지   
-  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-    <img src="./../images/a11y-mobile/img_a11yMobile_ex_donot05.png" alt="">
-    <figcaption>출처 : 카카오</figcaption>
-  </figure>
-
-**사례6**   
-
-- 의미없는 대체 텍스트가 제공된 경우와 암묵적으로 제시된 이미지에 중복 사용된 경우    
-  - 개선 전 : 의미를 갖지 않는 장식용 이미지에 alt가 제공    
-    의미를 가지는 정보는 날짜 같은 경우는 풀어서 제공해줘야 함. 예)~2024.09.30 -> 2024년 09월 30까지      
-    음성출력 형태(Talkback) : **"유플닷컴 출석체크 이벤트 2024년 9월 30일 달력 이미지"** 링크 활성화하려면 두 번 탭하세요. 링크 사용가능. 세 손가락으로 탭 동작으로 보기.      
-    음성출력 형태(Voiceover) : **"유플닷컴 출석체크 이벤트 물결 2024점 9점 30점 슬래시 달력 이미지"** 링크    
-  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-    <img src="./../images/a11y-mobile/img_a11yMobile_ex_donot06.png" alt="">
-    <figcaption>출처 : LGU+</figcaption>
-  </figure>
-  
-  - 개선 후 : 의미없는 장식용 이미지에 대한 alt값 제거 및 이미지에 대한 중복 사용 제거   
-    음성출력 형태(Talkback) : **"유플닷컴 출석체크 이벤트 기간 2024년 9월 30일 까지"** 링크 활성화하려면 두 번 탭하세요. 링크 사용가능. 세 손가락으로 탭 동작으로 보기.
-    음성출력 형태(Voiceover) : **"유플닷컴 출석체크 이벤트 기간 2024년 9월 30일 까지"** 링크
-  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-    <img src="./../images/a11y-mobile/img_a11yMobile_ex_donot07.png" alt="">
-    <figcaption>출처 : LGU+</figcaption>
-  </figure>
 
 #### 11. 관련 영상       
-<iframe style="width:100%;min-height:315px;" src="https://www.youtube.com/embed/eQHPJ4tk-ag?si=mMQd3txeiPLQc_4B" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe style="width:100%;min-height:315px;" src="https://www.youtube.com/embed/UeRoj4zVQKU?si=HmF1ezEljt0pq6Bl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-[AOA11Y 모바일 앱 접근성 (1.대체 텍스트)](https://www.youtube.com/watch?v=eQHPJ4tk-ag){: target="_blank"}    
+[AOA11Y 모바일 앱 접근성 (4.명도대비)](https://www.youtube.com/embed/UeRoj4zVQKU?si=HmF1ezEljt0pq6Bl){: target="_blank"}    
+
+<iframe style="width:100%;min-height:315px;" src="https://www.youtube.com/embed/q8THhm0y1GA?si=npQe6MpgZbS4N7dg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
    
 ---
 <details>
@@ -796,3 +557,10 @@ Android 앱 개발도구인 Android Studio 의 Lint를 통해 개발과정에서
 - [보건복지부 블로그](https://blog.naver.com/prologue/PrologueList.naver?blogId=mohw2016){: target="_blank"}     
 - [행정안전부 - 전자정부 웹사이트 UI UX 가이드라인](https://www.mois.go.kr/frt/bbs/type001/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000045&nttId=69451){: target="_blank"}     
 - [널리 알리는 기술 소식 커뮤니티](https://nuli.navercorp.com/community/article){: target="_blank"}     
+- [Colour Contrast Analyser (CCA)](https://www.tpgi.com/color-contrast-checker/){: target="_blank"}
+- [Color Contrast Checker](https://coolors.co/contrast-checker){: target="_blank"}
+- [WCAG Color Contrast Checker](https://accessibleweb.com/color-contrast-checker/){: target="_blank"}
+- [Leonardo](https://leonardocolor.io/theme.html#){: target="_blank"}
+- [WCAG Color contrast checker](https://chromewebstore.google.com/detail/wcag-color-contrast-check/plnahcmalebffmaghcpcmpaciebdhgdf){: target="_blank"}
+- [Figma : Stark - Contrast & Accessibility Checker](https://www.figma.com/community/plugin/732603254453395948/stark-contrast-accessibility-checker){: target="_blank"}
+- [Fabien Gavinet의 아티클 - Colors that make sense](https://medium.com/getaround-eu/colors-that-make-sense-505d0f3509c1){: target="_blank"}     
