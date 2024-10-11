@@ -68,24 +68,24 @@
 **네이티브**     
 
 - **iOS**    
-  - 명도 대비 체크 및 조정   
-    ```sh
-    let label = UILabel()
-    label.text = "Important Info"
-    label.textColor = .darkGray  // 명도 대비 기준을 충족하도록 적절한 색상 사용
-    label.backgroundColor = .white
-    ```    
+  명도 대비 체크 및 조정   
+  ```sh
+  let label = UILabel()
+  label.text = "Important Info"
+  label.textColor = .darkGray  // 명도 대비 기준을 충족하도록 적절한 색상 사용
+  label.backgroundColor = .white
+  ```    
 
 - **Android**        
-  - 명도 대비 조정   
-    ```sh
-    <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Important Info"
-    android:textColor="#4A4A4A"  <!-- 진한 색상으로 명도 대비 기준 충족 -->
-    android:background="#FFFFFF" />
-    ```   
+  명도 대비 조정   
+  ```sh
+  <TextView
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"
+  android:text="Important Info"
+  android:textColor="#4A4A4A"  <!-- 진한 색상으로 명도 대비 기준 충족 -->
+  android:background="#FFFFFF" />
+  ```   
 
 - **하이브리드(html)**     
   ```sh
