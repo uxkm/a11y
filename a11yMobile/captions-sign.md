@@ -75,18 +75,18 @@
 **네이티브**     
 
 - **iOS**    
-  - **자막 적용**  
-    ```sh
-    let videoPlayer = AVPlayer(url: videoURL)
-    let captions = AVMediaSelectionGroup()
-    videoPlayer.add(captions)
-    ```   
+**자막 적용**  
+```sh
+let videoPlayer = AVPlayer(url: videoURL)
+let captions = AVMediaSelectionGroup()
+videoPlayer.add(captions)
+```   
 
 - **Android**         
-  - 자막 파일과 함께 비디오 재생    
-    ```sh
-    videoView.addSubtitleSource(new FileInputStream(subtitleFile), MediaFormat.createSubtitleFormat("text/vtt", Locale.getDefault().getLanguage()));
-    ```   
+  자막 파일과 함께 비디오 재생    
+```sh
+videoView.addSubtitleSource(new FileInputStream(subtitleFile), MediaFormat.createSubtitleFormat("text/vtt", Locale.getDefault().getLanguage()));
+```   
 
 - **하이브리드(html)**    
 ```sh
