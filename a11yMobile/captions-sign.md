@@ -72,23 +72,22 @@
 
 #### 6. 개발방법     
 
-**네이티브**     
+**네이티브 (iOS) - 자막 적용**  
 
-- **iOS**    
-**자막 적용**  
 ```sh
 let videoPlayer = AVPlayer(url: videoURL)
 let captions = AVMediaSelectionGroup()
 videoPlayer.add(captions)
 ```   
 
-- **Android**         
-  자막 파일과 함께 비디오 재생    
+**네이티브 (Android) - 자막 파일과 함께 비디오 재생**    
+
 ```sh
 videoView.addSubtitleSource(new FileInputStream(subtitleFile), MediaFormat.createSubtitleFormat("text/vtt", Locale.getDefault().getLanguage()));
 ```   
 
-- **하이브리드(html)**    
+**하이브리드(html)**    
+
 ```sh
 <video controls>
   <source src="video.mp4" type="video/mp4">
@@ -96,7 +95,8 @@ videoView.addSubtitleSource(new FileInputStream(subtitleFile), MediaFormat.creat
 </video>
 ```
 
-- **하이브리드(Vue)**    
+**하이브리드(Vue)**    
+
 ```sh
 <template>
   <video controls>
@@ -106,7 +106,8 @@ videoView.addSubtitleSource(new FileInputStream(subtitleFile), MediaFormat.creat
 </template>
 ```
 
-- **하이브리드(React)**    
+**하이브리드(React)**    
+
 ```sh
 function VideoComponent() {
   return (
