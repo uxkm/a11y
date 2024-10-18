@@ -10,7 +10,7 @@
 [WCAG 2.2 Quick Reference - Label in Name](https://www.w3.org/WAI/WCAG22/quickref/#label-in-name){: target="_blank"}
 
 **키워드**   
-#모바일 앱 접근성, #모바일 앱 접근성 콘텐츠 제작 기법, #WCAG2.2, #명확한 지시 사항, #사용자 인터페이스, #지침 제공, #시각 장애인, #인지 장애
+#모바일 앱 접근성, #모바일 앱 접근성 콘텐츠 제작 기법, #WCAG2.2, #명확한 지시 사항, #사용자 인터페이스, #지침 제공, #시각 장애, #인지 장애, #색각 이상, #청각 장애
 
 #### 1. 필요성        
 명확한 지시 사항은 모든 사용자가 작업을 이해하고 수행할 수 있도록 돕습니다. 지시 사항이 불분명하면 사용자는 필요한 정보를 놓치거나 오류를 범할 수 있습니다. 특히, 시각 장애인이나 인지 장애가 있는 사용자들은 텍스트와 안내의 의미를 쉽게 이해할 수 있어야 하며, 이를 통해 접근성을 보장할 수 있습니다.   
@@ -45,33 +45,216 @@
 
 #### 6. 개발방법     
 
+**iOS**    
+- UILabel과 UIButton의 접근성 속성 설정    
+
+```sh
+let submitButton = UIButton()
+submitButton.setTitle("제출", for: .normal)
+submitButton.accessibilityLabel = "신청서 제출 버튼"
+submitButton.accessibilityHint = "신청서를 제출하려면 클릭하세요."
+```
+
+- 에러 메시지 제공   
+
+```sh
+let errorMessageLabel = UILabel()
+errorMessageLabel.text = "이름을 입력하세요."
+errorMessageLabel.textColor = .red
+errorMessageLabel.accessibilityLabel = "오류: 이름 입력 필드가 비어 있습니다."
+```
+
+**Android**    
+
+- Button의 접근성 속성 설정   
+
+```sh
+Button submitButton = findViewById(R.id.submitButton);
+submitButton.setText("제출");
+submitButton.setContentDescription("신청서 제출 버튼. 클릭하여 제출");
+```
+
+- 에러 메시지 제공   
+
+```sh
+TextView errorMessage = findViewById(R.id.errorMessage);
+errorMessage.setText("이름을 입력하세요.");
+errorMessage.setTextColor(Color.RED);
+errorMessage.setContentDescription("오류: 이름 입력 필드가 비어 있습니다.");
+```
+
+**하이브리드(html)**   
+
+- 버튼에 aria-label 설명 추가   
+
+```sh
+<button aria-label="신청서 제출" aria-describedby="submitHint">제출</button>
+<div id="submitHint">신청서를 제출하려면 클릭하세요.</div>
+```
+
+- 에러 메시지 제공   
+
+```sh
+<span role="alert" style="color: red;">오류: 이름을 입력하세요.</span>
+```
+
+**하이브리드(Vue)**   
+
+- 버튼에 aria-label 설명 추가   
+
+```sh
+<template>
+  <button :aria-label="'신청서 제출'" @click="submitForm">제출</button>
+  <p v-if="errorMessage" role="alert">{{ errorMessage }}</p>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      errorMessage: ""
+    };
+  },
+  methods: {
+    submitForm() {
+      if (this.isFormValid()) {
+        // 제출 로직
+      } else {
+        this.errorMessage = "이름을 입력하세요.";
+      }
+    }
+  }
+};
+</script>
+```
+
+**하이브리드(React)**   
+
+- 버튼에 aria-label 설명 추가   
+
+```sh
+function App() {
+  const [errorMessage, setErrorMessage] = React.useState("");
+
+  const handleSubmit = () => {
+    if (isFormValid()) {
+      // 제출 로직
+    } else {
+      setErrorMessage("이름을 입력하세요.");
+    }
+  };
+
+  return (
+    <div>
+      <button aria-label="신청서 제출" onClick={handleSubmit}>
+        제출
+      </button>
+      {errorMessage && <p role="alert" style={{ color: "red" }}>{errorMessage}</p>}
+    </div>
+  );
+}
+```
+
 
 
 #### 7. 점검 기준     
-- **지시 사항의 명확성**: 지시 사항이 사용자에게 충분히 이해할 수 있는 언어로 제공되었는가?    
-- **에러 메시지와 알림의 적절성**: 에러 메시지, 알림 등이 사용자 행동을 유도할 만큼 충분히 구체적인가?    
-- **스크린 리더 호환성**: 스크린 리더를 사용할 때 지시 사항이 제대로 전달되고 있는가?    
+
+**오류 유형**    
+
+- **모호한 지시 사항**: "여기를 클릭하세요"와 같이 구체적이지 않은 표현 사용.   
+- **일관성 없는 라벨**: 같은 기능을 하는 요소가 화면마다 다른 라벨로 제공되는 경우.   
+- **부족한 에러 메시지 정보**: "오류 발생"과 같이 구체적인 이유나 해결 방법이 없는 메시지.   
+- **스크린 리더 호환성 부족**: 스크린 리더로 지시 사항이 제대로 읽히지 않거나 전달되지 않는 경우.   
+- 색, 크기, 모양, 방향 등으로만 정보를 제공한 경우    
+- 전달하고자 하는 지시사항을 소리로만 정보를 제공한 경우    
+
+**주의사항**   
+
+- **구체적인 지시 사항 사용**: "파일을 선택하려면 '파일 업로드' 버튼을 클릭하세요"와 같이 구체적으로 작성합니다.    
+- **일관된 라벨 사용**: 같은 기능을 하는 버튼이나 링크는 동일한 라벨을 사용해야 합니다.   
+- **에러 메시지 개선**: 사용자가 문제를 해결할 수 있도록 구체적인 지침을 제공합니다(예: "비밀번호는 최소 8자 이상이어야 합니다").   
+- **스크린 리더 테스트 수행**: 개발 중 스크린 리더를 사용하여 라벨과 설명이 명확히 전달되는지 확인합니다.    
+-  노인이나 약시자의 경우에 브라우저의 글자체를 확대시켜 콘텐츠를 표시하면 콘텐츠의 표시 위치가 지시하는 위치와 달라져 혼란을 줄 수 있으므로 가급적 위치 정보를 이용하여 지시하지 않도록 콘텐츠를 구현하는 것을 권장    
 
 #### 8. 점검 방법     
+페이지를 구성하는 콘트롤이 특정요소로만 지시를 하거나 표현하는지 점검한다. (대체 수단 없이 음성 혹은 음향으로 지시사항을 전달하는 경우 포함)     
+
+**특정요소로만 지시를 하는 사례**
+- 방향, 위치 정보로만 이용하는 사용법을 알려주는 경우    
+- 화면의 위치만으로 객체를 지정하는 경우    
+- 버튼의 모양만을 이용하여 사용법을 알려주는 경우    
+- 음성으로만 지시하는 경우 등    
+
 **iOS**    
 
+- **VoiceOver 사용**: iOS의 VoiceOver 기능을 켜고, 지시 사항이 음성으로 명확하게 전달되는지 테스트합니다. 버튼, 입력 필드, 에러 메시지 등에서 올바른 라벨과 설명이 전달되는지 확인합니다.    
+  예시) iPhone의 설정 > 손쉬운 사용 > VoiceOver를 켜고, 앱에서 버튼을 클릭할 때 "신청서 제출 버튼"이라는 지시 사항이 VoiceOver에서 출력되는지 확인합니다.     
+- **폰트 크기 및 색상 대비 설정**: 설정에서 폰트 크기를 크게 설정하거나 색상 대비(고대비)를 활성화한 후, 지시 사항이 여전히 명확하게 보이는지 확인합니다.      
+  예시) 설정 > 손쉬운 사용 > 디스플레이 및 텍스트 크기에서 '더 굵게', '투명도 줄이기' 등을 적용하여 텍스트 가독성을 확인합니다.      
 
-**Android**    
+**Android**     
+
+- **TalkBack 사용**: Android의 TalkBack 기능을 켜고, 버튼, 링크, 입력 필드 등에 올바른 지시 사항이 음성으로 전달되는지 확인합니다.     
+  예시) Android 설정 > 손쉬운 사용 > TalkBack을 켜고, 앱에서 버튼을 클릭할 때 "신청서 제출 버튼"이라는 설명이 TalkBack으로 읽히는지 테스트합니다.     
+- **고대비 모드 테스트**: Android에서 색상 반전 또는 고대비 텍스트 설정을 활성화한 후, 앱에서 지시 사항이 명확하게 보이는지 테스트합니다.    
+  예시) 설정 > 손쉬운 사용 > 색상 반전 또는 고대비 텍스트 활성화 후, UI 요소들이 충분히 가독성이 있는지 확인합니다.    
+
+**HTML**    
+
+- **스크린 리더 사용**: PC에서 스크린 리더(NVDA, JAWS 등)를 사용하여 웹 페이지에서 버튼, 링크, 입력 필드의 접근성 라벨이 명확하게 전달되는지 확인합니다.     
+  예시) NVDA 스크린 리더를 실행하고, 버튼을 클릭할 때 "신청서 제출 버튼"이라는 음성 피드백이 올바르게 출력되는지 확인합니다.    
+- **색상 대비 도구 사용**: Chrome의 DevTools 또는 Axe와 같은 자동화 접근성 도구를 사용하여 색상 대비 및 접근성 라벨 설정이 잘 되어 있는지 점검합니다.    
+  예시) DevTools > Audits에서 접근성 분석을 실행하여 색상 대비 및 라벨 적절성을 확인합니다.    
+
+**Vue**   
+
+- **스크린 리더 사용**: Vue.js로 개발된 웹 애플리케이션에서도 NVDA 또는 VoiceOver 같은 스크린 리더를 사용해 지시 사항과 라벨이 적절하게 전달되는지 점검합니다.    
+  예시) Vue.js 컴포넌트에서 "aria-label" 속성이 올바르게 설정되어 있는지, 스크린 리더로 확인합니다.    
+- **Vue 접근성 플러그인 사용**: Vue.js용 접근성 플러그인을 설치하여 자동으로 접근성 문제를 탐지하고 수정할 수 있는 방법도 사용합니다.    
+
+**React**    
+
+- **스크린 리더 및 자동화 도구 사용**: React로 개발된 애플리케이션에서는 NVDA와 같은 스크린 리더와 함께 Lighthouse 또는 Axe 같은 접근성 도구로 점검합니다.    
+  예시) React 컴포넌트의 접근성 속성이 제대로 설정되었는지 확인하고, 접근성 오류가 있는지 Lighthouse로 분석합니다.    
+- **React 접근성 개발자 도구**: React 개발자 도구를 사용해 컴포넌트별로 접근성 라벨과 속성이 올바르게 설정되었는지 확인합니다.     
 
 
 #### 9. 준수 사례       
 
 **사례1**   
 
-- 아이콘 + 텍스트와 같이 제공되는 경우    
+- 지시사항을 명확하게 제공한 경우    
   <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-    <img src="./../images/a11y-mobile/img_a11yMobile_ex_do01.png" alt="">
-    <figcaption>출처 : 무인정보단말기 UI 플랫폼</figcaption>
+    <img src="./../images/a11y-mobile/img_a11yMobile_labelor_ex_do01.png" alt="">
+    <figcaption>출처 : 모바일 애플리케이션 접근성 제작기법</figcaption>
   </figure>
+
+- 자동 가입 방지를 위한 인증 도구의 하나로 캡챠(captcha)를 사용    
+  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
+    <img src="./../images/a11y-mobile/img_a11yMobile_labelor_ex_do02.png" alt="">
+    <figcaption>출처 : 모바일 애플리케이션 접근성 제작기법</figcaption>
+  </figure>
+  캡챠의 지시사항이 “팝콘이 있는 이미지를 모두 선택하세요”와 같이 시각에만 의존하고 있어 시각에 장애가 있는 사용자는 지시 사항을 인식하고 수행하는 것이 불가능하다. 이런 경우에는 대체할 수 있는 수단을 제공하는 것이 바람직하며, 이 애플리케이션에서는 오디오서비스를 제공하고 있다).     
+
+
 
 #### 10. 미준수 사례       
 
 **사례1**   
+
+- 색, 크기, 모양, 방향 등으로만 정보를 제공한 경우    
+  '여기서 확인하세요!'로 방향으로만 정보를 제공하고 있음     
+  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
+    <img src="./../images/a11y-mobile/img_a11yMobile_labelor_ex_donot01.png" alt="">
+    <figcaption>출처 : 모바일 애플리케이션 접근성 제작기법</figcaption>
+  </figure>
+
+- '마이페이지/이곳'으로 방향으로만 정보를 제공하고 있음.      
+  텍스트 안에 링크나 버튼을 넣지 않아야 한다. 아래 예처럼 텍스트 안에 링크가 있는 경우 스크린 리더는 빠르게 텍스트를 읽어 나가기 때문에 화면의 레이아웃을 파악하기 힘든 시각장애인은 링크 위치를 알 수 없다.    
+  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
+    <img src="./../images/a11y-mobile/img_a11yMobile_labelor_ex_donot02.png" alt="">
+    <figcaption>출처 : 모바일 애플리케이션 접근성 제작기법</figcaption>
+  </figure>
 
 
 #### 11. 관련 영상       

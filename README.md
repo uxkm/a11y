@@ -111,8 +111,8 @@ ACCESSIBILITY 메뉴명도 A11Y로 변경 고려?
   * #### [자막, 수화 등의 제공](a11yMobile/captions-sign.md)  (완료)   
   * #### [색에 무관한 인식](a11yMobile/use-of-color.md) (완료)    
   * #### [명도 대비](a11yMobile/contrast-minimum.md) (완료)    
-  * #### [명확한 지시 사항](a11yMobile/labels-or-instructions.md) (진행중)     
-  * #### [알림 기능](a11yMobile/interruptions.md) (진행중)     
+  * #### [명확한 지시 사항](a11yMobile/labels-or-instructions.md) (완료)     
+  * #### [알림 기능](a11yMobile/interruptions.md) (완료)     
    
 ####  [운용의 용이성(Operable)](a11yMobile/focus-visible.md)   
   * #### [초점](a11yMobile/focus-visible.md) (대기)      
@@ -129,8 +129,8 @@ ACCESSIBILITY 메뉴명도 A11Y로 변경 고려?
   * #### [예측가능성](a11yMobile/on-focus.md) (대기)        
    
 ####  [견고성(Robust)](a11yMobile/resize-text.md)   
-  * #### [폰트 관련 기능의 활용](a11yMobile/resize-text.md) (대기)         
-  * #### [보조 기술과의 호환성](a11yMobile/name-role-value.md) (대기)          
+  * #### [폰트 관련 기능의 활용](a11yMobile/resize-text.md) (진행중)         
+  * #### [보조 기술과의 호환성](a11yMobile/name-role-value.md) (진행중)          
    
 ### 3. [무인정보단말기 접근성 제작기법](a11yKiosk/kiosk.md)     
 

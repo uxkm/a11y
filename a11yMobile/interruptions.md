@@ -7,28 +7,184 @@
 
 ### 알림 기능
 **관련 지침 : 알림 정보는 화면 표시, 소리, 진동 등 다양한 방법으로 제공되어야 한다.**   
-대체 텍스트는 비 텍스트 콘텐츠를 설명하는 중요한 요소로, 접근성을 높이기 위해 필수적으로 제공되어야 합니다. 다양한 테스트 도구를 활용해 웹 및 모바일 앱에서 대체 텍스트를 포함한 접근성 요소를 철저히 점검하고, 사용자 경험을 개선할 수 있습니다. 접근성을 준수함으로써 모든 사용자에게 포용적인 디지털 환경을 제공합니다.   
-[WCAG 2.2 Quick Reference - Non-text Content](https://www.w3.org/WAI/WCAG22/quickref/#non-text-content){: target="_blank"}
+알림 기능은 사용자가 앱 내에서 중요한 정보를 놓치지 않도록 즉각적으로 알려주는 방법입니다. 접근성 측면에서 알림은 단순히 화면에 텍스트를 띄우는 것 이상으로, 시각, 청각, 촉각(진동) 등 다양한 방식으로 사용자에게 전달되어야 합니다. 스크린 리더 사용자도 알림 내용을 충분히 인지할 수 있도록 접근성 속성을 설정해야 하며, 알림이 적시에 제대로 전달되도록 설계되어야 합니다.   
+[WCAG 2.2 Quick Reference - Status Messages](https://www.w3.org/WAI/WCAG22/quickref/#status-messages){: target="_blank"}
 
 **키워드**   
-#모바일 앱 접근성, #모바일 앱 접근성 콘텐츠 제작 기법, #WCAG2.2, #대체 텍스트, #비 텍스트 콘텐츠, #accessibilityLabel, #contentDescription, #보조기술과의호환성, #접근성 테스트 도구 활용 점검방법, #스크린 리더, #VoiceOver, #TalkBack, #UIAccessibility API #AccessibilityNodeInfo API, #Swift, #Kotlin, #네이티브 #하이브리드
+#모바일 앱 접근성, #모바일 앱 접근성 콘텐츠 제작 기법, #WCAG2.2, #대체 텍스트, #비 텍스트 콘텐츠, #accessibilityLabel, #contentDescription, #보조기술과의호환성, #접근성 테스트 도구 활용 점검방법, #스크린 리더, #VoiceOver, #TalkBack, #알림 기능, #상태 메시지, #진동 피드백, #시각적 알림
 
 #### 1. 필요성        
+알림 기능은 모든 사용자가 중요한 앱 이벤트를 즉각적으로 인지할 수 있도록 보장하는 핵심적인 접근성 요소입니다. 시각 장애인, 청각 장애인, 인지 장애인, 고령자 등 다양한 사용자는 상황에 따라 알림을 놓칠 수 있기 때문에, 다채로운 방식으로 알림이 제공되어야 합니다. 이를 통해 사용자 경험을 개선하고, 앱에서 제공하는 중요한 정보를 놓치지 않도록 할 수 있습니다.    
 
 #### 2. 대상       
+- **시각 장애인**: 스크린 리더를 사용하여 알림 내용을 인식해야 하는 사용자.   
+- **청각 장애인**: 소리나 음성 알림을 인식하지 못하는 사용자.   
+- **인지 장애인**: 간결하고 이해하기 쉬운 알림 메시지를 필요로 하는 사용자.   
+- **고령 사용자**: 청각과 시각이 저하되어 시각적·청각적 알림을 강화해야 하는 사용자.   
+- **비장애인 포함 모든 사용자**: 알림을 통해 중요한 정보나 상태 변화를 인지해야 하는 사용자.    
 
-#### 3. 체크리스트       
+#### 3. 체크리스트     
+
+- **알림의 명확성**: 알림 메시지가 간결하고, 필요한 정보를 전달하고 있는가?    
+- **다채널 알림 제공 여부**: 시각적, 청각적, 촉각적 알림이 모두 적절하게 제공되고 있는가?    
+- **스크린 리더 호환성**: 알림이 스크린 리더에서 적절히 전달되는가?   
+- **알림의 우선순위 설정**: 중요도에 따라 알림의 우선순위가 적절하게 설정되었는가?   
 
 #### 4. 기기별 테스트 방법      
 
-#### 5. QA 지표       
+**iOS**    
+
+- **VoiceOver 사용**: iOS의 VoiceOver 기능을 활성화한 후, 알림 메시지가 음성으로 전달되는지 확인합니다.    
+  예시) 파일 업로드 성공 시, "파일이 성공적으로 업로드되었습니다."라는 메시지가 VoiceOver에서 출력되는지 확인합니다.     
+- **진동 및 소리 테스트**: 진동 및 소리 알림이 올바르게 전달되는지 확인합니다.     
+
+**Android**
+
+- **TalkBack 사용**: Android의 TalkBack 기능을 활성화하고, 알림 메시지가 음성으로 전달되는지 테스트합니다.    
+  예시) 오류 발생 시 TalkBack을 통해 "네트워크 연결 오류가 발생했습니다."라는 메시지가 음성으로 출력되는지 확인합니다.    
+- **진동 테스트**: 알림이 진동 피드백을 통해 적절하게 전달되는지 테스트합니다.    
+
+**HTML**     
+
+- **스크린 리더 사용**: NVDA 또는 JAWS와 같은 스크린 리더를 사용하여, 알림이 스크린 리더에서 제대로 인식되는지 확인합니다.     
+  예시) ARIA 라이브 영역을 통해 상태 변경이 스크린 리더에 의해 읽히는지 테스트합니다.    
+
+**Vue**     
+
+- Vue.js 애플리케이션에서 스크린 리더와의 호환성 및 시각적 피드백(예: 애니메이션)이 제대로 작동하는지 점검합니다.        
+
+**React**       
+
+- React 애플리케이션에서 Lighthouse 또는 Axe 같은 접근성 도구를 사용해 알림 기능의 접근성을 점검합니다. 스크린 리더로 알림이 적절하게 전달되는지 확인합니다.        
+
+#### 5. QA 지표     
+
+- **알림 전달 성공률**: 알림 메시지가 스크린 리더, 진동, 소리 등을 통해 사용자에게 성공적으로 전달되는지 여부.        
+- **사용자 피드백**: 사용자 테스트를 통해 알림이 적절하게 제공되고 있는지 평가.       
+- **알림 우선순위 테스트**: 알림의 우선순위가 적절히 설정되었는지 여부.    
 
 #### 6. 개발방법     
 
+**iOS**    
+
+- 알림 메시지 전송 및 스크린 리더 인식    
+```sh
+let announcement = "파일이 성공적으로 업로드되었습니다."
+UIAccessibility.post(notification: .announcement, argument: announcement)
+```
+
+- 진동 피드백 제공    
+```sh
+AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+```
+
+**Android**    
+
+- 알림 메시지 전송 및 스크린 리더 인식     
+```sh
+String message = "파일이 성공적으로 업로드되었습니다.";
+AccessibilityManager am = (AccessibilityManager) getSystemService(ACCESSIBILITY_SERVICE);
+if (am.isEnabled()) {
+    am.sendAccessibilityEvent(AccessibilityEvent.obtain(AccessibilityEvent.TYPE_ANNOUNCEMENT).setText(message));
+}
+```
+
+- 진동 피드백 제공     
+```sh
+Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+vibrator.vibrate(500); // 500ms 진동
+```
+
+**하이브리드(html)**    
+
+- ARIA 라이브 영역을 통한 알림 메시지 전송 및 CSS 애니메이션을 통한 시각적 알림    
+```sh
+<div id="alert" role="alert" aria-live="assertive">
+  파일이 성공적으로 업로드되었습니다.
+</div>
+
+<style>
+#alert {
+  background-color: #ffcc00;
+  padding: 10px;
+  animation: fadeInOut 3s ease-in-out;
+}
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+</style>
+```
+
+**하이브리드(vue)**    
+
+- 알림 메시지 및 스크린 리더 인식    
+```sh
+<template>
+  <div aria-live="polite" role="alert">{{ alertMessage }}</div>
+  <button @click="sendAlert">업로드</button>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      alertMessage: ""
+    };
+  },
+  methods: {
+    sendAlert() {
+      this.alertMessage = "파일이 성공적으로 업로드되었습니다.";
+    }
+  }
+};
+</script>
+```
+
+
+**하이브리드(React)**    
+
+- 알림 메시지 및 스크린 리더 인식    
+```sh
+function App() {
+  const [alertMessage, setAlertMessage] = React.useState("");
+
+  const handleUpload = () => {
+    setAlertMessage("파일이 성공적으로 업로드되었습니다.");
+  };
+
+  return (
+    <div>
+      <div role="alert" aria-live="assertive">{alertMessage}</div>
+      <button onClick={handleUpload}>업로드</button>
+    </div>
+  );
+}
+```
+
+
+
 #### 7. 점검 기준    
 
+**오류 유형**       
 
-#### 8. 점검 방법     
+- **알림 메시지의 누락**: 중요한 상태 변화가 알림을 통해 전달되지 않는 경우.       
+- **스크린 리더와의 호환성 부족**: 알림 메시지가 스크린 리더에서 인식되지 않거나 누락되는 경우.       
+- **과도한 알림**: 불필요한 알림이 너무 자주 발생해 사용자에게 방해가 되는 경우.       
+
+**주의사항**       
+
+- **알림의 적시성**: 알림이 적시에 제공되어 사용자가 놓치지 않도록 해야 합니다.       
+- **중복 알림 방지**: 동일한 알림이 중복되어 발생하지 않도록 주의해야 합니다.     
+- **알림의 명확성**: 알림 메시지는 사용자가 이해하기 쉬운 언어로 간결하게 작성되어야 합니다.        
+
+#### 8. 점검 방법    
+
+- 알림창 팝업 시 알림 소리와 진동이 각각 또는 동시에 제공되고, 알림창 정보를 텍스트로 인지할 수 있는지를 점검한다.  
+- 알림을 제공하는 애플리케이션 대상    
+  - 애플리케이션의 설정항목에서 알림설정으로 이동한다.   
+  - 알림방식 (진동, 소리 등) 을 선택할 수 있는지 확인한다.    
 
 #### 9. 준수 사례       
 
@@ -36,7 +192,7 @@
 
 - 아이콘 + 텍스트와 같이 제공되는 경우    
   <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-    <img src="./../images/a11y-mobile/img_a11yMobile_ex_do01.png" alt="">
+    <img src="./../images/a11y-mobile/img_a11yMobile_interruptions_ex_do01.png" alt="">
     <figcaption>출처 : 무인정보단말기 UI 플랫폼</figcaption>
   </figure>
 
