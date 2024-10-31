@@ -188,17 +188,17 @@ function App() {
 
 #### 9. 준수 사례       
 
-**사례1**   
+- **정부24**: 알림 기능이 시각적, 청각적, 촉각적 방식으로 적절히 제공되어 사용자가 중요한 정보나 상태 변화를 놓치지 않도록 설계되었습니다.   
+- **Google Calendar**: 이벤트 알림이 시각적 피드백(팝업), 소리, 진동으로 제공되어 접근성이 잘 보장되고 있습니다.   
 
-- 아이콘 + 텍스트와 같이 제공되는 경우    
-  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-    <img src="./../images/a11y-mobile/img_a11yMobile_interruptions_ex_do01.png" alt="">
-    <figcaption>출처 : 무인정보단말기 UI 플랫폼</figcaption>
-  </figure>
+이미지 사례는 준비중... 없으면 위 내용으로만 처리
 
-#### 10. 미준수 사례       
+#### 10. 미준수 사례      
 
-**사례1**   
+- **일부 쇼핑몰**: 네트워크 오류 등 중요한 알림이 사용자에게 전달되지 않거나, 중복된 알림이 발생해 사용자에게 혼란을 초래하는 사례가 있습니다.   
+- **소규모 앱**: 알림 메시지가 스크린 리더에서 인식되지 않거나, 진동 피드백이 제공되지 않아 접근성 요구사항을 충족하지 못하는 경우가 발생합니다.   
+
+이미지 사례는 준비중... 없으면 위 내용으로만 처리
 
 #### 11. 관련 영상       
 <iframe style="width:100%;min-height:315px;" src="https://www.youtube.com/embed/u7Acn6bv29A?si=age6LpHtmhsfbr0h" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
