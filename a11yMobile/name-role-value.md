@@ -6,42 +6,196 @@
 
 ### 보조 기술과의 호환성
 **관련 지침 : 사용자 인터페이스 컴포넌트는 보조 기술을 이용하여 사용할 수 있도록 해야 한다.**   
-대체 텍스트는 비 텍스트 콘텐츠를 설명하는 중요한 요소로, 접근성을 높이기 위해 필수적으로 제공되어야 합니다. 다양한 테스트 도구를 활용해 웹 및 모바일 앱에서 대체 텍스트를 포함한 접근성 요소를 철저히 점검하고, 사용자 경험을 개선할 수 있습니다. 접근성을 준수함으로써 모든 사용자에게 포용적인 디지털 환경을 제공합니다.   
-[WCAG 2.2 Quick Reference - Non-text Content](https://www.w3.org/WAI/WCAG22/quickref/#non-text-content){: target="_blank"}
+보조 기술과의 호환성은 모든 사용자 인터페이스 컴포넌트가 TalkBack, VoiceOver 등 보조 기술과 원활하게 상호작용할 수 있도록 설계해야 한다는 의미입니다. 사용자에게 필수적인 정보를 제공하고, 앱을 탐색하고 기능을 사용할 때 필요한 각종 버튼, 링크, 입력 필드 등이 보조 기술을 통해 접근 가능해야 합니다. 모든 UI 요소에 적절한 접근성 속성을 추가하여, 사용자에게 시각적·청각적 피드백이 아닌 정보도 전달될 수 있도록 합니다.   
+[WCAG 2.2 Quick Reference - Compatible with Assistive Technologies](https://www.w3.org/WAI/WCAG22/quickref/#compatible-with-assistive-technologies){: target="_blank"}
+
+**예시**   
+
+- **VoiceOver**: "뒤로 가기" 버튼에 접근성 라벨을 설정하여 VoiceOver 사용자에게 명확히 안내.   
+- **TalkBack**: TalkBack 사용자도 버튼에 "뒤로 가기"라는 라벨이 읽히도록 설정.   
+- **스위치 제어**: 손이나 손가락을 사용할 수 없는 사용자들이 UI 컴포넌트를 탐색하고 조작할 수 있도록 설정.   
 
 **키워드**   
-#모바일 앱 접근성, #모바일 앱 접근성 콘텐츠 제작 기법, #WCAG2.2, #대체 텍스트, #비 텍스트 콘텐츠, #accessibilityLabel, #contentDescription, #보조기술과의호환성, #접근성 테스트 도구 활용 점검방법, #스크린 리더, #VoiceOver, #TalkBack, #UIAccessibility API #AccessibilityNodeInfo API, #Swift, #Kotlin, #네이티브 #하이브리드
+#모바일 앱 접근성, #모바일 앱 접근성 콘텐츠 제작 기법, #WCAG2.2, #스크린 리더, #음성 명령, #스위치 제어, #사용자 인터페이스(UI) 호환성, #시각 장애인, #청각 장애인, #인지 장애인, #신체 장애인, #Android, #iOS
 
 #### 1. 필요성        
+시각장애인 등의 사용자는 모바일 기기에서 제공하는 장애인 보조 기술을 사용하여 애플리케이션을 이용하게 된다. 만약 애플리케이션의 사용자 인터페이스 컴포넌트가 보조 기술의 사용을 지원하지 않는다면 보조 기술을 사용하는 장애인은 애플리케이션을 이용할 수 없는 상황에 처하게 된다. 
+     
+애플리케이션에서 보조 기술을 지원하는 가장 효과적인 방법은 기본사용자인터페이스 컴포넌트를 사용하는 것이나 부득이 사용자정의 컴포넌트를 사용할 경우 보조 기술로도 접근할 수 있는 속성들을 반드시 제공해야 한다.     
+    
+기본적으로는 사용자 인터페이스 컴포넌트가 어떤 유형(버튼, 슬라이더 등)인지 정보를 제공해야 한다. 시각장애인의 경우 디자인을 인지할 수 없으므로 컴포넌트의 종류에 따라 조작하는 방법을 선택하게 되므로 사용자 인터페이스 컴포넌트의 유형을 명확히 제공하는 것이 중요하다.   
 
 #### 2. 대상       
 
+- **시각 장애인**: 스크린 리더 등 보조 기술을 통해 화면 내용을 청각적으로 인식하는 사용자.   
+- **청각 장애인**: 음성 출력을 인식할 수 없기 때문에 시각적 피드백과 텍스트 정보를 선호하는 사용자.   
+- **인지 장애인**: 간결하고 쉽게 이해할 수 있는 사용자 인터페이스를 필요로 하는 사용자.   
+- **신체 장애인**: 스위치 제어나 음성 명령을 통해 기기를 제어하는 사용자.   
+- **비장애인 포함 전체 사용자**: 앱이 다양한 보조 기술을 통해 모든 사용자에게 보다 나은 접근성을 제공할 수 있도록 보장.   
+
 #### 3. 체크리스트       
 
+- **보조 기술 호환성 여부**: 모든 UI 요소가 TalkBack 및 VoiceOver와 호환되는지 확인합니다.    
+- **상태 변경 알림 제공 여부**: 상태 변화가 보조 기술 사용자에게 적절히 전달되고 있는지 확인합니다.    
+- **스위치 제어 호환성**: 스위치 제어로 모든 UI 컴포넌트를 탐색하고 사용할 수 있는지 확인합니다.     
+
 #### 4. 기기별 테스트 방법      
+**iOS**       
+
+- **VoiceOver 사용**: iOS의 VoiceOver를 켜고, UI 요소가 접근 가능한지 테스트합니다.    
+- **키보드 테스트**: iPad 등에서 키보드를 연결하여 모든 요소가 탐색 가능한지 확인합니다.    
+
+**Android**    
+
+- **TalkBack 사용**: Android의 TalkBack을 켜고 UI 요소가 제대로 인식되는지 확인합니다.    
+- **스위치 제어 테스트**: 스위치 제어 장치를 사용해 UI 탐색이 가능한지 확인합니다.     
+
+**HTML**   
+
+- **스크린 리더 사용**: NVDA 또는 JAWS와 같은 스크린 리더를 사용해 UI 컴포넌트의 접근성을 점검합니다.     
+- **키보드 탐색**: 모든 UI 컴포넌트가 키보드로 탐색 가능한지 확인합니다.    
+
+**Vue.js**    
+- **스크린 리더 테스트**: Vue.js 앱에서 ARIA 속성이 적용된 컴포넌트가 스크린 리더와 호환되는지 점검합니다.    
+
+**React**    
+
+- **스크린 리더 및 자동화 도구**: React에서 개발된 UI 요소가 스크린 리더와 호환되는지, 자동화된 접근성 도구로도 점검합니다.    
 
 #### 5. QA 지표       
 
+- **보조 기술 호환성 점수**: 보조 기술 사용자 테스트를 통해 모든 UI 컴포넌트가 호환성 요구사항을 충족하는지 평가.     
+- **스위치 제어 탐색 가능성**: 모든 UI 요소가 스위치 제어로 탐색 및 조작 가능한지 여부.    
+- **TalkBack 및 VoiceOver 적합성**: TalkBack 및 VoiceOver에서 모든 UI 요소가 올바르게 설명되고, 상호작용 가능한지 여부.    
+
 #### 6. 개발방법     
+
+**네이티브 - iOS**    
+
+- VoiceOver용 접근성 라벨 설정    
+```sh
+let backButton = UIButton()
+backButton.setTitle("뒤로", for: .normal)
+backButton.accessibilityLabel = "뒤로 가기"
+```
+- 상태 변경을 인식하도록 알림
+```sh
+UIAccessibility.post(notification: .announcement, argument: "네트워크 연결이 성공했습니다.")
+```
+- 키보드 및 스위치 제어 탐색 설정
+```sh
+myButton.isAccessibilityElement = true
+myButton.accessibilityTraits = .button
+```
+
+**네이티브 - Android**   
+
+- TalkBack용 접근성 라벨 설정    
+```sh
+Button backButton = findViewById(R.id.backButton);
+backButton.setContentDescription("뒤로 가기");
+```
+- 상태 변경을 인식하도록 알림
+```sh
+AccessibilityEvent event = AccessibilityEvent.obtain(AccessibilityEvent.TYPE_ANNOUNCEMENT);
+event.getText().add("네트워크 연결이 성공했습니다.");
+getSystemService(AccessibilityManager.class).sendAccessibilityEvent(event);
+```
+- 스위치 제어 탐색 설정
+```sh
+myButton.setFocusable(true);
+myButton.setFocusableInTouchMode(true);
+```
+
+**하이브리드 - HTML**   
+
+- ARIA 라벨과 역할(role) 설정    
+```sh
+<button aria-label="뒤로 가기" role="button">뒤로</button>
+```
+- 상태 변경을 인식하도록 알림
+```sh
+<div role="status" aria-live="polite">네트워크 연결이 성공했습니다.</div>
+```
+
+**하이브리드 - Vue.js**   
+
+- 접근성 라벨과 역할 설정    
+```sh
+<template>
+  <button :aria-label="'뒤로 가기'" role="button" @click="goBack">뒤로</button>
+</template>
+
+<script>
+export default {
+  methods: {
+    goBack() {
+      // 뒤로 가기 로직
+    }
+  }
+}
+</script>
+```
+
+**접근성 라벨과 역할 설정**   
+
+- 접근성 라벨과 역할 설정    
+```sh
+function App() {
+  return (
+    <button aria-label="뒤로 가기" role="button" onClick={() => window.history.back()}>
+      뒤로
+    </button>
+  );
+}
+```
+
+
+
 
 #### 7. 점검 기준    
 
+**오류 유형**    
+
+- **TalkBack 및 VoiceOver 호환성 부족**: 버튼이나 링크가 TalkBack 및 VoiceOver에서 인식되지 않는 경우.     
+- **스위치 제어 비호환**: 스위치 제어로 특정 UI 요소를 사용할 수 없는 경우.    
+- **라벨 누락**: TalkBack 및 VoiceOver에서 인식할 수 있는 라벨이 제공되지 않은 경우.    
+
+**주의사항**    
+
+- **모든 UI 컴포넌트에 라벨 설정**: TalkBack 및 VoiceOver에서 읽을 수 있는 라벨이 없는 경우, 보조 기술 사용자가 기능을 이해할 수 없습니다.    
+- **상태 변화 알림 제공**: 상태 변화가 발생할 때 사용자에게 그 변경 사항을 알리지 않으면 혼란이 발생할 수 있습니다.    
+- **스위치 제어 지원 확인**: 스위치 제어로 모든 UI를 탐색할 수 있도록 설정해야 합니다.    
 
 #### 8. 점검 방법     
 
+**iOS**     
+- VoiceOver 사용: iOS의 VoiceOver를 켜고, UI 요소가 접근 가능한지 테스트합니다.    
+- 스위치 제어 테스트: 스위치 제어 장치를 통해 UI 컴포넌트를 탐색하고 조작할 수 있는지 확인합니다.    
+
+**Android**    
+
+- TalkBack 사용: Android의 TalkBack을 켜고 UI 요소가 제대로 인식되는지 확인합니다.     
+- 스위치 제어 테스트: Android의 접근성 설정에서 스위치 제어를 활성화하여 UI 탐색이 가능한지 확인합니다.     
+
+**HTML**     
+
+- 스크린 리더 사용: PC에서 NVDA 또는 JAWS와 같은 스크린 리더를 사용해 UI 컴포넌트의 접근성을 점검합니다.    
+- 키보드 탐색: 모든 UI 컴포넌트가 키보드로 탐색 가능한지 확인합니다.     
+
+**Vue.js**    
+
+- 스크린 리더 테스트: Vue.js 앱에서 ARIA 속성이 적용된 컴포넌트가 TalkBack 및 VoiceOver와 호환되는지 점검합니다.     
+
+**React**    
+
+- 스크린 리더 및 자동화 도구: React에서 개발된 UI 요소가 TalkBack 및 VoiceOver와 호환되는지, 자동화된 접근성 도구로 점검합니다.    
+
 #### 9. 준수 사례       
 
-**사례1**   
-
-- 아이콘 + 텍스트와 같이 제공되는 경우    
-  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-    <img src="./../images/a11y-mobile/img_a11yMobile_ex_do01.png" alt="">
-    <figcaption>출처 : 무인정보단말기 UI 플랫폼</figcaption>
-  </figure>
 
 #### 10. 미준수 사례       
 
-**사례1**   
 
 #### 11. 관련 영상       
 <iframe style="width:100%;min-height:315px;" src="https://www.youtube.com/embed/FTJCDVhGmVE?si=FEXhxel7qtI_6Yas" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
