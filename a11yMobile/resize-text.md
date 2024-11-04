@@ -7,42 +7,302 @@
 
 ### 폰트 관련 기능의 활용
 **관련 지침 : 텍스트 콘텐츠는 운영체제에서 제공하는 폰트 관련 기능을 활용할 수 있는 방법을 제공해야 한다.**   
-대체 텍스트는 비 텍스트 콘텐츠를 설명하는 중요한 요소로, 접근성을 높이기 위해 필수적으로 제공되어야 합니다. 다양한 테스트 도구를 활용해 웹 및 모바일 앱에서 대체 텍스트를 포함한 접근성 요소를 철저히 점검하고, 사용자 경험을 개선할 수 있습니다. 접근성을 준수함으로써 모든 사용자에게 포용적인 디지털 환경을 제공합니다.   
-[WCAG 2.2 Quick Reference - Non-text Content](https://www.w3.org/WAI/WCAG22/quickref/#non-text-content){: target="_blank"}
+모바일 앱의 폰트 관련 기능 활용은 사용자가 운영체제(OS)에서 제공하는 폰트 크기 조절 및 텍스트 스타일 옵션을 앱 내에서 사용할 수 있도록 보장하는 중요한 접근성 요소입니다. 이를 통해 시력 저하, 인지 장애, 노화로 인한 가독성 저하 등을 겪는 사용자가 텍스트를 보다 쉽게 읽고 이해할 수 있습니다.   
+[WCAG 2.2 Quick Reference - Text Resize](https://www.w3.org/WAI/WCAG22/quickref/#text-resize){: target="_blank"}
 
 **키워드**   
-#모바일 앱 접근성, #모바일 앱 접근성 콘텐츠 제작 기법, #WCAG2.2, #대체 텍스트, #비 텍스트 콘텐츠, #accessibilityLabel, #contentDescription, #보조기술과의호환성, #접근성 테스트 도구 활용 점검방법, #스크린 리더, #VoiceOver, #TalkBack, #UIAccessibility API #AccessibilityNodeInfo API, #Swift, #Kotlin, #네이티브 #하이브리드
+#모바일 앱 접근성, #모바일 앱 접근성 콘텐츠 제작 기법, #WCAG2.2, #시각 장애인, #고령 사용자, #인지 장애인, #비장애인 포함 전체 사용자, #폰트 크기 조절, #가독성, #사용자 정의 폰트, #Dynamic Type, #Accessibility Text Scaling
 
 #### 1. 필요성        
 
+폰트 크기와 스타일 조절 기능은 다양한 사용자 그룹의 접근성과 가독성을 보장하는 데 필수적입니다. 운영체제의 기본 텍스트 조절 기능을 무시하거나 앱 내에서 비활성화하면 사용자가 자신에게 편한 크기와 스타일로 텍스트를 읽지 못할 수 있습니다. 특히 시각 장애인, 고령 사용자, 인지 장애를 가진 사용자는 더 큰 글씨와 명확한 글꼴을 통해 앱을 더 잘 이용할 수 있습니다.    
+
 #### 2. 대상       
+
+- **시각 장애인**: 더 큰 글씨와 명확한 글꼴을 필요로 하는 사용자.   
+- **고령 사용자**: 시력이 저하되거나 텍스트 가독성이 낮은 사용자.   
+- **인지 장애인**: 더 쉽게 읽을 수 있는 글꼴과 폰트 스타일을 선호하는 사용자.   
+- **비장애인 포함 전체 사용자**: 개인의 선호에 맞게 폰트 크기와 스타일을 조정하여 편리하게 사용할 수 있습니다.   
 
 #### 3. 체크리스트       
 
+- **폰트 크기 조절 가능 여부**: 앱이 운영체제에서 제공하는 폰트 크기 조절 기능을 따르는지 확인합니다.    
+- **동적 글꼴 지원**: 앱 내 텍스트가 iOS의 Dynamic Type 또는 Android의 Accessibility Text Scaling을 지원하는지 확인합니다.    
+- **글꼴 스타일 적용**: 글꼴 굵기나 스타일 변경이 앱 내에서 반영되는지 점검합니다.    
+- **텍스트 가독성 보장**: 폰트 변경 시에도 텍스트의 가독성이 유지되는지 확인합니다.    
+
 #### 4. 기기별 테스트 방법      
+
+**iOS**    
+- **Dynamic Type 설정 확인**: iOS의 설정 > 손쉬운 사용 > 디스플레이 및 텍스트 크기에서 글꼴 크기를 조정한 후 앱 내에서 적용되는지 확인합니다.   
+- **가독성 테스트**: Dynamic Type이 앱의 모든 텍스트에 적절히 반영되는지 확인하고, 가독성이 유지되는지 테스트합니다.     
+- **레이아웃 검증**: 폰트 크기 조절 후에도 레이아웃이 정상적으로 유지되는지 확인합니다.    
+
+**Android**    
+
+- **글꼴 크기 및 스타일 조절 확인**: Android의 설정 > 손쉬운 사용 > 글꼴 크기 및 화면 크기에서 글꼴 크기를 조정한 후 앱 내에서 적용되는지 확인합니다.     
+- **TextView** 및 **EditText 컴포넌트**가 OS의 글꼴 조절 설정에 따라 크기가 변경되는지 점검합니다.    
+- **Accessibility Scanner**를 사용하여 폰트 크기 조절 시 문제가 발생하지 않는지 테스트합니다.    
+
+**하이브리드 (HTML, Vue, React)**    
+
+- **글꼴 크기 변경**: HTML, Vue, React에서 버튼 클릭 시 글꼴 크기를 기본, 크게, 작게로 변경하고, 변경 시 aria-live 속성을 사용하여 사용자에게 toast 메시지를 음성 출력 가능하게 구현이 되었는지 테스트합니다.     
 
 #### 5. QA 지표       
 
+- **동적 글꼴 반영률**: 앱 내 텍스트가 운영체제의 폰트 크기 조정 기능을 따르는 비율.    
+- **텍스트 가독성**: 폰트 크기 및 스타일 변경 시에도 텍스트가 명확하게 보이는지 여부.    
+- **사용자 피드백**: 사용자 테스트를 통해 폰트 관련 기능의 사용 편의성을 평가.    
+
 #### 6. 개발방법     
+
+**iOS에서 Dynamic Type 적용 방법**    
+
+- UILabel 및 UITextView에 Dynamic Type 활성화     
+  ```sh
+  let label = UILabel()
+  label.font = UIFont.preferredFont(forTextStyle: .body)
+  label.adjustsFontForContentSizeCategory = true
+  ```
+- Interface Builder에서 텍스트 스타일을 설정하고 Dynamic Type 지원 옵션을 활성화합니다.     
+
+**Android에서 폰트 크기 조절 기능 구현 방법**    
+
+- TextView에서 글꼴 크기 반영    
+  ```sh
+  <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Hello World"
+    android:textSize="16sp" />
+  ```
+- 글꼴 크기 조절 기능을 지원하도록 설정    
+  ```sh
+  textView.textSize = resources.getDimension(R.dimen.default_text_size) * context.resources.configuration.fontScale
+  ```
+
+**HTML**    
+
+```sh
+<div id="content">텍스트 콘텐츠 예제</div>
+<button onclick="changeFontSize('small')">폰트 작게</button>
+<button onclick="changeFontSize('medium')">기본 크기</button>
+<button onclick="changeFontSize('large')">폰트 크게</button>
+<div id="toast" aria-live="polite" class="toast-message"></div>
+
+<script>
+  function changeFontSize(size) {
+    const content = document.getElementById('content');
+    if (size === 'small') {
+      content.style.fontSize = '12px';
+      showToast('폰트가 작게 설정되었습니다.');
+    } else if (size === 'medium') {
+      content.style.fontSize = '16px';
+      showToast('기본 폰트 크기가 설정되었습니다.');
+    } else if (size === 'large') {
+      content.style.fontSize = '20px';
+      showToast('폰트가 크게 설정되었습니다.');
+    }
+  }
+
+  function showToast(message) {
+    const toast = document.getElementById('toast');
+    toast.textContent = message;
+    toast.classList.add('show');
+    setTimeout(() => {
+      toast.classList.remove('show');
+      toast.textContent = '';
+    }, 3000);
+    if (window.speechSynthesis) {
+      const utterance = new SpeechSynthesisUtterance(message);
+      window.speechSynthesis.speak(utterance);
+    }
+  }
+</script>
+
+<style>
+  .toast-message {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+  }
+
+  .toast-message.show {
+    display: block;
+  }
+</style>
+```
+
+**Vue**    
+
+```sh
+<template>
+  <div>
+    <p :style="{ fontSize: fontSize }">텍스트 콘텐츠 예제</p>
+    <button @click="changeFontSize('small')">폰트 작게</button>
+    <button @click="changeFontSize('medium')">기본 크기</button>
+    <button @click="changeFontSize('large')">폰트 크게</button>
+    <div ref="toast" aria-live="polite" class="toast-message">{{ toastMessage }}</div>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      fontSize: '16px',
+      toastMessage: ''
+    };
+  },
+  methods: {
+    changeFontSize(size) {
+      if (size === 'small') {
+        this.fontSize = '12px';
+        this.showToast('폰트가 작게 설정되었습니다.');
+      } else if (size === 'medium') {
+        this.fontSize = '16px';
+        this.showToast('기본 폰트 크기가 설정되었습니다.');
+      } else if (size === 'large') {
+        this.fontSize = '20px';
+        this.showToast('폰트가 크게 설정되었습니다.');
+      }
+    },
+    showToast(message) {
+      this.toastMessage = message;
+      setTimeout(() => {
+        this.toastMessage = '';
+      }, 3000);
+      if (window.speechSynthesis) {
+        const utterance = new SpeechSynthesisUtterance(message);
+        window.speechSynthesis.speak(utterance);
+      }
+    }
+  }
+};
+</script>
+
+<style>
+  .toast-message {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+  }
+
+  .toast-message:empty {
+    display: none;
+  }
+</style>
+```
+
+**React**    
+
+```sh
+import React, { useState } from 'react';
+
+function App() {
+  const [fontSize, setFontSize] = useState('16px');
+  const [toastMessage, setToastMessage] = useState('');
+
+  const changeFontSize = (size) => {
+    if (size === 'small') {
+      setFontSize('12px');
+      showToast('폰트가 작게 설정되었습니다.');
+    } else if (size === 'medium') {
+      setFontSize('16px');
+      showToast('기본 폰트 크기가 설정되었습니다.');
+    } else if (size === 'large') {
+      setFontSize('20px');
+      showToast('폰트가 크게 설정되었습니다.');
+    }
+  };
+
+  const showToast = (message) => {
+    setToastMessage(message);
+    setTimeout(() => {
+      setToastMessage('');
+    }, 3000);
+    if (window.speechSynthesis) {
+      const utterance = new SpeechSynthesisUtterance(message);
+      window.speechSynthesis.speak(utterance);
+    }
+  };
+
+  return (
+    <div>
+      <p style={{ fontSize }}>텍스트 콘텐츠 예제</p>
+      <button onClick={() => changeFontSize('small')}>폰트 작게</button>
+      <button onClick={() => changeFontSize('medium')}>기본 크기</button>
+      <button onClick={() => changeFontSize('large')}>폰트 크게</button>
+      <div aria-live="polite" className="toast-message">{toastMessage}</div>
+    </div>
+  );
+}
+
+export default App;
+
+<style>
+  .toast-message {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+  }
+
+  .toast-message:empty {
+    display: none;
+  }
+</style>
+```
 
 #### 7. 점검 기준    
 
+**오류 유형**    
+
+- **폰트 크기 변경 미지원**: 앱이 운영체제의 글꼴 크기 설정을 무시하는 경우.
+- **일부 컴포넌트 비지원**: 특정 UI 컴포넌트에서만 폰트 크기 변경이 적용되지 않는 경우.
+- **가독성 저하**: 폰트 크기나 스타일 변경 시 텍스트가 읽기 어렵거나 UI가 깨지는 경우.
+
+**주의사항**    
+
+- **일관성 유지**: 폰트 크기 변경 시 모든 텍스트 요소가 일관되게 조정되어야 합니다.
+- **자동 레이아웃 사용**: 레이아웃이 글꼴 크기 조절에 따라 동적으로 조정되도록 설정해야 합니다.
+- **글꼴 스타일 제한**: 앱의 전반적인 디자인과 가독성을 해치지 않으면서 다양한 글꼴 스타일을 허용해야 합니다.
 
 #### 8. 점검 방법     
 
+**iOS**    
+
+- **Dynamic Type 테스트**: 앱 내의 모든 텍스트가 Dynamic Type 설정에 맞춰 크기와 스타일이 조정되는지 테스트합니다.    
+- **손쉬운 사용 설정**: iOS의 손쉬운 사용 옵션을 통해 글꼴 크기 변경 후 앱의 가독성과 UI 안정성을 확인합니다.    
+
+**Android**    
+
+- **Accessibility Text Scaling 테스트**: Android에서 글꼴 크기 및 화면 크기 조절 옵션을 활성화한 후 앱이 설정을 따르는지 테스트합니다.    
+- **레이아웃 테스트**: 글꼴 크기 변경 시 레이아웃이 깨지거나 텍스트가 잘리지 않는지 확인합니다.    
+
+
 #### 9. 준수 사례       
 
-**사례1**   
-
-- 아이콘 + 텍스트와 같이 제공되는 경우    
-  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-    <img src="./../images/a11y-mobile/img_a11yMobile_ex_do01.png" alt="">
-    <figcaption>출처 : 무인정보단말기 UI 플랫폼</figcaption>
-  </figure>
 
 #### 10. 미준수 사례       
 
-**사례1**   
 
 #### 11. 관련 영상       
 <iframe style="width:100%;min-height:315px;" src="https://www.youtube.com/embed/q8jHIdEVxSw?si=n7BBcjCq4wukdjy-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
