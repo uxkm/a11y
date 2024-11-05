@@ -51,6 +51,7 @@
 **iOS (Swift)**    
 
 - 타이머 기능 구현 및 시간 연장 버튼 제공    
+
 ```sh
 import UIKit
 
@@ -88,6 +89,7 @@ class ViewController: UIViewController {
 **Android (Kotlin)**    
 
 - CountDownTimer 및 시간 연장 다이얼로그 구현    
+
 ```sh
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -134,6 +136,7 @@ class MainActivity : AppCompatActivity() {
 **HTML**    
 
 - 타이머 기능 및 시간 연장 대화상자 제공    
+
 ```sh
 <div id="timer">남은 시간: 30초</div>
 <button id="extendButton" style="display: none;" onclick="extendTime()">시간 연장</button>
@@ -168,6 +171,7 @@ class MainActivity : AppCompatActivity() {
 **Vue.js**    
 
 - 타이머 및 시간 연장 구현    
+
 ```sh
 <template>
   <div>
@@ -212,6 +216,7 @@ export default {
 **React**    
 
 - 타이머 및 시간 연장 구현    
+
 ```sh
 import React, { useEffect, useState } from 'react';
 
