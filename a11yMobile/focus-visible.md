@@ -7,7 +7,7 @@
    
 ### 초점
 **관련 지침 : 의미나 기능을 갖는 모든 사용자 인터페이스 컴포넌트에는 초점(focus)이 적용되고, 초점은 논리적인 순서로 이동되어야 한다.**   
-모바일 앱과 웹 애플리케이션에서 **초점(Focus)** 은 사용자가 상호작용하는 요소에 명확하게 접근할 수 있도록 하고, 논리적인 순서로 초점이 이동되게 하여 사용성을 개선하는 중요한 접근성 원칙입니다. 특히, 키보드 사용자나 스크린 리더 사용자에게 필수적입니다.   
+초점 관리와 논리적 순서 유지는 모든 사용자가 앱 내에서 효율적으로 탐색하고 상호작용할 수 있도록 돕는 중요한 요소입니다. 올바르게 설계된 초점 순서는 사용자 경험을 향상시키고, 특히 키보드 및 스크린 리더 사용자에게 필수적인 편의를 제공합니다.   
 [WCAG 2.2 Quick Reference - Focus Order](https://www.w3.org/WAI/WCAG22/quickref/#focus-order){: target="_blank"}
 
 **키워드**   
@@ -47,7 +47,8 @@
 **iOS (Swift)**     
 
 - UIAccessibility와 focusable 속성을 사용하여 초점 관리     
-```sh
+
+```sh 
 import UIKit
 
 class ViewController: UIViewController {
@@ -71,7 +72,8 @@ class ViewController: UIViewController {
 **Android (Kotlin)**    
 
 - focusable 속성 및 ViewCompat을 사용하여 초점 관리    
-```sh
+
+```sh    
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -102,6 +104,7 @@ class MainActivity : AppCompatActivity() {
 **HTML**    
 
 - HTML에서 Tab 순서 설정 및 JavaScript로 초점 이동 제어    
+    
 ```sh
 <button id="buttonOne">버튼 1</button>
 <button id="buttonTwo">버튼 2</button>
