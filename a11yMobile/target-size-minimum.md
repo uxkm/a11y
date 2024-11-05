@@ -50,6 +50,7 @@
 **iOS (Swift)**    
 
 - UIButton 크기와 간격 설정    
+
 ```sh
 import UIKit
 
@@ -81,6 +82,7 @@ class ViewController: UIViewController {
 **Android (Kotlin)**    
 
 - Button의 크기 및 간격 설정    
+
 ```sh
 <LinearLayout
     android:layout_width="match_parent"
@@ -110,6 +112,7 @@ class ViewController: UIViewController {
 **HTML**    
 
 - HTML 버튼 크기 및 간격 설정    
+
 ```sh
 <button class="large-button">버튼 1</button>
 <button class="large-button">버튼 2</button>
@@ -129,6 +132,7 @@ class ViewController: UIViewController {
 **Vue.js**    
 
 - 버튼 크기 및 간격 설정    
+
 ```sh
 <template>
   <div>
@@ -152,6 +156,7 @@ class ViewController: UIViewController {
 **React**    
 
 - 버튼 크기와 간격을 위한 스타일 설정    
+
 ```sh
 import React from 'react';
 
