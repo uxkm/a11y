@@ -117,11 +117,11 @@ ACCESSIBILITY 메뉴명도 A11Y로 변경 고려?
 텍스트 위주의 내용 먼저 정리 추 후 관련 이미지 삽입 예정     
 
 ####  [운용의 용이성(Operable)](a11yMobile/focus-visible.md)   
-  * #### [초점](a11yMobile/focus-visible.md) (진행중 - 준수/미준수 사례 대기)      
-  * #### [누르기 동작 지원](a11yMobile/pointer-gestures.md) (진행중 - 준수/미준수 사례 대기)       
-  * #### [응답 시간 조절](a11yMobile/timing-adjustable.md) (진행중 - 준수/미준수 사례 대기)       
-  * #### [정지 기능 제공](a11yMobile/pause-stop-hide.md) (진행중 - 준수/미준수 사례 대기)       
-  * #### [컨트롤의 크기와 간격](a11yMobile/target-size-minimum.md) (진행중 - 준수/미준수 사례 대기)      
+  * #### [초점](a11yMobile/focus-visible.md) (완료 - 준수/미준수 사례 대기)      
+  * #### [누르기 동작 지원](a11yMobile/pointer-gestures.md) (완료 - 준수/미준수 사례 대기)       
+  * #### [응답 시간 조절](a11yMobile/timing-adjustable.md) (완료 - 준수/미준수 사례 대기)       
+  * #### [정지 기능 제공](a11yMobile/pause-stop-hide.md) (완료 - 준수/미준수 사례 대기)       
+  * #### [컨트롤의 크기와 간격](a11yMobile/target-size-minimum.md) (완료 - 준수/미준수 사례 대기)      
    
 ####  [이해의 용이성(Understandable)](a11yMobile/error-identification.md)   
   * #### [입력 도움](a11yMobile/error-identification.md) (완료 - 준수/미준수 사례 대기)      

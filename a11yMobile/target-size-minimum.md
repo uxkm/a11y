@@ -6,42 +6,197 @@
 
 ### 컨트롤의 크기와 간격
 **관련 지침 : 컨트롤은 충분한 크기와 간격으로 제공되어야 한다.**   
-대체 텍스트는 비 텍스트 콘텐츠를 설명하는 중요한 요소로, 접근성을 높이기 위해 필수적으로 제공되어야 합니다. 다양한 테스트 도구를 활용해 웹 및 모바일 앱에서 대체 텍스트를 포함한 접근성 요소를 철저히 점검하고, 사용자 경험을 개선할 수 있습니다. 접근성을 준수함으로써 모든 사용자에게 포용적인 디지털 환경을 제공합니다.   
+모든 사용자에게 적절한 크기와 간격을 갖춘 터치 가능한 인터페이스 요소를 제공하면, 사용자 경험을 향상시킬 뿐 아니라 접근성을 보장할 수 있습니다. 충분한 터치 영역과 간격을 확보함으로써 모든 사용자가 쉽게 조작할 수 있는 환경을 제공할 수 있습니다.   
 [WCAG 2.2 Quick Reference - Non-text Content](https://www.w3.org/WAI/WCAG22/quickref/#non-text-content){: target="_blank"}
 
 **키워드**   
-#모바일 앱 접근성, #모바일 앱 접근성 콘텐츠 제작 기법, #WCAG2.2, #대체 텍스트, #비 텍스트 콘텐츠, #accessibilityLabel, #contentDescription, #보조기술과의호환성, #접근성 테스트 도구 활용 점검방법, #스크린 리더, #VoiceOver, #TalkBack, #UIAccessibility API #AccessibilityNodeInfo API, #Swift, #Kotlin, #네이티브 #하이브리드
+#모바일 앱 접근성, #모바일 앱 접근성 콘텐츠 제작 기법, #WCAG2.2, #컨토롤 크기와 간격, #터치 영역, #터치 간격, # 터치 정확성, #운동 장애 사용자, #고령 사용자
 
 #### 1. 필요성        
 
+컨트롤의 크기와 간격이 충분히 넓으면 다음과 같은 이점이 있습니다.    
+
+- **사용성 개선**: 손가락이나 마우스를 사용하는 모든 사용자에게 컨트롤이 쉽게 눌려질 수 있도록 보장합니다.    
+- **오작동 방지**: 크기와 간격이 충분하지 않으면 잘못된 요소를 터치하거나 클릭할 가능성이 높아집니다.    
+- **접근성 향상**: 운동 장애가 있는 사용자나 고령 사용자에게는 큰 터치 영역이 필수적입니다.    
+
 #### 2. 대상       
+
+- **모바일 사용자**: 손가락을 이용해 터치 기반으로 컨트롤을 조작하는 사용자.    
+- **운동 장애 사용자**: 작은 터치 영역이나 간격이 좁은 경우 조작이 어려운 사용자.    
+- **고령 사용자**: 시력이 저하되거나 작은 컨트롤을 누르기 어려운 사용자.    
 
 #### 3. 체크리스트       
 
+- **최소 크기 기준 준수**: 컨트롤의 크기가 최소 44x44 픽셀 이상인지 확인합니다.    
+- **적절한 간격 제공**: 각 컨트롤 사이에 충분한 간격(최소 8~10픽셀 이상)을 두어 실수로 다른 컨트롤을 누르지 않도록 합니다.    
+- **시각적 피드백 제공**: 컨트롤을 터치하거나 클릭할 때 시각적 피드백을 제공하여 조작이 인식되도록 합니다.    
+- **중복 터치 방지**: 여러 컨트롤이 겹치거나 너무 가까이 배치되지 않도록 합니다.    
+
 #### 4. 기기별 테스트 방법      
+
+- **iOS**: VoiceOver를 활성화한 상태에서 컨트롤의 크기와 간격이 적절하고, 터치하기 쉬운지 확인합니다.    
+- **Android**: TalkBack을 활성화하고, 컨트롤 간의 간격과 크기가 충분한지, 터치 오류가 발생하지 않는지 테스트합니다.    
+- **웹 및 하이브리드 앱(HTML, Vue, React)**: 데스크톱 및 모바일 환경에서 각 컨트롤의 크기와 간격이 터치 또는 클릭으로 조작하기에 충분한지 확인합니다.    
 
 #### 5. QA 지표       
 
+- **터치 오작동 비율**: 컨트롤 크기와 간격으로 인한 오작동이 발생하지 않는지 확인합니다.    
+- **사용자 피드백 수집**: 사용자 테스트를 통해 컨트롤의 크기와 간격에 대한 피드백을 수집합니다.    
+- **접근성 기준 충족 여부**: 접근성 기준을 만족하는 크기 및 간격 설정이 적용되었는지 확인합니다.    
+
 #### 6. 개발방법     
+
+**iOS (Swift)**    
+
+- UIButton 크기와 간격 설정    
+```sh
+import UIKit
+
+class ViewController: UIViewController {
+    @IBOutlet weak var buttonOne: UIButton!
+    @IBOutlet weak var buttonTwo: UIButton!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setButtonSizeAndSpacing()
+    }
+
+    func setButtonSizeAndSpacing() {
+        buttonOne.frame.size = CGSize(width: 100, height: 44)
+        buttonTwo.frame.size = CGSize(width: 100, height: 44)
+        buttonOne.translatesAutoresizingMaskIntoConstraints = false
+        buttonTwo.translatesAutoresizingMaskIntoConstraints = false
+        
+        // 버튼 사이 간격 설정
+        NSLayoutConstraint.activate([
+            buttonOne.heightAnchor.constraint(equalToConstant: 44),
+            buttonTwo.heightAnchor.constraint(equalToConstant: 44),
+            buttonTwo.topAnchor.constraint(equalTo: buttonOne.bottomAnchor, constant: 10)
+        ])
+    }
+}
+```
+
+**Android (Kotlin)**    
+
+- Button의 크기 및 간격 설정    
+```sh
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center">
+
+    <Button
+        android:id="@+id/buttonOne"
+        android:layout_width="200dp"
+        android:layout_height="48dp"
+        android:text="버튼 1" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="8dp" />
+
+    <Button
+        android:id="@+id/buttonTwo"
+        android:layout_width="200dp"
+        android:layout_height="48dp"
+        android:text="버튼 2" />
+</LinearLayout>
+```
+
+**HTML**    
+
+- HTML 버튼 크기 및 간격 설정    
+```sh
+<button class="large-button">버튼 1</button>
+<button class="large-button">버튼 2</button>
+
+<style>
+  .large-button {
+    width: 100px;
+    height: 44px;
+    margin: 10px 0; /* 각 버튼 사이의 간격 */
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 5px;
+  }
+</style>
+```
+
+**Vue.js**    
+
+- 버튼 크기 및 간격 설정    
+```sh
+<template>
+  <div>
+    <button class="large-button">버튼 1</button>
+    <button class="large-button">버튼 2</button>
+  </div>
+</template>
+
+<style scoped>
+  .large-button {
+    width: 100px;
+    height: 44px;
+    margin: 10px 0; /* 각 버튼 사이의 간격 */
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 5px;
+  }
+</style>
+```
+
+**React**    
+
+- 버튼 크기와 간격을 위한 스타일 설정    
+```sh
+import React from 'react';
+
+function App() {
+  return (
+    <div>
+      <button style={buttonStyle}>버튼 1</button>
+      <button style={buttonStyle}>버튼 2</button>
+    </div>
+  );
+}
+
+const buttonStyle = {
+  width: "100px",
+  height: "44px",
+  margin: "10px 0", // 각 버튼 사이의 간격
+  padding: "12px",
+  fontSize: "16px",
+  borderRadius: "5px"
+};
+
+export default App;
+```
 
 #### 7. 점검 기준    
 
+- **터치 및 클릭 영역의 적절한 크기**: 모든 버튼 및 인터랙션 요소가 최소 44x44 픽셀의 크기를 갖추고 있는지 확인합니다.    
+- **적절한 간격 유지**: 모든 컨트롤 사이에 충분한 간격이 제공되어 실수로 다른 컨트롤이 눌리지 않도록 합니다.    
+- **터치/클릭 시각적 피드백 제공**: 터치 또는 클릭 시 시각적 피드백이 제공되어 조작이 인식되도록 합니다.    
 
 #### 8. 점검 방법     
 
+- **자동화 도구**: 접근성 검사 도구로 버튼 및 컨트롤 크기와 간격이 기준에 부합하는지 확인합니다.    
+- **수동 점검**: 다양한 모바일 및 데스크톱 환경에서 직접 테스트하여 터치 영역이 충분한지 확인합니다.    
+- **사용자 피드백**: 사용자 피드백을 통해 터치 영역과 간격의 편의성에 대한 의견을 수집합니다.    
+
 #### 9. 준수 사례       
 
-**사례1**   
-
-- 아이콘 + 텍스트와 같이 제공되는 경우    
-  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-    <img src="./../images/a11y-mobile/img_a11yMobile_ex_do01.png" alt="">
-    <figcaption>출처 : 무인정보단말기 UI 플랫폼</figcaption>
-  </figure>
+- **충분한 크기의 터치 영역 제공**: 버튼이나 인터랙션 가능한 요소가 손가락으로 쉽게 누를 수 있도록 충분한 크기와 간격으로 제공되는 경우.    
+- **적절한 간격으로 실수 방지**: 컨트롤 간에 적절한 간격을 두어 실수로 잘못된 버튼을 누를 가능성을 최소화한 경우.    
 
 #### 10. 미준수 사례       
 
-**사례1**   
+- **작은 터치 영역**: 작은 터치 영역으로 인해 사용자가 실수로 다른 요소를 터치하는 경우.    
+- **간격 부족**: 버튼 사이의 간격이 너무 좁아 한 번의 터치로 여러 요소가 눌리는 경우.     
 
 #### 11. 관련 영상       
 <iframe style="width:100%;min-height:315px;" src="https://www.youtube.com/embed/HndGi_6j0_I?si=jGl3Hv244oa6X_Ul" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
