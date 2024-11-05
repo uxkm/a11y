@@ -51,6 +51,7 @@
 **iOS (Swift)**    
 
 - UIButton을 사용한 터치 반응 설정   
+
 ```sh
 import UIKit
 
@@ -70,6 +71,7 @@ class ViewController: UIViewController {
 ```
     
 - 터치 영역 확장: UIButton의 터치 영역을 넓히기 위해 터치 영역을 추가로 설정합니다.   
+
 ```sh
 extension UIButton {
     override open func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
@@ -83,6 +85,7 @@ extension UIButton {
 **Android (Kotlin)**    
 
 - Button을 사용한 터치 이벤트 설정   
+
 ```sh
 import android.os.Bundle
 import android.widget.Button
@@ -104,6 +107,7 @@ class MainActivity : AppCompatActivity() {
 ```
     
 - 터치 영역 확대: 터치 영역이 충분히 넓어지도록 설정하여 사용자의 실수를 줄입니다.   
+
 ```sh
 <Button
     android:id="@+id/myButton"
@@ -115,6 +119,7 @@ class MainActivity : AppCompatActivity() {
 **HTML**    
 
 - 터치 가능 영역 설정: HTML 버튼 요소에 클릭 이벤트를 추가하여 모바일 터치 환경에서도 반응하도록 설정합니다.   
+
 ```sh
 <button id="myButton">확인</button>
 
@@ -128,6 +133,7 @@ class MainActivity : AppCompatActivity() {
 **Vue.js**    
 
 - 터치 이벤트와 클릭 핸들러 설정   
+
 ```sh
 <template>
   <button @click="handleClick">확인</button>
@@ -147,6 +153,7 @@ export default {
 **React**    
 
 - 터치 제어를 위한 onClick 핸들러 추가   
+
 ```sh
 import React from 'react';
 
