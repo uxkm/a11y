@@ -7,42 +7,234 @@
 
 ### 입력 도움
 **관련 지침 : 입력 서식 이용 시, 입력 오류를 방지하거나 정정할 수 있는 방법을 제공해야 한다.**   
-대체 텍스트는 비 텍스트 콘텐츠를 설명하는 중요한 요소로, 접근성을 높이기 위해 필수적으로 제공되어야 합니다. 다양한 테스트 도구를 활용해 웹 및 모바일 앱에서 대체 텍스트를 포함한 접근성 요소를 철저히 점검하고, 사용자 경험을 개선할 수 있습니다. 접근성을 준수함으로써 모든 사용자에게 포용적인 디지털 환경을 제공합니다.   
-[WCAG 2.2 Quick Reference - Non-text Content](https://www.w3.org/WAI/WCAG22/quickref/#non-text-content){: target="_blank"}
+모바일 앱에서 입력 서식을 사용할 때, 사용자의 입력 오류를 방지하거나 정정할 수 있는 방법을 제공하는 것은 필수적인 접근성 요건입니다. 이를 통해 사용자의 경험을 개선하고 다양한 사용자층이 쉽게 앱을 사용할 수 있도록 합니다.   
+[WCAG 2.2 Quick Reference - Input Assistance](https://www.w3.org/WAI/WCAG22/quickref/#input-assistance){: target="_blank"}
 
 **키워드**   
-#모바일 앱 접근성, #모바일 앱 접근성 콘텐츠 제작 기법, #WCAG2.2, #대체 텍스트, #비 텍스트 콘텐츠, #accessibilityLabel, #contentDescription, #보조기술과의호환성, #접근성 테스트 도구 활용 점검방법, #스크린 리더, #VoiceOver, #TalkBack, #UIAccessibility API #AccessibilityNodeInfo API, #Swift, #Kotlin, #네이티브 #하이브리드
+#모바일 앱 접근성, #모바일 앱 접근성 콘텐츠 제작 기법, #WCAG2.2, #입력 도움, #입력 오류 방지, #실시간 피드백, #자동 완성, #힌트 제공, #명확한 오류 메시지
 
-#### 1. 필요성        
+#### 1. 필요성     
 
-#### 2. 대상       
+입력 오류 방지 기능은 사용자가 데이터를 정확하게 입력할 수 있도록 하여 앱 사용의 편의성과 정확성을 높입니다. 특히, 시각 장애인, 인지 장애인, 고령 사용자 등에게는 입력 오류 시 빠르고 쉽게 정정할 수 있는 기능이 필수적입니다. 입력 도움 기능은 사용자의 스트레스를 줄이고, 앱에 대한 만족도를 높입니다.   
+
+#### 2. 대상     
+
+- **모든 사용자**: 입력 시 오류를 줄이기 위한 안내와 수정 기능은 모든 사용자에게 필요합니다.    
+- **장애인 사용자**: 시각 장애인이나 인지 장애가 있는 사용자의 경우, 오류 메시지와 입력 힌트가 접근성을 보장합니다.    
+- **고령 사용자**: 세밀한 조작이 어려운 사용자에게는 실시간 피드백이 중요합니다.    
 
 #### 3. 체크리스트       
 
+- **실시간 오류 감지 및 피드백 제공**: 사용자가 입력할 때 즉시 오류를 알려주는 기능이 있는지 확인합니다.    
+- **자동 완성 및 제안 기능**: 사용자가 입력을 더 쉽게 할 수 있도록 자동 완성 기능이 있는지 확인합니다.    
+- **입력 힌트 제공**: 필드에 힌트나 예제를 제공하여 사용자가 올바르게 입력할 수 있도록 안내합니다.    
+- **명확한 오류 메시지**: 오류가 발생했을 때 사용자에게 명확하고 구체적인 메시지를 제공합니다.    
+
 #### 4. 기기별 테스트 방법      
+
+- **iOS**: 입력 필드에 대한 오류 검출 및 피드백 기능이 iOS 스크린 리더(VoiceOver)에서 제대로 동작하는지 확인합니다.    
+- **Android**: TalkBack을 통해 입력 오류 피드백이 적절히 전달되고 사용자가 오류를 쉽게 수정할 수 있는지 점검합니다.   
+- **웹 및 하이브리드 앱(HTML, Vue, React)**: 스크린 리더 및 키보드 네비게이션을 사용하여 오류 피드백 및 수정 기능을 점검합니다.    
 
 #### 5. QA 지표       
 
+- **오류 감지율**: 사용자가 입력 시 얼마나 빠르게 오류를 인지할 수 있는지 측정합니다.    
+- **피드백 적시성**: 입력 후 오류 피드백이 즉각적으로 제공되는지 여부를 확인합니다.    
+- **이해도 평가**: 오류 메시지가 사용자에게 얼마나 명확하게 전달되는지 확인합니다.    
+
+
 #### 6. 개발방법     
+
+**iOS : UITextField 및 실시간 오류 감지**   
+
+```sh
+import UIKit
+
+class ViewController: UIViewController, UITextFieldDelegate {
+    @IBOutlet weak var usernameField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var errorMessageLabel: UILabel!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        usernameField.delegate = self
+        passwordField.delegate = self
+    }
+
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField == usernameField && (textField.text?.isEmpty ?? true) {
+            errorMessageLabel.text = \"아이디를 입력하세요.\"
+        } else if textField == passwordField && (textField.text?.count ?? 0) < 6 {
+            errorMessageLabel.text = \"비밀번호는 최소 6자 이상이어야 합니다.\"
+        } else {
+            errorMessageLabel.text = \"\"
+        }
+    }
+}
+```
+
+**Android : EditText 및 실시간 오류 감지**    
+
+```sh
+<EditText
+    android:id=\"@+id/usernameInput\"
+    android:layout_width=\"match_parent\"
+    android:layout_height=\"wrap_content\"
+    android:hint=\"아이디\" />
+
+<EditText
+    android:id=\"@+id/passwordInput\"
+    android:layout_width=\"match_parent\"
+    android:layout_height=\"wrap_content\"
+    android:hint=\"비밀번호\"
+    android:inputType=\"textPassword\" />
+
+<TextView
+    android:id=\"@+id/errorMessage\"
+    android:layout_width=\"match_parent\"
+    android:layout_height=\"wrap_content\"
+    android:textColor=\"@android:color/holo_red_light\" />
+```
+
+**HTML : 입력 필드 및 실시간 검증**    
+
+```sh
+<input type=\"text\" id=\"username\" placeholder=\"아이디\">
+<input type=\"password\" id=\"password\" placeholder=\"비밀번호\">
+<div id=\"errorMessage\" aria-live=\"polite\" class=\"error-message\"></div>
+
+<script>
+  document.getElementById('username').addEventListener('input', function() {
+    if (this.value === '') {
+      document.getElementById('errorMessage').textContent = '아이디를 입력하세요.';
+    } else {
+      document.getElementById('errorMessage').textContent = '';
+    }
+  });
+
+  document.getElementById('password').addEventListener('input', function() {
+    if (this.value.length < 6) {
+      document.getElementById('errorMessage').textContent = '비밀번호는 최소 6자 이상이어야 합니다.';
+    } else {
+      document.getElementById('errorMessage').textContent = '';
+    }
+  });
+</script>
+```
+
+**Vue : 입력 검증 컴포넌트**   
+
+```sh
+<template>
+  <div>
+    <input v-model=\"username\" @input=\"validateUsername\" placeholder=\"아이디\">
+    <input type=\"password\" v-model=\"password\" @input=\"validatePassword\" placeholder=\"비밀번호\">
+    <div v-if=\"errorMessage\" aria-live=\"polite\" class=\"error-message\">{{ errorMessage }}</div>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      username: '',
+      password: '',
+      errorMessage: ''
+    };
+  },
+  methods: {
+    validateUsername() {
+      if (this.username === '') {
+        this.errorMessage = '아이디를 입력하세요.';
+      } else {
+        this.errorMessage = '';
+      }
+    },
+    validatePassword() {
+      if (this.password.length < 6) {
+        this.errorMessage = '비밀번호는 최소 6자 이상이어야 합니다.';
+      } else {
+        this.errorMessage = '';
+      }
+    }
+  }
+};
+</script>
+
+<style>
+  .error-message {
+    color: red;
+  }
+</style>
+```
+
+**React : 입력 검증 컴포넌트**   
+
+```sh
+import React, { useState } from 'react';
+
+function App() {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const handleUsernameChange = (e) => {
+    setUsername(e.target.value);
+    if (e.target.value === '') {
+      setErrorMessage('아이디를 입력하세요.');
+    } else {
+      setErrorMessage('');
+    }
+  };
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+    if (e.target.value.length < 6) {
+      setErrorMessage('비밀번호는 최소 6자 이상이어야 합니다.');
+    } else {
+      setErrorMessage('');
+    }
+  };
+
+  return (
+    <div>
+      <input type=\"text\" value={username} onChange={handleUsernameChange} placeholder=\"아이디\" />
+      <input type=\"password\" value={password} onChange={handlePasswordChange} placeholder=\"비밀번호\" />
+      {errorMessage && <div aria-live=\"polite\" className=\"error-message\">{errorMessage}</div>}
+    </div>
+  );
+}
+
+export default App;
+
+<style>
+  .error-message {
+    color: red;
+  }
+</style>
+```
 
 #### 7. 점검 기준    
 
+- **접근성 지침 준수**: 입력 오류 피드백이 WCAG의 입력 오류 방지 기준을 충족하는지 점검합니다.    
+- **에러 메시지 가시성**: 시각적으로 명확하게 표시되는지 확인합니다.   
+- **스크린 리더 대응**: 스크린 리더 사용자에게 오류가 인식되도록 aria-live 속성을 활용합니다.    
 
 #### 8. 점검 방법     
 
+- **자동화 도구**: Lighthouse나 Axe와 같은 접근성 테스트 도구를 사용하여 입력 서식의 오류 피드백이 적절히 동작하는지 확인합니다.    
+- **수동 점검**: 다양한 화면 크기와 OS 환경에서 직접 입력 테스트를 하여 피드백의 적절성을 확인합니다.    
+- **스크린 리더 테스트**: VoiceOver, TalkBack 등 스크린 리더로 입력 오류 안내가 제대로 전달되는지 테스트합니다.    
+
 #### 9. 준수 사례       
 
-**사례1**   
-
-- 아이콘 + 텍스트와 같이 제공되는 경우    
-  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-    <img src="./../images/a11y-mobile/img_a11yMobile_ex_do01.png" alt="">
-    <figcaption>출처 : 무인정보단말기 UI 플랫폼</figcaption>
-  </figure>
+- **자동 오류 감지와 수정 안내**: 아이디와 비밀번호 입력 시, 올바르지 않은 형식을 실시간으로 감지하고 적절한 오류 메시지를 제공하는 앱.    
+- **명확한 힌트 제공**: 입력 필드에 힌트를 추가해 사용자가 올바른 형식으로 입력할 수 있도록 안내하는 앱.   
 
 #### 10. 미준수 사례       
 
-**사례1**   
+- **부정확한 오류 메시지**: 오류 발생 시 단순히 '잘못된 입력'만 표시하고 구체적인 수정 방법을 안내하지 않는 경우.    
+- **시각적 피드백만 제공**: 스크린 리더 사용자를 고려하지 않고, 시각적인 피드백만 제공하여 접근성이 떨어지는 사례.    
 
 #### 11. 관련 영상       
 <iframe style="width:100%;min-height:315px;" src="https://www.youtube.com/embed/ALkmLGAHeFg?si=Rx9pcZ9IkNlTstop" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

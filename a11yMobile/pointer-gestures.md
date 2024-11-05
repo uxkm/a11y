@@ -7,42 +7,183 @@
    
 ### 누르기 동작 지원
 **관련 지침 : 터치(touch) 기반 모바일 기기의 모든 컨트롤은 누르기 동작으로 제어할 수 있어야 한다.**   
-대체 텍스트는 비 텍스트 콘텐츠를 설명하는 중요한 요소로, 접근성을 높이기 위해 필수적으로 제공되어야 합니다. 다양한 테스트 도구를 활용해 웹 및 모바일 앱에서 대체 텍스트를 포함한 접근성 요소를 철저히 점검하고, 사용자 경험을 개선할 수 있습니다. 접근성을 준수함으로써 모든 사용자에게 포용적인 디지털 환경을 제공합니다.   
-[WCAG 2.2 Quick Reference - Non-text Content](https://www.w3.org/WAI/WCAG22/quickref/#non-text-content){: target="_blank"}
+터치 기반 모바일 기기에서 접근성을 보장하기 위해서는 누르기 동작 지원이 필수적입니다. 모든 사용자가 손가락으로 쉽게 조작할 수 있는 충분한 터치 영역을 제공하고, 시각적 피드백을 통해 명확하게 반응하는 인터페이스를 구현함으로써 사용자 경험을 크게 향상시킬 수 있습니다.        
+[WCAG 2.2 Quick Reference - Pointer Accessible](https://www.w3.org/WAI/WCAG22/quickref/#pointer-accessible){: target="_blank"}
 
 **키워드**   
-#모바일 앱 접근성, #모바일 앱 접근성 콘텐츠 제작 기법, #WCAG2.2, #대체 텍스트, #비 텍스트 콘텐츠, #accessibilityLabel, #contentDescription, #보조기술과의호환성, #접근성 테스트 도구 활용 점검방법, #스크린 리더, #VoiceOver, #TalkBack, #UIAccessibility API #AccessibilityNodeInfo API, #Swift, #Kotlin, #네이티브 #하이브리드
+#모바일 앱 접근성, #모바일 앱 접근성 콘텐츠 제작 기법, #WCAG2.2, #누르기 동작, #터치 제어, # 손쉬운 터치 영역, #반응성, #운동 장애 사용자
 
 #### 1. 필요성        
 
+터치 기반 인터페이스에서 모든 컨트롤이 누르기 동작으로 제어 가능해야 하는 이유는 다음과 같습니다.    
+
+- **사용자 접근성 보장**: 물리적 제한이 있는 사용자도 쉽게 사용할 수 있도록 손가락 크기에 맞는 충분한 터치 영역을 제공합니다.   
+- **반응성 향상**: 터치 기반 기기에서 누르기 동작이 명확하게 작동하면, 사용자가 앱을 보다 직관적으로 사용할 수 있습니다.   
+- **모든 사용자 지원**: 특정 도구나 보조 기구 없이 손가락 하나만으로 조작할 수 있는 인터페이스는 모든 사용자에게 유리합니다.   
+
 #### 2. 대상       
+
+- **모든 모바일 사용자**: 터치 기반 모바일 기기를 사용하는 모든 사용자.    
+- **운동 장애 사용자**: 작은 터치 영역을 다루기 어려운 사용자에게 필수적입니다.    
+- **시각 장애 사용자**: 명확한 터치 영역과 반응성 있는 피드백은 시각 장애 사용자에게 도움이 됩니다.     
 
 #### 3. 체크리스트       
 
+- **적절한 터치 영역 크기**: 터치 영역이 최소 44x44 픽셀 이상인지 확인하여 손가락으로 쉽게 누를 수 있는지 점검합니다.    
+- **간편한 누르기 동작**: 터치 기반 컨트롤이 클릭, 더블 탭 등 간단한 동작으로 제어 가능한지 확인합니다.    
+- **시각적 피드백 제공**: 버튼을 누를 때 시각적 또는 진동 등의 피드백이 제공되는지 확인합니다.    
+- **멀티터치 회피**: 기본적인 기능에 멀티터치가 필요하지 않고, 한 번의 터치로 작동하도록 설정합니다.    
+
 #### 4. 기기별 테스트 방법      
+
+- **iOS**: VoiceOver가 활성화된 상태에서 모든 터치 컨트롤이 정상적으로 작동하는지 테스트합니다.    
+- **Android**: TalkBack이 활성화된 상태에서 누르기 동작으로 모든 기능에 접근 가능하고 터치 영역이 적절한지 확인합니다.    
+- **웹 및 하이브리드 앱(HTML, Vue, React)**: 모바일 브라우저에서 터치 기반 제어 요소가 잘 작동하는지, 특히 Tab 키를 통해 손가락 터치와 동일한 인터랙션을 제공하는지 점검합니다.    
 
 #### 5. QA 지표       
 
+- **터치 반응성**: 터치에 대한 응답 시간이 빠르고, 명확하게 반응하는지 확인합니다.    
+- **터치 영역 크기 충족 여부**: 모든 터치 가능 영역이 최소 크기 기준을 충족하는지 점검합니다.    
+- **피드백 제공 여부**: 터치 동작 시 시각적 피드백 또는 진동 피드백이 제공되는지 확인합니다.    
+
 #### 6. 개발방법     
+
+**iOS (Swift)**    
+
+- UIButton을 사용한 터치 반응 설정   
+```sh
+import UIKit
+
+class ViewController: UIViewController {
+    @IBOutlet weak var myButton: UIButton!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        myButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+    }
+
+    @objc func buttonTapped() {
+        // 버튼이 눌렸을 때의 동작 정의
+        print("버튼이 눌렸습니다!")
+    }
+}
+```
+    
+- 터치 영역 확장: UIButton의 터치 영역을 넓히기 위해 터치 영역을 추가로 설정합니다.   
+```sh
+extension UIButton {
+    override open func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+        let margin: CGFloat = 22
+        let area = self.bounds.insetBy(dx: -margin, dy: -margin)
+        return area.contains(point)
+    }
+}
+```
+
+**Android (Kotlin)**    
+
+- Button을 사용한 터치 이벤트 설정   
+```sh
+import android.os.Bundle
+import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
+
+class MainActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        val myButton: Button = findViewById(R.id.myButton)
+        myButton.setOnClickListener {
+            // 버튼이 눌렸을 때의 동작 정의
+            println("버튼이 눌렸습니다!")
+        }
+    }
+}
+```
+    
+- 터치 영역 확대: 터치 영역이 충분히 넓어지도록 설정하여 사용자의 실수를 줄입니다.   
+```sh
+<Button
+    android:id="@+id/myButton"
+    android:layout_width="200dp"
+    android:layout_height="48dp"
+    android:text="확인" />
+```
+
+**HTML**    
+
+- 터치 가능 영역 설정: HTML 버튼 요소에 클릭 이벤트를 추가하여 모바일 터치 환경에서도 반응하도록 설정합니다.   
+```sh
+<button id="myButton">확인</button>
+
+<script>
+  document.getElementById("myButton").addEventListener("click", function() {
+    alert("버튼이 눌렸습니다!");
+  });
+</script>
+```
+
+**Vue.js**    
+
+- 터치 이벤트와 클릭 핸들러 설정   
+```sh
+<template>
+  <button @click="handleClick">확인</button>
+</template>
+
+<script>
+export default {
+  methods: {
+    handleClick() {
+      alert("버튼이 눌렸습니다!");
+    }
+  }
+};
+</script>
+```
+
+**React**    
+
+- 터치 제어를 위한 onClick 핸들러 추가   
+```sh
+import React from 'react';
+
+function App() {
+  const handleClick = () => {
+    alert("버튼이 눌렸습니다!");
+  };
+
+  return (
+    <button onClick={handleClick} style={{ width: "200px", height: "48px" }}>확인</button>
+  );
+}
+
+export default App;
+```
 
 #### 7. 점검 기준    
 
+- **터치 영역 크기 확인**: 각 터치 가능한 영역이 적절한 크기를 가지고 있는지 확인합니다.     
+- **터치 반응성**: 터치 시 즉각적으로 반응하는지 확인합니다.    
+- **피드백 제공 여부**: 터치가 발생할 때 시각적 피드백이나 진동 피드백이 제공되는지 확인합니다.    
 
 #### 8. 점검 방법     
 
+- **자동화 도구**: Lighthouse, Axe와 같은 접근성 검사 도구를 사용하여 터치 영역과 관련된 접근성 문제를 확인합니다.    
+- **수동 점검**: 다양한 모바일 기기에서 터치 가능한 요소를 직접 테스트하여 충분한 크기와 반응성을 제공하는지 확인합니다.    
+- **사용자 테스트**: 다양한 사용자 그룹의 피드백을 통해 터치 반응성과 편의성을 평가합니다.    
+
 #### 9. 준수 사례       
 
-**사례1**   
-
-- 아이콘 + 텍스트와 같이 제공되는 경우    
-  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-    <img src="./../images/a11y-mobile/img_a11yMobile_ex_do01.png" alt="">
-    <figcaption>출처 : 무인정보단말기 UI 플랫폼</figcaption>
-  </figure>
+- **충분한 터치 영역 제공**: 버튼 크기가 손가락으로 쉽게 누를 수 있도록 충분히 넓고, 터치 시 명확한 피드백을 제공하는 앱.    
+- **간단한 터치 동작으로 제어 가능**: 복잡한 멀티터치나 추가 동작이 필요하지 않고, 한 번의 터치로 작동하는 기능을 제공하는 앱.    
 
 #### 10. 미준수 사례       
 
-**사례1**   
+- **작은 터치 영역**: 너무 작은 버튼이나 터치 영역이 있어, 사용자가 실수로 다른 요소를 누르게 되는 경우.    
+- **터치 피드백 부재**: 터치 시 명확한 시각적 또는 진동 피드백이 없어 사용자가 누르기를 인식하지 못하는 경우.    
 
 #### 11. 관련 영상       
 <iframe style="width:100%;min-height:315px;" src="https://www.youtube.com/embed/PF2oBsrgRKY?si=TDYOYxCCty814e_E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

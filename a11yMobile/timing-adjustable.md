@@ -7,42 +7,266 @@
    
 ### 응답 시간 조절
 **관련 지침 : 시간 제한이 있는 콘텐츠는 응답 시간을 조절할 수 있어야 한다.**   
-대체 텍스트는 비 텍스트 콘텐츠를 설명하는 중요한 요소로, 접근성을 높이기 위해 필수적으로 제공되어야 합니다. 다양한 테스트 도구를 활용해 웹 및 모바일 앱에서 대체 텍스트를 포함한 접근성 요소를 철저히 점검하고, 사용자 경험을 개선할 수 있습니다. 접근성을 준수함으로써 모든 사용자에게 포용적인 디지털 환경을 제공합니다.   
-[WCAG 2.2 Quick Reference - Non-text Content](https://www.w3.org/WAI/WCAG22/quickref/#non-text-content){: target="_blank"}
+응답 시간 조절 기능을 제공함으로써 사용자는 콘텐츠에 필요한 만큼의 시간을 확보할 수 있고, 특히 접근성이 필요한 사용자에게 필수적인 유연성을 제공합니다. 이러한 방법으로 모든 사용자에게 시간을 조절할 수 있는 옵션을 제공하여 접근성을 높일 수 있습니다.   
+[WCAG 2.2 Quick Reference - Timeouts](https://www.w3.org/WAI/WCAG22/quickref/#timeouts){: target="_blank"}
 
 **키워드**   
-#모바일 앱 접근성, #모바일 앱 접근성 콘텐츠 제작 기법, #WCAG2.2, #대체 텍스트, #비 텍스트 콘텐츠, #accessibilityLabel, #contentDescription, #보조기술과의호환성, #접근성 테스트 도구 활용 점검방법, #스크린 리더, #VoiceOver, #TalkBack, #UIAccessibility API #AccessibilityNodeInfo API, #Swift, #Kotlin, #네이티브 #하이브리드
+#모바일 앱 접근성, #모바일 앱 접근성 콘텐츠 제작 기법, #WCAG2.2, #응답 시간 조절, #시간 제한, #사용자 제어, #타이머 설정, #시간 연장, #인지 장애 사용자, #운동 장애 사용자
 
 #### 1. 필요성        
 
+응답 시간을 조절할 수 있는 기능은 사용자에게 여러 가지 이점을 제공합니다.    
+
+- **사용자 경험 개선**: 사용자가 충분히 콘텐츠를 읽고 이해할 시간을 확보할 수 있어 만족도가 높아집니다.    
+- **모든 사용자 지원**: 물리적 또는 인지적 한계가 있는 사용자는 시간을 더 필요로 할 수 있습니다.    
+- **접근성 향상**: 다양한 속도로 콘텐츠를 이용하는 사용자가 자신의 필요에 맞는 속도로 작업을 완료할 수 있습니다.    
+
 #### 2. 대상       
+
+- **인지 장애 사용자**: 시간 제한이 빠르면 정보를 처리하기 어려운 사용자.    
+- **운동 장애 사용자**: 조작 속도가 느려 시간 제한이 있는 작업을 어려워하는 사용자.    
+- **일반 사용자**: 예기치 못한 상황으로 인해 제한 시간을 늘리고 싶은 사용자에게도 유용합니다.    
 
 #### 3. 체크리스트       
 
+- **시간 연장 옵션 제공**: 시간 제한이 있는 작업을 수행할 때 시간을 연장할 수 있는 옵션을 제공합니다.    
+- **자동 갱신 제한**: 자동으로 시간이 갱신되지 않도록 설정하고, 사용자가 시간을 직접 조절할 수 있도록 합니다.    
+- **타이머 경고 제공**: 시간 제한이 임박했을 때 사용자에게 알림을 제공합니다.    
+- **시간 연장 방법의 다양성**: 사용자 선택에 따라 다양한 방식(추가 버튼 클릭, 자동 연장 등)으로 시간을 연장할 수 있도록 합니다.    
+
 #### 4. 기기별 테스트 방법      
+
+- **iOS**: 시간 연장 기능이 VoiceOver로 제대로 인식되고, 연장 버튼이 터치로 접근 가능한지 확인합니다.    
+- **Android**: TalkBack을 사용하여 시간 연장 기능이 시각적 또는 음성으로 사용자에게 충분히 제공되는지 테스트합니다.    
+- **웹 및 하이브리드 앱(HTML, Vue, React)**: 여러 브라우저와 장치에서 시간 제한이 있는 콘텐츠를 테스트하고, 응답 시간을 쉽게 조절할 수 있는지 확인합니다.    
 
 #### 5. QA 지표       
 
+- **시간 연장 가능 여부**: 사용자 요청에 따라 시간 제한을 연장할 수 있는지 확인합니다.    
+- **경고 제공 여부**: 시간 제한이 임박했을 때 사용자에게 경고가 제공되는지 확인합니다.    
+- **사용자 만족도**: 사용자에게 시간 조절 기능이 적절하게 제공되었는지 평가합니다.     
+
 #### 6. 개발방법     
+
+**iOS (Swift)**    
+
+- 타이머 기능 구현 및 시간 연장 버튼 제공    
+```sh
+import UIKit
+
+class ViewController: UIViewController {
+    var timer: Timer?
+    var timeLeft = 30 // 제한 시간 설정 (예: 30초)
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        startTimer()
+    }
+
+    func startTimer() {
+        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+            self.timeLeft -= 1
+            if self.timeLeft == 0 {
+                timer.invalidate()
+                self.showTimeExpiredAlert()
+            }
+        }
+    }
+
+    func showTimeExpiredAlert() {
+        let alert = UIAlertController(title: "시간 초과", message: "시간을 연장하시겠습니까?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "연장", style: .default) { _ in
+            self.timeLeft = 30 // 시간 연장
+            self.startTimer()
+        })
+        alert.addAction(UIAlertAction(title: "취소", style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+}
+```
+
+**Android (Kotlin)**    
+
+- CountDownTimer 및 시간 연장 다이얼로그 구현    
+```sh
+import android.os.Bundle
+import android.os.CountDownTimer
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
+
+class MainActivity : AppCompatActivity() {
+    private var timeLeftInMillis: Long = 30000 // 30초 제한 시간 설정
+    private lateinit var countDownTimer: CountDownTimer
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        startTimer()
+    }
+
+    private fun startTimer() {
+        countDownTimer = object : CountDownTimer(timeLeftInMillis, 1000) {
+            override fun onTick(millisUntilFinished: Long) {
+                timeLeftInMillis = millisUntilFinished
+            }
+
+            override fun onFinish() {
+                showTimeExpiredDialog()
+            }
+        }.start()
+    }
+
+    private fun showTimeExpiredDialog() {
+        AlertDialog.Builder(this)
+            .setTitle("시간 초과")
+            .setMessage("시간을 연장하시겠습니까?")
+            .setPositiveButton("연장") { _, _ ->
+                timeLeftInMillis = 30000 // 시간 연장
+                startTimer()
+            }
+            .setNegativeButton("취소", null)
+            .show()
+    }
+}
+```
+
+**HTML**    
+
+- 타이머 기능 및 시간 연장 대화상자 제공    
+```sh
+<div id="timer">남은 시간: 30초</div>
+<button id="extendButton" style="display: none;" onclick="extendTime()">시간 연장</button>
+
+<script>
+  let timeLeft = 30;
+  let timerInterval = setInterval(updateTimer, 1000);
+
+  function updateTimer() {
+    document.getElementById("timer").textContent = `남은 시간: ${timeLeft}초`;
+    if (timeLeft <= 0) {
+      clearInterval(timerInterval);
+      showExtendDialog();
+    } else {
+      timeLeft--;
+    }
+  }
+
+  function showExtendDialog() {
+    if (confirm("시간을 연장하시겠습니까?")) {
+      extendTime();
+    }
+  }
+
+  function extendTime() {
+    timeLeft = 30;
+    timerInterval = setInterval(updateTimer, 1000);
+  }
+</script>
+```
+
+**Vue.js**    
+
+- 타이머 및 시간 연장 구현    
+```sh
+<template>
+  <div>
+    <p>남은 시간: {{ timeLeft }}초</p>
+    <button v-if="timeLeft === 0" @click="extendTime">시간 연장</button>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      timeLeft: 30,
+      timer: null,
+    };
+  },
+  mounted() {
+    this.startTimer();
+  },
+  methods: {
+    startTimer() {
+      this.timer = setInterval(() => {
+        if (this.timeLeft > 0) {
+          this.timeLeft--;
+        } else {
+          clearInterval(this.timer);
+          if (confirm("시간을 연장하시겠습니까?")) {
+            this.extendTime();
+          }
+        }
+      }, 1000);
+    },
+    extendTime() {
+      this.timeLeft = 30;
+      this.startTimer();
+    },
+  },
+};
+</script>
+```
+
+**React**    
+
+- 타이머 및 시간 연장 구현    
+```sh
+import React, { useEffect, useState } from 'react';
+
+function App() {
+  const [timeLeft, setTimeLeft] = useState(30);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft((prevTime) => (prevTime > 0 ? prevTime - 1 : prevTime));
+    }, 1000);
+    
+    if (timeLeft === 0) {
+      clearInterval(timer);
+      if (window.confirm("시간을 연장하시겠습니까?")) {
+        extendTime();
+      }
+    }
+    
+    return () => clearInterval(timer);
+  }, [timeLeft]);
+
+  const extendTime = () => setTimeLeft(30);
+
+  return (
+    <div>
+      <p>남은 시간: {timeLeft}초</p>
+      {timeLeft === 0 && <button onClick={extendTime}>시간 연장</button>}
+    </div>
+  );
+}
+
+export default App;
+```
 
 #### 7. 점검 기준    
 
+- **시간 연장 기능 확인**: 시간 제한이 있는 콘텐츠에 대해 연장 기능이 제공되는지 확인합니다.    
+- **경고 제공 여부**: 시간 제한이 임박했을 때 사용자에게 경고가 제공되는지 점검합니다.    
+- **사용자 제어 기능**: 시간 연장 방식이 사용자에게 제어할 수 있는 방식으로 제공되는지 확인합니다.    
 
 #### 8. 점검 방법     
 
+- **자동화 도구**: 접근성 검사 도구로 시간 연장 기능이 제대로 작동하는지 확인합니다.    
+- **수동 점검**: 타이머가 설정된 콘텐츠에서 시간 연장 기능이 적절하게 제공되는지 직접 테스트합니다.    
+- **사용자 테스트**: 사용자 피드백을 통해 시간 조절 기능이 충분히 이해되고 적절히 제공되는지 확인합니다.    
+
 #### 9. 준수 사례       
 
-**사례1**   
-
-- 아이콘 + 텍스트와 같이 제공되는 경우    
-  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-    <img src="./../images/a11y-mobile/img_a11yMobile_ex_do01.png" alt="">
-    <figcaption>출처 : 무인정보단말기 UI 플랫폼</figcaption>
-  </figure>
+- **타이머 설정 및 시간 연장 기능 제공**: 사용자가 필요한 경우 시간을 연장할 수 있는 옵션이 있는 타이머 기능.    
+- **명확한 경고 제공**: 시간 제한이 임박했을 때 사용자에게 시각적 또는 청각적 경고를 제공하여 충분히 준비할 시간을 주는 사례.    
 
 #### 10. 미준수 사례       
 
-**사례1**   
+- **시간 연장 옵션 미제공**: 사용자가 요청할 수 있는 시간 연장 기능이 없이 자동으로 제한 시간이 종료되는 경우.    
+- **경고 미제공**: 시간 제한이 임박했음에도 사용자에게 알림이나 경고가 제공되지 않아 제한 시간이 종료되는 경우.     
 
 #### 11. 관련 영상       
 <iframe style="width:100%;min-height:315px;" src="https://www.youtube.com/embed/erHH3hX9OgI?si=SsARKrXEhpO8ZoiJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

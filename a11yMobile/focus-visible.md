@@ -7,42 +7,177 @@
    
 ### 초점
 **관련 지침 : 의미나 기능을 갖는 모든 사용자 인터페이스 컴포넌트에는 초점(focus)이 적용되고, 초점은 논리적인 순서로 이동되어야 한다.**   
-대체 텍스트는 비 텍스트 콘텐츠를 설명하는 중요한 요소로, 접근성을 높이기 위해 필수적으로 제공되어야 합니다. 다양한 테스트 도구를 활용해 웹 및 모바일 앱에서 대체 텍스트를 포함한 접근성 요소를 철저히 점검하고, 사용자 경험을 개선할 수 있습니다. 접근성을 준수함으로써 모든 사용자에게 포용적인 디지털 환경을 제공합니다.   
-[WCAG 2.2 Quick Reference - Non-text Content](https://www.w3.org/WAI/WCAG22/quickref/#non-text-content){: target="_blank"}
+모바일 앱과 웹 애플리케이션에서 **초점(Focus)** 은 사용자가 상호작용하는 요소에 명확하게 접근할 수 있도록 하고, 논리적인 순서로 초점이 이동되게 하여 사용성을 개선하는 중요한 접근성 원칙입니다. 특히, 키보드 사용자나 스크린 리더 사용자에게 필수적입니다.   
+[WCAG 2.2 Quick Reference - Focus Order](https://www.w3.org/WAI/WCAG22/quickref/#focus-order){: target="_blank"}
 
 **키워드**   
-#모바일 앱 접근성, #모바일 앱 접근성 콘텐츠 제작 기법, #WCAG2.2, #대체 텍스트, #비 텍스트 콘텐츠, #accessibilityLabel, #contentDescription, #보조기술과의호환성, #접근성 테스트 도구 활용 점검방법, #스크린 리더, #VoiceOver, #TalkBack, #UIAccessibility API #AccessibilityNodeInfo API, #Swift, #Kotlin, #네이티브 #하이브리드
+#모바일 앱 접근성, #모바일 앱 접근성 콘텐츠 제작 기법, #WCAG2.2, #초점, #논리적 순서, #키보드 내비게이션, #스크린 리더, #TalkBack, #VoiceOver
 
 #### 1. 필요성        
 
+초점 이동이 논리적 순서로 설정되지 않으면 사용자 경험이 혼란스러워지고, 특히 키보드 사용자와 스크린 리더 사용자는 주요 기능을 놓칠 위험이 있습니다. 초점이 논리적으로 이동함으로써 사용자가 흐름을 예측할 수 있고, 중요한 요소에 쉽게 접근할 수 있게 됩니다.    
+
 #### 2. 대상       
+
+- **키보드 사용자**: 마우스를 사용하지 않고 키보드로만 탐색하는 사용자.    
+- **스크린 리더 사용자**: 초점을 통해 콘텐츠의 위치를 추적하는 시각 장애인.    
+- **모든 사용자**: 특히 폼 입력이나 대화형 콘텐츠가 많은 경우 초점 관리가 중요합니다.    
 
 #### 3. 체크리스트       
 
+- **논리적 초점 순서**: 모든 인터페이스 요소가 논리적인 순서로 초점이 이동하도록 설정되어 있는지 확인합니다.    
+- **초점 표시**: 초점이 위치한 요소가 시각적으로 명확하게 표시되도록 합니다.    
+- **키보드 접근성 보장**: 모든 중요한 인터페이스 요소가 키보드로 접근 가능해야 합니다.   
+- **초점 고정 방지**: 특정 요소에 초점이 고정되지 않고 자연스럽게 다음 요소로 이동하는지 점검합니다.    
+
 #### 4. 기기별 테스트 방법      
+
+- **iOS**: VoiceOver를 사용하여 초점 이동이 논리적인 순서로 이동되는지 확인합니다.    
+- **Android**: TalkBack 활성화 상태에서 초점이 순서대로 이동되는지, 모든 기능이 초점을 통해 접근 가능한지 점검합니다.    
+- **웹 및 하이브리드 앱(HTML, Vue, React)**: 여러 브라우저 및 장치에서 Tab 키와 Shift + Tab을 사용하여 논리적 순서로 초점이 이동되는지 확인합니다.    
 
 #### 5. QA 지표       
 
+- **논리적 초점 이동률**: 초점이 순차적으로 논리적인 순서로 이동하는지 확인합니다.    
+- **초점 표시 명확성**: 초점이 위치한 요소가 시각적으로 명확하게 표시되는지 점검합니다.    
+- **키보드 테스트 통과율**: 모든 중요한 요소가 키보드로 접근 가능한지 여부를 확인합니다.    
+
 #### 6. 개발방법     
 
+**iOS (Swift)**     
+
+- UIAccessibility와 focusable 속성을 사용하여 초점 관리     
+```sh
+import UIKit
+
+class ViewController: UIViewController {
+    @IBOutlet weak var buttonOne: UIButton!
+    @IBOutlet weak var buttonTwo: UIButton!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // 접근성 설정
+        buttonOne.isAccessibilityElement = true
+        buttonTwo.isAccessibilityElement = true
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        UIAccessibility.post(notification: .screenChanged, argument: buttonOne)
+    }
+}
+```
+
+**Android (Kotlin)**    
+
+- focusable 속성 및 ViewCompat을 사용하여 초점 관리    
+```sh
+import android.os.Bundle
+import android.view.View
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
+
+class MainActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        val buttonOne: View = findViewById(R.id.buttonOne)
+        val buttonTwo: View = findViewById(R.id.buttonTwo)
+
+        // 접근성 및 초점 설정
+        ViewCompat.setAccessibilityDelegate(buttonOne, object : ViewCompat.AccessibilityDelegateCompat() {
+            override fun onInitializeAccessibilityNodeInfo(host: View, info: AccessibilityNodeInfoCompat) {
+                super.onInitializeAccessibilityNodeInfo(host, info)
+                info.isFocusable = true
+            }
+        })
+        buttonOne.requestFocus() // 첫 번째 버튼에 초점 설정
+    }
+}
+```
+
+**HTML**    
+
+- HTML에서 Tab 순서 설정 및 JavaScript로 초점 이동 제어    
+```sh
+<button id="buttonOne">버튼 1</button>
+<button id="buttonTwo">버튼 2</button>
+<button id="buttonThree">버튼 3</button>
+
+<script>
+  document.getElementById("buttonOne").focus(); // 초기 초점 설정
+</script>
+```
+
+**Vue.js**    
+
+```sh
+<template>
+  <div>
+    <button ref="buttonOne">버튼 1</button>
+    <button ref="buttonTwo">버튼 2</button>
+    <button ref="buttonThree">버튼 3</button>
+  </div>
+</template>
+
+<script>
+export default {
+  mounted() {
+    this.$refs.buttonOne.focus(); // 초기 초점 설정
+  },
+};
+</script>
+```
+
+**React**    
+
+```sh
+import React, { useEffect, useRef } from 'react';
+
+function App() {
+  const buttonOneRef = useRef(null);
+
+  useEffect(() => {
+    buttonOneRef.current.focus(); // 초기 초점 설정
+  }, []);
+
+  return (
+    <div>
+      <button ref={buttonOneRef}>버튼 1</button>
+      <button>버튼 2</button>
+      <button>버튼 3</button>
+    </div>
+  );
+}
+
+export default App;
+```
+
 #### 7. 점검 기준    
+
+- **초점 이동의 논리성**: 모든 요소에 초점이 논리적인 순서로 이동하는지 확인합니다.    
+- **시각적 초점 표시**: 초점이 위치한 요소가 명확하게 시각적으로 표시되는지 점검합니다.    
+- **키보드 접근성**: 키보드를 사용하여 모든 요소에 접근할 수 있는지 확인합니다.    
 
 
 #### 8. 점검 방법     
 
+- **자동화 도구**: Axe, Lighthouse 등의 접근성 도구를 사용하여 초점 순서 및 접근성 문제를 확인합니다.    
+- **수동 점검**: 키보드로만 탐색하며 모든 초점 요소에 접근할 수 있는지, 초점이 논리적 순서로 이동하는지 확인합니다.    
+- **스크린 리더 테스트**: VoiceOver, TalkBack을 사용하여 초점 순서가 논리적이며 스크린 리더 사용 시 방해가 없는지 점검합니다.    
+
 #### 9. 준수 사례       
 
-**사례1**   
-
-- 아이콘 + 텍스트와 같이 제공되는 경우    
-  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-    <img src="./../images/a11y-mobile/img_a11yMobile_ex_do01.png" alt="">
-    <figcaption>출처 : 무인정보단말기 UI 플랫폼</figcaption>
-  </figure>
+- **논리적 순서의 폼 요소**: 폼 입력 필드가 위에서 아래로 논리적인 순서로 초점이 이동하는 경우.    
+- **초점 표시**: 사용자가 탭할 때마다 버튼이나 링크가 명확한 초점 표시를 통해 시각적으로 강조되는 경우.    
 
 #### 10. 미준수 사례       
 
-**사례1**   
+- **비논리적인 초점 이동**: 폼 필드가 논리적인 순서가 아닌 임의의 순서로 초점이 이동하는 경우.    
+- **초점 표시 부재**: 초점이 위치한 요소에 시각적인 표시가 없어서 사용자가 현재 초점 위치를 인지하지 못하는 경우.     
 
 #### 11. 관련 영상       
 <iframe style="width:100%;min-height:315px;" src="https://www.youtube.com/embed/sxaElogrIgs?si=vnuvTKdloFq7TQ4z" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

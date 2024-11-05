@@ -11,7 +11,7 @@
 [WCAG 2.2 Quick Reference - Text Resize](https://www.w3.org/WAI/WCAG22/quickref/#text-resize){: target="_blank"}
 
 **키워드**   
-#모바일 앱 접근성, #모바일 앱 접근성 콘텐츠 제작 기법, #WCAG2.2, #시각 장애인, #고령 사용자, #인지 장애인, #비장애인 포함 전체 사용자, #폰트 크기 조절, #가독성, #사용자 정의 폰트, #Dynamic Type, #Accessibility Text Scaling
+#모바일 앱 접근성, #모바일 앱 접근성 콘텐츠 제작 기법, #WCAG2.2, #폰트 관련 기능의 활용, #시각 장애인, #고령 사용자, #인지 장애인, #비장애인 포함 전체 사용자, #폰트 크기 조절, #가독성, #사용자 정의 폰트, #Dynamic Type, #Accessibility Text Scaling
 
 #### 1. 필요성        
 

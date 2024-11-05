@@ -6,42 +6,116 @@
 
 ### 깜박거림의 사용 제한
 **관련 지침 : 깜빡이거나 번쩍이는 콘텐츠를 제공하지 않아야 한다.**   
-대체 텍스트는 비 텍스트 콘텐츠를 설명하는 중요한 요소로, 접근성을 높이기 위해 필수적으로 제공되어야 합니다. 다양한 테스트 도구를 활용해 웹 및 모바일 앱에서 대체 텍스트를 포함한 접근성 요소를 철저히 점검하고, 사용자 경험을 개선할 수 있습니다. 접근성을 준수함으로써 모든 사용자에게 포용적인 디지털 환경을 제공합니다.   
-[WCAG 2.2 Quick Reference - Non-text Content](https://www.w3.org/WAI/WCAG22/quickref/#non-text-content){: target="_blank"}
+모바일 앱과 웹 애플리케이션에서 깜박이거나 번쩍이는 콘텐츠를 제한하는 것은 매우 중요한 접근성 원칙입니다. 특정 시각적 효과는 사용자의 건강에 영향을 미칠 수 있으며, 특히 발작이나 광민감성 발작을 유발할 수 있는 사용자가 위험에 처할 수 있습니다.   
+[WCAG 2.2 Quick Reference - Flashing Content](https://www.w3.org/WAI/WCAG22/quickref/#seizures-and-physical-reactions){: target="_blank"}
 
 **키워드**   
-#모바일 앱 접근성, #모바일 앱 접근성 콘텐츠 제작 기법, #WCAG2.2, #대체 텍스트, #비 텍스트 콘텐츠, #accessibilityLabel, #contentDescription, #보조기술과의호환성, #접근성 테스트 도구 활용 점검방법, #스크린 리더, #VoiceOver, #TalkBack, #UIAccessibility API #AccessibilityNodeInfo API, #Swift, #Kotlin, #네이티브 #하이브리드
+#모바일 앱 접근성, #모바일 앱 접근성 콘텐츠 제작 기법, #WCAG2.2, #깜빡거림의 사용 제한, #깜빡임, #번쩍임, #광민감성 발작, #시각적 자극, #발작 예방, #고령 사용자
 
 #### 1. 필요성        
 
+깜박이거나 번쩍이는 콘텐츠는 특정 사용자 그룹에게 심각한 건강 문제를 일으킬 수 있습니다. 특히 광민감성 발작이 있는 사용자에게는 3Hz에서 60Hz 사이의 깜박임이 발작을 유발할 수 있습니다. 따라서 콘텐츠의 깜박임을 제한하거나 제거하는 것은 이러한 위험을 줄이는 데 필수적입니다.    
+
 #### 2. 대상       
+
+- **광민감성 발작 위험이 있는 사용자**: 특정 빈도의 깜박임에 민감한 사용자.   
+- **모든 사용자**: 깜박이는 콘텐츠는 시각적으로 불편함을 유발할 수 있으므로 모든 사용자에게 영향을 미칠 수 있습니다.   
+- **고령 사용자**: 번쩍이는 콘텐츠는 가독성을 저하시키고 혼란을 초래할 수 있습니다.   
 
 #### 3. 체크리스트       
 
+- **깜박임 빈도 제한**: 콘텐츠의 깜박임 빈도가 초당 3회 미만이거나 60회 초과인지를 확인합니다.    
+- **자동 재생 제한**: 번쩍이는 콘텐츠가 자동으로 재생되지 않도록 설정합니다.    
+- **사용자 제어 기능**: 사용자가 깜박이는 콘텐츠를 중지하거나 숨길 수 있는 옵션을 제공합니다.    
+- **색상 대비 및 조명 효과**: 높은 대비의 색상과 강한 조명 효과를 피합니다.    
+
 #### 4. 기기별 테스트 방법      
+
+- **iOS**: 다양한 iOS 기기에서 깜박임 및 번쩍임이 있는 콘텐츠가 적절히 제한되는지 확인합니다.    
+- **Android**: Android 장치에서 콘텐츠가 깜박이지 않도록 하고, 필요한 경우 사용자 제어 기능이 작동하는지 점검합니다.    
+- **웹 및 하이브리드 앱(HTML, Vue, React)**: 브라우저 및 화면 크기에서 깜박임이나 번쩍임이 발생하지 않는지 확인합니다.    
 
 #### 5. QA 지표       
 
+- **깜박임 감지율**: 앱이나 웹 페이지의 콘텐츠에서 깜박임이 발생하는지 여부를 확인합니다.    
+- **사용자 피드백**: 사용자 테스트를 통해 깜박임의 시각적 불편함 여부를 평가합니다.    
+- **자동화 테스트 통과율**: 접근성 검사 도구를 통해 깜박임 관련 기준을 준수하는지 확인합니다.    
+
 #### 6. 개발방법     
+
+- **CSS 애니메이션 제한**: CSS 애니메이션 사용 시 깜박임 효과를 제한합니다.    
+```sh
+.no-blink-animation {
+  animation: none;
+}
+```
+
+- **JavaScript 애니메이션 제어**: 깜박임을 유발할 수 있는 JavaScript 애니메이션은 주의하여 사용합니다.    
+```sh
+let flashElement = document.getElementById('flashElement');
+let interval = setInterval(() => {
+  flashElement.style.visibility = flashElement.style.visibility === 'hidden' ? 'visible' : 'hidden';
+}, 100); // 이 예제는 10Hz의 깜박임을 유발할 수 있어 피해야 합니다.
+
+// 제한 필요: 안전한 빈도로 조정하거나 제거.
+```
+
+- **Vue.js**: 애니메이션 사용 시 사용자 제어를 추가하여 번쩍임을 줄입니다.    
+```sh
+<template>
+  <div v-if="!flashDisabled" class="flash-content">주의: 이 콘텐츠는 깜박일 수 있습니다.</div>
+  <button @click="stopFlashing">깜박임 중지</button>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      flashDisabled: false,
+    };
+  },
+  methods: {
+    stopFlashing() {
+      this.flashDisabled = true;
+    }
+  }
+};
+</script>
+
+<style>
+  .flash-content {
+    animation: flash-animation 0.2s infinite;
+  }
+
+  @keyframes flash-animation {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+</style>
+```
+
 
 #### 7. 점검 기준    
 
+- **깜박임 및 발작 예방 기준 준수 여부**: 콘텐츠가 초당 3회에서 60회 사이의 빈도로 깜박이지 않는지 확인합니다.    
+- **사용자 제어 기능 존재 여부**: 번쩍임이 있을 경우 사용자가 이를 중지할 수 있는 옵션이 있는지 점검합니다.    
+- **디자인 가이드라인 준수**: 시각적 자극을 피하는 디자인 가이드라인을 따르는지 확인합니다.    
 
 #### 8. 점검 방법     
 
+- **자동화 도구**: Lighthouse, Axe 등과 같은 접근성 검사 도구를 사용하여 깜박임 문제가 있는지를 확인합니다.    
+- **수동 점검**: 실제 기기에서 콘텐츠를 테스트하여 깜박임 및 번쩍임이 발생하지 않도록 시각적으로 점검합니다.    
+- **사용자 테스트**: 사용자에게 깜박임이 있는지 여부에 대한 피드백을 받아 점검합니다.   
+
 #### 9. 준수 사례       
 
-**사례1**   
-
-- 아이콘 + 텍스트와 같이 제공되는 경우    
-  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-    <img src="./../images/a11y-mobile/img_a11yMobile_ex_do01.png" alt="">
-    <figcaption>출처 : 무인정보단말기 UI 플랫폼</figcaption>
-  </figure>
+- **정적 이미지 사용**: 중요한 콘텐츠에 깜박임이 아닌 정적 이미지를 사용하는 경우.    
+- **사용자 제어 옵션 제공**: 사용자에게 깜박이는 효과를 중지할 수 있는 버튼을 제공하는 앱.   
 
 #### 10. 미준수 사례       
 
-**사례1**   
+- **자동 깜박임 애니메이션**: 사용자가 제어할 수 없는 깜박이는 광고나 로딩 애니메이션을 사용하는 경우.    
+- **높은 빈도의 깜박임**: 3Hz에서 60Hz 사이의 빈도로 깜박이는 콘텐츠를 제공하여 사용자의 건강을 위협하는 경우.    
 
 #### 11. 관련 영상       
 <iframe style="width:100%;min-height:315px;" src="https://www.youtube.com/embed/jyfP6mqbu2o?si=JxgBBRRJ7vwJ8H5E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

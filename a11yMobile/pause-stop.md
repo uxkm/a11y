@@ -7,42 +7,148 @@
    
 ### 자동재생 금지
 **관련 지침 : 자동으로 재생되는 배경음을 사용하지 않아야 한다.**   
-대체 텍스트는 비 텍스트 콘텐츠를 설명하는 중요한 요소로, 접근성을 높이기 위해 필수적으로 제공되어야 합니다. 다양한 테스트 도구를 활용해 웹 및 모바일 앱에서 대체 텍스트를 포함한 접근성 요소를 철저히 점검하고, 사용자 경험을 개선할 수 있습니다. 접근성을 준수함으로써 모든 사용자에게 포용적인 디지털 환경을 제공합니다.   
-[WCAG 2.2 Quick Reference - Non-text Content](https://www.w3.org/WAI/WCAG22/quickref/#non-text-content){: target="_blank"}
+모바일 앱과 웹 애플리케이션에서 자동 재생되는 배경음을 제한하는 것은 접근성의 중요한 원칙 중 하나입니다. 자동 재생 음향은 사용자의 의도와 관계없이 콘텐츠를 방해하고, 특히 스크린 리더 사용자나 청각 장애가 있는 사용자를 혼란스럽게 할 수 있습니다.   
+[WCAG 2.2 Quick Reference - Audio Control](https://www.w3.org/WAI/WCAG22/quickref/#audio-control){: target="_blank"}
 
 **키워드**   
-#모바일 앱 접근성, #모바일 앱 접근성 콘텐츠 제작 기법, #WCAG2.2, #대체 텍스트, #비 텍스트 콘텐츠, #accessibilityLabel, #contentDescription, #보조기술과의호환성, #접근성 테스트 도구 활용 점검방법, #스크린 리더, #VoiceOver, #TalkBack, #UIAccessibility API #AccessibilityNodeInfo API, #Swift, #Kotlin, #네이티브 #하이브리드
+#모바일 앱 접근성, #모바일 앱 접근성 콘텐츠 제작 기법, #WCAG2.2, #자동재생 금지, #스크린 리더 사용자, #청각 장애 사용자, #모든 사용자, #자동 재생, #사용자 제어 기능, #자동 재생, #오디오 중지, #스크린 리더 호환성   
 
 #### 1. 필요성        
 
+자동 재생되는 배경음은 사용자가 원치 않는 음향 경험을 겪게 하고, 특히 스크린 리더 사용자에게는 정보를 혼란스럽게 만드는 주요 요인이 됩니다. 또한 자동 재생 음향은 특정 환경에서 불편함을 유발할 수 있으므로, 사용자가 직접 오디오를 선택적으로 재생할 수 있도록 지원하는 것이 필요합니다.    
+
 #### 2. 대상       
+
+- **스크린 리더 사용자**: 배경음이 자동으로 재생되면 스크린 리더 음성과 겹쳐져 혼란을 유발할 수 있습니다.    
+- **청각 장애 사용자**: 불필요한 배경음은 사용자 경험에 도움이 되지 않으며, 접근성에 반합니다.    
+- **모든 사용자**: 조용한 환경에서 앱을 사용하는 모든 사용자에게 방해가 될 수 있습니다.    
 
 #### 3. 체크리스트       
 
+- **자동 재생 음향 금지**: 페이지가 로드되었을 때 자동으로 배경음이 재생되지 않도록 설정합니다.    
+- **사용자 제어 기능 제공**: 사용자에게 오디오 재생을 시작하거나 중지할 수 있는 버튼을 제공합니다.    
+- **음량 제어**: 배경음이 필요한 경우, 음량을 사용자가 조정할 수 있도록 합니다.    
+- **화면 전환 시 오디오 중지**: 다른 페이지로 이동할 때 배경음이 자동으로 중지되도록 설정합니다.   
+
 #### 4. 기기별 테스트 방법      
+
+- **iOS**: 배경음이 자동으로 재생되지 않도록 설정하고, VoiceOver 사용 시 스크린 리더의 음성이 방해받지 않도록 합니다.    
+- **Android**: TalkBack 활성화 상태에서 자동 재생이 없는지 확인하고, 필요 시 오디오 제어 옵션을 확인합니다.    
+- **웹 및 하이브리드 앱(HTML, Vue, React)**: 브라우저 및 여러 장치에서 페이지가 로드될 때 오디오가 자동으로 재생되지 않는지 확인합니다.    
 
 #### 5. QA 지표       
 
+- **자동 재생 감지율**: 페이지가 로드될 때 오디오가 자동으로 재생되지 않는지 여부를 확인합니다.    
+- **사용자 제어 기능 점검**: 오디오를 시작하고 중지할 수 있는 옵션이 있는지 점검합니다.    
+- **사용자 피드백 수집**: 자동 재생으로 인해 사용자가 불편을 느끼지 않는지 피드백을 확인합니다.    
+
 #### 6. 개발방법     
+
+- **HTML5 오디오 태그 활용**: autoplay 속성을 사용하지 않도록 하여 자동 재생을 방지합니다.    
+```sh
+<audio id="backgroundAudio" controls>
+    <source src="background-music.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+</audio>
+```
+
+- **JavaScript로 제어하는 오디오 재생** : 자동 재생을 방지하고, 사용자가 원하는 경우 오디오를 재생할 수 있도록 JavaScript를 사용합니다.    
+```sh
+const audio = document.getElementById('backgroundAudio');
+const playButton = document.getElementById('playButton');
+const stopButton = document.getElementById('stopButton');
+
+playButton.addEventListener('click', () => {
+    audio.play();
+});
+
+stopButton.addEventListener('click', () => {
+    audio.pause();
+    audio.currentTime = 0;
+});
+```
+
+- **Vue.js 오디오 제어 컴포넌트**
+```sh
+<template>
+  <div>
+    <button @click="playAudio">오디오 재생</button>
+    <button @click="stopAudio">오디오 중지</button>
+    <audio ref="backgroundAudio" :src="audioSrc"></audio>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      audioSrc: 'background-music.mp3',
+    };
+  },
+  methods: {
+    playAudio() {
+      this.$refs.backgroundAudio.play();
+    },
+    stopAudio() {
+      this.$refs.backgroundAudio.pause();
+      this.$refs.backgroundAudio.currentTime = 0;
+    },
+  },
+};
+</script>
+```
+
+
+- **React 오디오 제어 컴포넌트**    
+```sh
+import React, { useRef } from 'react';
+
+function App() {
+  const audioRef = useRef(null);
+
+  const playAudio = () => {
+    audioRef.current.play();
+  };
+
+  const stopAudio = () => {
+    audioRef.current.pause();
+    audioRef.current.currentTime = 0;
+  };
+
+  return (
+    <div>
+      <button onClick={playAudio}>오디오 재생</button>
+      <button onClick={stopAudio}>오디오 중지</button>
+      <audio ref={audioRef} src="background-music.mp3" />
+    </div>
+  );
+}
+
+export default App;
+```
+
 
 #### 7. 점검 기준    
 
+- **자동 재생 방지 여부**: 배경음이 페이지 로드 시 자동으로 재생되지 않는지 확인합니다.    
+- **사용자 제어 기능**: 오디오를 시작 및 중지할 수 있는 옵션이 존재하는지 확인합니다.    
+- **스크린 리더 호환성**: 스크린 리더 사용자에게 방해가 되지 않도록 설정되어 있는지 확인합니다.    
 
 #### 8. 점검 방법     
 
+- **자동화 도구**: Axe와 같은 접근성 검사 도구를 사용하여 자동 재생 문제가 있는지를 확인합니다.    
+- **수동 점검**: 여러 환경에서 페이지를 로드하여 배경음이 자동으로 재생되지 않도록 설정했는지 시각적으로 확인합니다.    
+- **사용자 테스트**: 다양한 사용자 그룹을 대상으로 자동 재생으로 인한 불편함 여부를 점검합니다.    
+
 #### 9. 준수 사례       
 
-**사례1**   
-
-- 아이콘 + 텍스트와 같이 제공되는 경우    
-  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-    <img src="./../images/a11y-mobile/img_a11yMobile_ex_do01.png" alt="">
-    <figcaption>출처 : 무인정보단말기 UI 플랫폼</figcaption>
-  </figure>
+- **사용자 제어 제공**: 배경음을 원할 경우에만 사용자가 재생할 수 있도록, 명시적인 재생 버튼을 제공하는 앱.    
+- **자동 재생 금지**: 페이지가 로드될 때 자동으로 재생되지 않고, 사용자가 원할 때만 배경음이 재생되도록 구현된 앱.    
 
 #### 10. 미준수 사례       
 
-**사례1**   
+- **자동 재생 음향**: 사용자가 페이지를 방문할 때 배경음이 자동으로 재생되는 경우.    
+- **재생 중지 기능 부재**: 배경음이 자동 재생되며, 사용자가 이를 중지할 방법이 제공되지 않은 경우.     
 
 #### 11. 관련 영상       
 <iframe style="width:100%;min-height:315px;" src="https://www.youtube.com/embed/2yZU3tdP97M?si=BIq22tQ_2YbqgD9_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

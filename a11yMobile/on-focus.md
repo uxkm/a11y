@@ -6,42 +6,184 @@
 
 ### 예측가능성
 **관련 지침 : 사용자가 의도하지 않는 화면 전환이나 이벤트 등이 실행되는 경우 사용자가 이해할 수 있는 방법으로 제공되어야 한다.**   
-대체 텍스트는 비 텍스트 콘텐츠를 설명하는 중요한 요소로, 접근성을 높이기 위해 필수적으로 제공되어야 합니다. 다양한 테스트 도구를 활용해 웹 및 모바일 앱에서 대체 텍스트를 포함한 접근성 요소를 철저히 점검하고, 사용자 경험을 개선할 수 있습니다. 접근성을 준수함으로써 모든 사용자에게 포용적인 디지털 환경을 제공합니다.   
-[WCAG 2.2 Quick Reference - Non-text Content](https://www.w3.org/WAI/WCAG22/quickref/#non-text-content){: target="_blank"}
+모바일 앱과 웹 애플리케이션에서 예측가능성은 사용자가 예상치 못한 화면 전환이나 이벤트에 당황하지 않도록 하여 사용 경험을 높이는 중요한 접근성 원칙입니다. 예측 가능한 인터페이스는 특히 인지 장애가 있는 사용자나 기술에 익숙하지 않은 사용자에게 필수적입니다.    
+[WCAG 2.2 Quick Reference - Predictability](https://www.w3.org/WAI/WCAG22/quickref/#predictable){: target="_blank"}
 
 **키워드**   
-#모바일 앱 접근성, #모바일 앱 접근성 콘텐츠 제작 기법, #WCAG2.2, #대체 텍스트, #비 텍스트 콘텐츠, #accessibilityLabel, #contentDescription, #보조기술과의호환성, #접근성 테스트 도구 활용 점검방법, #스크린 리더, #VoiceOver, #TalkBack, #UIAccessibility API #AccessibilityNodeInfo API, #Swift, #Kotlin, #네이티브 #하이브리드
+#모바일 앱 접근성, #모바일 앱 접근성 콘텐츠 제작 기법, #WCAG2.2, #예측가능성, #자동 전환 방지, # 사용자 제어, #이벤트 이해 가능성, #피드백, #인지 장애 사용자
 
 #### 1. 필요성        
 
+예측 불가능한 화면 전환이나 이벤트는 사용자가 혼란을 느끼고, 심각한 경우 중요한 정보나 기능을 놓치게 만들 수 있습니다. 특히, 사용자의 의도와 상관없이 화면이 전환되거나 특정 이벤트가 발생하면 인지 장애가 있는 사용자에게는 불편을 초래하며, 스크린 리더 사용자에게는 정보 접근을 어렵게 합니다.    
+
 #### 2. 대상       
+
+- **인지 장애 사용자**: 갑작스러운 화면 전환이나 이벤트가 혼란을 유발할 수 있는 사용자.    
+- **스크린 리더 사용자**: 자동으로 전환되는 화면이나 예고 없이 발생하는 이벤트는 스크린 리더 사용자를 혼란스럽게 만듭니다.    
+- **모든 사용자**: 자동 화면 전환이나 불필요한 이벤트는 모든 사용자의 경험에 불편을 줄 수 있습니다.    
 
 #### 3. 체크리스트       
 
+- **자동 화면 전환 방지**: 사용자가 원하지 않는 경우 자동으로 화면이 전환되지 않도록 설정합니다.    
+- **예고된 이벤트**: 화면 전환이나 이벤트 발생 시 사용자에게 미리 예고합니다.    
+- **사용자 제어 제공**: 자동 전환이 필요한 경우, 이를 중지하거나 선택할 수 있는 옵션을 제공합니다.     
+- **화면 변경 피드백**: 화면 전환 시 피드백을 통해 사용자가 알 수 있도록 합니다.    
+
 #### 4. 기기별 테스트 방법      
+
+- **iOS**: 화면 전환과 이벤트가 VoiceOver 사용자에게 방해가 되지 않는지 확인합니다.    
+- **Android**: TalkBack 활성화 상태에서 의도하지 않은 화면 전환이 발생하지 않도록 설정을 점검합니다.    
+- **웹 및 하이브리드 앱(HTML, Vue, React)**: 여러 브라우저 및 장치에서 화면 전환 및 이벤트가 예측 가능하고 사용자의 제어 하에 있는지 확인합니다.    
 
 #### 5. QA 지표       
 
+- **자동 화면 전환 제어 여부**: 사용자가 자동 전환을 예측하고 제어할 수 있는지 확인합니다.    
+- **사용자 피드백 수집**: 사용자에게 화면 전환이나 이벤트가 예상 가능했는지 여부에 대한 의견을 받습니다.    
+- **스크린 리더 테스트 통과율**: 스크린 리더 환경에서 예기치 않은 화면 전환이나 이벤트가 발생하지 않도록 설정했는지 확인합니다.    
+
 #### 6. 개발방법     
 
+**iOS (Swift)**    
+
+- **UIAlertController를 통한 사용자 확인 요청**: 사용자에게 화면 전환을 알리고 확인을 요청합니다.    
+```sh
+import UIKit
+
+class ViewController: UIViewController {
+    func confirmTransition() {
+        let alert = UIAlertController(title: "알림", message: "페이지를 전환하시겠습니까?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "취소", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "확인", style: .default, handler: { _ in
+            self.performSegue(withIdentifier: "showNextPage", sender: self)
+        }))
+        present(alert, animated: true, completion: nil)
+    }
+}
+```
+
+**Android (Kotlin)**    
+
+- **AlertDialog를 이용한 사용자 확인**: 화면 전환 전 사용자 동의를 구하여 예기치 않은 전환을 방지합니다.     
+```sh
+import android.content.DialogInterface
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
+
+class MainActivity : AppCompatActivity() {
+
+    private fun confirmTransition() {
+        val builder = AlertDialog.Builder(this)
+        builder.setMessage("페이지를 전환하시겠습니까?")
+            .setPositiveButton("확인") { _, _ ->
+                // 다음 페이지로 이동
+                startActivity(Intent(this, NextActivity::class.java))
+            }
+            .setNegativeButton("취소", null)
+        builder.create().show()
+    }
+}
+```
+
+**HTML/JavaScript**    
+
+- **사용자 제어를 포함한 경고 제공**: 화면 전환을 위한 버튼 클릭 시 사용자에게 경고 메시지를 표시합니다.     
+```sh
+<button onclick="confirmTransition()">페이지 전환</button>
+
+<script>
+  function confirmTransition() {
+    const userConfirmed = confirm("페이지를 전환하시겠습니까?");
+    if (userConfirmed) {
+      window.location.href = "newpage.html";
+    }
+  }
+</script>
+```
+
+**Vue.js**    
+
+- **자동 이벤트 중지 및 사용자 알림 제공**: 페이지가 자동으로 전환되지 않도록 하고, 사용자에게 알림을 제공합니다.     
+```sh
+<template>
+  <div>
+    <button @click="confirmNavigation">다른 페이지로 이동</button>
+    <p v-if="showMessage">{{ message }}</p>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      showMessage: false,
+      message: "페이지가 전환되었습니다.",
+    };
+  },
+  methods: {
+    confirmNavigation() {
+      if (confirm("페이지를 전환하시겠습니까?")) {
+        this.showMessage = true;
+        // 실제 페이지 전환 로직
+        // this.$router.push('/newpage');
+      }
+    },
+  },
+};
+</script>
+```
+
+**React**    
+
+- **경고 메시지를 통해 화면 전환 제어**     
+```sh
+import React, { useState } from 'react';
+
+function App() {
+  const [message, setMessage] = useState("");
+
+  const handleNavigation = () => {
+    const userConfirmed = window.confirm("페이지를 전환하시겠습니까?");
+    if (userConfirmed) {
+      setMessage("페이지가 전환되었습니다.");
+      // 실제 페이지 전환 로직
+      // window.location.href = "/newpage";
+    }
+  };
+
+  return (
+    <div>
+      <button onClick={handleNavigation}>다른 페이지로 이동</button>
+      {message && <p>{message}</p>}
+    </div>
+  );
+}
+
+export default App;
+```
+
 #### 7. 점검 기준    
+
+- **자동 전환 방지 여부**: 사용자가 의도하지 않은 화면 전환이 발생하지 않는지 확인합니다.    
+- **사용자 제어 기능 제공**: 화면 전환이나 이벤트 발생 시 사용자가 이를 제어할 수 있는 옵션이 있는지 확인합니다.    
+- **스크린 리더 호환성**: 스크린 리더 사용자에게 방해되지 않도록 설정되어 있는지 점검합니다.    
 
 
 #### 8. 점검 방법     
 
+- **자동화 도구**: Axe, Lighthouse 등의 접근성 도구를 통해 자동 화면 전환 문제가 있는지 확인합니다.    
+- **수동 점검**: 다양한 장치에서 직접 화면 전환 및 이벤트를 실행해 보며, 예측 가능한 방식으로 동작하는지 확인합니다.    
+- **사용자 테스트**: 다양한 사용자 그룹의 피드백을 통해 예측 가능성과 관련한 불편함을 점검합니다.    
+
+
 #### 9. 준수 사례       
 
-**사례1**   
-
-- 아이콘 + 텍스트와 같이 제공되는 경우    
-  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-    <img src="./../images/a11y-mobile/img_a11yMobile_ex_do01.png" alt="">
-    <figcaption>출처 : 무인정보단말기 UI 플랫폼</figcaption>
-  </figure>
+- **사용자 동의 후 화면 전환**: 사용자가 버튼을 클릭하여 페이지를 전환할 때마다 경고 창을 통해 의도를 확인하고 전환하는 앱.    
+- **자동 전환 중지 옵션 제공**: 자동으로 진행되는 슬라이드 쇼에 중지 버튼을 제공하여 사용자가 전환을 중지할 수 있도록 한 앱.    
 
 #### 10. 미준수 사례       
 
-**사례1**   
+- **갑작스러운 화면 전환**: 사용자가 동의하지 않았는데 페이지가 자동으로 전환되는 경우.    
+- **사용자 제어 기능 부재**: 자동 재생되는 슬라이드 쇼나 팝업 이벤트에서 중지할 수 있는 옵션이 제공되지 않는 경우.    
 
 #### 11. 관련 영상       
 <iframe style="width:100%;min-height:315px;" src="https://www.youtube.com/embed/B_tezDF6CXo?si=CotSIdAZlPC0x4jZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
