@@ -93,6 +93,7 @@ if (am.isEnabled()) {
 ```
 
 - 진동 피드백 제공     
+
 ```sh
 Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 vibrator.vibrate(500); // 500ms 진동
