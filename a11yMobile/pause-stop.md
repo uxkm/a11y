@@ -45,6 +45,7 @@
 #### 6. 개발방법     
 
 - **HTML5 오디오 태그 활용**: autoplay 속성을 사용하지 않도록 하여 자동 재생을 방지합니다.    
+
 ```sh
 <audio id="backgroundAudio" controls>
     <source src="background-music.mp3" type="audio/mp3">
@@ -53,6 +54,7 @@
 ```
 
 - **JavaScript로 제어하는 오디오 재생** : 자동 재생을 방지하고, 사용자가 원하는 경우 오디오를 재생할 수 있도록 JavaScript를 사용합니다.    
+
 ```sh
 const audio = document.getElementById('backgroundAudio');
 const playButton = document.getElementById('playButton');
@@ -69,6 +71,7 @@ stopButton.addEventListener('click', () => {
 ```
 
 - **Vue.js 오디오 제어 컴포넌트**
+
 ```sh
 <template>
   <div>
@@ -100,6 +103,7 @@ export default {
 
 
 - **React 오디오 제어 컴포넌트**    
+
 ```sh
 import React, { useRef } from 'react';
 

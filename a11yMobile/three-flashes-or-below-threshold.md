@@ -44,6 +44,7 @@
 #### 6. 개발방법     
 
 - **CSS 애니메이션 제한**: CSS 애니메이션 사용 시 깜박임 효과를 제한합니다.    
+
 ```sh
 .no-blink-animation {
   animation: none;
@@ -51,6 +52,7 @@
 ```
 
 - **JavaScript 애니메이션 제어**: 깜박임을 유발할 수 있는 JavaScript 애니메이션은 주의하여 사용합니다.    
+
 ```sh
 let flashElement = document.getElementById('flashElement');
 let interval = setInterval(() => {
@@ -61,6 +63,7 @@ let interval = setInterval(() => {
 ```
 
 - **Vue.js**: 애니메이션 사용 시 사용자 제어를 추가하여 번쩍임을 줄입니다.    
+
 ```sh
 <template>
   <div v-if="!flashDisabled" class="flash-content">주의: 이 콘텐츠는 깜박일 수 있습니다.</div>

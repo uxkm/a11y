@@ -51,6 +51,7 @@
 
 - **iOS**    
   - 경고 메시지 제공 
+    
     ```sh
     let warningLabel = UILabel()
     warningLabel.text = "Error occurred"
@@ -60,6 +61,7 @@
 
 - **Android**         
   - 버튼 색상과 텍스트로 상태 표시   
+    
     ```sh
     <Button
     android:id="@+id/button"
@@ -71,6 +73,7 @@
     ```   
 
 - **하이브리드(html)**    
+
 ```sh
 <button style="background-color: green;">
   Submit
@@ -78,6 +81,7 @@
 </button>
 ```
 - **하이브리드(Vue)**    
+
 ```sh
 <template>
   <button :style="{ backgroundColor: buttonColor }">
@@ -97,6 +101,7 @@ export default {
 </script>
 ```
 - **하이브리드(React)**    
+
 ```sh
 function SubmitButton({ status }) {
   return (

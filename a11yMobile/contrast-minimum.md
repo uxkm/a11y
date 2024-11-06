@@ -69,6 +69,7 @@
 
 - **iOS**    
   명도 대비 체크 및 조정   
+  
   ```sh
   let label = UILabel()
   label.text = "Important Info"
@@ -78,6 +79,7 @@
 
 - **Android**        
   명도 대비 조정   
+  
   ```sh
   <TextView
   android:layout_width="wrap_content"
@@ -88,12 +90,14 @@
   ```   
 
 - **하이브리드(html)**     
+  
   ```sh
   <div style="background-color: #FFFFFF; color: #333333;">
     Important Info
   </div>
   ```   
 - **하이브리드(Vue)**     
+  
   ```sh
   <template>
     <div :style="{ backgroundColor: '#FFFFFF', color: '#333333' }">
@@ -102,6 +106,7 @@
   </template>
   ```
 - **하이브리드(React)**    
+  
   ```sh
   function ImportantInfo() {
     return (

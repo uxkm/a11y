@@ -59,6 +59,7 @@
 **iOS에서 Dynamic Type 적용 방법**    
 
 - UILabel 및 UITextView에 Dynamic Type 활성화     
+  
   ```sh
   let label = UILabel()
   label.font = UIFont.preferredFont(forTextStyle: .body)
@@ -69,6 +70,7 @@
 **Android에서 폰트 크기 조절 기능 구현 방법**    
 
 - TextView에서 글꼴 크기 반영    
+  
   ```sh
   <TextView
     android:layout_width="wrap_content"
@@ -77,6 +79,7 @@
     android:textSize="16sp" />
   ```
 - 글꼴 크기 조절 기능을 지원하도록 설정    
+  
   ```sh
   textView.textSize = resources.getDimension(R.dimen.default_text_size) * context.resources.configuration.fontScale
   ```

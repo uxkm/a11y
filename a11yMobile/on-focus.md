@@ -46,6 +46,7 @@
 **iOS (Swift)**    
 
 - **UIAlertController를 통한 사용자 확인 요청**: 사용자에게 화면 전환을 알리고 확인을 요청합니다.    
+
 ```sh
 import UIKit
 
@@ -64,6 +65,7 @@ class ViewController: UIViewController {
 **Android (Kotlin)**    
 
 - **AlertDialog를 이용한 사용자 확인**: 화면 전환 전 사용자 동의를 구하여 예기치 않은 전환을 방지합니다.     
+
 ```sh
 import android.content.DialogInterface
 import androidx.appcompat.app.AlertDialog
@@ -87,6 +89,7 @@ class MainActivity : AppCompatActivity() {
 **HTML/JavaScript**    
 
 - **사용자 제어를 포함한 경고 제공**: 화면 전환을 위한 버튼 클릭 시 사용자에게 경고 메시지를 표시합니다.     
+
 ```sh
 <button onclick="confirmTransition()">페이지 전환</button>
 
@@ -103,6 +106,7 @@ class MainActivity : AppCompatActivity() {
 **Vue.js**    
 
 - **자동 이벤트 중지 및 사용자 알림 제공**: 페이지가 자동으로 전환되지 않도록 하고, 사용자에게 알림을 제공합니다.     
+
 ```sh
 <template>
   <div>
@@ -135,6 +139,7 @@ export default {
 **React**    
 
 - **경고 메시지를 통해 화면 전환 제어**     
+
 ```sh
 import React, { useState } from 'react';
 

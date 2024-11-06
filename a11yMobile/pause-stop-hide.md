@@ -7,42 +7,238 @@
 
 ### 정지 기능 제공
 **관련 지침 : 자동으로 변경되는 콘텐츠는 움직임을 제어할 수 있어야 한다.**   
-대체 텍스트는 비 텍스트 콘텐츠를 설명하는 중요한 요소로, 접근성을 높이기 위해 필수적으로 제공되어야 합니다. 다양한 테스트 도구를 활용해 웹 및 모바일 앱에서 대체 텍스트를 포함한 접근성 요소를 철저히 점검하고, 사용자 경험을 개선할 수 있습니다. 접근성을 준수함으로써 모든 사용자에게 포용적인 디지털 환경을 제공합니다.   
-[WCAG 2.2 Quick Reference - Non-text Content](https://www.w3.org/WAI/WCAG22/quickref/#non-text-content){: target="_blank"}
+정지 기능을 제공함으로써 사용자는 자동 변경 콘텐츠를 효과적으로 제어할 수 있으며, 특히 접근성 요구가 있는 사용자에게 중요한 편의를 제공합니다. 모든 사용자에게 안정적이고 예측 가능한 사용자 경험을 제공할 수 있도록 정지 기능을 필수적으로 제공해야 합니다.   
+[WCAG 2.2 Quick Reference - Animation from Interactions](https://www.w3.org/WAI/WCAG22/quickref/#animation-from-interactions){: target="_blank"}
 
 **키워드**   
-#모바일 앱 접근성, #모바일 앱 접근성 콘텐츠 제작 기법, #WCAG2.2, #대체 텍스트, #비 텍스트 콘텐츠, #accessibilityLabel, #contentDescription, #보조기술과의호환성, #접근성 테스트 도구 활용 점검방법, #스크린 리더, #VoiceOver, #TalkBack, #UIAccessibility API #AccessibilityNodeInfo API, #Swift, #Kotlin, #네이티브 #하이브리드
+#모바일 앱 접근성, #모바일 앱 접근성 콘텐츠 제작 기법, #WCAG2.2, #정지 기능 제공, #자동 변경, #정지 버튼, #사용자 제어, #시각적 장애 사용자, #인지 장애 사용자
 
 #### 1. 필요성        
 
+자동으로 변경되는 콘텐츠는 사용자가 주의 집중을 방해하거나 중요한 정보를 놓치게 할 수 있습니다. 특히, 시각적 피로 또는 광민감성 발작이 있는 사용자는 움직임이 많은 콘텐츠로 인해 불편을 느낄 수 있습니다. 따라서 콘텐츠의 자동 변환 기능을 제어하는 옵션은 모든 사용자에게 필수적입니다.    
+
 #### 2. 대상       
+
+- **시각적 장애 사용자**: 계속 움직이는 콘텐츠가 시각적 피로를 유발할 수 있습니다.     
+- **인지 장애 사용자**: 자동 변경이 콘텐츠 이해를 방해할 수 있는 사용자.    
+- **모든 사용자**: 정보가 자동으로 변경되어 놓치는 경우, 필요한 정보를 다시 보거나 멈출 수 있는 기능이 유용합니다.    
 
 #### 3. 체크리스트       
 
+- **정지/재생 기능 제공**: 사용자가 자동으로 변경되는 콘텐츠를 멈추거나 다시 시작할 수 있도록 정지 및 재생 버튼을 제공합니다.    
+- **일시정지 및 속도 조절**: 콘텐츠의 속도를 조절하거나 일시정지할 수 있는 옵션을 제공합니다.     
+- **명확한 컨트롤 버튼 표시**: 정지/재생 버튼이 사용자가 쉽게 인식하고 조작할 수 있는 위치에 있어야 합니다.    
+- **움직임 제어 사용자 정의 설정**: 사용자가 설정에서 자동 변경 콘텐츠의 움직임을 제어할 수 있도록 합니다.    
+
 #### 4. 기기별 테스트 방법      
+
+- **iOS**: VoiceOver를 활성화하여 자동으로 변경되는 콘텐츠의 정지 기능이 접근 가능한지, 시각적으로 명확히 표시되는지 테스트합니다.    
+- **Android**: TalkBack으로 자동 변환되는 콘텐츠를 정지/재생하고 컨트롤을 쉽게 사용할 수 있는지 점검합니다.    
+- **웹 및 하이브리드 앱(HTML, Vue, React)**: 브라우저 및 장치에서 자동으로 변경되는 콘텐츠가 멈출 수 있도록 설정이 가능한지, 정지 기능이 작동하는지 확인합니다.    
 
 #### 5. QA 지표       
 
+- **정지 기능 제공 여부**: 모든 자동 변경 콘텐츠가 정지 가능한지 여부를 확인합니다.     
+- **컨트롤 접근성**: 정지/재생 버튼이 사용자에게 쉽게 접근 가능한 위치와 크기로 제공되는지 확인합니다.    
+- **사용자 피드백 수집**: 정지 기능이 사용자 경험에 미치는 영향을 사용자로부터 평가합니다.    
+
 #### 6. 개발방법     
+
+**iOS (Swift)**    
+
+- 정지/재생 버튼을 사용하여 자동 슬라이드 제어     
+
+```sh
+import UIKit
+
+class ViewController: UIViewController {
+    var timer: Timer?
+    var isPaused = false
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        startSlideshow()
+    }
+
+    func startSlideshow() {
+        timer = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: true) { _ in
+            if !self.isPaused {
+                // 슬라이드 변경 로직
+            }
+        }
+    }
+
+    @IBAction func toggleSlideshow(_ sender: UIButton) {
+        isPaused.toggle()
+        sender.setTitle(isPaused ? "재생" : "정지", for: .normal)
+    }
+}
+```
+
+**Android (Kotlin)**    
+
+- Handler와 Button을 사용하여 슬라이드 쇼 제어     
+
+```sh
+import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
+
+class MainActivity : AppCompatActivity() {
+    private val handler = Handler(Looper.getMainLooper())
+    private var isPaused = false
+    private lateinit var controlButton: Button
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        controlButton = findViewById(R.id.controlButton)
+        startSlideshow()
+
+        controlButton.setOnClickListener {
+            isPaused = !isPaused
+            controlButton.text = if (isPaused) "재생" else "정지"
+        }
+    }
+
+    private fun startSlideshow() {
+        handler.postDelayed(object : Runnable {
+            override fun run() {
+                if (!isPaused) {
+                    // 슬라이드 변경 로직
+                }
+                handler.postDelayed(this, 3000)
+            }
+        }, 3000)
+    }
+}
+```
+
+**HTML**    
+
+- 자동 슬라이드 쇼 제어   
+
+```sh
+<div id="slideshow">슬라이드 콘텐츠</div>
+<button id="controlButton" onclick="toggleSlideshow()">정지</button>
+
+<script>
+  let isPaused = false;
+  let slideshowInterval = setInterval(changeSlide, 3000);
+
+  function changeSlide() {
+    if (!isPaused) {
+      document.getElementById("slideshow").innerText = "다음 슬라이드";
+    }
+  }
+
+  function toggleSlideshow() {
+    isPaused = !isPaused;
+    document.getElementById("controlButton").innerText = isPaused ? "재생" : "정지";
+  }
+</script>
+```
+
+**Vue.js**    
+
+- 슬라이드 자동 전환 및 정지 버튼   
+
+```sh
+<template>
+  <div>
+    <div>{{ currentSlide }}</div>
+    <button @click="toggleSlideshow">{{ isPaused ? '재생' : '정지' }}</button>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      isPaused: false,
+      currentSlide: "슬라이드 1",
+      timer: null,
+    };
+  },
+  mounted() {
+    this.startSlideshow();
+  },
+  methods: {
+    startSlideshow() {
+      this.timer = setInterval(() => {
+        if (!this.isPaused) {
+          this.currentSlide = this.currentSlide === "슬라이드 1" ? "슬라이드 2" : "슬라이드 1";
+        }
+      }, 3000);
+    },
+    toggleSlideshow() {
+      this.isPaused = !this.isPaused;
+    },
+  },
+  beforeDestroy() {
+    clearInterval(this.timer);
+  },
+};
+</script>
+```
+
+**React**    
+
+- 슬라이드 제어를 위한 상태 관리   
+
+```sh
+import React, { useState, useEffect } from 'react';
+
+function App() {
+  const [isPaused, setIsPaused] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState("슬라이드 1");
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      if (!isPaused) {
+        setCurrentSlide((prevSlide) => (prevSlide === "슬라이드 1" ? "슬라이드 2" : "슬라이드 1"));
+      }
+    }, 3000);
+    return () => clearInterval(timer);
+  }, [isPaused]);
+
+  const toggleSlideshow = () => setIsPaused(!isPaused);
+
+  return (
+    <div>
+      <div>{currentSlide}</div>
+      <button onClick={toggleSlideshow}>{isPaused ? "재생" : "정지"}</button>
+    </div>
+  );
+}
+
+export default App;
+```
+
 
 #### 7. 점검 기준    
 
+- **정지 기능 제공 여부**: 모든 자동 변경 콘텐츠에 대해 정지 기능이 제공되는지 확인합니다.   
+- **접근 가능한 컨트롤**: 정지/재생 버튼이 접근성에 맞게 제공되고, VoiceOver 및 TalkBack과 호환되는지 점검합니다.    
+- **자동 갱신 제한**: 사용자가 원하지 않는 경우 콘텐츠가 자동으로 갱신되지 않도록 제어할 수 있는지 확인합니다.    
 
 #### 8. 점검 방법     
 
+- **자동화 도구**: Axe나 Lighthouse와 같은 접근성 검사 도구를 사용하여 자동 변경 콘텐츠에 정지 기능이 제공되는지 확인합니다.    
+- **수동 점검**: 다양한 기기에서 자동으로 변경되는 콘텐츠를 테스트하여 정지 기능이 사용 가능하고 쉽게 조작할 수 있는지 확인합니다.    
+- **사용자 피드백**: 정지 기능에 대한 사용자 피드백을 통해 접근성 요구가 잘 충족되고 있는지 평가합니다.   
+
 #### 9. 준수 사례       
 
-**사례1**   
-
-- 아이콘 + 텍스트와 같이 제공되는 경우    
-  <figure aria-hidden="true" style="text-align:center;border:1px solid #000">
-    <img src="./../images/a11y-mobile/img_a11yMobile_ex_do01.png" alt="">
-    <figcaption>출처 : 무인정보단말기 UI 플랫폼</figcaption>
-  </figure>
+- **자동 슬라이드 정지 기능 제공**: 슬라이드 쇼에 정지 버튼이 있어 사용자가 원할 때 언제든지 멈출 수 있는 경우.    
+- **명확한 정지/재생 표시**: 사용자에게 자동 변경을 정지할 수 있는 컨트롤이 명확하게 표시되어 있는 경우.    
 
 #### 10. 미준수 사례       
 
-**사례1**   
+- **정지 기능 미제공**: 자동으로 변경되는 콘텐츠가 사용자에게 제어권을 제공하지 않아 지속적으로 변경되는 경우.    
+- **컨트롤이 접근 불가능한 위치에 있음**: 정지/재생 버튼이 너무 작거나 시각적으로 명확하지 않아 사용자가 쉽게 접근할 수 없는 경우.
 
 #### 11. 관련 영상       
 <iframe style="width:100%;min-height:315px;" src="https://www.youtube.com/embed/eQHPJ4tk-ag?si=mMQd3txeiPLQc_4B" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

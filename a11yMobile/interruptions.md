@@ -68,12 +68,14 @@
 **iOS**    
 
 - 알림 메시지 전송 및 스크린 리더 인식    
+
 ```sh
 let announcement = "파일이 성공적으로 업로드되었습니다."
 UIAccessibility.post(notification: .announcement, argument: announcement)
 ```
 
 - 진동 피드백 제공    
+
 ```sh
 AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
 ```
@@ -81,6 +83,7 @@ AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
 **Android**    
 
 - 알림 메시지 전송 및 스크린 리더 인식     
+
 ```sh
 String message = "파일이 성공적으로 업로드되었습니다.";
 AccessibilityManager am = (AccessibilityManager) getSystemService(ACCESSIBILITY_SERVICE);
@@ -98,6 +101,7 @@ vibrator.vibrate(500); // 500ms 진동
 **하이브리드(html)**    
 
 - ARIA 라이브 영역을 통한 알림 메시지 전송 및 CSS 애니메이션을 통한 시각적 알림    
+
 ```sh
 <div id="alert" role="alert" aria-live="assertive">
   파일이 성공적으로 업로드되었습니다.
@@ -120,6 +124,7 @@ vibrator.vibrate(500); // 500ms 진동
 **하이브리드(vue)**    
 
 - 알림 메시지 및 스크린 리더 인식    
+
 ```sh
 <template>
   <div aria-live="polite" role="alert">{{ alertMessage }}</div>
@@ -146,6 +151,7 @@ export default {
 **하이브리드(React)**    
 
 - 알림 메시지 및 스크린 리더 인식    
+
 ```sh
 function App() {
   const [alertMessage, setAlertMessage] = React.useState("");

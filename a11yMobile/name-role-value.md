@@ -73,16 +73,21 @@
 **네이티브 - iOS**    
 
 - VoiceOver용 접근성 라벨 설정    
+
 ```sh
 let backButton = UIButton()
 backButton.setTitle("뒤로", for: .normal)
 backButton.accessibilityLabel = "뒤로 가기"
 ```
+
 - 상태 변경을 인식하도록 알림
+
 ```sh
 UIAccessibility.post(notification: .announcement, argument: "네트워크 연결이 성공했습니다.")
 ```
+
 - 키보드 및 스위치 제어 탐색 설정
+
 ```sh
 myButton.isAccessibilityElement = true
 myButton.accessibilityTraits = .button
@@ -91,17 +96,22 @@ myButton.accessibilityTraits = .button
 **네이티브 - Android**   
 
 - TalkBack용 접근성 라벨 설정    
+
 ```sh
 Button backButton = findViewById(R.id.backButton);
 backButton.setContentDescription("뒤로 가기");
 ```
+
 - 상태 변경을 인식하도록 알림
+
 ```sh
 AccessibilityEvent event = AccessibilityEvent.obtain(AccessibilityEvent.TYPE_ANNOUNCEMENT);
 event.getText().add("네트워크 연결이 성공했습니다.");
 getSystemService(AccessibilityManager.class).sendAccessibilityEvent(event);
 ```
+
 - 스위치 제어 탐색 설정
+
 ```sh
 myButton.setFocusable(true);
 myButton.setFocusableInTouchMode(true);
@@ -110,6 +120,7 @@ myButton.setFocusableInTouchMode(true);
 **하이브리드 - HTML**   
 
 - ARIA 라벨과 역할(role) 설정    
+
 ```sh
 <button aria-label="뒤로 가기" role="button">뒤로</button>
 ```
@@ -121,6 +132,7 @@ myButton.setFocusableInTouchMode(true);
 **하이브리드 - Vue.js**   
 
 - 접근성 라벨과 역할 설정    
+
 ```sh
 <template>
   <button :aria-label="'뒤로 가기'" role="button" @click="goBack">뒤로</button>
@@ -140,6 +152,7 @@ export default {
 **접근성 라벨과 역할 설정**   
 
 - 접근성 라벨과 역할 설정    
+
 ```sh
 function App() {
   return (
