@@ -125,6 +125,7 @@ myButton.setFocusableInTouchMode(true);
 <button aria-label="뒤로 가기" role="button">뒤로</button>
 ```
 - 상태 변경을 인식하도록 알림
+
 ```sh
 <div role="status" aria-live="polite">네트워크 연결이 성공했습니다.</div>
 ```
