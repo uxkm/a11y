@@ -241,9 +241,9 @@ export default App;
 - **컨트롤이 접근 불가능한 위치에 있음**: 정지/재생 버튼이 너무 작거나 시각적으로 명확하지 않아 사용자가 쉽게 접근할 수 없는 경우.
 
 #### 11. 관련 영상       
-<iframe style="width:100%;min-height:315px;" src="https://www.youtube.com/embed/eQHPJ4tk-ag?si=mMQd3txeiPLQc_4B" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe style="width:100%;min-height:315px;" src="https://www.youtube.com/embed/z5nhDxrSblM?si=O2gdkjdf9JMwycqn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-[AOA11Y 모바일 앱 접근성 (1.대체 텍스트)](https://www.youtube.com/watch?v=eQHPJ4tk-ag){: target="_blank"}    
+[NULI 모바일 앱 접근성 (10. 정지 기능 제공)](https://youtu.be/z5nhDxrSblM?si=9jHiHBdS2BGslqoW){: target="_blank"}    
    
 ---
 <details>
