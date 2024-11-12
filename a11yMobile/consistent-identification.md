@@ -61,13 +61,69 @@ UI 컴포넌트의 일관성은 다음과 같은 이유로 필요합니다.
 }
 ```
 
-**재사용 가능한 컴포넌트 개발**   
+**iOS (Swift)**    
 
-- Vue.js 예시    
+디자인 시스템 준수: UIButton이나 UILabel 같은 공통 컴포넌트의 스타일을 일관되게 적용합니다.
+
+```sh
+import UIKit
+
+class ViewController: UIViewController {
+    let primaryButton = UIButton()
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        primaryButton.backgroundColor = UIColor.systemBlue
+        primaryButton.setTitleColor(.white, for: .normal)
+        primaryButton.layer.cornerRadius = 8
+    }
+}
+```
+
+**Android (Kotlin)**    
+
+스타일과 테마를 통한 일관성 유지: styles.xml 파일에서 일관된 스타일을 정의하여 모든 버튼에 적용합니다.
+
+```sh
+<!-- res/values/styles.xml -->
+<style name="PrimaryButton">
+    <item name="android:background">?attr/colorPrimary</item>
+    <item name="android:textColor">#FFFFFF</item>
+    <item name="android:padding">12dp</item>
+    <item name="android:layout_marginTop">8dp</item>
+</style>
+
+<Button
+    style="@style/PrimaryButton"
+    android:text="확인" />
+```
+
+**HTML**    
+
+CSS 클래스와 공통 스타일 사용: 일관된 스타일의 버튼과 링크를 제공합니다
+
+```sh
+<button class="primary-button">확인</button>
+
+<style>
+  .primary-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    border: none;
+  }
+</style>
+```
+
+**Vue.js**    
+
+컴포넌트 재사용을 통한 일관성 유지
 
 ```sh
 <template>
-  <button class="button-primary">{{ label }}</button>
+  <button class="primary-button">{{ label }}</button>
 </template>
 
 <script>
@@ -77,27 +133,44 @@ export default {
 </script>
 
 <style scoped>
-.button-primary {
-  background-color: #007bff;
-  color: #fff;
-  border-radius: 5px;
-  padding: 10px 20px;
-}
+  .primary-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    border: none;
+  }
 </style>
 ```
 
-- React 예시    
+**React**    
+
+재사용 가능한 컴포넌트 개발
 
 ```sh
 import React from 'react';
 import './Button.css';
 
 function Button({ label }) {
-  return <button className="button-primary">{label}</button>;
+  return <button className="primary-button">{label}</button>;
 }
 
 export default Button;
+
+
+// CSS 파일(Button.css)    
+
+.primary-button {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  border: none;
+}
 ```
+
 
 #### 7. 점검 기준    
 
