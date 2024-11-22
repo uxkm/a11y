@@ -7,7 +7,7 @@
 ### 사용자 인터페이스의 일관성
 **관련 지침 : 사용자 인터페이스 컴포넌트들은 일관성 있게 배치되어야 한다.**   
 모바일 앱과 웹 애플리케이션에서 사용자 인터페이스(UI)의 일관성은 사용자 경험을 향상시키고 학습 곡선을 줄이며 접근성을 개선하는 데 중요한 역할을 합니다. UI 컴포넌트의 일관된 배치는 사용자가 애플리케이션 내에서 일관된 경험을 기대할 수 있도록 하며, 사용자의 신뢰도와 만족도를 높입니다.   
-[WCAG 2.2 Quick Reference - Non-text Content](https://www.w3.org/WAI/WCAG22/quickref/#non-text-content){: target="_blank"}
+[WCAG 2.2 Quick Reference - Consistent Navigation](https://www.w3.org/WAI/WCAG22/quickref/#consistent-navigation){: target="_blank"}
 
 **키워드**   
 #모바일 앱 접근성, #모바일 앱 접근성 콘텐츠 제작 기법, #WCAG2.2, #사용자 인터페이스 일관성, #UI 일관성, #디자인 시스템, #반응형 디자인, #사용성, #컴포넌트 재사용, #장애인 사용자, #고령 사용자
