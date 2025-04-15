@@ -59,6 +59,8 @@
 ## A11Y CREATION TECH   
 ### 1. [웹 접근성 제작 기법 - [준수/미준수 사례 제외]](a11yWeb/non-text-content.md)    
 
+### 인식의 용이성 -  15개 검사항목 중 6개 추가     
+
 ####  [인식의 용이성(Perceivable)](a11yWeb/non-text-content.md)
   * #### [적절한 대체 텍스트 제공](a11yWeb/non-text-content.md)    
   * #### [자막 제공](a11yWeb/captions-prerecorded.md)    
@@ -68,9 +70,9 @@
   * #### [색에 무관한 콘텐츠 인식](a11yWeb/use-of-color.md)    
   * #### [자동 재생 금지](a11yWeb/pause-stop-hide.md)    
   * #### [텍스트 콘텐츠의 명도 대비](a11yWeb/contrast-minimum.md)    
-  * #### [콘텐츠 간의 구분](a11yWeb/grouping-content.md)    
-   
-####  [운용의 용이성(Operable)](a11yWeb/keyboard.md)  -  15개 검사항목 중 6개 추가     
+  * #### [콘텐츠 간의 구분](a11yWeb/grouping-content.md)
+
+####  [운용의 용이성(Operable)](a11yWeb/keyboard.md)     
   * #### [키보드 사용 보장](a11yWeb/keyboard.md)    
   * #### [초점 이동과 표시](a11yWeb/focus-visible.md)    
   * #### [조작 가능](a11yWeb/operable.md)    
@@ -86,8 +88,10 @@
   * #### [포인터 입력 취소 [신규 항목]](a11yWeb/pointer-cancellation.md)    
   * #### [레이블과 네임 [신규 항목]](a11yWeb/label-in-name.md)    
   * #### [동작기반 작동 [신규 항목]](a11yWeb/motion-actuation.md)    
-   
-####  [이해의 용이성(Understandable)](a11yWeb/language-of-page.md)   -  7개 검사항목 중 3개 추가     
+
+###  이해의 용이성 -  7개 검사항목 중 3개 추가
+
+####  [이해의 용이성(Understandable)](a11yWeb/language-of-page.md)         
   * #### [기본 언어 표시](a11yWeb/language-of-page.md)    
   * #### [사용자 요구에 따른 실행](a11yWeb/change-on-request.md)    
   * #### [찾기 쉬운 도움 정보 [신규 항목]](a11yWeb/consistent-help.md)    
